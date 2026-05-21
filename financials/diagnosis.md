@@ -31,10 +31,13 @@ Three levers, and a loss usually means at least one is broken.
 | **H3** | **Adverse price spread** — buying females at a high $/kg and selling fattened at a lower $/kg, so the gain doesn't cover the compression. | Females can be discounted by the market vs. males (research pending). | Purchase $/kg vs. sale $/kg, side by side. |
 | **H4** | **Subscale fixed costs** — 200 ha + labor spread over too little throughput. High cost per head per month. | Monthly cash burn regardless of sales. | Monthly fixed costs ÷ head actually turned over. |
 | **H5** | **Low-value calf flow** — born-on-farm calves sold cheap at weaning, never adding value. | Stated: calves raised to weaning, not fattened, sold then. | Calf sale prices vs. cost to raise them. |
+| **H6** | **Weak selling channel** — selling small amounts to regional butchers, no price discovery, no volume leverage, accepting low prices. | Owner's own read: "we don't have buyers at a good price; we sell mostly to regional butchers in small amounts." | Sale records: buyer concentration, lot sizes, realized $/kg vs. auction averages (e.g. Feria de Medellín). |
 
-My early bet, before seeing numbers: **H1 + H4 together** — a herd that sits and
-slowly accumulates while monthly costs run. Ceba is a *turnover* business; cattle
-that don't move don't pay. But we test it, we don't assume it.
+My early bet, before seeing numbers: **H1 + H4 + H6 together** — a herd that sits and
+slowly accumulates while monthly costs run, and the few animals that *do* sell go out
+in small lots to regional butchers at weak prices. Ceba is a *turnover* business sold
+into a *discovered price*; cattle that don't move, or that move cheaply, don't pay. But
+we test it, we don't assume it.
 
 ## What the Colombia research adds (see [`../research/colombia-cattle-profitability.md`](../research/colombia-cattle-profitability.md))
 
