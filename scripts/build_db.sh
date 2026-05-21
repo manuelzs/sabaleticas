@@ -13,13 +13,13 @@ rm -f "$DB"
 sqlite3 "$DB" < "$DATA/schema.sql"
 
 # Load each CSV (skip header). Header-only files import 0 rows, which is fine.
-for table in sources lotes animals weighings sales costs; do
+for table in sources lotes animals weighings sales costs gsmi_movements; do
     sqlite3 "$DB" ".mode csv" ".import --skip 1 '$DATA/$table.csv' $table"
 done
 
 echo "Built $DB"
 sqlite3 "$DB" "SELECT name, (SELECT COUNT(*) FROM sqlite_master) FROM sqlite_master WHERE type='table';" >/dev/null
 echo "Row counts:"
-for table in sources lotes animals weighings sales costs; do
+for table in sources lotes animals weighings sales costs gsmi_movements; do
     printf "  %-12s %s\n" "$table" "$(sqlite3 "$DB" "SELECT COUNT(*) FROM $table;")"
 done

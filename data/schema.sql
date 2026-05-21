@@ -62,6 +62,19 @@ CREATE TABLE costs (
     lote_id     TEXT REFERENCES lotes(id) -- NULL = operation-level (allocated later)
 );
 
+-- GSMI movement guides (from SINIGAN). Outbound movements / sales. NO prices.
+-- head is often NULL (count lives inside each guide PDF, not the list view).
+CREATE TABLE gsmi_movements (
+    codigo       TEXT PRIMARY KEY,
+    mov_date     TEXT,                 -- YYYY-MM-DD
+    destino      TEXT,
+    pago         TEXT,                 -- PSE / Consignacion
+    estado       TEXT,                 -- CERRADA / ANULADA / EN TRANSITO / etc.
+    head         INTEGER,
+    animal_class TEXT,
+    source_app   TEXT                  -- V5 / V6
+);
+
 -- ---------------------------------------------------------------------------
 -- Analytical views — the questions we actually ask
 -- ---------------------------------------------------------------------------

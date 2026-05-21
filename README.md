@@ -41,7 +41,7 @@ Hybrid by design:
   generated summaries (per-lote margin, source leaderboard) are human-readable
   markdown.
 
-Tables: `sources`, `lotes`, `animals`, `weighings`, `sales`, `costs`.
+Tables: `sources`, `lotes`, `animals`, `weighings`, `sales`, `costs`, `gsmi_movements`.
 Views: `animal_gain` (gain + ADG per animal), `lote_margin`, `source_leaderboard`.
 
 ## Working agreement
