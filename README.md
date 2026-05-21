@@ -33,8 +33,10 @@ Hybrid by design:
 
 - **Structured data → SQLite, backed by CSV.** The canonical truth is `data/*.csv`
   (one file per table — clean git diffs, full audit trail of every record). The
-  queryable `ranch.db` is *derived*: rebuild it anytime with `scripts/build_db.sh`.
-  It's gitignored. Schema and analytical views live in [`data/schema.sql`](data/schema.sql).
+  queryable `ranch.db` is *derived* but **committed** for convenience (a working
+  DB on clone). Rebuild it with `scripts/build_db.sh`. **Rule:** the CSVs are
+  authoritative — after changing any CSV, rebuild and commit `ranch.db` in the
+  same change so they never drift. Schema and views live in [`data/schema.sql`](data/schema.sql).
 - **Narrative + reports → markdown.** Profiles, processes, decisions, and
   generated summaries (per-lote margin, source leaderboard) are human-readable
   markdown.

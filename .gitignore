@@ -3,6 +3,6 @@
 .claude/
 ~$*
 
-# Derived database — rebuilt from data/*.csv via scripts/build_db.sh
-ranch.db
+# Derived database is committed (rebuild from data/*.csv via scripts/build_db.sh),
+# but its transient WAL/SHM/journal sidecar files are not.
 ranch.db-*
