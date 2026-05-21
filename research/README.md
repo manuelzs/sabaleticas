@@ -25,7 +25,7 @@ to **grow and stay traceable**: every claim cites a source, every source is regi
 | [ceba-de-hembras](topics/ceba-de-hembras.md) | Female strategy economics; calf sell-vs-retain |
 | [selling-and-channels](topics/selling-and-channels.md) | Auctions vs. comisionistas, price discovery, timing |
 | [failure-modes-and-fixes](topics/failure-modes-and-fixes.md) | Why farms lose money + prioritized fixes |
-| [grain-finishing](topics/grain-finishing.md) | US-style grain/confinement finishing — viability in Colombia _(in progress)_ |
+| [grain-finishing](topics/grain-finishing.md) | US-style grain/confinement finishing — viability in Colombia (verdict: poor fit) |
 
 ## Conventions
 

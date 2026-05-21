@@ -42,7 +42,7 @@ documents** ([`topics/`](topics/)); every claim cites the **source register**
 | [ceba-de-hembras](topics/ceba-de-hembras.md) | The female strategy — economics, calf sell-vs-retain |
 | [selling-and-channels](topics/selling-and-channels.md) | Auctions vs. comisionistas, price discovery, timing |
 | [failure-modes-and-fixes](topics/failure-modes-and-fixes.md) | Why farms lose money + prioritized fixes |
-| [grain-finishing](topics/grain-finishing.md) | US-style grain/confinement finishing — viability in Colombia _(in progress)_ |
+| [grain-finishing](topics/grain-finishing.md) | US-style grain/confinement finishing — verdict: poor fit in Colombia (imported grain, no marbling premium); test only a small costed finishing supplement |
 
 ## Glossary (Colombian terms)
 
