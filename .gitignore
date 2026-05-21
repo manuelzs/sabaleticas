@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+.claude/
+~$*
+
+# Derived database — rebuilt from data/*.csv via scripts/build_db.sh
+ranch.db
+ranch.db-*
