@@ -3,6 +3,12 @@
 The single source of truth for the basics. Updated as we learn more.
 _Anything marked TBD is unconfirmed — fill in when known._
 
+> ## ⚠️ The core problem
+> **The operation is losing money every month.** This is why the advisory project
+> exists. The north star is: **stop the monthly loss, then build toward profit.**
+> Working diagnosis and the minimal data needed to find the leak are in
+> [`financials/diagnosis.md`](financials/diagnosis.md).
+
 ## Identity
 
 - **Name:** Hacienda Sabaleticas
