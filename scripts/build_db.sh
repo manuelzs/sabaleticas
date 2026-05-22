@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Rebuild ranch.db from the canonical CSVs in data/.
+# Rebuild sabaleticas.db from the canonical CSVs in data/.
 # The DB is derived and disposable — CSVs are the source of truth.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-DB="$ROOT/ranch.db"
+DB="$ROOT/sabaleticas.db"
 DATA="$ROOT/data"
 
 rm -f "$DB"

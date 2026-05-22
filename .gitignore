@@ -8,7 +8,7 @@ data/_staging/
 
 # Derived database is committed (rebuild from data/*.csv via scripts/build_db.sh),
 # but its transient WAL/SHM/journal sidecar files are not.
-ranch.db-*
+sabaleticas.db-*
 
 # Python
 __pycache__/

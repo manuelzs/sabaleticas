@@ -1,20 +1,20 @@
-"""ranch — small CLI for the Hacienda Sabaleticas data layer.
+"""sabaleticas — small CLI for the Hacienda Sabaleticas data layer.
 
 Stdlib only (argparse + urllib + sqlite3). `prices fetch` also needs the
 `pdftotext` system binary (poppler).
 
-  ranch build              rebuild ranch.db from data/*.csv
-  ranch prices show        show current market-price benchmarks
-  ranch prices fetch       pull latest Central Ganadera boletín -> price_benchmarks.csv
-  ranch movements          summarize GSMI sales cadence & channels
+  sabaleticas build          rebuild sabaleticas.db from data/*.csv
+  sabaleticas prices show    show current market-price benchmarks
+  sabaleticas prices fetch   pull latest Central Ganadera boletín -> price_benchmarks.csv
+  sabaleticas movements      summarize GSMI sales cadence & channels
 
-(Also runnable without install: `python -m ranch ...` or `uv run ranch ...`.)
+(Also runnable without install: `python -m sabaleticas ...` or `uv run sabaleticas ...`.)
 """
 import argparse, csv, os, re, sqlite3, subprocess, sys, tempfile, urllib.request
 from datetime import date
 from pathlib import Path
 
-UA = "Mozilla/5.0 (ranch-cli; +sabaleticas advisory)"
+UA = "Mozilla/5.0 (sabaleticas-cli; +sabaleticas advisory)"
 CG_INDEX = "https://centralganadera.com/boletines/precios-oficiales/"
 MESES = {"enero":1,"febrero":2,"marzo":3,"abril":4,"mayo":5,"junio":6,"julio":7,
          "agosto":8,"septiembre":9,"setiembre":9,"octubre":10,"noviembre":11,"diciembre":12}
@@ -22,20 +22,20 @@ MESES = {"enero":1,"febrero":2,"marzo":3,"abril":4,"mayo":5,"junio":6,"julio":7,
 
 def find_root() -> Path:
     """Locate the project root (the dir holding data/schema.sql)."""
-    env = os.environ.get("RANCH_ROOT")
+    env = os.environ.get("SABALETICAS_ROOT")
     if env and (Path(env) / "data" / "schema.sql").exists():
         return Path(env)
     for base in (Path.cwd(), Path(__file__).resolve().parent):
         for d in (base, *base.parents):
             if (d / "data" / "schema.sql").exists():
                 return d
-    sys.exit("error: could not find the ranch project root (no data/schema.sql). "
-             "Run from inside the repo or set RANCH_ROOT.")
+    sys.exit("error: could not find the project root (no data/schema.sql). "
+             "Run from inside the repo or set SABALETICAS_ROOT.")
 
 
 ROOT = find_root()
 DATA = ROOT / "data"
-DB = ROOT / "ranch.db"
+DB = ROOT / "sabaleticas.db"
 BENCH_CSV = DATA / "price_benchmarks.csv"
 
 
@@ -59,7 +59,7 @@ def cmd_build(_):
 # ---------------------------------------------------------------- prices show
 def cmd_prices_show(_):
     if not DB.exists():
-        print("ranch.db missing — run: ranch build"); return 1
+        print("sabaleticas.db missing — run: sabaleticas build"); return 1
     con = sqlite3.connect(DB)
     rows = con.execute("""
         SELECT category, region, cop_per_kg, obs_date, source FROM price_benchmarks b
@@ -67,7 +67,7 @@ def cmd_prices_show(_):
                           WHERE x.category=b.category AND x.region=b.region AND x.source=b.source)
         ORDER BY category, region""").fetchall()
     if not rows:
-        print("No benchmarks yet — run: ranch prices fetch"); return 0
+        print("No benchmarks yet — run: sabaleticas prices fetch"); return 0
     print(f"{'category':18} {'region':12} {'COP/kg':>8}  {'date':10}  source")
     print("-" * 72)
     for cat, reg, cop, d, src in rows:
@@ -146,7 +146,7 @@ def cmd_prices_fetch(args):
 # ---------------------------------------------------------------- movements
 def cmd_movements(_):
     if not DB.exists():
-        print("ranch.db missing — run: ranch build"); return 1
+        print("sabaleticas.db missing — run: sabaleticas build"); return 1
     con = sqlite3.connect(DB)
     valid = "estado != 'ANULADA'"
     n = con.execute(f"SELECT COUNT(*) FROM gsmi_movements WHERE {valid}").fetchone()[0]
@@ -163,9 +163,9 @@ def cmd_movements(_):
 
 
 def main():
-    p = argparse.ArgumentParser(prog="ranch", description="Hacienda Sabaleticas data CLI")
+    p = argparse.ArgumentParser(prog="sabaleticas", description="Hacienda Sabaleticas data CLI")
     sub = p.add_subparsers(dest="cmd", required=True)
-    sub.add_parser("build", help="rebuild ranch.db from data/*.csv").set_defaults(fn=cmd_build)
+    sub.add_parser("build", help="rebuild sabaleticas.db from data/*.csv").set_defaults(fn=cmd_build)
     pr = sub.add_parser("prices", help="market price benchmarks").add_subparsers(dest="sub", required=True)
     pr.add_parser("show", help="show current benchmarks").set_defaults(fn=cmd_prices_show)
     pf = pr.add_parser("fetch", help="pull latest Central Ganadera boletín")

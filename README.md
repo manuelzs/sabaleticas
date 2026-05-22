@@ -33,9 +33,9 @@ Hybrid by design:
 
 - **Structured data → SQLite, backed by CSV.** The canonical truth is `data/*.csv`
   (one file per table — clean git diffs, full audit trail of every record). The
-  queryable `ranch.db` is *derived* but **committed** for convenience (a working
+  queryable `sabaleticas.db` is *derived* but **committed** for convenience (a working
   DB on clone). Rebuild it with `scripts/build_db.sh`. **Rule:** the CSVs are
-  authoritative — after changing any CSV, rebuild and commit `ranch.db` in the
+  authoritative — after changing any CSV, rebuild and commit `sabaleticas.db` in the
   same change so they never drift. Schema and views live in [`data/schema.sql`](data/schema.sql).
 - **Narrative + reports → markdown.** Profiles, processes, decisions, and
   generated summaries (per-lote margin, source leaderboard) are human-readable
@@ -43,22 +43,22 @@ Hybrid by design:
 
 Tables: `sources`, `lotes`, `animals`, `weighings`, `sales`, `costs`, `gsmi_movements`, `price_benchmarks`.
 
-## CLI (`ranch`)
+## CLI (`sabaleticas`)
 
-A stdlib-only Python package (`ranch/`), packaged with `pyproject.toml` (hatchling).
+A stdlib-only Python package (`sabaleticas/`), packaged with `pyproject.toml` (hatchling).
 `prices fetch` also needs the `pdftotext` system binary (poppler).
 
 **Run it** (any of):
-- `uv run ranch <cmd>` — no setup; uv handles the env
-- `uv sync` once, then `ranch <cmd>`
-- `python -m ranch <cmd>` — from the repo, no install
+- `uv run sabaleticas <cmd>` — no setup; uv handles the env
+- `uv sync` once, then `sabaleticas <cmd>`
+- `python -m sabaleticas <cmd>` — from the repo, no install
 
 | Command | What it does |
 |---|---|
-| `ranch build` | Rebuild `ranch.db` from `data/*.csv` (same as `scripts/build_db.sh`) |
-| `ranch prices show` | Show current market-price benchmarks |
-| `ranch prices fetch [--dry-run]` | Pull the latest **Central Ganadera Medellín** boletín, parse macho/hembra cebada $/kg, append to `price_benchmarks.csv`, rebuild. Run weekly. |
-| `ranch movements` | Summarize GSMI sales cadence & channels |
+| `sabaleticas build` | Rebuild `sabaleticas.db` from `data/*.csv` (same as `scripts/build_db.sh`) |
+| `sabaleticas prices show` | Show current market-price benchmarks |
+| `sabaleticas prices fetch [--dry-run]` | Pull the latest **Central Ganadera Medellín** boletín, parse macho/hembra cebada $/kg, append to `price_benchmarks.csv`, rebuild. Run weekly. |
+| `sabaleticas movements` | Summarize GSMI sales cadence & channels |
 Views: `animal_gain` (gain + ADG per animal), `lote_margin`, `source_leaderboard`.
 
 ## Working agreement

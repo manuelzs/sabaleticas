@@ -1,4 +1,4 @@
-from ranch.cli import main
+from sabaleticas.cli import main
 
 if __name__ == "__main__":
     main()
