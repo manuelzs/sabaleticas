@@ -1,1 +1,10 @@
 obs_date,source,category,region,weight_range,cop_per_kg,notes
+2026-04-24,Central Ganadera Medellin,hembra cebada,Medellin,,9671,Boletin N16 Apr 20-24 2026; range 7300-11200; n=746; PRIMARY benchmark for our main product [S37]
+2026-04-24,Central Ganadera Medellin,macho cebado,Medellin,,11644,Boletin N16 Apr 20-24 2026; range 9700-12400; n=2361 [S37]
+2026-04-24,Central Ganadera Medellin,bovino industrial,Medellin,,6010,Boletin N16; cull/industrial en pie; range 4500-7700 [S37]
+2026-04-24,CONtexto/Fedegan-FNG,macho gordo,nacional,,9411,week Apr 18-24 2026 national avg [S38]
+2026-04-24,CONtexto/Fedegan-FNG,hembra levante,nacional,,8742,week Apr 18-24 2026 national avg (levante not gorda) [S38]
+2026-03-07,BMC/Fedegan,macho gordo,Antioquia,,10316,early Mar 2026 dept table [S39]
+2026-03-07,BMC/Fedegan,macho gordo,nacional,,9885,early Mar 2026 consolidated [S39]
+2026-02-06,Central Ganadera Medellin,hembra cebada,Medellin,,9215,Boletin N05 Feb 2-6 2026 [S37]
+2026-02-06,Central Ganadera Medellin,macho cebado,Medellin,,11279,Boletin N05 Feb 2-6 2026 [S37]

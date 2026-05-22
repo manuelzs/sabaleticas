@@ -26,6 +26,7 @@ to **grow and stay traceable**: every claim cites a source, every source is regi
 | [selling-and-channels](topics/selling-and-channels.md) | Auctions vs. comisionistas, price discovery, timing |
 | [failure-modes-and-fixes](topics/failure-modes-and-fixes.md) | Why farms lose money + prioritized fixes |
 | [grain-finishing](topics/grain-finishing.md) | US-style grain/confinement finishing — viability in Colombia (verdict: poor fit) |
+| [price-benchmarks](topics/price-benchmarks.md) | Where to get current cattle prices — Central Ganadera Medellín (the one source with finished-female prices), Fedegán, CONtexto; what to track |
 
 ## Conventions
 

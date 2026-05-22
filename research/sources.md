@@ -51,6 +51,16 @@ by ID (e.g. `[S1]`). When you add a source, give it the next ID, never reuse one
 
 > The grain-finishing briefing also drew on **S2** (Fedegán precios) and **S4** (CONtexto mid-2025 prices), already registered above — not duplicated here.
 
+### Price benchmarks (added 2026-05-22)
+
+| ID | Source | Type | Region | Accessed | Rel. |
+|---|---|---|---|---|---|
+| **S37** | Sociedad Central Ganadera S.A. — "Precios Oficiales Feria de Ganados de Medellín," Boletín N.º 16 (20–24 abr 2026), incl. Hembras Cebadas/Machos Cebados $/kg en pie; index + weekly PDFs. https://centralganadera.com/boletines/precios-oficiales/ (latest PDF: https://centralganadera.com/wp-content/uploads/2026/04/16_PRECIOS-OFICIALES_20_al_24_Abril_2026.pdf) | Market price boletín | Medellín / Antioquia | 2026-05-22 | 🔵 market |
+| **S38** | CONtexto Ganadero — "Precios del ganado: sube el macho cebado y la hembra de levante…" (semana 18–24 abr 2026; Medellín macho $11.644, nat. avg $9.411; built on Fedegán-FNG). https://www.contextoganadero.com/economia/precio-del-ganado-semana-del-18-al-24-de-abril | Trade weekly price | National | 2026-05-22 | 🔵 price-snapshot |
+| **S39** | Agricultura y Ganadería — BMC/Fedegán "ganado bovino comercial (macho gordo)" dept. table (Antioquia ~$10.316; nat. ~$9.885, ppios mar 2026; image-based). https://www.agriculturayganaderia.com/?p=9199 | Trade republish of BMC | National (9 depts) | 2026-05-22 | 🔵 market |
+| **S40** | Subastar S.A. — subastas comerciales y consulta de precios. https://subastar.com.co/ ; https://app.subastar.com.co/precio/ | Auction operator | National | 2026-05-22 | 🔵 market |
+| **S41** | DANE — SIPSA (boletines mayoristas; carne en canal/despiece, NOT ganado en pie — verified Jan 2026 monthly). https://www.dane.gov.co/index.php/estadisticas-por-tema/agropecuario/sistema-de-informacion-de-precios-sipsa (mirror: https://www.agronet.gov.co/estadistica/Paginas/home.aspx?cod=67) | Official price stats | National | 2026-05-22 | 🟢 institutional |
+
 ## To source next (open threads)
 
 - **Delivered-to-farm feed prices at La Pintada / suroeste antioqueño** (maíz, torta de soya, palmiste, balanceado) — the #1 missing number for any grain-finishing or supplementation pro forma.
@@ -58,4 +68,4 @@ by ID (e.g. `[S1]`). When you add a source, give it the next ID, never reuse one
 - Antioquia-specific ceba cost study (current cost structure is Orinoquía, [S1]).
 - Colombian ceba mortality benchmark (not found — flagged as a gap).
 - Fedegán "Ganadería Colombiana Sostenible" (GCS) program terms & eligibility.
-- Feria de Medellín / Subastar published price series (for selling benchmark).
+- Feria de Medellín / Subastar published price series (for selling benchmark). → **DONE 2026-05-22, see [S37]** (Central Ganadera weekly boletín, incl. hembra cebada en-pie). See `topics/price-benchmarks.md`.
