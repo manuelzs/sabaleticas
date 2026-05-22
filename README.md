@@ -42,6 +42,17 @@ Hybrid by design:
   markdown.
 
 Tables: `sources`, `lotes`, `animals`, `weighings`, `sales`, `costs`, `gsmi_movements`, `price_benchmarks`.
+
+## CLI (`ranch.py`)
+
+Stdlib-only Python (no install). `pdftotext` (poppler) is needed only for `prices fetch`.
+
+| Command | What it does |
+|---|---|
+| `python3 ranch.py build` | Rebuild `ranch.db` from `data/*.csv` (same as `scripts/build_db.sh`) |
+| `python3 ranch.py prices show` | Show current market-price benchmarks |
+| `python3 ranch.py prices fetch [--dry-run]` | Pull the latest **Central Ganadera Medellín** boletín, parse macho/hembra cebada $/kg, append to `price_benchmarks.csv`, rebuild. Run weekly. |
+| `python3 ranch.py movements` | Summarize GSMI sales cadence & channels |
 Views: `animal_gain` (gain + ADG per animal), `lote_margin`, `source_leaderboard`.
 
 ## Working agreement
