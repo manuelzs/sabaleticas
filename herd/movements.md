@@ -1,63 +1,74 @@
-# Outbound movements (GSMI) — sales channel analysis
+# Outbound movements (GSMI) — sales cadence & channels
 
-Source: **SINIGAN GSMI guías**, Sabaleticas origin only. Pulled 2026-05-21 from V5
-(history, Jan 2025–Apr 2026) + V6 (the 2 most recent, Apr–May 2026). Data in
-[`../data/gsmi_movements.csv`](../data/gsmi_movements.csv) → `gsmi_movements` table.
+Source: **SINIGAN GSMI guías**, Sabaleticas origin. Pulled 2026-05-21/22 from V5
+(history) + V6 (2 newest). Data: [`../data/gsmi_movements.csv`](../data/gsmi_movements.csv)
+→ `gsmi_movements` table. **84 guides, 75 valid** (9 ANULADA), **Jan 2025 – May 2026**.
 
-**Big caveat:** GSMI has **no prices** and the list view has **no head counts** (the
-count lives inside each guide PDF). So this tells us *when, where, and how often* cattle
-left — the **cadence and channel** — but not yet *how many* or *for how much*. Head
-counts and prices come from opening each guide or from the owner's own records.
+> **Correction note:** an earlier version of this file (from an incomplete pull of 35
+> guides) claimed "100% direct-to-slaughter, 0% auction." **That was wrong.** The full
+> pull surfaced a large comisionista/consignación channel and sales to the Medellín
+> livestock market. Corrected below.
+>
+> **Scope note:** these are recent guides (current SINIGAN version). Older sales under
+> prior software versions are not captured and we're not chasing them — the goal is
+> recent cadence + lot sizes, not a complete archive.
 
-## What the guides show
+## Cadence — frequent, small, steady
 
-**37 guides total; 28 valid** (9 are ANULADA — voided, see below).
+**~4.7 valid sales/month** across the window (range 1–10/month). This is *high
+frequency* — roughly a sale a week, in small lots. That's the signature of selling
+animals a few at a time rather than batching into larger, better-priced lots.
 
-### Every sale goes to a slaughter plant — never an auction
+## Lot sizes — small (the head counts we pulled)
 
-| Destination | Type | Valid guides |
-|---|---|---|
-| Frigorífico Municipal de Fredonia | municipal slaughter plant (Antioquia) | 15 |
-| Frigocentro S.A. | slaughter plant | 4 |
-| Central de Sacrificio de Riosucio | municipal slaughter plant (Caldas) | 3 |
-| Planta de Faenado Amagá (PLAFA) | municipal slaughter plant (Antioquia) | 2 |
-| Frigotún (Otún) | slaughter plant (Pereira) | 1 |
-| Matadero La Virginia | slaughter plant (Risaralda) | 1 |
-| Cárnicos Especializados (Guayabito) | slaughter plant | 1 |
-| **El Lucero** (José Diniel Vásquez) | **another predio — a live sale, not slaughter** | 1 |
+| Date | Head | Class | Destination | Channel |
+|---|---|---|---|---|
+| 2026-05-11 | 10 | hembras 2–3 | Central de Sacrificio Riosucio | owner direct |
+| 2026-04-28 | 6 | hembras 2–3 | Frigorífico Fredonia | owner direct |
+| 2026-03-26 | **14** | **machos 2–3** | **Sociedad Central Ganadera** (Medellín market) | comisionista |
+| 2026-03-12 | 6 | hembras 2–3 | Frigorífico Fredonia | owner direct |
+| 2026-02-09 | 1 | hembras 2–3 | El Lucero (a farm) | owner direct |
 
-**Almost everything is "GSMI a planta de beneficio" — cattle sent to municipal
-slaughter plants.** There is **not one sale through a subasta / feria / concentración
-ganadera** — i.e. no competitive price discovery, ever. This is hypothesis **H6** in
-[`../financials/diagnosis.md`](../financials/diagnosis.md) confirmed in the record: the
-weakest possible channel for price. The municipal-plant route is exactly how cattle
-reach local butchers ("regional butchers" matches), and the buyer set is scattered
-across many small plants in Antioquia/Caldas/Risaralda — no anchored, volume buyer.
+Small lots — **single digits to ~14**. Pattern in the sample: **hembras 2–3 años go to
+slaughter plants**; **the born-on-farm machos go to the Central Ganadera market** (and in
+a bigger lot, 14). Single-animal sales happen (the "1") — per owner, often a **forced
+sale** (e.g. an animal hurt in an accident) offloaded to a local butcher/plant.
+*(Only 5 head counts pulled — the app is buggy and counts live inside each guide PDF;
+this is a representative sample, not the full total.)*
 
-### Cadence: frequent, small, steady — not batched
+## Channels — heavy use of comisionistas & consignación
 
-Roughly **1–3 movements per month**, nearly every month, Jan 2025 → May 2026. The two
-guides we have head counts for were **6 and 10 head** — small lots. Frequent small
-shipments to slaughter plants is the opposite of building **uniform volume lots** for an
-auction. It ties H6 (channel) to H1 (turnover): dribbling animals out a few at a time.
+| Cut | Split (of 75 valid) |
+|---|---|
+| **Comisionista-handled** (ELUPI SAS 38, Agroequina 9) | **47 (63%)** |
+| Owner direct (Silvia) | 28 (37%) |
+| **Consignación** payment | **50 (67%)** |
+| PSE (paid direct) | 25 (33%) |
 
-### A process red flag: 24% of guides voided (ANULADA)
+**Destinations (valid):** Frigorífico Municipal de Fredonia **38**, Sociedad Central
+Ganadera (Medellín livestock market) **17**, Frigocentro 4, Riosucio 3, Amagá 2,
+Frigotún 1, Matadero La Virginia 1, Cárnicos Especializados 1; plus **sales to other
+farms** — La Fortuna 3, El Lucero, Los Alticos, La Guaimaralá, San Joaquín (live cattle).
 
-9 of 37 guides are ANULADA — including **five on a single day (2025-10-20)** all to
-Fredonia, all "Pendiente Confirmación ACH." That looks like repeated failed attempts to
-issue one guide (payment/system friction). Worth understanding — wasted effort, and a
-sign the selling process itself is rough.
+So the real channel mix:
+- **~half to one municipal slaughter plant (Fredonia)** — local, small-capacity buyers.
+- **~23% through Sociedad Central Ganadera** — the Medellín market *does* give price
+  discovery; this is the one competitive channel, and it's where the machos go.
+- **The rest** scattered across small plants and direct farm sales.
+- **Two-thirds run through comisionistas on consignación** — meaning a middleman sells
+  on Sabaleticas' behalf and takes a cut; the farm is largely a **price-taker**.
 
-## What this does and doesn't prove
+## What this means for the diagnosis (H6)
 
-- **Confirms (H6):** no price discovery — 100% direct-to-plant, 0% auction.
-- **Supports (H1):** small, frequent shipments rather than batched volume sales.
-- **Still unknown:** total head sold, lot sizes (beyond the 2 samples), and — since GSMI
-  never has them — **prices**. These come from the owner's records (which will also let
-  us compute realized $/kg vs. auction averages).
+Revised from "no price discovery at all" to something more precise: **high-frequency
+small-lot selling, mostly via comisionistas on consignación.** The likely leaks:
+- **Commission fees** on ~63% of sales.
+- **Small-lot pricing** — frequent tiny lots don't command volume pricing; this ties
+  back to turnover (H1): you can only sell small if you're not finishing batches.
+- Under-using the one real-market channel (Central Ganadera) for the females.
 
-## To do
+## Still missing (comes from owner's records)
 
-- Get **head counts** per guide (open each guide PDF, or from owner records).
-- Compare realized prices to **Feria de Medellín** averages once prices arrive.
-- Understand the **El Lucero** sale (live animals to another farm?) and the **ANULADA cluster**.
+- **Prices** — GSMI never has them. Realized $/kg per sale is the key gap.
+- **Total head sold** — only 5 lot sizes pulled; the rest need each guide's PDF or the
+  owner's books.

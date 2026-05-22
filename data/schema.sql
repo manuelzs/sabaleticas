@@ -66,11 +66,12 @@ CREATE TABLE costs (
 -- head is often NULL (count lives inside each guide PDF, not the list view).
 CREATE TABLE gsmi_movements (
     codigo       TEXT PRIMARY KEY,
-    mov_date     TEXT,                 -- YYYY-MM-DD
+    mov_date     TEXT,                 -- YYYY-MM-DD (fecha expedición)
+    resp_origen  TEXT,                 -- who handled it: owner (SILVIA) or comisionista (ELUPI/AGROEQUINA)
     destino      TEXT,
     pago         TEXT,                 -- PSE / Consignacion
     estado       TEXT,                 -- CERRADA / ANULADA / EN TRANSITO / etc.
-    head         INTEGER,
+    head         INTEGER,              -- lot size (mostly NULL; lives inside each guide)
     animal_class TEXT,
     source_app   TEXT                  -- V5 / V6
 );
