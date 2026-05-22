@@ -1,2 +1,2 @@
-fecha_venta,n_cabezas,kg_total,valor_total_cop,comprador,canal,comisionista,notas
-2025-06-15,6,2400,21000000,Frigorifico Fredonia,consignacion,ELUPI SAS,EJEMPLO — borrar esta fila. kg_total = peso total del lote en pie; valor_total_cop = lo que TE pagaron (neto de comision si aplica)
+fecha_venta,lote_origen,n_cabezas,kg_total,valor_total_cop,comprador,canal,comisionista,notas
+2025-06-15,lote-2025-03-caucasia,6,2400,21000000,Frigorifico Fredonia,consignacion,ELUPI SAS,EJEMPLO — borrar esta fila. lote_origen = de qué lote salieron (usa el lote_nombre de purchases_intake; si no sabes, dejalo en blanco). kg_total = peso total en pie; valor_total_cop = lo que TE pagaron (neto de comision si aplica)

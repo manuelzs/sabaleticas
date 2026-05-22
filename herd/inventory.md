@@ -13,7 +13,15 @@ Sabaleticas), pulled 2026-05-21. All animals VIVO.
 | Machos | 10 |
 | **Total** | **266** |
 
-## By grupo etario (SINIGAN age classes)
+## By grupo etario (SINIGAN age classes) — ⚠️ UNRELIABLE
+
+> **Do not use this table as evidence.** Per the owner, SINIGAN per-animal age/identity is
+> untrustworthy: version 5 only recorded head counts (no animal selection); version 6's
+> catalog animals can't be traced to the real herd, so which animals — and their ages — are
+> effectively arbitrary. The total (~266) is usable as an approximate count; the age
+> breakdown below is **not**. The reliable source for age/lot history is the owner's own
+> written lot records.
+
 
 | Grupo etario | Head |
 |---|---|
