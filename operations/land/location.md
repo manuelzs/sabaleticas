@@ -14,13 +14,19 @@
 
 ## History & land tenure
 
-Sabaleticas was once part of **Hacienda El Guaico**, the original (larger) ranch. About 20
-years ago (~2006) El Guaico was **split among 4 siblings**, and Sabaleticas is **one of those
-four parcels** (~200 ha). So the adjacent "Hacienda El Guaico" on the map is **family land**,
-not an unrelated neighbor — and some of the other nearby parcels (Casa La Esmeralda, etc.)
-may be the other siblings' shares. This matters for the boundary work: our property line is a
-~2006 internal subdivision of one bigger hacienda, so the boundary map should align with how
-that original parcel was divided four ways.
+Sabaleticas was once part of **Hacienda El Guaico**, the original (much larger) ranch, which
+has been **split twice**:
+
+1. **~40 years ago (~1986):** El Guaico split in **two**, divided by the **river**. The land
+   on the **far side of the river** was carved off then — those owners are **not family**.
+2. **~20 years ago (~2006):** the near half (this side of the river) split again, among **4
+   siblings**. **Sabaleticas is one of those four parcels** (~200 ha).
+
+So the **river is the family / non-family line**: **every parcel on our side of the river is
+family** (the four sibling shares — the adjacent "Hacienda El Guaico," Casa La Esmeralda,
+etc.); **everything across the river is not.** Implications for the boundary work: the river
+is very likely a property edge on that side, and our line is a ~2006 four-way internal
+subdivision — the boundary map should reconcile with how that near-half was divided.
 
 ## Surroundings (read off satellite — to confirm against the real boundary map)
 
