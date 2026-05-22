@@ -64,7 +64,7 @@ Everything else can wait behind them.
 
 | What | Status | Cadence | Notes |
 |---|---|---|---|
-| **Farm map / potrero layout** | ❌ | One-off + occasional | Area, water access, grass per paddock → goes in `operations/land/` ([`operations/pasture.md`](operations/pasture.md)) |
+| **Farm map / potrero layout** | 🟡 | One-off + occasional | Entrance pin received ([`operations/land/location.md`](operations/land/location.md)); **boundary map coming from owner**. Then: area, water, grass per paddock |
 | Grazing history (group, potrero, in/out dates) | ❌ | Recurring per move | Enables kg-gain-per-hectare; **parked until weights exist** (your call) |
 | Forage condition & improvements (fertilizing, renovation) | ❌ | Recurring / seasonal | What grasses we actually have is TBD |
 | Infrastructure (corrals, fencing, water, is there a báscula?) | ❌ | One-off | Whether a scale exists decides how fast we get weights |
