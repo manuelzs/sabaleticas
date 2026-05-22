@@ -33,6 +33,7 @@ trust his recollection if it conflicts with the data.*
 | Path | What |
 |---|---|
 | `profile.md` | Operation at a glance + the core problem |
+| `data-inventory.md` | **Master tracker** of every data need — have/missing, one-off vs. recurring |
 | `data/*.csv` + `data/schema.sql` | **Canonical** structured data + schema/views |
 | `sabaleticas.db` | Derived SQLite (committed; rebuilt from CSVs) |
 | `sabaleticas/` + `pyproject.toml` | The `sabaleticas` CLI (Python, stdlib-only, uv) |
