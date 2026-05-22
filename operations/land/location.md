@@ -12,6 +12,16 @@
 - **Municipality:** La Pintada area, suroeste de Antioquia (vereda La Bocana per `profile.md`)
 - **Elevation:** ~550–600 m, *tierra caliente*, Cauca river valley
 
+## History & land tenure
+
+Sabaleticas was once part of **Hacienda El Guaico**, the original (larger) ranch. About 20
+years ago (~2006) El Guaico was **split among 4 siblings**, and Sabaleticas is **one of those
+four parcels** (~200 ha). So the adjacent "Hacienda El Guaico" on the map is **family land**,
+not an unrelated neighbor — and some of the other nearby parcels (Casa La Esmeralda, etc.)
+may be the other siblings' shares. This matters for the boundary work: our property line is a
+~2006 internal subdivision of one bigger hacienda, so the boundary map should align with how
+that original parcel was divided four ways.
+
 ## Surroundings (read off satellite — to confirm against the real boundary map)
 
 - **Road access:** the entrance is **directly on the main highway** — Ruta Nacional 25 /
@@ -24,6 +34,14 @@
   (darker), with a few dark patches that may be ponds/reservoirs, and a quebrada/stream on
   the east side. **All of this is provisional** until the boundary map shows what's actually
   inside the property.
+
+## Water (future topic — flagged by owner)
+
+The dark patches that look like **reservoirs**, plus the **quebrada on the east side**, point
+to a **water-management discussion to have later**. In *tierra caliente* dry-season (verano)
+water is usually the real cap on carrying capacity — which potreros have water decides which
+are usable when. When the boundary/potrero map arrives we'll locate the water sources
+(reservoirs, quebradas, troughs, aqueduct) per paddock and fold it into grazing planning.
 
 ## What's still needed (one-off)
 
