@@ -1,0 +1,2 @@
+fecha_compra,n_cabezas,kg_total,valor_total_cop,vendedor_o_feria,notas
+2025-03-10,12,3000,28500000,Feria de Caucasia,EJEMPLO — borrar esta fila. kg_total = peso total del lote al entrar; valor_total_cop = lo que pagaste por el lote completo (incluye comision/flete si quieres, anotalo)
