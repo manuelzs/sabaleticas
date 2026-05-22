@@ -43,16 +43,22 @@ Hybrid by design:
 
 Tables: `sources`, `lotes`, `animals`, `weighings`, `sales`, `costs`, `gsmi_movements`, `price_benchmarks`.
 
-## CLI (`ranch.py`)
+## CLI (`ranch`)
 
-Stdlib-only Python (no install). `pdftotext` (poppler) is needed only for `prices fetch`.
+A stdlib-only Python package (`ranch/`), packaged with `pyproject.toml` (hatchling).
+`prices fetch` also needs the `pdftotext` system binary (poppler).
+
+**Run it** (any of):
+- `uv run ranch <cmd>` — no setup; uv handles the env
+- `uv sync` once, then `ranch <cmd>`
+- `python -m ranch <cmd>` — from the repo, no install
 
 | Command | What it does |
 |---|---|
-| `python3 ranch.py build` | Rebuild `ranch.db` from `data/*.csv` (same as `scripts/build_db.sh`) |
-| `python3 ranch.py prices show` | Show current market-price benchmarks |
-| `python3 ranch.py prices fetch [--dry-run]` | Pull the latest **Central Ganadera Medellín** boletín, parse macho/hembra cebada $/kg, append to `price_benchmarks.csv`, rebuild. Run weekly. |
-| `python3 ranch.py movements` | Summarize GSMI sales cadence & channels |
+| `ranch build` | Rebuild `ranch.db` from `data/*.csv` (same as `scripts/build_db.sh`) |
+| `ranch prices show` | Show current market-price benchmarks |
+| `ranch prices fetch [--dry-run]` | Pull the latest **Central Ganadera Medellín** boletín, parse macho/hembra cebada $/kg, append to `price_benchmarks.csv`, rebuild. Run weekly. |
+| `ranch movements` | Summarize GSMI sales cadence & channels |
 Views: `animal_gain` (gain + ADG per animal), `lote_margin`, `source_leaderboard`.
 
 ## Working agreement
