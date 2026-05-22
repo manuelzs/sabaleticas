@@ -3,55 +3,65 @@
 > Tests the **low-turnover hypothesis** in [`../financials/diagnosis.md`](../financials/diagnosis.md):
 > *do cattle cycle through, or sit and accumulate while monthly costs run?*
 >
-> ⚠️ **Read this first — major caveat (2026-05-22).** An earlier version of this doc claimed
-> the low-turnover hypothesis was "structurally confirmed" from the herd **age pyramid** (142
-> females at finishing age, 7 overdue at 3–5 years). **That claim is retracted.** The age data
-> came from the SINIGAN/ICA roster, and per the owner the per-animal age/identity in that
-> system is **not reliable**: in version 5 you only entered head counts (no animal selection);
-> in version 6 the catalog animals can't be traced to real animals, so which ones — and their
-> ages — are effectively arbitrary. So we cannot use the age breakdown as evidence. What
-> remains below is only what doesn't depend on it.
+> **Confidence note (2026-05-22).** The herd age pyramid below is the owner's SINIGAN roster,
+> which he says is **roughly right but low-confidence** (exact ages often unknown even at
+> purchase, so animals are grouped; and the app's per-animal identity is shaky). So it's an
+> **approximate directional signal — not confirmed evidence.** The reliable confirmation is
+> the owner's written lot records (entry/exit dates), still pending. An earlier draft called
+> this hypothesis "confirmed" from the pyramid; that was overstated and is corrected here.
 
-## Status: suspected, not confirmed
+## Status: leading suspect, not yet confirmed
 
-Low turnover is still the **leading suspect** (alongside subscale fixed cost and the weak
-selling channel), but with the age data removed we **cannot yet confirm it**. Confirming it
-needs the owner's own lot records (see *How to actually measure this*).
+Low turnover is the **leading suspect**. The signals below all point the same way, but the
+strongest piece (the age structure) is low-confidence, so we hold "confirmed" until the lot
+records land.
 
-## What we can still say (not age-dependent)
+## The age structure — approximate signal, points to accumulation
 
-- **Herd size ≈ 266 head** (SINIGAN count). Treat as approximate — even the count carries
-  some version-5-era uncertainty — but it's the best head number we have.
-- **Stocking ≈ 1.33 animales/ha** (266 ÷ 200 ha). Against benchmarks (national "losing"
-  ~0.87/ha; rotated target 1–2/ha) the farm is **not under-stocked**. So if there *is* a
-  turnover problem, it's a velocity problem, not a lack of animals.
-- **Sale cadence ≈ 4.5 valid guías/month** over Jan 2025 – May 2026, in **small lots**
-  (the few head counts we pulled run single-digit to ~14) — from real GSMI movement guías
-  ([`movements.md`](movements.md)). High frequency of small lots is a real, observed pattern.
+Reading the SINIGAN buckets *as an approximate picture* of the herd:
 
-## What we can NOT say yet
+| Grupo etario | Head | Read as |
+|---|---|---|
+| Hembras 3–5 años | ~7 | If real, **overdue** — past normal ceba finish age |
+| Hembras 2–3 años | ~135 | Finish-age cohort — should be selling |
+| Hembras 1–2 años | ~102 | Levante pipeline filling behind them |
+| Hembras < 1 año + machos | ~22 | Mostly born-on-farm |
 
-- That the herd is full of finish-age or overdue females — **retracted** (bad age data).
-- Head sold per year / herd residence time — still blocked: GSMI's head count lives inside
-  each guide PDF and only ~5 were pulled, so even the cadence can't be turned into a head
-  figure.
+Even discounted for low confidence, the shape is suggestive: a large block of females
+(~135) sitting in the finishing bracket with a full pipeline (~102) behind them. *If* roughly
+accurate, that's a herd accumulating finish-age animals rather than draining them into sales.
+The ~7 at 3–5 years is the weakest line — small enough to be noise — so we don't lean on it.
 
-## How to actually measure this (the reliable path)
+## What's firmer (not age-dependent)
 
-The owner keeps (or can reconstruct) **written lot records**: for each animal, which lot it
-**entered with and when**, and **when it left**. That is the trustworthy source — independent
-of the SINIGAN ages. From entry/exit dates we get the real numbers this doc was reaching for:
+- **Herd size ≈ 266 head** (SINIGAN count, approximate). **Stocking ≈ 1.33 animales/ha** —
+  against benchmarks (national "losing" ~0.87/ha; rotated target 1–2/ha) the farm is **not
+  under-stocked**. So any turnover problem is about *velocity*, not lack of animals.
+- **Sale cadence ≈ 4.5 valid guías/month** (Jan 2025 – May 2026), in **small lots**
+  (single-digit to ~14 head), from real GSMI movement guías ([`movements.md`](movements.md)).
+  Frequent small lots is a real, observed pattern and is consistent with not finishing batches.
 
-- **Days-on-farm per animal** → actual residence time and whether animals sit too long.
+## What we still can't quantify
+
+- Head sold per year / herd residence time — GSMI's head count lives inside each guide PDF
+  and only ~5 were pulled, so the cadence can't be turned into a head figure yet.
+- A precise age structure — pending the owner validating the pyramid or, better, the lot records.
+
+## How to confirm it properly (the reliable path)
+
+The owner's **written lot records** — for each animal/lot, the entry date and the exit date —
+are independent of the SINIGAN ages and give the real numbers:
+
+- **Days-on-farm per lot/animal** → actual residence time, whether animals sit too long.
 - **Head in vs. head out per period** → true turnover, no age guesswork.
-- Combined with the sale records being gathered ([`../financials/owner-records-request.md`](../financials/owner-records-request.md)),
-  the full velocity picture.
 
-So the turnover question is **parked on the owner's lot records**, not on SINIGAN. When those
-arrive, we add an entry/exit table and compute residence time directly.
+These feed in via the intake kit (`lote_nombre` on purchases ↔ `lote_origen` on sales —
+[`../financials/owner-records-request.md`](../financials/owner-records-request.md)). When they
+arrive we compute residence time directly and either confirm or kill this hypothesis.
 
-## The one directional note that's safe
+## Safe takeaway for now
 
-Selling in small lots ~weekly is, on its own, a weak-channel and small-batch signal (ties to
-the selling-channel hypothesis). But whether the herd is *accumulating* — the actual turnover
-claim — waits for the lot records. No action on finish-age "backlog" until we have real ages.
+The approximate age picture, the adequate stocking, and the frequent-small-lot sale cadence
+all lean the same way — toward a herd that accumulates rather than cycles — but none is
+conclusive on its own. Treat low turnover as the **working lead**, validate it with the lot
+records, and hold off on finish-age "backlog" actions until the ages are confirmed.
