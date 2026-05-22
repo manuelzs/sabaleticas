@@ -76,6 +76,18 @@ CREATE TABLE gsmi_movements (
     source_app   TEXT                  -- V5 / V6
 );
 
+-- Published market price benchmarks (auction houses, Fedegán, etc.). COP/kg en pie.
+-- Logged over time so we can compare our realized sale prices against the market.
+CREATE TABLE price_benchmarks (
+    obs_date    TEXT,                  -- YYYY-MM-DD of the quote
+    source      TEXT,                  -- Central Ganadera Medellin / Fedegan / CONtexto / BMC ...
+    category    TEXT,                  -- e.g. hembra gorda, macho gordo, macho levante
+    region      TEXT,                  -- Medellin / Antioquia / nacional ...
+    weight_range TEXT,                 -- optional kg band
+    cop_per_kg  REAL,                  -- price per kg liveweight (en pie)
+    notes       TEXT
+);
+
 -- ---------------------------------------------------------------------------
 -- Analytical views — the questions we actually ask
 -- ---------------------------------------------------------------------------
