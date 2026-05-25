@@ -44,6 +44,7 @@ trust his recollection if it conflicts with the data.*
 | `operations/` | Yearly cycle, `pasture.md` (land/grazing/forage plan) |
 | `experiments/` | On-farm trial methodology + template |
 | `decisions/` | Decision log |
+| `strategy/` | Whole-operation direction — e.g. `diversification.md` (citrus/solar, parked) |
 
 ## Data layer
 
