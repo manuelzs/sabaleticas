@@ -25,6 +25,8 @@ build up over time into a clear picture of the business.
 | [`herd/`](herd/) | Generated reports + narrative on the animals (inventory, lote summaries) |
 | [`financials/`](financials/) | P&L, costs, revenue, break-even, balance sheet |
 | [`operations/`](operations/) | The yearly cycle, processes, calendar, labor, infrastructure |
+| [`operations/water/`](operations/water/README.md) | Water & verano carrying capacity — active project |
+| [`operations/land/geo/`](operations/land/geo/README.md) | Turning the 2003 paper plano into real geometry (GeoJSON) |
 | [`decisions/`](decisions/) | Decision log — what we chose, why, and what happened |
 
 ## Data architecture

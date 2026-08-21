@@ -73,9 +73,11 @@ Everything else can wait behind them.
 |---|---|---|---|
 | **Farm map / potrero layout** | ✅ | One-off + occasional | **Received 2026-08-21** — 1:5000 survey plan, enero 2003 ([`operations/land/plano-2003.md`](operations/land/plano-2003.md)): **193.41 ha, 10 potreros / 158.67 ha**, areas + names + water network. Follow-ups below |
 | Grazing history (group, potrero, in/out dates) | ❌ | Recurring per move | Enables kg-gain-per-hectare; **parked until weights exist** (your call) |
-| **Ground-truth the 2003 layout** | ❌ | One-off | Do the 2003 fences still stand? are the dozens of sub-names fenced paddocks or just place names? Gates whether the potrero data can become canonical |
-| **Water-system condition** | ❌ | One-off (walk it) | The plan maps nacimientos → tubería → tanques + represa. Working or degraded? If degraded, restoring it is likely the cheapest carrying-capacity lever |
-| Digital boundary (KML / plano catastral) | ❌ | One-off | The 2003 scan is too coarse for precise coordinates |
+| **Updated potrero plan** | ❌ | One-off | ✅ *Confirmed: the named sub-divisions ARE fenced potreros, and more have been added since 2003* — so the farm is already finely subdivided. Manuel will supply a current plan |
+| **Rotation actually in use today** | ❌ | One-off + update | Which potreros, what order, how many days in / days of rest. Now the top pasture question, since the fences already exist |
+| **Número predial** (impuesto predial bill) or matrícula inmobiliaria | ❌ | One-off | Unlocks the official cadastral polygon from IGAC / GeoAntioquia — cheapest route to a real boundary ([`operations/land/geo/README.md`](operations/land/geo/README.md)) |
+| **GPS points on the mojones** | ❌ | One-off | 4+ around the perimeter (or a walked track). Gives the boundary *and* lets us georeference the whole 2003 scan, rescuing its water network |
+| **Water: full inventory & verano behaviour** | ❌ | One-off + seasonal | The 2003 map is partial; reservoir tanks added since. Own workstream → [`operations/water/README.md`](operations/water/README.md) |
 | Forage condition & improvements (fertilizing, renovation) | ❌ | Recurring / seasonal | What grasses we actually have is TBD — **the 2003 plan carries no forage data at all** |
 | Infrastructure (corrals, fencing, water, is there a báscula?) | ❌ | One-off | Whether a scale exists decides how fast we get weights |
 | Yearly operational calendar | ❌ | One-off | Vaccination, deworming, breeding, weaning, sale seasons vs. invierno/verano |

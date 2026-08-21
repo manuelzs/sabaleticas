@@ -76,27 +76,35 @@ head is the wrong instinct.
 | Verdún | 7.08 |
 | **Sum of the 9 legible** | **148.34** |
 
-❓ The table says **10 potreros / 158.67 ha**; nine are legibly named and lettered with
-areas, summing to 148.34. **One potrero of ~10.33 ha is unaccounted for** — either a name
-I can't read on the scan or an area I misread. Worth resolving against a better scan or
-Manuel's knowledge.
+⚠️ **Read these as blocks, not as the working paddocks.** The nine lettered areas sum to
+148.34 against the table's 158.67, and the count "(10)" is the surveyor's aggregation for the
+area table — **not** the number of fenced paddocks. The real subdivision is finer (see below).
+The ~10.33 ha difference is unresolved on the scan; it stops mattering once areas are computed
+from real polygons rather than transcribed.
 
-Note **Lajas alone is 37.43 ha — 24% of all potrero**, more than twice the next largest.
-A block that size is a grazing-management problem in itself: cattle graze it selectively and
-it gets no real rest period.
+Note **Lajas is 37.43 ha as a block** — but again, that's the block, not a single paddock.
 
-### Sub-divisions inside the potreros
+### The real potreros — the named sub-divisions
 
-The plan labels **far more names than ten** — dozens of small named parcels inside the big
-blocks, mostly world place names: *San Sebastián, Punta Cruceta, La Mancha, Mozambique,
-Tierradentro, Panamá, Piñón, Portugal, Bilbao, El Silencio, Perfume, Kena, Paraíso,
-Alejandría, Lisboa, Barcelona, Samán, Mamoncillo, Palma, Etiopía, Argelia, El Cairo, Congo,
-Rincón, Marruecos, Buenavista, El Bosque, Sabaleticas…*
+**✅ Confirmed by Manuel (2026-08-21): the dozens of named sub-divisions ARE the potreros.**
+They are fenced paddocks, and that is what they are called on the farm. Names on the plan:
+*San Sebastián, Punta Cruceta, La Mancha, Mozambique, Tierradentro, Panamá, Piñón, Portugal,
+Bilbao, El Silencio, Perfume, Kena, Paraíso, Alejandría, Lisboa, Barcelona, Samán, Mamoncillo,
+Palma, Etiopía, Argelia, El Cairo, Congo, Rincón, Marruecos, Buenavista, El Bosque,
+Sabaleticas…*
 
-❓ **Key question for Manuel:** are these *fenced potreros* (i.e. the farm is actually
-subdivided into 30+ paddocks) or just **place names / parajes** for orientation? The answer
-changes the pasture plan completely — a farm with 30 real paddocks is one that can be
-rotated tomorrow; a farm with 10 big blocks needs fencing investment first.
+**And the farm has been subdivided further since 2003** — there are now *more* potreros than
+the plan shows. Manuel will supply an updated plan later.
+
+This is the single most useful thing the document told us, and it flips an earlier
+assumption. The farm is **already finely subdivided**. Rotation is not blocked behind a
+fencing investment — the infrastructure for it is on the ground today. That moves grazing
+management from "needs capital" to "needs a plan and discipline," which is the cheapest
+possible kind of fix and squarely inside the biggest lever we have
+([`../pasture.md`](../pasture.md)).
+
+The open question is no longer *can we rotate* but **what rotation is actually being run
+today**, and whether rest periods are long enough.
 
 ## The water system — the real find
 
@@ -113,38 +121,31 @@ The file is named *"Plano Aguas"* and that's what it is: alongside the boundarie
   means it climbs over a high point). Segment figures are noted along it (e.g. 38.23 m,
   170.79 m) and what looks like **"3 in"** pipe diameter.
 
-**Why this matters more than it looks.** In *tierra caliente*, dry-season (verano) water is
-normally the binding constraint on carrying capacity — which potreros have water decides
-which are usable at all in verano, which decides whether rotation is even possible. A
-gravity-fed spring network reaching tanks across the farm means the previous owners solved
-that problem. Two possibilities, and they point to very different actions:
+### ⚠️ This water map is incomplete — and out of date in our favour
 
-1. **It still works** → water is not our constraint, and the pasture problem is purely
-   grazing management. Good news.
-2. **It has degraded over 23 years** (broken pipe, silted represa, capped springs) → then
-   **restoring it is probably the cheapest carrying-capacity lever available to us**, far
-   cheaper than fencing or fertilizing, and it should be costed before anything else.
+Per Manuel (2026-08-21): **the network drawn here is not the whole system** — it's the best
+information he has been able to gather so far. Since 2003 the farm has also added
+**substantial reservoir-tank storage in several places** that does not appear on the plan.
 
-Establishing which of the two is true is now a top ground-truth question.
+So treat the plan as a **partial, historical** picture of the water system: the springs,
+represa and pipe runs it shows are real and useful, but absence from the plan proves nothing,
+and the farm's true storage capacity is larger than drawn.
 
-## Land-tenure puzzle
+**Why this matters.** In *tierra caliente*, dry-season (verano) water is normally the binding
+constraint on carrying capacity — which potreros have water decides which are usable at all
+in verano, which decides whether the rotation can actually run. With a hard verano coming,
+this has been promoted from a background question to **its own workstream** →
+[`../water/README.md`](../water/README.md).
 
-The plan is titled **"Hacienda El Guaico — Lote No. 1"** and shows **"Lote No. 2"** as the
-neighbour to the south. But [`location.md`](location.md) records that El Guaico's remaining
-southern piece was split **four ways among siblings around 2006**, with Sabaleticas as one
-of the four.
+## Land tenure — resolved
 
-Those two don't obviously reconcile: this 2003 plan shows a **two**-lot division, and Lote
-No. 1 at **193.41 ha** matches Sabaleticas's own "~200 ha" almost exactly.
+**✅ Confirmed by Manuel (2026-08-21): this is the plan drawn *for* the subdivision, and
+Lote No. 1 is today's Sabaleticas.** The larger Hacienda El Guaico was divided into four;
+this 2003 survey is that subdivision, and our parcel is Lote No. 1. "Lote No. 2" on the
+southern edge is a sibling parcel; the other two lie beyond it.
 
-❓ **For Manuel:**
-- Is **Lote No. 1 exactly today's Sabaleticas**, boundary for boundary?
-- If yes, was the "four-way split" a division of **Lote No. 2**, with Sabaleticas coming out
-  of the earlier two-way split instead? That would revise the history in `location.md`.
-- Was this plan drawn **for** the split (2003 survey → later titling)?
-
-Getting this right matters beyond genealogy: it decides whether 193.41 ha is our actual
-titled area, which is the denominator under every per-hectare number we will produce.
+That settles the question that mattered: **193.41 ha is our titled area**, and it is the
+denominator under every per-hectare figure in this repo.
 
 ## What's now answered vs. still open
 
@@ -152,19 +153,24 @@ titled area, which is the denominator under every per-hectare number we will pro
 count and most potrero areas and names, the four boundaries (confirmed independently), the
 existence and rough layout of a piped water system, and the streams and reservoirs.
 
+Also confirmed since: the named sub-divisions are **real fenced potreros**, and Lote No. 1
+is today's Sabaleticas.
+
 **Still open:**
-- The missing ~10.33 ha potrero.
-- Whether the 2003 fence layout still stands (and whether the sub-names are fenced).
-- Condition of the pipeline, tanks, represa and springs **today**.
+- **The current potrero layout** — the farm has been subdivided further since 2003. Manuel
+  will supply an updated plan; until then we don't know today's paddock count or areas.
+- **The full water system** — the plan is partial and predates the added reservoir tanks.
+  → [`../water/README.md`](../water/README.md).
 - Grass species per potrero — the plan shows no forage information at all.
 - Whether the **playón** (21.90 ha) is grazed in verano, as river terraces usually are;
-  if so, effective grazing area is ~180 ha in the dry season, not 158.67.
-- A digital boundary (KML / plano catastral) — this scan can't give precise coordinates.
+  if so, effective grazing area is larger than 158.67 in the dry season.
+- A digital boundary — this scan can't give precise coordinates.
+  → [`geo/README.md`](geo/README.md) is the plan for fixing that.
 
-## Next step when the above is settled
+## Next step
 
-Per the data model in [`../pasture.md`](../pasture.md), turn the potrero list into a
-canonical `potreros` table (`id, name, area_ha, grass_species, water_source, notes`). Holding
-off deliberately for now: a 23-year-old scan with one unresolved potrero and an unknown
-fence status shouldn't become canonical structured data until it's ground-truthed. The
-markdown above is the faithful record of the document in the meantime.
+**Digitize before tabulating.** Rather than transcribe the plan's numbers into a `potreros`
+table, the better move is to build real geometry — then areas are *computed* from polygons
+instead of copied off a 23-year-old scan (which also dissolves the missing-10.33-ha problem).
+The approach and format decision live in [`geo/README.md`](geo/README.md); the data model
+for the eventual table is in [`../pasture.md`](../pasture.md).

@@ -35,15 +35,24 @@ is potrero across 10 paddocks**, their names and areas, and a mapped **water dis
 network**. What it does *not* give: grass species, current fence status, or the condition of
 the water system today.
 
-Two things jump out for grazing management:
+**The key fact, confirmed by Manuel (2026-08-21): the dozens of named sub-parcels on the plan
+are real fenced potreros — and the farm has been subdivided further since.**
 
-- **Lajas is 37.43 ha — 24% of all potrero, more than double the next largest.** A block that
-  size can't be rested properly; cattle graze it selectively and the good grass gets hit
-  repeatedly while the rest goes rank. Subdividing Lajas is probably the single highest-value
-  fencing decision on the farm.
-- **The plan names dozens of sub-parcels inside the ten potreros.** If those are real fences,
-  the farm can be rotated almost immediately with no capital. If they're just place names, we
-  need a fencing plan. **Establishing which is the gating question for this whole document.**
+That is very good news, and it reframes this whole document. **The farm is already finely
+subdivided, so rotation is not blocked behind a fencing investment.** The infrastructure
+exists. What we don't know is whether it's being *used* — how many days cattle spend in a
+potrero, and how long it rests before they come back.
+
+So the question here is no longer "can we rotate?" but:
+
+- **What rotation is actually running today?** Days in, days of rest, which order.
+- **Is the rest period long enough** for the grass to recover before it's grazed again?
+  Grazing a paddock again too early is the classic way to degrade good pasture and lose daily
+  gain without spending a peso on anything.
+- **Which potreros are usable in verano** — a water question, not a grass question
+  ([`water/README.md`](water/README.md)).
+
+Rotation discipline is now the cheapest lever we have: no capital, just a plan.
 
 ## Forage notes (to confirm on the ground)
 

@@ -65,10 +65,13 @@ and to **tanks by the house**, with tees and a ventosa along the line. Plus the 
 Poblanco** on the west edge and the quebradas **Sabaletica**, **Buenavista** and **Cascajón**
 crossing the farm. Details in [`plano-2003.md`](plano-2003.md).
 
+⚠️ Per Manuel (2026-08-21) **this map of the water system is incomplete** — it's the best
+information gathered so far — and the farm has since added **substantial reservoir-tank
+storage in several places** that isn't drawn.
+
 In *tierra caliente* verano, water is usually the real cap on carrying capacity — which
-potreros have water decides which are usable when. The 2003 owners appear to have solved
-that. **The open question is whether the system still works after 23 years** — if it has
-degraded, restoring it is likely the cheapest carrying-capacity lever on the farm.
+potreros have water decides which are usable when. With a hard dry season expected, this is
+now **its own workstream**: [`../water/README.md`](../water/README.md).
 
 ## What's still needed (one-off)
 

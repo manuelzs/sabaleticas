@@ -24,16 +24,19 @@ Source: the 1:5000 survey plan of **enero 2003** — see
 and are 23 years old; layout on the ground still to be confirmed.
 
 - **Total area:** **193.41 ha** (titled area per the plan — the old "~200 ha" was a round number)
-- **Usable pasture:** **158.67 ha in 10 potreros** (82% of the farm). Rest: playón 21.90,
+- **Usable pasture:** **158.67 ha** of potrero (82% of the farm). Rest: playón 21.90,
   sapal 5.52, rastrojos 3.60, cañaverales 1.95, guaduales 1.13, represas 0.64
-- **Largest potreros:** Lajas 37.43 · Consuelo 22.17 · Siberia 22.11 · San Matías 17.57 ·
+- **Blocks on the 2003 plan:** Lajas 37.43 · Consuelo 22.17 · Siberia 22.11 · San Matías 17.57 ·
   Riachón 12.45 · Jagüe 11.65 · Abisinia 9.94 · Balkanes 7.94 · Verdún 7.08
 - **Pasture type / grasses:** TBD (likely improved tropical — braquiaria, estrella, guinea — _to confirm_; the plan carries no forage data)
 - **Water:** Río Poblanco (west edge), quebradas Sabaletica / Buenavista / Cascajón, a
-  0.64 ha represa, at least two nacimientos + a manantial, and a **piped network to tanks**
-  drawn on the 2003 plan. **Condition today unknown — a top ground-truth question**
-- **Subdivision:** 10 potreros on the plan, plus dozens of named sub-parcels whose fence
-  status is unknown. Rotation system: TBD
+  0.64 ha represa, at least two nacimientos + a manantial, a **piped network to tanks**, plus
+  **substantial reservoir-tank storage added since 2003**. The 2003 map of it is partial.
+  → active workstream: [`operations/water/`](operations/water/README.md)
+- **Subdivision:** **finely subdivided into many fenced potreros** — the dozens of named
+  parcels on the 2003 plan (Bilbao, Siberia, Portugal, Marruecos, El Cairo…) are real
+  paddocks, and **more have been added since**. Current count and layout: TBD, updated plan
+  coming. **Rotation actually being run today: TBD — the key pasture question**
 - **Owned vs. leased:** TBD
 
 ## The herd
@@ -92,9 +95,8 @@ Track at **two levels** (see [`herd/`](herd/)):
 ## Open questions
 
 1. Class breakdown of the 266 head (and how many are the born-at-farm calves)?
-2. Pasture: the 2003 plan gives 10 potreros and their areas — but **do those fences still
-   stand**, are the dozens of sub-names fenced paddocks or just place names, what grasses,
-   and is any rotation running?
+2. Pasture: the farm is already finely divided into fenced potreros — so **what rotation is
+   actually being run today**, with what rest periods, and what grasses are in them?
 3. Sales & sourcing channels — who do we buy from and sell to?
 4. Who does the work, and what does labor cost?
 5. In what form are the financial / vaccination / land records (paper, Excel, app)?

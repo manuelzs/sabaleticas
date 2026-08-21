@@ -41,7 +41,7 @@ trust his recollection if it conflicts with the data.*
 | `financials/` | `diagnosis.md` (why we're losing money — 6 hypotheses), P&L/costs (TBD) |
 | `herd/` | `inventory.md`, `movements.md` (GSMI sales analysis), `lotes/` template |
 | `research/` | Sourced knowledge base — `sources.md` (S1–S41), `topics/`, overview |
-| `operations/` | Yearly cycle, `pasture.md` (land/grazing/forage plan), `land/` (location + the 2003 survey plan) |
+| `operations/` | Yearly cycle, `pasture.md`, `land/` (location, the 2003 survey plan, `geo/` map-modernization plan), `water/` (**verano capacity project, opened 2026-08-21**) |
 | `experiments/` | On-farm trial methodology + template |
 | `decisions/` | Decision log |
 | `strategy/` | Whole-operation direction — e.g. `diversification.md` (citrus/solar, parked) |
@@ -104,7 +104,9 @@ from AGROSAVIA, Fedegán, CIPAV, CONtexto Ganadero, Central Ganadera, universiti
    #1 blocker: it enables the P&L, realized $/kg per channel vs. the Medellín benchmark, and
    confirms which hypothesis bites. When it arrives, load into `sales`/`costs`/`lotes`.
 2. **Weighing discipline** — no GDP data yet ("báscula"). Encourage it; it unlocks the core ceba metrics.
-3. ~~Farm maps~~ ✅ **received 2026-08-21** (`operations/land/plano-2003.md`). Now pending: **ground-truth it** — do the 2003 fences still stand, and does the mapped water network still work? Those two answers gate the grazing-rotation plan (still the biggest cheap lever).
+3. ~~Farm maps~~ ✅ **received 2026-08-21** (`operations/land/plano-2003.md`). Key finding: **the farm is already finely subdivided into fenced potreros** (more than the plan shows) — so rotation needs *a plan and discipline, not capital*. Pending: what rotation is actually run today.
+3b. **Water / verano capacity** — own project, `operations/water/README.md`. Manuel flagged a hard dry season coming; scaffolded, not yet discussed.
+3c. **Map modernization** — `operations/land/geo/README.md`. GeoJSON canonical. Two asks out to Manuel: the *número predial* (unlocks the official IGAC/GeoAntioquia polygon) and GPS points on the mojones.
 4. Re-extract the full 266-animal roster from SINIGAN when V6 is up.
 5. **Accounting-service access** — being provisioned (2026-08-21); may deliver sales/purchases/costs wholesale. Weights and lot linkage will still likely come from Manuel's own records.
 
