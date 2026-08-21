@@ -236,3 +236,53 @@ Three known things check out, and one is new:
 · [Colombia en Mapas](https://www.colombiaenmapas.gov.co/)
 · [GeoAntioquia](https://geovisor.antioquia.gov.co/GeoAntioquia)
 · [SNR — Certificado de Tradición y Libertad](https://certificados.supernotariado.gov.co/certificado)
+
+## The local viewer — `sabaleticas map`
+
+```
+sabaleticas map            # build it and open it
+sabaleticas map --no-open  # just write the file
+```
+
+Writes `viewer.html` (~1.2 MB) and opens it in the browser. **No server, no internet, no
+install** — it reads straight off the disk. Built by `sabaleticas/map.py`, stdlib-only like
+the rest of the CLI; the page itself is plain HTML canvas and vanilla JavaScript, **no
+mapping library**. Rebuild it any time the underlying GeoJSON changes.
+
+What it does:
+
+- **Basemap** is our own 0.5 m orthophoto (`orthophoto.jpg`), not online tiles — so it works
+  offline and is sharper than anything a tile service gives for this area.
+- **Layers** toggle on and off: linderos, cercas, drenajes, depósitos de agua, bosque, vías,
+  construcciones, curvas de nivel, vecinos.
+- **Cursor readout** — latitude, longitude and **elevation** anywhere on the map, from the
+  IGAC terrain model sampled onto a 30 m grid (`terrain-grid.json`).
+- **Measure tool** — click two or more points for distance, **elevation difference**, and
+  slope. It states plainly whether water would *flow by gravity* or *need pumping* between
+  the points.
+
+That last feature is the point of the whole thing. "Can this tank reach that potrero without
+a pump?" is the central question of the verano work
+([`../../water/README.md`](../../water/README.md)), and it is now answerable in two clicks.
+
+### ⚠️ The `Cerca` layer is not the potrero map
+
+Per Manuel (2026-08-21), and visible in the viewer: IGAC's fence layer is **incomplete** —
+many fences are missing and several enclosures do not close, which suggests automated or
+photo-interpreted capture rather than a survey. The fences it *does* show are probably all
+real; the set is just partial, and it is **not topological**, so potrero polygons cannot be
+derived from it.
+
+Treat it as a **skeleton**. The real potrero map still has to come from tracing the
+orthophoto (fence lines are legible at 50 cm), Manuel's updated plan, or GPS — see
+[`../pasture.md`](../pasture.md).
+
+## Using the data in real GIS
+
+Everything here is standard, so no conversion is needed:
+
+- **QGIS** (free, [qgis.org](https://qgis.org)) — drag `boundary.geojson`, the files in
+  `igac-1to5000/`, and `orthophoto.jpg` straight onto the canvas. The `.jgw` world file next
+  to each JPEG places the imagery automatically.
+- **Google Earth Pro** — open `boundary.kml`.
+- Anything else — it is all WGS 84 lat/lon (EPSG:4326) GeoJSON.

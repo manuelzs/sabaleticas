@@ -7,6 +7,7 @@ Stdlib only (argparse + urllib + sqlite3). `prices fetch` also needs the
   sabaleticas prices show    show current market-price benchmarks
   sabaleticas prices fetch   pull latest Central Ganadera boletín -> price_benchmarks.csv
   sabaleticas movements      summarize GSMI sales cadence & channels
+  sabaleticas map            build + open the local map viewer (linderos, cercas, agua, relieve)
 
 (Also runnable without install: `python -m sabaleticas ...` or `uv run sabaleticas ...`.)
 """
@@ -144,6 +145,20 @@ def cmd_prices_fetch(args):
 
 
 # ---------------------------------------------------------------- movements
+def cmd_map(args):
+    """Build the offline map viewer and (unless --no-open) open it."""
+    from . import map as mapmod
+    out = mapmod.build(ROOT)
+    kb = out.stat().st_size / 1024
+    print(f"viewer: {out}  ({kb:.0f} KB)")
+    if not args.no_open:
+        opener = {"darwin": "open", "win32": "start"}.get(sys.platform, "xdg-open")
+        try:
+            subprocess.run([opener, str(out)], check=False)
+        except FileNotFoundError:
+            print("open it manually in a browser.")
+
+
 def cmd_movements(_):
     if not DB.exists():
         print("sabaleticas.db missing — run: sabaleticas build"); return 1
@@ -172,6 +187,9 @@ def main():
     pf.add_argument("--dry-run", action="store_true", help="parse and print, don't write")
     pf.set_defaults(fn=cmd_prices_fetch)
     sub.add_parser("movements", help="GSMI sales cadence & channels").set_defaults(fn=cmd_movements)
+    mp = sub.add_parser("map", help="build + open the local map viewer")
+    mp.add_argument("--no-open", action="store_true", help="just write the file")
+    mp.set_defaults(fn=cmd_map)
     args = p.parse_args()
     sys.exit(args.fn(args))
 

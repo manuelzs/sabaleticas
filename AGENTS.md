@@ -77,6 +77,7 @@ Stdlib-only; `prices fetch` needs `pdftotext` (poppler). Run via `uv run sabalet
 - `sabaleticas prices show` — current market benchmarks
 - `sabaleticas prices fetch [--dry-run]` — pull the latest **Central Ganadera Medellín** boletín → `price_benchmarks.csv` (run weekly)
 - `sabaleticas movements` — GSMI sales cadence & channels
+- `sabaleticas map` — build + open `operations/land/geo/viewer.html`: offline map (own orthophoto as basemap, IGAC layers, elevation at cursor, distance + gravity-feed measure). Plain canvas/JS, **no mapping library**, stdlib-only generator in `sabaleticas/map.py`
 
 ## Research library
 

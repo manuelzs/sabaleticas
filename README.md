@@ -61,6 +61,7 @@ A stdlib-only Python package (`sabaleticas/`), packaged with `pyproject.toml` (h
 | `sabaleticas prices show` | Show current market-price benchmarks |
 | `sabaleticas prices fetch [--dry-run]` | Pull the latest **Central Ganadera Medellín** boletín, parse macho/hembra cebada $/kg, append to `price_benchmarks.csv`, rebuild. Run weekly. |
 | `sabaleticas movements` | Summarize GSMI sales cadence & channels |
+| `sabaleticas map` | Build + open the **offline map viewer** — orthophoto, linderos, cercas, agua, elevation readout, gravity-feed measure tool |
 Views: `animal_gain` (gain + ADG per animal), `lote_margin`, `source_leaderboard`.
 
 ## Working agreement
