@@ -9,7 +9,7 @@ build up over time into a clear picture of the business.
 | | |
 |---|---|
 | **Herd size** | ~266 head |
-| **Land** | ~200 hectares |
+| **Land** | 193.41 ha titled · 158.67 ha of potrero in 10 paddocks |
 | **Location** | Colombia |
 | **Currency** | COP (Colombian pesos) |
 | **Units** | Metric (kg, hectares) |

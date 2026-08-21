@@ -15,6 +15,13 @@ row. Companion docs: [`financials/owner-records-request.md`](financials/owner-re
 These four build the 12-month P&L and confirm the core diagnosis (why we're losing money).
 Everything else can wait behind them.
 
+> 🔓 **Update 2026-08-21: a user account on the farm's accounting service is being set up**,
+> and Manuel will hand over access. If the books are in there, that potentially delivers
+> items 1–3 in one move and makes the hand-fill intake templates unnecessary. **Nothing is
+> loaded until we actually see the data** — the templates stay as the fallback. What we'll
+> still likely need from outside the accounting system: **kg** (weights rarely live in
+> accounting) and **lot linkage** (item 4).
+
 | # | What | Status | Cadence | Lands in |
 |---|---|---|---|---|
 | 1 | **Sales, last 12 mo** — date, head, total kg en pie, COP received, buyer, channel, comisionista | ❌ | One-off (history) + Recurring per sale | [`financials/intake/sales_intake.csv`](financials/intake/sales_intake.csv) → `sales` |
@@ -64,9 +71,12 @@ Everything else can wait behind them.
 
 | What | Status | Cadence | Notes |
 |---|---|---|---|
-| **Farm map / potrero layout** | 🟡 | One-off + occasional | Entrance pin received ([`operations/land/location.md`](operations/land/location.md)); **boundary map coming from owner**. Then: area, water, grass per paddock |
+| **Farm map / potrero layout** | ✅ | One-off + occasional | **Received 2026-08-21** — 1:5000 survey plan, enero 2003 ([`operations/land/plano-2003.md`](operations/land/plano-2003.md)): **193.41 ha, 10 potreros / 158.67 ha**, areas + names + water network. Follow-ups below |
 | Grazing history (group, potrero, in/out dates) | ❌ | Recurring per move | Enables kg-gain-per-hectare; **parked until weights exist** (your call) |
-| Forage condition & improvements (fertilizing, renovation) | ❌ | Recurring / seasonal | What grasses we actually have is TBD |
+| **Ground-truth the 2003 layout** | ❌ | One-off | Do the 2003 fences still stand? are the dozens of sub-names fenced paddocks or just place names? Gates whether the potrero data can become canonical |
+| **Water-system condition** | ❌ | One-off (walk it) | The plan maps nacimientos → tubería → tanques + represa. Working or degraded? If degraded, restoring it is likely the cheapest carrying-capacity lever |
+| Digital boundary (KML / plano catastral) | ❌ | One-off | The 2003 scan is too coarse for precise coordinates |
+| Forage condition & improvements (fertilizing, renovation) | ❌ | Recurring / seasonal | What grasses we actually have is TBD — **the 2003 plan carries no forage data at all** |
 | Infrastructure (corrals, fencing, water, is there a báscula?) | ❌ | One-off | Whether a scale exists decides how fast we get weights |
 | Yearly operational calendar | ❌ | One-off | Vaccination, deworming, breeding, weaning, sale seasons vs. invierno/verano |
 

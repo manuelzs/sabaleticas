@@ -16,7 +16,7 @@ trust his recollection if it conflicts with the data.*
 ## The operation (facts)
 
 - **Location:** La Pintada, suroeste de Antioquia, Colombia — *tierra caliente*, ~550–600 m, Cauca valley. Vereda La Bocana.
-- **Land:** ~200 ha. **Herd:** ~266 head (per SINIGAN, May 2026).
+- **Land:** **193.41 ha** titled, of which **158.67 ha is potrero (10)** — per the 2003 survey plan, `operations/land/plano-2003.md`. **Herd:** ~266 head (per SINIGAN, May 2026) → **~1.68 head/ha on potrero**, i.e. *not* under-stocked.
 - **Model:** **ceba de hembras** — buys **females**, fattens on pasture, sells on weight. Females are the deliberate strategy (≈256 hembras / 10 machos).
 - **Born-on-farm calves:** some purchased females arrive pregnant; calves are born here, raised to weaning, sold then — **not fattened**. The few machos are these.
 - **Currency/units:** COP and metric (kg, hectares) everywhere. Use Colombian terms (ceba, levante, GDP = ganancia diaria de peso, potrero, carga, en pie, gordo/flaco, comisionista, consignación…).
@@ -41,7 +41,7 @@ trust his recollection if it conflicts with the data.*
 | `financials/` | `diagnosis.md` (why we're losing money — 6 hypotheses), P&L/costs (TBD) |
 | `herd/` | `inventory.md`, `movements.md` (GSMI sales analysis), `lotes/` template |
 | `research/` | Sourced knowledge base — `sources.md` (S1–S41), `topics/`, overview |
-| `operations/` | Yearly cycle, `pasture.md` (land/grazing/forage plan) |
+| `operations/` | Yearly cycle, `pasture.md` (land/grazing/forage plan), `land/` (location + the 2003 survey plan) |
 | `experiments/` | On-farm trial methodology + template |
 | `decisions/` | Decision log |
 | `strategy/` | Whole-operation direction — e.g. `diversification.md` (citrus/solar, parked) |
@@ -104,8 +104,9 @@ from AGROSAVIA, Fedegán, CIPAV, CONtexto Ganadero, Central Ganadera, universiti
    #1 blocker: it enables the P&L, realized $/kg per channel vs. the Medellín benchmark, and
    confirms which hypothesis bites. When it arrives, load into `sales`/`costs`/`lotes`.
 2. **Weighing discipline** — no GDP data yet ("báscula"). Encourage it; it unlocks the core ceba metrics.
-3. **Farm maps** → `operations/land/` to lay out potreros + a grazing rotation (biggest cheap lever).
+3. ~~Farm maps~~ ✅ **received 2026-08-21** (`operations/land/plano-2003.md`). Now pending: **ground-truth it** — do the 2003 fences still stand, and does the mapped water network still work? Those two answers gate the grazing-rotation plan (still the biggest cheap lever).
 4. Re-extract the full 266-animal roster from SINIGAN when V6 is up.
+5. **Accounting-service access** — being provisioned (2026-08-21); may deliver sales/purchases/costs wholesale. Weights and lot linkage will still likely come from Manuel's own records.
 
 ## Style note
 

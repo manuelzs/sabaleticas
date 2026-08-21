@@ -19,11 +19,21 @@ _Anything marked TBD is unconfirmed — fill in when known._
 
 ## The land
 
-- **Total area:** ~200 hectares
-- **Usable pasture:** TBD
-- **Pasture type / grasses:** TBD (likely improved tropical — braquiaria, estrella, guinea — _to confirm_)
-- **Water:** TBD (Cauca river frontage? quebradas, ponds, troughs)
-- **Subdivision:** TBD (number of potreros, rotation?)
+Source: the 1:5000 survey plan of **enero 2003** — see
+[`operations/land/plano-2003.md`](operations/land/plano-2003.md). Areas are from that plan
+and are 23 years old; layout on the ground still to be confirmed.
+
+- **Total area:** **193.41 ha** (titled area per the plan — the old "~200 ha" was a round number)
+- **Usable pasture:** **158.67 ha in 10 potreros** (82% of the farm). Rest: playón 21.90,
+  sapal 5.52, rastrojos 3.60, cañaverales 1.95, guaduales 1.13, represas 0.64
+- **Largest potreros:** Lajas 37.43 · Consuelo 22.17 · Siberia 22.11 · San Matías 17.57 ·
+  Riachón 12.45 · Jagüe 11.65 · Abisinia 9.94 · Balkanes 7.94 · Verdún 7.08
+- **Pasture type / grasses:** TBD (likely improved tropical — braquiaria, estrella, guinea — _to confirm_; the plan carries no forage data)
+- **Water:** Río Poblanco (west edge), quebradas Sabaletica / Buenavista / Cascajón, a
+  0.64 ha represa, at least two nacimientos + a manantial, and a **piped network to tanks**
+  drawn on the 2003 plan. **Condition today unknown — a top ground-truth question**
+- **Subdivision:** 10 potreros on the plan, plus dozens of named sub-parcels whose fence
+  status is unknown. Rotation system: TBD
 - **Owned vs. leased:** TBD
 
 ## The herd
@@ -57,7 +67,9 @@ _Anything marked TBD is unconfirmed — fill in when known._
 - **Sales channels:** TBD (subasta/feria, comisionista, direct)
 - **Sourcing:** buy females in lotes from various sources — _tracking source performance is a goal_
 - **Labor:** TBD (mayordomo, vaqueros, headcount, pay)
-- **Stocking rate:** ~1.33 head/ha at current numbers _(266 ÷ 200)_
+- **Stocking rate:** **~1.68 head/ha on actual potrero** _(266 ÷ 158.67)_ — near the top
+  of the 1–2/ha rotated-pasture benchmark, i.e. **not under-stocked**. (1.38/ha if measured
+  against the full 193.41 ha titled area.)
 
 ## Systems of record
 
@@ -80,7 +92,9 @@ Track at **two levels** (see [`herd/`](herd/)):
 ## Open questions
 
 1. Class breakdown of the 266 head (and how many are the born-at-farm calves)?
-2. Pasture: how many potreros, what grasses, rotation system?
+2. Pasture: the 2003 plan gives 10 potreros and their areas — but **do those fences still
+   stand**, are the dozens of sub-names fenced paddocks or just place names, what grasses,
+   and is any rotation running?
 3. Sales & sourcing channels — who do we buy from and sell to?
 4. Who does the work, and what does labor cost?
 5. In what form are the financial / vaccination / land records (paper, Excel, app)?

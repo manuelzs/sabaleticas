@@ -1,9 +1,12 @@
 # Farm location
 
-> The geographic anchor for Sabaleticas. **All four boundary edges are now known
-> qualitatively** (below); the exact lines and hectares still come from a proper boundary map
-> Manuel is sending. This file gets the potrero layout once that arrives. See
-> [`pasture.md`](../pasture.md) for why land/grazing is a top profit lever.
+>  The geographic anchor for Sabaleticas. **All four boundary edges are known** (below) and
+> the **1:5000 survey plan of 2003 has now arrived** — areas, potreros and the water system
+> are transcribed in [`plano-2003.md`](plano-2003.md) (document:
+> [`plano-aguas-2003.jpg`](plano-aguas-2003.jpg)). It confirms every boundary below
+> independently and puts the titled area at **193.41 ha**. Still outstanding: a *digital*
+> boundary (KML / plano catastral) and confirmation that the 2003 layout still stands on the
+> ground. See [`pasture.md`](../pasture.md) for why land/grazing is a top profit lever.
 
 ## Entrance (confirmed by owner)
 
@@ -22,7 +25,10 @@
 | **North** | the parcel **carved off ~40 years ago** (El Guaico's first split). |
 | **South** | **Hacienda El Guaico** — the sibling parcel from the ~20-years-ago split. |
 
-Still from the map: the **exact lines and total hectares** (~200 ha per `profile.md`).
+**Confirmed by the 2003 plan** ([`plano-2003.md`](plano-2003.md)), which is drawn rotated
+(up = east, left = north) and shows: **Hacienda Texas** as the northern neighbour along a
+2922.18 m line, **Lote No. 2 / Hda. La Perla / Fernando González** to the south, the road to
+Medellín at the east, and the Río Poblanco at the west. **Titled area: 193.41 ha.**
 
 ## History & land tenure
 
@@ -51,18 +57,27 @@ El Guaico split lines — those run north–south.
   (darker), with a few dark patches that may be **ponds/reservoirs** inside the property.
   Provisional until the boundary map confirms what's inside the line.
 
-## Water (future topic — flagged by owner)
+## Water — no longer a future topic
 
-Water management is a **discussion to have later**. Two features matter: the **Río Poblanco**
-along the western edge, and the apparent **reservoirs** inside the property. In *tierra
-caliente* dry-season (verano) water is usually the real cap on carrying capacity — which
-potreros have water decides which are usable when. When the potrero map arrives we'll locate
-the water sources (river access, reservoirs, troughs, aqueduct) per paddock and fold it into
-grazing planning.
+The 2003 document is in fact a ***plano de aguas***: it maps a **piped distribution network**
+(`---- Tubería`) fed by **nacimientos and a manantial**, running to a **represa (0.64 ha)**
+and to **tanks by the house**, with tees and a ventosa along the line. Plus the **Río
+Poblanco** on the west edge and the quebradas **Sabaletica**, **Buenavista** and **Cascajón**
+crossing the farm. Details in [`plano-2003.md`](plano-2003.md).
+
+In *tierra caliente* verano, water is usually the real cap on carrying capacity — which
+potreros have water decides which are usable when. The 2003 owners appear to have solved
+that. **The open question is whether the system still works after 23 years** — if it has
+degraded, restoring it is likely the cheapest carrying-capacity lever on the farm.
 
 ## What's still needed (one-off)
 
-- **Property boundary map** — coming from Manuel; gives the exact lines and hectares within
-  the four edges above. Ideally a KML / plano catastral / escritura area.
-- Once we have it: divide into **potreros** (area, water access, grass per paddock) and,
-  later, grazing history — see the data model in [`pasture.md`](../pasture.md).
+- ✅ **Property boundary map** — received 2026-08-21, the 2003 survey plan. See
+  [`plano-2003.md`](plano-2003.md): 193.41 ha, 10 potreros / 158.67 ha, water network.
+- **A digital boundary** (KML / plano catastral / escritura area) — the scan is too coarse
+  for precise coordinates or for measuring anything we didn't already read off the plan.
+- **Ground-truthing the 2003 layout** — do those fences still stand? is the pipeline alive?
+  This is now the gating question before the potrero data becomes canonical.
+- **Grass species per potrero** — the plan has no forage data at all.
+- Then: build the `potreros` table and, later, grazing history — data model in
+  [`pasture.md`](../pasture.md).

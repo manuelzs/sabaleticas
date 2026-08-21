@@ -64,8 +64,12 @@ The research moved two priors and handed us benchmarks to measure against:
 | kg carne/ha/year | 120–150 | 350 → 960+ (intensified rotation) |
 | Months to finish | ~40 | ≤12–14 |
 
-At **266 head on 200 ha (1.33/ha)** with no weighing yet, we don't know our GDP or
-turnover — but those are the first numbers to establish, because they decide everything.
+At **266 head on 158.67 ha of actual potrero (1.68/ha — revised 2026-08-21 from the 2003
+survey plan, [`../operations/land/plano-2003.md`](../operations/land/plano-2003.md))** with no
+weighing yet, we don't know our GDP or turnover — but those are the first numbers to
+establish, because they decide everything. Note the revision cuts the other way from what you
+might hope: we are **more** densely stocked than we thought, so "buy more cattle" is off the
+table as a fix and the carga benchmark is already met.
 
 ## The minimal data to find the leak
 

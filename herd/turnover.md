@@ -34,9 +34,13 @@ The ~7 at 3–5 years is the weakest line — small enough to be noise — so we
 
 ## What's firmer (not age-dependent)
 
-- **Herd size ≈ 266 head** (SINIGAN count, approximate). **Stocking ≈ 1.33 animales/ha** —
-  against benchmarks (national "losing" ~0.87/ha; rotated target 1–2/ha) the farm is **not
-  under-stocked**. So any turnover problem is about *velocity*, not lack of animals.
+- **Herd size ≈ 266 head** (SINIGAN count, approximate). **Stocking ≈ 1.68 animales/ha** —
+  revised upward 2026-08-21: the 2003 survey plan shows only **158.67 ha of the 193.41 ha is
+  actual potrero** ([`../operations/land/plano-2003.md`](../operations/land/plano-2003.md)),
+  not the 200 ha previously assumed. Against benchmarks (national "losing" ~0.87/ha; rotated
+  target 1–2/ha) the farm is **not under-stocked — it sits near the top of the range**. So
+  any turnover problem is about *velocity*, not lack of animals, and adding head would make
+  it worse.
 - **Sale cadence ≈ 4.5 valid guías/month** (Jan 2025 – May 2026), in **small lots**
   (single-digit to ~14 head), from real GSMI movement guías ([`movements.md`](movements.md)).
   Frequent small lots is a real, observed pattern and is consistent with not finishing batches.

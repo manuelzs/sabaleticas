@@ -29,9 +29,21 @@ real productivity number for the farm — and see which potreros and grasses per
 
 ## Farm plans / maps
 
-When you send plans of the farm, they go in `operations/land/` (images or PDFs).
-From a map I can help lay out the potrero list, estimate areas, and design a
-**rotation** if one isn't already running.
+✅ **The plan arrived (2026-08-21):** the 1:5000 survey of enero 2003 —
+[`land/plano-2003.md`](land/plano-2003.md). It gives us **193.41 ha total, of which 158.67 ha
+is potrero across 10 paddocks**, their names and areas, and a mapped **water distribution
+network**. What it does *not* give: grass species, current fence status, or the condition of
+the water system today.
+
+Two things jump out for grazing management:
+
+- **Lajas is 37.43 ha — 24% of all potrero, more than double the next largest.** A block that
+  size can't be rested properly; cattle graze it selectively and the good grass gets hit
+  repeatedly while the rest goes rank. Subdividing Lajas is probably the single highest-value
+  fencing decision on the farm.
+- **The plan names dozens of sub-parcels inside the ten potreros.** If those are real fences,
+  the farm can be rotated almost immediately with no capital. If they're just place names, we
+  need a fencing plan. **Establishing which is the gating question for this whole document.**
 
 ## Forage notes (to confirm on the ground)
 
@@ -41,4 +53,5 @@ actually have at Sabaleticas is **TBD** — we'll inventory it. The research bri
 ([`../research/colombia-cattle-profitability.md`](../research/colombia-cattle-profitability.md),
 in progress) will give benchmarks for what good pasture should deliver here.
 
-_Nothing measured yet — waiting on the farm plan and a forage walk-through._
+_Areas now known from the 2003 plan; grass species and current condition still need a forage
+walk-through._
