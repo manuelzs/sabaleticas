@@ -79,39 +79,57 @@ parcel. "Verdún" is one of the potrero names on the 2003 plan, at the northern 
 road. Whether that is a coincidence of naming or a piece that came out of the old farm is
 unresolved.
 
-## The 41-hectare question
+## Area: settled at 151.85 ha
 
-**This is the finding that matters.**
+**Manuel confirmed (2026-08-21): we own only AP 1. "AP 2 Parte Alta" belongs to his cousin,**
+who inherited it as part of the same subdivision. So:
 
-| Source | Area |
-|---|---|
-| 2003 survey plan, "Hacienda El Guaico — Lote No. 1" | **193.41 ha** |
-| Cadastre today, "AP 1 SABALETITAS" | **151.85 ha** |
-| **Gap** | **41.56 ha** |
-| Adjacent parcel "AP 2 PARTE ALTA" (023-16155) | **41.16 ha** |
+> ### **Sabaleticas = 151.85 ha.** That is the number to use everywhere.
 
-The gap and that neighbouring parcel match to within **0.4 ha (1%)**. The naming — *AP 1* and
-*AP 2* — points the same way. So the 2003 Lote No. 1 almost certainly comprised both, and
-they have since been separated.
+### A correction to an earlier reading
 
-**Per Manuel (2026-08-21): AP 2 "Parte Alta" was part of the old farm but now belongs to a
-neighbour.** Which raises his question, and it's a good one:
+I initially flagged that AP 2's 41.16 ha almost exactly closes the gap between AP 1
+(151.85 ha) and the 2003 plan's Lote No. 1 (193.41 ha), and treated that as evidence they
+were once one parcel. **That inference was wrong**, for a reason the geometry settles:
 
-> *"I don't know if the data here is wrong, or we might be paying for stuff that isn't ours
-> in taxes."*
+> **AP 1 and AP 2 are 149 m apart** — genuinely detached, not merely road-separated. Lote
+> No. 1 was drawn in 2003 as a *single contiguous outline*, so it cannot simply be AP 1 plus
+> AP 2. The area match is a coincidence.
 
-The geometry supports the concern being real rather than theoretical: AP 2 is **not
-contiguous** with AP 1 — it sits southeast of the entrance, separated from it. A detached
-parcel carrying a sibling name from the same subdivision is exactly the shape of thing that
-stays attached to the wrong cadastral account for years without anyone noticing.
+**The 41.56 ha gap is still real** — the 2003 parcel was bigger than what we hold — but AP 2
+is not where it went. Better candidates, both adjacent to our northern boundary and both
+**created in the cadastre only in December 2025** (the surrounding parcels date from May
+2025), and both split from the same parent:
 
-### How to settle it — two checks, in order
+| Parcel | ha | Note |
+|---|---|---|
+| Fca La Esmeralda | 22.61 | `location.md` already lists "Casa La Esmeralda" as a family parcel |
+| **Fca El Verdún** | 8.78 | **"Verdún" is a potrero name on the 2003 plan**, at the northern end near the road (7.08 ha there) |
+| Subtotal | 31.39 | leaves ~10.2 ha still unexplained |
 
-**1. The impuesto predial bill (free, decisive, and you already have it).** Look at which
-**número predial / matrícula** the bill is issued against. If it shows only
-`053900001000000020058…` / **023-16153**, there is no problem — we simply record 151.85 ha
-and move on. If it also carries `…0059…` / **023-16155**, we are being billed for land we
-don't own, and it is worth recovering.
+That is a hypothesis, not a finding. It does **not** change our area — 151.85 ha is confirmed
+either way — it only bears on the history.
+
+## The tax question — check on Monday
+
+Parked to Monday (out of office hours). The concern, in Manuel's words:
+
+>  *"We might be paying for stuff that isn't ours in taxes"* — potentially across the ~20
+> years since the subdivision.
+
+**The risk is lower than it first looked, but not zero.** AP 2 has its own matrícula
+(023-16155) and was inherited by the cousin, so it should carry its own predial account —
+which is the normal case and means no overpayment. Worth verifying anyway, because the cost
+of checking is near zero and the exposure, if it exists, is two decades deep.
+
+### The two checks
+
+**1. The impuesto predial bill (free, decisive, already in hand).** Check which **número
+predial / matrícula** it is issued against, and on what **área**. Expected and correct:
+`053900001000000020058…` / **023-16153** / **151.85 ha**. Two ways it could be wrong — it
+also carries `…0059…` / 023-16155, *or* it bills the right predio at an inflated area (e.g.
+still ~193 ha from the 2003 plan). **The second is the likelier failure and the easier one to
+miss**, since the predio number would look perfectly right.
 
 **2. A certificado de tradición y libertad for matrícula 023-16155.** This names the legal
 owner outright and settles it beyond argument. Order online at
@@ -123,24 +141,70 @@ would want on record anyway.
 If it turns out we have been paying, the route is a **corrección de área / revisión de avalúo**
 with Catastro Antioquia, plus a claim for what was overpaid.
 
-### Why the answer changes the farm's numbers
+## What the confirmed area does to the herd numbers
 
-Until this is settled, **the denominator under every per-hectare figure in this repo is
-uncertain** — including the one that decides how hard the coming verano will be:
+This is the consequence that outranks the tax question:
 
-| If the titled area is… | Potrero (ha) | Head/ha at 266 | Against the 1–2/ha rotated benchmark |
+| Basis | Potrero (ha) | Head/ha at 266 | Against the 1–2/ha rotated benchmark |
 |---|---|---|---|
-| 193.41 ha (2003 plan) | 158.67 | **1.68** | near the top of the range |
-| **151.85 ha (cadastre)** | **~117–125** | **~2.13–2.27** | **above the range — overstocked** |
+| Old assumption, 193.41 ha | 158.67 | 1.68 | near the top of the range |
+| **Confirmed, 151.85 ha** | **~117–125** | **~2.13–2.27** | **above the range** |
 
-The lower figure assumes the non-potrero land (playón 21.90, sapal 5.52, rastrojos,
-cañaverales, guaduales, represas — 34.74 ha in total) sits mostly inside AP 1, which it should,
-since it is the river-edge land on the western boundary.
+The potrero figure assumes the non-grazing land (playón 21.90, sapal 5.52, rastrojos,
+cañaverales, guaduales, represas — 34.74 ha on the 2003 plan) sits inside our parcel, which
+the satellite check confirms: it is the river-edge land along the western boundary, and that
+boundary is ours.
 
-**If the cadastre is right, we are carrying more cattle than the land is rated for**, which
-would compound with the water question ([`../../water/README.md`](../../water/README.md)) in
-the worst possible way going into a dry season — and it would strengthen the case that the
-answer to a tight verano is *fewer head*, not *more water*.
+> **We are carrying more cattle than the land is rated for.** Not dramatically — but we are
+> over the benchmark, not under it, and that is the opposite of what "266 head on 200
+> hectares" suggested when this project started.
+
+It compounds badly with the verano ([`../../water/README.md`](../../water/README.md)): being
+overstocked *before* dry-season water shrinks the usable paddocks is how crowding turns
+severe. And it points question six in the water project — *more water, or fewer head?* —
+firmly toward **fewer head**, which is what the turnover diagnosis wants anyway.
+
+## Aerial imagery — 0.5 m orthophoto
+
+**IGAC flies La Pintada at 50 cm and publishes it.** The service is
+`mapas.igac.gov.co/image/rest/services/orto/orto05390lapintada/ImageServer` (4-band, native
+pixel 0.5 m, EPSG:9377). Its footprint covers **essentially the whole farm** — the no-data
+edges of the export fall outside our boundary, in the surrounding padding.
+
+That is a true **orthophoto**: orthorectified, so terrain displacement is removed and you can
+measure distances and areas straight off it. An ordinary satellite view can't be trusted that
+way on hilly ground like ours.
+
+| File | What it is |
+|---|---|
+| `orthophoto-igac-05m.jpg` | **The photo.** IGAC 0.5 m orthophoto, 4488 × 3996, ~2.2 × 2.0 km. Archival copy |
+| `orthophoto-boundary.jpg` | Same imagery with the parcel boundary and a 500 m scale bar — the working/field map |
+| `*.jgw` | World files. Put one beside its JPEG and QGIS / ArcGIS / Google Earth Pro place it automatically at the right spot on Earth |
+
+Both are in plain WGS 84 lat/lon (EPSG:4326), north up. Gaps at the frame margins are filled
+from Esri World Imagery (max native zoom here is z18 ≈ 0.59 m/px, so it is the fallback, not
+the primary).
+
+### What the imagery shows
+
+Three known things check out, and one is new:
+
+- **The western boundary follows the Río Poblanco exactly** — the braided channel is clearly
+  visible and the parcel line traces it. Confirms [`../location.md`](../location.md).
+- **The northeastern boundary is a single long straight survey line** (~1,377 m), running from
+  the entrance up to the north — consistent with the plan's ruled boundary against the
+  northern neighbour.
+- **The entrance falls exactly on the eastern tip** of the parcel.
+- **New, and the useful part: fence lines are plainly visible.** At 50 cm the hedgerows and
+  vegetation breaks that divide the potreros are unmistakable, along with farm tracks, the
+  house, and individual trees. **The current potreros can be traced from this imagery** — we
+  do not have to wait for the new survey to get a usable potrero map.
+- **Water bodies are visible inside the boundary** on the eastern side — candidate
+  represas/reservoirs, and directly useful to the verano work
+  ([`../../water/README.md`](../../water/README.md)), which needs exactly this inventory.
+- A **planted block with regular rows** is visible in the south — worth identifying on the
+  ground (cañaveral? fruit?), and interesting next to the parked citrus question in
+  [`../../../strategy/diversification.md`](../../../strategy/diversification.md).
 
 ## Still to do
 
