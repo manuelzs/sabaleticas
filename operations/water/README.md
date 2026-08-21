@@ -17,9 +17,12 @@ Two reasons it outranks its usual place as a footnote in the pasture plan:
    run at all, which decides daily gain. It sits upstream of the pasture plan
    ([`../pasture.md`](../pasture.md)), not beside it.
 
-And the stakes are concrete: at **266 head on 158.67 ha of potrero (~1.68/ha)** the farm is
-already stocked near the top of the rotated-pasture benchmark. There is **no slack**. If dry
--season water shrinks the usable area, effective stocking on what's left rises fast.
+And the stakes are concrete: at **266 head** the farm is stocked at **~1.68/ha** on the 2003
+figures — and **~2.13–2.27/ha if the cadastre's smaller area is the right one**
+([`../land/geo/README.md`](../land/geo/README.md)), which would put us *above* the
+rotated-pasture benchmark. Either way there is **no slack**, and possibly a deficit already.
+If dry-season water shrinks the usable area, effective stocking on what's left rises fast
+from an already-tight base.
 
 ## The question to answer
 

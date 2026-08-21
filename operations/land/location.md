@@ -25,6 +25,11 @@
 | **North** | the parcel **carved off ~40 years ago** (El Guaico's first split). |
 | **South** | **Hacienda El Guaico** — the sibling parcel from the ~20-years-ago split. |
 
+✅ **The official boundary is now in the repo** — pulled from **Catastro Antioquia**
+2026-08-21 and confirmed by Manuel: parcel **AP 1 SABALETITAS**, matrícula **023-16153**,
+NPN `053900001000000020058000000000`, **151.85 ha** computed from the polygon. Geometry and
+the open 41-hectare question: [`geo/README.md`](geo/README.md).
+
 **Confirmed by the 2003 plan** ([`plano-2003.md`](plano-2003.md)), which is drawn rotated
 (up = east, left = north) and shows: **Hacienda Texas** as the northern neighbour along a
 2922.18 m line, **Lote No. 2 / Hda. La Perla / Fernando González** to the south, the road to
@@ -77,8 +82,11 @@ now **its own workstream**: [`../water/README.md`](../water/README.md).
 
 - ✅ **Property boundary map** — received 2026-08-21, the 2003 survey plan. See
   [`plano-2003.md`](plano-2003.md): 193.41 ha, 10 potreros / 158.67 ha, water network.
-- **A digital boundary** (KML / plano catastral / escritura area) — the scan is too coarse
-  for precise coordinates or for measuring anything we didn't already read off the plan.
+- ✅ **A digital boundary** — obtained 2026-08-21 from Catastro Antioquia
+  ([`geo/README.md`](geo/README.md)). GeoJSON + KML in [`geo/`](geo/).
+- ⚠️ **Settle the 41-hectare discrepancy** — cadastre says 151.85 ha, the 2003 plan said
+  193.41. Check the impuesto predial bill and, if needed, a certificado de tradición for
+  matrícula 023-16155. **We may be paying tax on land we don't own.**
 - **Ground-truthing the 2003 layout** — do those fences still stand? is the pipeline alive?
   This is now the gating question before the potrero data becomes canonical.
 - **Grass species per potrero** — the plan has no forage data at all.

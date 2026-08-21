@@ -16,7 +16,7 @@ trust his recollection if it conflicts with the data.*
 ## The operation (facts)
 
 - **Location:** La Pintada, suroeste de Antioquia, Colombia — *tierra caliente*, ~550–600 m, Cauca valley. Vereda La Bocana.
-- **Land:** **193.41 ha** titled, of which **158.67 ha is potrero (10)** — per the 2003 survey plan, `operations/land/plano-2003.md`. **Herd:** ~266 head (per SINIGAN, May 2026) → **~1.68 head/ha on potrero**, i.e. *not* under-stocked.
+- **Land:** ⚠️ **area contested.** Catastro Antioquia (2026-08-21) records our parcel *AP 1 SABALETITAS* (matrícula 023-16153) at **151.85 ha**; the 2003 survey plan's Lote No. 1 was **193.41 ha** with 158.67 ha of potrero. The 41.56 ha gap matches neighbouring parcel *AP 2 Parte Alta* — **possible tax overpayment, unresolved** (`operations/land/geo/README.md`). **Herd:** ~266 head → **1.68/ha** on the old area, **~2.1–2.3/ha** on the cadastral one (i.e. possibly *over*stocked). Never quote a per-hectare figure without saying which area it uses.
 - **Model:** **ceba de hembras** — buys **females**, fattens on pasture, sells on weight. Females are the deliberate strategy (≈256 hembras / 10 machos).
 - **Born-on-farm calves:** some purchased females arrive pregnant; calves are born here, raised to weaning, sold then — **not fattened**. The few machos are these.
 - **Currency/units:** COP and metric (kg, hectares) everywhere. Use Colombian terms (ceba, levante, GDP = ganancia diaria de peso, potrero, carga, en pie, gordo/flaco, comisionista, consignación…).
@@ -106,7 +106,8 @@ from AGROSAVIA, Fedegán, CIPAV, CONtexto Ganadero, Central Ganadera, universiti
 2. **Weighing discipline** — no GDP data yet ("báscula"). Encourage it; it unlocks the core ceba metrics.
 3. ~~Farm maps~~ ✅ **received 2026-08-21** (`operations/land/plano-2003.md`). Key finding: **the farm is already finely subdivided into fenced potreros** (more than the plan shows) — so rotation needs *a plan and discipline, not capital*. Pending: what rotation is actually run today.
 3b. **Water / verano capacity** — own project, `operations/water/README.md`. Manuel flagged a hard dry season coming; scaffolded, not yet discussed.
-3c. **Map modernization** — `operations/land/geo/README.md`. GeoJSON canonical. Two asks out to Manuel: the *número predial* (unlocks the official IGAC/GeoAntioquia polygon) and GPS points on the mojones.
+3c. **Boundary** ✅ — official polygon obtained 2026-08-21 from **Catastro Antioquia** (`geodatos.antioquia.gov.co/server/rest/services/Catastro/BCGS_Catastro_Publico/MapServer`, layer 10; serves GeoJSON directly). IGAC's national base does *not* cover La Pintada — Antioquia is a gestor catastral descentralizado. Files in `operations/land/geo/`.
+3d. 🔴 **Open: the 41-hectare question** — check the impuesto predial bill for which predio(s) we're billed, then a certificado de tradición for matrícula 023-16155. Decides our true area *and* whether we're overpaying tax.
 4. Re-extract the full 266-animal roster from SINIGAN when V6 is up.
 5. **Accounting-service access** — being provisioned (2026-08-21); may deliver sales/purchases/costs wholesale. Weights and lot linkage will still likely come from Manuel's own records.
 

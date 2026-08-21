@@ -1,145 +1,162 @@
-# Modernizing the map — from a 2003 paper plano to real geometry
+# Geometry — the official boundary, and an open question about 41 hectares
 
-> **Status: plan proposed 2026-08-21, awaiting Manuel's input on the two asks at the bottom.**
-> The goal: replace "a scan of a hand-drawn plan from 2003" with **actual coordinates** we can
-> measure, query and hand to anyone.
+> **Status: boundary found and saved, 2026-08-21.** Pulled live from **Catastro Antioquia**,
+> confirmed visually by Manuel. One material discrepancy remains open — see
+> [The 41-hectare question](#the-41-hectare-question), which is both a data problem and a
+> possible **money** problem.
 
-## Why bother (beyond it being nice to have)
+## What's here
 
-Real geometry isn't decoration — it changes what we can compute:
-
-- **Areas become measured, not transcribed.** Every per-hectare number in this repo currently
-  rests on figures copied off a 23-year-old scan, one of which doesn't reconcile (the
-  ~10.33 ha gap in [`../plano-2003.md`](../plano-2003.md)). With polygons, area is computed
-  and that whole class of error disappears.
-- **Per-potrero productivity becomes possible.** The prize in
-  [`../pasture.md`](../pasture.md) is *kg of gain per hectare per potrero* — which needs each
-  paddock's true area, not a block estimate.
-- **Water planning needs distance and elevation.** "Which potreros can be watered in verano"
-  ([`../../water/README.md`](../../water/README.md)) is a question about pipe runs and height
-  differences. You cannot answer it off a paper plan.
-- **It survives.** Paper plans get lost, and this one already had to be pieced together.
-
-## Format decision: GeoJSON canonical, KML for the field
-
-**Canonical: GeoJSON** (WGS84 lat/lon, EPSG:4326), one file per layer, in this folder.
-
-It's the right choice for this repo specifically, for the same reason the data layer is CSV:
-GeoJSON is **plain text, so it diffs cleanly in git** and every change is auditable. It also
-happens that **GitHub renders a `.geojson` file as an interactive map automatically** — so
-these become viewable in the browser with no tooling. And it opens in QGIS (free), Google
-Earth, Python, and essentially everything else.
-
-**For the field / phone: export KML.** Google Earth on a phone is how Manuel or the mayordomo
-will actually look at this standing in a potrero. KML is generated *from* the GeoJSON, never
-edited by hand — same derived-artifact rule as `sabaleticas.db`.
-
-Deliberately **not** shapefile: it's a 1990s multi-file binary format that diffs terribly and
-would fight the repo's whole design.
-
-### Layers
-
-| File | Contents |
+| File | What it is |
 |---|---|
-| `boundary.geojson` | The predio outline — one polygon, the legal-ish extent |
-| `potreros.geojson` | One polygon per fenced paddock, with `name`, computed `area_ha`, grass, water access |
-| `water.geojson` | Springs, tanks, reservoirs, represa, troughs (points); pipeline, quebradas, river (lines) |
-| `infrastructure.geojson` | House, corrals, gates, roads, báscula if one exists |
+| `boundary.geojson` | **The official parcel** — "AP 1 SABALETITAS", **151.85 ha**. Canonical |
+| `boundary.kml` | Same, derived, for Google Earth on a phone. **Never hand-edit** |
+| `candidate-ap2-parte-alta.geojson` | "AP 2 PARTE ALTA", 41.16 ha — **not ours per Manuel**, kept only because of the discrepancy below |
+| `neighbours.geojson` | The six surrounding predios, for context and orientation |
+| `parcels-overview.svg` | Quick visual of all of the above, north up |
 
-## Three routes to the boundary, best first
+GeoJSON is canonical: plain text, clean git diffs, and GitHub renders it as an interactive
+map on its own. KML is derived for field use.
 
-### 1. Pull the official cadastral polygon — try this first, it may take ten minutes
+## Where it came from
 
-Colombia's cadastral data is public, and **IGAC's Consulta Catastral geovisor lets you export
-a predio's terrain polygon directly as GeoJSON or shapefile** — which is exactly the artifact
-we want, from the authoritative source, for free. Antioquia also runs its own
-descentralizado viewer, **GeoAntioquia** (`geovisor.antioquia.gov.co/GeoAntioquia`), covering
-113 of the department's 125 municipios with predio-level data — La Pintada may sit there
-rather than in the national set, so both are worth trying.
+The national route failed, informatively. IGAC's *Consulta Catastral* on
+[Colombia en Mapas](https://www.colombiaenmapas.gov.co/) answered a coordinate query at the
+farm entrance with:
 
-To look the predio up you need **one** of:
+> *"No se encontró información asociada. Para consultar esta información debe contactar al
+> gestor catastral: **CATASTRO ANTIOQUIA**."*
 
-- the **número predial / cédula catastral** — it's printed on the **impuesto predial** bill;
-- the **matrícula inmobiliaria** — it's on the **escritura**;
-- or just the location on the map, clicking the parcel.
+Antioquia is a **gestor catastral descentralizado**, so La Pintada will never appear in the
+national base. The real source is the department's own published service, which backs the
+[GeoAntioquia](https://geovisor.antioquia.gov.co/GeoAntioquia) viewer:
 
-This route is strictly better than anything we can produce ourselves: it's official, it's
-already digital, and it costs nothing. **If it works, routes 2 and 3 become optional.**
+```
+https://geodatos.antioquia.gov.co/server/rest/services/Catastro/BCGS_Catastro_Publico/MapServer
+  layer 10 = R LC Terreno Predio   (rural parcels, with matrícula + NPN)
+```
 
-### 2. GPS the mojones — the strong fallback, and useful regardless
+It serves GeoJSON directly (`f=geojson&outSR=4326`), so the boundary needs no conversion.
 
-The 2003 plan marks **mojones** (boundary monuments) at the vertices — labelled `M7`, `M8`,
-`M9`, `M10`, `M11`, `M12`, `M13` and so on around the perimeter. If those stones are still in
-the ground, each one is a **surveyed corner**, and standing on it with a phone gives it a real
-coordinate.
+## The parcel
 
-This is worth doing **even if route 1 succeeds**, because it does something route 1 can't:
+| Field | Value |
+|---|---|
+| **Name in the cadastre** | **AP 1 SABALETITAS** *(cadastral typo — "Sabaletitas" for Sabaleticas)* |
+| **Número predial nacional** | `053900001000000020058000000000` |
+| **Matrícula inmobiliaria** | **023-16153** |
+| Ficha catastral | 13902419 |
+| Municipio | La Pintada, Antioquia (05390) |
+| **Computed area** | **151.85 ha** (geodesic, from the polygon — not transcribed) |
+| Perimeter | 6,697 m · 367 vertices |
+| Extent | 5.7888–5.8078 N, 75.5949–75.6191 W (~2.7 km × 2.1 km) |
 
-> With **4 or more well-spread mojones** tied to real coordinates, I can **georeference the
-> entire 2003 scan** — warp the whole raster into real-world position. That drags the historic
-> **water network, spring locations and old potrero lines** into real coordinates with it.
-> That information exists nowhere else, and this is the only way to rescue it.
+**Confirmed by Manuel (2026-08-21)** on the rendered map, misspelling and all.
 
-Even better than corner points, if the perimeter is walkable or drivable: **record a
-continuous GPS track around the fence line.** That yields the polygon directly rather than
-interpolating between corners.
+Two independent checks agree it's the right parcel: the farm entrance lands on its eastern
+tip, and its neighbours are exactly the ones the 2003 plan names — **HACIENDA TEXAS** to the
+north and **EL GUAICO** to the south.
 
-**On accuracy — worth being clear so you don't over- or under-invest:**
+### The neighbours
 
-| Method | Rough accuracy | Good enough for |
+| Predio | ha | Matrícula |
 |---|---|---|
-| Phone GPS, standing still ~1 min per point | ~3–5 m (better on dual-frequency phones) | Everything we want to do — grazing planning, areas, water layout |
-| Topógrafo with RTK/GNSS | centimetres | Legal boundary disputes, titling |
+| Rancho Los Toros | 316.92 | 023-5441 |
+| **El Guaico** | 132.44 | 023-16154 |
+| Casoja | 71.89 | 023-8398 |
+| **Hacienda Texas** | 53.06 | 023-14591 |
+| Fca La Esmeralda | 22.61 | 023-23120 |
+| Fca El Verdún | 8.78 | 023-23121 |
 
-For our purposes **the phone is fine.** On a 193 ha farm a 5 m error is noise — a 5 ha potrero
-is ~225 m across, so 5 m is about 2%. Do **not** hire a topógrafo for grazing planning; only
-for a legal boundary question, which we don't currently have. Tip: stand still for a minute
-per point and let the reading settle, and note the accuracy figure the app shows.
+Note **023-16153 (Sabaleticas), 023-16154 (El Guaico), 023-16155 (AP 2 Parte Alta)** are
+**consecutive matrículas** — they were registered in the same act. That is the fingerprint of
+the four-way subdivision described in [`../location.md`](../location.md), and it confirms the
+tenure story independently.
 
-### 3. Trace from satellite imagery — the fallback that needs nothing from anyone
+Also worth noting: **Fca La Esmeralda and Fca El Verdún were created in the cadastre only in
+December 2025** (the others date from May 2025), and both were split from the same parent
+parcel. "Verdún" is one of the potrero names on the 2003 plan, at the northern end near the
+road. Whether that is a coincidence of naming or a piece that came out of the old farm is
+unresolved.
 
-Most of our boundary is made of things visible from space: **Ruta 25** on the east, the **Río
-Poblanco** on the west. And the plan gives the lengths of the two survey lines — **Hacienda
-Texas 2922.18 m** (north) and **Lote No. 2 2395.96 m**, plus **Fernando González 1251.26 m**
-and **Hda. La Perla 271.80 m** (south) — which constrain the rest. Good enough for planning,
-not good enough to rely on for anything legal.
+## The 41-hectare question
 
-## For the potreros specifically — don't vectorize the 2003 lines
+**This is the finding that matters.**
 
-The 2003 paddock layout is **superseded**: Manuel confirms the farm has been subdivided
-further since, and an updated plan is coming. Tracing those old lines would be careful work
-producing a known-wrong answer.
+| Source | Area |
+|---|---|
+| 2003 survey plan, "Hacienda El Guaico — Lote No. 1" | **193.41 ha** |
+| Cadastre today, "AP 1 SABALETITAS" | **151.85 ha** |
+| **Gap** | **41.56 ha** |
+| Adjacent parcel "AP 2 PARTE ALTA" (023-16155) | **41.16 ha** |
 
-Better, in order:
+The gap and that neighbouring parcel match to within **0.4 ha (1%)**. The naming — *AP 1* and
+*AP 2* — points the same way. So the 2003 Lote No. 1 almost certainly comprised both, and
+they have since been separated.
 
-1. **Wait for the updated plan** if it's coming soon — then digitize once, correctly.
-2. **Trace current fence lines from recent high-resolution satellite imagery.** Fence lines
-   usually show up as vegetation and colour breaks, and grazing pressure differences make
-   paddock edges surprisingly visible from above. I can do a first pass; Manuel or the
-   mayordomo corrects names and any invisible lines.
-3. **Walk or drive them with a GPS track app** — most accurate, most effort, best done for
-   the paddocks we care most about rather than all of them.
+**Per Manuel (2026-08-21): AP 2 "Parte Alta" was part of the old farm but now belongs to a
+neighbour.** Which raises his question, and it's a good one:
 
-The 2003 plan stays valuable for what only it has: **the historic water network and the
-original block names.**
+> *"I don't know if the data here is wrong, or we might be paying for stuff that isn't ours
+> in taxes."*
 
-## The two asks
+The geometry supports the concern being real rather than theoretical: AP 2 is **not
+contiguous** with AP 1 — it sits southeast of the entrance, separated from it. A detached
+parcel carrying a sibling name from the same subdivision is exactly the shape of thing that
+stays attached to the wrong cadastral account for years without anyone noticing.
 
-1. **Look for the número predial** on an impuesto predial bill (or the matrícula on the
-   escritura) and send it. That unlocks route 1, which is the cheapest path to an
-   authoritative boundary by a wide margin.
-2. **When someone is next walking the fence line, take GPS points on any mojones still
-   standing** — 4+ spread around the perimeter, or a continuous track if that's easier. Send
-   them however they come out (KML, GPX, screenshots of coordinates, a list of numbers).
+### How to settle it — two checks, in order
 
-With either one I can produce `boundary.geojson` and we stop guessing at the denominator.
+**1. The impuesto predial bill (free, decisive, and you already have it).** Look at which
+**número predial / matrícula** the bill is issued against. If it shows only
+`053900001000000020058…` / **023-16153**, there is no problem — we simply record 151.85 ha
+and move on. If it also carries `…0059…` / **023-16155**, we are being billed for land we
+don't own, and it is worth recovering.
+
+**2. A certificado de tradición y libertad for matrícula 023-16155.** This names the legal
+owner outright and settles it beyond argument. Order online at
+[certificados.supernotariado.gov.co](https://certificados.supernotariado.gov.co/certificado)
+— roughly **$18,700 COP**, paid by PSE, PDF in minutes. Worth pulling **023-16153** at the
+same time to confirm our own title cleanly, including any mortgages or limitations, which we
+would want on record anyway.
+
+If it turns out we have been paying, the route is a **corrección de área / revisión de avalúo**
+with Catastro Antioquia, plus a claim for what was overpaid.
+
+### Why the answer changes the farm's numbers
+
+Until this is settled, **the denominator under every per-hectare figure in this repo is
+uncertain** — including the one that decides how hard the coming verano will be:
+
+| If the titled area is… | Potrero (ha) | Head/ha at 266 | Against the 1–2/ha rotated benchmark |
+|---|---|---|---|
+| 193.41 ha (2003 plan) | 158.67 | **1.68** | near the top of the range |
+| **151.85 ha (cadastre)** | **~117–125** | **~2.13–2.27** | **above the range — overstocked** |
+
+The lower figure assumes the non-potrero land (playón 21.90, sapal 5.52, rastrojos,
+cañaverales, guaduales, represas — 34.74 ha in total) sits mostly inside AP 1, which it should,
+since it is the river-edge land on the western boundary.
+
+**If the cadastre is right, we are carrying more cattle than the land is rated for**, which
+would compound with the water question ([`../../water/README.md`](../../water/README.md)) in
+the worst possible way going into a dry season — and it would strengthen the case that the
+answer to a tight verano is *fewer head*, not *more water*.
+
+## Still to do
+
+- **Settle the 41 ha** (above) and fix the area everywhere.
+- **Potreros** — the 2003 layout is superseded and Manuel has an updated plan coming, so
+  digitizing the old lines would be careful work producing a known-wrong answer. Do it once,
+  from the new plan, or trace current fence lines off recent satellite imagery.
+- **Water layer** — locate springs, tanks, reservoirs and pipe runs as geometry; feeds the
+  verano capacity work directly.
+- **GPS on the mojones** is now optional for the boundary (we have an official one) but still
+  valuable for one thing: **4+ points would let us georeference the 2003 scan** and rescue its
+  historic water network into real coordinates.
 
 ---
 
-**Sources for the cadastral routes:** [IGAC — Consulta
-Catastral](https://geoportal.igac.gov.co/contenido/consulta-catastral) ·
-[IGAC — Datos Abiertos
-Catastro](https://geoportal.igac.gov.co/contenido/datos-abiertos-catastro) ·
-[GeoAntioquia
-announcement](https://antioquia.gov.co/index.php/antioquiacuenta/gobernacion-de-antioquia-presento-geoantioquia-el-nuevo-visor-geografico-del-departamento)
-· [Datos Abiertos Antioquia](https://open-data-gobantioquia.hub.arcgis.com/)
+**Sources:** [IGAC — Consulta Catastral](https://geoportal.igac.gov.co/contenido/consulta-catastral)
+· [Colombia en Mapas](https://www.colombiaenmapas.gov.co/)
+· [GeoAntioquia](https://geovisor.antioquia.gov.co/GeoAntioquia)
+· [SNR — Certificado de Tradición y Libertad](https://certificados.supernotariado.gov.co/certificado)

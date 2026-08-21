@@ -75,7 +75,9 @@ Everything else can wait behind them.
 | Grazing history (group, potrero, in/out dates) | ❌ | Recurring per move | Enables kg-gain-per-hectare; **parked until weights exist** (your call) |
 | **Updated potrero plan** | ❌ | One-off | ✅ *Confirmed: the named sub-divisions ARE fenced potreros, and more have been added since 2003* — so the farm is already finely subdivided. Manuel will supply a current plan |
 | **Rotation actually in use today** | ❌ | One-off + update | Which potreros, what order, how many days in / days of rest. Now the top pasture question, since the fences already exist |
-| **Número predial** (impuesto predial bill) or matrícula inmobiliaria | ❌ | One-off | Unlocks the official cadastral polygon from IGAC / GeoAntioquia — cheapest route to a real boundary ([`operations/land/geo/README.md`](operations/land/geo/README.md)) |
+| ~~Official cadastral boundary~~ | ✅ | One-off | **Got it 2026-08-21** from Catastro Antioquia — *AP 1 SABALETITAS*, matrícula 023-16153, **151.85 ha**, as GeoJSON + KML ([`operations/land/geo/README.md`](operations/land/geo/README.md)) |
+| 🔴 **Impuesto predial bill — which predio(s) are we billed for?** | ❌ | One-off (urgent) | Cadastre says 151.85 ha; the 2003 plan said 193.41. The 41.56 ha gap = parcel *AP 2 Parte Alta*, which Manuel says is a neighbour's. **We may be paying tax on land we don't own.** Free to check |
+| Certificado de tradición y libertad, matrículas 023-16155 (and 023-16153) | ❌ | One-off | Names the legal owner outright; ~$18,700 COP each, PDF in minutes from the SNR. Settles the above |
 | **GPS points on the mojones** | ❌ | One-off | 4+ around the perimeter (or a walked track). Gives the boundary *and* lets us georeference the whole 2003 scan, rescuing its water network |
 | **Water: full inventory & verano behaviour** | ❌ | One-off + seasonal | The 2003 map is partial; reservoir tanks added since. Own workstream → [`operations/water/README.md`](operations/water/README.md) |
 | Forage condition & improvements (fertilizing, renovation) | ❌ | Recurring / seasonal | What grasses we actually have is TBD — **the 2003 plan carries no forage data at all** |

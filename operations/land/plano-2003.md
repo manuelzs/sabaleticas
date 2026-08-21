@@ -43,23 +43,26 @@ Transcribed verbatim from the plan's area table:
 | Represas | 0.64 | 0.3% |
 | **Total** | **193.41** | 100% |
 
-**So "~200 ha" is really 193.41 ha titled, of which only 158.67 ha is potrero.** That
-158.67 — not 193, and not 200 — is the correct denominator for carrying capacity and for
-kg-of-gain-per-hectare.
+**So the 2003 parcel was 193.41 ha, of which 158.67 ha was potrero.** ⚠️ But see
+[`geo/README.md`](geo/README.md): the cadastre puts *today's* Sabaleticas at **151.85 ha**, so
+these 2003 figures describe a larger property than we may now hold. The correct denominator
+for carrying capacity is unresolved until that is settled.
 
 ### What this does to the stocking rate
 
 | Denominator | Head/ha at 266 head |
 |---|---|
 | 200 ha (old placeholder) | 1.33 |
-| 193.41 ha (titled) | 1.38 |
-| **158.67 ha (actual potrero)** | **1.68** |
+| 193.41 ha (the 2003 parcel) | 1.38 |
+| 158.67 ha (2003 potrero) | 1.68 |
+| **~117–125 ha (potrero, if today's area is the cadastre's 151.85 ha)** | **~2.13–2.27** |
 
 Against the benchmarks in [`../../financials/diagnosis.md`](../../financials/diagnosis.md)
-(national "losing" ~0.87/ha; rotated target 1–2/ha) the farm is **not under-stocked — it sits
-near the top of the rotated-pasture range.** That strengthens the existing read: whatever is
-wrong is about **velocity and price, not about having too few animals.** If anything, adding
-head is the wrong instinct.
+(national "losing" ~0.87/ha; rotated target 1–2/ha) the farm is **at best near the top of the
+rotated-pasture range, and possibly above it.** Either way the read holds and hardens:
+whatever is wrong is about **velocity and price, not about having too few animals** — and
+adding head is the wrong instinct. If the cadastral area is the right one, we may need to
+*reduce* head, which happens to be what the turnover diagnosis would recommend anyway.
 
 ## Named potreros (with areas on the plan)
 
@@ -144,8 +147,12 @@ Lote No. 1 is today's Sabaleticas.** The larger Hacienda El Guaico was divided i
 this 2003 survey is that subdivision, and our parcel is Lote No. 1. "Lote No. 2" on the
 southern edge is a sibling parcel; the other two lie beyond it.
 
-That settles the question that mattered: **193.41 ha is our titled area**, and it is the
-denominator under every per-hectare figure in this repo.
+⚠️ **But the area does not survive contact with the cadastre.** Catastro Antioquia records
+our parcel at **151.85 ha**, not 193.41 — and the missing 41.56 ha matches an adjacent parcel,
+*AP 2 Parte Alta*, which Manuel says now belongs to a neighbour. So **Lote No. 1 as drawn in
+2003 is larger than what we hold today.** The full analysis, and the possibility that we are
+still being taxed on the difference, is in [`geo/README.md`](geo/README.md). Until it's
+settled, treat **193.41 ha as the 2003 figure, not as our area**.
 
 ## What's now answered vs. still open
 

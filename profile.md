@@ -23,7 +23,11 @@ Source: the 1:5000 survey plan of **enero 2003** — see
 [`operations/land/plano-2003.md`](operations/land/plano-2003.md). Areas are from that plan
 and are 23 years old; layout on the ground still to be confirmed.
 
-- **Total area:** **193.41 ha** (titled area per the plan — the old "~200 ha" was a round number)
+- **Total area:** ⚠️ **contested — 151.85 ha or 193.41 ha.** The **cadastre** (Catastro
+  Antioquia, pulled 2026-08-21) puts our parcel *AP 1 SABALETITAS* at **151.85 ha**; the 2003
+  plan's *Lote No. 1* was **193.41 ha**. The 41.56 ha gap matches the adjacent parcel *AP 2
+  Parte Alta* (41.16 ha), which Manuel says now belongs to a neighbour. **Open question,
+  possibly a tax overpayment** → [`operations/land/geo/README.md`](operations/land/geo/README.md)
 - **Usable pasture:** **158.67 ha** of potrero (82% of the farm). Rest: playón 21.90,
   sapal 5.52, rastrojos 3.60, cañaverales 1.95, guaduales 1.13, represas 0.64
 - **Blocks on the 2003 plan:** Lajas 37.43 · Consuelo 22.17 · Siberia 22.11 · San Matías 17.57 ·
@@ -70,9 +74,11 @@ and are 23 years old; layout on the ground still to be confirmed.
 - **Sales channels:** TBD (subasta/feria, comisionista, direct)
 - **Sourcing:** buy females in lotes from various sources — _tracking source performance is a goal_
 - **Labor:** TBD (mayordomo, vaqueros, headcount, pay)
-- **Stocking rate:** **~1.68 head/ha on actual potrero** _(266 ÷ 158.67)_ — near the top
-  of the 1–2/ha rotated-pasture benchmark, i.e. **not under-stocked**. (1.38/ha if measured
-  against the full 193.41 ha titled area.)
+- **Stocking rate:** **~1.68 head/ha** if the area is 193.41 ha (near the top of the 1–2/ha
+  rotated benchmark) — but **~2.13–2.27 head/ha if the cadastre's 151.85 ha is right**, which
+  would put us **above** the benchmark, i.e. **overstocked**. Resolving the area question
+  above therefore decides whether we are at capacity or over it — material for the coming
+  verano ([`operations/water/`](operations/water/README.md)).
 
 ## Systems of record
 
