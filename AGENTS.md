@@ -24,6 +24,19 @@ trust his recollection if it conflicts with the data.*
 ## How to work here (conventions)
 
 - **Commits:** small, logical, committed as you go. **Never add a co-author** (global user rule). Commit only when work is real; the derived DB is committed too (see below).
+- **Provenance discipline (added 2026-08-21, at Manuel's instruction).** Every material fact
+  carries where it came from. Manuel's own statements are **input, not ground truth** — he has
+  told us twice now to *verify what he says or mark it unverified*, and the ~200 ha area is
+  the cautionary example (see below). Tag facts:
+  - **`[cadastre]` / `[SINIGAN]` / `[plano 2003]` / `[S#]`** — from a document or system of record.
+  - **`[owner, unverified]`** — Manuel said it; nothing corroborates it yet. Perfectly usable,
+    but say so, and don't let it harden into fact by repetition.
+  - **`[owner, corroborated by X]`** — he said it and something independent agrees. Promote it
+    and name what agreed.
+  - **`[derived]`** — computed from the above. Say from what.
+  A number with no provenance is a bug. **The ~200 ha figure sat in `profile.md` from the very
+  first commit with no source, unquestioned for months, and was wrong.** That is the failure
+  mode this rule exists to prevent.
 - **Data integrity:** **never invent statistics.** In research, cite sources by `[S#]` from `research/sources.md`; mark unsourced claims; label regional/foreign proxies. Mark unknowns `TBD`.
 - **Scope discipline (SINIGAN):** the owner has **one predio = Sabaleticas**. Other predios shown in the app are a known bug — never pull or mix them.
 - **Tone:** terse, direct, proactive. Manuel is technical (engineer/founder).

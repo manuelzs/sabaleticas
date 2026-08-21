@@ -79,40 +79,52 @@ parcel. "Verdún" is one of the potrero names on the 2003 plan, at the northern 
 road. Whether that is a coincidence of naming or a piece that came out of the old farm is
 unresolved.
 
-## Area: settled at 151.85 ha
+## Area: 151.85 ha is the best evidence — but 41.56 ha remain unexplained
 
-**Manuel confirmed (2026-08-21): we own only AP 1. "AP 2 Parte Alta" belongs to his cousin,**
-who inherited it as part of the same subdivision. So:
+**Use 151.85 ha.** `[cadastre — parcel AP 1 SABALETITAS, matrícula 023-16153, area computed
+from the official polygon]`. It is the only figure here that comes from a system of record
+rather than from memory, and Manuel's read of the rendered map agrees with it
+`[owner, corroborated by cadastre]`.
 
-> ### **Sabaleticas = 151.85 ha.** That is the number to use everywhere.
+### The discrepancy has not gone away
 
-### A correction to an earlier reading
+| Figure | Source | Status |
+|---|---|---|
+| **151.85 ha** | Cadastre, AP 1 SABALETITAS, 2026 | Best evidence |
+| 193.41 ha | 2003 survey plan, "Lote No. 1" | A real document, describing a larger parcel |
+| ~200 ha | Owner, at project kickoff | **Unsourced and wrong** — carried unchallenged from the first commit |
+| **41.56 ha** | The gap | **Unexplained** |
 
-I initially flagged that AP 2's 41.16 ha almost exactly closes the gap between AP 1
-(151.85 ha) and the 2003 plan's Lote No. 1 (193.41 ha), and treated that as evidence they
-were once one parcel. **That inference was wrong**, for a reason the geometry settles:
+Two documents disagree by 41.56 ha and **we do not know why.** That is not resolved by
+preferring one of them. Either the 2003 parcel was later reduced, or the two describe
+different things.
 
-> **AP 1 and AP 2 are 149 m apart** — genuinely detached, not merely road-separated. Lote
-> No. 1 was drawn in 2003 as a *single contiguous outline*, so it cannot simply be AP 1 plus
-> AP 2. The area match is a coincidence.
+### What I got wrong, and what's left
 
-**The 41.56 ha gap is still real** — the 2003 parcel was bigger than what we hold — but AP 2
-is not where it went. Better candidates, both adjacent to our northern boundary and both
-**created in the cadastre only in December 2025** (the surrounding parcels date from May
-2025), and both split from the same parent:
+I first read AP 2 Parte Alta (41.16 ha) as the missing piece, since it closes the gap to
+within 1%. **The geometry kills that**: AP 1 and AP 2 are **149 m apart**, and Lote No. 1 was
+drawn as a *single contiguous outline*, so it cannot be the two of them. The area match is a
+coincidence. Manuel separately states AP 2 belongs to his cousin, who inherited it in the
+same subdivision `[owner, unverified — the next-week check tests this]`.
+
+A remaining **hypothesis, not a finding** — two parcels adjacent to our northern boundary,
+both created in the cadastre only in **December 2025** (neighbours date from May 2025), both
+split from the same parent:
 
 | Parcel | ha | Note |
 |---|---|---|
-| Fca La Esmeralda | 22.61 | `location.md` already lists "Casa La Esmeralda" as a family parcel |
-| **Fca El Verdún** | 8.78 | **"Verdún" is a potrero name on the 2003 plan**, at the northern end near the road (7.08 ha there) |
-| Subtotal | 31.39 | leaves ~10.2 ha still unexplained |
+| Fca La Esmeralda | 22.61 | `location.md` lists "Casa La Esmeralda" as a family parcel |
+| **Fca El Verdún** | 8.78 | **"Verdún" is a potrero on the 2003 plan**, at the northern end (7.08 ha there) |
+| Subtotal | 31.39 | **still leaves ~10.2 ha unaccounted** |
 
-That is a hypothesis, not a finding. It does **not** change our area — 151.85 ha is confirmed
-either way — it only bears on the history.
+**What would actually settle it:** the *certificado de tradición y libertad* for **023-16153**.
+It lists the property's whole chain of title — every segregation and sale — so it would show
+directly whether land was split off our parcel since 2003, and when. Worth ordering alongside
+the tax check.
 
-## The tax question — check on Monday
+## The tax question — checking next week
 
-Parked to Monday (out of office hours). The concern, in Manuel's words:
+Parked to next week. The concern, in Manuel's words:
 
 >  *"We might be paying for stuff that isn't ours in taxes"* — potentially across the ~20
 > years since the subdivision.

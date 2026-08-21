@@ -19,17 +19,21 @@ _Anything marked TBD is unconfirmed — fill in when known._
 
 ## The land
 
-Source: the 1:5000 survey plan of **enero 2003** — see
-[`operations/land/plano-2003.md`](operations/land/plano-2003.md). Areas are from that plan
-and are 23 years old; layout on the ground still to be confirmed.
+Every figure below carries its provenance — see the convention in
+[`AGENTS.md`](AGENTS.md). Two documents disagree about the area and **the disagreement is not
+resolved**; both are shown rather than picking one silently.
 
-- **Total area:** ⚠️ **contested — 151.85 ha or 193.41 ha.** The **cadastre** (Catastro
-  Antioquia, pulled 2026-08-21) puts our parcel *AP 1 SABALETITAS* at **151.85 ha**; the 2003
-  plan's *Lote No. 1* was **193.41 ha**. The 41.56 ha gap matches the adjacent parcel *AP 2
-  Parte Alta* (41.16 ha), which Manuel says now belongs to a neighbour. **Open question,
-  possibly a tax overpayment** → [`operations/land/geo/README.md`](operations/land/geo/README.md)
-- **Usable pasture:** **158.67 ha** of potrero (82% of the farm). Rest: playón 21.90,
-  sapal 5.52, rastrojos 3.60, cañaverales 1.95, guaduales 1.13, represas 0.64
+- **Total area: 151.85 ha** `[cadastre — Catastro Antioquia, parcel AP 1 SABALETITAS,
+  matrícula 023-16153, computed from the official polygon 2026-08-21]`. **This is the best
+  evidence we have and the number to use.**
+  - ⚠️ **But a 41.56 ha discrepancy is open and unexplained.** The 2003 survey plan's *Lote
+    No. 1* was **193.41 ha** `[plano 2003]`. Where the difference went is **not established** —
+    see [`operations/land/geo/README.md`](operations/land/geo/README.md).
+  - ~~"~200 ha"~~ `[owner, unverified — and wrong]`. Carried from the first commit with no
+    source. Superseded 2026-08-21. Kept visible as a caution.
+- **Usable pasture:** **158.67 ha** of potrero `[plano 2003]` — but that is 82% *of the 2003
+  parcel*, so it inherits the unresolved area gap. Rest: playón 21.90, sapal 5.52, rastrojos
+  3.60, cañaverales 1.95, guaduales 1.13, represas 0.64 `[plano 2003]`
 - **Blocks on the 2003 plan:** Lajas 37.43 · Consuelo 22.17 · Siberia 22.11 · San Matías 17.57 ·
   Riachón 12.45 · Jagüe 11.65 · Abisinia 9.94 · Balkanes 7.94 · Verdún 7.08
 - **Pasture type / grasses:** TBD (likely improved tropical — braquiaria, estrella, guinea — _to confirm_; the plan carries no forage data)
@@ -37,10 +41,12 @@ and are 23 years old; layout on the ground still to be confirmed.
   0.64 ha represa, at least two nacimientos + a manantial, a **piped network to tanks**, plus
   **substantial reservoir-tank storage added since 2003**. The 2003 map of it is partial.
   → active workstream: [`operations/water/`](operations/water/README.md)
-- **Subdivision:** **finely subdivided into many fenced potreros** — the dozens of named
-  parcels on the 2003 plan (Bilbao, Siberia, Portugal, Marruecos, El Cairo…) are real
-  paddocks, and **more have been added since**. Current count and layout: TBD, updated plan
-  coming. **Rotation actually being run today: TBD — the key pasture question**
+- **Subdivision:** **finely subdivided into many fenced potreros** `[owner, corroborated by
+  the 0.5 m orthophoto — hedgerows and fence lines are clearly visible dividing the pasture
+  into blocks]`. The dozens of named parcels on the 2003 plan (Bilbao, Siberia, Portugal,
+  Marruecos, El Cairo…) are real paddocks, and more have been added since `[owner,
+  unverified]`. Current count and layout: TBD. **Rotation actually being run today: TBD — the
+  key pasture question**
 - **Owned vs. leased:** TBD
 
 ## The herd
@@ -74,11 +80,11 @@ and are 23 years old; layout on the ground still to be confirmed.
 - **Sales channels:** TBD (subasta/feria, comisionista, direct)
 - **Sourcing:** buy females in lotes from various sources — _tracking source performance is a goal_
 - **Labor:** TBD (mayordomo, vaqueros, headcount, pay)
-- **Stocking rate:** **~1.68 head/ha** if the area is 193.41 ha (near the top of the 1–2/ha
-  rotated benchmark) — but **~2.13–2.27 head/ha if the cadastre's 151.85 ha is right**, which
-  would put us **above** the benchmark, i.e. **overstocked**. Resolving the area question
-  above therefore decides whether we are at capacity or over it — material for the coming
-  verano ([`operations/water/`](operations/water/README.md)).
+- **Stocking rate: ~2.1–2.3 head/ha** `[derived: 266 head ÷ ~117–125 ha of potrero, using the
+  cadastral 151.85 ha]` — **above** the 1–2/ha rotated-pasture benchmark, i.e. **overstocked**.
+  On the older 193.41 ha basis it would be 1.68/ha, near the top of the range. Either way the
+  direction is the same and it matters for the coming verano
+  ([`operations/water/`](operations/water/README.md)).
 
 ## Systems of record
 
