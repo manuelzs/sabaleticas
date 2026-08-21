@@ -15,7 +15,7 @@ trust his recollection if it conflicts with the data.*
 
 ## The operation (facts)
 
-- **Location:** La Pintada, suroeste de Antioquia, Colombia — *tierra caliente*, ~550–600 m, Cauca valley. Vereda La Bocana.
+- **Location:** La Pintada, suroeste de Antioquia, Colombia — *tierra caliente*, Cauca valley. **Elevation 628–821 m** `[IGAC terrain model]` (the old "~550–600 m" was unsourced and wrong). ⚠️ Vereda: `profile.md` says **La Bocana** `[owner, unverified]` but the 2003 plan says **El Mamoncillo** — unresolved.
 - **Land:** ⚠️ **area contested.** Catastro Antioquia (2026-08-21) records our parcel *AP 1 SABALETITAS* (matrícula 023-16153) at **151.85 ha**; the 2003 survey plan's Lote No. 1 was **193.41 ha** with 158.67 ha of potrero. The 41.56 ha gap matches neighbouring parcel *AP 2 Parte Alta* — **possible tax overpayment, unresolved** (`operations/land/geo/README.md`). **Herd:** ~266 head → **1.68/ha** on the old area, **~2.1–2.3/ha** on the cadastral one (i.e. possibly *over*stocked). Never quote a per-hectare figure without saying which area it uses.
 - **Model:** **ceba de hembras** — buys **females**, fattens on pasture, sells on weight. Females are the deliberate strategy (≈256 hembras / 10 machos).
 - **Born-on-farm calves:** some purchased females arrive pregnant; calves are born here, raised to weaning, sold then — **not fattened**. The few machos are these.

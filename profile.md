@@ -13,7 +13,10 @@ _Anything marked TBD is unconfirmed — fill in when known._
 
 - **Name:** Hacienda Sabaleticas
 - **Location:** La Pintada, suroeste de Antioquia, Colombia
-- **Setting:** *Tierra caliente* on the Cauca river (~hot lowland, ~550–600 m)
+- **Setting:** *Tierra caliente*, Cauca river valley. **Elevation 628–821 m, 191 m of vertical
+  range** `[IGAC terrain model, sampled 2026-08-21]` — corrects the unsourced "~550–600 m"
+  carried since the first commit. Median slope 10.8°; ~22% of the farm is steep (15–25°).
+  See [`operations/land/geo/terrain-and-climate.md`](operations/land/geo/terrain-and-climate.md)
 - **Owner:** Manuel
 - **Advisor:** Claude
 
@@ -37,10 +40,14 @@ resolved**; both are shown rather than picking one silently.
 - **Blocks on the 2003 plan:** Lajas 37.43 · Consuelo 22.17 · Siberia 22.11 · San Matías 17.57 ·
   Riachón 12.45 · Jagüe 11.65 · Abisinia 9.94 · Balkanes 7.94 · Verdún 7.08
 - **Pasture type / grasses:** TBD (likely improved tropical — braquiaria, estrella, guinea — _to confirm_; the plan carries no forage data)
-- **Water:** Río Poblanco (west edge), quebradas Sabaletica / Buenavista / Cascajón, a
-  0.64 ha represa, at least two nacimientos + a manantial, a **piped network to tanks**, plus
-  **substantial reservoir-tank storage added since 2003**. The 2003 map of it is partial.
+- **Water:** Río Poblanco (west edge) `[orthophoto + cadastre]`, quebradas Sabaletica /
+  Buenavista / Cascajón `[plano 2003]`, **4 mapped water bodies inside the parcel**
+  `[IGAC 1:5000]`, a 0.64 ha represa + nacimientos + a piped network `[plano 2003, partial]`,
+  plus **reservoir-tank storage added since 2003** `[owner, unverified]`.
   → active workstream: [`operations/water/`](operations/water/README.md)
+- **Land cover:** **~47 ha forest / ~105 ha open** `[derived: IGAC 1:5000 Bosque ∩ parcel]`.
+  Much of the forest is gallery woodland along the quebradas and hedgerows, so it is *not* all
+  lost to grazing — but the open-land figure is the honest lower bound for grazing area
 - **Subdivision:** **finely subdivided into many fenced potreros** `[owner, corroborated by
   the 0.5 m orthophoto — hedgerows and fence lines are clearly visible dividing the pasture
   into blocks]`. The dozens of named parcels on the 2003 plan (Bilbao, Siberia, Portugal,
