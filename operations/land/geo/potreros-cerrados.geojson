@@ -304,16 +304,16 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "San Matías",
+    "nombre": "Potrero 3",
     "n": 3,
-    "nombrado": true,
+    "nombrado": false,
     "estado": "por_verificar",
     "estado_nota": "el plano de 2007 muestra dos potreros aquí (San Mateo y San Matías); en la ortofoto no se ve la división. Manuel confirma en campo.",
     "subdivide_en": [
      "San Mateo",
      "San Matías"
     ],
-    "subdivide_nota": "OJO: no está en juego sólo la línea, también el NOMBRE. Hoy la cara entera se llama San Matías; si el plano tiene razón, la parte norte es San Mateo y sólo la sur es San Matías. Manuel lo confirmará en campo. Las 6,8 ha de hoy tampoco cuadran con las 8,58 que suman los dos rótulos de 2007, así que los bordes tampoco coinciden.",
+    "subdivide_nota": "OJO: no está en juego sólo la línea, también el NOMBRE. Hoy la cara entera se llama San Matías; si el plano tiene razón, la parte norte es San Mateo y sólo la sur es San Matías. Manuel lo confirmará en campo. Las 6,8 ha de hoy tampoco cuadran con las 8,58 que suman los dos rótulos de 2007, así que los bordes tampoco coinciden. [2026-08-22] Se le QUITÓ el nombre a la cara: Manuel no quiere verla rotulada «San Matías» mientras no esté partida, porque si el plano tiene razón sólo la mitad sur lo es. Sale numerada hasta que se defina la línea.",
     "area_ha": 6.8,
     "area_m2": 67953,
     "agua": [
