@@ -319,8 +319,8 @@
     "tipo": "cierre",
     "nombre": "Cierre 29–punto",
     "longitud_m": 115,
-    "motivo": "[owner] conecta con el punto marcado por Manuel",
-    "es_cerca": false,
+    "motivo": "cerca real desde el punto que marcó Manuel",
+    "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {

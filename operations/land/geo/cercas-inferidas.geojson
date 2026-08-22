@@ -74,6 +74,29 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_inferida",
+    "nombre": "Cerca 29–punto",
+    "longitud_m": 115,
+    "fuente": "[owner] cerca real desde el punto que marcó Manuel",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615282,
+      5.798782
+     ],
+     [
+      -75.616051,
+      5.798078
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
     "nombre": "Cerca 28–29",
     "longitud_m": 267,
     "fuente": "[owner] cerca real que el IGAC no capturó",
