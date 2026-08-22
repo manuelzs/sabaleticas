@@ -377,6 +377,23 @@ two to three times demand.** The system is losing water to *stoppages*, not to s
 | 5 | **Inspect and clean the float valve.** Check size and blockage; this is unfiltered quebrada water. **Do not redesign it** — see above. | low |
 | 6 | **Give the garden a higher take-off than the cattle** on the tanques intermedios. The garden then dies first, automatically, and the remaining volume is reserved for the bebederos — **no discipline required.** | low |
 
+### The line to the house, and what it pins down
+
+`[owner, 2026-08-21]` **Tanques intermedios → T-1 → T-2 → T-3 → casa principal.** The house is
+**not** fed directly from the intermedios, as this document previously drew it.
+
+That plus one confirmed trough brackets the two bad junctions without needing the plan at all:
+
+| | Constraint | Source |
+|---|---|---|
+| **T-1** | 747 m, trusted — Manuel can see its trench in the orthophoto | photo |
+| **T-3** | **≥ 720 m** — it feeds Bebedero 1 at 717 m, and the casa at 705 m below it | terrain + owner |
+| **T-2** | **between 720 and 747 m** — downstream of T-1, upstream of T-3 | ordering |
+
+> **Both junctions live in a 27 m band of elevation.** Turn on **Curvas 5 m** in the viewer and
+> that band is a visible strip on the ground — a far better place to look in the photo than
+> anywhere the 2003 plan puts them.
+
 ### ⚠️ How good these coordinates are — read before trusting any profile below
 
 `[owner, 2026-08-21]` Manuel, on everything transcribed off the 2003 plan:
@@ -554,12 +571,14 @@ Two things worth taking from it:
    above far less speculative: **we are restoring an idea the builders had, not importing one.**
    It sits on the **tanques intermedios → casa principal** leg. The leg that is failing — the
    **entrada to the rompecargas** — apparently has none.
-2. **It lands 1.1 m from the schematic straight line** for that leg, at 34 % along.
+2. ~~It lands 1.1 m from the schematic straight line for that leg~~ — **❌ retracted.**
 
-> That second point is a free calibration. An independent feature off a 2003 drawing falling
-> within a metre of a line we drew by joining two endpoints says the **schematic routes are far
-> better than "indicative"** on this leg — and raises confidence in the terrain profiles run
-> along them.
+> **The "free calibration" claim is void.** I compared the ventosa against a straight line drawn
+> from the tanques intermedios to the casa principal — but Manuel has since confirmed the line
+> does not run that way at all. It goes **intermedios → T-1 → T-2 → T-3 → casa**
+> `[owner, 2026-08-21]`. The ventosa falling near a route that does not exist is a coincidence,
+> not a confirmation, and it never supported the conclusion I drew from it about the schematic
+> routes being better than indicative.
 
 ⚠️ **Existence today is unconfirmed.** Per Manuel's standing rule, nothing from the 2003 plan
 counts as current until checked in the field. Add it to the walk-the-pipes list: **is it still
