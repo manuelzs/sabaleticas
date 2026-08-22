@@ -1203,7 +1203,12 @@ def main():
             continue
         # "inside" has to allow a point that sits ON the ring: a fence that divides an
         # enclosure runs boundary to boundary, so its two tips belong exactly on it, and a
-        # strict test would throw the whole fence out for being correct.
+        # strict interior test would throw the whole fence out for being correct.
+        #
+        # The margin is 0.5 m, not a comfortable one. It exists only because coordinates are
+        # stored to six decimals — about 0.11 m — so a point put exactly on the ring can
+        # still miss it by a rounding step. A tip that needs more than that is not on the
+        # boundary and should be moved, not tolerated.
         def _dentro(p, r=ring):
             if inside(p, [[r]]):
                 return True
@@ -1216,7 +1221,7 @@ def main():
                 if dd == 0:
                     continue
                 t = max(0.0, min(1.0, ((px - ax) * dx + (py - ay) * dy) / dd))
-                if math.hypot(px - (ax + t * dx), py - (ay + t * dy)) <= 2.0:
+                if math.hypot(px - (ax + t * dx), py - (ay + t * dy)) <= 0.5:
                     return True
             return False
         dentro = [l for l in lines if len(l) > 1 and all(_dentro(p) for p in l)]
