@@ -743,18 +743,18 @@
   {
    "id": "agua:beb-9",
    "tipo": "bebedero",
-   "nombre": "Bebedero 9 (aprox.)",
+   "nombre": "Bebedero 9",
    "cota_m": 732,
    "geo": [
-    -75.610959,
-    5.798724
+    -75.610992,
+    5.798738
    ],
-   "pos_confianza": "baja",
-   "pos_motivo": "aproximada (Manuel)",
+   "pos_confianza": "alta",
+   "pos_motivo": "esquina de cerca señalada por Manuel",
    "props": {
     "n": 9,
     "alimentado_por": "[owner, 2026-08-22] T-1 (abajo de intermedios).",
-    "fuente": "[owner, 2026-08-22] Capturado por Manuel en el visor.",
+    "fuente": "[owner, 2026-08-22] Manuel lo situó en la esquina de cerca que marcó en el visor. Sustituye la posición aproximada leída del plano.",
     "nombre_definitivo": "[pendiente] Nombre real con los nombres de los potreros."
    },
    "pid": [

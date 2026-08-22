@@ -65,6 +65,12 @@
    ],
    "llega al lindero en el quiebre que marcó Manuel",
    true
+  ],
+  [
+   23,
+   "agua:beb-9",
+   "llega a la esquina donde está el Bebedero 9",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

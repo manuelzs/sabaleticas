@@ -573,7 +573,8 @@ def main():
                     continue
                 d_m = math.hypot((pos[vb][0] - pos[va][0]) * LON2M,
                                  (pos[vb][1] - pos[va][1]) * LAT2M)
-                flag = "  ⚠ muy largo" if d_m > 60 else ""
+                lim = 400 if es_cerca else 60      # a real fence may be long; a gap may not
+                flag = "  ⚠ muy largo" if d_m > lim else ""
                 print(f"    {a} → {'lindero' if isinstance(b, list) else b}: {d_m:6.1f} m{flag}")
                 adj[va].add(vb)
                 adj[vb].add(va)
@@ -607,7 +608,8 @@ def main():
                 continue
             d_m = math.hypot((pos[vb][0] - pos[va][0]) * LON2M,
                              (pos[vb][1] - pos[va][1]) * LAT2M)
-            flag = "  ⚠ muy largo, ¿número equivocado?" if d_m > 120 else ""
+            lim = 400 if es_cerca else 120
+            flag = "  ⚠ muy largo, ¿número equivocado?" if d_m > lim else ""
             print(f"    cierre {a}–{b}: {d_m:6.1f} m{flag}")
             adj[va].add(vb)
             adj[vb].add(va)

@@ -1868,7 +1868,7 @@
     "n": 6,
     "nombrado": false,
     "area_ha": 3.62,
-    "area_m2": 36249,
+    "area_m2": 36247,
     "agua": [
      {
       "id": "agua:tanques-intermedios",
@@ -1878,9 +1878,9 @@
      },
      {
       "id": "agua:beb-9",
-      "nombre": "Bebedero 9 (aprox.)",
+      "nombre": "Bebedero 9",
       "tipo": "bebedero",
-      "confianza": "baja"
+      "confianza": "alta"
      },
      {
       "id": null,

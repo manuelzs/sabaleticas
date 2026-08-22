@@ -4,7 +4,7 @@
 > run `python3 scripts/water_inventory.py`. Position confidence is stored per feature
 > as `pos_confianza`, so this file cannot drift from the map.
 
-**25 points total.** 12 baja · 4 media · 9 alta
+**25 points total.** 11 baja · 4 media · 10 alta
 
 Manuel, 2026-08-22: *"when I go to confirm at the farm, I don't want to have to go to
 every single one of these places if I already know the reality."*
@@ -19,7 +19,6 @@ every single one of these places if I already know the reality."*
 | Bebedero | **Bebedero 6 (aprox.)** | 678 m | aproximada (Manuel) |
 | Bebedero | **Bebedero 7 (aprox.)** | 675 m | aproximada (Manuel) |
 | Bebedero | **Bebedero 8 (aprox.)** | 693 m | aproximada (Manuel) |
-| Bebedero | **Bebedero 9 (aprox.)** | 732 m | aproximada (Manuel) |
 | Bocatoma | **Bocatoma 1** | None m | sin coordenadas — fuera del predio, al oriente |
 | Bocatoma | **Bocatoma 2** | None m | sin coordenadas — fuera del predio, al oriente |
 | Represa | **Represa principal (el lago)** | 778 m |  |
@@ -49,6 +48,7 @@ Identified against the orthophoto or the cadastre. **Already reality.**
 | Bebedero | **Bebedero 2** | 748 m | ortofoto + hueco de cerca IGAC a 0 m |
 | Bebedero | **Bebedero 3** | 729 m | ortofoto + hueco de cerca IGAC a 0 m |
 | Bebedero | **Bebedero 4** | 700 m | identificado por Manuel en el hueco de cerca 19–20 |
+| Bebedero | **Bebedero 9** | 732 m | esquina de cerca señalada por Manuel |
 | Casa | **Casa de la entrada** | 813 m | Catastro IGAC 1:5000 |
 | Casa | **Casa principal** | 705 m | Catastro IGAC 1:5000 |
 | Tanque | **Tanque principal 1 (~50.000 L)** | 811 m | Manuel, coordenada del visor |

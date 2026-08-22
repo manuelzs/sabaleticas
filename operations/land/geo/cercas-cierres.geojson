@@ -288,6 +288,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 23–beb-9",
+    "longitud_m": 190,
+    "motivo": "llega a la esquina donde está el Bebedero 9",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610312,
+      5.800313
+     ],
+     [
+      -75.610992,
+      5.798738
+     ]
+    ]
+   }
   }
  ]
 }

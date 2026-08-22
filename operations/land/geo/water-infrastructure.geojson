@@ -714,21 +714,21 @@
    "type": "Feature",
    "properties": {
     "tipo": "bebedero",
-    "nombre": "Bebedero 9 (aprox.)",
+    "nombre": "Bebedero 9",
     "altura_m": 732,
-    "pos_confianza": "baja",
-    "pos_motivo": "aproximada (Manuel)",
+    "pos_confianza": "alta",
+    "pos_motivo": "esquina de cerca señalada por Manuel",
     "n": 9,
     "alimentado_por": "[owner, 2026-08-22] T-1 (abajo de intermedios).",
-    "fuente": "[owner, 2026-08-22] Capturado por Manuel en el visor.",
+    "fuente": "[owner, 2026-08-22] Manuel lo situó en la esquina de cerca que marcó en el visor. Sustituye la posición aproximada leída del plano.",
     "nombre_definitivo": "[pendiente] Nombre real con los nombres de los potreros.",
     "_id": "agua:beb-9"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.610959,
-     5.798724
+     -75.610992,
+     5.798738
     ]
    }
   },
@@ -1130,9 +1130,9 @@
    "properties": {
     "tipo": "tuberia",
     "nombre": "T-1 → Bebedero 9 (trazado esquemático)",
-    "longitud_m": 122,
+    "longitud_m": 124,
     "desnivel_m": 15,
-    "gradiente_pct": 12.3,
+    "gradiente_pct": 12.1,
     "fuente": "[owner, 2026-08-22] Conexión confirmada por Manuel.",
     "_id": "agua:t-1--agua:beb-9"
    },
@@ -1144,8 +1144,8 @@
       5.797628
      ],
      [
-      -75.610959,
-      5.798724
+      -75.610992,
+      5.798738
      ]
     ]
    }

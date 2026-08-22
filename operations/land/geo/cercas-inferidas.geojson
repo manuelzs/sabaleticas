@@ -46,6 +46,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 23–beb-9",
+    "longitud_m": 190,
+    "fuente": "[owner] llega a la esquina donde está el Bebedero 9",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610312,
+      5.800313
+     ],
+     [
+      -75.610992,
+      5.798738
+     ]
+    ]
+   }
   }
  ]
 }
