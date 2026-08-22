@@ -84,8 +84,8 @@
  .card .why{color:var(--muted);font-size:11.5px;line-height:1.55;margin-top:10px}
  .card .why ul{margin:5px 0 0 14px;padding:0}
  /* rows: same material as the cards, accent moved to the left margin */
- .rows{display:flex;flex-direction:column;gap:9px;margin-bottom:30px}
- .row{position:relative;display:flex;align-items:flex-start;gap:20px;overflow:hidden;
+ .rows{display:flex;flex-direction:column;gap:8px;margin-bottom:30px}
+ .row{position:relative;display:flex;align-items:center;gap:20px;overflow:hidden;
    background:linear-gradient(100deg,#1b222a,#151b21);border:1px solid var(--line);
    border-radius:12px;padding:13px 17px 13px 20px}
  .row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--acc)}
@@ -93,8 +93,7 @@
    transform:translateY(-50%);border-radius:50%;background:var(--acc);opacity:.09;filter:blur(16px)}
  .row .main{flex:1;min-width:0;position:relative;z-index:1}
  .row .nm{font-weight:600;font-size:13px}
- .row .side{display:flex;align-items:flex-start;gap:14px;flex:none;position:relative;
-   z-index:1;padding-top:1px}
+ .row .side{display:flex;align-items:center;gap:14px;flex:none;position:relative;z-index:1}
  .row .col{width:118px;flex:none}
  .row .col.narrow{width:104px}
  .row .k{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em}
@@ -1826,24 +1825,18 @@ function sourceLive(f){
 }
 function rowSource(f){
   const [col,label]=SRC_STATE[f.estado]||['#78909c',f.estado||'?'];
-  const live=sourceLive(f);
   const canales=(f.canales||[]).map(c=>c.magnitud).join(' · ')||'—';
-  const pend=(Array.isArray(f.pendiente)?f.pendiente:f.pendiente?[f.pendiente]:[]);
   return `<div class="row" style="--acc:${col}">
-    <div class="main">
-      <div class="nm">${f.nombre}</div>
-      ${f.por_que_importa?`<div class="why">${f.por_que_importa}</div>`:''}
-      ${pend.length?`<div class="why"><ul>${pend.map(p=>`<li>${p}</li>`).join('')}</ul></div>`:''}
-    </div>
+    <div class="main"><div class="nm">${f.origen==='manual'?'✍︎':'⚙'} ${f.nombre}</div></div>
     <div class="side">
       <div class="col"><div class="k">canales</div><div class="v">${canales}</div></div>
       <div class="col"><div class="k">entidad</div>
         <div class="v">${f.entidad?entityName(f.entidad):'cualquiera'}</div></div>
-      <div class="col narrow"><div class="k">origen</div>
-        <div class="v">${f.origen==='manual'?'✍︎ manual':'⚙ automático'}</div></div>
+      <div class="col narrow"><div class="k">transporte</div>
+        <div class="v">${f.transporte||'—'}</div></div>
       <div class="col narrow"><div class="k">estado</div>
         <div class="v"><span class="pill" style="background:${col}22;color:${col}">${label}</span></div></div>
-      ${spark(live)}
+      ${spark(sourceLive(f))}
     </div>
   </div>`;
 }

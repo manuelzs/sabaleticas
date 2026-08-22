@@ -71,24 +71,18 @@ function sourceLive(f){
 }
 function rowSource(f){
   const [col,label]=SRC_STATE[f.estado]||['#78909c',f.estado||'?'];
-  const live=sourceLive(f);
   const canales=(f.canales||[]).map(c=>c.magnitud).join(' · ')||'—';
-  const pend=(Array.isArray(f.pendiente)?f.pendiente:f.pendiente?[f.pendiente]:[]);
   return `<div class="row" style="--acc:${col}">
-    <div class="main">
-      <div class="nm">${f.nombre}</div>
-      ${f.por_que_importa?`<div class="why">${f.por_que_importa}</div>`:''}
-      ${pend.length?`<div class="why"><ul>${pend.map(p=>`<li>${p}</li>`).join('')}</ul></div>`:''}
-    </div>
+    <div class="main"><div class="nm">${f.origen==='manual'?'✍︎':'⚙'} ${f.nombre}</div></div>
     <div class="side">
       <div class="col"><div class="k">canales</div><div class="v">${canales}</div></div>
       <div class="col"><div class="k">entidad</div>
         <div class="v">${f.entidad?entityName(f.entidad):'cualquiera'}</div></div>
-      <div class="col narrow"><div class="k">origen</div>
-        <div class="v">${f.origen==='manual'?'✍︎ manual':'⚙ automático'}</div></div>
+      <div class="col narrow"><div class="k">transporte</div>
+        <div class="v">${f.transporte||'—'}</div></div>
       <div class="col narrow"><div class="k">estado</div>
         <div class="v"><span class="pill" style="background:${col}22;color:${col}">${label}</span></div></div>
-      ${spark(live)}
+      ${spark(sourceLive(f))}
     </div>
   </div>`;
 }
