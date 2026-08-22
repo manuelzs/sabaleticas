@@ -898,6 +898,28 @@
    ],
    "es_cerca": true,
    "motivo": "cuarta cerca dentro de EL GUAICO, 113.9 m, de occidente a oriente. No toca el anillo del lote: va de una a otra de las dos cercas norte–sur, y las dos puntas se llevan exactamente sobre ellas (estaban a 1,09 y 0,58 m). Cuatro puntos capturados por Manuel sobre la ortofoto; sin cota en ninguno."
+  },
+  {
+   "polilinea": [
+    [
+     -75.61928,
+     5.804949
+    ],
+    [
+     -75.618897,
+     5.804906
+    ],
+    [
+     -75.618405,
+     5.804793
+    ],
+    [
+     -75.618094,
+     5.804694
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "quinta cerca dentro de EL GUAICO, 134.7 m, de occidente a oriente entre las dos cercas norte–sur. Las dos puntas se llevan exactamente sobre ellas (estaban a 0,32 y 0,49 m). Cuatro puntos de Manuel sobre la ortofoto, sin cota."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

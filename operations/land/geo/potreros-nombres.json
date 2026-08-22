@@ -265,6 +265,30 @@
     5.802441
    ],
    "fuente": "[owner + plano 2007, 2026-08-22] Manuel verificó el potrero 41 de la corrida del 2026-08-22 — una de las cuatro caras en que quedó partido EL GUAICO. «POBLANCO» ya aparecía en el levantamiento de 2007."
+  },
+  {
+   "nombre": "Palma",
+   "punto": [
+    -75.618168,
+    5.806255
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] Manuel: es Palma. Una de las caras de EL GUAICO. «PALMA» ya venía en el levantamiento de 2007. Manuel dio el NOMBRE, no el estado — queda sin confirmar."
+  },
+  {
+   "nombre": "Samán",
+   "punto": [
+    -75.618526,
+    5.805332
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] Manuel lo verificó — una de las caras de EL GUAICO. «SAMÁN» ya venía en el levantamiento de 2007. Manuel lo llamó «p 43» mirando la corrida anterior; al quitar la cara duplicada de El Guaico la numeración se corrió y es el 42. Es la única cara de 1,44 ha sin nombre que queda, así que no hay ambigüedad."
+  },
+  {
+   "nombre": "Mamoncillo",
+   "punto": [
+    -75.618863,
+    5.803832
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] Manuel lo verificó — una de las caras de EL GUAICO. «MAMONCILLO» ya venía en el levantamiento de 2007."
   }
  ]
 }

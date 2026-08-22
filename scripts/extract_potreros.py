@@ -1191,6 +1191,14 @@ def main():
                 if a / 10000 > 0.5:
                     print(f"      descartada por ser espejo de agua: {a/10000:.2f} ha")
                 continue
+        # A face lying inside a dictated enclosure that extracts on its OWN graph must not
+        # come out of this one too. Its fences live in both graphs, and once they close a
+        # loop without needing the parcel ring, the main graph produces the same face again
+        # and the area is counted twice — El Guaico went to 170.4 ha that way.
+        if _anillos and n_tot:
+            n_sub = sum(1 for q in muestras if inside(q, [[r] for r in _anillos]))
+            if n_sub / n_tot > 0.8:
+                continue
         if CORRALES and n_tot:
             n_cor = sum(1 for q in muestras if inside(q, [[r] for r in CORRALES]))
             if n_cor / n_tot > 0.8:

@@ -1193,8 +1193,8 @@
        5.804807
       ],
       [
-       -75.619285,
-       5.804941
+       -75.61928,
+       5.804949
       ],
       [
        -75.619151,
@@ -2978,196 +2978,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 18",
-    "n": 18,
-    "nombrado": false,
-    "estado": null,
-    "estado_nota": "",
-    "subdivide_en": [],
-    "subdivide_nota": "",
-    "area_ha": 4.17,
-    "area_m2": 41720,
-    "agua": [],
-    "sal": [],
-    "sin_agua": true,
-    "solo_natural": false,
-    "agua_por_confirmar": true,
-    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
-    "dictado": false,
-    "dictado_nota": "",
-    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
-    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
-   },
-   "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -75.619512,
-       5.804304
-      ],
-      [
-       -75.619496,
-       5.804293
-      ],
-      [
-       -75.619469,
-       5.804273
-      ],
-      [
-       -75.61945,
-       5.80426
-      ],
-      [
-       -75.619362,
-       5.804158
-      ],
-      [
-       -75.619324,
-       5.804096
-      ],
-      [
-       -75.619274,
-       5.804006
-      ],
-      [
-       -75.61919,
-       5.803856
-      ],
-      [
-       -75.619139,
-       5.803795
-      ],
-      [
-       -75.619077,
-       5.803721
-      ],
-      [
-       -75.618888,
-       5.803512
-      ],
-      [
-       -75.618819,
-       5.803426
-      ],
-      [
-       -75.618794,
-       5.803395
-      ],
-      [
-       -75.618724,
-       5.803227
-      ],
-      [
-       -75.618696,
-       5.803083
-      ],
-      [
-       -75.618697,
-       5.803044
-      ],
-      [
-       -75.6187,
-       5.80298
-      ],
-      [
-       -75.618737,
-       5.802849
-      ],
-      [
-       -75.618751,
-       5.8028
-      ],
-      [
-       -75.618791,
-       5.802689
-      ],
-      [
-       -75.618419,
-       5.802849
-      ],
-      [
-       -75.617703,
-       5.803152
-      ],
-      [
-       -75.61797,
-       5.803726
-      ],
-      [
-       -75.618128,
-       5.80414
-      ],
-      [
-       -75.618105,
-       5.804579
-      ],
-      [
-       -75.618094,
-       5.804699
-      ],
-      [
-       -75.618043,
-       5.805009
-      ],
-      [
-       -75.617962,
-       5.805432
-      ],
-      [
-       -75.617865,
-       5.805796
-      ],
-      [
-       -75.618009,
-       5.805805
-      ],
-      [
-       -75.618201,
-       5.805882
-      ],
-      [
-       -75.618866,
-       5.805991
-      ],
-      [
-       -75.619025,
-       5.80557
-      ],
-      [
-       -75.619036,
-       5.805339
-      ],
-      [
-       -75.619151,
-       5.80515
-      ],
-      [
-       -75.619285,
-       5.804941
-      ],
-      [
-       -75.619363,
-       5.804807
-      ],
-      [
-       -75.619486,
-       5.804421
-      ],
-      [
-       -75.619512,
-       5.804304
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "potrero",
     "nombre": "Sabaleticas",
-    "n": 19,
+    "n": 18,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3374,7 +3186,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Balkanes",
-    "n": 20,
+    "n": 19,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3473,7 +3285,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Serengueti",
-    "n": 21,
+    "n": 20,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3574,7 +3386,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Piñón",
-    "n": 22,
+    "n": 21,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3714,8 +3526,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 23",
-    "n": 23,
+    "nombre": "Potrero 22",
+    "n": 22,
     "nombrado": false,
     "estado": "final",
     "estado_nota": "",
@@ -3815,7 +3627,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Lajas",
-    "n": 24,
+    "n": 23,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3917,7 +3729,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Perfume",
-    "n": 25,
+    "n": 24,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4080,7 +3892,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Argelia",
-    "n": 26,
+    "n": 25,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4283,7 +4095,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Paraíso",
-    "n": 27,
+    "n": 26,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4394,7 +4206,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Marruecos",
-    "n": 28,
+    "n": 27,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4561,7 +4373,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Zanzíbar",
-    "n": 29,
+    "n": 28,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4674,7 +4486,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Consuelo",
-    "n": 30,
+    "n": 29,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4773,6 +4585,166 @@
       [
        -75.615696,
        5.796693
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Mamoncillo",
+    "n": 30,
+    "nombrado": true,
+    "estado": "final",
+    "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
+    "area_ha": 2.73,
+    "area_m2": 27337,
+    "agua": [],
+    "sal": [],
+    "sin_agua": true,
+    "solo_natural": false,
+    "agua_por_confirmar": true,
+    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
+    "dictado": false,
+    "dictado_nota": "",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.619512,
+       5.804304
+      ],
+      [
+       -75.619496,
+       5.804293
+      ],
+      [
+       -75.619469,
+       5.804273
+      ],
+      [
+       -75.61945,
+       5.80426
+      ],
+      [
+       -75.619362,
+       5.804158
+      ],
+      [
+       -75.619324,
+       5.804096
+      ],
+      [
+       -75.619274,
+       5.804006
+      ],
+      [
+       -75.61919,
+       5.803856
+      ],
+      [
+       -75.619139,
+       5.803795
+      ],
+      [
+       -75.619077,
+       5.803721
+      ],
+      [
+       -75.618888,
+       5.803512
+      ],
+      [
+       -75.618819,
+       5.803426
+      ],
+      [
+       -75.618794,
+       5.803395
+      ],
+      [
+       -75.618724,
+       5.803227
+      ],
+      [
+       -75.618696,
+       5.803083
+      ],
+      [
+       -75.618697,
+       5.803044
+      ],
+      [
+       -75.6187,
+       5.80298
+      ],
+      [
+       -75.618737,
+       5.802849
+      ],
+      [
+       -75.618751,
+       5.8028
+      ],
+      [
+       -75.618791,
+       5.802689
+      ],
+      [
+       -75.618419,
+       5.802849
+      ],
+      [
+       -75.617703,
+       5.803152
+      ],
+      [
+       -75.61797,
+       5.803726
+      ],
+      [
+       -75.618128,
+       5.80414
+      ],
+      [
+       -75.618105,
+       5.804579
+      ],
+      [
+       -75.618094,
+       5.804699
+      ],
+      [
+       -75.618405,
+       5.804793
+      ],
+      [
+       -75.618897,
+       5.804906
+      ],
+      [
+       -75.61928,
+       5.804949
+      ],
+      [
+       -75.619363,
+       5.804807
+      ],
+      [
+       -75.619486,
+       5.804421
+      ],
+      [
+       -75.619512,
+       5.804304
       ]
      ]
     ]
@@ -5963,8 +5935,96 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Tanzania",
+    "nombre": "Samán",
     "n": 42,
+    "nombrado": true,
+    "estado": "final",
+    "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
+    "area_ha": 1.44,
+    "area_m2": 14382,
+    "agua": [],
+    "sal": [],
+    "sin_agua": true,
+    "solo_natural": false,
+    "agua_por_confirmar": true,
+    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
+    "dictado": false,
+    "dictado_nota": "",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.618866,
+       5.805991
+      ],
+      [
+       -75.619025,
+       5.80557
+      ],
+      [
+       -75.619036,
+       5.805339
+      ],
+      [
+       -75.619151,
+       5.80515
+      ],
+      [
+       -75.61928,
+       5.804949
+      ],
+      [
+       -75.618897,
+       5.804906
+      ],
+      [
+       -75.618405,
+       5.804793
+      ],
+      [
+       -75.618094,
+       5.804699
+      ],
+      [
+       -75.618043,
+       5.805009
+      ],
+      [
+       -75.617962,
+       5.805432
+      ],
+      [
+       -75.617865,
+       5.805796
+      ],
+      [
+       -75.618009,
+       5.805805
+      ],
+      [
+       -75.618201,
+       5.805882
+      ],
+      [
+       -75.618866,
+       5.805991
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Tanzania",
+    "n": 43,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -6038,10 +6098,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 43",
-    "n": 43,
-    "nombrado": false,
-    "estado": null,
+    "nombre": "Palma",
+    "n": 44,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",
@@ -6123,7 +6183,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Rincón",
-    "n": 44,
+    "n": 45,
     "nombrado": true,
     "estado": "por_verificar",
     "estado_nota": "Manuel dice que es Rincón, pero el Mojón 15 queda 56 m al sur, fuera de la cara: puede que el potrero llegue hasta allá. Nombre en espera hasta decidir el borde.",
