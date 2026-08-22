@@ -138,6 +138,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 36–38",
+    "longitud_m": 74,
+    "fuente": "[owner] cerca real que el IGAC no capturó",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612991,
+      5.797186
+     ],
+     [
+      -75.612339,
+      5.797021
+     ]
+    ]
+   }
   }
  ]
 }

@@ -384,6 +384,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 36–38",
+    "longitud_m": 74,
+    "motivo": "cerca real que el IGAC no capturó",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612991,
+      5.797186
+     ],
+     [
+      -75.612339,
+      5.797021
+     ]
+    ]
+   }
   }
  ]
 }
