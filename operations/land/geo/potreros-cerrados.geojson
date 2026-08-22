@@ -1708,8 +1708,95 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Portugal",
+    "nombre": "Potrero 4",
     "n": 4,
+    "nombrado": false,
+    "area_ha": 5.12,
+    "area_m2": 51162,
+    "agua": [
+     {
+      "id": "agua:beb-4",
+      "nombre": "Bebedero 4",
+      "tipo": "bebedero",
+      "confianza": "alta"
+     },
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": false,
+    "agua_por_confirmar": false,
+    "agua_nota": "",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.615811,
+       5.800495
+      ],
+      [
+       -75.61583,
+       5.800189
+      ],
+      [
+       -75.615966,
+       5.799908
+      ],
+      [
+       -75.615282,
+       5.798782
+      ],
+      [
+       -75.612872,
+       5.798926
+      ],
+      [
+       -75.612834,
+       5.799213
+      ],
+      [
+       -75.613255,
+       5.799801
+      ],
+      [
+       -75.613749,
+       5.800226
+      ],
+      [
+       -75.613868,
+       5.80062
+      ],
+      [
+       -75.614342,
+       5.800591
+      ],
+      [
+       -75.614518,
+       5.80056
+      ],
+      [
+       -75.615811,
+       5.800495
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Portugal",
+    "n": 5,
     "nombrado": true,
     "area_ha": 4.49,
     "area_m2": 44912,
@@ -1791,8 +1878,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 5",
-    "n": 5,
+    "nombre": "Potrero 6",
+    "n": 6,
     "nombrado": false,
     "area_ha": 4.36,
     "area_m2": 43609,
@@ -1864,8 +1951,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 6",
-    "n": 6,
+    "nombre": "Potrero 7",
+    "n": 7,
     "nombrado": false,
     "area_ha": 3.62,
     "area_m2": 36247,
@@ -1957,8 +2044,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 7",
-    "n": 7,
+    "nombre": "Potrero 8",
+    "n": 8,
     "nombrado": false,
     "area_ha": 3.23,
     "area_m2": 32318,
@@ -2046,7 +2133,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Lajas",
-    "n": 8,
+    "n": 9,
     "nombrado": true,
     "area_ha": 3.21,
     "area_m2": 32092,
@@ -2137,8 +2224,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 9",
-    "n": 9,
+    "nombre": "Potrero 10",
+    "n": 10,
     "nombrado": false,
     "area_ha": 3.11,
     "area_m2": 31105,
@@ -2222,8 +2309,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 10",
-    "n": 10,
+    "nombre": "Potrero 11",
+    "n": 11,
     "nombrado": false,
     "area_ha": 1.82,
     "area_m2": 18233,
