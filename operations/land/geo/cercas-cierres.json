@@ -804,6 +804,56 @@
    ],
    "es_cerca": true,
    "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003."
+  },
+  {
+   "polilinea": [
+    [
+     -75.617486,
+     5.807009
+    ],
+    [
+     -75.617695,
+     5.806482
+    ],
+    [
+     -75.61785,
+     5.805916
+    ],
+    [
+     -75.617865,
+     5.805796
+    ],
+    [
+     -75.617962,
+     5.805432
+    ],
+    [
+     -75.618043,
+     5.805009
+    ],
+    [
+     -75.618094,
+     5.804699
+    ],
+    [
+     -75.618105,
+     5.804579
+    ],
+    [
+     -75.618128,
+     5.80414
+    ],
+    [
+     -75.61797,
+     5.803726
+    ],
+    [
+     -75.617703,
+     5.803152
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

@@ -2880,6 +2880,246 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 63,
+    "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota. (tramo 1 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617486,
+      5.807009
+     ],
+     [
+      -75.617695,
+      5.806482
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 65,
+    "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota. (tramo 2 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617695,
+      5.806482
+     ],
+     [
+      -75.61785,
+      5.805916
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 13,
+    "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota. (tramo 3 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.61785,
+      5.805916
+     ],
+     [
+      -75.617865,
+      5.805796
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 42,
+    "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota. (tramo 4 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617865,
+      5.805796
+     ],
+     [
+      -75.617962,
+      5.805432
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 48,
+    "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota. (tramo 5 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617962,
+      5.805432
+     ],
+     [
+      -75.618043,
+      5.805009
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 35,
+    "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota. (tramo 6 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618043,
+      5.805009
+     ],
+     [
+      -75.618094,
+      5.804699
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 13,
+    "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota. (tramo 7 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618094,
+      5.804699
+     ],
+     [
+      -75.618105,
+      5.804579
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 49,
+    "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota. (tramo 8 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618105,
+      5.804579
+     ],
+     [
+      -75.618128,
+      5.80414
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 49,
+    "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota. (tramo 9 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618128,
+      5.80414
+     ],
+     [
+      -75.61797,
+      5.803726
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 70,
+    "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota. (tramo 10 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.61797,
+      5.803726
+     ],
+     [
+      -75.617703,
+      5.803152
+     ]
+    ]
+   }
   }
  ]
 }
