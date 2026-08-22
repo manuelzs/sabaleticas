@@ -726,30 +726,6 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre punto–punto",
-    "longitud_m": 79,
-    "motivo": "la cerca 28–29 se prolonga al este en su misma dirección (rumbo 86,6°) hasta cruzar con la que baja del extremo 25 [Arranca ahora del final de la prolongación del 28, no del 28.]",
-    "es_cerca": true,
-    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
-   },
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.612884,
-      5.798822
-     ],
-     [
-      -75.612176,
-      5.798905
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cierre",
-    "nombre": "Cierre punto–punto",
     "longitud_m": 96,
     "motivo": "cerca real que une dos cercas casi paralelas (6,2° entre sí) — no engancha en vértices sino a media luz de cada una: 91,7 m, a 80,0° de una y 86,2° de la otra. Los dos puntos los marcó Manuel sobre las aristas, y caen a 0,0 y 0,1 m de ellas.",
     "es_cerca": true,
@@ -1629,6 +1605,78 @@
      [
       -75.612884,
       5.798822
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 22,
+    "motivo": "cerca real por el drenaje 34 (tramos 34–36) en vez de la recta de 78,9 m: 98,3 m siguiendo el cauce, que se aparta hasta 14,4 m de ella. La punta oriente ya coincidía exactamente con el vértice de la recta; la occidente se lleva al otro vértice (estaba a 11,9 m), que es el final de la prolongación dictada del extremo 28. (tramo 1 de 3)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612884,
+      5.798822
+     ],
+     [
+      -75.612715,
+      5.798711
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 27,
+    "motivo": "cerca real por el drenaje 34 (tramos 34–36) en vez de la recta de 78,9 m: 98,3 m siguiendo el cauce, que se aparta hasta 14,4 m de ella. La punta oriente ya coincidía exactamente con el vértice de la recta; la occidente se lleva al otro vértice (estaba a 11,9 m), que es el final de la prolongación dictada del extremo 28. (tramo 2 de 3)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612715,
+      5.798711
+     ],
+     [
+      -75.612475,
+      5.798757
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 37,
+    "motivo": "cerca real por el drenaje 34 (tramos 34–36) en vez de la recta de 78,9 m: 98,3 m siguiendo el cauce, que se aparta hasta 14,4 m de ella. La punta oriente ya coincidía exactamente con el vértice de la recta; la occidente se lleva al otro vértice (estaba a 11,9 m), que es el final de la prolongación dictada del extremo 28. (tramo 3 de 3)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612475,
+      5.798757
+     ],
+     [
+      -75.612176,
+      5.798905
      ]
     ]
    }

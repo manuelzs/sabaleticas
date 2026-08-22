@@ -3088,15 +3088,213 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Perfume",
+    "nombre": "Potrero 20",
     "n": 20,
+    "nombrado": false,
+    "estado": "final",
+    "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
+    "area_ha": 3.23,
+    "area_m2": 32317,
+    "agua": [
+     {
+      "id": "agua:beb-5",
+      "nombre": "Bebedero 5",
+      "tipo": "bebedero",
+      "confianza": "alta"
+     },
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [
+     {
+      "id": "ganado:saladero-1",
+      "nombre": "Saladero 1",
+      "donde": "dentro",
+      "confianza": "alta"
+     }
+    ],
+    "sin_agua": false,
+    "solo_natural": false,
+    "agua_por_confirmar": false,
+    "agua_nota": "",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.611504,
+       5.804018
+      ],
+      [
+       -75.612722,
+       5.803423
+      ],
+      [
+       -75.61203,
+       5.802605
+      ],
+      [
+       -75.611413,
+       5.802377
+      ],
+      [
+       -75.611058,
+       5.802364
+      ],
+      [
+       -75.611011,
+       5.802484
+      ],
+      [
+       -75.610955,
+       5.802595
+      ],
+      [
+       -75.610659,
+       5.803257
+      ],
+      [
+       -75.61021,
+       5.80356
+      ],
+      [
+       -75.610238,
+       5.803588
+      ],
+      [
+       -75.610912,
+       5.804307
+      ],
+      [
+       -75.611504,
+       5.804018
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Lajas",
+    "n": 21,
+    "nombrado": true,
+    "estado": "final",
+    "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
+    "area_ha": 3.21,
+    "area_m2": 32093,
+    "agua": [
+     {
+      "id": "agua:beb-3",
+      "nombre": "Bebedero 3",
+      "tipo": "bebedero",
+      "confianza": "alta"
+     }
+    ],
+    "sal": [
+     {
+      "id": "ganado:saladero-1",
+      "nombre": "Saladero 1",
+      "donde": "en el lindero",
+      "confianza": "alta"
+     }
+    ],
+    "sin_agua": false,
+    "solo_natural": false,
+    "agua_por_confirmar": false,
+    "agua_nota": "",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.60927,
+       5.802581
+      ],
+      [
+       -75.609304,
+       5.802616
+      ],
+      [
+       -75.609691,
+       5.803019
+      ],
+      [
+       -75.609735,
+       5.803065
+      ],
+      [
+       -75.61021,
+       5.80356
+      ],
+      [
+       -75.610659,
+       5.803257
+      ],
+      [
+       -75.610955,
+       5.802595
+      ],
+      [
+       -75.611011,
+       5.802484
+      ],
+      [
+       -75.611058,
+       5.802364
+      ],
+      [
+       -75.610794,
+       5.801408
+      ],
+      [
+       -75.610781,
+       5.801364
+      ],
+      [
+       -75.610749,
+       5.801363
+      ],
+      [
+       -75.609827,
+       5.801367
+      ],
+      [
+       -75.60927,
+       5.802581
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Perfume",
+    "n": 22,
     "nombrado": true,
     "estado": null,
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",
-    "area_ha": 3.24,
-    "area_m2": 32408,
+    "area_ha": 3.17,
+    "area_m2": 31707,
     "agua": [
      {
       "id": "agua:beb-8",
@@ -3202,6 +3400,14 @@
        5.798905
       ],
       [
+       -75.612475,
+       5.798757
+      ],
+      [
+       -75.612715,
+       5.798711
+      ],
+      [
        -75.612884,
        5.798822
       ],
@@ -3232,204 +3438,6 @@
       [
        -75.614275,
        5.798024
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "potrero",
-    "nombre": "Potrero 21",
-    "n": 21,
-    "nombrado": false,
-    "estado": "final",
-    "estado_nota": "",
-    "subdivide_en": [],
-    "subdivide_nota": "",
-    "area_ha": 3.23,
-    "area_m2": 32317,
-    "agua": [
-     {
-      "id": "agua:beb-5",
-      "nombre": "Bebedero 5",
-      "tipo": "bebedero",
-      "confianza": "alta"
-     },
-     {
-      "id": null,
-      "nombre": "drenaje",
-      "tipo": "natural",
-      "confianza": "IGAC"
-     }
-    ],
-    "sal": [
-     {
-      "id": "ganado:saladero-1",
-      "nombre": "Saladero 1",
-      "donde": "dentro",
-      "confianza": "alta"
-     }
-    ],
-    "sin_agua": false,
-    "solo_natural": false,
-    "agua_por_confirmar": false,
-    "agua_nota": "",
-    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
-    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
-   },
-   "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -75.611504,
-       5.804018
-      ],
-      [
-       -75.612722,
-       5.803423
-      ],
-      [
-       -75.61203,
-       5.802605
-      ],
-      [
-       -75.611413,
-       5.802377
-      ],
-      [
-       -75.611058,
-       5.802364
-      ],
-      [
-       -75.611011,
-       5.802484
-      ],
-      [
-       -75.610955,
-       5.802595
-      ],
-      [
-       -75.610659,
-       5.803257
-      ],
-      [
-       -75.61021,
-       5.80356
-      ],
-      [
-       -75.610238,
-       5.803588
-      ],
-      [
-       -75.610912,
-       5.804307
-      ],
-      [
-       -75.611504,
-       5.804018
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "potrero",
-    "nombre": "Lajas",
-    "n": 22,
-    "nombrado": true,
-    "estado": "final",
-    "estado_nota": "",
-    "subdivide_en": [],
-    "subdivide_nota": "",
-    "area_ha": 3.21,
-    "area_m2": 32093,
-    "agua": [
-     {
-      "id": "agua:beb-3",
-      "nombre": "Bebedero 3",
-      "tipo": "bebedero",
-      "confianza": "alta"
-     }
-    ],
-    "sal": [
-     {
-      "id": "ganado:saladero-1",
-      "nombre": "Saladero 1",
-      "donde": "en el lindero",
-      "confianza": "alta"
-     }
-    ],
-    "sin_agua": false,
-    "solo_natural": false,
-    "agua_por_confirmar": false,
-    "agua_nota": "",
-    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
-    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
-   },
-   "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -75.60927,
-       5.802581
-      ],
-      [
-       -75.609304,
-       5.802616
-      ],
-      [
-       -75.609691,
-       5.803019
-      ],
-      [
-       -75.609735,
-       5.803065
-      ],
-      [
-       -75.61021,
-       5.80356
-      ],
-      [
-       -75.610659,
-       5.803257
-      ],
-      [
-       -75.610955,
-       5.802595
-      ],
-      [
-       -75.611011,
-       5.802484
-      ],
-      [
-       -75.611058,
-       5.802364
-      ],
-      [
-       -75.610794,
-       5.801408
-      ],
-      [
-       -75.610781,
-       5.801364
-      ],
-      [
-       -75.610749,
-       5.801363
-      ],
-      [
-       -75.609827,
-       5.801367
-      ],
-      [
-       -75.60927,
-       5.802581
       ]
      ]
     ]
@@ -4068,8 +4076,105 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 29",
+    "nombre": "Toledo",
     "n": 29,
+    "nombrado": true,
+    "estado": "final",
+    "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
+    "area_ha": 2.22,
+    "area_m2": 22219,
+    "agua": [
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": true,
+    "agua_por_confirmar": true,
+    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.612391,
+       5.799602
+      ],
+      [
+       -75.612627,
+       5.800322
+      ],
+      [
+       -75.612674,
+       5.800419
+      ],
+      [
+       -75.612845,
+       5.800974
+      ],
+      [
+       -75.613338,
+       5.800936
+      ],
+      [
+       -75.613868,
+       5.80062
+      ],
+      [
+       -75.613749,
+       5.800226
+      ],
+      [
+       -75.613255,
+       5.799801
+      ],
+      [
+       -75.612834,
+       5.799213
+      ],
+      [
+       -75.612872,
+       5.798926
+      ],
+      [
+       -75.612884,
+       5.798822
+      ],
+      [
+       -75.612715,
+       5.798711
+      ],
+      [
+       -75.612475,
+       5.798757
+      ],
+      [
+       -75.612176,
+       5.798905
+      ],
+      [
+       -75.612391,
+       5.799602
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 30",
+    "n": 30,
     "nombrado": false,
     "estado": "final",
     "estado_nota": "confirmado por Manuel; el levantamiento de 2007 no le da nombre",
@@ -4156,95 +4261,6 @@
       [
        -75.614458,
        5.795555
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "potrero",
-    "nombre": "Toledo",
-    "n": 30,
-    "nombrado": true,
-    "estado": "final",
-    "estado_nota": "",
-    "subdivide_en": [],
-    "subdivide_nota": "",
-    "area_ha": 2.15,
-    "area_m2": 21519,
-    "agua": [
-     {
-      "id": null,
-      "nombre": "drenaje",
-      "tipo": "natural",
-      "confianza": "IGAC"
-     }
-    ],
-    "sal": [],
-    "sin_agua": false,
-    "solo_natural": true,
-    "agua_por_confirmar": true,
-    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
-    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
-    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
-   },
-   "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -75.612391,
-       5.799602
-      ],
-      [
-       -75.612627,
-       5.800322
-      ],
-      [
-       -75.612674,
-       5.800419
-      ],
-      [
-       -75.612845,
-       5.800974
-      ],
-      [
-       -75.613338,
-       5.800936
-      ],
-      [
-       -75.613868,
-       5.80062
-      ],
-      [
-       -75.613749,
-       5.800226
-      ],
-      [
-       -75.613255,
-       5.799801
-      ],
-      [
-       -75.612834,
-       5.799213
-      ],
-      [
-       -75.612872,
-       5.798926
-      ],
-      [
-       -75.612884,
-       5.798822
-      ],
-      [
-       -75.612176,
-       5.798905
-      ],
-      [
-       -75.612391,
-       5.799602
       ]
      ]
     ]
