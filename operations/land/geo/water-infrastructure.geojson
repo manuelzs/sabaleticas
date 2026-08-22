@@ -57,6 +57,26 @@
   {
    "type": "Feature",
    "properties": {
+    "tipo": "rompecargas",
+    "nombre": "Tanque rompecargas (~1.000 L)",
+    "altura_m": 798,
+    "capacidad_l": 1000,
+    "funcion": "Cámara rompe-presión: devuelve la línea a presión atmosférica a mitad de camino, partiendo una carga larga en dos cortas. Sin esto la tubería revienta por la pendiente.",
+    "posicion_en_el_sistema": "entre los tanques altos (813 m) y los intermedios (762 m)",
+    "fuente": "[owner] coordenada exacta dada por Manuel 2026-08-21 desde el visor.",
+    "confianza": "posición: alta · capacidad: baja (estimación de memoria)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.606162,
+     5.797126
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "tipo": "casa",
     "nombre": "Casa principal",
     "altura_m": 705,

@@ -91,7 +91,7 @@ def _round_geom(coords, dp=6):
 # point in a layer renders identically — which had a casa reading as a tanque.
 TIPO_COLOUR = {
     "tanque": "#00e5ff", "nacimiento": "#7cffcb", "bebedero": "#4dd0e1",
-    "represa": "#0091ea", "bocatoma": "#26c6da", "tuberia": "#b388ff",
+    "represa": "#0091ea", "rompecargas": "#ffd54f", "bocatoma": "#26c6da", "tuberia": "#b388ff",
     "casa": "#ff8a65", "potrero": "#ffee58",
 }
 

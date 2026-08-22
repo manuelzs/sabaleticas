@@ -116,11 +116,17 @@ Manuel spent last weekend surveying the water infrastructure. Current state `[ow
 We have roughly **three months** before the December–March window. Sequenced by cost per day
 of autonomy bought:
 
-### 0. Cost a gravity line from the lake to the mid tanks *(new, and it outranks everything)*
-The lake is **16 m above** the mid cluster and holds **tens of times** the tanks' volume. If a
-gravity connection is feasible, it converts our single-failure-mode supply into a genuinely
-redundant one, with no pump to buy, fuel or maintain. **Measure the lake's depth first** — it
-is cheap and it sizes the entire prize. Then price the pipe run.
+### 0. Price a pumped connection: lake → rompecargas *(outranks everything else here)*
+**138 m of pipe and 20 m of lift**, into a tank that already feeds the whole lower system.
+Behind it sits somewhere between 885 and 2,949 days of herd demand, against 13.6 days in the
+tanks. It converts a supply with one failure mode into a genuinely redundant one.
+
+Get a quote for: the pipe run, a pump of roughly 150–600 W depending on how fast you want to
+move water, and either a solar array (~400 Wp for daily demand) or a mains/genset feed.
+
+**Do not spend anything on measuring the lake's depth first.** Across every plausible dam
+height and shape the answer stays "years of demand," so the measurement cannot change the
+decision. Measure it out of curiosity, not as a gate.
 
 ### 1. Make the storage we already own actually usable *(cheapest, do first)*
 **Correction (2026-08-21): the two main tanks are NOT disconnected** — I had misread that.
@@ -261,7 +267,67 @@ Recorded because it is the first coherent description of the system we have.
    > (~10.6 bar to the house). Good instinct, correctly built — Manuel just didn't have the
    > word for it.
 
-## 🟢 The biggest finding in this document: the lake is above the mid tanks
+## ⚠️ Correction: I was wrong about gravity
+
+An earlier version of this section claimed the lake could gravity-feed the mid tanks, because
+it sits 16 m above them. **That was a bad piece of analysis.** I compared two endpoint
+elevations and never asked what the pipe has to cross in between — which is the only question
+that matters in gravity flow.
+
+Manuel corrected it from the ground, and the terrain model backs him up:
+
+- On the straight line from the reservoir to the mid tanks, the ground rises to **796 m —
+  18 m above the lake's surface.**
+- Searching the *entire* terrain grid for the route with the lowest possible high point, the
+  best available still tops out at **778 m**, exactly the lake surface. A pipe that grazes its
+  own source elevation has **zero driving head and carries no water.**
+- **A siphon cannot rescue it.** At 778 m elevation atmospheric pressure supports only
+  **9.4 m** of water column in theory, and about **7 m** in practice once vapour pressure,
+  dissolved air and friction are allowed for. The ridge needs 18 m. Not close.
+- Trenching through the hill is, as Manuel says, not sensible.
+
+**So the reservoir has to be pumped. He was right, I was wrong.**
+
+## 🟢 But the pump is small — and the break-pressure tank is why
+
+The confirmed profile, now that every point has a real coordinate:
+
+| | Elevation | |
+|---|---|---|
+| Tanques altos (entrada) | **813 m** | |
+| **Tanque rompecargas** | **798 m** | 5.797126, −75.606162 |
+| **Represa (el lago)** | **778 m** | 5.796346, −75.605185 |
+| Tanques intermedios | **762 m** | 5.797095, −75.609996 |
+| Casa principal | 705 m | |
+
+The reservoir sits in a hollow **20 m below the rompecargas — and only 138 m from it.**
+
+> ### That is the connection point. Not the mid tanks.
+> Pumping to the mid tanks means 539 m of pipe over an 18 m ridge. Pumping to the
+> **rompecargas** means **138 m of pipe and 20 m of lift** — and from there the water is
+> already *in the existing network*, flowing on by gravity to the mid tanks (−36 m) and the
+> house (−93 m). No new distribution to build.
+
+### What that pump looks like
+
+Design head ~25 m (20 m static plus friction over a short run), 55% efficiency:
+
+| Task | Flow | Power | Energy |
+|---|---|---|---|
+| Cover daily herd demand (9,576 L) over 8 h | 0.33 L/s | **148 W** | 1.2 kWh |
+| Cover daily herd demand over 4 h | 0.67 L/s | 297 W | 1.2 kWh |
+| Refill the whole mid cluster (60,000 L) in 12 h | 1.39 L/s | 619 W | 7.4 kWh |
+
+**This is a domestic-sized pump, not civil works.** And it is a natural fit for solar: covering
+daily herd demand needs roughly **400 Wp of panel** — two panels — with no fuel to buy and
+nothing to haul up the hill. There is a neat irony in it: **the drought that threatens the
+water supply also delivers the sunshine to move the water.**
+
+_All figures here are engineering estimates from the terrain model and standard hydraulics,
+not a quotation. A real design needs pipe sizing, a proper friction calculation and someone
+who does this for a living._
+
+## The scale of what is behind that pump
 
 The reservoir sits at **778 m** `[IGAC terrain model, at Manuel's coordinate]`, with a mapped
 surface of **0.56 ha (5,647 m²)** `[IGAC 1:5000]`. Set against the rest of the system:
@@ -273,13 +339,7 @@ surface of **0.56 ha (5,647 m²)** `[IGAC 1:5000]`. Set against the rest of the 
 | Main house | 705 m | 73 m below |
 | Lowest ground | 627 m | 151 m below |
 
-> ### The lake does not need a pump to reach the mid tanks. It is 16 m above them.
->
-> Manuel is right that a pump can't fill the top tanks — that's a 35 m lift. But **the lower
-> half of the system doesn't require pumping at all.** A pipe and enough head is the whole
-> mechanism. No fuel, no motor, nothing to fail in the middle of a drought.
-
-### And the volume dwarfs everything else
+### The volume dwarfs everything else
 
 Depth is unknown, so this is a range, not a figure:
 
