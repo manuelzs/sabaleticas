@@ -972,7 +972,44 @@ def main():
     # ("connect 38 and 41"), so they must survive a re-run — including a re-run where
     # earlier closures have already removed some of them. Existing numbers are matched
     # by position and kept; only genuinely new gaps get new ones.
-    tips = sorted([v for v, n in adj.items() if len(n) == 1],
+    # A fence inside a dictated enclosure closes on THAT enclosure's ring, which is not in
+    # this graph — so its tips look loose here and are not. Left in, El Guaico's subdivisions
+    # would pile up phantom open ends and bury the ones that are real.
+    #
+    # The test is landing ON the ring, not merely being inside it: a tip inside the parcel but
+    # away from the boundary genuinely is open, and must keep showing up.
+    _anillos = []
+    _f_dic = GEO / "potreros-dictados.json"
+    if _f_dic.exists():
+        _bnd = json.loads((GEO / "boundary.geojson").read_text(encoding="utf-8"))
+        for e in json.loads(_f_dic.read_text(encoding="utf-8"))["potreros"]:
+            if not e.get("subdividir_con_grafo"):
+                continue
+            for f in _bnd["features"]:
+                if f["properties"].get("name") == e.get("del_lindero"):
+                    _anillos.append([tuple(c[:2]) for c in f["geometry"]["coordinates"][0]])
+
+    def _sobre_anillo(p, tol=0.5):
+        for r in _anillos:
+            for a, b in zip(r, r[1:] + r[:1]):
+                ax, ay = a[0] * LON2M, a[1] * LAT2M
+                bx, by = b[0] * LON2M, b[1] * LAT2M
+                px, py = p[0] * LON2M, p[1] * LAT2M
+                dx, dy = bx - ax, by - ay
+                dd = dx * dx + dy * dy
+                if dd == 0:
+                    continue
+                t = max(0.0, min(1.0, ((px - ax) * dx + (py - ay) * dy) / dd))
+                if math.hypot(px - (ax + t * dx), py - (ay + t * dy)) <= tol:
+                    return True
+        return False
+
+    _cerrados = [v for v, n in adj.items() if len(n) == 1 and _sobre_anillo(pos[v])]
+    if _cerrados:
+        print(f"  {len(_cerrados)} puntas que cierran sobre el anillo de un potrero dictado "
+              f"— no cuentan como cerca abierta")
+    tips = sorted([v for v, n in adj.items()
+                   if len(n) == 1 and v not in set(_cerrados)],
                   key=lambda v: (-pos[v][1], pos[v][0]))
     # The registry is the authority and is append-only: a number, once given, is never
     # reused — not when its gap closes and drops out of cercas-abiertas, and not when the
