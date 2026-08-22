@@ -255,6 +255,14 @@
    "estado": "final",
    "nota": "confirmado por Manuel; el levantamiento de 2007 no le da nombre",
    "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 28 de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.611401,
+    5.800191
+   ],
+   "estado": "final",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 8 de la corrida del 2026-08-22."
   }
  ]
 }

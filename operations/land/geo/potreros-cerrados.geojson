@@ -1462,10 +1462,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 8",
+    "nombre": "Macarena",
     "n": 8,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",
