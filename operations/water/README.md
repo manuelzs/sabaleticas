@@ -391,18 +391,86 @@ Two things fall out of that:
 
 1. **Most of the head is already spent before the T.** More than half the fall on this leg
    happens in the first 198 m.
-2. **The T sits 13 m above the tanques intermedios, and the north branch has no storage at
-   all.** In an uncontrolled split, the branch with more head wins — and that is the branch
-   running down to the intermedios, the house and the garden.
+2. **The north branch carries no storage of its own** `[owner, 2026-08-21]` — it leans on the
+   tanques altos. The tanques intermedios exist *"mostly because of the high water usage of the
+   house."*
 
-> **Hypothesis `[derived, unverified]`: the north bebederos are not just unbuffered, they are
-> structurally outbid.** Whenever supply is short, 13 m of extra head pulls the water south.
+#### ❌ Retracted: the north is *not* outbid on head
 
-If the two-measurement test confirms the inflow deficit, this is the second thing to look at —
-and the fix is the same family as fix 6: **a balancing valve or an orifice at the T**, so the
-split is set deliberately rather than decided by gravity.
+An earlier version of this section argued the south branch wins the split because it has 13 m
+of extra head. **That was wrong, and the error is worth naming:** it compared a drop that was
+known (13 m, south) against a drop that was *not known at all* (north), and the unstated
+assumption — that the north branch stayed near the T's elevation — carried the whole conclusion.
 
-**Unknown:** where the ramal norte actually runs, and what it feeds. Not mapped.
+Manuel's coordinates for the ramal norte, 2026-08-21:
+
+| From the T (775 m) | Distance | Drop | Gradient |
+|---|---|---|---|
+| South → tanques intermedios (762 m) | 227 m | 13 m | 5.7 % |
+| **North → tanque norte 1 (747 m)** | 371 m | **28 m** | **7.6 %** |
+
+The north's first tank is **28 m below** the T. If diameters match, flow goes roughly as
+√gradient, so the north should draw about **15 % more** than the south — the opposite of the
+claim. **Nor is the reverse now proven:** the pipe diameters are unknown, and a narrower north
+line would flip it back. **Head competition does not explain the north's behaviour in either
+direction.** Diameters are on the field list for exactly this reason.
+
+### What does explain it: the north branch is one long air trap
+
+| Leg | Length | Drop | Gradient | Ground above its own grade line |
+|---|---|---|---|---|
+| T → norte 1 | 371 m | 28 m | 7.6 % | **+5.7 m**, and a **10.6 m climb into the tank** |
+| norte 1 → norte 2 | 337 m | 25 m | 7.4 % | **+9.2 m** at 272 m along |
+| norte 2 → norte 3 | 401 m | 22 m | 5.5 % | +1.9 m |
+| **Total from the T** | **1.109 m** | **75 m** | | 13 humps in all |
+
+> ### Tanks are built on high points, so every tank inlet is a summit — and every summit is an air trap.
+> The rompecargas inlet climbs **20.9 m**. Tanque norte 1's inlet climbs **10.6 m**. Same shape,
+> twice. That is a property of how the system was laid out, not an accident of one pipe.
+
+So when the rompecargas runs to air, the branch that stays blocked is the one with the most
+summits and the longest run — **the north, 1.1 km of it, with nothing stored downstream.**
+That matches Manuel's account far better than any competition at the T.
+
+### 🔴 The buffer is on the discretionary load, and none is on the cattle
+
+Putting the storage answer together with the layout:
+
+| Load | Dedicated storage |
+|---|---|
+| **House and garden** — *discretionary; "the garden might die a little bit, but it's fine"* | **60.000 L** in the tanques intermedios |
+| **Northern cattle** — *not discretionary* | **none** |
+
+The northern cattle's only buffer is the **tanques altos**, on the far side of a 2.000 L
+chamber that empties in under two hours. **And the 60.000 L in the intermedios cannot reach
+them — it is downhill of the T.** In a shortage that volume is stranded relative to the animals
+that need it.
+
+**Two fixes, both cheap, and they are probably the best value in the whole water system:**
+
+1. **Put a poly tank on the north branch.** A 10.000 L tank at tanque norte 1 buys roughly
+   **1.2–2 days** for the northern cattle `[derived, unverified: ~100–160 head × ~50 L/día]`.
+   It is a tank on a slab — not civil works, unlike enlarging the rompecargas.
+2. **Cross-tie the tanques intermedios to the north branch.** Tested on the terrain model:
+
+   | | |
+   |---|---|
+   | Route | intermedios (762 m) → tanque norte 1 (747 m) |
+   | Length | **430 m, entirely on our own land** |
+   | Climb required | **0.4 m** — less than the tanks' own height |
+   | Limiting gradient | 3.40 % |
+   | Flow at 1½″ | **1.24 L/s ≈ 107 m³/día** |
+
+   > **That turns 60.000 L of house-dedicated storage into cattle insurance, by gravity, with
+   > nobody's permission.** It also gives the north a second path when the first air-locks.
+
+   **Fit a normally-closed valve**, so it is opened deliberately when the north is short —
+   otherwise the garden drains the cattle's reserve too, which is the current problem with the
+   sign reversed.
+
+**Still unmapped:** the ramal norte's true route (positions are read off the 2003 plan and
+marked `posición: BAJA`), and **the further T-junctions below the tanques intermedios**
+`[owner, 2026-08-21]` — Manuel has those but has not given coordinates yet.
 
 ### A ventosa already exists — the 2003 designers knew about air
 

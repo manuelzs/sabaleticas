@@ -435,31 +435,6 @@
    "type": "Feature",
    "properties": {
     "tipo": "tuberia",
-    "nombre": "T del norte → tanques intermedios (INDICATIVA)",
-    "desnivel_m": 13,
-    "longitud_m": 227,
-    "gradiente_pct": 5.7,
-    "confianza": "extremos reales; trazado esquemático",
-    "fuente": "Une puntos confirmados por Manuel."
-   },
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.607946,
-      5.797082
-     ],
-     [
-      -75.609996,
-      5.797095
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "tuberia",
     "nombre": "Tanques intermedios → casa principal (INDICATIVA)",
     "desnivel_m": 57,
     "confianza": "solo los extremos son reales; el trazado es esquemático",
@@ -495,6 +470,161 @@
     "coordinates": [
      -75.612092,
      5.796878
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tanque",
+    "nombre": "Tanque norte 1 (aprox.)",
+    "altura_m": 747,
+    "orden_en_el_ramal": 1,
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · posición: BAJA · capacidad: desconocida"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.608523,
+     5.800383
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tanque",
+    "nombre": "Tanque norte 2 (aprox.)",
+    "altura_m": 722,
+    "orden_en_el_ramal": 2,
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · posición: BAJA · capacidad: desconocida"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.611471,
+     5.801149
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tanque",
+    "nombre": "Tanque norte 3 (aprox.)",
+    "altura_m": 700,
+    "orden_en_el_ramal": 3,
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · posición: BAJA · capacidad: desconocida"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.615,
+     5.800337
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "T del norte → tanque norte 1 (APROXIMADA)",
+    "longitud_m": 371,
+    "desnivel_m": 28,
+    "gradiente_pct": 7.6,
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · trazado y longitud: BAJA"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.607946,
+      5.797082
+     ],
+     [
+      -75.608523,
+      5.800383
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Tanque norte 1 → 2 (APROXIMADA)",
+    "longitud_m": 337,
+    "desnivel_m": 25,
+    "gradiente_pct": 7.4,
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · trazado y longitud: BAJA"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608523,
+      5.800383
+     ],
+     [
+      -75.611471,
+      5.801149
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Tanque norte 2 → 3 (APROXIMADA)",
+    "longitud_m": 401,
+    "desnivel_m": 22,
+    "gradiente_pct": 5.5,
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · trazado y longitud: BAJA"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.611471,
+      5.801149
+     ],
+     [
+      -75.615,
+      5.800337
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "T del norte → tanques intermedios (INDICATIVA)",
+    "desnivel_m": 13,
+    "longitud_m": 227,
+    "gradiente_pct": 5.7,
+    "confianza": "extremos reales; trazado esquemático",
+    "fuente": "Une puntos confirmados por Manuel.",
+    "nota": "Borrada por error 2026-08-21 al añadir el ramal norte; restaurada."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.607946,
+      5.797082
+     ],
+     [
+      -75.609996,
+      5.797095
+     ]
     ]
    }
   }
