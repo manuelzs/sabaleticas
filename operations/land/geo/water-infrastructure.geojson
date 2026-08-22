@@ -1175,6 +1175,34 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Bebedero 3 → 5 — HIPOTÉTICA",
+    "longitud_m": 311,
+    "desnivel_m": 15,
+    "gradiente_pct": 4.8,
+    "estilo": "discontinuo",
+    "fuente": "[hypothesis, derived + owner concurs 2026-08-22] Los bebederos 5-6-7 tienen que alimentarse de algo por encima de ~717 m, y lo único cerca que cumple es el ramal norte. La T más probable está en o justo antes del Bebedero 3 (729 m, +15 m de carga). El tramo 3→4 pasa más cerca pero sólo a ~719 m.",
+    "advertencia": "NO CONFIRMADA. Existe para que la red sea un solo grafo conectado; el trazado es inventado. Verificar en campo buscando la derivación cerca del Bebedero 3.",
+    "confianza": "conexión: HIPÓTESIS · trazado: ninguno",
+    "_id": "beb-3--beb-5"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610781,
+      5.801364
+     ],
+     [
+      -75.612802,
+      5.803313
+     ]
+    ]
+   }
   }
  ]
 }

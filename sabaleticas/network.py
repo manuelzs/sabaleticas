@@ -49,10 +49,40 @@ def edge_metrics(net, e, by=None):
     return length, drop, grad
 
 
+def components(net):
+    """Connected components. A subsystem that is not reachable from the source is
+    either genuinely isolated (the represa, deliberately) or a gap in what we know
+    (Bebederos 5-7 were, until a hypothetical edge was added)."""
+    adj = {n["id"]: set() for n in net["nodes"]}
+    for e in net["edges"]:
+        if e["from"] in adj and e["to"] in adj:
+            adj[e["from"]].add(e["to"])
+            adj[e["to"]].add(e["from"])
+    seen, out = set(), []
+    for nid in adj:
+        if nid in seen:
+            continue
+        stack, comp = [nid], []
+        while stack:
+            u = stack.pop()
+            if u in seen:
+                continue
+            seen.add(u); comp.append(u)
+            stack.extend(adj[u] - seen)
+        out.append(sorted(comp))
+    return sorted(out, key=len, reverse=True)
+
+
 def check(net):
-    """Physical sanity. Water does not run uphill in a gravity system."""
+    """Physical sanity. Water does not run uphill in a gravity system.
+
+    Hypothetical edges are exempt: their geometry is invented, so their gradient
+    means nothing. They are reported separately instead.
+    """
     by, out = index(net), []
     for e in net["edges"]:
+        if e.get("hipotetica"):
+            continue
         length, drop, grad = edge_metrics(net, e, by)
         if drop is not None and drop < 0:
             out.append({
