@@ -368,6 +368,15 @@
    ],
    "PASO INTERMEDIO: se prolonga 25 m al sureste en su misma dirección (rumbo 126,9°). No cierra nada todavía — el extremo nuevo queda suelto a propósito, esperando la siguiente instrucción de Manuel.",
    true
+  ],
+  [
+   66,
+   [
+    -75.614246,
+    5.794019
+   ],
+   "cerca real: del extremo nuevo (la prolongación de 49) al vértice que marcó Manuel — 46,4 m, rumbo 236,3°. El punto capturado cayó a 0,1 m de un vértice ya existente.",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
