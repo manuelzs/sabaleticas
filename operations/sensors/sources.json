@@ -54,7 +54,20 @@
    "origen": "automatico",
    "temperatura_ambiente": "[owner + derived, 2026-08-22] Manuel reporta 27 °C a medianoche y 32–33 °C de día, coincidiendo con lo que marca su celular. Para La Pintada (~700 m, tierra caliente) eso es exactamente el rango del AIRE. Un chip de cámara en ese clima estaría a 40–60 °C y rara vez bajaría de 30 de madrugada. La evidencia apunta a AMBIENTE. Yo había advertido lo contrario por conocimiento general — el dato manda.",
    "prueba_decisiva": "Si es del chip, no cae tan rápido como el aire de madrugada y SALTA al encenderse el iluminador IR al anochecer. Si el valor sigue bajando entre medianoche y las 5 a.m., es aire.",
-   "ampliable": "[owner, 2026-08-22] El panel admite sensores adicionales. Aunque la temperatura actual resultara del chip, el sistema ya instalado sirve de PASARELA: se le conectan sensores propios y se usa el mismo camino de datos."
+   "ampliable": "[owner, 2026-08-22] El panel admite sensores adicionales. Aunque la temperatura actual resultara del chip, el sistema ya instalado sirve de PASARELA: se le conectan sensores propios y se usa el mismo camino de datos.",
+   "investigacion_2026_08_22": {
+    "pregunta": "¿Se puede leer la temperatura desde la nube, sin estar en la finca?",
+    "respuesta": "NO por vía oficial.",
+    "por_que": "Toda API de nube de Hikvision (Hik-Connect OpenAPI, Hik-Partner Pro) exige registro como EMPRESA con NIT, NDA y aprobación manual de un gerente regional. No existe opción de 'dueño del equipo'. Y la temperatura NO aparece en la lista de capacidades documentadas de ninguna de ellas.",
+    "donde_vive_el_dato": "GET /ISAPI/SecurityCP/status/zones?format=json en el panel AX Pro — cada zona trae un campo `temperature`. Verificado en tres implementaciones de código abierto (homey-hikvision-axpro, hikaxpro, ax-pro).",
+    "hallazgo_interesante": "Existe un PASSTHROUGH ISAPI NO DOCUMENTADO en la nube: POST /v3/userdevices/v1/isapi reenvía peticiones ISAPI crudas al equipo por el túnel P2P — el mismo mecanismo de la app. Documentado por ingeniería inversa en prescornic/hikconnect_alarm y Loule95450/Nexecur-Unofficial-API, que ya usa rutas /ISAPI/SecurityCP/ por ese túnel. SIN VERIFICAR de extremo a extremo para temperatura: nadie ha publicado una lectura así, y el campo `apiKey` podría limitar qué rutas pasan.",
+    "recomendacion": "Una visita: dejar una caja siempre encendida (Raspberry Pi o similar) con Tailscale/WireGuard. Desde ahí, ISAPI local y punto. Es también el host que necesita el gateway LoRa del agua — una sola compra sirve para las dos cosas.",
+    "no_hacer": [
+     "Solicitar el partnership TPP: exige empresa con NIT y ni siquiera expone la capacidad que queremos.",
+     "Exponer el NVR a internet con port forwarding."
+    ],
+    "confianza": "[researched 2026-08-22, con fuentes] Páginas de Hikvision y código leídos directamente."
+   }
   },
   {
    "id": "nivel-rompecargas",

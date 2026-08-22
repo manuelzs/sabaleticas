@@ -9,5 +9,9 @@
     "maxy": 5.809376
   },
   "geo_dir": "operations/land/geo",
-  "_note": "Single source of truth for farm identity and map extent. Area and municipios are NOT typed here - they are computed from boundary.geojson, so the map can never disagree with the cadastre. Pointing the viewer at another farm should mean editing this file and the geo_dir it names."
+  "_note": "Single source of truth for farm identity and map extent. Area and municipios are NOT typed here - they are computed from boundary.geojson, so the map can never disagree with the cadastre. Pointing the viewer at another farm should mean editing this file and the geo_dir it names.",
+  "alias_gsmi": [
+    "SABALETICAS"
+  ],
+  "_alias_nota": "Cómo aparece el predio como DESTINO en las guías GSMI. Sirve para separar entradas de salidas: si el destino es la finca, la res entra."
 }

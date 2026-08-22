@@ -15,7 +15,7 @@ const NAV=[
   {id:'predio', label:'Predio', views:[], disabled:true,
    why:'se activa con los potreros — hoy sería el mapa General con menos capas'},
   {id:'ganado', label:'Ganado',
-   views:[['hato','Hato'],['movimientos','Movimientos']]},
+   views:[['hato','Hato'],['movimientos','Movimientos'],['guias','Guías abiertas']]},
   /* Cross-cutting: these are not subsystems. Readings and tickets attach to entities
      and surface in context — a level inside a tank symbol, a badge on a marker. What
      earns these tabs is the MANAGEMENT view of them: "is my telemetry alive", "what
@@ -48,6 +48,11 @@ function navRender(){
     else b.onclick=()=>navGo(s.id);
     tabs.appendChild(b);
   }
+  const av=document.createElement('button');            // findings live in a drawer
+  av.innerHTML='Avisos<span class="badge cero" id="navAvisos">0</span>';
+  av.onclick=()=>toggleDrawer();
+  const sep2=document.createElement('span'); sep2.className='sep';
+  tabs.appendChild(sep2); tabs.appendChild(av);
   const sub=navSub(route.tab);
   if(sub && sub.views.length>1) for(const [id,label] of sub.views){
     const b=document.createElement('button');
@@ -61,7 +66,8 @@ function navRender(){
 /* Views come in two kinds: canvas (mapa, 3d, esquema) and DOM (lista). The DOM ones
    need the map chrome out of the way entirely. */
 const PAGE_VIEWS={lecturas:renderLecturas, fuentes:renderFuentes,
-                  hato:renderHato, movimientos:renderMovimientos};
+                  hato:renderHato, movimientos:renderMovimientos,
+                  guias:renderGuias};
 
 function navApply(){
   const page=PAGE_VIEWS[route.view];
@@ -83,6 +89,7 @@ function navApply(){
   }
   buildLayers(route.tab==='general' ? null : route.tab); // scope the layer list
   navRender();
+  renderDrawer();
   const h=route.tab+'/'+route.view;
   if(location.hash.slice(1)!==h){ try{ history.replaceState(null,'','#'+h); }catch(e){} }
 }
