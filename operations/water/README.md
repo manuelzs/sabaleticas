@@ -371,11 +371,38 @@ two to three times demand.** The system is losing water to *stoppages*, not to s
 | 5 | **Inspect and clean the float valve.** Check size and blockage; this is unfiltered quebrada water. **Do not redesign it** — see above. | low |
 | 6 | **Give the garden a higher take-off than the cattle** on the tanques intermedios. The garden then dies first, automatically, and the remaining volume is reserved for the bebederos — **no discipline required.** | low |
 
+### The T del norte — an uncontrolled split, and the north loses it
+
+`[owner, 2026-08-21]` **5.797082, −75.607946 · 775 m**, on the leg between the rompecargas and
+the tanques intermedios. It splits the **ramal norte** off from the run to the intermedios.
+
+| Leg | Length | Drop | Gradient |
+|---|---|---|---|
+| Rompecargas (798 m) → T (775 m) | 198 m | 23 m | **11.6 %** |
+| T (775 m) → intermedios (762 m) | 227 m | 13 m | **5.7 %** |
+
+Two things fall out of that:
+
+1. **Most of the head is already spent before the T.** More than half the fall on this leg
+   happens in the first 198 m.
+2. **The T sits 13 m above the tanques intermedios, and the north branch has no storage at
+   all.** In an uncontrolled split, the branch with more head wins — and that is the branch
+   running down to the intermedios, the house and the garden.
+
+> **Hypothesis `[derived, unverified]`: the north bebederos are not just unbuffered, they are
+> structurally outbid.** Whenever supply is short, 13 m of extra head pulls the water south.
+
+If the two-measurement test confirms the inflow deficit, this is the second thing to look at —
+and the fix is the same family as fix 6: **a balancing valve or an orifice at the T**, so the
+split is set deliberately rather than decided by gravity.
+
+**Unknown:** where the ramal norte actually runs, and what it feeds. Not mapped.
+
 ### The two measurements that would settle it
 
 Both need only a watch:
 
-- **Close the outlet. Time the rompecargas filling.** 1.000 L ÷ seconds = **inflow in L/s.**
+- **Close the outlet. Time the rompecargas filling.** 2.000 L ÷ seconds = **inflow in L/s.**
 - **Shut the inlet, open the outlet. Time it draining.** = **outflow in L/s.**
 
 If outflow > inflow, the hypothesis is confirmed and fix 1 is immediately actionable.

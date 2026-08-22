@@ -78,6 +78,25 @@
   {
    "type": "Feature",
    "properties": {
+    "tipo": "derivacion",
+    "nombre": "T del norte",
+    "altura_m": 775,
+    "funcion": "Reparte entre el ramal norte (sin almacenamiento) y los tanques intermedios.",
+    "clave": "Está 13 m POR ENCIMA de los tanques intermedios. En un reparto sin control el ramal de mayor carga —el de los intermedios— se lleva el agua, y el norte se queda sin nada.",
+    "fuente": "[owner] coordenada dada por Manuel 2026-08-21 desde el visor, aproximada a pocos metros.",
+    "confianza": "posición: alta (±pocos m) · reparto: hipótesis sin verificar"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.607946,
+     5.797082
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
     "tipo": "casa",
     "nombre": "Casa principal",
     "altura_m": 705,
@@ -391,10 +410,12 @@
    "type": "Feature",
    "properties": {
     "tipo": "tuberia",
-    "nombre": "Rompecargas → tanques intermedios (INDICATIVA)",
-    "desnivel_m": 36,
-    "confianza": "solo los extremos son reales; el trazado es esquemático",
-    "fuente": "Une puntos confirmados por Manuel. Se reemplaza con el levantamiento de tubería."
+    "nombre": "Rompecargas → T del norte (INDICATIVA)",
+    "desnivel_m": 23,
+    "longitud_m": 198,
+    "gradiente_pct": 11.6,
+    "confianza": "extremos reales; trazado esquemático",
+    "fuente": "Une puntos confirmados por Manuel."
    },
    "geometry": {
     "type": "LineString",
@@ -402,6 +423,31 @@
      [
       -75.606162,
       5.797126
+     ],
+     [
+      -75.607946,
+      5.797082
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "T del norte → tanques intermedios (INDICATIVA)",
+    "desnivel_m": 13,
+    "longitud_m": 227,
+    "gradiente_pct": 5.7,
+    "confianza": "extremos reales; trazado esquemático",
+    "fuente": "Une puntos confirmados por Manuel."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.607946,
+      5.797082
      ],
      [
       -75.609996,
