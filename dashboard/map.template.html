@@ -300,7 +300,9 @@ function draw(){
     cx.lineWidth=L.width; cx.lineJoin='round';
     for(const f of L.features){
       cx.strokeStyle = f.col || L.colour;
+      if(f.dash) cx.setLineDash(f.dash);      // dashed = the connection is unconfirmed
       drawGeom(f,L.kind,L.fill);
+      if(f.dash) cx.setLineDash([]);
     }
     // labels for named features (water infrastructure etc.), only when zoomed in enough
     const labelZoom = (L.name.indexOf('Vecinos')===0) ? 700 : 3000;

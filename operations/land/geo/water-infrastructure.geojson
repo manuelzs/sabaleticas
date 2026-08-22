@@ -790,6 +790,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "T-3 (¿o T-2?) → Bebedero 1 — SIN CONFIRMAR",
+    "estilo": "discontinuo",
+    "longitud_m": 111,
+    "fuente": "[owner, 2026-08-21] Manuel sabe que el bebedero se alimenta de una de las T, pero no de cuál. Trazo discontinuo = conexión sin confirmar. La T dibujada aquí además está mal ubicada (queda por debajo del bebedero), así que sólo indica QUE existe la conexión, no por dónde va.",
+    "confianza": "existencia de la conexión: alta · cuál T: DESCONOCIDA · trazado: ninguno"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614449,
+      5.797114
+     ],
+     [
+      -75.614251,
+      5.796126
+     ]
+    ]
+   }
   }
  ]
 }

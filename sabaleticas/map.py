@@ -165,6 +165,8 @@ def _collect(geo: Path):
                 label = f"{props['elev']} m"
             item = {"t": g["type"], "c": _round_geom(_thin(g["coordinates"])),
                     "l": str(label)[:120], "kind": kind}
+            if props.get("estilo") == "discontinuo":   # unconfirmed connection
+                item["dash"] = [9, 7]
             tipo = props.get("tipo")
             if tipo in TIPO_COLOUR:
                 item["col"] = TIPO_COLOUR[tipo]
