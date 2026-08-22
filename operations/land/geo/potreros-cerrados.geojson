@@ -9,7 +9,7 @@
     "n": 1,
     "nombrado": false,
     "area_ha": 23.31,
-    "area_m2": 233051,
+    "area_m2": 233052,
     "agua": [
      {
       "id": "agua:beb-5",
@@ -608,7 +608,7 @@
     "n": 2,
     "nombrado": false,
     "area_ha": 20.81,
-    "area_m2": 208126,
+    "area_m2": 208125,
     "agua": [
      {
       "id": null,
@@ -1761,7 +1761,7 @@
     "n": 5,
     "nombrado": false,
     "area_ha": 5.12,
-    "area_m2": 51162,
+    "area_m2": 51161,
     "agua": [
      {
       "id": "agua:beb-4",
@@ -2354,7 +2354,7 @@
     "n": 12,
     "nombrado": true,
     "area_ha": 3.11,
-    "area_m2": 31105,
+    "area_m2": 31102,
     "agua": [
      {
       "id": null,
@@ -2439,7 +2439,7 @@
     "n": 13,
     "nombrado": true,
     "area_ha": 2.39,
-    "area_m2": 23934,
+    "area_m2": 23935,
     "agua": [
      {
       "id": null,

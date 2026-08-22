@@ -497,6 +497,26 @@ def main():
                 print(f"  ⚠ extender {c[0]}: nada por delante a menos de {CAP:.0f} m "
                       f"ni cerca a menos de {NEAR:.0f} m")
 
+    # Fences Manuel dictates are FENCES, so they must be part of the geometry before
+    # noding — not merely edges bolted on afterwards. Otherwise a later fence cannot end
+    # mid-span on an earlier one, which is exactly what happened: a point sitting 0.0 m
+    # along "Cerca 23–beb-9" had nothing to attach to and dangled.
+    def resolve(x):
+        if isinstance(x, list):
+            return tuple(x)
+        if isinstance(x, str):
+            return ents.get(x)
+        p = reg0.get(str(x))
+        return tuple(p) if p else None
+
+    if f_c0.exists():
+        for c in json.loads(f_c0.read_text(encoding="utf-8"))["cierres"]:
+            if len(c) < 4 or not c[3] or c[1] == "@extend":
+                continue
+            pa, pb = resolve(c[0]), resolve(c[1])
+            if pa and pb:
+                lines.append([pa, pb])
+
     before = sum(len(l) for l in lines)
     lines = node_lines(lines, extra=ext_pts)
     print(f"  noding: {before} → {sum(len(l) for l in lines)} vértices")
