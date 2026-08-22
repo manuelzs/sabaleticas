@@ -297,15 +297,6 @@
   },
   {
    "punto": [
-    -75.617857,
-    5.804617
-   ],
-   "estado": "por_subdividir",
-   "nota": "es el lote entero; adentro hay varios potreros que Manuel dará después. El IGAC no tiene ninguna cerca dibujada aquí, así que las divisiones habrá que digitalizarlas o dictarlas.",
-   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «por_subdividir» sobre el El Guaico de la corrida del 2026-08-22."
-  },
-  {
-   "punto": [
     -75.60688,
     5.799196
    ],
@@ -352,6 +343,38 @@
    ],
    "estado": "final",
    "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Palma de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.616317,
+    5.806101
+   ],
+   "estado": "final",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 18 de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.617659,
+    5.805314
+   ],
+   "estado": "final",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 40 de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.617761,
+    5.80146
+   ],
+   "estado": "final",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 14 de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.617892,
+    5.799034
+   ],
+   "estado": "final",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 10 de la corrida del 2026-08-22."
   }
  ]
 }

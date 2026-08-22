@@ -289,6 +289,38 @@
     5.803832
    ],
    "fuente": "[owner + plano 2007, 2026-08-22] Manuel lo verificó — una de las caras de EL GUAICO. «MAMONCILLO» ya venía en el levantamiento de 2007."
+  },
+  {
+   "nombre": "Abisinia",
+   "punto": [
+    -75.616317,
+    5.806101
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] Manuel verificó el potrero 18 de la corrida del 2026-08-22. «ABISINIA» ya venía en el levantamiento de 2007."
+  },
+  {
+   "nombre": "Guadial",
+   "punto": [
+    -75.617673,
+    5.805312
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] Manuel verificó el potrero 40 de la corrida del 2026-08-22. OJO con la grafía: el plano de 2007 lo rotula «GUADUAL» (de guadua). Se guarda como lo dijo Manuel; si la del plano es la buena, se corrige."
+  },
+  {
+   "nombre": "Barcelona",
+   "punto": [
+    -75.617761,
+    5.80146
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] Manuel verificó el potrero 14 de la corrida del 2026-08-22. «BARCELONA» ya venía en el levantamiento de 2007."
+  },
+  {
+   "nombre": "Lisboa",
+   "punto": [
+    -75.617892,
+    5.799034
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] Manuel verificó el potrero 10 de la corrida del 2026-08-22. «LISBOA» ya venía en el levantamiento de 2007."
   }
  ]
 }
