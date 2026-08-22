@@ -1,0 +1,144 @@
+{
+ "meta": {
+  "descripcion": "Registro de fuentes de datos en tiempo real. No sólo sensores: cualquier cosa que reporte un valor — un sistema de terceros, una cámara, un medidor.",
+  "regla": "Cada fuente se ANCLA a una entidad por su id (entidad). Así una lectura se puede dibujar sobre el mapa y sobre el esquema sin plomería adicional. Ver dashboard/ARCHITECTURE.md.",
+  "estados": {
+   "en_linea": "reportando",
+   "sin_datos": "integrada pero sin lecturas recientes",
+   "por_investigar": "el equipo existe; falta saber cómo sacarle los datos",
+   "planificado": "todavía no existe"
+  },
+  "nota_ids": "Los ids de entidad son los del grafo de agua (rompecargas, tanques-intermedios…). Cuando se haga el namespacing pasarán a agua:rompecargas.",
+  "actualizado": "2026-08-22",
+  "modelo": "DOS conceptos separados. Una LECTURA es entidad + magnitud + valor + fecha + cómo se obtuvo. Una FUENTE es de dónde vino. Una lectura anotada a mano vale igual que una automática: cambia el ORIGEN y la frescura esperada, no la lectura. Por eso el visor puede mostrar niveles hoy mismo, sin comprar nada.",
+  "origenes": {
+   "manual": "alguien lo miró y lo anotó",
+   "automatico": "un equipo lo reporta solo"
+  }
+ },
+ "fuentes": [
+  {
+   "id": "manual",
+   "nombre": "Anotación manual",
+   "tipo": "persona",
+   "origen": "manual",
+   "entidad": null,
+   "estado": "en_linea",
+   "transporte": "—",
+   "canales": [],
+   "por_que_importa": "Funciona HOY, sin comprar nada, y ejercita toda la cadena de visualización. Un tubo de nivel en el rompecargas y una foto diaria valen como fuente de datos: la lectura se anota, queda fechada, y el visor la dibuja igual que una automática. Cuando llegue la automatización no cambia nada del lado de la pantalla — sólo quién escribe.",
+   "nota": "Manuel, 2026-08-22: *\"podemos decir: este tanque está en tal cantidad, con un registro manual y una fecha de última actualización\"*."
+  },
+  {
+   "id": "seguridad-casa-principal",
+   "nombre": "Hikvision — casa principal (cámaras, PIR, alarma)",
+   "tipo": "sistema-de-terceros",
+   "entidad": "casa-principal",
+   "estado": "por_investigar",
+   "transporte": "ISAPI sobre la red local (por confirmar)",
+   "canales": [
+    {
+     "id": "temperatura",
+     "magnitud": "temperatura",
+     "unidad": "°C"
+    }
+   ],
+   "fuente": "[owner, 2026-08-22] Sistema Hikvision en la casa principal: varias cámaras, sensores de movimiento, panel de alarma y grabador. Manuel lo monitorea desde el celular. NO se quiere vídeo — sólo temperatura.",
+   "por_que_importa": "ES EL PILOTO. El valor no es la temperatura: es probar la cadena completa — equipo → transporte → almacenamiento → un número en la página. Todo sensor posterior sigue el camino que abra éste. Además ya está instalado y pagado.",
+   "pendiente": [
+    "Modelo del panel de alarma y del grabador; IP local; usuario de sólo lectura.",
+    "PRUEBA MÍNIMA: GET con digest auth a /ISAPI/System/deviceInfo desde la red de la casa.",
+    "¿Hay red desde donde correría el colector hasta la casa?"
+   ],
+   "marca": "Hikvision",
+   "integracion": {
+    "opciones": [
+     "ISAPI — la API HTTP local de Hikvision, autenticación digest. Es la vía práctica.",
+     "Home Assistant — tiene integraciones Hikvision y AX Pro ya hechas; evita escribir un cliente ISAPI.",
+     "Hik-Connect (la app del celular) es nube y NO tiene API pública de consumidor.",
+     "ONVIF sirve para vídeo/PTZ, no para temperatura."
+    ],
+    "confianza": "[recalled] Las rutas de integración son conocimiento general, sin verificar en esta sesión. Que el dato sea ambiente lo confirma Manuel."
+   },
+   "origen": "automatico",
+   "temperatura_ambiente": "[owner + derived, 2026-08-22] Manuel reporta 27 °C a medianoche y 32–33 °C de día, coincidiendo con lo que marca su celular. Para La Pintada (~700 m, tierra caliente) eso es exactamente el rango del AIRE. Un chip de cámara en ese clima estaría a 40–60 °C y rara vez bajaría de 30 de madrugada. La evidencia apunta a AMBIENTE. Yo había advertido lo contrario por conocimiento general — el dato manda.",
+   "prueba_decisiva": "Si es del chip, no cae tan rápido como el aire de madrugada y SALTA al encenderse el iluminador IR al anochecer. Si el valor sigue bajando entre medianoche y las 5 a.m., es aire.",
+   "ampliable": "[owner, 2026-08-22] El panel admite sensores adicionales. Aunque la temperatura actual resultara del chip, el sistema ya instalado sirve de PASARELA: se le conectan sensores propios y se usa el mismo camino de datos."
+  },
+  {
+   "id": "nivel-rompecargas",
+   "nombre": "Nivel — tanque rompecargas",
+   "tipo": "flotadores",
+   "entidad": "rompecargas",
+   "estado": "planificado",
+   "transporte": "LoRa",
+   "canales": [
+    {
+     "id": "lleno",
+     "magnitud": "nivel",
+     "unidad": "booleano"
+    },
+    {
+     "id": "bajo",
+     "magnitud": "nivel",
+     "unidad": "booleano"
+    }
+   ],
+   "por_que_importa": "El fallo diagnosticado: la cámara se vacía en menos de dos horas y entra aire. Es el indicador ADELANTADO de toda la cascada.",
+   "nota": "Cámara de concreto ENTERRADA, ~1 m² × 1–2 m, tapa a ras. Sin sol adentro y la radio no sale bien de una caja de concreto: sensor abajo, radio y panel arriba. NADA de ultrasonido aquí — el cono golpea las paredes y condensa. Ver operations/water/sensors.md.",
+   "origen": "automatico"
+  },
+  {
+   "id": "nivel-tanques-intermedios",
+   "nombre": "Nivel — tanques intermedios",
+   "tipo": "ultrasonido",
+   "entidad": "tanques-intermedios",
+   "estado": "planificado",
+   "transporte": "LoRa",
+   "canales": [
+    {
+     "id": "nivel",
+     "magnitud": "nivel",
+     "unidad": "%"
+    }
+   ],
+   "por_que_importa": "Días de autonomía restantes — el número que hoy nadie puede decir.",
+   "nota": "Son TRES tanques y no sabemos cómo se interconectan. Puede requerir tres sensores.",
+   "origen": "automatico"
+  },
+  {
+   "id": "nivel-tanques-altos",
+   "nombre": "Nivel — tanques altos",
+   "tipo": "ultrasonido",
+   "entidad": "tanque-alto-1",
+   "estado": "planificado",
+   "transporte": "LoRa",
+   "canales": [
+    {
+     "id": "nivel",
+     "magnitud": "nivel",
+     "unidad": "%"
+    }
+   ],
+   "por_que_importa": "Si las bocatomas dejan de dar, se ve aquí primero. Pasa a ser el crítico si aprieta el verano.",
+   "origen": "automatico"
+  },
+  {
+   "id": "nivel-represa",
+   "nombre": "Nivel — represa",
+   "tipo": "presion-sumergible",
+   "entidad": "represa",
+   "estado": "planificado",
+   "transporte": "LoRa",
+   "canales": [
+    {
+     "id": "nivel",
+     "magnitud": "nivel",
+     "unidad": "m"
+    }
+   ],
+   "por_que_importa": "Sólo si avanza la ruta por gravedad o la bomba. El margen de esa ruta lo fija el nivel MÍNIMO de trabajo, no el nivel lleno.",
+   "origen": "automatico"
+  }
+ ]
+}

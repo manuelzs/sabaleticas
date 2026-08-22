@@ -63,6 +63,38 @@ addEventListener('keydown',e=>{
   else if(k==='x'){ captured=[]; capSave(); }
 });
 
+/* Live readings on the map. A reading carries its AGE as prominently as its value —
+   a manual note from three weeks ago should not look like a fresh one, and the colour
+   of the dot says which it is. Same data the schematic and the Sensores list use. */
+function drawReadings(){
+  const R=D.readings; if(!R || !Object.keys(R).length) return;
+  const seen={};
+  for(const L of D.layers){
+    if(!L.on) continue;
+    for(const f of L.features){
+      if(f.t!=='Point' || !f.eid || seen[f.eid]) continue;
+      const rs=Object.keys(R).filter(k=>k.split('|')[0]===f.eid).map(k=>R[k]);
+      if(!rs.length) continue;
+      seen[f.eid]=1;
+      const p=toScreen(f.c[0],f.c[1]);
+      let dy=-16;
+      for(const r of rs){
+        const a=(typeof readingAge==='function') ? readingAge(r.ts) : {col:'#00e676'};
+        const txt=`${r.valor} ${r.unidad||''}`.trim();
+        cx.font='bold 12px system-ui';
+        const w=cx.measureText(txt).width;
+        cx.fillStyle='rgba(8,12,16,.88)';
+        cx.beginPath(); cx.roundRect(p[0]+11, p[1]+dy-11, w+22, 17, 8); cx.fill();
+        cx.strokeStyle=a.col+'66'; cx.lineWidth=1; cx.stroke();
+        cx.beginPath(); cx.arc(p[0]+18, p[1]+dy-2.5, 3, 0, 7); cx.fillStyle=a.col; cx.fill();
+        cx.fillStyle='#e6edf3'; cx.textAlign='left';
+        cx.fillText(txt, p[0]+25, p[1]+dy+2);
+        dy-=20;
+      }
+    }
+  }
+}
+
 /* ---- hover highlight: light up the contour nearest the cursor ---- */
 let hoverC=null;                       // {L,f} of the contour under the pointer
 const HOVER_PX=12;                     // how close the cursor has to get
@@ -178,6 +210,7 @@ function draw(){
       cx.lineWidth=L.width;
     }
   }
+  drawReadings();
   if(hoverC && hoverC.L.on){                       // the curve under the cursor, lit up
     const {L,f}=hoverC;
     cx.save();

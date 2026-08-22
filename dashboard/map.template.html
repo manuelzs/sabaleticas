@@ -53,12 +53,31 @@
  #btn3d,#btnPid{display:none!important}
  .grp{margin:9px 0 2px;color:var(--muted);font-size:10px;letter-spacing:.09em;
    text-transform:uppercase}
+ /* DOM views (lists, tables) render here, over the canvases */
+ #page{position:absolute;inset:0;overflow:auto;background:var(--bg);display:none;
+   padding:96px 26px 40px}
+ #page .inner{max-width:1080px;margin:0 auto}
+ #page h2{font-size:17px;margin:0 0 4px}
+ #page .lead{color:var(--muted);font-size:12px;margin:0 0 18px;max-width:70ch;line-height:1.6}
+ table{border-collapse:collapse;width:100%;font-size:12.5px}
+ th{text-align:left;color:var(--muted);font-weight:500;font-size:10.5px;
+   letter-spacing:.08em;text-transform:uppercase;padding:0 12px 7px 0;
+   border-bottom:1px solid var(--line)}
+ td{padding:11px 12px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+ tr:hover td{background:#171d23}
+ .pill{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;
+   white-space:nowrap}
+ .val{font-variant-numeric:tabular-nums;font-size:15px}
+ .sub2{color:var(--muted);font-size:11.5px;line-height:1.5;margin-top:3px}
+ .todo{color:var(--muted);font-size:11.5px;margin:3px 0 0 15px;padding:0}
+ .todo li{margin:1px 0}
 </style></head><body><div id="wrap">
 <canvas id="cv"></canvas>
 <canvas id="cv3" style="display:none"></canvas>
 <canvas id="cvp" style="display:none"></canvas>
 
 <div id="nav"><div id="tabs"></div><div id="views"></div></div>
+<div id="page"><div class="inner" id="pageInner"></div></div>
 
 <div class="panel" id="side">
   <h1 id="fname">—</h1>

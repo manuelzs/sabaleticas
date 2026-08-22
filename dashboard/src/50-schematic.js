@@ -131,6 +131,7 @@ function routeEdge(P,Q,boxes){
 
 function drawPid(){
   if(!D.net) return;
+  if(typeof applyReadingsToNet==='function') applyReadingsToNet();   // levels -> tank fill
   if(!W||!H) resize();          // may be called before the async basemap sized the canvas
   if(!PB) pidFit();
   cvp.width=W*devicePixelRatio; cvp.height=H*devicePixelRatio;

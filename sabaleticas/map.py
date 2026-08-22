@@ -150,6 +150,27 @@ def _farm(root: Path, geo: Path):
     return cfg
 
 
+def _latest_readings(path: Path):
+    """Most recent value per (entity, magnitude).
+
+    A reading is entity + magnitude + value + when + how it was obtained. A hand-written
+    one counts exactly as much as an automated one — only `origen` and the freshness we
+    should expect differ. That is what lets the viewer show levels today, with no hardware.
+    """
+    if not path.exists():
+        return {}
+    import csv
+    out = {}
+    with path.open(encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            if not r.get("entidad") or not r.get("ts"):
+                continue
+            key = f"{r['entidad']}|{r['magnitud']}"
+            if key not in out or r["ts"] > out[key]["ts"]:
+                out[key] = {k: (v or "") for k, v in r.items()}
+    return out
+
+
 def _collect(geo: Path):
     out = []
     owners = _owners(geo)
@@ -177,6 +198,8 @@ def _collect(geo: Path):
                 label = f"{props['elev']} m"
             item = {"t": g["type"], "c": _round_geom(_thin(g["coordinates"])),
                     "l": str(label)[:120], "kind": kind}
+            if props.get("_id"):
+                item["eid"] = props["_id"]     # so readings can attach to this feature
             if props.get("estilo") == "discontinuo":   # unconfirmed connection
                 item["dash"] = [9, 7]
             tipo = props.get("tipo")
@@ -246,9 +269,17 @@ def build(root: Path) -> Path:
     net = json.loads((geo / "water-network.json").read_text(encoding="utf-8")) \
         if (geo / "water-network.json").exists() else None
 
+    # Real-time data sources. Cross-cutting: they attach to entities by id, so a
+    # reading can surface on the map and on the schematic without extra plumbing.
+    src_f = root / "operations" / "sensors" / "sources.json"
+    sources = json.loads(src_f.read_text(encoding="utf-8")) if src_f.exists() else None
+    readings = _latest_readings(root / "data" / "readings.csv")
+
     payload = json.dumps({
         "farm": farm,
         "net": net,                       # the water graph, for the schematic view
+        "sources": sources,               # data sources, automated and manual
+        "readings": readings,             # latest value per entity+magnitude
         "tipoColour": TIPO_COLOUR,
         "tipoShape": TIPO_SHAPE,
         "bounds": farm["bounds"],

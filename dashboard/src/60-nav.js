@@ -21,8 +21,7 @@ const NAV=[
      work is open", which no entity-level badge can answer. */
   {id:'trabajo',  label:'Trabajo',  views:[], disabled:true, cross:true,
    why:'tareas y alertas sobre cualquier entidad — pendiente'},
-  {id:'sensores', label:'Sensores', views:[], disabled:true, cross:true,
-   why:'estado de los equipos: última lectura, batería, señal — pendiente'},
+  {id:'sensores', label:'Sensores', views:[['lista','Lista']], cross:true},
 ];
 const NAV_LEGACY={mapa:'general/mapa','3d':'general/3d',esquema:'agua/esquema',
                   'finca/mapa':'general/mapa','finca/3d':'general/3d'};
@@ -56,10 +55,28 @@ function navRender(){
   }
 }
 
+/* Views come in two kinds: canvas (mapa, 3d, esquema) and DOM (lista). The DOM ones
+   need the map chrome out of the way entirely. */
+const PAGE_VIEWS={lista:renderSensores};
+
 function navApply(){
-  if(route.view==='esquema'){ if(!isPid) setPid(true); }
-  else if(route.view==='3d'){ if(isPid) setPid(false); if(!is3d) set3d(true); }
-  else { if(isPid) setPid(false); if(is3d) set3d(false); }
+  const page=PAGE_VIEWS[route.view];
+  if(isPid) setPid(false);
+  if(is3d && route.view!=='3d') set3d(false);
+  if(page){
+    document.getElementById('cv').style.display='none';
+    for(const id of ['side','read','scale','tools']){
+      const el=document.getElementById(id); if(el) el.style.display='none'; }
+    document.getElementById('page').style.display='block';
+    page();
+  } else {
+    document.getElementById('page').style.display='none';
+    for(const id of ['side','read','scale','tools']){
+      const el=document.getElementById(id); if(el) el.style.display=''; }
+    if(route.view==='esquema') setPid(true);
+    else if(route.view==='3d'){ if(!is3d) set3d(true); }
+    else { document.getElementById('cv').style.display='block'; draw(); }
+  }
   buildLayers(route.tab==='general' ? null : route.tab); // scope the layer list
   navRender();
   const h=route.tab+'/'+route.view;
