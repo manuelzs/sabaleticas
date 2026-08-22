@@ -1731,10 +1731,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 9",
+    "nombre": "Cairo",
     "n": 9,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "area_ha": 5.42,
     "area_m2": 54189,
