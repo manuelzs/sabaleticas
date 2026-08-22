@@ -376,20 +376,26 @@ def main():
     sin_agua = []
     for i, (a, ring) in enumerate(polys, 1):
         fuentes = agua_de(ring, net, dre, dep)
-        # A creek is not the same as a trough. In a verano the quebrada may simply not be
-        # there, so a paddock watered only by nature is exposed in exactly the season the
-        # whole water project exists for.
+        # No mapped trough is NOT the same as "watered by the creek". It may mean the
+        # paddock really relies on the quebrada — which matters, because in a verano the
+        # creek may not be there — or simply that we have not mapped its trough yet.
+        # Both stay open until Manuel says which.
         conducida = [f for f in fuentes if f["tipo"] != "natural"]
         if not fuentes:
-            sin_agua.append((i, a / 10000, "sin ninguna fuente"))
+            sin_agua.append((i, a / 10000, "ninguna fuente conocida — POR CONFIRMAR"))
         elif not conducida:
-            sin_agua.append((i, a / 10000, "sólo agua natural"))
+            sin_agua.append((i, a / 10000, "sin bebedero mapeado — POR CONFIRMAR"))
         feats.append({"type": "Feature", "properties": {
             "tipo": "potrero", "nombre": f"Potrero {i}", "n": i,
             "area_ha": round(a / 10000, 2), "area_m2": round(a),
             "agua": fuentes,
             "sin_agua": not fuentes,
             "solo_natural": bool(fuentes) and not conducida,
+            "agua_por_confirmar": not conducida,
+            "agua_nota": ("" if conducida else
+                "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado "
+                "tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. "
+                "No asumir lo uno ni lo otro."),
             "fuente": f"[derived {TOL} m] Cara cerrada del grafo Cerca IGAC + linderos. "
                       "Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
             "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"},
@@ -440,7 +446,7 @@ def main():
             print(f"    {a}–{b}: {tag} {n['nombre']} ({d:.0f} m)")
 
     if sin_agua:
-        print("  ⚠ potreros expuestos en verano:")
+        print("  ⚠ potreros sin bebedero mapeado (fuente por confirmar):")
         for i, ha, why in sin_agua:
             print(f"      Potrero {i}: {ha:5.2f} ha — {why}")
     tot = sum(a for a, _ in polys) / 10000

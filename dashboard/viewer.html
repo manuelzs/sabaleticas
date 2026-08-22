@@ -2417,8 +2417,8 @@ const RULES=[
       const mal=L.features.filter(f=>f.sinAgua || f.soloNatural);
       if(!mal.length) return;
       const ha=mal.reduce((s,f)=>s+(f.areaHa||0),0);
-      return {t:`Potreros sin agua conducida`, v:`${mal.length}`,
-              d:`${ha.toFixed(1)} ha · sólo quebrada`}; } },
+      return {t:`Potreros sin bebedero mapeado`, v:`${mal.length}`,
+              d:`${ha.toFixed(1)} ha · fuente por confirmar`}; } },
 
   { id:'lecturas-obsoletas', sev:'media', ir:'sensores/lecturas',
     run:D=>{ const R=Object.values(D.readings||{});
