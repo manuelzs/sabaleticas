@@ -28,7 +28,19 @@
     5.796
    ],
    "motivo": "[owner, 2026-08-22] Manuel: la cola de 361 m de la cerca 12 no existe — corre pegada al lindero, que ya cierra por sí solo, y el extremo 52 muere sin conectar. Las dos líneas se juntan a 0,6 m en el norte y se abren a 23,7 m en el sur, así que el anillo del potrero bajaba por una y subía por la otra formando una espiga de 360 m."
+  },
+  {
+   "tipo": "pegar_vertice",
+   "extent": [
+    -75.60215,
+    5.7955,
+    -75.6019,
+    5.79572
+   ],
+   "tol_m": 5.0,
+   "motivo": "[owner, 2026-08-22] Extremo 45: la cerca del IGAC se pasa 3,9 m de la esquina del lindero y muere en mitad de la vía. La esquina (compartida con el cierre de Potrero 38) es donde la cerca termina de verdad; el sobrante es cola de digitalización."
   }
  ],
- "_recortar": "Un cierre {tipo: recortar} borra parte de UNA cerca: la identifica por un punto sobre ella (como cercas-excluidas.json) y le quita los vértices que caen en 'extent'. Hace falta lo uno Y lo otro: excluir la cerca entera se llevaría también el tramo bueno, y el 'extent' a secas alcanzaría a otra cerca 81 m al oeste."
+ "_recortar": "Un cierre {tipo: recortar} borra parte de UNA cerca: la identifica por un punto sobre ella (como cercas-excluidas.json) y le quita los vértices que caen en 'extent'. Hace falta lo uno Y lo otro: excluir la cerca entera se llevaría también el tramo bueno, y el 'extent' a secas alcanzaría a otra cerca 81 m al oeste.",
+ "_pegar_vertice": "Lleva UN vértice de cerca al vértice de lindero más cercano, dentro de 'extent' y de 'tol_m'. No reemplaza el trazado como _pegar_al_lindero: es para un extremo suelto que se pasó de la esquina, no para un tramo mal digitalizado. Se mueve la cerca y no el cierre porque el vértice del cierre es del lindero — moverlo sería redibujar el linde para acomodar un error de digitalización."
 }

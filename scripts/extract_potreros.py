@@ -336,6 +336,64 @@ def recortar_zonas(feats, verbose=False):
     return out
 
 
+def pegar_vertices(feats, polys, verbose=False):
+    """Snap a stray fence END onto the lindero vertex it was meant to land on.
+
+    Narrower than pegar_al_lindero on purpose: this moves ONE vertex to ONE lindero
+    vertex, it does not re-trace a run, so there is no near-parallel pair to create.
+
+    Which of the two to move is not a toss-up. The enclosure vertex is the lindero's
+    own, shared with the neighbouring parcel — moving it would be redrawing the
+    property line to fit a digitising error. The fence end is the one adrift, sitting
+    out in the road past the corner.
+    """
+    f_cor = GEO / "cercas-correcciones.json"
+    if not f_cor.exists():
+        return feats
+    reglas = [c for c in json.loads(f_cor.read_text(encoding="utf-8"))["correcciones"]
+              if c.get("tipo") == "pegar_vertice"]
+    if not reglas:
+        return feats
+
+    vert = [tuple(v[:2]) for poly in polys for r in poly for v in r]
+    movidos = 0
+
+    def ajustar(c):
+        nonlocal movidos
+        for r in reglas:
+            x0, y0, x1, y1 = r["extent"]
+            if not (x0 <= c[0] <= x1 and y0 <= c[1] <= y1):
+                continue
+            best = min(vert, key=lambda v: math.hypot((v[0] - c[0]) * LON2M,
+                                                      (v[1] - c[1]) * LAT2M))
+            d = math.hypot((best[0] - c[0]) * LON2M, (best[1] - c[1]) * LAT2M)
+            if 0 < d <= r.get("tol_m", 5.0):
+                movidos += 1
+                return best
+        return c
+
+    out = []
+    for f in feats:
+        g = f["geometry"]
+        lss = [g["coordinates"]] if g["type"] == "LineString" else g["coordinates"]
+        nuevas = []
+        for ln in lss:
+            pts = [ajustar(tuple(c[:2])) for c in ln]
+            limpio = [pts[0]]
+            for c in pts[1:]:
+                if c != limpio[-1]:
+                    limpio.append(c)
+            if len(limpio) > 1:
+                nuevas.append(limpio)
+        if not nuevas:
+            continue
+        out.append(dict(f, geometry={"type": "LineString", "coordinates": nuevas[0]}
+                        if len(nuevas) == 1 else
+                        {"type": "MultiLineString", "coordinates": nuevas}))
+    if verbose and movidos:
+        print(f"  pegado: {movidos} vértice(s) de cerca llevados al lindero")
+    return out
+
 # Parcels kept OUT of the fence graph, though they are still ours and still drawn.
 #
 # The property is two parcels on one matrícula: AP 1 SABALETITAS (151.85 ha) and
@@ -531,6 +589,7 @@ def cercas_propias(write=True):
     ours = pegar_al_lindero(ours, polys, verbose=write)
     ours = recortar_en_corrales(ours, verbose=write)
     ours = recortar_zonas(ours, verbose=write)
+    ours = pegar_vertices(ours, polys, verbose=write)
     if write:
         (GEO / "cercas-propias.geojson").write_text(
             json.dumps({"type": "FeatureCollection", "features": ours}, indent=1,
