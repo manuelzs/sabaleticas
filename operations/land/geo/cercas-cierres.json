@@ -648,6 +648,44 @@
    ],
    "es_cerca": true,
    "motivo": "cerca real 35 → punta de la prolongación del 30, quebrando en el vértice del drenaje 34 (-75.616022,5.797999). NO es un adorno: el noding ya partía ahí la recta, porque ese vértice queda a 4,2 m y la tolerancia para puntos dictados es de 6 m. El grafo usaba el camino quebrado y la capa de cierres seguía dibujando la recta — de ahí las dos líneas casi paralelas, una verde y otra amarilla, que veía Manuel. Dictándola quebrada, lo dibujado y lo calculado coinciden."
+  },
+  {
+   "polilinea": [
+    [
+     -75.615776,
+     5.795183
+    ],
+    [
+     -75.615893,
+     5.795085
+    ],
+    [
+     -75.615986,
+     5.794998
+    ],
+    [
+     -75.616,
+     5.794953
+    ],
+    [
+     -75.61595,
+     5.794846
+    ],
+    [
+     -75.615931,
+     5.794685
+    ],
+    [
+     -75.615964,
+     5.794475
+    ],
+    [
+     -75.616246,
+     5.79395
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "cerca real nueva por el drenaje 37 (tramos 9–15), 156.6 m. Al SUR corta el lindero en -75.616246,5.793950. Al NORTE NO arranca del vértice de Congo sino de donde muere la cerca del IGAC, 49,2 m más abajo: esa cerca ya une el vértice con este punto, y arrancar arriba ponía 66 m de cerca dictada encima de sus 49 m con 1,6° de diferencia — el atajo casi paralelo que impide cerrar caras. Al empezar aquí, la conexión con el vértice la sigue dando la cerca del IGAC y no hay línea repetida."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

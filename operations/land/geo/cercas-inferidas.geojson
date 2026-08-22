@@ -1748,6 +1748,167 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 17,
+    "fuente": "[owner] cerca real nueva por el drenaje 37 (tramos 9–15), 156.6 m. Al SUR corta el lindero en -75.616246,5.793950. Al NORTE NO arranca del vértice de Congo sino de donde muere la cerca del IGAC, 49,2 m más abajo: esa cerca ya une el vértice con este punto, y arrancar arriba ponía 66 m de cerca dictada encima de sus 49 m con 1,6° de diferencia — el atajo casi paralelo que impide cerrar caras. Al empezar aquí, la conexión con el vértice la sigue dando la cerca del IGAC y no hay línea repetida. (tramo 1 de 7)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615776,
+      5.795183
+     ],
+     [
+      -75.615893,
+      5.795085
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 14,
+    "fuente": "[owner] cerca real nueva por el drenaje 37 (tramos 9–15), 156.6 m. Al SUR corta el lindero en -75.616246,5.793950. Al NORTE NO arranca del vértice de Congo sino de donde muere la cerca del IGAC, 49,2 m más abajo: esa cerca ya une el vértice con este punto, y arrancar arriba ponía 66 m de cerca dictada encima de sus 49 m con 1,6° de diferencia — el atajo casi paralelo que impide cerrar caras. Al empezar aquí, la conexión con el vértice la sigue dando la cerca del IGAC y no hay línea repetida. (tramo 2 de 7)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615893,
+      5.795085
+     ],
+     [
+      -75.615986,
+      5.794998
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 5,
+    "fuente": "[owner] cerca real nueva por el drenaje 37 (tramos 9–15), 156.6 m. Al SUR corta el lindero en -75.616246,5.793950. Al NORTE NO arranca del vértice de Congo sino de donde muere la cerca del IGAC, 49,2 m más abajo: esa cerca ya une el vértice con este punto, y arrancar arriba ponía 66 m de cerca dictada encima de sus 49 m con 1,6° de diferencia — el atajo casi paralelo que impide cerrar caras. Al empezar aquí, la conexión con el vértice la sigue dando la cerca del IGAC y no hay línea repetida. (tramo 3 de 7)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615986,
+      5.794998
+     ],
+     [
+      -75.616,
+      5.794953
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 13,
+    "fuente": "[owner] cerca real nueva por el drenaje 37 (tramos 9–15), 156.6 m. Al SUR corta el lindero en -75.616246,5.793950. Al NORTE NO arranca del vértice de Congo sino de donde muere la cerca del IGAC, 49,2 m más abajo: esa cerca ya une el vértice con este punto, y arrancar arriba ponía 66 m de cerca dictada encima de sus 49 m con 1,6° de diferencia — el atajo casi paralelo que impide cerrar caras. Al empezar aquí, la conexión con el vértice la sigue dando la cerca del IGAC y no hay línea repetida. (tramo 4 de 7)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616,
+      5.794953
+     ],
+     [
+      -75.61595,
+      5.794846
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 18,
+    "fuente": "[owner] cerca real nueva por el drenaje 37 (tramos 9–15), 156.6 m. Al SUR corta el lindero en -75.616246,5.793950. Al NORTE NO arranca del vértice de Congo sino de donde muere la cerca del IGAC, 49,2 m más abajo: esa cerca ya une el vértice con este punto, y arrancar arriba ponía 66 m de cerca dictada encima de sus 49 m con 1,6° de diferencia — el atajo casi paralelo que impide cerrar caras. Al empezar aquí, la conexión con el vértice la sigue dando la cerca del IGAC y no hay línea repetida. (tramo 5 de 7)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.61595,
+      5.794846
+     ],
+     [
+      -75.615931,
+      5.794685
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 24,
+    "fuente": "[owner] cerca real nueva por el drenaje 37 (tramos 9–15), 156.6 m. Al SUR corta el lindero en -75.616246,5.793950. Al NORTE NO arranca del vértice de Congo sino de donde muere la cerca del IGAC, 49,2 m más abajo: esa cerca ya une el vértice con este punto, y arrancar arriba ponía 66 m de cerca dictada encima de sus 49 m con 1,6° de diferencia — el atajo casi paralelo que impide cerrar caras. Al empezar aquí, la conexión con el vértice la sigue dando la cerca del IGAC y no hay línea repetida. (tramo 6 de 7)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615931,
+      5.794685
+     ],
+     [
+      -75.615964,
+      5.794475
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 66,
+    "fuente": "[owner] cerca real nueva por el drenaje 37 (tramos 9–15), 156.6 m. Al SUR corta el lindero en -75.616246,5.793950. Al NORTE NO arranca del vértice de Congo sino de donde muere la cerca del IGAC, 49,2 m más abajo: esa cerca ya une el vértice con este punto, y arrancar arriba ponía 66 m de cerca dictada encima de sus 49 m con 1,6° de diferencia — el atajo casi paralelo que impide cerrar caras. Al empezar aquí, la conexión con el vértice la sigue dando la cerca del IGAC y no hay línea repetida. (tramo 7 de 7)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615964,
+      5.794475
+     ],
+     [
+      -75.616246,
+      5.79395
+     ]
+    ]
+   }
   }
  ]
 }
