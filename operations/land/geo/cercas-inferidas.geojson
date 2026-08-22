@@ -1707,9 +1707,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_inferida",
-    "nombre": "Cerca 35–punto",
-    "longitud_m": 125,
-    "fuente": "[owner] cerca real del extremo 35 al vértice que marcó Manuel (125,0 m). Reemplaza a la anterior, que se quitó y se volvió a dictar desde cero por si el trazado viejo arrastraba algún artefacto.",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 109,
+    "fuente": "[owner] cerca real 35 → punta de la prolongación del 30, quebrando en el vértice del drenaje 34 (-75.616022,5.797999). NO es un adorno: el noding ya partía ahí la recta, porque ese vértice queda a 4,2 m y la tolerancia para puntos dictados es de 6 m. El grafo usaba el camino quebrado y la capa de cierres seguía dibujando la recta — de ahí las dos líneas casi paralelas, una verde y otra amarilla, que veía Manuel. Dictándola quebrada, lo dibujado y lo calculado coinciden. (tramo 1 de 2)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
@@ -1718,6 +1718,29 @@
      [
       -75.616726,
       5.797314
+     ],
+     [
+      -75.616022,
+      5.797999
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 17,
+    "fuente": "[owner] cerca real 35 → punta de la prolongación del 30, quebrando en el vértice del drenaje 34 (-75.616022,5.797999). NO es un adorno: el noding ya partía ahí la recta, porque ese vértice queda a 4,2 m y la tolerancia para puntos dictados es de 6 m. El grafo usaba el camino quebrado y la capa de cierres seguía dibujando la recta — de ahí las dos líneas casi paralelas, una verde y otra amarilla, que veía Manuel. Dictándola quebrada, lo dibujado y lo calculado coinciden. (tramo 2 de 2)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616022,
+      5.797999
      ],
      [
       -75.615887,

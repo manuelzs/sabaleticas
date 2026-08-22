@@ -2093,9 +2093,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "cierre",
-    "nombre": "Cierre 35–punto",
-    "longitud_m": 125,
-    "motivo": "cerca real del extremo 35 al vértice que marcó Manuel (125,0 m). Reemplaza a la anterior, que se quitó y se volvió a dictar desde cero por si el trazado viejo arrastraba algún artefacto.",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 109,
+    "motivo": "cerca real 35 → punta de la prolongación del 30, quebrando en el vértice del drenaje 34 (-75.616022,5.797999). NO es un adorno: el noding ya partía ahí la recta, porque ese vértice queda a 4,2 m y la tolerancia para puntos dictados es de 6 m. El grafo usaba el camino quebrado y la capa de cierres seguía dibujando la recta — de ahí las dos líneas casi paralelas, una verde y otra amarilla, que veía Manuel. Dictándola quebrada, lo dibujado y lo calculado coinciden. (tramo 1 de 2)",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
@@ -2105,6 +2105,30 @@
      [
       -75.616726,
       5.797314
+     ],
+     [
+      -75.616022,
+      5.797999
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 17,
+    "motivo": "cerca real 35 → punta de la prolongación del 30, quebrando en el vértice del drenaje 34 (-75.616022,5.797999). NO es un adorno: el noding ya partía ahí la recta, porque ese vértice queda a 4,2 m y la tolerancia para puntos dictados es de 6 m. El grafo usaba el camino quebrado y la capa de cierres seguía dibujando la recta — de ahí las dos líneas casi paralelas, una verde y otra amarilla, que veía Manuel. Dictándola quebrada, lo dibujado y lo calculado coinciden. (tramo 2 de 2)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616022,
+      5.797999
      ],
      [
       -75.615887,
