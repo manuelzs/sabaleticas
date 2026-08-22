@@ -127,6 +127,31 @@ Build the **seam**, not the cathedral:
 Deliberately deferred: routing/URLs, per-view state persistence beyond what exists, and
 any CRUD editing. None of it is needed to know the shape is right.
 
+## A rule the schematic taught us
+
+Bebedero 9 appeared connected to the ventosa. It was **not a data divergence** — the map's
+GeoJSON is generated from the graph on every build, so the two cannot disagree, and both said
+`t-1 → beb-9`. It was the **renderer inventing a claim**:
+
+```
+T-1 at 747 m, Bebedero 9 at 732 m  →  the router put the horizontal run at 739.5 m
+The ventosa sits at 739 m, in the same lane  →  the pipe drew straight through it
+```
+
+> ### When an axis carries meaning, the renderer may not use it freely.
+> On this diagram Y **is elevation**, so a horizontal segment at height Z asserts *"this happens
+> at Z metres."* A generic flowchart router treats Y as empty space. Here that produces a
+> confident, false statement about what is connected to what.
+
+The fix generalises: **route by search, not by formula.** Generate candidate polylines, score
+them against every symbol box, and take the cleanest — collisions dominate, then non-orthogonal
+segments, then bend count. Verified at 23 edges, zero crossings, zero diagonals.
+
+**The wider lesson for the views:** a view that shows uncertain data must not *manufacture*
+certainty through layout. The dashed hypothetical edges, the "cota desconocida" band and the
+confidence dots all exist for the same reason — the drawing must never look more confident than
+the data behind it.
+
 ## Rules this has to keep
 
 Carried from [`README.md`](README.md), and none of them change here:

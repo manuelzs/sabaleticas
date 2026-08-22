@@ -1289,6 +1289,58 @@ function pidSymbol(x,y,n,col,k){
   return {hx:r*W_, hy:r*1.3};
 }
 
+/* Symbol size without drawing it — edges must be routed before nodes are painted. */
+function symExtent(n,k){
+  const r=9*k;
+  if(n.tipo==='tanque'){
+    const units=n.unidades&&n.unidades.length||1;
+    return {hx:Math.max(46,22*units)*k/2, hy:34*k/2};
+  }
+  const W_={rompecargas:1.6, bebedero:1.3, represa:2.1, bocatoma:1.2, casa:1.0,
+            ventosa:1.0, valvula:1.0}[n.tipo] || 0.72;
+  return {hx:r*W_, hy:r*1.3};
+}
+
+/* ---- edge routing -------------------------------------------------------
+   In this diagram Y *means* elevation, so a horizontal run at height Z is a claim
+   that something happens at Z metres. A router that picks Y freely will sooner or
+   later draw a line straight through an unrelated symbol, and the diagram then lies
+   about what is connected to what — which is exactly what happened between T-1,
+   Bebedero 9 and the ventosa, whose elevations differ by half a metre.
+
+   So: generate several candidate polylines, score them against every symbol box,
+   and take the cleanest. Collisions dominate the score; bends only break ties. */
+function segHitsBox(a,b,r){
+  const x0=Math.min(a[0],b[0])-1, x1=Math.max(a[0],b[0])+1;
+  const y0=Math.min(a[1],b[1])-1, y1=Math.max(a[1],b[1])+1;
+  return !(x1<r.x0 || x0>r.x1 || y1<r.y0 || y0>r.y1);
+}
+function routeScore(path,boxes){
+  let hits=0, diag=0;
+  for(let i=0;i<path.length-1;i++){
+    const a=path[i], b=path[i+1];
+    if(Math.abs(a[0]-b[0])>2 && Math.abs(a[1]-b[1])>2) diag++;   // not orthogonal
+    for(const r of boxes) if(segHitsBox(a,b,r)) hits++;
+  }
+  return hits*100 + diag*12 + (path.length-2); // collisions ≫ diagonals ≫ bend count
+}
+function routeEdge(P,Q,boxes){
+  const cands=[[P,Q]];
+  cands.push([P,[P[0],Q[1]],Q]);                       // down this lane, in level
+  cands.push([P,[Q[0],P[1]],Q]);                       // across, then down
+  const mids=[(P[0]+Q[0])/2];
+  for(const d of [22,-22,40,-40,64,-64,90,-90])
+    mids.push((P[0]+Q[0])/2+d, P[0]+d, Q[0]+d);
+  for(const cx of mids){
+    cands.push([P,[cx,P[1]],[cx,Q[1]],Q]);             // the S: out, along, in level
+    const s=Math.sign(Q[1]-P[1])*16 || 16;
+    cands.push([P,[P[0],P[1]+s],[cx,P[1]+s],[cx,Q[1]],Q]);   // with a short stub first
+  }
+  let best=cands[0], bs=Infinity;
+  for(const c of cands){ const sc=routeScore(c,boxes); if(sc<bs){ bs=sc; best=c; } }
+  return {path:best, clean:bs<100};
+}
+
 function drawPid(){
   if(!D.net) return;
   if(!W||!H) resize();          // may be called before the async basemap sized the canvas
@@ -1318,19 +1370,39 @@ function drawPid(){
     cxp.fillText('cota desconocida — posición nominal',56,yN-6);
   }
 
+  /* symbol boxes, so no pipe is ever drawn through a node it does not touch */
+  const NB={};
+  for(const n of pidNodes()){
+    const [x,y]=pidXY(n), S=symExtent(n,k);
+    NB[n.id]={x0:x-S.hx-3, x1:x+S.hx+3, y0:y-S.hy-3, y1:y+S.hy+3};
+  }
   for(const e of D.net.edges){
     const a=by[e.from], c=by[e.to];
     if(!a||!a.pid||!c||!c.pid) continue;
     const p=pidXY(a), q=pidXY(c);
+    const boxes=Object.keys(NB).filter(id=>id!==e.from&&id!==e.to).map(id=>NB[id]);
+    const {path}=routeEdge(p,q,boxes);
     const uphill = a.cota_m!=null && c.cota_m!=null && c.cota_m>a.cota_m && !e.hipotetica;
     cxp.strokeStyle = uphill ? '#ff5252' : (e.hipotetica ? '#78909c' : '#b388ff');
     cxp.lineWidth = (uphill?3:2.4)*Math.min(1.4,k);
     cxp.setLineDash(e.hipotetica ? [7,6] : []);
-    const my=(p[1]+q[1])/2;
-    cxp.beginPath(); cxp.moveTo(p[0],p[1]); cxp.lineTo(p[0],my);
-    cxp.lineTo(q[0],my); cxp.lineTo(q[0],q[1]); cxp.stroke(); cxp.setLineDash([]);
-    if(uphill){ cxp.fillStyle='#ff5252'; cxp.font='bold 11px system-ui'; cxp.textAlign='center';
-      cxp.fillText('▲ sube '+(c.cota_m-a.cota_m)+' m',(p[0]+q[0])/2,my-5); }
+    cxp.beginPath(); cxp.moveTo(path[0][0],path[0][1]);
+    for(let i=1;i<path.length;i++) cxp.lineTo(path[i][0],path[i][1]);
+    cxp.stroke(); cxp.setLineDash([]);
+    if(uphill){
+      let li=0, lw=-1;                       // label on the longest horizontal run
+      for(let i=0;i<path.length-1;i++){
+        if(Math.abs(path[i][1]-path[i+1][1])>2) continue;
+        const w=Math.abs(path[i][0]-path[i+1][0]); if(w>lw){ lw=w; li=i; }
+      }
+      const mx=(path[li][0]+path[li+1][0])/2, my=path[li][1];
+      const txt='▲ sube '+(c.cota_m-a.cota_m)+' m';
+      cxp.font='bold 11px system-ui'; cxp.textAlign='center';
+      const tw=cxp.measureText(txt).width;
+      cxp.fillStyle='rgba(6,8,10,.92)';                    // chip, so it never gets lost
+      cxp.fillRect(mx-tw/2-5, my-16, tw+10, 14);
+      cxp.fillStyle='#ff5252'; cxp.fillText(txt,mx,my-5);
+    }
   }
 
   const CONF={alta:'#00e676', media:'#ffd54f', baja:'#ff9100', contradicha:'#ff5252'};
