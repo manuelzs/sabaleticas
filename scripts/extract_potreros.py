@@ -343,6 +343,24 @@ def main():
         json.dumps({"type": "FeatureCollection", "features": cfeats}, indent=1,
                    ensure_ascii=False), encoding="utf-8")
 
+    # Cross-check against the water graph. Manuel's insight: a fence gap is often a
+    # trough with the fence split so cattle drink from both sides — so every closure is
+    # a candidate water point, and one that is FAR from anything we know is a trough the
+    # water network is missing.
+    wf = GEO / "water-network.json"
+    if wf.exists() and cierres:
+        net = json.loads(wf.read_text(encoding="utf-8"))
+        pts = [n for n in net["nodes"] if n.get("geo")]
+        print("  contra la red de agua:")
+        for a, b, pa, pb, mot, _ in cierres:
+            mid = ((pa[0] + pb[0]) / 2, (pa[1] + pb[1]) / 2)
+            d, n = min((( math.hypot((mid[0]-x["geo"][0])*LON2M,
+                                     (mid[1]-x["geo"][1])*LAT2M), x) for x in pts),
+                       key=lambda t: t[0])
+            tag = ("coincide con" if d < 25 else
+                   "cerca de" if d < 80 else "NUEVO · lo más cercano")
+            print(f"    {a}–{b}: {tag} {n['nombre']} ({d:.0f} m)")
+
     tot = sum(a for a, _ in polys) / 10000
     print(f"  {len(polys)} potreros cerrados · {tot:.1f} ha en total"
           + (f"  ({fuera} descartados por caer fuera del lindero)" if fuera else ""))
