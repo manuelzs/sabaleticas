@@ -1752,6 +1752,270 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 17,
+    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12. (tramo 1 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615887,
+      5.79807
+     ],
+     [
+      -75.616022,
+      5.797999
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 13,
+    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12. (tramo 2 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616022,
+      5.797999
+     ],
+     [
+      -75.616137,
+      5.798004
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 28,
+    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12. (tramo 3 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616137,
+      5.798004
+     ],
+     [
+      -75.616378,
+      5.798085
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 38,
+    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12. (tramo 4 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616378,
+      5.798085
+     ],
+     [
+      -75.616687,
+      5.798241
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 34,
+    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12. (tramo 5 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616687,
+      5.798241
+     ],
+     [
+      -75.616976,
+      5.798341
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 55,
+    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12. (tramo 6 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616976,
+      5.798341
+     ],
+     [
+      -75.617476,
+      5.798346
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 19,
+    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12. (tramo 7 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617476,
+      5.798346
+     ],
+     [
+      -75.617651,
+      5.798334
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 56,
+    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12. (tramo 8 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617651,
+      5.798334
+     ],
+     [
+      -75.618128,
+      5.798165
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 33,
+    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12. (tramo 9 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618128,
+      5.798165
+     ],
+     [
+      -75.618422,
+      5.798114
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 13,
+    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12. (tramo 10 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618422,
+      5.798114
+     ],
+     [
+      -75.618538,
+      5.798123
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 39,
+    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12. (tramo 11 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618538,
+      5.798123
+     ],
+     [
+      -75.618863,
+      5.797982
+     ]
+    ]
+   }
   }
  ]
 }

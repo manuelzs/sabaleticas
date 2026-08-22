@@ -564,6 +564,60 @@
    ],
    "es_cerca": true,
    "motivo": "cerca real nueva que SUBDIVIDE, por el drenaje 12 (tramos 13 y 14). Une dos vértices que ya existían y que salieron de los dos ajustes anteriores: al sur, el final de la cerca dictada que se corrió al cruce drenaje/IGAC; al norte, la punta de la prolongación del extremo 30. 65,7 m por el cauce contra 65,1 m en recta — aquí el drenaje casi no dobla, pero es por donde va la cerca."
+  },
+  {
+   "polilinea": [
+    [
+     -75.615887,
+     5.79807
+    ],
+    [
+     -75.616022,
+     5.797999
+    ],
+    [
+     -75.616137,
+     5.798004
+    ],
+    [
+     -75.616378,
+     5.798085
+    ],
+    [
+     -75.616687,
+     5.798241
+    ],
+    [
+     -75.616976,
+     5.798341
+    ],
+    [
+     -75.617476,
+     5.798346
+    ],
+    [
+     -75.617651,
+     5.798334
+    ],
+    [
+     -75.618128,
+     5.798165
+    ],
+    [
+     -75.618422,
+     5.798114
+    ],
+    [
+     -75.618538,
+     5.798123
+    ],
+    [
+     -75.618863,
+     5.797982
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
