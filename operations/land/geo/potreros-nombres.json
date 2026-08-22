@@ -121,6 +121,14 @@
     5.800001
    ],
    "fuente": "[owner+plano 2003, 2026-08-22] Nombre HISTÓRICO leído del plano de 2003: el centro del potrero 23 cae justo sobre la etiqueta «Toledo» al proyectarlo con la georreferenciación afín (RMS 11 m). Manuel lo dio por bueno. Corroboran los vecinos del plano: Paraíso al oeste, Portugal al norte, Lajas al nororiente."
+  },
+  {
+   "nombre": "Verdún",
+   "punto": [
+    -75.604623,
+    5.796399
+   ],
+   "fuente": "[owner, 2026-08-22] Manuel lo identificó como el potrero 10 de la corrida del 2026-08-22 — la cara de 5,02 ha que apareció al cerrar la carrera del vértice 37 hasta el lindero. El plano de 2003 trae «VERDUN 7.08 has.» como bloque en esa zona."
   }
  ]
 }

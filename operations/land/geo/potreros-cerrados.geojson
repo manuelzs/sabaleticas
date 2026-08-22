@@ -2170,10 +2170,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 10",
+    "nombre": "Verdún",
     "n": 10,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "area_ha": 5.02,
     "area_m2": 50168,
