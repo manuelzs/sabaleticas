@@ -644,6 +644,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 184,
+    "fuente": "[owner] cerca real confirmada en terreno: cruza el Potrero 1 de oriente a occidente (183,5 m, rumbo 266,6°, bajando 42 m). Los dos extremos son vértices exactos del potrero.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617346,
+      5.796288
+     ],
+     [
+      -75.619,
+      5.796189
+     ]
+    ]
+   }
   }
  ]
 }

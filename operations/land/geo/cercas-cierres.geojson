@@ -984,6 +984,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 184,
+    "motivo": "cerca real confirmada en terreno: cruza el Potrero 1 de oriente a occidente (183,5 m, rumbo 266,6°, bajando 42 m). Los dos extremos son vértices exactos del potrero.",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617346,
+      5.796288
+     ],
+     [
+      -75.619,
+      5.796189
+     ]
+    ]
+   }
   }
  ]
 }
