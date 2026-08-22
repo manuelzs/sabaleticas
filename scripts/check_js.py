@@ -27,6 +27,41 @@ KNOWN = {
     "if", "for", "while", "switch", "catch", "return", "typeof", "function", "new", "do",
     "else", "try", "throw", "delete", "void", "in", "of", "await", "yield", "case",
 }
+def _strip_literals(src):
+    """Blank out string and template-literal *text*, keeping ${...} interpolations.
+
+    A regex cannot do this: template literals nest, and the ones here hold GLSL,
+    HTML and CSS. So walk it once with a tiny scanner.
+    """
+    out, i, n = [], 0, len(src)
+    stack = []                      # '`' while inside a template literal's text
+    while i < n:
+        c = src[i]
+        if stack and stack[-1] == "`":
+            if c == "\\":
+                i += 2; out.append("  "); continue
+            if c == "`":
+                stack.pop(); out.append(" "); i += 1; continue
+            if c == "$" and i + 1 < n and src[i + 1] == "{":
+                stack.append("{"); out.append("  "); i += 2; continue
+            out.append(" " if c != "\n" else "\n"); i += 1; continue
+        if c in "'\"":
+            j = i + 1
+            while j < n and src[j] != c:
+                j += 2 if src[j] == "\\" else 1
+            out.append(" " * (j - i + 1)); i = j + 1; continue
+        if c == "`":
+            stack.append("`"); out.append(" "); i += 1; continue
+        if c == "{" and stack:
+            stack.append("{")
+        elif c == "}" and stack and stack[-1] == "{":
+            stack.pop()
+            if stack and stack[-1] == "`":
+                out.append(" "); i += 1; continue
+        out.append(c); i += 1
+    return "".join(out)
+
+
 DECL = re.compile(r"\b(?:function\s+([A-Za-z_]\w*)|(?:const|let|var)\s+([A-Za-z_]\w*)\s*=)")
 # a call that is NOT a method call (not preceded by a dot) and not a declaration
 CALL = re.compile(r"(?<![.\w$])([A-Za-z_]\w*)\s*\(")
@@ -39,11 +74,7 @@ def main(quiet=False):
         src = f.read_text(encoding="utf-8")
         src = re.sub(r"/\*.*?\*/", " ", src, flags=re.S)          # comments
         src = re.sub(r"//[^\n]*", " ", src)
-        # Template literals hold GLSL, HTML and CSS — none of it is JavaScript we declare.
-        # Keep ${...} interpolations, which are.
-        src = re.sub(r"`(?:[^`\\]|\\.)*`",
-                     lambda m: " ".join(re.findall(r"\$\{([^{}]*)\}", m.group(0))), src)
-        src = re.sub(r"'(?:[^'\\]|\\.)*'|\"(?:[^\"\\]|\\.)*\"", " ", src)
+        src = _strip_literals(src)
         for a, b in DECL.findall(src):
             declared.add(a or b)
         for a, b, c in PARAM.findall(src):

@@ -181,6 +181,33 @@ certainty through layout. The dashed hypothetical edges, the "cota desconocida" 
 confidence dots all exist for the same reason — the drawing must never look more confident than
 the data behind it.
 
+## Time is a dimension of confidence
+
+`[Manuel, 2026-08-22]` *"Anything that we log in time should display a warning, or not display
+the data, when the data is stale — across all the different possible visualisations."*
+
+Two distinct things, both now enforced:
+
+### 1 · A value has a shelf life
+`VIGENCIA_H` in `src/00-core.js` says how long a measurement stays representative:
+**temperatura 3 h · nivel 24 h · conteo 30 d**. Past it → *envejecido*; past 3× → **obsoleto**,
+and **no view may show the number any more**:
+
+- the **map chip** stops printing the value and prints *"sin dato vigente"* plus the age
+- the **schematic** will not fill a tank from an obsolete level
+- the **card** greys the figure to a dash
+
+> A stale reading is not wrong. It has simply stopped being a statement about *now*, and
+> showing it as one is a lie the interface tells by omission.
+
+### 2 · The data has a horizon
+Different failure, same family. Movements are logged continuously **in real life**; the repo
+holds them only up to a date. **Silence after that date means "not yet given to us", never
+"nothing happened"** — and a chart that just stops invites the wrong reading.
+
+So both cattle views open with the horizon, and the monthly chart marks the end of the record
+with a red rule and hatched ground beyond it.
+
 ## Rules this has to keep
 
 Carried from [`README.md`](README.md), and none of them change here:

@@ -1,0 +1,31 @@
+{
+ "meta": {
+  "fuente": "SINIGAN / SNIITA V6, extraído 2026-05-21 (un predio: Sabaleticas). Todos VIVO.",
+  "obsoleto": true,
+  "obsoleto_desde": "2026-08-21",
+  "por_que": "Manuel está vendiendo activamente por delante de nuevas caídas de precio. El conteo real está POR DEBAJO de 266 y en movimiento. Toda cifra por res o por hectárea debe leerse como COTA SUPERIOR conservadora hasta un conteo fresco.",
+  "confianza_total": "media — conteo aproximado utilizable",
+  "confianza_edades": "baja",
+  "por_que_edades": "La edad exacta a menudo no se conoce ni al comprar, así que los animales se asignan a un grupo; y la identidad por animal en SINIGAN es frágil (V5 sólo guardaba conteos; los animales del catálogo V6 no se pueden rastrear al hato real). Los registros escritos de lotes de Manuel son la fuente fiable."
+ },
+ "fecha": "2026-05-21",
+ "total": 266,
+ "por_sexo": {"hembras": 256, "machos": 10},
+ "grupos": [
+  {"orden": 1, "clase": "< 3 meses",    "sexo": "hembras", "head": 1},
+  {"orden": 2, "clase": "3–9 meses",    "sexo": "hembras", "head": 1},
+  {"orden": 2, "clase": "3–9 meses",    "sexo": "machos",  "head": 5},
+  {"orden": 3, "clase": "9–12 meses",   "sexo": "hembras", "head": 10},
+  {"orden": 4, "clase": "1–2 años",     "sexo": "hembras", "head": 102},
+  {"orden": 4, "clase": "1–2 años",     "sexo": "machos",  "head": 1},
+  {"orden": 5, "clase": "2–3 años",     "sexo": "hembras", "head": 135},
+  {"orden": 5, "clase": "2–3 años",     "sexo": "machos",  "head": 4},
+  {"orden": 6, "clase": "3–5 años",     "sexo": "hembras", "head": 7}
+ ],
+ "faltante": [
+  {"que": "Peso de entrada y de salida", "por_que": "Sin kilos no hay margen por res ni ganancia diaria. Es el número que convierte un P&G en un diagnóstico."},
+  {"que": "Registros de lotes: fecha de entrada y de salida", "por_que": "Es la fuente FIABLE de edad y de rotación — más que SINIGAN. Confirma o descarta la hipótesis de baja rotación."},
+  {"que": "Precio de compra y de venta por res", "por_que": "Sin esto no se puede calcular el $/kg realizado contra el referente de Central Ganadera."},
+  {"que": "Conteo fresco tras las ventas", "por_que": "266 quedó obsoleto el 2026-08-21."}
+ ]
+}

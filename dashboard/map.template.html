@@ -103,6 +103,22 @@
  .spark path{fill:none;stroke:var(--acc);stroke-width:1.7;stroke-linecap:round;opacity:.85}
  .spark.live path{animation:flow 2.6s linear infinite}
  @keyframes flow{from{transform:translateX(0)}to{transform:translateX(-66px)}}
+ /* horizontal bars for distributions */
+ .bars{display:flex;flex-direction:column;gap:7px;margin-bottom:26px}
+ .bar{display:grid;grid-template-columns:104px 1fr 58px;align-items:center;gap:13px}
+ .bar .lbl{font-size:12px;color:var(--muted);text-align:right}
+ .bar .track{height:24px;background:#151b21;border-radius:6px;overflow:hidden;display:flex}
+ .bar .fill{height:100%;transition:width .5s ease}
+ .bar .num{font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+   font-variant-numeric:tabular-nums}
+ .warn{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:9px;
+   background:#ff910014;border:1px solid #ff910033;color:#ffb459;font-size:12px;
+   margin:0 0 20px;line-height:1.5;max-width:74ch}
+ .legend{display:flex;gap:16px;color:var(--muted);font-size:11px;margin:-14px 0 22px}
+ .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px}
+ .mini{display:flex;align-items:flex-end;gap:3px;height:52px;margin-bottom:6px}
+ .mini div{flex:1;background:#2f7f9c;border-radius:2px 2px 0 0;min-height:2px}
+ .mini div.hi{background:#4fc3f7}
  .sect{display:flex;align-items:baseline;gap:11px;margin:0 0 16px}
  .sect .n{color:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
  table{border-collapse:collapse;width:100%;font-size:12.5px}

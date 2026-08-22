@@ -12,15 +12,7 @@ const SRC_STATE={
 };
 const MAG_UNIT={nivel:'%', temperatura:'°C'};
 
-function readingAge(ts){
-  const t=Date.parse(ts.length<=10 ? ts+'T12:00:00' : ts);
-  if(isNaN(t)) return {label:'?', col:'#78909c', hours:1e9};
-  const h=(Date.now()-t)/3.6e6;
-  const label = h<1 ? 'hace minutos'
-              : h<48 ? `hace ${Math.round(h)} h`
-              : `hace ${Math.round(h/24)} d`;
-  return {label, col: h<24?'#00e676' : h<24*8?'#ffd54f' : '#ff9100', hours:h};
-}
+const readingAge=(ts,mag)=>freshness(ts,mag);   // superseded by the shared model
 function readingsFor(eid){
   const R=D.readings||{};
   return Object.keys(R).filter(k=>k.split('|')[0]===eid).map(k=>R[k]);
@@ -34,16 +26,21 @@ function applyReadingsToNet(){
   if(!D.net) return;
   for(const n of D.net.nodes){
     const r=(D.readings||{})[n.id+'|nivel'];
-    n.nivel_pct = (r && r.unidad==='%') ? parseFloat(r.valor) : null;
+    // an obsolete level must not paint a tank — it would assert a state we do not know
+    n.nivel_pct = (r && r.unidad==='%' && freshness(r.ts,'nivel').estado!=='obsoleto')
+      ? parseFloat(r.valor) : null;
   }
 }
 
 /* ---- the two views of the Sensores tab -------------------------------- */
 function cardReading(r){
-  const a=readingAge(r.ts);
-  return `<div class="card" style="--acc:${a.col}">
-    <div class="top"><span class="dot"></span>${a.label}</div>
-    <div class="big">${r.valor}<small>${r.unidad||''}</small></div>
+  const a=freshness(r.ts, r.magnitud);
+  const dead=a.estado==='obsoleto';
+  return `<div class="card${dead?' ghost':''}" style="--acc:${a.col}">
+    <div class="top"><span class="dot"></span>${a.label}${
+      a.estado!=='fresco'?` · ${a.estado} (vigencia ${a.vigencia} h)`:''}</div>
+    <div class="big"${dead?' style="color:#4b5761"':''}>${
+      dead?'—':r.valor}<small>${r.unidad||''}</small></div>
     <div class="mag">${r.magnitud}</div>
     <div class="ent">${entityName(r.entidad)}</div>
     <div class="meta">${r.origen==='manual'?'✍︎ anotado a mano':'⚙ automático'}${
@@ -68,7 +65,7 @@ function spark(live){
    have declared it online. Manual transcription counts: data is data. */
 function freshFrom(f){
   return Object.values(D.readings||{})
-    .find(r=>r.fuente===f.id && readingAge(r.ts).hours < 48) || null;
+    .find(r=>r.fuente===f.id && freshness(r.ts,r.magnitud).estado!=='obsoleto') || null;
 }
 /* Data is arriving — by whatever route. The sparkline shows flow, the pill shows
    whether the DEVICE is connected. A hand-typed value is real data and a

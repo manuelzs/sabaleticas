@@ -20,6 +20,9 @@
 | **Subsystem tabs × views**, routed in the hash (`#agua/esquema`) | ✅ |
 | **Sensores tab** — readings + sources, first DOM view | ✅ |
 | **Readings render everywhere** — map chip, schematic tank fill, list — by entity id | ✅ |
+| **Freshness model** — values expire and views stop asserting them | ✅ |
+| **Ganado tab** — hato and movimientos, from real SINIGAN and GSMI data | ✅ |
+| `check_js.py` — catches identifiers called but never declared, on every build | ✅ |
 
 ## Open
 

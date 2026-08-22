@@ -83,17 +83,26 @@ function drawReadings(){
       const p=toScreen(f.c[0],f.c[1]);
       let dy=-27;                       // clear of the feature's own label
       for(const r of rs){
-        const a=(typeof readingAge==='function') ? readingAge(r.ts) : {col:'#00e676'};
-        const txt=`${r.valor} ${r.unidad||''}`.trim();
+        const a=freshness(r.ts, r.magnitud);
+        // past its shelf life the number stops being shown at all — only that it is stale
+        const txt = a.estado==='obsoleto'
+          ? `${r.magnitud} · sin dato vigente`
+          : `${r.valor} ${r.unidad||''}`.trim();
         cx.font='bold 12px system-ui';
         const w=cx.measureText(txt).width;
         cx.fillStyle='rgba(8,12,16,.88)';
         cx.beginPath(); cx.roundRect(p[0]+11, p[1]+dy-11, w+22, 17, 8); cx.fill();
         cx.strokeStyle=a.col+'66'; cx.lineWidth=1; cx.stroke();
         cx.beginPath(); cx.arc(p[0]+18, p[1]+dy-2.5, 3, 0, 7); cx.fillStyle=a.col; cx.fill();
-        cx.fillStyle='#e6edf3'; cx.textAlign='left';
+        cx.fillStyle = a.estado==='obsoleto' ? '#8b98a5'
+                     : a.estado==='envejecido' ? '#cbd5dc' : '#e6edf3';
+        cx.textAlign='left';
         cx.fillText(txt, p[0]+25, p[1]+dy+2);
-        dy-=20;
+        if(a.estado!=='fresco'){                      // say how old, never just the value
+          cx.font='10px system-ui'; cx.fillStyle=a.col+'cc';
+          cx.fillText(a.label, p[0]+25, p[1]+dy+13);
+        }
+        dy-= (a.estado==='fresco'?20:31);
       }
     }
   }

@@ -172,6 +172,16 @@ def _latest_readings(path: Path):
     return out
 
 
+def _movements(path: Path):
+    """GSMI movement guides, as issued. Nothing is filtered or filled in — several
+    carry no head count at all, and that gap is worth seeing rather than hiding."""
+    if not path.exists():
+        return []
+    import csv
+    with path.open(encoding="utf-8") as f:
+        return [{k: (v or "") for k, v in r.items()} for r in csv.DictReader(f)]
+
+
 def _collect(geo: Path):
     out = []
     owners = _owners(geo)
@@ -275,12 +285,17 @@ def build(root: Path) -> Path:
     src_f = root / "operations" / "sensors" / "sources.json"
     sources = json.loads(src_f.read_text(encoding="utf-8")) if src_f.exists() else None
     readings = _latest_readings(root / "data" / "readings.csv")
+    herd_f = root / "data" / "herd.json"
+    herd = json.loads(herd_f.read_text(encoding="utf-8")) if herd_f.exists() else None
+    movements = _movements(root / "data" / "gsmi_movements.csv")
 
     payload = json.dumps({
         "farm": farm,
         "net": net,                       # the water graph, for the schematic view
         "sources": sources,               # data sources, automated and manual
         "readings": readings,             # latest value per entity+magnitude
+        "herd": herd,                     # SINIGAN inventory snapshot
+        "movements": movements,           # GSMI movement guides
         "tipoColour": TIPO_COLOUR,
         "tipoShape": TIPO_SHAPE,
         "bounds": farm["bounds"],

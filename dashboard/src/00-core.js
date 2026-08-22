@@ -47,3 +47,29 @@ function slopeAt(lon,lat){
   return {deg: Math.atan(g)*180/Math.PI, pct: g*100};
 }
 
+/* ---- how long a measurement stays representative ------------------------
+   This is a system that logs things over time, so every timestamped value has a
+   shelf life. Past it the number is not wrong — it is simply no longer a statement
+   about now, and no view may present it as though it were.
+
+   `vigencia` = how long the value can still be read as current, in hours. Beyond
+   3x that it is obsolete and views must stop showing the number. */
+const VIGENCIA_H = {temperatura: 3, nivel: 24, peso: 720, conteo: 720, lluvia: 6};
+const VIGENCIA_DEF = 24;
+
+function ageHours(ts){
+  if(!ts) return Infinity;
+  const t = Date.parse(ts.length<=10 ? ts+'T12:00:00' : ts);
+  return isNaN(t) ? Infinity : (Date.now()-t)/3.6e6;
+}
+function freshness(ts, magnitud){
+  const h = ageHours(ts), v = VIGENCIA_H[magnitud] || VIGENCIA_DEF;
+  const label = h===Infinity ? 'sin fecha'
+    : h<1 ? 'hace minutos'
+    : h<48 ? `hace ${Math.round(h)} h`
+    : `hace ${Math.round(h/24)} d`;
+  if(h <= v)     return {estado:'fresco',     col:'#00e676', label, hours:h, vigencia:v};
+  if(h <= v*3)   return {estado:'envejecido', col:'#ffd54f', label, hours:h, vigencia:v};
+  return           {estado:'obsoleto',   col:'#ff5252', label, hours:h, vigencia:v};
+}
+
