@@ -19,6 +19,66 @@
      5.802539
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "corral",
+    "nombre": "Corral principal",
+    "_id": "ganado:corral-1",
+    "area_m2": 431,
+    "piso": "duro",
+    "fuente": "[owner, 2026-08-22] Manuel capturó las cuatro esquinas sobre la ortofoto.",
+    "pos_confianza": "alta",
+    "nota": "NO es un potrero: piso duro, cero forraje. Sus muros SÍ son cerca — entran en la geometría antes del noding para que los potreros vecinos cierren contra ellos, y la cara que forman se descarta de la lista de potreros, igual que la represa. Dentro cae una construcción del IGAC de 152 m² (6 de sus 7 vértices): es el techo sobre la báscula, no un conflicto — son capas distintas describiendo cosas distintas."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.615555,
+       5.796451
+      ],
+      [
+       -75.615541,
+       5.796607
+      ],
+      [
+       -75.615321,
+       5.79659
+      ],
+      [
+       -75.615331,
+       5.796433
+      ],
+      [
+       -75.615555,
+       5.796451
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "embarcadero",
+    "nombre": "Embarcadero",
+    "_id": "ganado:embarcadero-1",
+    "corral": "ganado:corral-1",
+    "fuente": "[owner, 2026-08-22] Manuel: está en la esquina suroriental del corral.",
+    "pos_confianza": "media",
+    "pos_motivo": "la esquina la dio Manuel; el punto exacto de la rampa dentro de la esquina no",
+    "nota": "Por donde sube el ganado al camión. Es el punto por el que sale TODO lo que se vende, así que cuelga de aquí cualquier evento de embarque."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.615331,
+     5.796433
+    ]
+   }
   }
  ]
 }

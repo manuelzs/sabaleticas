@@ -53,7 +53,11 @@ LAYERS = [
     ("Construcciones",          "igac-1to5000/Construccion_R.geojson", "poly", "#ff8a65", 1.5, "rgba(255,138,101,.6)"),
     ("Vecinos (con nombre)",   "neighbours.geojson",                  "poly", "#b0bec5", 1.6, None),
     ("Ruta gravedad (candidata)","gravity-route-candidate.geojson",     "line", "#00e676", 3.0, None),
-    ("Ganado: infraestructura", "ganado-infraestructura.geojson",     "line", "#ce93d8", 2.0, None),
+    # "poly", not "line": the layer holds the corral as a POLYGON, and a line-kind
+    # layer never labels its polygons. Points in it are unaffected — drawGeom
+    # branches on the geometry, not on the layer kind.
+    ("Ganado: infraestructura", "ganado-infraestructura.geojson",     "poly", "#ce93d8", 2.0,
+     "rgba(161,136,127,.22)"),
     ("Potreros (cerrados)",     "potreros-cerrados.geojson",           "poly", "#ffee58", 2.2, "rgba(255,238,88,.16)"),
     ("Cercas abiertas",         "cercas-abiertas.geojson",             "line", "#ff5252", 1.0, None),
     ("Cierres (dictados)",      "cercas-cierres.geojson",              "line", "#00e676", 2.6, None),

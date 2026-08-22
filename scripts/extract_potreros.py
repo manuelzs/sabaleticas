@@ -594,6 +594,27 @@ def main():
             print(f"  espejos de agua como lindero: {len(ESPEJOS)} "
                   f"({sum(len(r) for r in ESPEJOS)} vértices)")
 
+    # A corral is NOT a potrero: hard floor, zero forage. Counting it as one would put a
+    # zero-forage polygon into every per-hectare figure — stocking rate, rest days, forage
+    # budget — and add a face to the audit list that nobody needs to confirm. But its walls
+    # ARE fence: neighbouring potreros close against them, so the outline goes into the
+    # geometry exactly like the reservoir, and the face it forms is dropped further down.
+    CORRALES = []
+    f_gan = GEO / "ganado-infraestructura.geojson"
+    if f_gan.exists():
+        for f in json.loads(f_gan.read_text(encoding="utf-8"))["features"]:
+            if f["properties"].get("tipo") != "corral":
+                continue
+            g = f["geometry"]
+            rings = g["coordinates"] if g["type"] == "Polygon" else \
+                [r for p in g["coordinates"] for r in p]
+            for r in rings:
+                ring = [tuple(c[:2]) for c in r]
+                lines.append(ring)
+                CORRALES.append(ring)
+        if CORRALES:
+            print(f"  corrales como lindero: {len(CORRALES)}")
+
     # A gap does not always close onto another gap. Often a fence simply RUNS ON and
     # meets another fence in a T. The faithful move is to continue it in its own
     # direction until it hits something — not to drop a perpendicular, which would
@@ -920,6 +941,11 @@ def main():
             if n_agua / n_tot > 0.8:
                 if a / 10000 > 0.5:
                     print(f"      descartada por ser espejo de agua: {a/10000:.2f} ha")
+                continue
+        if CORRALES and n_tot:
+            n_cor = sum(1 for q in muestras if inside(q, [[r] for r in CORRALES]))
+            if n_cor / n_tot > 0.8:
+                print(f"      descartada por ser corral: {a:.0f} m²")
                 continue
         if sum(1 for k in cyc if k in bkeys) / len(cyc) > 0.9:
             if a / 10000 > 2:

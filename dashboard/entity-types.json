@@ -201,6 +201,31 @@
    "ancho": 0,
    "geom": "line",
    "atributos": []
+  },
+  "corral": {
+   "label": "Corral",
+   "color": "#a1887f",
+   "mapa": "square",
+   "esquema": "box",
+   "ancho": 2.0,
+   "geom": "polygon",
+   "atributos": [
+    "area_m2",
+    "piso",
+    "embarcadero",
+    "bascula"
+   ]
+  },
+  "embarcadero": {
+   "label": "Embarcadero",
+   "color": "#8d6e63",
+   "mapa": "triangle",
+   "esquema": "dot",
+   "ancho": 1.0,
+   "geom": "point",
+   "atributos": [
+    "corral"
+   ]
   }
  }
 }
