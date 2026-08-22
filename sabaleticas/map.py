@@ -29,7 +29,7 @@ LAYERS = [
     ("Cauces (área)",           "igac-1to5000/Drenaje_R.geojson",      "poly", "#29b6f6", 1.0, "rgba(41,182,246,.35)"),
     ("Depósitos de agua",       "igac-1to5000/Deposito_Agua_R.geojson","poly", "#00e5ff", 2.0, "rgba(0,229,255,.45)"),
     ("Agua: infraestructura",   "water-infrastructure.geojson",        "line", "#b388ff", 2.6, None),
-    ("Curvas 5 m",              "contours-5m.geojson",                 "line", "#c9a227", 0.6, None),
+    ("Curvas 5 m",              "contours-5m.geojson",                 "line", "#f0cd7a", 0.9, None),
     ("Curvas 25 m",             "contours-25m.geojson",                "line", "#ffb74d", 1.4, None),
     ("Bosque",                  "igac-1to5000/Bosque.geojson",         "poly", "#66bb6a", 1.0, "rgba(102,187,106,.20)"),
     ("Vías",                    "igac-1to5000/Vias.geojson",           "line", "#ffffff", 1.4, None),
