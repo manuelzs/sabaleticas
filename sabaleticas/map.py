@@ -43,6 +43,12 @@ EXACTAS = {"Linderos", "Cercas", "Cercas (bajo dosel)", "Potreros (cerrados)",
            "Cercas abiertas", "Cierres (dictados)", "Ganado: infraestructura",
            "Agua: infraestructura", "Playón (uso, no pastoreo)"}
 
+# Layers that share ONE checkbox. They stay separate files, separate colours and
+# separate features — only the menu entry is shared. A fence is a fence: which of the
+# two saw it, IGAC's imagery or Manuel, is a question about provenance, and the map
+# already answers it in the colour. It does not need to be a switch you can get wrong.
+MENU = {"Cercas": "Cercas", "Cercas (bajo dosel)": "Cercas"}
+
 # label, file (relative to geo/), kind, colour, width, fill
 LAYERS = [
     ("Linderos",                "boundary.geojson",                    "poly", "#ff1744", 3.0, None),
@@ -293,7 +299,9 @@ def _collect(geo: Path, TIPOS):
                              else str(props.get("nombre") or label))[:60]
             feats.append(item)
         if feats:
-            out.append({"name": name, "kind": kind, "colour": colour, "width": width,
+            item_menu = MENU.get(name)
+            out.append({"name": name, "menu": item_menu, "kind": kind,
+                        "colour": colour, "width": width,
                         "fill": fill, "on": name in DEFAULT_ON, "features": feats,
                         "grupo": LAYER_GROUP.get(name, "predio")})
     return out

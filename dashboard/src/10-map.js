@@ -583,13 +583,28 @@ function buildLayers(only){
     if(only && g!==only) continue;
     if(!only && keys.length>1)
       box.insertAdjacentHTML('beforeend',`<div class="grp">${GRUPO[g]||g}</div>`);
+    /* Layers carrying the same `menu` share one checkbox. The data stays split — two
+       files, two colours, two entries in D.layers — because which source saw a fence is
+       worth keeping; it just is not worth a switch. The swatch blends both colours so
+       the entry still says there are two things under it. */
+    const menus=[];
     for(const [L,i] of groups[g]){
-      const id='L'+i;
+      const key=L.menu||L.name;
+      let m=menus.find(x=>x.key===key);
+      if(!m){ m={key,label:key,first:i,ls:[]}; menus.push(m); }
+      m.ls.push(L);
+    }
+    for(const m of menus){
+      const id='L'+m.first;
+      const cols=[...new Set(m.ls.map(L=>L.colour))];
+      const sw = cols.length>1
+        ? `linear-gradient(135deg,${cols[0]} 0 50%,${cols[1]} 50% 100%)` : cols[0];
+      const on=m.ls.some(L=>L.on);
       box.insertAdjacentHTML('beforeend',
-        `<label><input type="checkbox" id="${id}" ${L.on?'checked':''}>
-         <span class="sw" style="background:${L.colour}"></span>${L.name}</label>`);
+        `<label><input type="checkbox" id="${id}" ${on?'checked':''}>
+         <span class="sw" style="background:${sw}"></span>${m.label}</label>`);
       document.getElementById(id).onchange=e=>{
-        L.on=e.target.checked; saveLayers();
+        m.ls.forEach(L=>L.on=e.target.checked); saveLayers();
         if(isPid) drawPid(); else if(is3d) render3d(); else draw();};
     }
   }
