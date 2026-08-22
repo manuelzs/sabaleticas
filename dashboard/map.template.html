@@ -1194,7 +1194,7 @@ function set3d(on){
 }
 if(D.tex && D.mesh){
   const b=document.getElementById('btn3d'); b.style.display='inline-block';
-  b.onclick=()=>set3d(!is3d);
+  b.onclick=()=>setMode(is3d?'mapa':'3d');
   document.getElementById('exag').oninput=e=>{
     exag=parseFloat(e.target.value);
     document.getElementById('exagv').textContent=exag+'×'; saveView(); render3d();};
@@ -1211,12 +1211,14 @@ if(D.tex && D.mesh){
 }
 
 /* ================= Esquema hidráulico (P&ID) =================
-   A second renderer over the SAME graph as the map. Y is real elevation, because
-   in a gravity system height is the logic: what sits above can feed what sits
-   below, and that has to be readable at a glance. X is a hand-placed lane per
-   branch, chosen purely for legibility. */
+   A second renderer over the SAME graph as the map. Y is real elevation, because in a
+   gravity system height IS the logic: what sits above can feed what sits below, and that
+   has to be readable at a glance. X is a hand-placed lane per branch, for legibility only.
+
+   Transform is base -> scale -> offset, exactly like the map, so the wheel can zoom about
+   the cursor instead of sliding the drawing around. */
 const cvp=document.getElementById('cvp'), cxp=cvp.getContext('2d');
-let isPid=false, pv={x:0,y:0,s:1}, pvInit=false, pidHover=null;
+let isPid=false, pv={ox:0,oy:0,s:1}, PB=null;
 
 function pidNodes(){ return (D.net&&D.net.nodes||[]).filter(n=>n.pid); }
 function pidBounds(){
@@ -1224,107 +1226,163 @@ function pidBounds(){
   return {x0:Math.min(...xs), x1:Math.max(...xs), y0:Math.min(...ys), y1:Math.max(...ys)};
 }
 function pidFit(){
-  const b=pidBounds(), padL=68, padR=150, padT=48, padB=40;
-  const w=(W-padL-padR)/Math.max(1,(b.x1-b.x0)), h=(H-padT-padB)/Math.max(1,(b.y1-b.y0));
-  pv={x:padL - b.x0*w, y:padT + b.y1*h, s:1, w, h};   // y flipped: high ground on top
-  pvInit=true;
+  const b=pidBounds(), padL=92, padR=190, padT=70, padB=74;
+  PB={b, padL, padT,
+      w:(W-padL-padR)/Math.max(1,(b.x1-b.x0)),
+      h:(H-padT-padB)/Math.max(1,(b.y1-b.y0))};
+  pv={ox:0, oy:0, s:1};
 }
-function pidXY(n){
-  return [pv.x + n.pid[0]*pv.w*pv.s + (pv.dx||0),
-          pv.y - n.pid[1]*pv.h*pv.s + (pv.dy||0)];
-}
-const PID_SYM={tanque:'tank', rompecargas:'chamber', derivacion:'tee', bebedero:'trough',
-               casa:'house', represa:'pond', ventosa:'vent', bocatoma:'intake'};
+function pidBase(p){ return [PB.padL+(p[0]-PB.b.x0)*PB.w, PB.padT+(PB.b.y1-p[1])*PB.h]; }
+function pidXY(n){ const b=pidBase(n.pid); return [b[0]*pv.s+pv.ox, b[1]*pv.s+pv.oy]; }
+function pidYof(z){ return pidBase([0,z])[1]*pv.s+pv.oy; }
+const fmtL=v=>v==null?'':v.toLocaleString('es-CO')+' L';
 
-function pidSymbol(x,y,tipo,col,r){
+/* Tanks are drawn large and hollow on purpose: the interior is where a level will go
+   once there is sensor data. Until then it reads as an empty vessel, which is honest. */
+function pidTank(x,y,n,col,k){
+  const units=n.unidades&&n.unidades.length||1;
+  const w=Math.max(46, 22*units)*k, h=34*k;
+  const x0=x-w/2, y0=y-h/2;
+  cxp.fillStyle='rgba(8,12,16,.95)'; cxp.fillRect(x0,y0,w,h);
+  const lvl=n.nivel_pct;                                   // filled in when sensors exist
+  if(lvl!=null){ cxp.fillStyle=col+'55';
+    cxp.fillRect(x0, y0+h*(1-lvl/100), w, h*lvl/100); }
+  cxp.strokeStyle=col; cxp.lineWidth=2.2*Math.min(1.6,k); cxp.strokeRect(x0,y0,w,h);
+  if(units>1){                                             // three vessels, one group
+    cxp.strokeStyle=col+'88'; cxp.lineWidth=1;
+    for(let u=1;u<units;u++){ const ux=x0+w*u/units;
+      cxp.beginPath(); cxp.moveTo(ux,y0+2); cxp.lineTo(ux,y0+h-2); cxp.stroke(); }
+  }
+  if(lvl==null && k>0.7){                                  // dashed waterline = no reading
+    cxp.strokeStyle='rgba(255,255,255,.18)'; cxp.setLineDash([4,4]); cxp.lineWidth=1;
+    cxp.beginPath(); cxp.moveTo(x0+3,y-h*0.1); cxp.lineTo(x0+w-3,y-h*0.1); cxp.stroke();
+    cxp.setLineDash([]);
+  }
+  return {hx:w/2, hy:h/2};
+}
+function pidSymbol(x,y,n,col,k){
+  const t=n.tipo, r=9*k;
+  if(t==='tanque') return pidTank(x,y,n,col,k);
   cxp.beginPath();
-  const k=PID_SYM[tipo]||'tee';
-  if(k==='tank'){ cxp.rect(x-r*1.5,y-r,r*3,r*2); }
-  else if(k==='chamber'){ cxp.rect(x-r*1.4,y-r*0.9,r*2.8,r*1.8); }
-  else if(k==='trough'){ cxp.moveTo(x-r*1.3,y-r*0.8); cxp.lineTo(x+r*1.3,y-r*0.8);
-                         cxp.lineTo(x+r*0.8,y+r*0.8); cxp.lineTo(x-r*0.8,y+r*0.8); cxp.closePath(); }
-  else if(k==='house'){ cxp.moveTo(x-r,y+r); cxp.lineTo(x-r,y-r*0.2); cxp.lineTo(x,y-r*1.3);
-                        cxp.lineTo(x+r,y-r*0.2); cxp.lineTo(x+r,y+r); cxp.closePath(); }
-  else if(k==='pond'){ cxp.ellipse(x,y,r*2.1,r*1.1,0,0,7); }
-  else if(k==='vent'){ const w=r*0.42;
-                       cxp.moveTo(x,y-r*1.4); cxp.lineTo(x+r,y-r*0.1); cxp.lineTo(x+w,y-r*0.1);
-                       cxp.lineTo(x+w,y+r); cxp.lineTo(x-w,y+r); cxp.lineTo(x-w,y-r*0.1);
-                       cxp.lineTo(x-r,y-r*0.1); cxp.closePath(); }
+  if(t==='rompecargas'){ cxp.rect(x-r*1.6,y-r*1.1,r*3.2,r*2.2); }
+  else if(t==='bebedero'){ cxp.moveTo(x-r*1.3,y-r*0.8); cxp.lineTo(x+r*1.3,y-r*0.8);
+                           cxp.lineTo(x+r*0.8,y+r*0.8); cxp.lineTo(x-r*0.8,y+r*0.8); cxp.closePath(); }
+  else if(t==='casa'){ cxp.moveTo(x-r,y+r); cxp.lineTo(x-r,y-r*0.2); cxp.lineTo(x,y-r*1.3);
+                       cxp.lineTo(x+r,y-r*0.2); cxp.lineTo(x+r,y+r); cxp.closePath(); }
+  else if(t==='represa'){ cxp.ellipse(x,y,r*2.1,r*1.1,0,0,7); }
+  else if(t==='bocatoma'){ cxp.moveTo(x,y-r*1.2); cxp.lineTo(x+r*1.2,y+r*0.8);
+                           cxp.lineTo(x-r*1.2,y+r*0.8); cxp.closePath(); }
+  else if(t==='ventosa'){ const w=r*0.42;
+      cxp.moveTo(x,y-r*1.4); cxp.lineTo(x+r,y-r*0.1); cxp.lineTo(x+w,y-r*0.1);
+      cxp.lineTo(x+w,y+r); cxp.lineTo(x-w,y+r); cxp.lineTo(x-w,y-r*0.1);
+      cxp.lineTo(x-r,y-r*0.1); cxp.closePath(); }
+  else if(t==='valvula'){ cxp.moveTo(x-r,y-r*0.8); cxp.lineTo(x,y); cxp.lineTo(x-r,y+r*0.8);
+      cxp.closePath(); cxp.moveTo(x+r,y-r*0.8); cxp.lineTo(x,y); cxp.lineTo(x+r,y+r*0.8);
+      cxp.closePath(); }
   else { cxp.arc(x,y,r*0.72,0,7); }
-  cxp.fillStyle = k==='tee' ? col : 'rgba(10,14,18,.92)';
+  cxp.fillStyle = (t==='derivacion') ? col : 'rgba(8,12,16,.95)';
   cxp.fill();
-  cxp.strokeStyle=col; cxp.lineWidth=2; cxp.stroke();
+  if(n.cota_nominal){ cxp.setLineDash([4,3]); }            // placed by inference, not measured
+  cxp.strokeStyle=col; cxp.lineWidth=2*Math.min(1.6,k); cxp.stroke(); cxp.setLineDash([]);
+  const W_={rompecargas:1.6, bebedero:1.3, represa:2.1, bocatoma:1.2, casa:1.0,
+            ventosa:1.0, valvula:1.0}[t] || 0.72;
+  return {hx:r*W_, hy:r*1.3};
 }
 
 function drawPid(){
   if(!D.net) return;
-  if(!pvInit) pidFit();
+  if(!W||!H) resize();          // may be called before the async basemap sized the canvas
+  if(!PB) pidFit();
   cvp.width=W*devicePixelRatio; cvp.height=H*devicePixelRatio;
   cvp.style.width=W+'px'; cvp.style.height=H+'px';
   cxp.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
   cxp.fillStyle='#06080a'; cxp.fillRect(0,0,W,H);
-
   const by={}; for(const n of D.net.nodes) by[n.id]=n;
-  const b=pidBounds();
+  const b=pidBounds(), k=Math.max(.55,Math.min(1.8,pv.s));
 
-  /* elevation axis — the whole point of the layout */
+  /* elevation axis — the reason this layout is worth having */
   cxp.font='11px system-ui'; cxp.textAlign='left';
-  for(let z=Math.ceil(b.y0/25)*25; z<=b.y1; z+=25){
-    const y=pv.y - z*pv.h*pv.s + (pv.dy||0);
-    if(y<20||y>H-10) continue;
+  const real=pidNodes().filter(n=>!n.cota_nominal).map(n=>n.pid[1]);
+  const zTop=Math.max(...real);
+  for(let z=Math.ceil(b.y0/25)*25; z<=zTop; z+=25){
+    const y=pidYof(z); if(y<16||y>H-24) continue;
     cxp.strokeStyle='rgba(255,255,255,.07)'; cxp.lineWidth=1;
-    cxp.beginPath(); cxp.moveTo(46,y); cxp.lineTo(W-8,y); cxp.stroke();
+    cxp.beginPath(); cxp.moveTo(50,y); cxp.lineTo(W-8,y); cxp.stroke();
     cxp.fillStyle='rgba(255,255,255,.38)'; cxp.fillText(z+' m',8,y+4);
   }
+  const yN=pidYof(zTop)-26;                     // above this line, heights are inferred
+  if(yN>14&&yN<H){
+    cxp.strokeStyle='rgba(255,255,255,.13)'; cxp.setLineDash([6,5]); cxp.lineWidth=1;
+    cxp.beginPath(); cxp.moveTo(50,yN); cxp.lineTo(W-8,yN); cxp.stroke(); cxp.setLineDash([]);
+    cxp.fillStyle='rgba(255,255,255,.3)'; cxp.font='italic 11px system-ui';
+    cxp.fillText('cota desconocida — posición nominal',56,yN-6);
+  }
 
-  /* edges */
   for(const e of D.net.edges){
     const a=by[e.from], c=by[e.to];
     if(!a||!a.pid||!c||!c.pid) continue;
     const p=pidXY(a), q=pidXY(c);
     const uphill = a.cota_m!=null && c.cota_m!=null && c.cota_m>a.cota_m && !e.hipotetica;
     cxp.strokeStyle = uphill ? '#ff5252' : (e.hipotetica ? '#78909c' : '#b388ff');
-    cxp.lineWidth = uphill ? 3 : 2.4;
+    cxp.lineWidth = (uphill?3:2.4)*Math.min(1.4,k);
     cxp.setLineDash(e.hipotetica ? [7,6] : []);
-    cxp.beginPath();
-    const my=(p[1]+q[1])/2;                       // orthogonal routing, P&ID style
-    cxp.moveTo(p[0],p[1]); cxp.lineTo(p[0],my); cxp.lineTo(q[0],my); cxp.lineTo(q[0],q[1]);
-    cxp.stroke(); cxp.setLineDash([]);
-    if(uphill){                                   // mark the impossibility, do not hide it
-      cxp.fillStyle='#ff5252'; cxp.font='bold 11px system-ui'; cxp.textAlign='center';
-      cxp.fillText('▲ sube '+(c.cota_m-a.cota_m)+' m',(p[0]+q[0])/2,my-5);
-    }
+    const my=(p[1]+q[1])/2;
+    cxp.beginPath(); cxp.moveTo(p[0],p[1]); cxp.lineTo(p[0],my);
+    cxp.lineTo(q[0],my); cxp.lineTo(q[0],q[1]); cxp.stroke(); cxp.setLineDash([]);
+    if(uphill){ cxp.fillStyle='#ff5252'; cxp.font='bold 11px system-ui'; cxp.textAlign='center';
+      cxp.fillText('▲ sube '+(c.cota_m-a.cota_m)+' m',(p[0]+q[0])/2,my-5); }
   }
 
-  /* nodes */
   const CONF={alta:'#00e676', media:'#ffd54f', baja:'#ff9100', contradicha:'#ff5252'};
+  const boxes=[];
+  const hits=(a)=>boxes.some(b=>!(a.x1<b.x0||a.x0>b.x1||a.y1<b.y0||a.y0>b.y1));
   for(const n of pidNodes()){
     const [x,y]=pidXY(n);
     const col=(D.tipoColour||{})[n.tipo]||'#90a4ae';
-    pidSymbol(x,y,n.tipo,col,9);
-    const right = n.pid[0] >= 44;
-    cxp.textAlign = right ? 'left' : 'right';
-    const tx = x + (right ? 20 : -20);
+    const S=pidSymbol(x,y,n,col,k);
+    const lines=[(n.nombre||n.id).replace(/\s*\(.*?\)\s*/g,' ').trim()];
+    const sub=[ n.cota_m!=null ? n.cota_m+' m' : (n.cota_nominal?'cota ?':''),
+                n.capacidad_l ? fmtL(n.capacidad_l) : '' ].filter(Boolean).join(' · ');
+    if(sub) lines.push(sub);
+    if(n.unidades) lines.push(n.unidades.length+' × '+fmtL(n.unidades[0].capacidad_l)+' · unión ?');
     cxp.font='bold 12px system-ui';
-    cxp.fillStyle = n===pidHover ? '#fff' : '#dfe6ea';
-    cxp.fillText((n.nombre||n.id).replace(/\s*\(.*?\)\s*/g,' ').trim(), tx, y-1);
-    cxp.font='11px system-ui'; cxp.fillStyle='rgba(255,255,255,.45)';
-    cxp.fillText((n.cota_m!=null? n.cota_m+' m' : ''), tx, y+13);
-    const c=CONF[n.pos_confianza||'baja'];        // confidence as a dot on the symbol
-    cxp.beginPath(); cxp.arc(x + (right?-14:14), y-11, 3.2, 0, 7);
-    cxp.fillStyle=c; cxp.fill();
+    const wpx=Math.max(...lines.map((t,i)=>{ cxp.font=(i?'11px':'bold 12px')+' system-ui';
+                                             return cxp.measureText(t).width; }));
+    const hpx=lines.length*12+6, gap=S.hx+12;
+    let placed=null;
+    for(const side of (n.pid[0]>=44 ? [1,-1] : [-1,1])){
+      for(const dy of [0,-16,16,-30,30,-44,44]){
+        const tx = x + side*gap, ty = y-2+dy;
+        const box={x0: side>0?tx:tx-wpx, x1: side>0?tx+wpx:tx, y0:ty-11, y1:ty-11+hpx};
+        if(!hits(box)){ placed={tx,ty,side,box}; break; }
+      }
+      if(placed) break;
+    }
+    if(!placed){ const tx=x+gap; placed={tx,ty:y-2,side:1,
+      box:{x0:tx,x1:tx+wpx,y0:y-13,y1:y-13+hpx}}; }
+    boxes.push(placed.box);
+    cxp.textAlign = placed.side>0 ? 'left' : 'right';
+    lines.forEach((t,i)=>{
+      cxp.font=(i?'11px':'bold 12px')+' system-ui';
+      cxp.fillStyle = i===0 ? '#dfe6ea' : (i===1?'rgba(255,255,255,.45)':'rgba(255,255,255,.3)');
+      cxp.fillText(t, placed.tx, placed.ty + i*12);
+    });
+    if(Math.abs(placed.ty-(y-2))>4){          // label was nudged: tie it back to its symbol
+      cxp.strokeStyle='rgba(255,255,255,.16)'; cxp.lineWidth=1;
+      cxp.beginPath(); cxp.moveTo(x+placed.side*(S.hx+2), y);
+      cxp.lineTo(placed.tx-placed.side*3, placed.ty-4); cxp.stroke();
+    }
+    cxp.beginPath(); cxp.arc(x-placed.side*(S.hx+6), y-S.hy-4, 3.2, 0, 7);
+    cxp.fillStyle=CONF[n.pos_confianza||'baja']; cxp.fill();
   }
 
-  /* legend */
   cxp.textAlign='left'; cxp.font='11px system-ui';
-  let ly=H-16;
-  const items=[['#00e676','confirmado'],['#ffd54f','bueno'],['#ff9100','aproximado'],
-               ['#ff5252','contradicho / imposible'],['#78909c','conexión hipotética']];
-  let lx=60;
-  for(const [c,t] of items){
+  let lx=60, ly=H-14;
+  for(const [c,t] of [['#00e676','confirmado'],['#ffd54f','bueno'],['#ff9100','aproximado'],
+                      ['#ff5252','contradicho / imposible'],['#78909c','conexión hipotética']]){
     cxp.beginPath(); cxp.arc(lx,ly-4,3.4,0,7); cxp.fillStyle=c; cxp.fill();
     cxp.fillStyle='rgba(255,255,255,.55)'; cxp.fillText(t,lx+9,ly);
-    lx += cxp.measureText(t).width + 32;
+    lx += cxp.measureText(t).width + 30;
   }
 }
 
@@ -1335,7 +1393,6 @@ function setPid(on){
   cvp.style.display = on ? 'block' : 'none';
   document.getElementById('btnPid').classList.toggle('on',on);
   document.getElementById('btn3d').style.display = on ? 'none' : 'inline-block';
-  // the schematic has no geography: layers, cursor readout and scale bar mean nothing here
   for(const id of ['side','read','scale']) document.getElementById(id).style.display = on?'none':'';
   for(const id of ['btnMeasure','btnClear','btnReset'])
     { const b=document.getElementById(id); if(b) b.style.display = on?'none':''; }
@@ -1345,15 +1402,45 @@ function setPid(on){
 if(D.net && D.net.nodes && D.net.nodes.some(n=>n.pid)){
   const b=document.getElementById('btnPid');
   b.style.display='inline-block';
-  b.onclick=()=>setPid(!isPid);
+  b.onclick=()=>setMode(isPid?'mapa':'esquema');
   let pd=null;
-  cvp.addEventListener('mousedown',e=>{pd={x:e.clientX,y:e.clientY,dx:pv.dx||0,dy:pv.dy||0};});
+  cvp.addEventListener('mousedown',e=>{pd={x:e.clientX,y:e.clientY,ox:pv.ox,oy:pv.oy};});
   addEventListener('mouseup',()=>{pd=null;});
   addEventListener('mousemove',e=>{ if(!pd||!isPid)return;
-    pv.dx=pd.dx+(e.clientX-pd.x); pv.dy=pd.dy+(e.clientY-pd.y); drawPid();});
-  cvp.addEventListener('wheel',e=>{e.preventDefault();
-    pv.s=Math.max(0.35,Math.min(4,pv.s*Math.exp(-e.deltaY*0.0014))); drawPid();},{passive:false});
-  addEventListener('resize',()=>{ if(isPid){ pvInit=false; drawPid(); } });
+    pv.ox=pd.ox+(e.clientX-pd.x); pv.oy=pd.oy+(e.clientY-pd.y); drawPid();});
+  cvp.addEventListener('wheel',e=>{
+    e.preventDefault();
+    const old=pv.s;
+    pv.s=Math.max(0.3,Math.min(4,pv.s*Math.exp(-e.deltaY*0.0016)));
+    const r=pv.s/old;                       // zoom about the cursor, like the map
+    pv.ox=e.clientX-(e.clientX-pv.ox)*r;
+    pv.oy=e.clientY-(e.clientY-pv.oy)*r;
+    drawPid();
+  },{passive:false});
+  addEventListener('resize',()=>{ if(isPid){ PB=null; drawPid(); } });
 }
+
+/* ---- view routing in the URL hash --------------------------------------
+   #mapa · #3d · #esquema. Reloading keeps you where you were, and a view is
+   now linkable. This is also the seam the subsystem tabs will plug into:
+   #agua/esquema and #ganado/tabla are the same mechanism with a second part. */
+function setMode(m){
+  if(m==='esquema'){ if(!isPid) setPid(true); }
+  else if(m==='3d'){ if(isPid) setPid(false); if(!is3d) set3d(true); }
+  else { if(isPid) setPid(false); if(is3d) set3d(false); }
+  if(location.hash.slice(1)!==m){ try{ history.replaceState(null,'','#'+m); }catch(e){} }
+}
+function modeFromHash(){
+  const m=(location.hash||'').slice(1).split('/')[0];
+  return ['mapa','3d','esquema'].includes(m) ? m : null;
+}
+addEventListener('hashchange',()=>{ const m=modeFromHash(); if(m) setMode(m); });
+/* after 'load', so the canvas has been sized and restoreView() has already run —
+   otherwise the restored 2D/3D state would overwrite whatever the hash asked for */
+addEventListener('load',()=>{
+  const m=modeFromHash();
+  if(m) setMode(m);                                  // the hash wins over saved state
+  else setMode(is3d ? '3d' : 'mapa');
+});
 
 </script></body></html>

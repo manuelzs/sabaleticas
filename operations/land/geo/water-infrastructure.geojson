@@ -134,7 +134,7 @@
    "type": "Feature",
    "properties": {
     "tipo": "tanque",
-    "nombre": "Tanques intermedios (3 × ~20.000 L)",
+    "nombre": "Tanques intermedios",
     "altura_m": 762,
     "pos_confianza": "alta",
     "pos_motivo": "Manuel, coordenada del visor",
@@ -728,26 +728,20 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "tuberia",
-    "nombre": "Tanques altos → rompecargas (INDICATIVA)",
-    "longitud_m": 448,
-    "desnivel_m": 13,
-    "gradiente_pct": 2.9,
-    "confianza": "solo los extremos son reales; el trazado es esquemático",
-    "fuente": "Une puntos confirmados por Manuel. Se reemplaza con el levantamiento de tubería.",
-    "_id": "tanque-alto-1--rompecargas"
+    "tipo": "valvula",
+    "nombre": "Válvula de cambio",
+    "pos_confianza": "baja",
+    "pos_motivo": "existe según Manuel; ubicación exacta desconocida — dibujada junto a los tanques",
+    "fuente": "[owner, 2026-08-22] *\"Hay una válvula de cambio que conecta los dos tanques al rompecargas\"*. El cambio entre tanque principal y reserva es MANUAL.",
+    "funcion": "Selecciona cuál de los dos tanques altos alimenta la línea al rompecargas.",
+    "advertencia": "Posición geográfica inventada (punto medio entre los dos tanques) sólo para poder dibujar la conexión. La cota es nominal.",
+    "_id": "valvula-cambio"
    },
    "geometry": {
-    "type": "LineString",
+    "type": "Point",
     "coordinates": [
-     [
-      -75.602603,
-      5.795199
-     ],
-     [
-      -75.606162,
-      5.797126
-     ]
+     -75.602648,
+     5.795199
     ]
    }
   },
@@ -1200,6 +1194,102 @@
      [
       -75.612802,
       5.803313
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Tanque principal 1 → válvula de cambio",
+    "longitud_m": 5,
+    "fuente": "[owner, 2026-08-22] Conexión real; trazado desconocido.",
+    "_id": "tanque-alto-1--valvula-cambio"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.602603,
+      5.795199
+     ],
+     [
+      -75.602648,
+      5.795199
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Tanque principal 2 → válvula de cambio",
+    "longitud_m": 5,
+    "fuente": "[owner, 2026-08-22] Conexión real; trazado desconocido.",
+    "_id": "tanque-alto-2--valvula-cambio"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.602693,
+      5.795199
+     ],
+     [
+      -75.602648,
+      5.795199
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Válvula de cambio → rompecargas",
+    "longitud_m": 444,
+    "fuente": "[owner, 2026-08-22] Conexión real; trazado desconocido.",
+    "_id": "valvula-cambio--rompecargas"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.602648,
+      5.795199
+     ],
+     [
+      -75.606162,
+      5.797126
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Tanques altos → casa de la entrada — HIPOTÉTICA",
+    "longitud_m": 24,
+    "desnivel_m": -2,
+    "gradiente_pct": -8.5,
+    "estilo": "discontinuo",
+    "fuente": "[owner, 2026-08-22] Sabemos que existe la conexión, no por dónde va ni desde qué punto exacto.",
+    "duda": "[owner] Manuel: la casa de la entrada se alimenta del tanque principal — *\"o incluso de la línea principal que viene de donde tomamos el agua\"*. Punto de derivación SIN CONFIRMAR.",
+    "_id": "tanque-alto-1--casa-entrada"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.602603,
+      5.795199
+     ],
+     [
+      -75.60241,
+      5.79529
      ]
     ]
    }

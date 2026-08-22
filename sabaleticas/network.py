@@ -41,8 +41,9 @@ def edge_geometry(net, e, by=None):
 def edge_metrics(net, e, by=None):
     """Length along the drawn path, drop and gradient. Always computed."""
     by = by or index(net)
-    path = edge_geometry(net, e, by)
-    length = sum(dist_m(path[i], path[i + 1]) for i in range(len(path) - 1))
+    path = [p for p in edge_geometry(net, e, by) if p]
+    length = (sum(dist_m(path[i], path[i + 1]) for i in range(len(path) - 1))
+              if len(path) > 1 else 0.0)
     a, b = by[e["from"]].get("cota_m"), by[e["to"]].get("cota_m")
     drop = (a - b) if None not in (a, b) else None
     grad = (drop / length * 100) if drop is not None and length else None
@@ -102,6 +103,8 @@ def to_geojson(net):
     """Render the graph as the GeoJSON the map already knows how to draw."""
     by, feats = index(net), []
     for n in net["nodes"]:
+        if not n.get("geo"):        # e.g. the bocatomas — real, but unplaceable so far
+            continue
         p = {"tipo": n.get("tipo", ""), "nombre": n.get("nombre", "")}
         if n.get("cota_m") is not None:
             p["altura_m"] = n["cota_m"]
@@ -114,6 +117,8 @@ def to_geojson(net):
                 else {"type": "Point", "coordinates": n["geo"]})
         feats.append({"type": "Feature", "properties": p, "geometry": geom})
     for e in net["edges"]:
+        if not (by[e["from"]].get("geo") and by[e["to"]].get("geo")):
+            continue                # an edge to an unplaced node cannot be drawn on a map
         length, drop, grad = edge_metrics(net, e, by)
         p = {"tipo": "tuberia", "nombre": e.get("nombre", e["id"]),
              "longitud_m": round(length)}

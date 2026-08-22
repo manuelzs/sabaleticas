@@ -72,6 +72,35 @@ Three ways to fix it, cheapest first:
 **Recommendation: do (1) now.** It unblocks the entire project this week instead of next
 quarter, and (2) can correct it later.
 
+## Next up — raised 2026-08-22, not started
+
+### 1. First live sensor: the house temperature probe
+Manuel already has temperature sensors at the house. **The value is not the temperature — it is
+proving the chain end to end**: device → transport → storage → a number on the page. One reading,
+one widget, and every later sensor follows the path it cuts.
+It also forces the first real decision on the **attachment model** in
+[`ARCHITECTURE.md`](ARCHITECTURE.md): a reading keyed to an entity id.
+
+### 2. Close the potrero polygons *(unblocks Phase 1)*
+Manuel, 2026-08-22: *"The internal boundaries are not really good, but they don't need that much
+work… the rule is very simple: **all enclosures are closed polygons**, so we just check which
+ones are empty and do our best to close them until we have another graph, which is all the
+enclosures."*
+
+That is a tractable problem, not a survey:
+
+1. Take IGAC's `Cerca` lines — incomplete, many fences missing, several enclosures not closing.
+2. **Find the dangling ends** — a fence vertex that no other fence meets.
+3. **Close them** against the orthophoto, where fence lines are legible at 50 cm.
+4. The result is a **planar graph whose faces are the potreros** — the same move we just made
+   with the water system, applied to land.
+
+> **This is the single biggest unblock in the project.** Grass, cattle location, rest periods,
+> kg per hectare — every one of them hangs off knowing where the potreros are.
+
+Manuel will supply the **names**, which is the other half: the troughs are numbered today and
+each belongs to a named enclosure.
+
 ## Phases
 
 ### Phase 1 — Potreros *(the unlock)*

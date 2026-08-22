@@ -46,7 +46,8 @@
    "pid": [
     50,
     811
-   ]
+   ],
+   "capacidad_l": 50000
   },
   {
    "id": "tanque-alto-2",
@@ -67,7 +68,8 @@
    "pid": [
     60,
     811
-   ]
+   ],
+   "capacidad_l": 20000
   },
   {
    "id": "rompecargas",
@@ -91,7 +93,8 @@
    "pid": [
     50,
     798
-   ]
+   ],
+   "capacidad_l": 2000
   },
   {
    "id": "t-norte",
@@ -139,7 +142,7 @@
   {
    "id": "tanques-intermedios",
    "tipo": "tanque",
-   "nombre": "Tanques intermedios (3 × ~20.000 L)",
+   "nombre": "Tanques intermedios",
    "cota_m": 762,
    "geo": [
     -75.609996,
@@ -158,7 +161,23 @@
    "pid": [
     50,
     762
-   ]
+   ],
+   "capacidad_l": 60000,
+   "unidades": [
+    {
+     "id": "ti-1",
+     "capacidad_l": 20000
+    },
+    {
+     "id": "ti-2",
+     "capacidad_l": 20000
+    },
+    {
+     "id": "ti-3",
+     "capacidad_l": 20000
+    }
+   ],
+   "interconexion": "[owner] DESCONOCIDA. Son tres tanques de ~20.000 L cada uno. No sabemos si están en serie, en paralelo o con un manifold, ni tenemos posición individual — sólo una coordenada del conjunto."
   },
   {
    "id": "represa",
@@ -734,20 +753,71 @@
     66,
     732
    ]
+  },
+  {
+   "id": "bocatoma-1",
+   "tipo": "bocatoma",
+   "nombre": "Bocatoma 1",
+   "cota_m": null,
+   "pid": [
+    40,
+    838
+   ],
+   "cota_nominal": true,
+   "pos_confianza": "baja",
+   "pos_motivo": "sin coordenadas — fuera del predio, al oriente",
+   "props": {
+    "fuente": "[owner] Dos bocatomas sobre dos quebradas al ORIENTE, FUERA del predio. Son la ÚNICA entrada de agua al sistema.",
+    "advertencia": "Sin coordenadas y sin cota. En el esquema se dibujan por encima de los tanques altos porque tienen que estarlo para alimentarlos por gravedad — la altura mostrada es NOMINAL, no medida. No aparecen en el mapa.",
+    "servidumbre": "[owner] Más de 50 años, sin disputa.",
+    "concesion": "[owner] Renovada regularmente. Falta el caudal concesionado en L/s.",
+    "pendiente": "Ubicar, nombrar la quebrada y leer la concesión."
+   }
+  },
+  {
+   "id": "bocatoma-2",
+   "tipo": "bocatoma",
+   "nombre": "Bocatoma 2",
+   "cota_m": null,
+   "pid": [
+    62,
+    838
+   ],
+   "cota_nominal": true,
+   "pos_confianza": "baja",
+   "pos_motivo": "sin coordenadas — fuera del predio, al oriente",
+   "props": {
+    "fuente": "[owner] Dos bocatomas sobre dos quebradas al ORIENTE, FUERA del predio. Son la ÚNICA entrada de agua al sistema.",
+    "advertencia": "Sin coordenadas y sin cota. En el esquema se dibujan por encima de los tanques altos porque tienen que estarlo para alimentarlos por gravedad — la altura mostrada es NOMINAL, no medida. No aparecen en el mapa.",
+    "servidumbre": "[owner] Más de 50 años, sin disputa.",
+    "concesion": "[owner] Renovada regularmente. Falta el caudal concesionado en L/s.",
+    "pendiente": "Ubicar, nombrar la quebrada y leer la concesión."
+   }
+  },
+  {
+   "id": "valvula-cambio",
+   "tipo": "valvula",
+   "nombre": "Válvula de cambio",
+   "cota_m": null,
+   "pid": [
+    55,
+    806
+   ],
+   "cota_nominal": true,
+   "geo": [
+    -75.602648,
+    5.795199
+   ],
+   "pos_confianza": "baja",
+   "pos_motivo": "existe según Manuel; ubicación exacta desconocida — dibujada junto a los tanques",
+   "props": {
+    "fuente": "[owner, 2026-08-22] *\"Hay una válvula de cambio que conecta los dos tanques al rompecargas\"*. El cambio entre tanque principal y reserva es MANUAL.",
+    "funcion": "Selecciona cuál de los dos tanques altos alimenta la línea al rompecargas.",
+    "advertencia": "Posición geográfica inventada (punto medio entre los dos tanques) sólo para poder dibujar la conexión. La cota es nominal."
+   }
   }
  ],
  "edges": [
-  {
-   "id": "tanque-alto-1--rompecargas",
-   "from": "tanque-alto-1",
-   "to": "rompecargas",
-   "nombre": "Tanques altos → rompecargas (INDICATIVA)",
-   "props": {
-    "tipo": "tuberia",
-    "confianza": "solo los extremos son reales; el trazado es esquemático",
-    "fuente": "Une puntos confirmados por Manuel. Se reemplaza con el levantamiento de tubería."
-   }
-  },
   {
    "id": "rompecargas--t-norte",
    "from": "rompecargas",
@@ -945,6 +1015,67 @@
     "fuente": "[hypothesis, derived + owner concurs 2026-08-22] Los bebederos 5-6-7 tienen que alimentarse de algo por encima de ~717 m, y lo único cerca que cumple es el ramal norte. La T más probable está en o justo antes del Bebedero 3 (729 m, +15 m de carga). El tramo 3→4 pasa más cerca pero sólo a ~719 m.",
     "advertencia": "NO CONFIRMADA. Existe para que la red sea un solo grafo conectado; el trazado es inventado. Verificar en campo buscando la derivación cerca del Bebedero 3.",
     "confianza": "conexión: HIPÓTESIS · trazado: ninguno"
+   }
+  },
+  {
+   "id": "tanque-alto-1--valvula-cambio",
+   "from": "tanque-alto-1",
+   "to": "valvula-cambio",
+   "nombre": "Tanque principal 1 → válvula de cambio",
+   "props": {
+    "fuente": "[owner, 2026-08-22] Conexión real; trazado desconocido."
+   }
+  },
+  {
+   "id": "tanque-alto-2--valvula-cambio",
+   "from": "tanque-alto-2",
+   "to": "valvula-cambio",
+   "nombre": "Tanque principal 2 → válvula de cambio",
+   "props": {
+    "fuente": "[owner, 2026-08-22] Conexión real; trazado desconocido."
+   }
+  },
+  {
+   "id": "valvula-cambio--rompecargas",
+   "from": "valvula-cambio",
+   "to": "rompecargas",
+   "nombre": "Válvula de cambio → rompecargas",
+   "props": {
+    "fuente": "[owner, 2026-08-22] Conexión real; trazado desconocido."
+   }
+  },
+  {
+   "id": "bocatoma-1--tanque-alto-1",
+   "from": "bocatoma-1",
+   "to": "tanque-alto-1",
+   "nombre": "Bocatoma 1 → tanques altos (conducción)",
+   "estilo": "discontinuo",
+   "hipotetica": true,
+   "props": {
+    "fuente": "[owner, 2026-08-22] Sabemos que existe la conexión, no por dónde va ni desde qué punto exacto."
+   }
+  },
+  {
+   "id": "bocatoma-2--tanque-alto-1",
+   "from": "bocatoma-2",
+   "to": "tanque-alto-1",
+   "nombre": "Bocatoma 2 → tanques altos (conducción)",
+   "estilo": "discontinuo",
+   "hipotetica": true,
+   "props": {
+    "fuente": "[owner, 2026-08-22] Sabemos que existe la conexión, no por dónde va ni desde qué punto exacto."
+   }
+  },
+  {
+   "id": "tanque-alto-1--casa-entrada",
+   "from": "tanque-alto-1",
+   "to": "casa-entrada",
+   "nombre": "Tanques altos → casa de la entrada — HIPOTÉTICA",
+   "estilo": "discontinuo",
+   "hipotetica": true,
+   "props": {
+    "fuente": "[owner, 2026-08-22] Sabemos que existe la conexión, no por dónde va ni desde qué punto exacto.",
+    "duda": "[owner] Manuel: la casa de la entrada se alimenta del tanque principal — *\"o incluso de la línea principal que viene de donde tomamos el agua\"*. Punto de derivación SIN CONFIRMAR."
    }
   }
  ]
