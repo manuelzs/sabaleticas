@@ -21,6 +21,14 @@
    ],
    "motivo": "[owner, 2026-08-22] Está fuera del predio.",
    "nota": "Señalada con la herramienta de aristas: tramo de 230,1 m hasta -75.606324,5.796421."
+  },
+  {
+   "punto": [
+    -75.613726,
+    5.79605
+   ],
+   "motivo": "[owner, 2026-08-22] No existe. Ahí no hay cerca — el IGAC la detectó porque el trazo va pegado a la vía.",
+   "nota": "Señalada con la herramienta de aristas. Es la cerca 34 completa (15 vértices, de -75.614112,5.795606 a -75.611697,5.797); no debe aparecer ni en cercas ni en potreros."
   }
  ]
 }
