@@ -76,15 +76,6 @@
    true
   ],
   [
-   29,
-   [
-    -75.615887,
-    5.79807
-   ],
-   "cerca real desde el punto que marcó Manuel [Termina ahora en el final de la prolongación del 30.]",
-   true
-  ],
-  [
    12,
    [
     -75.617129,
@@ -618,6 +609,36 @@
    ],
    "es_cerca": true,
    "motivo": "cerca real por el drenaje 34 (tramos 51–61), 341,3 m. Al OCCIDENTE muere sobre el lindero — la punta del drenaje ya caía a 0,0 m de él, no hubo que ajustar nada. Al ORIENTE se engancha al vértice que ya estaba a 5,1 m: la punta de la prolongación dictada del extremo 30, el mismo vértice del que arranca la cerca del drenaje 12."
+  },
+  {
+   "polilinea": [
+    [
+     -75.615282,
+     5.798782
+    ],
+    [
+     -75.615394,
+     5.798752
+    ],
+    [
+     -75.61549,
+     5.798692
+    ],
+    [
+     -75.615573,
+     5.798596
+    ],
+    [
+     -75.615784,
+     5.798182
+    ],
+    [
+     -75.615887,
+     5.79807
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "cerca real por el drenaje 34 (tramos 46–50), 107.6 m, en vez de la recta de 103,4 m que iba del extremo 29 a la punta de la prolongación del 30. Las dos puntas del drenaje se llevan a esos dos vértices (estaban a 7,9 y 5,1 m). El extremo 29 es de una cerca real del IGAC y NO se mueve: la polilínea arranca justo donde él está."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

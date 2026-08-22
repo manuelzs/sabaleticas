@@ -317,30 +317,6 @@
    "type": "Feature",
    "properties": {
     "tipo": "cierre",
-    "nombre": "Cierre 29–punto",
-    "longitud_m": 103,
-    "motivo": "cerca real desde el punto que marcó Manuel [Termina ahora en el final de la prolongación del 30.]",
-    "es_cerca": true,
-    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
-   },
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.615282,
-      5.798782
-     ],
-     [
-      -75.615887,
-      5.79807
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cierre",
     "nombre": "Cierre 12–punto",
     "longitud_m": 46,
     "motivo": "cerca real hasta el vértice del lindero donde se juntan los potreros — 10 m al norte y 16 m al este del quiebre, según Manuel. Ajustado 3,3 m al norte para caer EXACTAMENTE sobre el vértice del lindero: quedaba justo fuera de los 2 m de tolerancia del noding y dejaba el potrero abierto por ahí.",
@@ -2013,6 +1989,126 @@
      [
       -75.618863,
       5.797982
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 13,
+    "motivo": "cerca real por el drenaje 34 (tramos 46–50), 107.6 m, en vez de la recta de 103,4 m que iba del extremo 29 a la punta de la prolongación del 30. Las dos puntas del drenaje se llevan a esos dos vértices (estaban a 7,9 y 5,1 m). El extremo 29 es de una cerca real del IGAC y NO se mueve: la polilínea arranca justo donde él está. (tramo 1 de 5)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615282,
+      5.798782
+     ],
+     [
+      -75.615394,
+      5.798752
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 13,
+    "motivo": "cerca real por el drenaje 34 (tramos 46–50), 107.6 m, en vez de la recta de 103,4 m que iba del extremo 29 a la punta de la prolongación del 30. Las dos puntas del drenaje se llevan a esos dos vértices (estaban a 7,9 y 5,1 m). El extremo 29 es de una cerca real del IGAC y NO se mueve: la polilínea arranca justo donde él está. (tramo 2 de 5)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615394,
+      5.798752
+     ],
+     [
+      -75.61549,
+      5.798692
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 14,
+    "motivo": "cerca real por el drenaje 34 (tramos 46–50), 107.6 m, en vez de la recta de 103,4 m que iba del extremo 29 a la punta de la prolongación del 30. Las dos puntas del drenaje se llevan a esos dos vértices (estaban a 7,9 y 5,1 m). El extremo 29 es de una cerca real del IGAC y NO se mueve: la polilínea arranca justo donde él está. (tramo 3 de 5)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.61549,
+      5.798692
+     ],
+     [
+      -75.615573,
+      5.798596
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 51,
+    "motivo": "cerca real por el drenaje 34 (tramos 46–50), 107.6 m, en vez de la recta de 103,4 m que iba del extremo 29 a la punta de la prolongación del 30. Las dos puntas del drenaje se llevan a esos dos vértices (estaban a 7,9 y 5,1 m). El extremo 29 es de una cerca real del IGAC y NO se mueve: la polilínea arranca justo donde él está. (tramo 4 de 5)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615573,
+      5.798596
+     ],
+     [
+      -75.615784,
+      5.798182
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 17,
+    "motivo": "cerca real por el drenaje 34 (tramos 46–50), 107.6 m, en vez de la recta de 103,4 m que iba del extremo 29 a la punta de la prolongación del 30. Las dos puntas del drenaje se llevan a esos dos vértices (estaban a 7,9 y 5,1 m). El extremo 29 es de una cerca real del IGAC y NO se mueve: la polilínea arranca justo donde él está. (tramo 5 de 5)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615784,
+      5.798182
+     ],
+     [
+      -75.615887,
+      5.79807
      ]
     ]
    }
