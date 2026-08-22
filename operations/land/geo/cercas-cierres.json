@@ -942,6 +942,36 @@
    ],
    "es_cerca": true,
    "motivo": "cerca real al sur de El Guaico, 199.8 m, del lindero (occidente) a una cerca existente (oriente). Las dos puntas se ajustaron (estaban a 0,28 y 0,09 m). Aquí SÍ hay MDT: sube 69 m en 200, un 35 % de pendiente media, con tramos al 27° — es ladera fuerte, no vega."
+  },
+  {
+   "polilinea": [
+    [
+     -75.617935,
+     5.805534
+    ],
+    [
+     -75.617419,
+     5.805468
+    ],
+    [
+     -75.617235,
+     5.805548
+    ],
+    [
+     -75.616823,
+     5.805298
+    ],
+    [
+     -75.616424,
+     5.805075
+    ],
+    [
+     -75.615992,
+     5.804817
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "sexta cerca dentro de EL GUAICO, 239.5 m, de la segunda cerca norte–sur al anillo del lote por el oriente. Las dos puntas ajustadas (0,13 y 0,26 m). Aquí sí hubo cota en cinco de los seis puntos: va casi a nivel, entre 646 y 649 m — vega, a diferencia de la ladera del sur."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

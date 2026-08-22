@@ -2967,6 +2967,121 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 58,
+    "fuente": "[owner] sexta cerca dentro de EL GUAICO, 239.5 m, de la segunda cerca norte–sur al anillo del lote por el oriente. Las dos puntas ajustadas (0,13 y 0,26 m). Aquí sí hubo cota en cinco de los seis puntos: va casi a nivel, entre 646 y 649 m — vega, a diferencia de la ladera del sur. (tramo 1 de 5)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617935,
+      5.805534
+     ],
+     [
+      -75.617419,
+      5.805468
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 22,
+    "fuente": "[owner] sexta cerca dentro de EL GUAICO, 239.5 m, de la segunda cerca norte–sur al anillo del lote por el oriente. Las dos puntas ajustadas (0,13 y 0,26 m). Aquí sí hubo cota en cinco de los seis puntos: va casi a nivel, entre 646 y 649 m — vega, a diferencia de la ladera del sur. (tramo 2 de 5)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617419,
+      5.805468
+     ],
+     [
+      -75.617235,
+      5.805548
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 53,
+    "fuente": "[owner] sexta cerca dentro de EL GUAICO, 239.5 m, de la segunda cerca norte–sur al anillo del lote por el oriente. Las dos puntas ajustadas (0,13 y 0,26 m). Aquí sí hubo cota en cinco de los seis puntos: va casi a nivel, entre 646 y 649 m — vega, a diferencia de la ladera del sur. (tramo 3 de 5)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617235,
+      5.805548
+     ],
+     [
+      -75.616823,
+      5.805298
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 51,
+    "fuente": "[owner] sexta cerca dentro de EL GUAICO, 239.5 m, de la segunda cerca norte–sur al anillo del lote por el oriente. Las dos puntas ajustadas (0,13 y 0,26 m). Aquí sí hubo cota en cinco de los seis puntos: va casi a nivel, entre 646 y 649 m — vega, a diferencia de la ladera del sur. (tramo 4 de 5)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616823,
+      5.805298
+     ],
+     [
+      -75.616424,
+      5.805075
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 56,
+    "fuente": "[owner] sexta cerca dentro de EL GUAICO, 239.5 m, de la segunda cerca norte–sur al anillo del lote por el oriente. Las dos puntas ajustadas (0,13 y 0,26 m). Aquí sí hubo cota en cinco de los seis puntos: va casi a nivel, entre 646 y 649 m — vega, a diferencia de la ladera del sur. (tramo 5 de 5)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616424,
+      5.805075
+     ],
+     [
+      -75.615992,
+      5.804817
+     ]
+    ]
+   }
   }
  ]
 }
