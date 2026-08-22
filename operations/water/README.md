@@ -644,6 +644,15 @@ This supersedes nothing above — it is the list of things **only a site visit c
    here. If the inlet crests just before the chamber, that is where air is trapping.
 6. **Where does the single outlet split, and what does each branch feed?**
 
+### Before anything else — the cheapest source we have
+6b. **Talk to whoever has been updating the plan.** `[owner, 2026-08-21]` The water markings
+   have been maintained on paper for twenty years by someone who knows where the lines run —
+   that person is the **real repository of this system**, and they are free. Every question on
+   this list that is currently "unknown" is probably answerable in one conversation: which T
+   feeds Bebedero 1, where the pipe is aerial, which ventosas exist, what was rerouted and when.
+   **Do this before commissioning a survey**, not after — it tells the surveyor where to look
+   and stops us paying someone to rediscover it.
+
 ### Along the lines
 7. **Walk the pipes with a GPS track**, not paper. Same walk, same person, real coordinates.
    **Record construction type as you go** — buried, deep-trenched, surface-laid, or aerial —
