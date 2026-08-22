@@ -37,6 +37,12 @@ LAYER_GROUP = {
     "Agua: infraestructura": "agua", "Ruta gravedad (candidata)": "agua",
 }
 
+# Never simplified: their vertices are the analysis, and the edge picker reports them
+# back as coordinates we then act on.
+EXACTAS = {"Linderos", "Cercas", "Cercas (bajo dosel)", "Potreros (cerrados)",
+           "Cercas abiertas", "Cierres (dictados)", "Ganado: infraestructura",
+           "Agua: infraestructura"}
+
 # label, file (relative to geo/), kind, colour, width, fill
 LAYERS = [
     ("Linderos",                "boundary.geojson",                    "poly", "#ff1744", 3.0, None),
@@ -246,7 +252,15 @@ def _collect(geo: Path, TIPOS):
                          f" · {props.get('municipio','')}")
             if not label and props.get("elev"):
                 label = f"{props['elev']} m"
-            item = {"t": g["type"], "c": _round_geom(_thin(g["coordinates"])),
+            # Layers whose geometry is ANALYSED, not just looked at, are never thinned.
+            # SIMPLIFY_TOL is ~2.2 m, which quietly drops near-collinear vertices — and it
+            # drops different ones from different rings, so two potreros sharing a fence
+            # rendered as two lines a few metres apart. Manuel reported that as a duplicate
+            # edge to delete; nothing was wrong in the data, only in what the viewer showed.
+            # Potreros, cercas and linderos come to ~1,500 vertices in total, so thinning
+            # them buys nothing and costs the ability to point at a real edge.
+            coords = g["coordinates"] if name in EXACTAS else _thin(g["coordinates"])
+            item = {"t": g["type"], "c": _round_geom(coords),
                     "l": str(label)[:120], "kind": kind}
             if item_sub2 is not None:
                 item["sub2"] = item_sub2

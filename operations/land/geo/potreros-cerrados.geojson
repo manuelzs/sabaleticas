@@ -1633,9 +1633,9 @@
     "agua": [
      {
       "id": "agua:beb-5",
-      "nombre": "Bebedero 5 (aprox.)",
+      "nombre": "Bebedero 5",
       "tipo": "bebedero",
-      "confianza": "baja"
+      "confianza": "alta"
      },
      {
       "id": "agua:beb-6",
@@ -2250,9 +2250,9 @@
      },
      {
       "id": "agua:beb-5",
-      "nombre": "Bebedero 5 (aprox.)",
+      "nombre": "Bebedero 5",
       "tipo": "bebedero",
-      "confianza": "baja"
+      "confianza": "alta"
      },
      {
       "id": null,
@@ -3138,6 +3138,12 @@
     "area_m2": 32317,
     "agua": [
      {
+      "id": "agua:beb-5",
+      "nombre": "Bebedero 5",
+      "tipo": "bebedero",
+      "confianza": "alta"
+     },
+     {
       "id": null,
       "nombre": "drenaje",
       "tipo": "natural",
@@ -3153,9 +3159,9 @@
      }
     ],
     "sin_agua": false,
-    "solo_natural": true,
-    "agua_por_confirmar": true,
-    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
+    "solo_natural": false,
+    "agua_por_confirmar": false,
+    "agua_nota": "",
     "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
     "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
    },

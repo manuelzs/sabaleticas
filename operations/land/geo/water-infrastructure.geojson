@@ -596,13 +596,13 @@
    "type": "Feature",
    "properties": {
     "tipo": "bebedero",
-    "nombre": "Bebedero 5 (aprox.)",
+    "nombre": "Bebedero 5",
     "altura_m": 714,
-    "pos_confianza": "baja",
-    "pos_motivo": "aproximada (Manuel)",
+    "pos_confianza": "alta",
+    "pos_motivo": "[owner, 2026-08-22] Manuel lo situó sobre el vértice donde concurren las cercas — un vértice real de la cerca 11, no una estimación.",
     "n": 5,
-    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: bebedero actual, pero la posición es aproximada — no confirmada en la ortofoto como los bebederos 1, 2 y 3.",
-    "confianza": "existencia: alta · posición: BAJA · cota: derivada de una posición aproximada",
+    "fuente": "[owner, 2026-08-22] Manuel lo situó en el vértice de cerca donde se juntan los potreros. Antes estaba 15 m al suroeste, en posición aproximada.",
+    "confianza": "existencia: alta · posición: ALTA · cota: del MDT en la posición confirmada",
     "alimentado_por": "[pendiente] Sin conexión conocida con la línea principal.",
     "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros.",
     "hipotesis_alimentacion": "[derived + owner, 2026-08-22] Alimentado desde una T sobre el ramal norte, en o justo antes del Bebedero 3 (729 m, 311 m, +15 m de carga). El tramo 3→4 pasa más cerca (262 m) pero sólo a ~719 m: 5 m de carga es poco para 300 m de tubería. Manuel coincide con el análisis; NO verificable desde la ortofoto. VERIFICAR EN CAMPO.",
@@ -611,8 +611,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.612802,
-     5.803313
+     -75.612722,
+     5.803423
     ]
    }
   },
@@ -1051,7 +1051,7 @@
    "properties": {
     "tipo": "tuberia",
     "nombre": "Bebedero 5 → 6 (trazado esquemático)",
-    "longitud_m": 231,
+    "longitud_m": 230,
     "desnivel_m": 36,
     "gradiente_pct": 15.6,
     "fuente": "[owner, 2026-08-21] Orden confirmado por Manuel: 5 → 6 → 7. Las posiciones de los tres extremos son aproximadas, así que longitudes y gradientes son orientativos.",
@@ -1063,8 +1063,8 @@
     "type": "LineString",
     "coordinates": [
      [
-      -75.612802,
-      5.803313
+      -75.612722,
+      5.803423
      ],
      [
       -75.614336,
@@ -1155,7 +1155,7 @@
    "properties": {
     "tipo": "tuberia",
     "nombre": "Bebedero 3 → 5 — HIPOTÉTICA",
-    "longitud_m": 311,
+    "longitud_m": 313,
     "desnivel_m": 15,
     "gradiente_pct": 4.8,
     "estilo": "discontinuo",
@@ -1172,8 +1172,8 @@
       5.801364
      ],
      [
-      -75.612802,
-      5.803313
+      -75.612722,
+      5.803423
      ]
     ]
    }
