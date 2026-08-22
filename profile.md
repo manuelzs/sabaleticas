@@ -3,6 +3,11 @@
 The single source of truth for the basics. Updated as we learn more.
 _Anything marked TBD is unconfirmed — fill in when known._
 
+> ## 🔴 Live risk: El Niño
+> A **very strong, possibly historic** El Niño is forecast for late 2026 into 2027, and
+> **both our water sources are surface intakes on quebradas** — the exact thing it dries up.
+> Storage gives ~5–7 days of autonomy. See [`operations/water/`](operations/water/README.md).
+
 > ## ⚠️ The core problem
 > **The operation is losing money every month.** This is why the advisory project
 > exists. The north star is: **stop the monthly loss, then build toward profit.**

@@ -61,6 +61,15 @@ by ID (e.g. `[S1]`). When you add a source, give it the next ID, never reuse one
 | **S40** | Subastar S.A. — subastas comerciales y consulta de precios. https://subastar.com.co/ ; https://app.subastar.com.co/precio/ | Auction operator | National | 2026-05-22 | 🔵 market |
 | **S41** | DANE — SIPSA (boletines mayoristas; carne en canal/despiece, NOT ganado en pie — verified Jan 2026 monthly). https://www.dane.gov.co/index.php/estadisticas-por-tema/agropecuario/sistema-de-informacion-de-precios-sipsa (mirror: https://www.agronet.gov.co/estadistica/Paginas/home.aspx?cod=67) | Official price stats | National | 2026-05-22 | 🟢 institutional |
 
+### Agua, clima y El Niño (added 2026-08-21)
+
+| ID | Source | Type | Region | Accessed | Rel. |
+|---|---|---|---|---|---|
+| **S42** | CONtexto Ganadero — "Esta es la cantidad de agua que requiere tomar su ganado al día" (12 oct 2021). Requerimientos L/animal/día por peso: 120 kg → 12 L · 225 kg → 22,5 L · **300 kg → 36 L** · **400 kg → 48 L** · 450 kg → 54 L. Regla general: 10–20% del peso vivo/día, usar el rango alto. Cita CIAT, MinAgricultura y Bioversity International. https://www.contextoganadero.com/ganaderia-sostenible/esta-es-la-cantidad-de-agua-que-requiere-tomar-su-ganado-al-dia | Trade guidance (cita fuentes institucionales) | Colombia | 2026-08-21 | 🟡 trade, fuente secundaria |
+| **S43** | NOAA Climate Prediction Center — ENSO probabilities / diagnostic discussion. Mediados de agosto 2026: **>90% de un El Niño *muy fuerte*** en otoño-invierno 2026-27 (subió de 63% en junio y 81% en julio); **69% de un evento histórico** (RONI trimestral ≥ +2,5 °C) en oct–dic 2026, que superaría todo el registro desde 1950; persistencia hasta MAM 2027. https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml · https://cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/probabilities/ | Official climate forecast | Global / Pacífico | 2026-08-21 | 🟢 institucional |
+| **S44** | IDEAM — condiciones tipo "El Niño" ya presentes; advertencia de sequía, incendios y estrés hídrico. Para la **región Andina, reducción de lluvias del 10–30%**, temperaturas por encima de lo usual, y **reducción progresiva de los caudales de ríos y quebradas** y de los niveles de embalses. https://www.ideam.gov.co/sala-de-prensa/noticia/ideam-indica-que-las-condiciones-tipo-el-nino-ya-se-encuentran-presentes | Official national met/hydro service | Colombia | 2026-08-21 | 🟢 institucional |
+| **S45** | ERA5 reanalysis vía Open-Meteo Archive API — climatología diaria 2015–2026 para 5,7983 N, 75,6106 W (lluvia, ET0 FAO, temperatura). **Reanálisis modelado en malla de ~25 km, no una estación en la finca.** https://open-meteo.com/en/docs/historical-weather-api | Reanalysis / model | Global grid | 2026-08-21 | 🟡 modelo, no medición local |
+
 ## To source next (open threads)
 
 - **Delivered-to-farm feed prices at La Pintada / suroeste antioqueño** (maíz, torta de soya, palmiste, balanceado) — the #1 missing number for any grain-finishing or supplementation pro forma.

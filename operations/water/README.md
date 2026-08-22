@@ -1,16 +1,154 @@
 # Water — capacity for the coming verano
 
-> **Status: project opened 2026-08-21 at Manuel's request. Not yet discussed.**
-> This document is the **agenda**, not the answer. It frames the question, sets the method,
-> and lists what we need to gather so the conversation is productive when we have it.
-> Nothing here is measured or concluded yet.
+> **Status: active, and the risk is now quantified (2026-08-21).** This started as an agenda.
+> It isn't one any more — the forecast and the structure of our supply together make this the
+> most urgent operational risk on the farm. Read
+> [The El Niño problem](#the-el-niño-problem-and-why-it-lands-squarely-on-us) first.
+
+## The El Niño problem — and why it lands squarely on us
+
+Three facts, each independently sourced. Individually they are unremarkable. Together they
+describe a specific, avoidable failure.
+
+**1. The forecast is not a normal dry season.** NOAA's Climate Prediction Center puts a
+**very strong El Niño above 90%** for late 2026 into 2027, and gives **69% odds of a
+*historic* event** in October–December — one that would exceed **every El Niño in the record
+back to 1950** — persisting into early 2027 `[S43]`. IDEAM has El Niño conditions already
+present, and projects **10–30% less rainfall for the Andean region**, higher temperatures,
+and — the line that matters most to us — **progressive reduction in the flow of rivers and
+quebradas** `[S44]`.
+
+**2. Both our water sources are exactly the thing that dries up.** Per Manuel (2026-08-21),
+the two external sources are both **bocatomas on quebradas** — surface stream intakes, on two
+different streams.
+
+> **Two intakes on two streams is not redundancy against a drought.** It protects against a
+> local failure — a landslide, a blocked intake, a broken line. It gives us **nothing**
+> against a regional rainfall deficit, because that hits both streams at once. Our supply has
+> a single point of failure, and El Niño is precisely the event that triggers it.
+>
+> Had one source been a deep spring or a well, we would have diversity in the failure mode
+> that matters. We don't.
+
+**3. Demand rises at the same moment supply falls.** Potreros with natural water are watered
+by the same quebradas that are drying. As they fail, **more of the herd shifts onto the tank
+system** — so the tanks face their heaviest draw in the week their inflow is weakest. Both
+curves move the wrong way together.
+
+### How long the tanks last on their own
+
+Storage is **~70,000 L** (50,000 + 20,000) `[owner, unverified]`. Requirement for cattle in
+tropical conditions is **36 L/day at 300 kg and 48 L/day at 400 kg**, with the guidance to use
+the upper end when it's hot `[S42]` — and our August mean daily maximum is **33.2 °C** `[S45]`.
+
+| Assumed weight | Demand, 266 head | **Autonomy at zero inflow** |
+|---|---|---|
+| 300 kg | 9,576 L/day | **7.3 days** |
+| 400 kg | 12,768 L/day | **5.5 days** |
+
+> ### Call it **five to seven days.** That is the whole buffer.
+
+Two caveats, pulling opposite ways and roughly cancelling: not every animal drinks from the
+tanks today (some potreros have natural water) — but in the scenario we're worried about,
+those are exactly the ones that fail, and the house draws from the same system. **We also
+don't know our animals' weights**, because there is still no báscula — so the demand figure
+is an assumption, not a measurement.
+
+### What the dry season looks like with 10–30% less rain
+
+Applying IDEAM's stated range `[S44]` to our own climatology `[S45]`. **A scenario, not a
+forecast** — and conservative, because it holds evapotranspiration constant when higher
+temperatures would raise it:
+
+| December–March | Rainfall | Balance vs ET0 |
+|---|---|---|
+| Normal | 314 mm | −172 mm |
+| −10% | 283 mm | −203 mm |
+| −20% | 251 mm | **−235 mm** |
+| −30% | 220 mm | **−266 mm** |
+
+This also **resolves the confusion in the earlier climate note.** In an average year the
+mid-year dry season (May–September, −336 mm) is the harsher one. El Niño doesn't amplify that
+one — it amplifies **December–March**, pushing it toward mid-year severity while temperatures
+run above normal. So when Manuel says a big verano is coming, **the December–March window is
+the right thing to be planning for**, and we have roughly three months.
+
+## Where we stand right now (2026-08-21)
+
+Manuel spent last weekend surveying the water infrastructure. Current state `[owner]`:
+
+- ✅ **All tanks are at full capacity today.** Supply is not failing — we are going into this
+  from a sound starting position, which is the best possible time to act.
+- ⚠️ **Known faults**, detail to follow: **some smaller tanks are not properly connected**,
+  plus other issues.
+- Improvements to the system are already intended.
+
+> **The disconnected tanks are the most interesting sentence here.** Storage capacity that
+> physically exists but isn't plumbed in is **the cheapest water on the farm** — it needs
+> connecting, not buying. And storage is precisely the lever that matters when inflow is the
+> thing at risk. This should be costed first, before anything is purchased.
+
+## What to do, in order
+
+We have roughly **three months** before the December–March window. Sequenced by cost per day
+of autonomy bought:
+
+### 1. Connect what already exists *(cheapest, do first)*
+Every disconnected tank is storage we already own. Each 10,000 L added is **roughly one more
+day** of herd autonomy at current numbers. Nothing else on this list has that ratio.
+
+### 2. Start measuring **now**, while conditions are normal
+This is free and it expires. **You cannot detect a 40% decline in a quebrada you never
+measured at 100%.** Starting now, in a normal August, gives us the baseline that makes every
+later reading meaningful:
+
+- **Flow at both bocatomas** — even a bucket and a stopwatch, weekly, written down.
+- **Tank levels** — a mark on the wall and a daily reading. No sensors, no connectivity, no
+  cost. This is the manual version of the telemetry in
+  [`../../dashboard/README.md`](../../dashboard/README.md), and it answers the same question
+  three months sooner.
+- **Which potreros still have natural water**, revisited as things dry — this becomes the map
+  of usable grazing area in verano.
+
+### 3. Fix the distribution faults before the dry season, not during it
+Leaks and bad connections cost little when inflow is plentiful and everything is full. They
+become the whole problem when it isn't. A leak that is invisible today is a crisis in
+February. Same for the **over-pressure question** — 108 m of head to the big house and up to
+186 m to the lowest ground (see above) is the kind of fault that surfaces when a line is
+finally run hard.
+
+### 4. Decide the herd question — and decide it early
+This is the uncomfortable one, and it is the reason this document keeps pointing back at the
+financials.
+
+- We are stocked at roughly **2.1–2.3 head/ha of potrero**, **above** the 1–2/ha rotated
+  benchmark ([`../land/geo/README.md`](../land/geo/README.md)).
+- Water autonomy is **5–7 days**, and every animal is a fixed daily draw on it.
+- A **historic** El Niño is forecast `[S43]`.
+- The operation is **losing money monthly**, and the leading diagnosis is that the herd
+  **turns over too slowly** ([`../../financials/diagnosis.md`](../../financials/diagnosis.md)).
+
+> **Selling down is the one action that answers all four at once.** It cuts water demand,
+> relieves the stocking pressure, raises cash, and *is* the turnover fix we would be
+> recommending anyway. Buying water infrastructure to hold a herd that is already too large
+> for the land, in the worst forecast year on record, would be spending money to make the
+> underlying problem worse.
+>
+> The timing argument is sharper still: **sell early or sell with everyone else.** In a hard
+> verano, pasture fails region-wide, cattle come to market together, and prices fall exactly
+> when the animals are worth least. The farms that do well in an El Niño are the ones that
+> moved before the rush.
+
+**This is a decision for Manuel, not a recommendation to act on** — and it needs the P&L to
+size properly, which lands around the close of August. But it should be *considered* now
+rather than in December, because by December the option has passed.
 
 ## Why water gets its own project
 
 Two reasons it outranks its usual place as a footnote in the pasture plan:
 
-1. **A hard verano is coming** (Manuel, 2026-08-21) and we need to know whether the farm can
-   carry its current herd through it.
+1. **A very strong El Niño is forecast** `[S43]`, and both our sources are vulnerable to
+   exactly it — so we need to know whether the farm can carry its current herd through it.
 2. **In tierra caliente, water — not grass — is usually what actually caps carrying
    capacity.** A potrero with feed and no water is not a usable potrero. So water decides
    which paddocks are in play during the dry season, which decides whether the rotation can
