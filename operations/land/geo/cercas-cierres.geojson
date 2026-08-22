@@ -269,7 +269,7 @@
    "type": "Feature",
    "properties": {
     "tipo": "cierre",
-    "nombre": "Cierre 51–lindero",
+    "nombre": "Cierre 51–punto",
     "longitud_m": 30,
     "motivo": "llega al lindero en el quiebre que marcó Manuel",
     "es_cerca": true,
@@ -317,7 +317,7 @@
    "type": "Feature",
    "properties": {
     "tipo": "cierre",
-    "nombre": "Cierre 29–lindero",
+    "nombre": "Cierre 29–punto",
     "longitud_m": 115,
     "motivo": "[owner] conecta con el punto marcado por Manuel",
     "es_cerca": false,

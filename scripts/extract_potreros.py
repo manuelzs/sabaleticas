@@ -575,10 +575,10 @@ def main():
                                  (pos[vb][1] - pos[va][1]) * LAT2M)
                 lim = 400 if es_cerca else 60      # a real fence may be long; a gap may not
                 flag = "  ⚠ muy largo" if d_m > lim else ""
-                print(f"    {a} → {'lindero' if isinstance(b, list) else b}: {d_m:6.1f} m{flag}")
+                print(f"    {a} → {'punto' if isinstance(b, list) else b}: {d_m:6.1f} m{flag}")
                 adj[va].add(vb)
                 adj[vb].add(va)
-                lab = "lindero" if isinstance(b, list) else b.split(":")[-1]
+                lab = "punto" if isinstance(b, list) else b.split(":")[-1]
                 cierres.append((a, lab, pos[va], pos[vb], motivo, round(d_m), es_cerca))
                 hechos += 1
                 continue
