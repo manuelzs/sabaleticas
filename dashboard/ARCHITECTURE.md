@@ -112,6 +112,19 @@ TableView     tables from the active subsystem
 
 Adding cattle later means **publishing layers**, not editing the map.
 
+## When a tab is justified
+
+> ### A subsystem earns a tab when it offers a view the shared surface cannot.
+
+| | Earns one? | Because |
+|---|---|---|
+| **Agua** | **yes, today** | the **schematic** — General can never show it, and it is where you reason about the *system* rather than the *ground* |
+| **Predio** | not yet | its map is General with fewer checkboxes. It activates when potreros bring a **table** — names, área, pendiente, pasto, acceso a agua. That is content, not layers |
+| **Ganado** | not yet | no data |
+
+**Layer scoping alone is not a tab.** If the only difference is which checkboxes are visible,
+that is a filter on the shared surface, and pretending otherwise teaches the user nothing.
+
 ## The UI concept: workspaces
 
 Tabs are **workspaces**, not views and not subsystems — a workspace is *a subsystem plus

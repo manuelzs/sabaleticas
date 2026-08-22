@@ -8,7 +8,12 @@ const NAV=[
      it is the orientation view, where water is read against land. */
   {id:'general', label:'General', views:[['mapa','Mapa'],['3d','3D']]},
   {id:'agua',   label:'Agua',   views:[['esquema','Esquema'],['mapa','Mapa']]},
-  {id:'predio', label:'Predio', views:[['mapa','Mapa']]},
+  /* A subsystem earns a tab when it offers a view the shared surface cannot.
+     Agua does — the schematic. Predio does not yet: its map is General with fewer
+     checkboxes. It activates when potreros bring a table (names, área, pendiente,
+     pasto, acceso a agua), which is content, not layers. */
+  {id:'predio', label:'Predio', views:[], disabled:true,
+   why:'se activa con los potreros — hoy sería el mapa General con menos capas'},
   {id:'ganado', label:'Ganado', views:[], disabled:true, why:'sin datos de ganado todavía'},
   /* Cross-cutting: these are not subsystems. Readings and tickets attach to entities
      and surface in context — a level inside a tank symbol, a badge on a marker. What
