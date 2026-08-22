@@ -120,11 +120,12 @@ kind of thing, and that is fine:
 
 | Tab | Primary view | Also available |
 |---|---|---|
+| **General** | the map, every subsystem's layers | 3D |
 | **Ganado** | tables | map (cattle layers highlighted), charts |
-| **Geoespacial** | the map, **everything on** | — |
+| **General** | the map, **everything on** — the shared surface | — |
 | **Agua** | the **P&ID** | map (water layers), tables, the inventory |
 
-**Geoespacial is the shared surface.** The other tabs are lenses onto the same data with
+**General is the shared surface.** The other tabs are lenses onto the same data with
 different defaults. Nothing is duplicated — the same water node is one record, drawn in
 two places.
 
