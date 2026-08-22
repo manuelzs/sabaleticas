@@ -481,8 +481,209 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 3",
+    "nombre": "Alejandría",
     "n": 3,
+    "nombrado": true,
+    "estado": "final",
+    "estado_nota": "verificado por Manuel; heredó por_subdividir del bloque de 15,48 ha, pero esta mitad ya es un potrero completo",
+    "subdivide_en": [],
+    "subdivide_nota": "",
+    "area_ha": 8.08,
+    "area_m2": 80803,
+    "agua": [
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": true,
+    "agua_por_confirmar": true,
+    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.615696,
+       5.796693
+      ],
+      [
+       -75.615493,
+       5.797618
+      ],
+      [
+       -75.615431,
+       5.797699
+      ],
+      [
+       -75.61565,
+       5.797828
+      ],
+      [
+       -75.615887,
+       5.79807
+      ],
+      [
+       -75.616022,
+       5.797999
+      ],
+      [
+       -75.616137,
+       5.798004
+      ],
+      [
+       -75.616378,
+       5.798085
+      ],
+      [
+       -75.616687,
+       5.798241
+      ],
+      [
+       -75.616976,
+       5.798341
+      ],
+      [
+       -75.617476,
+       5.798346
+      ],
+      [
+       -75.617651,
+       5.798334
+      ],
+      [
+       -75.618128,
+       5.798165
+      ],
+      [
+       -75.618422,
+       5.798114
+      ],
+      [
+       -75.618538,
+       5.798123
+      ],
+      [
+       -75.618863,
+       5.797982
+      ],
+      [
+       -75.618941,
+       5.797747
+      ],
+      [
+       -75.618988,
+       5.797627
+      ],
+      [
+       -75.618975,
+       5.797512
+      ],
+      [
+       -75.618967,
+       5.797375
+      ],
+      [
+       -75.618938,
+       5.797168
+      ],
+      [
+       -75.618928,
+       5.797055
+      ],
+      [
+       -75.618946,
+       5.79692
+      ],
+      [
+       -75.618976,
+       5.796765
+      ],
+      [
+       -75.618995,
+       5.796712
+      ],
+      [
+       -75.618997,
+       5.796627
+      ],
+      [
+       -75.618997,
+       5.796547
+      ],
+      [
+       -75.618997,
+       5.796311
+      ],
+      [
+       -75.619,
+       5.796189
+      ],
+      [
+       -75.617346,
+       5.796288
+      ],
+      [
+       -75.616763,
+       5.796373
+      ],
+      [
+       -75.616726,
+       5.797314
+      ],
+      [
+       -75.616763,
+       5.796373
+      ],
+      [
+       -75.616734,
+       5.796
+      ],
+      [
+       -75.616515,
+       5.795961
+      ],
+      [
+       -75.616319,
+       5.796002
+      ],
+      [
+       -75.615926,
+       5.796184
+      ],
+      [
+       -75.615718,
+       5.796307
+      ],
+      [
+       -75.615555,
+       5.796451
+      ],
+      [
+       -75.615541,
+       5.796607
+      ],
+      [
+       -75.615696,
+       5.796693
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 4",
+    "n": 4,
     "nombrado": false,
     "estado": null,
     "estado_nota": "",
@@ -625,7 +826,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "San Matías",
-    "n": 4,
+    "n": 5,
     "nombrado": true,
     "estado": "por_verificar",
     "estado_nota": "el plano de 2007 muestra dos potreros aquí (San Mateo y San Matías); en la ortofoto no se ve la división. Manuel confirma en campo.",
@@ -872,8 +1073,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 5",
-    "n": 5,
+    "nombre": "Potrero 6",
+    "n": 6,
     "nombrado": false,
     "estado": "por_subdividir",
     "estado_nota": "los nombres del plano de 2007 que caen dentro dicen en cuántos se parte",
@@ -1141,7 +1342,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Laguna",
-    "n": 6,
+    "n": 7,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -1336,155 +1537,6 @@
       [
        -75.607569,
        5.796697
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "potrero",
-    "nombre": "Alejandría",
-    "n": 7,
-    "nombrado": true,
-    "estado": "final",
-    "estado_nota": "verificado por Manuel; heredó por_subdividir del bloque de 15,48 ha, pero esta mitad ya es un potrero completo",
-    "subdivide_en": [],
-    "subdivide_nota": "",
-    "area_ha": 5.72,
-    "area_m2": 57170,
-    "agua": [
-     {
-      "id": null,
-      "nombre": "drenaje",
-      "tipo": "natural",
-      "confianza": "IGAC"
-     }
-    ],
-    "sal": [],
-    "sin_agua": false,
-    "solo_natural": true,
-    "agua_por_confirmar": true,
-    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
-    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
-    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
-   },
-   "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -75.617346,
-       5.796288
-      ],
-      [
-       -75.616763,
-       5.796373
-      ],
-      [
-       -75.616726,
-       5.797314
-      ],
-      [
-       -75.616022,
-       5.797999
-      ],
-      [
-       -75.616137,
-       5.798004
-      ],
-      [
-       -75.616378,
-       5.798085
-      ],
-      [
-       -75.616687,
-       5.798241
-      ],
-      [
-       -75.616976,
-       5.798341
-      ],
-      [
-       -75.617476,
-       5.798346
-      ],
-      [
-       -75.617651,
-       5.798334
-      ],
-      [
-       -75.618128,
-       5.798165
-      ],
-      [
-       -75.618422,
-       5.798114
-      ],
-      [
-       -75.618538,
-       5.798123
-      ],
-      [
-       -75.618863,
-       5.797982
-      ],
-      [
-       -75.618941,
-       5.797747
-      ],
-      [
-       -75.618988,
-       5.797627
-      ],
-      [
-       -75.618975,
-       5.797512
-      ],
-      [
-       -75.618967,
-       5.797375
-      ],
-      [
-       -75.618938,
-       5.797168
-      ],
-      [
-       -75.618928,
-       5.797055
-      ],
-      [
-       -75.618946,
-       5.79692
-      ],
-      [
-       -75.618976,
-       5.796765
-      ],
-      [
-       -75.618995,
-       5.796712
-      ],
-      [
-       -75.618997,
-       5.796627
-      ],
-      [
-       -75.618997,
-       5.796547
-      ],
-      [
-       -75.618997,
-       5.796311
-      ],
-      [
-       -75.619,
-       5.796189
-      ],
-      [
-       -75.617346,
-       5.796288
       ]
      ]
     ]
@@ -3879,109 +3931,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 27",
-    "n": 27,
-    "nombrado": false,
-    "estado": null,
-    "estado_nota": "",
-    "subdivide_en": [],
-    "subdivide_nota": "",
-    "area_ha": 2.36,
-    "area_m2": 23633,
-    "agua": [
-     {
-      "id": null,
-      "nombre": "drenaje",
-      "tipo": "natural",
-      "confianza": "IGAC"
-     }
-    ],
-    "sal": [],
-    "sin_agua": false,
-    "solo_natural": true,
-    "agua_por_confirmar": true,
-    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
-    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
-    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
-   },
-   "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -75.615696,
-       5.796693
-      ],
-      [
-       -75.615493,
-       5.797618
-      ],
-      [
-       -75.615431,
-       5.797699
-      ],
-      [
-       -75.61565,
-       5.797828
-      ],
-      [
-       -75.615887,
-       5.79807
-      ],
-      [
-       -75.616022,
-       5.797999
-      ],
-      [
-       -75.616726,
-       5.797314
-      ],
-      [
-       -75.616763,
-       5.796373
-      ],
-      [
-       -75.616734,
-       5.796
-      ],
-      [
-       -75.616515,
-       5.795961
-      ],
-      [
-       -75.616319,
-       5.796002
-      ],
-      [
-       -75.615926,
-       5.796184
-      ],
-      [
-       -75.615718,
-       5.796307
-      ],
-      [
-       -75.615555,
-       5.796451
-      ],
-      [
-       -75.615541,
-       5.796607
-      ],
-      [
-       -75.615696,
-       5.796693
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "potrero",
     "nombre": "El Bosque",
-    "n": 28,
+    "n": 27,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4095,7 +4046,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Etiopía",
-    "n": 29,
+    "n": 28,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4224,7 +4175,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Toledo",
-    "n": 30,
+    "n": 29,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4320,8 +4271,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 31",
-    "n": 31,
+    "nombre": "Potrero 30",
+    "n": 30,
     "nombrado": false,
     "estado": "final",
     "estado_nota": "confirmado por Manuel; el levantamiento de 2007 no le da nombre",
@@ -4417,8 +4368,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 32",
-    "n": 32,
+    "nombre": "Potrero 31",
+    "n": 31,
     "nombrado": false,
     "estado": "final",
     "estado_nota": "",
@@ -4540,8 +4491,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 33",
-    "n": 33,
+    "nombre": "Potrero 32",
+    "n": 32,
     "nombrado": false,
     "estado": "final",
     "estado_nota": "",
@@ -4618,7 +4569,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Congo",
-    "n": 34,
+    "n": 33,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4687,7 +4638,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Silencio",
-    "n": 35,
+    "n": 34,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4780,7 +4731,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Tanzania",
-    "n": 36,
+    "n": 35,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4853,7 +4804,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Rincón",
-    "n": 37,
+    "n": 36,
     "nombrado": true,
     "estado": "por_verificar",
     "estado_nota": "Manuel dice que es Rincón, pero el Mojón 15 queda 56 m al sur, fuera de la cara: puede que el potrero llegue hasta allá. Nombre en espera hasta decidir el borde.",

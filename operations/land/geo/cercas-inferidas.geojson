@@ -5,29 +5,6 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_inferida",
-    "nombre": "Cerca 35–punto",
-    "longitud_m": 125,
-    "fuente": "[owner] cerca real bajo dosel — el satélite no la ve [Arranca ahora del final de la prolongación del 30, no del 30.]",
-    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
-   },
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.616726,
-      5.797314
-     ],
-     [
-      -75.615887,
-      5.79807
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_inferida",
     "nombre": "Cerca 51–punto",
     "longitud_m": 30,
     "fuente": "[owner] llega al lindero en el quiebre que marcó Manuel",

@@ -245,30 +245,6 @@
    "type": "Feature",
    "properties": {
     "tipo": "cierre",
-    "nombre": "Cierre 35–punto",
-    "longitud_m": 125,
-    "motivo": "cerca real bajo dosel — el satélite no la ve [Arranca ahora del final de la prolongación del 30, no del 30.]",
-    "es_cerca": true,
-    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
-   },
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.616726,
-      5.797314
-     ],
-     [
-      -75.615887,
-      5.79807
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cierre",
     "nombre": "Cierre 51–punto",
     "longitud_m": 30,
     "motivo": "llega al lindero en el quiebre que marcó Manuel",
