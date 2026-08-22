@@ -92,7 +92,6 @@ function cardPending(p){
     <div class="mag">${p.magnitud}</div>
     <div class="ent">${entityName(p.entidad)}</div>
     <div class="meta">${lit?lit+' · ':''}${p.fuente}</div>
-    <div class="why">Se llena con una fila en <code>data/readings.csv</code> — a mano vale.</div>
   </div>`;
 }
 
