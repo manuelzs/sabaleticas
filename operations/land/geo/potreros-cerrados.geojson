@@ -2337,93 +2337,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Manantial",
-    "n": 13,
-    "nombrado": true,
-    "estado": "final",
-    "estado_nota": "",
-    "subdivide_en": [],
-    "subdivide_nota": "",
-    "area_ha": 4.46,
-    "area_m2": 44609,
-    "agua": [
-     {
-      "id": null,
-      "nombre": "drenaje",
-      "tipo": "natural",
-      "confianza": "IGAC"
-     }
-    ],
-    "sal": [],
-    "sin_agua": false,
-    "solo_natural": true,
-    "agua_por_confirmar": true,
-    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
-    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
-    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
-   },
-   "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -75.615493,
-       5.797618
-      ],
-      [
-       -75.612991,
-       5.797186
-      ],
-      [
-       -75.612339,
-       5.797021
-      ],
-      [
-       -75.611671,
-       5.797075
-      ],
-      [
-       -75.611084,
-       5.798518
-      ],
-      [
-       -75.611589,
-       5.798486
-      ],
-      [
-       -75.612183,
-       5.798372
-      ],
-      [
-       -75.613876,
-       5.798092
-      ],
-      [
-       -75.614275,
-       5.798024
-      ],
-      [
-       -75.615115,
-       5.797881
-      ],
-      [
-       -75.615344,
-       5.797812
-      ],
-      [
-       -75.615493,
-       5.797618
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "potrero",
     "nombre": "Mozambique",
-    "n": 14,
+    "n": 13,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -2500,7 +2415,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "La Mancha",
-    "n": 15,
+    "n": 14,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -2585,6 +2500,91 @@
       [
        -75.609228,
        5.802541
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Manantial",
+    "n": 15,
+    "nombrado": true,
+    "estado": "final",
+    "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
+    "area_ha": 4.32,
+    "area_m2": 43203,
+    "agua": [
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": true,
+    "agua_por_confirmar": true,
+    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.615431,
+       5.797699
+      ],
+      [
+       -75.612991,
+       5.797186
+      ],
+      [
+       -75.612339,
+       5.797021
+      ],
+      [
+       -75.611671,
+       5.797075
+      ],
+      [
+       -75.611084,
+       5.798518
+      ],
+      [
+       -75.611589,
+       5.798486
+      ],
+      [
+       -75.612183,
+       5.798372
+      ],
+      [
+       -75.613876,
+       5.798092
+      ],
+      [
+       -75.614275,
+       5.798024
+      ],
+      [
+       -75.615115,
+       5.797881
+      ],
+      [
+       -75.615344,
+       5.797812
+      ],
+      [
+       -75.615431,
+       5.797699
       ]
      ]
     ]
@@ -2835,6 +2835,10 @@
       [
        -75.615493,
        5.797618
+      ],
+      [
+       -75.615431,
+       5.797699
       ],
       [
        -75.615344,
@@ -3662,14 +3666,20 @@
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",
-    "area_ha": 2.73,
-    "area_m2": 27331,
+    "area_ha": 2.87,
+    "area_m2": 28737,
     "agua": [
      {
       "id": "agua:beb-1",
       "nombre": "Bebedero 1",
       "tipo": "bebedero",
       "confianza": "alta"
+     },
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
      }
     ],
     "sal": [],
@@ -3735,6 +3745,10 @@
       [
        -75.612991,
        5.797186
+      ],
+      [
+       -75.615431,
+       5.797699
       ],
       [
        -75.615493,

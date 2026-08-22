@@ -105,8 +105,8 @@
     5.797186
    ],
    [
-    -75.615493,
-    5.797618
+    -75.615431,
+    5.797699
    ],
    "cerca conocida entre los dos puntos que marcó Manuel",
    true
@@ -624,6 +624,21 @@
     "par [20] extremo 0"
    ],
    "motivo": "[owner, 2026-08-22] la T donde concurren las prolongaciones 26 y 27 se corre 4,4 m al sur para seguir el drenaje"
+  },
+  {
+   "de": [
+    -75.615495,
+    5.797619
+   ],
+   "a": [
+    -75.615431,
+    5.797699
+   ],
+   "metros": 11.3,
+   "refs": [
+    "par [16] extremo 1"
+   ],
+   "motivo": "[owner, 2026-08-22] el final de la cerca dictada se corre 11,3 m al nororiente, hasta donde el drenaje corta la cerca del IGAC"
   }
  ]
 }

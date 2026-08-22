@@ -144,7 +144,7 @@
    "properties": {
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
-    "longitud_m": 281,
+    "longitud_m": 276,
     "fuente": "[owner] cerca conocida entre los dos puntos que marcó Manuel",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
@@ -156,8 +156,8 @@
       5.797186
      ],
      [
-      -75.615493,
-      5.797618
+      -75.615431,
+      5.797699
      ]
     ]
    }
