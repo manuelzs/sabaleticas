@@ -110,14 +110,35 @@ def cercas_propias(write=True):
                     best = min(best, math.hypot(px - (ax + t * dx), py - (ay + t * dy)))
         return best
 
+    # Manual exclusions: a fence the rule keeps but Manuel knows is not ours. Named by
+    # the number of a loose end on it, which is how he can point at one on the map.
+    excl_pts = []
+    f_ex = GEO / "cercas-excluidas.json"
+    if f_ex.exists():
+        reg = {}
+        f_r = GEO / "cercas-numeracion.json"
+        if f_r.exists():
+            reg = json.loads(f_r.read_text(encoding="utf-8"))["puntos"]
+        for e in json.loads(f_ex.read_text(encoding="utf-8"))["excluir"]:
+            p = reg.get(str(e["por_extremo"])) if "por_extremo" in e else e.get("punto")
+            if p:
+                excl_pts.append((tuple(p), e.get("motivo", "")))
+
     cer = json.loads((GEO / "igac-1to5000/Cerca.geojson").read_text(encoding="utf-8"))
     ours, theirs = [], []
     for f in cer["features"]:
         g = f["geometry"]
         ls = [g["coordinates"]] if g["type"] == "LineString" else g["coordinates"]
         pts = [tuple(c[:2]) for l in ls for c in l]
-        keep = any(inside(p, [polys[i]]) for p in pts for i in range(len(polys))) \
-            or min(d_bnd(p) for p in pts) <= 10.0
+        dentro = any(inside(p, [polys[i]]) for p in pts for i in range(len(polys)))
+        # A real perimeter fence HUGS the boundary along its length. Brushing it at one
+        # point does not make it ours: a 2,183 m neighbour's fence was qualifying on a
+        # single vertex within 10 m, with none of the other 65 inside anything.
+        pegado = sum(1 for p in pts if d_bnd(p) <= 10.0) / len(pts)
+        keep = dentro or pegado >= 0.5
+        for q, mot in excl_pts:
+            if any(math.hypot((p[0] - q[0]) * LON2M, (p[1] - q[1]) * LAT2M) < 2.0 for p in pts):
+                keep = False
         (ours if keep else theirs).append(f)
     if write:
         (GEO / "cercas-propias.geojson").write_text(
