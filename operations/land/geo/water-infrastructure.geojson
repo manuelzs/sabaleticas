@@ -58,13 +58,14 @@
    "type": "Feature",
    "properties": {
     "tipo": "rompecargas",
-    "nombre": "Tanque rompecargas (~1.000 L)",
+    "nombre": "Tanque rompecargas (~2.000 L)",
     "altura_m": 798,
-    "capacidad_l": 1000,
+    "capacidad_l": 2000,
     "funcion": "Cámara rompe-presión: devuelve la línea a presión atmosférica a mitad de camino, partiendo una carga larga en dos cortas. Sin esto la tubería revienta por la pendiente.",
     "posicion_en_el_sistema": "entre los tanques altos (813 m) y los intermedios (762 m)",
     "fuente": "[owner] coordenada exacta dada por Manuel 2026-08-21 desde el visor.",
-    "confianza": "posición: alta · capacidad: baja (estimación de memoria)"
+    "confianza": "posición: alta · volumen: media (estimado por Manuel de las dimensiones)",
+    "construccion": "[owner, 2026-08-21] Cámara enterrada en concreto, ~1 m² de planta por 1–2 m de profundidad, con tapa a ras de suelo. NO es un tanque plástico: ampliarla es obra civil, no un cambio de tanque."
    },
    "geometry": {
     "type": "Point",

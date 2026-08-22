@@ -316,7 +316,7 @@ Flow scales with roughly √gradient, so **the outlet can pull ~1.73× what the 
 deliver — regardless of diameter.** The float valve throttles the inlet further still, and the
 single outlet then splits to several branches `[owner]`.
 
-At those rates a **1.000 L** rompecargas nets −0.29 L/s and **empties in under an hour.**
+At those rates the rompecargas nets **−0.29 L/s**. At **2.000 L** `[owner, 2026-08-21: cámara enterrada de ~1 m² × 1–2 m]` that is **under two hours from full to air.**
 
 > **This is structural, not a fault. Matching pipe sizes was never going to match flows.**
 
@@ -366,7 +366,7 @@ two to three times demand.** The system is losing water to *stoppages*, not to s
 |---|---|---|
 | 1 | **Throttle the outlet valve permanently** so outflow ≤ inflow. Manuel already does this as an emergency measure — make it a setting, not a rescue. Continuous moderate flow beats intermittent fast flow, because the intermedios are *storage*: they care about the daily total, not the rate. | **nothing** |
 | 2 | **Raise the outlet draw-off inside the rompecargas** (internal standpipe / elbow up) plus a vortex breaker, so the tank **physically cannot drain to air.** Level falls, flow drops to match inflow, prime is never lost. | very low |
-| 3 | **Bigger rompecargas — 1.000 L → 5.000 L.** Buffer goes from ~1 h to ~5 h and rides out demand peaks. | low |
+| 3 | ~~Bigger rompecargas~~ — **downgraded.** It is a **buried concrete chamber with a flush lid**, not a swappable poly tank `[owner, 2026-08-21]`. Enlarging it is civil works. Do fixes 1, 2 and 4 first and it should not be needed. | *was low, actually high* |
 | 4 | **Ventosa (automatic air-release valve) at the inlet summit**, where the line crests just before the tank. This is the one that should actually **raise the inflow** — the concern Manuel started from. | low |
 | 5 | **Inspect and clean the float valve.** Check size and blockage; this is unfiltered quebrada water. **Do not redesign it** — see above. | low |
 | 6 | **Give the garden a higher take-off than the cattle** on the tanques intermedios. The garden then dies first, automatically, and the remaining volume is reserved for the bebederos — **no discipline required.** | low |
@@ -438,6 +438,54 @@ solar panels and a caseta. `[derived]`
 
 **That makes the field survey the cheapest high-value action in the whole water project.**
 See [`pump-costing.md`](pump-costing.md), whose premise this may retire.
+
+### And the neighbour is no longer a dependency
+
+Manuel, 2026-08-21: *"we will need agreement from our neighbors, and that is not a given."*
+Correct — so the same search was re-run **restricted to our own land**:
+
+| | Route | Lift needed | Permission |
+|---|---|---|---|
+| **A** | Through EL GUAICO | **none — pure gravity** | **servidumbre required** |
+| **B** | **Our land only, contour-routed** | **6.6 m, over one 195 m hump** | **none** |
+| C | The original direct line | ~33 m | none — but retire it |
+
+Option B's route is 716 m, and **only 195 m of it (from 60 m to 255 m along) sits above the
+represa.** Pump over that one hump and gravity carries the remaining ~460 m.
+
+| Duty at 0.25 L/s, 45 % wire-to-water | Power |
+|---|---|
+| **Option B — 6.6 m, say 10 m with friction** | **~36–54 W** |
+| Option C — the 33 m lift in `pump-costing.md` | ~196 W |
+
+> **A quarter of the power, and therefore roughly a quarter of the solar array.**
+> Option B needs nobody's signature.
+
+That reframes the negotiation with El Guaico from a **dependency into an optimisation** — and
+it is a far better position to negotiate from, because we can walk away.
+
+### Does the gravity route need its own rompecargas?
+
+**No.** Total fall is **15.6 m ≈ 1.5 bar** — even the cheapest pipe class sold in Colombia
+(RDE 32.5, 125 psi ≈ 8.6 bar) is over five times that.
+
+| | Gradient |
+|---|---|
+| Average over the whole route | **2.03 %** |
+| **The limiting section (first 323 m)** | **0.155 %** ← this governs the pipe size |
+| The back half, once it starts dropping | ~4.2 % |
+
+> The existing system needs a rompecargas because it drops **49 m** in one leg and **106 m** to
+> the house. This route drops 15.6 m in total. **The gravity route removes the very component
+> that is failing.**
+
+**What it needs instead is ventosas.** A nearly flat line running just under its hydraulic
+grade line is exactly where air collects — the same failure as above. Budget an air valve at
+every hump on that first flat stretch, designed in from the start.
+
+**Cheapest de-risking move:** trenching the ridge crossing down ~1 m turns 0.50 m of head into
+1.5 m, roughly **tripling** the flow and lifting the margin clear of the terrain model's error.
+`[derived]`
 
 Drawn in the viewer as **"Ruta gravedad (candidata)"** (green, off by default), from
 `operations/land/geo/gravity-route-candidate.geojson`. The trace is **orientative** — it is the
