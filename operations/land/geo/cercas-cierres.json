@@ -126,12 +126,24 @@
      5.799737
     ],
     [
+     -75.609351,
+     5.799653
+    ],
+    [
+     -75.609718,
+     5.799931
+    ],
+    [
+     -75.610046,
+     5.799937
+    ],
+    [
      -75.610436,
      5.800024
     ]
    ],
    "es_cerca": true,
-   "motivo": "cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice [2026-08-22] El primer tramo ya no va recto de la T al nodo: dobla por el vértice del drenaje 34 en -75.608998,5.799748, que es por donde va la cerca. Una arista de 39,8 m pasa a dos de 29,2 + 15,0. El arranque se queda EN la T, no en la punta del drenaje, que quedaba 3,3 m corta."
+   "motivo": "cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice [2026-08-22] El primer tramo ya no va recto de la T al nodo: dobla por el vértice del drenaje 34 en -75.608998,5.799748, que es por donde va la cerca. Una arista de 39,8 m pasa a dos de 29,2 + 15,0. El arranque se queda EN la T, no en la punta del drenaje, que quedaba 3,3 m corta. [2026-08-22] El tramo de 147,8 m que iba recto del nodo al extremo occidental ahora sigue el drenaje 34 (tramos 19–22). Se conserva el NODO -75.609133,5.799737 como vértice aunque quede 2,7 m fuera del cauce: ahí llega la prolongación de la cerca 24, y dejarlo fuera habría hecho que el noding lo pegara solo, sin que se vea."
   },
   [
    [
