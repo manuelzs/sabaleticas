@@ -14,6 +14,39 @@
 | **Views** — *how* you look | geospatial map · schematic (P&ID) · tables/CRUD · charts |
 | **Subsystems** — *what* you look at | **agua** · **ganado** · **predio** (land, boundaries, potreros) |
 
+## The third axis: cross-cutting concerns
+
+`[Manuel, 2026-08-22]` *"We might build some sort of ticket tracking app that can track work
+tickets across the different subsystems."*
+
+A ticket system is **neither a view nor a subsystem** — it is a thing that *attaches to*
+entities in any subsystem. "Replace the float valve at `rompecargas`". "Confirm where
+`beb-5` really is". "Weigh lote 42."
+
+And it is not alone. **Sensor readings work exactly the same way**: a level for
+`rompecargas` attaches to that node. So does a photo, or a scanned concesión.
+
+> ### The unifying idea: attachments key on entity id.
+> Subsystems own **entities**. Cross-cutting concerns own **attachments** that reference
+> entity ids. Any view can render the attachments it cares about — a map marker showing an
+> open ticket, a schematic symbol showing a live level.
+
+This has one consequence worth acting on **now**, because it is painful to retrofit:
+
+> **Entity ids must be globally unique, not unique per subsystem.**
+> `agua:rompecargas`, `predio:potrero-bilbao`, `ganado:lote-42`. Today the water graph uses
+> bare ids like `rompecargas`; that is fine while there is one subsystem, and it will collide
+> the moment there are two.
+
+### We already have a proto-ticket system, by accident
+
+[`../operations/water/inventory.md`](../operations/water/inventory.md) is generated from
+`pos_confianza` on each node. **`baja` means "someone has to go and check this"** — which is a
+ticket in everything but name, and the file is already a work list sorted by urgency.
+
+A real ticket system would make that explicit and, crucially, let Manuel **close items**.
+Until then, the generated inventory does the job and costs nothing to maintain.
+
 ## Why this is not a matrix
 
 The obvious move is a grid of view × subsystem. It breaks immediately:

@@ -3,7 +3,8 @@
   "descripcion": "Red hidráulica de Hacienda Sabaleticas como grafo explícito.",
   "regla": "La conectividad vive en from/to por ID, NUNCA en el nombre. Longitudes, desniveles y gradientes se CALCULAN, no se guardan.",
   "generado_desde": "water-infrastructure.geojson, migración 2026-08-22",
-  "vistas": "geo = mapa (lon/lat). pid = diagrama esquemático (x/y), aún sin asignar."
+  "vistas": "geo = mapa (lon/lat). pid = diagrama esquemático (x/y), aún sin asignar.",
+  "pid": "Coordenadas del esquema: x = carril, colocado a mano por legibilidad; y = COTA REAL en metros. Al ser un sistema por gravedad, la altura es la lógica del sistema: lo que está arriba puede alimentar lo que está abajo, y eso se ve de un vistazo."
  },
  "nodes": [
   {
@@ -20,7 +21,11 @@
    "props": {
     "fuente": "[owner, corroborated by IGAC 1:5000] Manuel describió dos sitios construidos en el predio; el catastro 1:5000 muestra exactamente dos (entrada y suroeste). Construcción 14x10 m.",
     "confianza": "alta"
-   }
+   },
+   "pid": [
+    38,
+    813
+   ]
   },
   {
    "id": "tanque-alto-1",
@@ -37,7 +42,11 @@
     "capacidad_l": 50000,
     "confianza": "posición: alta · capacidad: baja",
     "fuente": "[owner] coordenada exacta dada por Manuel 2026-08-21 desde el visor. Capacidad ~50.000 L = estimación de memoria."
-   }
+   },
+   "pid": [
+    50,
+    811
+   ]
   },
   {
    "id": "tanque-alto-2",
@@ -54,7 +63,11 @@
     "capacidad_l": 20000,
     "confianza": "posición del conjunto: alta · posición individual: sin confirmar · capacidad: baja",
     "fuente": "[owner] Manuel confirmó UNA coordenada para el conjunto de tanques altos (5.795199, -75.602603). Este marcador se dibuja ~10 m al oeste SOLO para que los dos no se superpongan — no es una posición medida."
-   }
+   },
+   "pid": [
+    60,
+    811
+   ]
   },
   {
    "id": "rompecargas",
@@ -74,7 +87,11 @@
     "fuente": "[owner] coordenada exacta dada por Manuel 2026-08-21 desde el visor.",
     "confianza": "posición: alta · volumen: media (estimado por Manuel de las dimensiones)",
     "construccion": "[owner, 2026-08-21] Cámara enterrada en concreto, ~1 m² de planta por 1–2 m de profundidad, con tapa a ras de suelo. NO es un tanque plástico: ampliarla es obra civil, no un cambio de tanque."
-   }
+   },
+   "pid": [
+    50,
+    798
+   ]
   },
   {
    "id": "t-norte",
@@ -92,7 +109,11 @@
     "clave": "Está 13 m POR ENCIMA de los tanques intermedios. En un reparto sin control el ramal de mayor carga —el de los intermedios— se lleva el agua, y el norte se queda sin nada.",
     "fuente": "[owner] coordenada dada por Manuel 2026-08-21 desde el visor, aproximada a pocos metros.",
     "confianza": "posición: alta (±pocos m) · reparto: hipótesis sin verificar"
-   }
+   },
+   "pid": [
+    50,
+    775
+   ]
   },
   {
    "id": "casa-principal",
@@ -109,7 +130,11 @@
     "fuente": "[owner, corroborated by IGAC 1:5000] Manuel describió dos sitios construidos en el predio; el catastro 1:5000 muestra exactamente dos (entrada y suroeste). Construcción 60x30 m, la mayor del predio.",
     "confianza": "alta",
     "nota": "[owner, 2026-08-21] NO hay tanques junto a esta casa. Los tanques intermedios están a ~694 m, 57 m más arriba."
-   }
+   },
+   "pid": [
+    62,
+    705
+   ]
   },
   {
    "id": "tanques-intermedios",
@@ -129,7 +154,11 @@
     "abastece": "casa principal (recreativa, incl. jardín — carga prescindible) + ~la mitad de los bebederos de esa zona",
     "fuente": "[owner] coordenada exacta dada por Manuel 2026-08-21 desde el visor. Los tres tanques se representan como un solo punto porque no conocemos sus posiciones individuales. Capacidades ~20.000 L c/u = estimación de memoria.",
     "confianza": "posición del grupo: alta · capacidades: baja"
-   }
+   },
+   "pid": [
+    50,
+    762
+   ]
   },
   {
    "id": "represa",
@@ -380,7 +409,11 @@
     "clave": "Está 16 m POR ENCIMA de los tanques intermedios (762 m) y 35 m por debajo de los altos (813 m).",
     "fuente": "[owner] coordenada dada por Manuel 2026-08-21; extensión = polígono IGAC 1:5000 Deposito_Agua_R. Altura = modelo de terreno IGAC.",
     "confianza": "posición y área: alta · profundidad y volumen: desconocidos"
-   }
+   },
+   "pid": [
+    86,
+    778
+   ]
   },
   {
    "id": "ventosa-1",
@@ -399,7 +432,11 @@
     "fuente": "[plano 2003] rotulada 'ventosa'; posición leída por Manuel sobre el calco georreferenciado 2026-08-21 (±10–15 m). Su tramo lo confirma Manuel: va entre T-1 y T-2.",
     "confianza": "posición: media (calco 2003, RMS ~11 m) · existencia hoy: SIN CONFIRMAR EN CAMPO",
     "posicion_en_la_linea": "[owner, 2026-08-21] Entre T-1 y T-2."
-   }
+   },
+   "pid": [
+    50,
+    739
+   ]
   },
   {
    "id": "beb-2",
@@ -417,7 +454,11 @@
     "fuente": "[owner, CONFIRMADA 2026-08-21] Manuel la identificó directamente en la ortofoto. Misma confianza que los tanques y las casas. Sustituye la posición leída del plano.",
     "confianza": "posición: ALTA (ortofoto) · capacidad: n/a",
     "n": 2
-   }
+   },
+   "pid": [
+    26,
+    748
+   ]
   },
   {
    "id": "beb-3",
@@ -435,7 +476,11 @@
     "fuente": "[owner, CONFIRMADA 2026-08-21] Manuel la identificó directamente en la ortofoto. Misma confianza que los tanques y las casas. Sustituye la posición leída del plano.",
     "confianza": "posición: ALTA (ortofoto) · capacidad: n/a",
     "n": 3
-   }
+   },
+   "pid": [
+    20,
+    729
+   ]
   },
   {
    "id": "beb-4",
@@ -454,7 +499,11 @@
     "confianza": "orden: alta · posición: BAJA · capacidad: desconocida",
     "n": 4,
     "nota": "[owner, 2026-08-21] Bebedero, no tanque de almacenamiento. El ramal norte no guarda agua: se apoya en los tanques altos."
-   }
+   },
+   "pid": [
+    10,
+    700
+   ]
   },
   {
    "id": "t-1",
@@ -471,7 +520,11 @@
     "orden_en_la_linea": 1,
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
     "confianza": "orden: alta · posición: BAJA (±10–15 m) · qué alimenta: DESCONOCIDO"
-   }
+   },
+   "pid": [
+    50,
+    747
+   ]
   },
   {
    "id": "t-2",
@@ -489,7 +542,11 @@
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
     "confianza": "orden: alta · posición: CONTRADICHA POR EL TERRENO — no usar",
     "contradiccion": "⚠ CONTRADICHA 2026-08-21: el bebedero del camino, de posición confirmada, está a 717 m. Esta T queda por debajo, así que no puede alimentarlo por gravedad. La posición real debe estar a ≥720 m — el terreno a esa cota más cercano al bebedero está a ~50 m al este. Manuel: 'T3 está demasiado al norte; debe estar más cerca del bebedero'."
-   }
+   },
+   "pid": [
+    50,
+    705
+   ]
   },
   {
    "id": "t-3",
@@ -507,7 +564,11 @@
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
     "confianza": "orden: alta · posición: CONTRADICHA POR EL TERRENO — no usar",
     "contradiccion": "⚠ CONTRADICHA 2026-08-21: el bebedero del camino, de posición confirmada, está a 717 m. Esta T queda por debajo, así que no puede alimentarlo por gravedad. La posición real debe estar a ≥720 m — el terreno a esa cota más cercano al bebedero está a ~50 m al este. Manuel: 'T3 está demasiado al norte; debe estar más cerca del bebedero'."
-   }
+   },
+   "pid": [
+    50,
+    695
+   ]
   },
   {
    "id": "beb-1",
@@ -528,7 +589,11 @@
     "n": 1,
     "descripcion": "Junto al camino, con quiebrapatas al lado — así se identificó en la ortofoto.",
     "nombre_definitivo": "[pendiente] Manuel dará el nombre real cuando entregue los nombres de los potreros: cada bebedero pertenece a uno. Hasta entonces, numerados."
-   }
+   },
+   "pid": [
+    38,
+    717
+   ]
   },
   {
    "id": "beb-5",
@@ -548,7 +613,11 @@
     "alimentado_por": "[pendiente] Sin conexión conocida con la línea principal.",
     "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros.",
     "hipotesis_alimentacion": "[derived + owner, 2026-08-22] Alimentado desde una T sobre el ramal norte, en o justo antes del Bebedero 3 (729 m, 311 m, +15 m de carga). El tramo 3→4 pasa más cerca (262 m) pero sólo a ~719 m: 5 m de carga es poco para 300 m de tubería. Manuel coincide con el análisis; NO verificable desde la ortofoto. VERIFICAR EN CAMPO."
-   }
+   },
+   "pid": [
+    32,
+    714
+   ]
   },
   {
    "id": "beb-6",
@@ -567,7 +636,11 @@
     "confianza": "existencia: alta · posición: BAJA · cota: derivada de una posición aproximada",
     "alimentado_por": "[owner] En serie: 5 → 6 → 7.",
     "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros."
-   }
+   },
+   "pid": [
+    30,
+    678
+   ]
   },
   {
    "id": "beb-7",
@@ -586,7 +659,11 @@
     "confianza": "existencia: alta · posición: BAJA · cota: derivada de una posición aproximada",
     "alimentado_por": "[owner] En serie: 5 → 6 → 7.",
     "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros."
-   }
+   },
+   "pid": [
+    38,
+    675
+   ]
   },
   {
    "id": "t-4",
@@ -607,7 +684,11 @@
     "confirmado": "[owner, 2026-08-22] T REAL y distinta de la T del norte: ambas están marcadas en el plano y Manuel cree haberlas visto en el terreno. En campo costó entender qué hacía la T-4, pero **al mover la válvula se confirmó que pasa agua**, así que alimenta algo — no está muerta.",
     "tiene_valvula": "[owner] Sí. Se operó para comprobar el caudal.",
     "prueba_pendiente": "CERRAR LA VÁLVULA Y VER QUÉ BEBEDERO SE SECA. Es la prueba definitiva del destino, cuesta nada y no requiere levantamiento."
-   }
+   },
+   "pid": [
+    50,
+    767
+   ]
   },
   {
    "id": "beb-8",
@@ -626,7 +707,11 @@
     "fuente": "[owner, 2026-08-22] Capturado por Manuel en el visor.",
     "confianza": "existencia y alimentación: alta · posición: asumida aproximada",
     "nombre_definitivo": "[pendiente] Nombre real con los nombres de los potreros."
-   }
+   },
+   "pid": [
+    70,
+    693
+   ]
   },
   {
    "id": "beb-9",
@@ -644,7 +729,11 @@
     "alimentado_por": "[owner, 2026-08-22] T-1 (abajo de intermedios).",
     "fuente": "[owner, 2026-08-22] Capturado por Manuel en el visor.",
     "nombre_definitivo": "[pendiente] Nombre real con los nombres de los potreros."
-   }
+   },
+   "pid": [
+    66,
+    732
+   ]
   }
  ],
  "edges": [
