@@ -245,9 +245,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "cierre",
-    "nombre": "Cierre 30–35",
-    "longitud_m": 113,
-    "motivo": "cerca real bajo dosel — el satélite no la ve",
+    "nombre": "Cierre 35–punto",
+    "longitud_m": 125,
+    "motivo": "cerca real bajo dosel — el satélite no la ve [Arranca ahora del final de la prolongación del 30, no del 30.]",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
@@ -255,12 +255,12 @@
     "type": "LineString",
     "coordinates": [
      [
-      -75.616051,
-      5.798078
-     ],
-     [
       -75.616726,
       5.797314
+     ],
+     [
+      -75.615887,
+      5.79807
      ]
     ]
    }
@@ -318,8 +318,8 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre 29–punto",
-    "longitud_m": 115,
-    "motivo": "cerca real desde el punto que marcó Manuel",
+    "longitud_m": 103,
+    "motivo": "cerca real desde el punto que marcó Manuel [Termina ahora en el final de la prolongación del 30.]",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
@@ -331,8 +331,8 @@
       5.798782
      ],
      [
-      -75.616051,
-      5.798078
+      -75.615887,
+      5.79807
      ]
     ]
    }
@@ -1677,6 +1677,30 @@
      [
       -75.612176,
       5.798905
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 30–punto",
+    "longitud_m": 18,
+    "motivo": "prolongación dictada: la cerca del IGAC muere en el extremo 30 y sigue 18,2 m al este hasta donde de verdad va. El extremo 30 NO se mueve — es de una cerca real del IGAC.",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616051,
+      5.798078
+     ],
+     [
+      -75.615887,
+      5.79807
      ]
     ]
    }

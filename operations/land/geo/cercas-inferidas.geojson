@@ -5,21 +5,21 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_inferida",
-    "nombre": "Cerca 30–35",
-    "longitud_m": 113,
-    "fuente": "[owner] cerca real bajo dosel — el satélite no la ve",
+    "nombre": "Cerca 35–punto",
+    "longitud_m": 125,
+    "fuente": "[owner] cerca real bajo dosel — el satélite no la ve [Arranca ahora del final de la prolongación del 30, no del 30.]",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -75.616051,
-      5.798078
-     ],
-     [
       -75.616726,
       5.797314
+     ],
+     [
+      -75.615887,
+      5.79807
      ]
     ]
    }
@@ -75,8 +75,8 @@
    "properties": {
     "tipo": "cerca_inferida",
     "nombre": "Cerca 29–punto",
-    "longitud_m": 115,
-    "fuente": "[owner] cerca real desde el punto que marcó Manuel",
+    "longitud_m": 103,
+    "fuente": "[owner] cerca real desde el punto que marcó Manuel [Termina ahora en el final de la prolongación del 30.]",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
@@ -87,8 +87,8 @@
       5.798782
      ],
      [
-      -75.616051,
-      5.798078
+      -75.615887,
+      5.79807
      ]
     ]
    }
@@ -1308,6 +1308,29 @@
      [
       -75.612176,
       5.798905
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 30–punto",
+    "longitud_m": 18,
+    "fuente": "[owner] prolongación dictada: la cerca del IGAC muere en el extremo 30 y sigue 18,2 m al este hasta donde de verdad va. El extremo 30 NO se mueve — es de una cerca real del IGAC.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616051,
+      5.798078
+     ],
+     [
+      -75.615887,
+      5.79807
      ]
     ]
    }

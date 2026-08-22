@@ -52,9 +52,12 @@
    "concurre en el Bebedero 3"
   ],
   [
-   30,
+   [
+    -75.615887,
+    5.79807
+   ],
    35,
-   "cerca real bajo dosel — el satélite no la ve",
+   "cerca real bajo dosel — el satélite no la ve [Arranca ahora del final de la prolongación del 30, no del 30.]",
    true
   ],
   [
@@ -75,10 +78,10 @@
   [
    29,
    [
-    -75.616051,
-    5.798078
+    -75.615887,
+    5.79807
    ],
-   "cerca real desde el punto que marcó Manuel",
+   "cerca real desde el punto que marcó Manuel [Termina ahora en el final de la prolongación del 30.]",
    true
   ],
   [
@@ -534,7 +537,16 @@
    ],
    "es_cerca": true,
    "motivo": "cerca real por el drenaje 34 (tramos 34–36) en vez de la recta de 78,9 m: 98,3 m siguiendo el cauce, que se aparta hasta 14,4 m de ella. La punta oriente ya coincidía exactamente con el vértice de la recta; la occidente se lleva al otro vértice (estaba a 11,9 m), que es el final de la prolongación dictada del extremo 28."
-  }
+  },
+  [
+   30,
+   [
+    -75.615887,
+    5.79807
+   ],
+   "prolongación dictada: la cerca del IGAC muere en el extremo 30 y sigue 18,2 m al este hasta donde de verdad va. El extremo 30 NO se mueve — es de una cerca real del IGAC.",
+   true
+  ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
  "_por_que": "[owner, 2026-08-22] La capa de CERCAS y la de POTREROS no son lo mismo. Donde no hay cerca física el IGAC hace bien en dejar el hueco, pero el POTRERO puede estar cerrado igual para el ganado. Las cercas se quedan abiertas; los potreros se cierran.",

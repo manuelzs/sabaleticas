@@ -378,6 +378,11 @@ def leer_cierres(path):
                 out.append([a, b, f"{mot} (tramo {i} de {n})" if mot else "",
                             bool(c.get("es_cerca"))])
         else:
+            # [coordenada, número] es la misma cerca que [número, coordenada], pero el lector
+            # sólo entiende la segunda. Se normaliza aquí en vez de dejar que reviente más
+            # abajo con un TypeError críptico al usar una lista como clave.
+            if isinstance(c, list) and isinstance(c[0], list) and isinstance(c[1], int):
+                c = [c[1], c[0]] + list(c[2:])
             out.append(c)
     return out
 
