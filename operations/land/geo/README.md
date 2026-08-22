@@ -79,7 +79,41 @@ parcel. "Verdún" is one of the potrero names on the 2003 plan, at the northern 
 road. Whether that is a coincidence of naming or a piece that came out of the old farm is
 unresolved.
 
-## Area: 151.85 ha is the best evidence — but 41.56 ha remain unexplained
+## Area: 170.73 ha across two parcels — 22.68 ha still unexplained
+
+> ### 🔴 Correction (2026-08-21): the farm spans two municipalities.
+> Manuel noticed the boundary layer was cutting off a considerable piece of land in the
+> northwest. He was right, and the cause was mine: **I queried Catastro Antioquia for La
+> Pintada only.**
+>
+> Searching by **matrícula** instead of by municipality returns **two parcels under the same
+> title 023-16153**:
+>
+> | Parcel | Municipio | NPN prefix | Area |
+> |---|---|---|---|
+> | AP 1 SABALETITAS | **La Pintada** | 05390 | 151.85 ha |
+> | **LO 1 EL GUAICO** | **Santa Bárbara** | **05679** | **18.88 ha** |
+> | | | **Total** | **170.73 ha** |
+>
+> Same matrícula means **one legal property**, administered by two municipal cadastres. The
+> Santa Bárbara piece sits to the **northwest**, exactly where Manuel said land was missing.
+>
+> **Lesson for this repo:** query cadastral data by **matrícula**, not by municipality. A
+> municipal query silently truncates any property that crosses a boundary — and it does so
+> without any error, which is the dangerous kind of wrong.
+
+### The remaining gap
+
+| Figure | Source | |
+|---|---|---|
+| **170.73 ha** | Cadastre, both parcels, 2026 | Best evidence |
+| 193.41 ha | 2003 survey plan, "Lote No. 1" | A real document |
+| **22.68 ha** | The gap | **Still unexplained** |
+
+Finding the Santa Bárbara parcel closed **19 of the 41.56 ha** we could not previously
+account for. The remainder is still open, and the candidates below are unchanged.
+
+## The older reading — kept for the record
 
 **Use 151.85 ha.** `[cadastre — parcel AP 1 SABALETITAS, matrícula 023-16153, area computed
 from the official polygon]`. It is the only figure here that comes from a system of record

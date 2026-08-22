@@ -31,9 +31,14 @@ Every figure below carries its provenance — see the convention in
 [`AGENTS.md`](AGENTS.md). Two documents disagree about the area and **the disagreement is not
 resolved**; both are shown rather than picking one silently.
 
-- **Total area: 151.85 ha** `[cadastre — Catastro Antioquia, parcel AP 1 SABALETITAS,
-  matrícula 023-16153, computed from the official polygon 2026-08-21]`. **This is the best
-  evidence we have and the number to use.**
+- **Total area: 170.73 ha** `[cadastre — Catastro Antioquia, matrícula 023-16153, computed
+  from the official polygons 2026-08-21]`, made of **two parcels under one matrícula**:
+  - **AP 1 SABALETITAS — 151.85 ha**, municipio **La Pintada** (05390)
+  - **LO 1 EL GUAICO — 18.88 ha**, municipio **Santa Bárbara** (05679), to the **northwest**
+
+  > **The farm straddles the La Pintada / Santa Bárbara municipal line.** Spotted by Manuel
+  > (2026-08-21) when the boundary layer visibly cut off land in the northwest; an earlier
+  > version of this file said 151.85 ha because only the La Pintada parcel had been pulled.
   - ⚠️ **But a 41.56 ha discrepancy is open and unexplained.** The 2003 survey plan's *Lote
     No. 1* was **193.41 ha** `[plano 2003]`. Where the difference went is **not established** —
     see [`operations/land/geo/README.md`](operations/land/geo/README.md).
@@ -92,11 +97,11 @@ resolved**; both are shown rather than picking one silently.
 - **Sales channels:** TBD (subasta/feria, comisionista, direct)
 - **Sourcing:** buy females in lotes from various sources — _tracking source performance is a goal_
 - **Labor:** TBD (mayordomo, vaqueros, headcount, pay)
-- **Stocking rate: ~2.1–2.3 head/ha** `[derived: 266 head ÷ ~117–125 ha of potrero, using the
-  cadastral 151.85 ha]` — **above** the 1–2/ha rotated-pasture benchmark, i.e. **overstocked**.
-  On the older 193.41 ha basis it would be 1.68/ha, near the top of the range. Either way the
-  direction is the same and it matters for the coming verano
-  ([`operations/water/`](operations/water/README.md)).
+- **Stocking rate: ~1.9 head/ha** `[derived: 266 head ÷ ~140 ha of potrero, applying the 2003
+  land-use ratio to 170.73 ha]` — at the **top of** the 1–2/ha rotated-pasture benchmark rather
+  than clearly above it. The earlier 2.1–2.3 figure was computed before the Santa Bárbara
+  parcel was found. **Still no slack**, and it still matters for the coming verano
+  ([`operations/water/`](operations/water/README.md)) — but "at capacity" rather than "over".
 
 ## Systems of record
 
