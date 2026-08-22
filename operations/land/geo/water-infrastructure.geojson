@@ -817,11 +817,11 @@
    "type": "Feature",
    "properties": {
     "tipo": "bebedero",
-    "nombre": "Bebedero 5",
+    "nombre": "Bebedero 5 (aprox.)",
     "n": 5,
     "altura_m": 714,
-    "fuente": "[owner, 2026-08-21] Bebedero actual, ubicado por Manuel en la ortofoto.",
-    "confianza": "posición: ALTA (ortofoto) · conexión: DESCONOCIDA",
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: bebedero actual, pero la posición es aproximada — no confirmada en la ortofoto como los bebederos 1, 2 y 3.",
+    "confianza": "existencia: alta · posición: BAJA · cota: derivada de una posición aproximada",
     "alimentado_por": "[pendiente] Sin conexión conocida con la línea principal.",
     "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros."
    },
@@ -837,11 +837,11 @@
    "type": "Feature",
    "properties": {
     "tipo": "bebedero",
-    "nombre": "Bebedero 6",
+    "nombre": "Bebedero 6 (aprox.)",
     "n": 6,
     "altura_m": 678,
-    "fuente": "[owner, 2026-08-21] Bebedero actual, ubicado por Manuel en la ortofoto.",
-    "confianza": "posición: ALTA (ortofoto) · conexión: DESCONOCIDA",
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: bebedero actual, pero la posición es aproximada — no confirmada en la ortofoto como los bebederos 1, 2 y 3.",
+    "confianza": "existencia: alta · posición: BAJA · cota: derivada de una posición aproximada",
     "alimentado_por": "[owner] En serie: 5 → 6 → 7.",
     "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros."
    },
@@ -857,11 +857,11 @@
    "type": "Feature",
    "properties": {
     "tipo": "bebedero",
-    "nombre": "Bebedero 7",
+    "nombre": "Bebedero 7 (aprox.)",
     "n": 7,
     "altura_m": 675,
-    "fuente": "[owner, 2026-08-21] Bebedero actual, ubicado por Manuel en la ortofoto.",
-    "confianza": "posición: ALTA (ortofoto) · conexión: DESCONOCIDA",
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: bebedero actual, pero la posición es aproximada — no confirmada en la ortofoto como los bebederos 1, 2 y 3.",
+    "confianza": "existencia: alta · posición: BAJA · cota: derivada de una posición aproximada",
     "alimentado_por": "[owner] En serie: 5 → 6 → 7.",
     "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros."
    },
@@ -880,9 +880,8 @@
     "nombre": "Bebedero 5 → 6 (trazado esquemático)",
     "longitud_m": 231,
     "desnivel_m": 36,
-    "gradiente_pct": 15.6,
-    "fuente": "[owner, 2026-08-21] Conexión confirmada por Manuel. Extremos confirmados en ortofoto; el trazado entre ellos es recto y esquemático.",
-    "confianza": "conexión: ALTA · extremos: ALTA · trazado: esquemático"
+    "fuente": "[owner, 2026-08-21] Orden confirmado por Manuel: 5 → 6 → 7. Las posiciones de los tres extremos son aproximadas, así que longitudes y gradientes son orientativos.",
+    "confianza": "conexión y orden: ALTA (Manuel) · extremos: BAJA · trazado: esquemático"
    },
    "geometry": {
     "type": "LineString",
@@ -905,9 +904,8 @@
     "nombre": "Bebedero 6 → 7 (trazado esquemático)",
     "longitud_m": 96,
     "desnivel_m": 3,
-    "gradiente_pct": 3.1,
-    "fuente": "[owner, 2026-08-21] Conexión confirmada por Manuel. Extremos confirmados en ortofoto; el trazado entre ellos es recto y esquemático.",
-    "confianza": "conexión: ALTA · extremos: ALTA · trazado: esquemático"
+    "fuente": "[owner, 2026-08-21] Orden confirmado por Manuel: 5 → 6 → 7. Las posiciones de los tres extremos son aproximadas, así que longitudes y gradientes son orientativos.",
+    "confianza": "conexión y orden: ALTA (Manuel) · extremos: BAJA · trazado: esquemático"
    },
    "geometry": {
     "type": "LineString",
