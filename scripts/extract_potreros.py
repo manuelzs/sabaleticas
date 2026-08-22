@@ -411,6 +411,8 @@ def main():
     f_c0 = GEO / CIERRES
     if f_c0.exists():
         for c in json.loads(f_c0.read_text(encoding="utf-8"))["cierres"]:
+            if isinstance(c[0], list):
+                ext_pts.append(tuple(c[0]))
             if isinstance(c[1], list):
                 ext_pts.append(tuple(c[1]))
                 continue
@@ -555,7 +557,19 @@ def main():
             motivo = c[2] if len(c) > 2 else ""
             es_cerca = bool(c[3]) if len(c) > 3 else False
             if isinstance(b, list) or b in ents:
-                va = by_num.get(a)
+                if isinstance(a, list):                      # both ends are coordinates
+                    va, bd0 = None, 6.0
+                    for v in adj:
+                        d0 = math.hypot((pos[v][0] - a[0]) * LON2M,
+                                        (pos[v][1] - a[1]) * LAT2M)
+                        if d0 < bd0:
+                            va, bd0 = v, d0
+                    if va is None:
+                        va = ("ent", tuple(a))
+                        pos[va] = tuple(a)
+                        adj.setdefault(va, set())
+                else:
+                    va = by_num.get(a)
                 pt = tuple(b) if isinstance(b, list) else ents[b]
                 # The junction must sit exactly ON the entity. Snapping to whatever vertex
                 # happens to be nearest put all three fences on a point 3.3 m west of the
@@ -575,13 +589,14 @@ def main():
                     continue
                 d_m = math.hypot((pos[vb][0] - pos[va][0]) * LON2M,
                                  (pos[vb][1] - pos[va][1]) * LAT2M)
+                lab = "punto" if isinstance(b, list) else b.split(":")[-1]
+                a_lab = "punto" if isinstance(a, list) else a
                 lim = 400 if es_cerca else 60      # a real fence may be long; a gap may not
                 flag = "  ⚠ muy largo" if d_m > lim else ""
-                print(f"    {a} → {'punto' if isinstance(b, list) else b}: {d_m:6.1f} m{flag}")
+                print(f"    {a_lab} → {lab}: {d_m:6.1f} m{flag}")
                 adj[va].add(vb)
                 adj[vb].add(va)
-                lab = "punto" if isinstance(b, list) else b.split(":")[-1]
-                cierres.append((a, lab, pos[va], pos[vb], motivo, round(d_m), es_cerca))
+                cierres.append((a_lab, lab, pos[va], pos[vb], motivo, round(d_m), es_cerca))
                 hechos += 1
                 continue
             if b == "@extend":

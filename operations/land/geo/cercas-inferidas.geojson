@@ -161,6 +161,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 548,
+    "fuente": "[owner] cerca real desde el vértice corregido hasta el punto que marcó Manuel",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617129,
+      5.802296
+     ],
+     [
+      -75.615493,
+      5.797618
+     ]
+    ]
+   }
   }
  ]
 }

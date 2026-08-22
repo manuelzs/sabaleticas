@@ -101,6 +101,18 @@
    38,
    "cerca real que el IGAC no capturó",
    true
+  ],
+  [
+   [
+    -75.617129,
+    5.802296
+   ],
+   [
+    -75.615493,
+    5.797618
+   ],
+   "cerca real desde el vértice corregido hasta el punto que marcó Manuel",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

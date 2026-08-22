@@ -220,6 +220,8 @@ def _collect(geo: Path, TIPOS):
                 continue
             props = f.get("properties") or {}
             label = props.get("name") or props.get("DIRECCION") or ""
+            if props.get("tipo") == "potrero" and props.get("area_ha"):
+                label = f"{props.get('nombre','')} · {props['area_ha']} ha"
             if props.get("lado") and props.get("area_ha"):      # neighbours: name / owner / side+area
                 who = (owners.get(props.get("matricula") or "", {}) or {}).get("owner", "")
                 label = (f"{props['name']} · {who}"
@@ -241,7 +243,8 @@ def _collect(geo: Path, TIPOS):
             if tipo in TIPOS:
                 item["col"] = TIPOS[tipo]["color"]
                 item["shp"] = TIPOS[tipo].get("mapa", "circle")
-                item["l"] = str(props.get("nombre") or label)[:60]
+                item["l"] = (label if props.get("tipo") == "potrero"
+                             else str(props.get("nombre") or label))[:60]
             feats.append(item)
         if feats:
             out.append({"name": name, "kind": kind, "colour": colour, "width": width,
