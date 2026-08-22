@@ -511,8 +511,8 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "mojon_lejos",
-    "nombre": "Mojón 24 · 178 m ⚠",
+    "tipo": "mojon_playon",
+    "nombre": "Mojón 24 · 178 m · playón",
     "_id": "predio:mojon-2007-24",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
@@ -520,7 +520,7 @@
     "aviso": "Posición aproximada ±20 m.",
     "es_lindero": true,
     "d_lindero_m": 178.2,
-    "nota_distancia": "A 178 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
+    "nota_distancia": "A 178 m del lindero catastral, y está BIEN. Marca el playón: la franja entre nuestra línea y el punto medio del río, que el catastro no incluye y los levantamientos de 2003 y 2007 sí. No es error de georreferenciación ni cosa que revisar — ver playon.md."
    },
    "geometry": {
     "type": "Point",
@@ -599,8 +599,8 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "mojon_lejos",
-    "nombre": "Mojón 28 · 60 m ⚠",
+    "tipo": "mojon_playon",
+    "nombre": "Mojón 28 · 60 m · playón",
     "_id": "predio:mojon-2007-28",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
@@ -608,7 +608,7 @@
     "aviso": "Posición aproximada ±20 m.",
     "es_lindero": true,
     "d_lindero_m": 60.0,
-    "nota_distancia": "A 60 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
+    "nota_distancia": "A 60 m del lindero catastral, y está BIEN. Marca el playón: la franja entre nuestra línea y el punto medio del río, que el catastro no incluye y los levantamientos de 2003 y 2007 sí. No es error de georreferenciación ni cosa que revisar — ver playon.md."
    },
    "geometry": {
     "type": "Point",
