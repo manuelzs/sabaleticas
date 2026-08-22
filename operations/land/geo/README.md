@@ -102,7 +102,65 @@ unresolved.
 > municipal query silently truncates any property that crosses a boundary — and it does so
 > without any error, which is the dangerous kind of wrong.
 
-### The remaining gap — and why it may not be a gap at all
+## ✅ RESOLVED: the difference is the playón
+
+**Manuel identified it (2026-08-21), and the arithmetic is decisive.** The 2003 plan's own
+area table lists **Playón: 21.90 ha** — the sandy river terrace along the Poblanco.
+
+| | |
+|---|---|
+| 2003 plan total | 193.41 ha |
+| **less the playón** | **171.51 ha** |
+| Cadastre, both parcels | **170.73 ha** |
+| **Residual** | **0.78 ha — 0.46%** |
+
+No other land-use category comes close: sapal would leave 17 ha unexplained, rastrojos 19,
+guaduales 21.5. Only the playón lands it, and it lands within half a percent — as close as
+arithmetic gets on a 1:5000 hand survey.
+
+### Why the two documents differ
+
+They were **measuring different things**, and both were right:
+
+- The **2003 surveyor measured the physical extent** of the finca, playón included, because a
+  riparian boundary runs to the water and that is what he walked.
+- The **cadastre registers privately-titleable land** and stops short of the river terrace.
+
+> ### So nothing was ever missing.
+> There is no lost parcel, no segregation to hunt for in the chain of title. The "22.68 ha
+> gap" was an artefact of comparing a *physical* survey against a *legal* one. **170.73 ha is
+> our titled area.**
+
+It also explains the control points. Along the river the two documents draw genuinely different
+lines — one including the playón, one excluding it — which is why points 8, 10 and 12 were
+tens of metres out there and why that frontage is unusable as alignment control. Manuel called
+that before the numbers did.
+
+And per Manuel, **the river moves constantly**. A boundary defined by a watercourse moves with
+it, so the area itself changes over time and neither document is stale so much as *dated*.
+
+### ⚠️ The open question is whether we can graze it
+
+Not ownership — **use**. That is worth establishing properly, because it is not small:
+
+> **~22 ha of playón is about 13% more grazing land**, against a titled 170.73 ha — arriving
+> exactly when the [verano work](../../water/README.md) is asking how many head the farm can
+> carry through a forecast historic El Niño.
+
+River terraces are commonly grazed by the adjoining landowner as the water drops in the dry
+season — which is precisely when we would want it. But the legal status genuinely matters and
+**none of it is researched yet**:
+
+- Colombian law treats the **cauce** and a strip alongside permanent watercourses as **bienes
+  de uso público**, so the playón may not be privately ownable at all.
+- **"Playones"** is also a specific category in Colombian agrarian law, associated with
+  seasonally flooded public land held for **communal use** — a different status again.
+- Accretion and avulsion rules govern what happens to title as a river shifts.
+
+**Nothing above should be relied on — it is the shape of the question, not an answer.**
+Worth a proper look, and worth simply asking whether the cattle already use it.
+
+### The older framing, kept for the record
 
 > ⚠️ **Reframed 2026-08-21.** This was being treated as "22.68 hectares are missing." That
 > overstates what we know, for a reason the georeferencing work then proved:

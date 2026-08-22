@@ -39,9 +39,12 @@ resolved**; both are shown rather than picking one silently.
   > **The farm straddles the La Pintada / Santa Bárbara municipal line.** Spotted by Manuel
   > (2026-08-21) when the boundary layer visibly cut off land in the northwest; an earlier
   > version of this file said 151.85 ha because only the La Pintada parcel had been pulled.
-  - ⚠️ **But a 41.56 ha discrepancy is open and unexplained.** The 2003 survey plan's *Lote
-    No. 1* was **193.41 ha** `[plano 2003]`. Where the difference went is **not established** —
-    see [`operations/land/geo/README.md`](operations/land/geo/README.md).
+  - ✅ **The old discrepancy against the 2003 plan is resolved.** The plan's 193.41 ha
+    included the **playón (21.90 ha)** — the sandy river terrace — which the cadastre excludes
+    as non-titleable. 193.41 − 21.90 = 171.51 against 170.73, a 0.78 ha residual. Nothing was
+    missing; the two documents measured different things.
+  - ❓ **Open: can we graze the playón?** ~22 ha, use rather than ownership, legal status
+    unresearched — see [`operations/land/geo/README.md`](operations/land/geo/README.md).
   - ~~"~200 ha"~~ `[owner, unverified — and wrong]`. Carried from the first commit with no
     source. Superseded 2026-08-21. Kept visible as a caution.
 - **Usable pasture:** **158.67 ha** of potrero `[plano 2003]` — but that is 82% *of the 2003
