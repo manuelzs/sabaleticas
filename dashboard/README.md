@@ -109,6 +109,29 @@ Both are real, and the second is the harder one. Worth researching before commit
 
 _All of the above is unresearched. No figures until they're sourced._
 
+## Backlog — 3D view modes *(raised 2026-08-21, not scheduled)*
+
+Manuel's idea: switch between views the way Google Maps does — **default / satellite /
+terrain** — and drape layers like contour lines over the 3D surface. Recorded with honest
+effort estimates so it can be picked up cheaply later.
+
+| Idea | Effort | Note |
+|---|---|---|
+| **Toggle the orthophoto texture off** (plain shaded relief) | **Small — ~15 lines** | The shader already carries normalized height per vertex; it just needs a mode uniform |
+| **Hypsometric terrain view** (elevation colour ramp + hillshade, no photo) | **Small** | Same mechanism as above. This is the "terrain" mode |
+| **Drape contour lines on the 3D surface** | **Moderate — ~40 lines** | Look up elevation per vertex from the terrain grid, emit WebGL line geometry, lift slightly to avoid z-fighting with the surface |
+| **Drape the other vector layers** (linderos, cercas, drenajes) | **Moderate** | Same machinery as contours — once one drapes, they all do |
+| **Slope-shaded view** (colour by steepness) | Small–moderate | Genuinely useful, not just pretty: it would show at a glance which potreros cattle will under-graze |
+
+**Assessment: the texture and terrain modes are an easy afternoon; draping vectors is a
+slightly longer one.** Nothing here is hard — it is all the same mesh with different shading,
+and the terrain grid is already in the page.
+
+Worth saying which one earns its keep: **slope shading**. About 22% of the farm is steep
+(15–25°), cattle under-graze steep ground, and seeing that against the potrero layout would
+directly inform where to put fences and water. The rest is mostly pleasure — which is a fine
+reason, just not the same reason.
+
 ## Design rules
 
 Worth fixing now, before the thing grows:
