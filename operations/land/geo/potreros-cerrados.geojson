@@ -1665,9 +1665,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 7",
+    "nombre": "Laguna",
     "n": 7,
-    "nombrado": false,
+    "nombrado": true,
     "estado": "final",
     "estado_nota": "",
     "area_ha": 5.91,
@@ -1868,9 +1868,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 8",
+    "nombre": "Tierradentro",
     "n": 8,
-    "nombrado": false,
+    "nombrado": true,
     "estado": "final",
     "estado_nota": "",
     "area_ha": 5.71,

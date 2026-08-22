@@ -137,6 +137,22 @@
     5.796274
    ],
    "fuente": "[owner, 2026-08-22] Manuel lo identificó como el potrero 22 de la corrida del 2026-08-22."
+  },
+  {
+   "nombre": "Laguna",
+   "punto": [
+    -75.606014,
+    5.796762
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] Manuel lo leyó en el plano de 2007 (levantamiento Zapata & Santa María, feb-2007) e identificó el potrero 7 de la corrida del 2026-08-22."
+  },
+  {
+   "nombre": "Tierradentro",
+   "punto": [
+    -75.612194,
+    5.802043
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] La etiqueta TIERRADENTRO del levantamiento de 2007 cae dentro de este potrero al reproyectarla; Manuel lo confirmó. La duda venía del plano de 2003, donde el rótulo queda a caballo del lindero entre los potreros 8 y 18."
   }
  ]
 }

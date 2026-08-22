@@ -1,0 +1,538 @@
+{
+ "type": "FeatureCollection",
+ "_nota": "Mojones del levantamiento de 2007, reproyectados. Posición APROXIMADA (±20 m).",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 1 (2007)",
+    "_id": "predio:mojon-2007-1",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.601792,
+     5.794056
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 2 (2007)",
+    "_id": "predio:mojon-2007-2",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.60206,
+     5.795325
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 3 (2007)",
+    "_id": "predio:mojon-2007-3",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.602042,
+     5.795672
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 4 (2007)",
+    "_id": "predio:mojon-2007-4",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.603319,
+     5.794521
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 5 (2007)",
+    "_id": "predio:mojon-2007-5",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.603538,
+     5.794852
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 6 (2007)",
+    "_id": "predio:mojon-2007-6",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.604173,
+     5.797706
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 7 (2007)",
+    "_id": "predio:mojon-2007-7",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.606357,
+     5.796436
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 8 (2007)",
+    "_id": "predio:mojon-2007-8",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.606466,
+     5.796093
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 9 (2007)",
+    "_id": "predio:mojon-2007-9",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.609251,
+     5.796812
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 10 (2007)",
+    "_id": "predio:mojon-2007-10",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.608267,
+     5.801558
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 11 (2007)",
+    "_id": "predio:mojon-2007-11",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.609343,
+     5.796844
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 12 (2007)",
+    "_id": "predio:mojon-2007-12",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.609618,
+     5.802833
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 13 (2007)",
+    "_id": "predio:mojon-2007-13",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.611734,
+     5.796996
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 14 (2007)",
+    "_id": "predio:mojon-2007-14",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.613228,
+     5.793344
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 15 (2007)",
+    "_id": "predio:mojon-2007-15",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.613415,
+     5.792828
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 16 (2007)",
+    "_id": "predio:mojon-2007-16",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.613498,
+     5.807883
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 17 (2007)",
+    "_id": "predio:mojon-2007-17",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.6168,
+     5.793708
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 18 (2007)",
+    "_id": "predio:mojon-2007-18",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.614184,
+     5.808871
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 19 (2007)",
+    "_id": "predio:mojon-2007-19",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.617728,
+     5.793412
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 20 (2007)",
+    "_id": "predio:mojon-2007-20",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.614845,
+     5.808007
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 21 (2007)",
+    "_id": "predio:mojon-2007-21",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.618327,
+     5.793203
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 22 (2007)",
+    "_id": "predio:mojon-2007-22",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.618546,
+     5.793119
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 23 (2007)",
+    "_id": "predio:mojon-2007-23",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.616268,
+     5.807104
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 24 (2007)",
+    "_id": "predio:mojon-2007-24",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.619959,
+     5.792547
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 25 (2007)",
+    "_id": "predio:mojon-2007-25",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.617018,
+     5.807044
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 26 (2007)",
+    "_id": "predio:mojon-2007-26",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.618512,
+     5.806885
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 27 (2007)",
+    "_id": "predio:mojon-2007-27",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.621918,
+     5.806527
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "mojon",
+    "nombre": "Mojón 28 (2007)",
+    "_id": "predio:mojon-2007-28",
+    "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
+    "pos_confianza": "baja",
+    "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
+    "aviso": "Posición aproximada ±20 m."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.622377,
+     5.806341
+    ]
+   }
+  }
+ ]
+}

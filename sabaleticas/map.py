@@ -57,6 +57,7 @@ LAYERS = [
     ("Bosque",                  "igac-1to5000/Bosque.geojson",         "poly", "#66bb6a", 1.0, "rgba(102,187,106,.20)"),
     ("Vías",                    "igac-1to5000/Vias.geojson",           "line", "#ffffff", 1.4, None),
     ("Construcciones",          "igac-1to5000/Construccion_R.geojson", "poly", "#ff8a65", 1.5, "rgba(255,138,101,.6)"),
+    ("Mojones 2007 (aprox.)",  "mojones-2007.geojson",                "line", "#ffd54f", 1.6, None),
     ("Vecinos (con nombre)",   "neighbours.geojson",                  "poly", "#b0bec5", 1.6, None),
     ("Ruta gravedad (candidata)","gravity-route-candidate.geojson",     "line", "#00e676", 3.0, None),
     # "poly", not "line": the layer holds the corral as a POLYGON, and a line-kind
