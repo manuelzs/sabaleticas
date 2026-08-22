@@ -4400,10 +4400,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 33",
+    "nombre": "Tanzania",
     "n": 33,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",
