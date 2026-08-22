@@ -250,7 +250,17 @@ def build(root: Path) -> Path:
         "surroundings": surroundings,
     }, separators=(",", ":"))
 
+    # The page is assembled from dashboard/src/*.js in filename order. ES modules
+    # would be the normal answer, but file:// refuses to load them — and opening
+    # straight off the disk is the one constraint we cannot give up. So the builder
+    # concatenates: modular in the repo, a single file on disk, no build tooling.
+    src = sorted((dash / "src").glob("*.js"))
+    if not src:
+        raise SystemExit(f"error: no sources in {dash / 'src'}")
+    js = "".join(f.read_text(encoding="utf-8") for f in src)
+
     out = dash / "viewer.html"
-    out.write_text(tpl.read_text(encoding="utf-8").replace("/*__DATA__*/", payload),
-                   encoding="utf-8")
+    out.write_text(
+        tpl.read_text(encoding="utf-8").replace("/*__JS__*/", js).replace("/*__DATA__*/", payload),
+        encoding="utf-8")
     return out
