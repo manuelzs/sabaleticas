@@ -59,6 +59,14 @@ the farm.** It is reliable for the *shape* of the year and for comparing one yea
 another; it should not be treated as a measurement of what fell at Sabaleticas. A local IDEAM
 station record would be better and is worth chasing.
 
+⚠️ **Unresolved conflict, flagged 2026-08-21.** A second ERA5 pull for the same point returned
+**~3,067 mm/year** — more than double the figure below — with a different monthly shape (driest
+**Dec–Feb**, wettest **Apr–May and Oct–Nov**). Two reanalysis extractions for one location
+should not disagree by 2×; the likely cause is a different underlying model (ERA5 vs ERA5-Land,
+which diverge sharply in mountains) or a different period. **Neither is a rain gauge.** Until an
+IDEAM station record settles it, treat every rainfall figure here as indicative only — and note
+that the *bimodal shape* is consistent across sources even where the totals are not.
+
 Annual rainfall averages **~1,397 mm**. Median month, against reference evapotranspiration:
 
 | Month | Rain (mm) | ET0 (mm) | Balance |

@@ -67,7 +67,7 @@ Uneven terrain also pushes image overlap up, roughly doubling flight time.
 3. **Sentinel-2 NDVI** (10 m, free, ~5-day revisit) — useless for tanks, genuinely good for
    **pasture monitoring**, which is a different job we will want later.
 
-### ⚠️ Verification note
+### ✅ Verification note — resolved, the 0.31 m frame is real
 
 The research flagged a **0.31 m WorldView-3 frame from March 2017** as sitting in Esri Wayback
 for our coordinate. **I could not reproduce this.** Probing Wayback releases at our exact tile,
@@ -75,10 +75,45 @@ zoom 19 (which 0.31 m imagery would support) returned *no data* in every release
 the one release that did serve our tile served it only at zoom 18 — the same ~0.6 m we already
 have.
 
-That does not disprove it: Wayback stores only tiles that *changed* in each release, so a
-correct probe has to walk back through releases, and I tested only a handful. **Treat the
-0.31 m claim as unconfirmed.** It costs ten minutes to check by hand in the
-[Wayback viewer](https://livingatlas.arcgis.com/wayback/) if curiosity strikes.
+**My probe was wrong, and the claim is confirmed.** Walking all 196 Wayback releases through
+Esri's metadata service at our exact coordinate returns the full history — and it is sparse:
+
+| Wayback release | Imagery over the farm |
+|---|---|
+| 2014 → mid-2017 | **No high-resolution imagery at all** (15 m TerraColor) |
+| 2017-06 | WorldView-2, **0.5 m**, captured **2013-11-16** |
+| **2019-04** | **WorldView-3, 0.31 m, captured 2017-03-13** |
+| 2024-09 | WorldView-2, **0.5 m**, captured **2023-08-05** ← the current basemap |
+
+> **Three high-resolution captures in twelve years** — roughly one every four to six years. The
+> imagery we are looking at today was taken on **5 August 2023**, and the sharpest that exists
+> is the **31 cm frame from March 2017**, free in Wayback.
+
+Two things follow. Our current view is **three years old**, so anything built since is
+invisible. And the sparseness has a cause: high-resolution collection is **demand-driven**, and
+rural Colombia generates little commercial demand, so satellites simply do not point here often.
+
+Worth noting the 2023 capture was taken on **5 August** — squarely in the July–August drier
+window, which is not a coincidence.
+
+### Archive is ~6× cheaper than tasking
+
+Because our area sits far below every minimum order, **we pay the minimum regardless**:
+
+| | What we'd pay |
+|---|---|
+| **50 cm archive** (25 km² minimum) | **$312–375** |
+| **30 cm archive** (25 km² minimum) | **$562–600** |
+| 50 cm **tasking** (100 km² minimum) | **$2,500** |
+| 30 cm **tasking** (100 km² minimum) | **$3,250** |
+
+Two effects compound, and both punish a small area: the per-km² rate is ~45% lower for
+archive, **and the minimum order is 4× smaller**. Search the archive before ever paying to task.
+
+If we ever do task: **order December–February** (clear-overpass odds 51–54% against 29% in
+May), **set the cloud spec to 20%, not 5%** — a strict spec would reject most dates the farm
+was genuinely clear, while adding thousands in uplifts — and choose a provider that
+**re-tasks free** rather than billing for a photograph of cloud.
 
 ## Recommended sequence
 

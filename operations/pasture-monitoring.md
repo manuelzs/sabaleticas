@@ -27,20 +27,35 @@ use **2.3 units/month, about 0.02% of the allowance.**
 
 ## The three things that actually limit this
 
-### 1. Cloud — the binding constraint
+### 1. Cloud — a real constraint, but far milder than first reported
 
-Twelve months of observations over the farm's bounding box (211 scenes):
+> ✅ **Corrected 2026-08-21.** An earlier version of this file said *zero* scenes under 10%
+> cloud in a full year. That was **tile-level** cloud over a 110 × 110 km area including the
+> high Andes — I flagged the caveat at the time, and it turned out to matter enormously.
 
-| | Landsat | Sentinel-2 |
-|---|---|---|
-| Median cloud cover | **88%** | **76%** |
-| **Scenes under 10% cloud** | **0** | **0** — *in a full year* |
-| Scenes under 20% cloud | 1 | 5 → roughly **one every 64 days** |
+Cloud has now been measured **over our farm specifically**: 951 Sentinel-2 scenes (2017–2026),
+reading the scene-classification band windowed to our own bounding box.
 
-⚠️ **Caveat that matters:** that is scene-level cloud over a 110 km tile including the high
-Andes, not over our 170 ha. The farm can be clear inside a 76%-cloudy tile, so the real
-farm-level rate is better. But the direction is unambiguous: **plan around month-scale gaps,
-clustered in the growing season.**
+| | |
+|---|---|
+| **Overpasses under 10% cloud over the farm** | **39.6%** |
+| Under 5% cloud | 35.4% |
+| Median gap between usable dates | **5 days** |
+| 90th-percentile gap | 20 days · worst observed 70 days |
+
+**Roughly two overpasses in five are usable** — not one in sixty-four. Sentinel-2's ~5-day
+revisit therefore yields a usable image about every couple of weeks on average.
+
+**By month**, best to worst: **enero 53.7% · febrero 50.9% · julio 47.8% · diciembre 46.4% ·
+agosto 44.6%** … down to **mayo 29.0%**.
+
+And the distribution is **strongly bimodal** — 39.6% of overpasses are under 10% cloud, 42.3%
+are over 90%, and only 18% sit in between. It is almost never *partly* cloudy here. That is
+good news operationally: **a usable capture is usually a fully usable one.**
+
+⚠️ One methodological caveat kept honestly: Sentinel-2's cloud classifier has known false
+positives over bright tropical-mountain surfaces and can mistake terrain shadow for cloud
+shadow, so if anything these figures **overstate** cloudiness.
 
 ### 2. NDVI saturates exactly where the decision lives
 

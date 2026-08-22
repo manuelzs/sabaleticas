@@ -48,6 +48,7 @@
       <button id="planoRotR" style="padding:4px 7px">⟳</button>
       <button id="planoCal" style="padding:4px 7px">Calibrar 2 pts</button>
       <button id="planoMulti" style="padding:4px 7px">Puntos (N)</button>
+      <button id="planoUndo" style="padding:4px 7px">Deshacer par</button>
       <button id="planoReset" style="padding:4px 7px">Reset</button>
     </div>
     <div class="hint" id="planoHint">Enciende <b>Alinear</b>: arrastra para mover, rueda para
@@ -579,8 +580,17 @@ document.getElementById('planoMulti').onclick=e=>{
   planoAlign=false; document.getElementById('planoAlign').classList.remove('on');
   calStep=-1;
   document.getElementById('planoHint').innerHTML = mpOn
-    ? `<b>${mpPairs.length} pares.</b> Clic en el <b>DIBUJO</b>, luego el mismo sitio en la <b>FOTO</b>. Repite por toda la finca.`
+    ? `<b>${mpPairs.length} pares.</b> Clic en el <b>DIBUJO</b>, luego el mismo sitio en la <b>FOTO</b>. ` +
+      `Repite por toda la finca — <b>la imagen no se moverá</b>. Cuando tengas ~10, avísame y yo hago el ajuste.`
     : 'Captura pausada.';
+  draw();
+};
+document.getElementById('planoUndo').onclick=()=>{
+  if(mpPending){ mpPending=null; }
+  else if(mpPairs.length) mpPairs.pop();
+  mpSave();
+  document.getElementById('planoHint').innerHTML=
+    `<b>${mpPairs.length} pares.</b> Clic en el <b>DIBUJO</b>, luego en la <b>FOTO</b>.`;
   draw();
 };
 function mpClick(g){
@@ -589,9 +599,13 @@ function mpClick(g){
       `Par ${mpPairs.length+1}: ahora el mismo sitio en la <b>FOTO</b>.`; draw(); return; }
   mpPairs.push({uv:geoToUv(mpPending), planGeo:mpPending, geo:g});
   mpPending=null; mpSave();
-  if(mpPairs.length>=3) mpFit();
-  else document.getElementById('planoHint').innerHTML=
-    `<b>${mpPairs.length} pares.</b> Sigue: clic en el <b>DIBUJO</b>, luego en la <b>FOTO</b>.`;
+  // Deliberately NO re-fitting here. Warping the plan mid-capture moves the very features
+  // being clicked, which makes accurate clicking impossible. Capture first, fit later.
+  const last=mpPairs[mpPairs.length-1];
+  const off=Math.hypot((last.planGeo[0]-last.geo[0])*LON2M,(last.planGeo[1]-last.geo[1])*LAT2M);
+  document.getElementById('planoHint').innerHTML=
+    `<b>${mpPairs.length} pares capturados</b> (desfase de este: ${off.toFixed(0)} m).<br>` +
+    `Sigue marcando por toda la finca. La imagen <b>no se moverá</b> mientras capturas.`;
   draw();
 }
 
