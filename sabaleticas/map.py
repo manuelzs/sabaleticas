@@ -16,6 +16,8 @@ import base64
 import json
 from pathlib import Path
 
+from . import network
+
 # Farm identity and map extent live in farm.json, not here — one place to edit
 # when this is pointed at a different farm.
 GEO_REL = "../operations/land/geo"          # dashboard/ -> geo/, as the browser sees it
@@ -196,6 +198,12 @@ def _mesh(dem, step=2):
 
 def build(root: Path) -> Path:
     geo = root / "operations" / "land" / "geo"
+    # The water system is authored as a graph; the GeoJSON the map draws is
+    # generated from it every build, so the two can never disagree.
+    if (geo / "water-network.json").exists():
+        net = network.write_geojson(geo)
+        for p in network.check(net):
+            print(f"  ⚠ {p['edge']}: {p['problema']}")
     dash = root / "dashboard"
     tpl = dash / "map.template.html"
     if not tpl.exists():

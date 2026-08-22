@@ -1,10 +1,19 @@
 # Water points — what is confirmed and what is not
 
-> **Generated from `../land/geo/water-infrastructure.geojson`.** Do not edit by hand —
+> **Generated from `../land/geo/water-network.json`.** Do not edit by hand —
 > run `python3 scripts/water_inventory.py`. Position confidence is stored per feature
 > as `pos_confianza`, so this file cannot drift from the map.
+## 🔴 Physically impossible as recorded
 
-**21 points total.** 2 contradicha · 7 baja · 4 media · 8 alta
+Found automatically by `sabaleticas/network.py` — these edges run **uphill**, which a gravity system cannot do. The endpoints, not the pipe, are wrong.
+
+| Tramo | Problema |
+|---|---|
+| `t-3--casa-principal` | sube 10 m — imposible por gravedad — T-3 abajo de intermedios (695 m) → Casa principal (705 m) |
+| `t-3--beb-1` | sube 22 m — imposible por gravedad — T-3 abajo de intermedios (695 m) → Bebedero 1 (717 m) |
+
+
+**22 points total.** 2 contradicha · 8 baja · 4 media · 8 alta
 
 Manuel, 2026-08-22: *"when I go to confirm at the farm, I don't want to have to go to
 every single one of these places if I already know the reality."*
@@ -30,6 +39,7 @@ every single one of these places if I already know the reality."*
 | Bebedero | **Bebedero 7 (aprox.)** | 675 m | aproximada (Manuel) |
 | Bebedero | **Bebedero 8 (aprox.)** | 693 m | aproximada (Manuel) |
 | Bebedero | **Bebedero 9 (aprox.)** | 732 m | aproximada (Manuel) |
+| Represa | **Represa principal (el lago)** | 778 m |  |
 | Ventosa | **Ventosa (plano 2003) — entre T-1 y T-2** | 739 m | plano 2003, anotación a mano |
 
 ## 🟡 Good, worth a glance

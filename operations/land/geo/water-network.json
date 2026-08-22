@@ -1,0 +1,849 @@
+{
+ "meta": {
+  "descripcion": "Red hidráulica de Hacienda Sabaleticas como grafo explícito.",
+  "regla": "La conectividad vive en from/to por ID, NUNCA en el nombre. Longitudes, desniveles y gradientes se CALCULAN, no se guardan.",
+  "generado_desde": "water-infrastructure.geojson, migración 2026-08-22",
+  "vistas": "geo = mapa (lon/lat). pid = diagrama esquemático (x/y), aún sin asignar."
+ },
+ "nodes": [
+  {
+   "id": "casa-entrada",
+   "tipo": "casa",
+   "nombre": "Casa de la entrada",
+   "cota_m": 813,
+   "geo": [
+    -75.60241,
+    5.79529
+   ],
+   "pos_confianza": "alta",
+   "pos_motivo": "Catastro IGAC 1:5000",
+   "props": {
+    "fuente": "[owner, corroborated by IGAC 1:5000] Manuel describió dos sitios construidos en el predio; el catastro 1:5000 muestra exactamente dos (entrada y suroeste). Construcción 14x10 m.",
+    "confianza": "alta"
+   }
+  },
+  {
+   "id": "tanque-alto-1",
+   "tipo": "tanque",
+   "nombre": "Tanque principal 1 (~50.000 L)",
+   "cota_m": 811,
+   "geo": [
+    -75.602603,
+    5.795199
+   ],
+   "pos_confianza": "alta",
+   "pos_motivo": "Manuel, coordenada del visor",
+   "props": {
+    "capacidad_l": 50000,
+    "confianza": "posición: alta · capacidad: baja",
+    "fuente": "[owner] coordenada exacta dada por Manuel 2026-08-21 desde el visor. Capacidad ~50.000 L = estimación de memoria."
+   }
+  },
+  {
+   "id": "tanque-alto-2",
+   "tipo": "tanque",
+   "nombre": "Tanque principal 2 (~20.000 L)",
+   "cota_m": 811,
+   "geo": [
+    -75.602693,
+    5.795199
+   ],
+   "pos_confianza": "media",
+   "pos_motivo": "desplazado ~10 m sólo para no superponer marcadores",
+   "props": {
+    "capacidad_l": 20000,
+    "confianza": "posición del conjunto: alta · posición individual: sin confirmar · capacidad: baja",
+    "fuente": "[owner] Manuel confirmó UNA coordenada para el conjunto de tanques altos (5.795199, -75.602603). Este marcador se dibuja ~10 m al oeste SOLO para que los dos no se superpongan — no es una posición medida."
+   }
+  },
+  {
+   "id": "rompecargas",
+   "tipo": "rompecargas",
+   "nombre": "Tanque rompecargas (~2.000 L)",
+   "cota_m": 798,
+   "geo": [
+    -75.606162,
+    5.797126
+   ],
+   "pos_confianza": "alta",
+   "pos_motivo": "Manuel, coordenada del visor",
+   "props": {
+    "capacidad_l": 2000,
+    "funcion": "Cámara rompe-presión: devuelve la línea a presión atmosférica a mitad de camino, partiendo una carga larga en dos cortas. Sin esto la tubería revienta por la pendiente.",
+    "posicion_en_el_sistema": "entre los tanques altos (813 m) y los intermedios (762 m)",
+    "fuente": "[owner] coordenada exacta dada por Manuel 2026-08-21 desde el visor.",
+    "confianza": "posición: alta · volumen: media (estimado por Manuel de las dimensiones)",
+    "construccion": "[owner, 2026-08-21] Cámara enterrada en concreto, ~1 m² de planta por 1–2 m de profundidad, con tapa a ras de suelo. NO es un tanque plástico: ampliarla es obra civil, no un cambio de tanque."
+   }
+  },
+  {
+   "id": "t-norte",
+   "tipo": "derivacion",
+   "nombre": "T del norte",
+   "cota_m": 775,
+   "geo": [
+    -75.607946,
+    5.797082
+   ],
+   "pos_confianza": "media",
+   "pos_motivo": "Manuel: \"aproximada, pero sólo por unos metros\"",
+   "props": {
+    "funcion": "Reparte entre el ramal norte (sin almacenamiento) y los tanques intermedios.",
+    "clave": "Está 13 m POR ENCIMA de los tanques intermedios. En un reparto sin control el ramal de mayor carga —el de los intermedios— se lleva el agua, y el norte se queda sin nada.",
+    "fuente": "[owner] coordenada dada por Manuel 2026-08-21 desde el visor, aproximada a pocos metros.",
+    "confianza": "posición: alta (±pocos m) · reparto: hipótesis sin verificar"
+   }
+  },
+  {
+   "id": "casa-principal",
+   "tipo": "casa",
+   "nombre": "Casa principal",
+   "cota_m": 705,
+   "geo": [
+    -75.61623,
+    5.79648
+   ],
+   "pos_confianza": "alta",
+   "pos_motivo": "Catastro IGAC 1:5000",
+   "props": {
+    "fuente": "[owner, corroborated by IGAC 1:5000] Manuel describió dos sitios construidos en el predio; el catastro 1:5000 muestra exactamente dos (entrada y suroeste). Construcción 60x30 m, la mayor del predio.",
+    "confianza": "alta",
+    "nota": "[owner, 2026-08-21] NO hay tanques junto a esta casa. Los tanques intermedios están a ~694 m, 57 m más arriba."
+   }
+  },
+  {
+   "id": "tanques-intermedios",
+   "tipo": "tanque",
+   "nombre": "Tanques intermedios (3 × ~20.000 L)",
+   "cota_m": 762,
+   "geo": [
+    -75.609996,
+    5.797095
+   ],
+   "pos_confianza": "alta",
+   "pos_motivo": "Manuel, coordenada del visor",
+   "props": {
+    "n_tanques": 3,
+    "capacidad_l_total": 60000,
+    "alimentado_por": "tanques principales de la entrada (813 m) — 51 m de caída, ~860 m",
+    "abastece": "casa principal (recreativa, incl. jardín — carga prescindible) + ~la mitad de los bebederos de esa zona",
+    "fuente": "[owner] coordenada exacta dada por Manuel 2026-08-21 desde el visor. Los tres tanques se representan como un solo punto porque no conocemos sus posiciones individuales. Capacidades ~20.000 L c/u = estimación de memoria.",
+    "confianza": "posición del grupo: alta · capacidades: baja"
+   }
+  },
+  {
+   "id": "represa",
+   "tipo": "represa",
+   "nombre": "Represa principal (el lago)",
+   "cota_m": 778,
+   "geo": [
+    -75.60512,
+    5.796512
+   ],
+   "poligono": [
+    [
+     [
+      -75.6051163,
+      5.7970803
+     ],
+     [
+      -75.6051332,
+      5.7970806
+     ],
+     [
+      -75.6051713,
+      5.7970366
+     ],
+     [
+      -75.6051865,
+      5.7969976
+     ],
+     [
+      -75.6052239,
+      5.7968945
+     ],
+     [
+      -75.605293,
+      5.7967902
+     ],
+     [
+      -75.6053427,
+      5.7966991
+     ],
+     [
+      -75.6053849,
+      5.7966275
+     ],
+     [
+      -75.6054123,
+      5.7965798
+     ],
+     [
+      -75.6054271,
+      5.7965061
+     ],
+     [
+      -75.605435,
+      5.7963973
+     ],
+     [
+      -75.6054439,
+      5.7963307
+     ],
+     [
+      -75.6054575,
+      5.7962749
+     ],
+     [
+      -75.6054642,
+      5.7961841
+     ],
+     [
+      -75.6054577,
+      5.796072
+     ],
+     [
+      -75.6054491,
+      5.795977
+     ],
+     [
+      -75.6054405,
+      5.7959543
+     ],
+     [
+      -75.6054108,
+      5.7959261
+     ],
+     [
+      -75.605378,
+      5.7959057
+     ],
+     [
+      -75.6052276,
+      5.7958886
+     ],
+     [
+      -75.6051794,
+      5.7958831
+     ],
+     [
+      -75.6050547,
+      5.7959117
+     ],
+     [
+      -75.6050357,
+      5.7959389
+     ],
+     [
+      -75.6050249,
+      5.7959747
+     ],
+     [
+      -75.6050086,
+      5.7960317
+     ],
+     [
+      -75.6049899,
+      5.7960729
+     ],
+     [
+      -75.6049651,
+      5.796109
+     ],
+     [
+      -75.6049211,
+      5.7961602
+     ],
+     [
+      -75.6048952,
+      5.7962453
+     ],
+     [
+      -75.6048943,
+      5.796267
+     ],
+     [
+      -75.6049119,
+      5.7962988
+     ],
+     [
+      -75.604919,
+      5.7963116
+     ],
+     [
+      -75.6049382,
+      5.796338
+     ],
+     [
+      -75.6049624,
+      5.7963874
+     ],
+     [
+      -75.6049793,
+      5.796429
+     ],
+     [
+      -75.6049874,
+      5.7964564
+     ],
+     [
+      -75.604991,
+      5.7964749
+     ],
+     [
+      -75.6049883,
+      5.7965174
+     ],
+     [
+      -75.6049719,
+      5.7965434
+     ],
+     [
+      -75.6049512,
+      5.7965726
+     ],
+     [
+      -75.6049443,
+      5.7965892
+     ],
+     [
+      -75.6049438,
+      5.7966353
+     ],
+     [
+      -75.6049626,
+      5.7966767
+     ],
+     [
+      -75.6049798,
+      5.7967117
+     ],
+     [
+      -75.6049957,
+      5.7967422
+     ],
+     [
+      -75.6050092,
+      5.7967775
+     ],
+     [
+      -75.6050301,
+      5.7968122
+     ],
+     [
+      -75.6050372,
+      5.7968491
+     ],
+     [
+      -75.6050081,
+      5.7969505
+     ],
+     [
+      -75.6050066,
+      5.7969854
+     ],
+     [
+      -75.605008,
+      5.7970003
+     ],
+     [
+      -75.6050292,
+      5.797018
+     ],
+     [
+      -75.6050628,
+      5.7970374
+     ],
+     [
+      -75.6050797,
+      5.7970584
+     ],
+     [
+      -75.6050922,
+      5.7970688
+     ],
+     [
+      -75.605102,
+      5.7970769
+     ],
+     [
+      -75.6051163,
+      5.7970803
+     ]
+    ]
+   ],
+   "props": {
+    "area_m2": 5647,
+    "area_ha": 0.565,
+    "volumen_l_estimado": "5.6–11.3 millones (a 1–2 m de profundidad media) — PROFUNDIDAD DESCONOCIDA",
+    "conectada": "NO — hoy está fuera del sistema",
+    "clave": "Está 16 m POR ENCIMA de los tanques intermedios (762 m) y 35 m por debajo de los altos (813 m).",
+    "fuente": "[owner] coordenada dada por Manuel 2026-08-21; extensión = polígono IGAC 1:5000 Deposito_Agua_R. Altura = modelo de terreno IGAC.",
+    "confianza": "posición y área: alta · profundidad y volumen: desconocidos"
+   }
+  },
+  {
+   "id": "ventosa-1",
+   "tipo": "ventosa",
+   "nombre": "Ventosa (plano 2003) — entre T-1 y T-2",
+   "cota_m": 739,
+   "geo": [
+    -75.612092,
+    5.796878
+   ],
+   "pos_confianza": "baja",
+   "pos_motivo": "plano 2003, anotación a mano",
+   "props": {
+    "funcion": "Válvula de expulsión de aire. Deja salir el aire que se acumula en los puntos altos de la línea; sin ella la tubería se bloquea por aire.",
+    "clave": "Confirma que el diseño original YA contemplaba el aire. Una ventosa marca un PUNTO ALTO de la línea, así que señala dónde cresta el tramo T-1 → T-2. La cota de 739 m sale del terreno en una posición aproximada — es coherente con estar entre T-1 (747 m) y T-2 (≥720 m), pero no es una medición.",
+    "fuente": "[plano 2003] rotulada 'ventosa'; posición leída por Manuel sobre el calco georreferenciado 2026-08-21 (±10–15 m). Su tramo lo confirma Manuel: va entre T-1 y T-2.",
+    "confianza": "posición: media (calco 2003, RMS ~11 m) · existencia hoy: SIN CONFIRMAR EN CAMPO",
+    "posicion_en_la_linea": "[owner, 2026-08-21] Entre T-1 y T-2."
+   }
+  },
+  {
+   "id": "beb-2",
+   "tipo": "bebedero",
+   "nombre": "Bebedero 2",
+   "cota_m": 748,
+   "geo": [
+    -75.608472,
+    5.800685
+   ],
+   "pos_confianza": "alta",
+   "pos_motivo": "ortofoto",
+   "props": {
+    "orden_en_el_ramal": 1,
+    "fuente": "[owner, CONFIRMADA 2026-08-21] Manuel la identificó directamente en la ortofoto. Misma confianza que los tanques y las casas. Sustituye la posición leída del plano.",
+    "confianza": "posición: ALTA (ortofoto) · capacidad: n/a",
+    "n": 2
+   }
+  },
+  {
+   "id": "beb-3",
+   "tipo": "bebedero",
+   "nombre": "Bebedero 3",
+   "cota_m": 729,
+   "geo": [
+    -75.610781,
+    5.801364
+   ],
+   "pos_confianza": "alta",
+   "pos_motivo": "ortofoto",
+   "props": {
+    "orden_en_el_ramal": 2,
+    "fuente": "[owner, CONFIRMADA 2026-08-21] Manuel la identificó directamente en la ortofoto. Misma confianza que los tanques y las casas. Sustituye la posición leída del plano.",
+    "confianza": "posición: ALTA (ortofoto) · capacidad: n/a",
+    "n": 3
+   }
+  },
+  {
+   "id": "beb-4",
+   "tipo": "bebedero",
+   "nombre": "Bebedero 4 (aprox.)",
+   "cota_m": 700,
+   "geo": [
+    -75.615,
+    5.800337
+   ],
+   "pos_confianza": "baja",
+   "pos_motivo": "plano 2003",
+   "props": {
+    "orden_en_el_ramal": 3,
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · posición: BAJA · capacidad: desconocida",
+    "n": 4,
+    "nota": "[owner, 2026-08-21] Bebedero, no tanque de almacenamiento. El ramal norte no guarda agua: se apoya en los tanques altos."
+   }
+  },
+  {
+   "id": "t-1",
+   "tipo": "derivacion",
+   "nombre": "T-1 abajo de intermedios",
+   "cota_m": 747,
+   "geo": [
+    -75.610805,
+    5.797628
+   ],
+   "pos_confianza": "media",
+   "pos_motivo": "Manuel cree ver la zanja de la manguera en la ortofoto",
+   "props": {
+    "orden_en_la_linea": 1,
+    "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · posición: BAJA (±10–15 m) · qué alimenta: DESCONOCIDO"
+   }
+  },
+  {
+   "id": "t-2",
+   "tipo": "derivacion",
+   "nombre": "T-2 abajo de intermedios",
+   "cota_m": 705,
+   "geo": [
+    -75.613651,
+    5.797096
+   ],
+   "pos_confianza": "contradicha",
+   "pos_motivo": "queda 12 m POR DEBAJO del Bebedero 1, que alimenta",
+   "props": {
+    "orden_en_la_linea": 2,
+    "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · posición: CONTRADICHA POR EL TERRENO — no usar",
+    "contradiccion": "⚠ CONTRADICHA 2026-08-21: el bebedero del camino, de posición confirmada, está a 717 m. Esta T queda por debajo, así que no puede alimentarlo por gravedad. La posición real debe estar a ≥720 m — el terreno a esa cota más cercano al bebedero está a ~50 m al este. Manuel: 'T3 está demasiado al norte; debe estar más cerca del bebedero'."
+   }
+  },
+  {
+   "id": "t-3",
+   "tipo": "derivacion",
+   "nombre": "T-3 abajo de intermedios",
+   "cota_m": 695,
+   "geo": [
+    -75.614449,
+    5.797114
+   ],
+   "pos_confianza": "contradicha",
+   "pos_motivo": "queda 22 m POR DEBAJO del Bebedero 1, que alimenta",
+   "props": {
+    "orden_en_la_linea": 3,
+    "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · posición: CONTRADICHA POR EL TERRENO — no usar",
+    "contradiccion": "⚠ CONTRADICHA 2026-08-21: el bebedero del camino, de posición confirmada, está a 717 m. Esta T queda por debajo, así que no puede alimentarlo por gravedad. La posición real debe estar a ≥720 m — el terreno a esa cota más cercano al bebedero está a ~50 m al este. Manuel: 'T3 está demasiado al norte; debe estar más cerca del bebedero'."
+   }
+  },
+  {
+   "id": "beb-1",
+   "tipo": "bebedero",
+   "nombre": "Bebedero 1",
+   "cota_m": 717,
+   "geo": [
+    -75.614251,
+    5.796126
+   ],
+   "pos_confianza": "alta",
+   "pos_motivo": "ortofoto: junto al camino, quiebrapatas visibles",
+   "props": {
+    "alimentado_por": "[owner, 2026-08-21] Desde una de las T — cuál, por determinar.",
+    "fuente": "[owner, CONFIRMADA] Manuel 2026-08-21: posición segura — está junto al camino, con los quiebrapatas visibles en la ortofoto. Misma confianza que los tanques y las casas.",
+    "confianza": "posición: ALTA · alimentación desde T-3: según Manuel",
+    "clave": "A 717 m está POR ENCIMA de T-2 (705 m) y T-3 (695 m) tal como los sitúa el plano. Imposible por gravedad: las posiciones del plano en este sector están mal.",
+    "n": 1,
+    "descripcion": "Junto al camino, con quiebrapatas al lado — así se identificó en la ortofoto.",
+    "nombre_definitivo": "[pendiente] Manuel dará el nombre real cuando entregue los nombres de los potreros: cada bebedero pertenece a uno. Hasta entonces, numerados."
+   }
+  },
+  {
+   "id": "beb-5",
+   "tipo": "bebedero",
+   "nombre": "Bebedero 5 (aprox.)",
+   "cota_m": 714,
+   "geo": [
+    -75.612802,
+    5.803313
+   ],
+   "pos_confianza": "baja",
+   "pos_motivo": "aproximada (Manuel)",
+   "props": {
+    "n": 5,
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: bebedero actual, pero la posición es aproximada — no confirmada en la ortofoto como los bebederos 1, 2 y 3.",
+    "confianza": "existencia: alta · posición: BAJA · cota: derivada de una posición aproximada",
+    "alimentado_por": "[pendiente] Sin conexión conocida con la línea principal.",
+    "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros.",
+    "hipotesis_alimentacion": "[derived + owner, 2026-08-22] Alimentado desde una T sobre el ramal norte, en o justo antes del Bebedero 3 (729 m, 311 m, +15 m de carga). El tramo 3→4 pasa más cerca (262 m) pero sólo a ~719 m: 5 m de carga es poco para 300 m de tubería. Manuel coincide con el análisis; NO verificable desde la ortofoto. VERIFICAR EN CAMPO."
+   }
+  },
+  {
+   "id": "beb-6",
+   "tipo": "bebedero",
+   "nombre": "Bebedero 6 (aprox.)",
+   "cota_m": 678,
+   "geo": [
+    -75.614336,
+    5.804734
+   ],
+   "pos_confianza": "baja",
+   "pos_motivo": "aproximada (Manuel)",
+   "props": {
+    "n": 6,
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: bebedero actual, pero la posición es aproximada — no confirmada en la ortofoto como los bebederos 1, 2 y 3.",
+    "confianza": "existencia: alta · posición: BAJA · cota: derivada de una posición aproximada",
+    "alimentado_por": "[owner] En serie: 5 → 6 → 7.",
+    "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros."
+   }
+  },
+  {
+   "id": "beb-7",
+   "tipo": "bebedero",
+   "nombre": "Bebedero 7 (aprox.)",
+   "cota_m": 675,
+   "geo": [
+    -75.614034,
+    5.803918
+   ],
+   "pos_confianza": "baja",
+   "pos_motivo": "aproximada (Manuel)",
+   "props": {
+    "n": 7,
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: bebedero actual, pero la posición es aproximada — no confirmada en la ortofoto como los bebederos 1, 2 y 3.",
+    "confianza": "existencia: alta · posición: BAJA · cota: derivada de una posición aproximada",
+    "alimentado_por": "[owner] En serie: 5 → 6 → 7.",
+    "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros."
+   }
+  },
+  {
+   "id": "t-4",
+   "tipo": "derivacion",
+   "nombre": "T-4 arriba de intermedios",
+   "cota_m": 767,
+   "geo": [
+    -75.608623,
+    5.79711
+   ],
+   "pos_confianza": "media",
+   "pos_motivo": "capturada por Manuel; T real confirmada en campo, posición aproximada",
+   "props": {
+    "alimenta": "[owner, 2026-08-22] Un ramal hacia el NORTE que sirve UN solo bebedero, todavía sin ubicar. Destino por determinar.",
+    "fuente": "[owner, 2026-08-22] Capturada por Manuel en el visor.",
+    "confianza": "existencia: alta · posición: sin especificar (asumida aproximada hasta que Manuel confirme)",
+    "supuesto": "[derived] Se asume que está sobre el tramo T del norte → tanques intermedios: cae a 75 m de la T del norte, y su cota de 767 m queda entre 775 y 762 m. CORREGIR si no.",
+    "confirmado": "[owner, 2026-08-22] T REAL y distinta de la T del norte: ambas están marcadas en el plano y Manuel cree haberlas visto en el terreno. En campo costó entender qué hacía la T-4, pero **al mover la válvula se confirmó que pasa agua**, así que alimenta algo — no está muerta.",
+    "tiene_valvula": "[owner] Sí. Se operó para comprobar el caudal.",
+    "prueba_pendiente": "CERRAR LA VÁLVULA Y VER QUÉ BEBEDERO SE SECA. Es la prueba definitiva del destino, cuesta nada y no requiere levantamiento."
+   }
+  },
+  {
+   "id": "beb-8",
+   "tipo": "bebedero",
+   "nombre": "Bebedero 8 (aprox.)",
+   "cota_m": 693,
+   "geo": [
+    -75.614033,
+    5.798286
+   ],
+   "pos_confianza": "baja",
+   "pos_motivo": "aproximada (Manuel)",
+   "props": {
+    "n": 8,
+    "alimentado_por": "[owner, 2026-08-22] T-2 (abajo de intermedios).",
+    "fuente": "[owner, 2026-08-22] Capturado por Manuel en el visor.",
+    "confianza": "existencia y alimentación: alta · posición: asumida aproximada",
+    "nombre_definitivo": "[pendiente] Nombre real con los nombres de los potreros."
+   }
+  },
+  {
+   "id": "beb-9",
+   "tipo": "bebedero",
+   "nombre": "Bebedero 9 (aprox.)",
+   "cota_m": 732,
+   "geo": [
+    -75.610959,
+    5.798724
+   ],
+   "pos_confianza": "baja",
+   "pos_motivo": "aproximada (Manuel)",
+   "props": {
+    "n": 9,
+    "alimentado_por": "[owner, 2026-08-22] T-1 (abajo de intermedios).",
+    "fuente": "[owner, 2026-08-22] Capturado por Manuel en el visor.",
+    "nombre_definitivo": "[pendiente] Nombre real con los nombres de los potreros."
+   }
+  }
+ ],
+ "edges": [
+  {
+   "id": "tanque-alto-1--rompecargas",
+   "from": "tanque-alto-1",
+   "to": "rompecargas",
+   "nombre": "Tanques altos → rompecargas (INDICATIVA)",
+   "props": {
+    "tipo": "tuberia",
+    "confianza": "solo los extremos son reales; el trazado es esquemático",
+    "fuente": "Une puntos confirmados por Manuel. Se reemplaza con el levantamiento de tubería."
+   }
+  },
+  {
+   "id": "rompecargas--t-norte",
+   "from": "rompecargas",
+   "to": "t-norte",
+   "nombre": "Rompecargas → T del norte (INDICATIVA)",
+   "props": {
+    "tipo": "tuberia",
+    "confianza": "extremos reales; trazado esquemático",
+    "fuente": "Une puntos confirmados por Manuel."
+   }
+  },
+  {
+   "id": "t-norte--beb-2",
+   "from": "t-norte",
+   "to": "beb-2",
+   "nombre": "T del norte → Bebedero 2 (APROXIMADA)",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · trazado y longitud: BAJA"
+   }
+  },
+  {
+   "id": "beb-2--beb-3",
+   "from": "beb-2",
+   "to": "beb-3",
+   "nombre": "Bebedero 2 → 3 (APROXIMADA)",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner] Une los bebederos 2 y 3 confirmados en ortofoto; el 4 sigue leído del plano, así que ese extremo es aproximado.",
+    "confianza": "orden: alta · trazado: recto esquemático",
+    "altura_m": 748
+   }
+  },
+  {
+   "id": "beb-3--beb-4",
+   "from": "beb-3",
+   "to": "beb-4",
+   "nombre": "Bebedero 3 → 4 (APROXIMADA)",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner] Une los bebederos 2 y 3 confirmados en ortofoto; el 4 sigue leído del plano, así que ese extremo es aproximado.",
+    "confianza": "orden: alta · trazado: recto esquemático",
+    "altura_m": 729
+   }
+  },
+  {
+   "id": "t-norte--t-4",
+   "from": "t-norte",
+   "to": "t-4",
+   "nombre": "T del norte → T-4",
+   "props": {
+    "tipo": "tuberia",
+    "confianza": "extremos reales; trazado esquemático",
+    "fuente": "Une puntos confirmados por Manuel.",
+    "nota": "Borrada por error 2026-08-21 al añadir el ramal norte; restaurada.",
+    "pasa_por": "[derived, supuesto] T-4, a 767 m."
+   }
+  },
+  {
+   "id": "t-4--tanques-intermedios",
+   "from": "t-4",
+   "to": "tanques-intermedios",
+   "nombre": "T-4 → tanques intermedios",
+   "props": {
+    "tipo": "tuberia",
+    "confianza": "extremos reales; trazado esquemático",
+    "fuente": "Une puntos confirmados por Manuel.",
+    "nota": "Borrada por error 2026-08-21 al añadir el ramal norte; restaurada.",
+    "pasa_por": "[derived, supuesto] T-4, a 767 m."
+   }
+  },
+  {
+   "id": "tanques-intermedios--t-1",
+   "from": "tanques-intermedios",
+   "to": "t-1",
+   "nombre": "Tanques intermedios → T-1 (APROXIMADA)",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · trazado y longitud: BAJA"
+   }
+  },
+  {
+   "id": "t-1--ventosa-1",
+   "from": "t-1",
+   "to": "ventosa-1",
+   "nombre": "T-1 → ventosa",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · trazado y longitud: BAJA",
+    "pasa_por": "[owner, 2026-08-21] La ventosa está en este tramo."
+   }
+  },
+  {
+   "id": "ventosa-1--t-2",
+   "from": "ventosa-1",
+   "to": "t-2",
+   "nombre": "Ventosa → T-2",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · trazado y longitud: BAJA",
+    "pasa_por": "[owner, 2026-08-21] La ventosa está en este tramo."
+   }
+  },
+  {
+   "id": "t-2--t-3",
+   "from": "t-2",
+   "to": "t-3",
+   "nombre": "T-2 → T-3 (APROXIMADA)",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
+    "confianza": "orden: alta · trazado y longitud: BAJA"
+   }
+  },
+  {
+   "id": "t-3--casa-principal",
+   "from": "t-3",
+   "to": "casa-principal",
+   "nombre": "T-3 → casa principal (APROXIMADA)",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner, 2026-08-21] Topología confirmada por Manuel: intermedios → T-1 → T-2 → T-3 → casa. La casa NO se alimenta directo de los intermedios. Posición de T-3 aún sin confirmar, así que la longitud es orientativa.",
+    "confianza": "topología: ALTA · trazado y longitud: BAJA"
+   }
+  },
+  {
+   "id": "t-3--beb-1",
+   "from": "t-3",
+   "to": "beb-1",
+   "nombre": "T-3 (¿o T-2?) → Bebedero 1 — SIN CONFIRMAR",
+   "estilo": "discontinuo",
+   "props": {
+    "tipo": "tuberia",
+    "estilo": "discontinuo",
+    "fuente": "[owner, 2026-08-21] Manuel sabe que el bebedero se alimenta de una de las T, pero no de cuál. Trazo discontinuo = conexión sin confirmar. La T dibujada aquí además está mal ubicada (queda por debajo del bebedero), así que sólo indica QUE existe la conexión, no por dónde va.",
+    "confianza": "existencia de la conexión: alta · cuál T: DESCONOCIDA · trazado: ninguno"
+   }
+  },
+  {
+   "id": "beb-5--beb-6",
+   "from": "beb-5",
+   "to": "beb-6",
+   "nombre": "Bebedero 5 → 6 (trazado esquemático)",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner, 2026-08-21] Orden confirmado por Manuel: 5 → 6 → 7. Las posiciones de los tres extremos son aproximadas, así que longitudes y gradientes son orientativos.",
+    "confianza": "conexión y orden: ALTA (Manuel) · extremos: BAJA · trazado: esquemático",
+    "hipotesis_alimentacion": "[derived + owner, 2026-08-22] Alimentado desde una T sobre el ramal norte, en o justo antes del Bebedero 3 (729 m, 311 m, +15 m de carga). El tramo 3→4 pasa más cerca (262 m) pero sólo a ~719 m: 5 m de carga es poco para 300 m de tubería. Manuel coincide con el análisis; NO verificable desde la ortofoto. VERIFICAR EN CAMPO."
+   }
+  },
+  {
+   "id": "beb-6--beb-7",
+   "from": "beb-6",
+   "to": "beb-7",
+   "nombre": "Bebedero 6 → 7 (trazado esquemático)",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner, 2026-08-21] Orden confirmado por Manuel: 5 → 6 → 7. Las posiciones de los tres extremos son aproximadas, así que longitudes y gradientes son orientativos.",
+    "confianza": "conexión y orden: ALTA (Manuel) · extremos: BAJA · trazado: esquemático"
+   }
+  },
+  {
+   "id": "t-2--beb-8",
+   "from": "t-2",
+   "to": "beb-8",
+   "nombre": "T-2 → Bebedero 8 (trazado esquemático)",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner, 2026-08-22] Conexión confirmada por Manuel.",
+    "confianza": "conexión: ALTA · trazado: ninguno — la posición de T-2 está CONTRADICHA por el terreno, así que esta línea sólo dice que la conexión existe."
+   }
+  },
+  {
+   "id": "t-1--beb-9",
+   "from": "t-1",
+   "to": "beb-9",
+   "nombre": "T-1 → Bebedero 9 (trazado esquemático)",
+   "props": {
+    "tipo": "tuberia",
+    "fuente": "[owner, 2026-08-22] Conexión confirmada por Manuel."
+   }
+  }
+ ]
+}

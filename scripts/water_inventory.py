@@ -10,7 +10,9 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "operations/land/geo/water-infrastructure.geojson"
+import sys; sys.path.insert(0, str(ROOT))
+from sabaleticas import network as N
+GEO = ROOT / "operations/land/geo"
 OUT = ROOT / "operations/water/inventory.md"
 
 ORDER = ["contradicha", "baja", "media", "alta"]
@@ -34,16 +36,16 @@ TIPO = {"bebedero": "Bebedero", "tanque": "Tanque", "derivacion": "T / derivaci�
 
 
 def main():
-    feats = json.loads(SRC.read_text(encoding="utf-8"))["features"]
-    pts = [f for f in feats if f["geometry"]["type"] == "Point"]
+    net = N.load(GEO)
+    pts = net["nodes"]
     buckets = {k: [] for k in ORDER}
-    for f in pts:
-        p = f["properties"]
-        buckets.get(p.get("pos_confianza", "baja"), buckets["baja"]).append(f)
+    for n in pts:
+        buckets.get(n.get("pos_confianza", "baja"), buckets["baja"]).append(n)
+    problems = N.check(net)
 
     L = ["# Water points — what is confirmed and what is not",
          "",
-         "> **Generated from `../land/geo/water-infrastructure.geojson`.** Do not edit by hand —",
+         "> **Generated from `../land/geo/water-network.json`.** Do not edit by hand —",
          "> run `python3 scripts/water_inventory.py`. Position confidence is stored per feature",
          "> as `pos_confianza`, so this file cannot drift from the map.",
          "",
@@ -59,13 +61,21 @@ def main():
         title, blurb = HEAD[k]
         L += [f"## {title}", "", blurb, "",
               "| | Punto | Cota | Por qué |", "|---|---|---|---|"]
-        for f in sorted(buckets[k], key=lambda x: x["properties"].get("nombre", "")):
-            p = f["properties"]
+        for p in sorted(buckets[k], key=lambda x: x.get("nombre", "")):
             L.append(f"| {TIPO.get(p.get('tipo'), p.get('tipo', ''))} "
                      f"| **{p.get('nombre', '')}** "
-                     f"| {p.get('altura_m', '—')} m "
+                     f"| {p.get('cota_m', '—')} m "
                      f"| {p.get('pos_motivo', '')} |")
         L.append("")
+    if problems:
+        L = L[:5] + [
+            "## 🔴 Physically impossible as recorded",
+            "",
+            "Found automatically by `sabaleticas/network.py` — these edges run **uphill**, "
+            "which a gravity system cannot do. The endpoints, not the pipe, are wrong.",
+            "",
+            "| Tramo | Problema |", "|---|---|"] + [
+            f"| `{p['edge']}` | {p['problema']} — {p.get('detalle','')} |" for p in problems] + [""] + L[5:]
     OUT.write_text("\n".join(L), encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)} — " +
           ", ".join(f"{len(buckets[k])} {k}" for k in ORDER))
