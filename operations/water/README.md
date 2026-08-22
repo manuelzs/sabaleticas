@@ -318,14 +318,77 @@ Design head ~25 m (20 m static plus friction over a short run), 55% efficiency:
 | Cover daily herd demand over 4 h | 0.67 L/s | 297 W | 1.2 kWh |
 | Refill the whole mid cluster (60,000 L) in 12 h | 1.39 L/s | 619 W | 7.4 kWh |
 
-**This is a domestic-sized pump, not civil works.** And it is a natural fit for solar: covering
-daily herd demand needs roughly **400 Wp of panel** — two panels — with no fuel to buy and
-nothing to haul up the hill. There is a neat irony in it: **the drought that threatens the
-water supply also delivers the sunshine to move the water.**
+**This is a domestic-sized pump, not civil works.**
+
+### The solar resource, measured
+
+Manuel's "we get a lot of sun" checks out, and the useful part is *how steady* it is
+`[S45, ERA5 2016–2026]`:
+
+| | kWh/m²/day (= peak sun hours) |
+|---|---|
+| Annual mean | **5.26** |
+| Best month (**agosto**) | 5.81 |
+| Worst month (noviembre) | **4.79** |
+
+Two things follow, and the second is the more useful:
+
+- **The spread is tiny** — 4.79 to 5.81 across the whole year. That is the equatorial
+  advantage: no winter to oversize against, so an array sized on the worst month is barely
+  larger than one sized on the average. Solar here is *predictable*, which is worth as much as
+  it being abundant.
+- **The sunniest month is August — the middle of the mid-year dry season.** Peak sun arrives
+  with peak water demand. The drought that threatens the supply delivers the energy to move
+  it.
+
+Sizing on the worst month, at 75% system efficiency:
+
+| Duty | Array |
+|---|---|
+| Cover daily herd demand (1.2 kWh/day) | **~334 Wp** — a single modern panel |
+| Refill the whole mid cluster daily (7.4 kWh/day) | ~2,060 Wp |
+
+**A single panel covers the cattle.** The larger array is only needed if you want to refill
+60,000 L every day, which you would not.
 
 _All figures here are engineering estimates from the terrain model and standard hydraulics,
 not a quotation. A real design needs pipe sizing, a proper friction calculation and someone
 who does this for a living._
+
+### The gravity option through El Guaico — short, but the data can't confirm it
+
+Manuel raised a third possibility: a **fully gravity-fed** line from the lake to the mid
+tanks, routed **through the southern neighbour, El Guaico** — who run a **lemon operation, not
+cattle**, and might permit a temporary crossing during a genuine crisis.
+
+I searched the terrain model for the shortest route that never rises above the lake's surface.
+
+| | |
+|---|---|
+| **Total length** | **759 m** |
+| **Crossing El Guaico** | **662 m — 87% of it** |
+| On our own land | ~97 m |
+| Average gradient | **2.11%** — a healthy slope for a gravity main |
+| **Vertical clearance at the tightest point** | **0.2 m** |
+
+> ### The verdict is "maybe", and the maybe is entirely about that 0.2 m.
+> 759 m of pipe at 2.11% is an unremarkable, buildable gravity line — far more attractive than
+> the 4 km alternatives. But it only works if the ground genuinely stays below the lake surface
+> the whole way, and **the model says it does so by 20 centimetres.**
+>
+> A 5 m terrain model carries roughly ±1–2 m of vertical error. **Our margin is smaller than
+> the error bar**, so this cannot be settled from a desk. It is neither confirmed nor ruled
+> out — the data simply cannot see at that precision.
+
+**How to settle it, cheaply:** run a level along the proposed line. A builder's level, or even
+a long clear hose filled with water, walked from the lake edge toward the mid tanks, would
+answer definitively in an afternoon. If real ground gives 2–3 m of clearance instead of 0.2,
+this becomes the best option on the table — **no pump, no power, no fuel, nothing to fail.**
+
+**The negotiation is the other half.** 662 m of buried line through a lemon orchard is a real
+ask, but a modest one: temporary, buried, no structures, and lemons need water too — a shared
+interest in a drought is a better opening than a favour. Worth knowing the answer to the
+survey *before* asking, so the conversation is about a specific line rather than a hypothesis.
 
 ### Getting power to it — the part that actually decides this
 

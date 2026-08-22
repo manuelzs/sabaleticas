@@ -116,52 +116,6 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "tuberia",
-    "nombre": "Aducción: tanques altos → tanques intermedios (INDICATIVA)",
-    "desnivel_m": 51,
-    "confianza": "solo extremos; ruta pendiente del levantamiento",
-    "fuente": "Esquemática entre dos puntos conocidos."
-   },
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.60244,
-      5.79531
-     ],
-     [
-      -75.609996,
-      5.797095
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "tuberia",
-    "nombre": "Distribución: tanques intermedios → casa principal (INDICATIVA)",
-    "desnivel_m": 57,
-    "confianza": "solo extremos; ruta pendiente del levantamiento",
-    "fuente": "Esquemática entre dos puntos conocidos."
-   },
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.609996,
-      5.797095
-     ],
-     [
-      -75.61623,
-      5.79648
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
     "tipo": "represa",
     "nombre": "Represa principal (el lago)",
     "altura_m": 778,
@@ -405,6 +359,75 @@
        -75.6051163,
        5.7970803
       ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Tanques altos → rompecargas (INDICATIVA)",
+    "desnivel_m": 15,
+    "confianza": "solo los extremos son reales; el trazado es esquemático",
+    "fuente": "Une puntos confirmados por Manuel. Se reemplaza con el levantamiento de tubería."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.60244,
+      5.79531
+     ],
+     [
+      -75.606162,
+      5.797126
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Rompecargas → tanques intermedios (INDICATIVA)",
+    "desnivel_m": 36,
+    "confianza": "solo los extremos son reales; el trazado es esquemático",
+    "fuente": "Une puntos confirmados por Manuel. Se reemplaza con el levantamiento de tubería."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.606162,
+      5.797126
+     ],
+     [
+      -75.609996,
+      5.797095
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Tanques intermedios → casa principal (INDICATIVA)",
+    "desnivel_m": 57,
+    "confianza": "solo los extremos son reales; el trazado es esquemático",
+    "fuente": "Une puntos confirmados por Manuel. Se reemplaza con el levantamiento de tubería."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.609996,
+      5.797095
+     ],
+     [
+      -75.61623,
+      5.79648
      ]
     ]
    }

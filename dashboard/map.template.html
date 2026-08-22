@@ -264,13 +264,22 @@ document.getElementById('btnClear').onclick=()=>{pts=[];report();draw();
   document.getElementById('mout').innerHTML='Pulsa <b>Medir</b> y haz clic en dos o más puntos.';};
 document.getElementById('btnReset').onclick=reset;
 
+let LSTATE={};
+try{ LSTATE=JSON.parse(localStorage.getItem('sab_layers')||'{}'); }catch(e){}
+D.layers.forEach(L=>{ if(L.name in LSTATE) L.on=!!LSTATE[L.name]; });
+const saveLayers=()=>{ try{
+  const o={}; D.layers.forEach(L=>o[L.name]=L.on);
+  localStorage.setItem('sab_layers',JSON.stringify(o));
+}catch(e){} };
+
 const box=document.getElementById('layers');
 D.layers.forEach((L,i)=>{
   const id='L'+i;
   box.insertAdjacentHTML('beforeend',
     `<label><input type="checkbox" id="${id}" ${L.on?'checked':''}>
      <span class="sw" style="background:${L.colour}"></span>${L.name}</label>`);
-  setTimeout(()=>document.getElementById(id).onchange=e=>{L.on=e.target.checked;draw();});
+  setTimeout(()=>document.getElementById(id).onchange=e=>{
+    L.on=e.target.checked; saveLayers(); draw();});
 });
 
 addEventListener('resize',resize);
