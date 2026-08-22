@@ -167,7 +167,7 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre 13–beb-3",
-    "longitud_m": 6,
+    "longitud_m": 5,
     "motivo": "concurre en el Bebedero 3",
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
@@ -179,8 +179,8 @@
       5.801408
      ],
      [
-      -75.61081,
-      5.801357
+      -75.610781,
+      5.801364
      ]
     ]
    }
@@ -190,7 +190,7 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre 14–beb-3",
-    "longitud_m": 7,
+    "longitud_m": 4,
     "motivo": "concurre en el Bebedero 3",
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
@@ -202,8 +202,8 @@
       5.801363
      ],
      [
-      -75.61081,
-      5.801357
+      -75.610781,
+      5.801364
      ]
     ]
    }
@@ -213,7 +213,7 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre 15–beb-3",
-    "longitud_m": 0,
+    "longitud_m": 3,
     "motivo": "concurre en el Bebedero 3",
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
@@ -225,8 +225,8 @@
       5.801357
      ],
      [
-      -75.61081,
-      5.801357
+      -75.610781,
+      5.801364
      ]
     ]
    }

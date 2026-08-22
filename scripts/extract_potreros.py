@@ -493,12 +493,20 @@ def main():
             if b in ents:
                 va = by_num.get(a)
                 pt = ents[b]
-                vb, bd2 = None, 5.0
+                # The junction must sit exactly ON the entity. Snapping to whatever vertex
+                # happens to be nearest put all three fences on a point 3.3 m west of the
+                # trough, which drew as a dogleg — the fences meet AT the trough, so the
+                # node goes there and is created if it does not exist.
+                vb, bd2 = None, 0.5
                 for v in adj:
                     d2 = math.hypot((pos[v][0] - pt[0]) * LON2M, (pos[v][1] - pt[1]) * LAT2M)
                     if d2 < bd2:
                         vb, bd2 = v, d2
-                if va is None or vb is None:
+                if vb is None:
+                    vb = ("ent", b)
+                    pos[vb] = pt
+                    adj.setdefault(vb, set())
+                if va is None:
                     print(f"  ⚠ {a} → {b}: no se pudo enganchar")
                     continue
                 d_m = math.hypot((pos[vb][0] - pos[va][0]) * LON2M,
