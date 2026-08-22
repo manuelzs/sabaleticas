@@ -41,7 +41,7 @@ LAYER_GROUP = {
 # back as coordinates we then act on.
 EXACTAS = {"Linderos", "Cercas", "Cercas (bajo dosel)", "Potreros (cerrados)",
            "Cercas abiertas", "Cierres (dictados)", "Ganado: infraestructura",
-           "Agua: infraestructura"}
+           "Agua: infraestructura", "Playón (uso, no pastoreo)"}
 
 # label, file (relative to geo/), kind, colour, width, fill
 LAYERS = [
@@ -65,11 +65,16 @@ LAYERS = [
     # branches on the geometry, not on the layer kind.
     ("Ganado: infraestructura", "ganado-infraestructura.geojson",     "poly", "#ce93d8", 2.0,
      "rgba(161,136,127,.22)"),
+    # Its own layer, deliberately not an enclosure: land of the State that we use.
+    # Cyan ties it to Mojones 24 and 28, which are outside the lindero for this exact
+    # reason, and keeps it clear of the yellow that means "paddock we own".
+    ("Playón (uso, no pastoreo)","playon.geojson",                      "poly", "#26c6da", 2.0, "rgba(38,198,218,.10)"),
     ("Potreros (cerrados)",     "potreros-cerrados.geojson",           "poly", "#ffee58", 2.2, "rgba(255,238,88,.16)"),
     ("Cercas abiertas",         "cercas-abiertas.geojson",             "line", "#ff5252", 1.0, None),
     ("Cierres (dictados)",      "cercas-cierres.geojson",              "line", "#00e676", 2.6, None),
 ]
 DEFAULT_ON = {"Linderos", "Cercas", "Cercas (bajo dosel)", "Potreros (cerrados)", "Cercas abiertas", "Cierres (dictados)",
+              "Playón (uso, no pastoreo)",
               "Ganado: infraestructura", "Drenajes",
               "Depósitos de agua", "Curvas 25 m", "Agua: infraestructura"}
 
@@ -249,6 +254,8 @@ def _collect(geo: Path, TIPOS):
                 if props.get("subdivide_en"):
                     sub2 += " → " + " + ".join(props["subdivide_en"])
                 item_sub2, item_mal = sub2, est != "final"
+            if props.get("sub2"):        # e.g. the playón: area on the quiet line,
+                item_sub2 = props["sub2"]  # without pretending to be a potrero
             if props.get("lado") and props.get("area_ha"):      # neighbours: name / owner / side+area
                 who = (owners.get(props.get("matricula") or "", {}) or {}).get("owner", "")
                 label = (f"{props['name']} · {who}"
