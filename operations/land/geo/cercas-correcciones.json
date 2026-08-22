@@ -49,10 +49,10 @@
    "extent": [
     -75.6075,
     5.7918,
-    -75.60345,
-    5.7945
+    -75.60333,
+    5.79448
    ],
-   "motivo": "[owner, 2026-08-22] Manuel: toda la línea desde el extremo 58 hasta la esquina junto al Mojón 4 sobra. Es la cola de 500 m de la cerca 53 del IGAC: sus 14 vértices caen dentro del predio vecino EL GUAICO (SE) y acompañan una vía a 4 m. Sólo entró como nuestra porque dos vértices del otro extremo pisan el predio. Los últimos ~140 m (del Mojón 4 al nororiente) SÍ son nuestros —van a 0,0 m del lindero— y se conservan."
+   "motivo": "[owner, 2026-08-22] Manuel: toda la línea desde el extremo 58 hasta la esquina junto al Mojón 4 sobra. Es la cola de 500 m de la cerca 53 del IGAC: sus 14 vértices caen dentro del predio vecino EL GUAICO (SE) y acompañan una vía a 4 m. Sólo entró como nuestra porque dos vértices del otro extremo pisan el predio. Los últimos ~140 m (del Mojón 4 al nororiente) SÍ son nuestros —van a 0,0 m del lindero— y se conservan. El corte llega hasta la esquina del cierre (-75.603308, 5.794497), no hasta el vértice anterior: entre los dos quedaba una arista de 6,8 m que dejaba el extremo colgando a 5 m de la esquina — cerca abierta 78. La cerca arranca EN la esquina."
   }
  ],
  "_recortar": "Un cierre {tipo: recortar} borra parte de UNA cerca: la identifica por un punto sobre ella (como cercas-excluidas.json) y le quita los vértices que caen en 'extent'. Hace falta lo uno Y lo otro: excluir la cerca entera se llevaría también el tramo bueno, y el 'extent' a secas alcanzaría a otra cerca 81 m al oeste.",
