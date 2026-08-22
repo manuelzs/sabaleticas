@@ -19,3 +19,6 @@ build/
 dist/
 .ruff_cache/
 .pytest_cache/
+
+# QCAD deja copias de respaldo con ~ al abrir un DXF
+operations/land/plano-2007/~*
