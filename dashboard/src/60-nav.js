@@ -7,7 +7,15 @@ const NAV=[
   {id:'finca',  label:'Finca',  views:[['mapa','Mapa'],['3d','3D']]},
   {id:'agua',   label:'Agua',   views:[['esquema','Esquema'],['mapa','Mapa']]},
   {id:'predio', label:'Predio', views:[['mapa','Mapa']]},
-  {id:'ganado', label:'Ganado', views:[], disabled:true, why:'sin datos todavía'},
+  {id:'ganado', label:'Ganado', views:[], disabled:true, why:'sin datos de ganado todavía'},
+  /* Cross-cutting: these are not subsystems. Readings and tickets attach to entities
+     and surface in context — a level inside a tank symbol, a badge on a marker. What
+     earns these tabs is the MANAGEMENT view of them: "is my telemetry alive", "what
+     work is open", which no entity-level badge can answer. */
+  {id:'trabajo',  label:'Trabajo',  views:[], disabled:true, cross:true,
+   why:'tareas y alertas sobre cualquier entidad — pendiente'},
+  {id:'sensores', label:'Sensores', views:[], disabled:true, cross:true,
+   why:'estado de los equipos: última lectura, batería, señal — pendiente'},
 ];
 const NAV_LEGACY={mapa:'finca/mapa','3d':'finca/3d',esquema:'agua/esquema'};
 let route={tab:'finca', view:'mapa'};
@@ -17,7 +25,12 @@ function navSub(id){ return NAV.find(s=>s.id===id); }
 function navRender(){
   const tabs=document.getElementById('tabs'), views=document.getElementById('views');
   tabs.innerHTML=''; views.innerHTML='';
+  let sepDone=false;
   for(const s of NAV){
+    if(s.cross && !sepDone){                 // the axis changes here, so show it
+      const sep=document.createElement('span'); sep.className='sep'; tabs.appendChild(sep);
+      sepDone=true;
+    }
     const b=document.createElement('button');
     b.textContent=s.label;
     if(s.id===route.tab) b.className='on';

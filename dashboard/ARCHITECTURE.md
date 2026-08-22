@@ -65,6 +65,21 @@ ticket in everything but name, and the file is already a work list sorted by urg
 A real ticket system would make that explicit and, crucially, let Manuel **close items**.
 Until then, the generated inventory does the job and costs nothing to maintain.
 
+### Why cross-cutting concerns still get a tab
+
+If readings and tickets attach to entities, why not show them only on entities?
+
+Because there are two different questions, and only one is answerable in context:
+
+| Question | Answered where |
+|---|---|
+| *"How full is the rompecargas?"* | **On the entity** — a level inside the tank symbol, on map and schematic alike |
+| *"Is my telemetry alive? Which node has not reported since Tuesday?"* | **Nowhere** — no entity badge can tell you about the node that went silent |
+| *"What work is open across the whole farm?"* | **Nowhere** — a badge shows one item, not a queue |
+
+So **Trabajo** and **Sensores** are management views over the attachment set, and they sit
+after a divider in the tab bar because they are a different axis, not another subsystem.
+
 ## Why this is not a matrix
 
 The obvious move is a grid of view × subsystem. It breaks immediately:
