@@ -30,6 +30,7 @@ LAYER_GROUP = {
     "Bosque": "predio", "Vías": "predio", "Construcciones": "predio",
     "Curvas 5 m": "predio", "Curvas 25 m": "predio",
     "Potreros (cerrados)": "predio", "Cercas abiertas": "predio",
+    "Cierres (dictados)": "predio",
     "Drenajes": "agua", "Cauces (área)": "agua", "Depósitos de agua": "agua",
     "Agua: infraestructura": "agua", "Ruta gravedad (candidata)": "agua",
 }
@@ -51,8 +52,9 @@ LAYERS = [
     ("Ruta gravedad (candidata)","gravity-route-candidate.geojson",     "line", "#00e676", 3.0, None),
     ("Potreros (cerrados)",     "potreros-cerrados.geojson",           "poly", "#ffee58", 2.2, "rgba(255,238,88,.16)"),
     ("Cercas abiertas",         "cercas-abiertas.geojson",             "line", "#ff5252", 1.0, None),
+    ("Cierres (dictados)",      "cercas-cierres.geojson",              "line", "#00e676", 2.6, None),
 ]
-DEFAULT_ON = {"Linderos", "Cercas", "Potreros (cerrados)", "Cercas abiertas", "Drenajes",
+DEFAULT_ON = {"Linderos", "Cercas", "Potreros (cerrados)", "Cercas abiertas", "Cierres (dictados)", "Drenajes",
               "Depósitos de agua", "Curvas 25 m", "Agua: infraestructura"}
 
 # ~2 m at this latitude. Plenty for a screen that never shows better than 0.5 m/px.

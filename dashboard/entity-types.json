@@ -172,6 +172,15 @@
    "ancho": 0.72,
    "geom": "point",
    "atributos": []
+  },
+  "cierre": {
+   "label": "Cierre dictado",
+   "color": "#00e676",
+   "mapa": "line",
+   "esquema": "line",
+   "ancho": 0,
+   "geom": "line",
+   "atributos": []
   }
  }
 }

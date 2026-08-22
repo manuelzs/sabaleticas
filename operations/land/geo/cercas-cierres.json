@@ -1,0 +1,5 @@
+{
+ "_nota": "Cierres dictados por Manuel, por NÚMERO de extremo suelto. Los números salen de cercas-abiertas.geojson y son estables entre corridas. Cada par añade una arista al grafo antes de extraer las caras.",
+ "cierres": [],
+ "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros."
+}

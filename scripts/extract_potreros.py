@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 GEO = ROOT / "operations/land/geo"
 TOL = 2.0                      # metres — coordinate noise, not a real gap
+CIERRES = "cercas-cierres.json"  # closures Manuel dictates, by gap number
 LON2M = 111320.0 * math.cos(math.radians(5.796))
 LAT2M = 110574.0
 
@@ -236,7 +237,50 @@ def main():
     # vertex ids that exist only because of the parcel outline
     bpts = {p for l in lines[n_cerca:] for p in l}
     bkeys = {k for k, p in pos.items() if p in bpts}
-    dangles = prune(adj)
+
+    # Loose ends, numbered STABLY. The numbers are how Manuel refers to a gap out loud
+    # ("connect 38 and 41"), so they must survive a re-run — including a re-run where
+    # earlier closures have already removed some of them. Existing numbers are matched
+    # by position and kept; only genuinely new gaps get new ones.
+    tips = sorted([v for v, n in adj.items() if len(n) == 1],
+                  key=lambda v: (-pos[v][1], pos[v][0]))
+    prev = {}
+    f_prev = GEO / "cercas-abiertas.geojson"
+    if f_prev.exists():
+        for ft in json.loads(f_prev.read_text(encoding="utf-8"))["features"]:
+            c = ft["geometry"]["coordinates"]
+            prev[(round(c[0], 6), round(c[1], 6))] = ft["properties"].get("n")
+    num, taken = {}, {n for n in prev.values() if n}
+    for v in tips:
+        p = (round(pos[v][0], 6), round(pos[v][1], 6))
+        if prev.get(p):
+            num[v] = prev[p]
+    nxt = 1
+    for v in tips:
+        if v in num:
+            continue
+        while nxt in taken:
+            nxt += 1
+        num[v] = nxt
+        taken.add(nxt)
+    by_num = {n: v for v, n in num.items()}
+
+    # closures dictated by Manuel, as graph edges
+    cierres, hechos = [], 0
+    f_c = GEO / CIERRES
+    if f_c.exists():
+        for a, b in json.loads(f_c.read_text(encoding="utf-8"))["cierres"]:
+            va, vb = by_num.get(a), by_num.get(b)
+            if va is None or vb is None:
+                print(f"  ⚠ cierre {a}–{b}: número no encontrado")
+                continue
+            adj[va].add(vb)
+            adj[vb].add(va)
+            cierres.append((a, b, pos[va], pos[vb]))
+            hechos += 1
+    if hechos:
+        print(f"  cierres aplicados: {hechos}")
+
     fs = faces(pos, adj)
 
     polys, fuera = [], 0
@@ -272,13 +316,23 @@ def main():
                    ensure_ascii=False), encoding="utf-8")
 
     dfeats = [{"type": "Feature", "properties": {
-        "tipo": "cerca_abierta", "nombre": f"Cerca abierta {i}",
-        "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí "
-                  "convierte los tramos sueltos en potreros."},
+        "tipo": "cerca_abierta", "nombre": f"Cerca abierta {num[k]}", "n": num[k],
+        "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es "
+                  "estable entre corridas: sirve para dictar cierres."},
         "geometry": {"type": "Point", "coordinates": [round(pos[k][0], 6), round(pos[k][1], 6)]}}
-        for i, k in enumerate(dict.fromkeys(dangles), 1)]
+        for k in sorted(tips, key=lambda v: num[v]) if len(adj.get(k, ())) <= 1]
     (GEO / "cercas-abiertas.geojson").write_text(
         json.dumps({"type": "FeatureCollection", "features": dfeats}, indent=1,
+                   ensure_ascii=False), encoding="utf-8")
+
+    cfeats = [{"type": "Feature", "properties": {
+        "tipo": "cierre", "nombre": f"Cierre {a}–{b}",
+        "fuente": "[owner] Cierre dictado por Manuel."},
+        "geometry": {"type": "LineString", "coordinates": [
+            [round(pa[0], 6), round(pa[1], 6)], [round(pb[0], 6), round(pb[1], 6)]]}}
+        for a, b, pa, pb in cierres]
+    (GEO / "cercas-cierres.geojson").write_text(
+        json.dumps({"type": "FeatureCollection", "features": cfeats}, indent=1,
                    ensure_ascii=False), encoding="utf-8")
 
     tot = sum(a for a, _ in polys) / 10000

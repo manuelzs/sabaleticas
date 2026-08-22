@@ -6,67 +6,8 @@
    "properties": {
     "tipo": "cerca_abierta",
     "nombre": "Cerca abierta 1",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.60077,
-     5.802606
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 2",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.614108,
-     5.807143
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 3",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.615326,
-     5.806351
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 4",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.601822,
-     5.806531
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 5",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
+    "n": 1,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
    },
    "geometry": {
     "type": "Point",
@@ -80,728 +21,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 6",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.604265,
-     5.800603
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 7",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.615696,
-     5.796693
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 8",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.616051,
-     5.798078
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 9",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.602009,
-     5.795603
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 10",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.612931,
-     5.794066
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 11",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.603271,
-     5.804982
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 12",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.605119,
-     5.797174
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 13",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.606042,
-     5.797939
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 14",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.614096,
-     5.793427
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 15",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.603222,
-     5.795868
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 16",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.613111,
-     5.807519
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 17",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.603197,
-     5.795954
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 18",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.606078,
-     5.798004
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 19",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.608265,
-     5.799467
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 20",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.606957,
-     5.794439
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 21",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.604354,
-     5.792385
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 22",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.605113,
-     5.789098
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 23",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.611091,
-     5.790446
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 24",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.617131,
-     5.794109
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 25",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.616726,
-     5.797314
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 26",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.615718,
-     5.796307
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 27",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.613385,
-     5.794191
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 28",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.614079,
-     5.794387
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 29",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.610765,
-     5.795851
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 30",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.610782,
-     5.792511
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 31",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.609858,
-     5.793329
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 32",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.609487,
-     5.795215
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 33",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.609455,
-     5.79533
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 34",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.608336,
-     5.793558
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 35",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.608444,
-     5.800733
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 36",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.608978,
-     5.799957
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 37",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.608498,
-     5.800636
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 38",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.60881,
-     5.797939
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 39",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.610749,
-     5.801363
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 40",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.61081,
-     5.801357
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 41",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.608871,
-     5.797948
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 42",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.608802,
-     5.799532
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 43",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.610312,
-     5.800313
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 44",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.612391,
-     5.799602
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 45",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.612627,
-     5.800322
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 46",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.612674,
-     5.800419
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 47",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.612872,
-     5.798926
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 48",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.614342,
-     5.800591
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 49",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.614518,
-     5.80056
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 50",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.615282,
-     5.798782
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 51",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.610794,
-     5.801408
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 52",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.611011,
-     5.802484
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 53",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.610955,
-     5.802595
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 54",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
+    "nombre": "Cerca abierta 2",
+    "n": 2,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
    },
    "geometry": {
     "type": "Point",
@@ -815,14 +37,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 55",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
+    "nombre": "Cerca abierta 3",
+    "n": 3,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.612339,
-     5.797021
+     -75.613111,
+     5.807519
     ]
    }
   },
@@ -830,8 +53,73 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 56",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
+    "nombre": "Cerca abierta 4",
+    "n": 4,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.614108,
+     5.807143
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 5",
+    "n": 5,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.601822,
+     5.806531
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 6",
+    "n": 6,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.615326,
+     5.806351
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 7",
+    "n": 7,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.603271,
+     5.804982
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 8",
+    "n": 8,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
    },
    "geometry": {
     "type": "Point",
@@ -845,8 +133,57 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 57",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
+    "nombre": "Cerca abierta 9",
+    "n": 9,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.60077,
+     5.802606
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 10",
+    "n": 10,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.610955,
+     5.802595
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 11",
+    "n": 11,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.611011,
+     5.802484
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 12",
+    "n": 12,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
    },
    "geometry": {
     "type": "Point",
@@ -860,14 +197,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 58",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
+    "nombre": "Cerca abierta 13",
+    "n": 13,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.615387,
-     5.796496
+     -75.610794,
+     5.801408
     ]
    }
   },
@@ -875,8 +213,361 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 59",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
+    "nombre": "Cerca abierta 14",
+    "n": 14,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.610749,
+     5.801363
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 15",
+    "n": 15,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.61081,
+     5.801357
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 16",
+    "n": 16,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.608444,
+     5.800733
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 17",
+    "n": 17,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.608498,
+     5.800636
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 18",
+    "n": 18,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.604265,
+     5.800603
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 19",
+    "n": 19,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.614342,
+     5.800591
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 20",
+    "n": 20,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.614518,
+     5.80056
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 21",
+    "n": 21,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.612674,
+     5.800419
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 22",
+    "n": 22,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.612627,
+     5.800322
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 23",
+    "n": 23,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.610312,
+     5.800313
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 24",
+    "n": 24,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.608978,
+     5.799957
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 25",
+    "n": 25,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.612391,
+     5.799602
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 26",
+    "n": 26,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.608802,
+     5.799532
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 27",
+    "n": 27,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.608265,
+     5.799467
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 28",
+    "n": 28,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.612872,
+     5.798926
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 29",
+    "n": 29,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.615282,
+     5.798782
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 30",
+    "n": 30,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.616051,
+     5.798078
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 31",
+    "n": 31,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.606078,
+     5.798004
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 32",
+    "n": 32,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.608871,
+     5.797948
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 33",
+    "n": 33,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.60881,
+     5.797939
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 34",
+    "n": 34,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.606042,
+     5.797939
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 35",
+    "n": 35,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.616726,
+     5.797314
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 36",
+    "n": 36,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
    },
    "geometry": {
     "type": "Point",
@@ -890,14 +581,383 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 60",
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. Cerrar aquí convierte los tramos sueltos en potreros."
+    "nombre": "Cerca abierta 37",
+    "n": 37,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.605119,
+     5.797174
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 38",
+    "n": 38,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.612339,
+     5.797021
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 39",
+    "n": 39,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.615696,
+     5.796693
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 40",
+    "n": 40,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.615387,
+     5.796496
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 41",
+    "n": 41,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.615718,
+     5.796307
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 42",
+    "n": 42,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.603197,
+     5.795954
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 43",
+    "n": 43,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.603222,
+     5.795868
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 44",
+    "n": 44,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.610765,
+     5.795851
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 45",
+    "n": 45,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.602009,
+     5.795603
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 46",
+    "n": 46,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.609455,
+     5.79533
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 47",
+    "n": 47,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.609487,
+     5.795215
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 48",
+    "n": 48,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.606957,
+     5.794439
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 49",
+    "n": 49,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.614079,
+     5.794387
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 50",
+    "n": 50,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.613385,
+     5.794191
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 51",
+    "n": 51,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.617131,
+     5.794109
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 52",
+    "n": 52,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.612931,
+     5.794066
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 53",
+    "n": 53,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.608336,
+     5.793558
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 54",
+    "n": 54,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.614096,
+     5.793427
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 55",
+    "n": 55,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.609858,
+     5.793329
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 56",
+    "n": 56,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.610782,
+     5.792511
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 57",
+    "n": 57,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.604354,
+     5.792385
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 58",
+    "n": 58,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
      -75.607015,
      5.792114
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 59",
+    "n": 59,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.611091,
+     5.790446
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_abierta",
+    "nombre": "Cerca abierta 60",
+    "n": 60,
+    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.605113,
+     5.789098
     ]
    }
   }

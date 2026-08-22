@@ -40,12 +40,22 @@ function drawGeom(g,kind,fill){
                                 cx.moveTo(x,y-r-2); cx.lineTo(x+r,y-1); cx.lineTo(x+w,y-1);
                                 cx.lineTo(x+w,y+r); cx.lineTo(x-w,y+r); cx.lineTo(x-w,y-1);
                                 cx.lineTo(x-r,y-1); cx.closePath();}
-      else if(shp==='x'){       // a broken fence end — deliberately loud
+      else if(shp==='x'){       // a broken fence end — loud, and always numbered so it
+                                // can be referred to out loud: "connect 38 and 41"
                                 cx.save(); cx.strokeStyle=g.col||'#ff5252'; cx.lineWidth=2.4;
                                 cx.beginPath();
                                 cx.moveTo(x-r*0.8,y-r*0.8); cx.lineTo(x+r*0.8,y+r*0.8);
                                 cx.moveTo(x+r*0.8,y-r*0.8); cx.lineTo(x-r*0.8,y+r*0.8);
-                                cx.stroke(); cx.restore(); return; }
+                                cx.stroke();
+                                const num=(g.l||'').match(/(\d+)\s*$/);
+                                if(num){
+                                  cx.font='bold 11px system-ui'; cx.textAlign='left';
+                                  cx.lineWidth=3; cx.strokeStyle='rgba(0,0,0,.85)';
+                                  cx.strokeText(num[1], x+r+2, y-r+1);
+                                  cx.fillStyle='#ffcdd2'; cx.fillText(num[1], x+r+2, y-r+1);
+                                  cx.textAlign='left';
+                                }
+                                cx.restore(); return; }
       else                      cx.arc(x,y,r-0.5,0,7);
       cx.fill();
       cx.save(); cx.strokeStyle='#0b0e11'; cx.lineWidth=2; cx.stroke(); cx.restore();
