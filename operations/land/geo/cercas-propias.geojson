@@ -204,29 +204,6 @@
   },
   {
    "type": "Feature",
-   "id": 1902,
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.6048557,
-      5.7983539
-     ],
-     [
-      -75.6042655,
-      5.8006027
-     ]
-    ]
-   },
-   "properties": {
-    "OBJECTID": 1902,
-    "CeIdentif": "053902002145",
-    "CeTipo": 2,
-    "RuleID": 2
-   }
-  },
-  {
-   "type": "Feature",
    "id": 1917,
    "geometry": {
     "type": "LineString",
