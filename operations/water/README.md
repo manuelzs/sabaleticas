@@ -680,8 +680,19 @@ matter — which is the scenario this whole project exists for.
    notices until the authority or a neighbour raises it.
 2. **How many L/s are we legally entitled to?** That is the ceiling on supply, and it may be
    lower than what we take. Worth knowing *before* comparing it to the ~10–17 m³/día estimate.
-3. **Who owns the land the bocatomas sit on, and does the easement survive a sale?** The same
-   question as El Guaico — and Los Búhos next door has just changed hands.
+3. ~~Who owns the land the bocatomas sit on, and does the easement survive a sale?~~
+   **✅ Closed** `[owner, 2026-08-22]`: *"we have the servidumbre, and it's been like that for
+   over 50 years, and we've never had an issue."* Fifty years of continuous, undisputed use is
+   strong on its own — in Colombian law an apparent, continuous easement of this age is about as
+   settled as it gets. **Not a live risk.**
+
+> ### But keep the two separate
+> **Servidumbre** = the right to cross their land — *private law, against the landowner.* Settled.
+> **Concesión de aguas** = the right to **take the water at all** — *public law, against the State.*
+>
+> **Fifty years of easement says nothing about the concesión.** In a declared drought it is
+> CORANTIOQUIA that restricts abstraction, and a perfect easement is no help if the abstraction
+> right has lapsed. Questions 1 and 2 stay open.
 
 ⚠️ In a declared drought CORANTIOQUIA can restrict abstraction. **A farm whose paperwork is in
 order is in a very different position from one whose is not.**
