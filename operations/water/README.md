@@ -733,9 +733,13 @@ Eso no es sólo una observación: es un **control de calidad de posiciones**.
 | **Bebederos 1, 2, 3** *(confirmados)* | 2–3 | **3–7 m** |
 | Bebederos 6, 7, 8 *(aproximados)* | **0** | **24–79 m** |
 
-Un bebedero confirmado se apoya en una unión de cercas. Uno flotando en campo abierto es la
-firma de una posición mal leída del plano — que es exactamente lo que le pasaba al Bebedero 4,
-a 22 m de toda cerca antes de moverlo.
+Un bebedero confirmado se apoya en una unión de cercas. Uno flotando en campo abierto **puede**
+ser una posición mal leída del plano — que es lo que le pasaba al Bebedero 4, a 22 m de toda
+cerca antes de moverlo.
+
+⚠️ **Pero no es regla.** Manuel, 2026-08-22: *"No es una regla dura que los bebederos estén en
+los linderos. Si el potrero es muy grande y los demás ya tienen agua, se puede poner en otra
+parte."* Así que estar lejos de una cerca es un **indicio para revisar**, no evidencia de error.
 
 > **Los bebederos 6, 7 y 8 siguen lejos de cualquier cerca.** Son los siguientes a revisar.
 

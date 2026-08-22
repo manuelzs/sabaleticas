@@ -30,6 +30,7 @@
       "confianza": "IGAC"
      }
     ],
+    "sal": [],
     "sin_agua": false,
     "solo_natural": false,
     "agua_por_confirmar": false,
@@ -116,6 +117,7 @@
       "confianza": "IGAC"
      }
     ],
+    "sal": [],
     "sin_agua": false,
     "solo_natural": false,
     "agua_por_confirmar": false,
@@ -192,6 +194,7 @@
       "confianza": "IGAC"
      }
     ],
+    "sal": [],
     "sin_agua": false,
     "solo_natural": true,
     "agua_por_confirmar": true,
@@ -276,6 +279,7 @@
       "confianza": "IGAC"
      }
     ],
+    "sal": [],
     "sin_agua": false,
     "solo_natural": false,
     "agua_por_confirmar": false,
@@ -350,22 +354,24 @@
     "area_m2": 32318,
     "agua": [
      {
-      "id": "agua:beb-5",
-      "nombre": "Bebedero 5 (aprox.)",
-      "tipo": "bebedero",
-      "confianza": "baja"
-     },
-     {
       "id": null,
       "nombre": "drenaje",
       "tipo": "natural",
       "confianza": "IGAC"
      }
     ],
+    "sal": [
+     {
+      "id": "ganado:saladero-1",
+      "nombre": "Saladero 1",
+      "donde": "dentro",
+      "confianza": "alta"
+     }
+    ],
     "sin_agua": false,
-    "solo_natural": false,
-    "agua_por_confirmar": false,
-    "agua_nota": "",
+    "solo_natural": true,
+    "agua_por_confirmar": true,
+    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
     "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
     "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
    },
@@ -439,6 +445,14 @@
       "id": "agua:beb-3",
       "nombre": "Bebedero 3",
       "tipo": "bebedero",
+      "confianza": "alta"
+     }
+    ],
+    "sal": [
+     {
+      "id": "ganado:saladero-1",
+      "nombre": "Saladero 1",
+      "donde": "en el lindero",
       "confianza": "alta"
      }
     ],
@@ -526,6 +540,7 @@
       "confianza": "IGAC"
      }
     ],
+    "sal": [],
     "sin_agua": false,
     "solo_natural": true,
     "agua_por_confirmar": true,

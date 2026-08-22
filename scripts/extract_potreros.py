@@ -259,7 +259,44 @@ def inside(pt, polys):
     return False
 
 
-def agua_de(ring, net, drenajes, depositos, tol=25.0):
+def sirve_a(ring, pts, tol=8.0):
+    """Which point features serve this enclosure — inside it, or on its edge.
+
+    Both cases are real and neither is a rule. A trough or saladero built ON a boundary
+    serves several paddocks; an older one sits in the MIDDLE of a single enclosure, and a
+    trough can sit anywhere at all if that is where the land needed it `[owner, 2026-08-22]`.
+    So the test is "inside, or ON the ring" — not "inside, or anywhere nearby".
+
+    `tol` is for coordinate error, not for reach. At 25 m a saladero 21 m outside a paddock
+    was being credited to it; a feature that genuinely shares a boundary reads 0.0 m.
+    """
+    def d_ring(p):
+        best = 1e9
+        for i in range(len(ring)):
+            a, b = ring[i], ring[(i + 1) % len(ring)]
+            ax, ay = a[0] * LON2M, a[1] * LAT2M
+            bx, by = b[0] * LON2M, b[1] * LAT2M
+            px, py = p[0] * LON2M, p[1] * LAT2M
+            dx, dy = bx - ax, by - ay
+            dd = dx * dx + dy * dy
+            t = 0.0 if dd == 0 else max(0.0, min(1.0, ((px - ax) * dx + (py - ay) * dy) / dd))
+            best = min(best, math.hypot(px - (ax + t * dx), py - (ay + t * dy)))
+        return best
+    out = []
+    for p in pts:
+        g = p.get("geo")
+        if not g:
+            continue
+        dentro = inside(g, [[ring]])
+        d = d_ring(g)
+        if dentro or d <= tol:
+            out.append({"id": p.get("id"), "nombre": p.get("nombre"),
+                        "donde": "dentro" if dentro else "en el lindero",
+                        "confianza": p.get("pos_confianza", "?")})
+    return out
+
+
+def agua_de(ring, net, drenajes, depositos, tol=8.0):
     """Which water sources serve this enclosure.
 
     Troughs are built ON boundaries, deliberately, so one serves several paddocks — a
@@ -598,10 +635,25 @@ def main():
     nombres = json.loads(f_nom.read_text(encoding="utf-8"))["nombres"] \
         if f_nom.exists() else []
 
+    # salt points, from the cattle-infrastructure layer
+    saladeros = []
+    fg = GEO / "ganado-infraestructura.geojson"
+    if fg.exists():
+        for f in json.loads(fg.read_text(encoding="utf-8"))["features"]:
+            if f["properties"].get("tipo") == "saladero":
+                saladeros.append({"id": f["properties"].get("_id"),
+                                  "nombre": f["properties"].get("nombre"),
+                                  "pos_confianza": f["properties"].get("pos_confianza"),
+                                  "geo": f["geometry"]["coordinates"]})
+
     feats = []
     sin_agua = []
+    sin_sal = []
     for i, (a, ring) in enumerate(polys, 1):
         fuentes = agua_de(ring, net, dre, dep)
+        sal = sirve_a(ring, saladeros)
+        if not sal:
+            sin_sal.append(i)
         # No mapped trough is NOT the same as "watered by the creek". It may mean the
         # paddock really relies on the quebrada — which matters, because in a verano the
         # creek may not be there — or simply that we have not mapped its trough yet.
@@ -618,6 +670,7 @@ def main():
             "n": i, "nombrado": bool(prop),
             "area_ha": round(a / 10000, 2), "area_m2": round(a),
             "agua": fuentes,
+            "sal": sal,
             "sin_agua": not fuentes,
             "solo_natural": bool(fuentes) and not conducida,
             "agua_por_confirmar": not conducida,
@@ -689,6 +742,10 @@ def main():
         print("  ⚠ potreros sin bebedero mapeado (fuente por confirmar):")
         for i, ha, why in sin_agua:
             print(f"      Potrero {i}: {ha:5.2f} ha — {why}")
+    if saladeros:
+        con = len(feats) - len(sin_sal)
+        print(f"  saladero asignado: {con} de {len(feats)} potreros"
+              + (f" (sin saladero MAPEADO: {', '.join(map(str, sin_sal))})" if sin_sal else ""))
     named = sum(1 for f in feats if f["properties"].get("nombrado"))
     if named:
         print(f"  con nombre: {named} de {len(feats)}")
