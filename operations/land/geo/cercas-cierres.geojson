@@ -2708,7 +2708,7 @@
      ],
      [
       -75.618866,
-      5.80599
+      5.805991
      ]
     ]
    }
@@ -2728,7 +2728,7 @@
     "coordinates": [
      [
       -75.618866,
-      5.80599
+      5.805991
      ],
      [
       -75.619025,
@@ -3189,6 +3189,78 @@
      [
       -75.617401,
       5.803243
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 75,
+    "motivo": "cuarta cerca dentro de EL GUAICO, 113.9 m, de occidente a oriente. No toca el anillo del lote: va de una a otra de las dos cercas norte–sur, y las dos puntas se llevan exactamente sobre ellas (estaban a 1,09 y 0,58 m). Cuatro puntos capturados por Manuel sobre la ortofoto; sin cota en ninguno. (tramo 1 de 3)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618866,
+      5.805991
+     ],
+     [
+      -75.618201,
+      5.805882
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 23,
+    "motivo": "cuarta cerca dentro de EL GUAICO, 113.9 m, de occidente a oriente. No toca el anillo del lote: va de una a otra de las dos cercas norte–sur, y las dos puntas se llevan exactamente sobre ellas (estaban a 1,09 y 0,58 m). Cuatro puntos capturados por Manuel sobre la ortofoto; sin cota en ninguno. (tramo 2 de 3)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618201,
+      5.805882
+     ],
+     [
+      -75.618009,
+      5.805805
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 16,
+    "motivo": "cuarta cerca dentro de EL GUAICO, 113.9 m, de occidente a oriente. No toca el anillo del lote: va de una a otra de las dos cercas norte–sur, y las dos puntas se llevan exactamente sobre ellas (estaban a 1,09 y 0,58 m). Cuatro puntos capturados por Manuel sobre la ortofoto; sin cota en ninguno. (tramo 3 de 3)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618009,
+      5.805805
+     ],
+     [
+      -75.617862,
+      5.805819
      ]
     ]
    }

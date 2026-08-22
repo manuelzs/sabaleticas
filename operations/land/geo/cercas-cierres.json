@@ -876,6 +876,28 @@
    ],
    "es_cerca": true,
    "motivo": "tercera cerca dentro de EL GUAICO, 165.8 m, de lindero a lindero (occidente a oriente). Es la que CIERRA la segunda: su tercer punto es exactamente la punta sur que se había dejado suelta. Los tres puntos que no eran exactos se ajustaron en vez de dejarlos al margen del noding — las dos puntas al anillo (0,7 y 0,3 m) y el cruce a la punta suelta (0,25 m)."
+  },
+  {
+   "polilinea": [
+    [
+     -75.618866,
+     5.805991
+    ],
+    [
+     -75.618201,
+     5.805882
+    ],
+    [
+     -75.618009,
+     5.805805
+    ],
+    [
+     -75.617862,
+     5.805819
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "cuarta cerca dentro de EL GUAICO, 113.9 m, de occidente a oriente. No toca el anillo del lote: va de una a otra de las dos cercas norte–sur, y las dos puntas se llevan exactamente sobre ellas (estaban a 1,09 y 0,58 m). Cuatro puntos capturados por Manuel sobre la ortofoto; sin cota en ninguno."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
