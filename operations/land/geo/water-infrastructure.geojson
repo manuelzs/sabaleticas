@@ -536,19 +536,25 @@
    "type": "Feature",
    "properties": {
     "tipo": "tuberia",
-    "nombre": "Bebedero 2",
-    "longitud_m": 337,
+    "nombre": "Bebedero 2 → 3 (APROXIMADA)",
+    "longitud_m": 267,
     "desnivel_m": 25,
     "gradiente_pct": 7.4,
-    "fuente": "[owner, CONFIRMADA 2026-08-21] Manuel la identificó directamente en la ortofoto. Misma confianza que los tanques y las casas. Sustituye la posición leída del plano.",
-    "confianza": "posición: ALTA (ortofoto) · capacidad: n/a",
+    "fuente": "[owner] Une los bebederos 2 y 3 confirmados en ortofoto; el 4 sigue leído del plano, así que ese extremo es aproximado.",
+    "confianza": "orden: alta · trazado: recto esquemático",
     "altura_m": 748
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
-     -75.608472,
-     5.800685
+     [
+      -75.608472,
+      5.800685
+     ],
+     [
+      -75.610781,
+      5.801364
+     ]
     ]
    }
   },
@@ -556,19 +562,25 @@
    "type": "Feature",
    "properties": {
     "tipo": "tuberia",
-    "nombre": "Bebedero 3",
-    "longitud_m": 401,
+    "nombre": "Bebedero 3 → 4 (APROXIMADA)",
+    "longitud_m": 481,
     "desnivel_m": 22,
     "gradiente_pct": 5.5,
-    "fuente": "[owner, CONFIRMADA 2026-08-21] Manuel la identificó directamente en la ortofoto. Misma confianza que los tanques y las casas. Sustituye la posición leída del plano.",
-    "confianza": "posición: ALTA (ortofoto) · capacidad: n/a",
+    "fuente": "[owner] Une los bebederos 2 y 3 confirmados en ortofoto; el 4 sigue leído del plano, así que ese extremo es aproximado.",
+    "confianza": "orden: alta · trazado: recto esquemático",
     "altura_m": 729
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
-     -75.610781,
-     5.801364
+     [
+      -75.610781,
+      5.801364
+     ],
+     [
+      -75.615,
+      5.800337
+     ]
     ]
    }
   },
