@@ -588,13 +588,14 @@
    "type": "Feature",
    "properties": {
     "tipo": "tuberia",
-    "nombre": "T del norte → tanques intermedios (INDICATIVA)",
+    "nombre": "T del norte → T-4 → tanques intermedios (INDICATIVA)",
     "desnivel_m": 13,
     "longitud_m": 227,
     "gradiente_pct": 5.7,
     "confianza": "extremos reales; trazado esquemático",
     "fuente": "Une puntos confirmados por Manuel.",
-    "nota": "Borrada por error 2026-08-21 al añadir el ramal norte; restaurada."
+    "nota": "Borrada por error 2026-08-21 al añadir el ramal norte; restaurada.",
+    "pasa_por": "[derived, supuesto] T-4, a 767 m."
    },
    "geometry": {
     "type": "LineString",
@@ -602,6 +603,10 @@
      [
       -75.607946,
       5.797082
+     ],
+     [
+      -75.608623,
+      5.79711
      ],
      [
       -75.609996,
@@ -918,6 +923,25 @@
       -75.614034,
       5.803918
      ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "derivacion",
+    "nombre": "T-4 arriba de intermedios",
+    "altura_m": 767,
+    "alimenta": "[owner, 2026-08-22] Un ramal hacia el NORTE que sirve UN solo bebedero, todavía sin ubicar. Destino por determinar.",
+    "fuente": "[owner, 2026-08-22] Capturada por Manuel en el visor.",
+    "confianza": "existencia: alta · posición: sin especificar (asumida aproximada hasta que Manuel confirme)",
+    "supuesto": "[derived] Se asume que está sobre el tramo T del norte → tanques intermedios: cae a 75 m de la T del norte, y su cota de 767 m queda entre 775 y 762 m. CORREGIR si no."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.608623,
+     5.79711
     ]
    }
   }
