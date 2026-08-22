@@ -1800,19 +1800,47 @@ function cardSource(f){
   </div>`;
 }
 
+/* Everything we have decided to measure but have not measured yet. Derived from the
+   sources — no placeholder rows in readings.csv, because a reading with no value is not
+   a reading. These are slots, and they say plainly what would fill them. */
+function pendingSlots(){
+  const R=D.readings||{}, out=[];
+  for(const f of (D.sources&&D.sources.fuentes)||[]){
+    if(!f.entidad) continue;
+    for(const c of f.canales||[]){
+      const mag=c.magnitud;
+      if(R[f.entidad+'|'+mag]) continue;
+      if(out.some(o=>o.entidad===f.entidad && o.magnitud===mag)) continue;
+      out.push({entidad:f.entidad, magnitud:mag, unidad:c.unidad||'',
+                fuente:f.nombre, estado:f.estado});
+    }
+  }
+  return out;
+}
+function cardPending(p){
+  const cap=(D.net&&D.net.nodes||[]).find(n=>n.id===p.entidad);
+  const lit=cap&&cap.capacidad_l ? cap.capacidad_l.toLocaleString('es-CO')+' L' : '';
+  return `<div class="card ghost" style="--acc:#78909c">
+    <div class="top"><span class="dot"></span>esperando primera lectura</div>
+    <div class="big">—<small>${p.unidad}</small></div>
+    <div class="mag">${p.magnitud}</div>
+    <div class="ent">${entityName(p.entidad)}</div>
+    <div class="meta">${lit?lit+' · ':''}${p.fuente}</div>
+    <div class="why">Se llena con una fila en <code>data/readings.csv</code> — a mano vale.</div>
+  </div>`;
+}
+
 function renderLecturas(){
   const R=Object.values(D.readings||{});
+  const P=pendingSlots();
   document.getElementById('pageInner').innerHTML=`
-    <div class="sect"><h2>Lecturas</h2><span class="n">${R.length} · última por entidad</span></div>
+    <div class="sect"><h2>Lecturas</h2>
+      <span class="n">${R.length} con dato · ${P.length} esperando</span></div>
     <p class="lead">Entidad + magnitud + valor + fecha + <b>cómo se obtuvo</b>. Una anotación a
       mano vale igual que una automática: cambia el <b>origen</b> y la frescura que cabe esperar,
-      no la lectura. Por eso esto funciona hoy, sin comprar nada.</p>
-    <div class="cards">${
-      R.length ? R.map(cardReading).join('')
-      : `<div class="card ghost" style="--acc:#78909c"><div class="top">sin lecturas</div>
-         <div class="big" style="font-size:19px">—</div>
-         <div class="why">Añade una fila a <code>data/readings.csv</code> y aparece aquí,
-         en el mapa y en el esquema.</div></div>`}</div>`;
+      no la lectura. Por eso esto funciona hoy, sin comprar nada — y por eso las tarjetas
+      apagadas de abajo se pueden llenar esta semana, sin hardware.</p>
+    <div class="cards">${R.map(cardReading).join('')}${P.map(cardPending).join('')}</div>`;
 }
 
 function renderFuentes(){
