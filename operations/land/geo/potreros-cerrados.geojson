@@ -2224,9 +2224,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 10",
+    "nombre": "Paraíso",
     "n": 10,
-    "nombrado": false,
+    "nombrado": true,
     "area_ha": 3.11,
     "area_m2": 31105,
     "agua": [
