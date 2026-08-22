@@ -249,6 +249,22 @@
     5.805319
    ],
    "fuente": "[owner + plano 2007, 2026-08-22] Manuel verificó el potrero 19 de la corrida del 2026-08-22. «PIÑON» ya aparecía en el plano de 2007 en esa zona."
+  },
+  {
+   "nombre": "Sapal",
+   "punto": [
+    -75.620283,
+    5.805574
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] Manuel verificó el potrero 6 de la corrida del 2026-08-22 — una de las cuatro caras en que quedó partido EL GUAICO. «SAPAL» ya aparecía en el levantamiento de 2007."
+  },
+  {
+   "nombre": "Poblanco",
+   "punto": [
+    -75.617853,
+    5.802441
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] Manuel verificó el potrero 41 de la corrida del 2026-08-22 — una de las cuatro caras en que quedó partido EL GUAICO. «POBLANCO» ya aparecía en el levantamiento de 2007."
   }
  ]
 }

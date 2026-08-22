@@ -312,6 +312,22 @@
    "estado": "por_subdividir",
    "nota": "Manuel: son dos, Altamira al oriente y San Sebastián al occidente; la línea la verifica en campo",
    "fuente": "[owner, 2026-08-22] Manuel lo marcó como «por_subdividir» sobre el Potrero 3 de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.620283,
+    5.805574
+   ],
+   "estado": "final",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 6 de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.617853,
+    5.802441
+   ],
+   "estado": "final",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 41 de la corrida del 2026-08-22."
   }
  ]
 }
