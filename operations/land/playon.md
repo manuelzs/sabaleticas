@@ -44,10 +44,27 @@ plano de 2007 es esto: por el lado del río la geometría de verdad cambió.
 | | |
 |---|---|
 | **Carga animal, ha de pastoreo, presupuesto de forraje** | **No cambian.** Piedra. Sumarlo inflaría el denominador de todas las cifras por hectárea y haría ver la finca menos cargada de lo que está |
-| **Agua** | **Sí cuenta.** Da acceso al río a los potreros que lo tocan — importa en verano, que es cuando el agua manda |
+| **Agua** | **NO es fuente de agua de ningún potrero.** Ver abajo: en operación normal no hay acceso al río |
 | **Área del predio** | Sigue siendo **170,73 ha** catastrales. El playón no se suma |
+
+## El río NO es una fuente de agua
+
+**[owner, 2026-08-22] No hay acceso directo al río: está todo cercado.** Ninguna cerca llega
+al agua porque ninguna cerca puede hacerlo — **no se puede cercar a través de un río**.
+
+En sequía **sí se le puede dar el paso al ganado**, y entonces aparece el costo real: **hay que
+cuidarlo**. Sin cerca que lo pare, el ganado camina río arriba o río abajo y se sale del predio.
+Es agua que cuesta un jornal, no agua que se abre y ya.
+
+Para el modelo de agua eso significa:
+
+- **Ningún potrero tiene el río como fuente.** No contarlo, ni siquiera en los que lo tocan.
+- Es una **contingencia de sequía con mano de obra asociada**, no una fuente más de la red.
+- Un potrero que sólo tenga «drenaje» sigue siendo un potrero **sin agua conducida**. El río
+  pegado al lado no lo salva.
 
 ## Abierto
 
 - Cuánto mide, y si vale la pena medirlo dado que se mueve.
-- Qué potreros tocan el playón y por tanto tienen agua de río — eso sí cambia el mapa de agua.
+- Cuántos jornales costaría cuidar el ganado en el playón durante una sequía — es el número
+  que decide si esta contingencia sirve de algo frente a arreglar el agua conducida.
