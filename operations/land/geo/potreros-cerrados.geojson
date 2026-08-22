@@ -8,8 +8,8 @@
     "nombre": "Potrero 1",
     "n": 1,
     "nombrado": false,
-    "estado": null,
-    "estado_nota": "",
+    "estado": "por_subdividir",
+    "estado_nota": "los nombres del plano de 2007 que caen dentro dicen en cuántos se parte",
     "area_ha": 20.82,
     "area_m2": 208175,
     "agua": [
@@ -567,8 +567,8 @@
     "nombre": "Potrero 2",
     "n": 2,
     "nombrado": false,
-    "estado": null,
-    "estado_nota": "",
+    "estado": "por_subdividir",
+    "estado_nota": "los nombres del plano de 2007 que caen dentro dicen en cuántos se parte",
     "area_ha": 12.66,
     "area_m2": 126582,
     "agua": [

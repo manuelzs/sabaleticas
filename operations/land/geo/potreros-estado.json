@@ -185,6 +185,24 @@
    ],
    "estado": "final",
    "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 7 de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.618191,
+    5.797204
+   ],
+   "estado": "por_subdividir",
+   "nota": "los nombres del plano de 2007 que caen dentro dicen en cuántos se parte",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «por_subdividir» sobre el Potrero 1 de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.614907,
+    5.794149
+   ],
+   "estado": "por_subdividir",
+   "nota": "los nombres del plano de 2007 que caen dentro dicen en cuántos se parte",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «por_subdividir» sobre el Potrero 2 de la corrida del 2026-08-22."
   }
  ]
 }
