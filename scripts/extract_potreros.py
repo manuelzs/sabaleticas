@@ -645,12 +645,30 @@ def main():
             continue
         if a < 200:                              # slivers from noding, not paddocks
             continue
-        cx = sum(p[0] for p in ring) / len(ring)
-        cy = sum(p[1] for p in ring) / len(ring)
-        if not inside((cx, cy), OURS):           # a neighbour's enclosure, not ours
+        # Is this face OURS? The centroid is not a safe test: a large or concave face
+        # hugging the boundary can have its centroid outside while most of its area is
+        # inside — that discarded a real 23 ha enclosure. Sample the face instead.
+        xs = [p[0] for p in ring]
+        ys = [p[1] for p in ring]
+        n_in = n_tot = 0
+        for gx in range(12):
+            for gy in range(12):
+                q = (min(xs) + (max(xs) - min(xs)) * (gx + 0.5) / 12,
+                     min(ys) + (max(ys) - min(ys)) * (gy + 0.5) / 12)
+                if not inside(q, [[ring]]):
+                    continue
+                n_tot += 1
+                if inside(q, OURS):
+                    n_in += 1
+        propio = (n_in / n_tot) if n_tot else 0.0
+        if propio < 0.5:                          # mostly a neighbour's enclosure
             fuera += 1
+            if a / 10000 > 2:
+                print(f"      descartada, {propio*100:.0f} % dentro del lindero: {a/10000:.2f} ha")
             continue
         if sum(1 for k in cyc if k in bkeys) / len(cyc) > 0.9:
+            if a / 10000 > 2:
+                print(f"      descartada por ser el contorno del predio: {a/10000:.2f} ha")
             continue                             # this face IS a parcel outline, not a potrero
         polys.append((a, ring))
     polys.sort(key=lambda t: -t[0])
