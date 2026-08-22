@@ -208,6 +208,48 @@ holds them only up to a date. **Silence after that date means "not yet given to 
 So both cattle views open with the horizon, and the monthly chart marks the end of the record
 with a red rule and hatched ground beyond it.
 
+## Compound indicators — the reason the subsystems share a roof
+
+`[Manuel, 2026-08-22]` *"You combined water capacity, land size and herd size and told me
+something. If we can think more about those compound indicators… that would make running the
+farm smarter."*
+
+> ### A number from one subsystem describes. A number from two decides.
+> **266 reses** is a fact. **130.000 L** is a fact. **"10–14 días de autonomía al tamaño actual
+> del hato"** is a decision — it tells you when to sell, or when to start hauling water.
+
+This is the actual payoff of putting water, land, cattle and money behind one door. If the app
+only ever showed each subsystem its own numbers, four separate spreadsheets would do the same
+job. **The integration has to earn itself, and this is how.**
+
+### Where they live
+
+`general/estado` — a second view under **General**, beside the map. General already means
+*the whole farm*; the map is one view of it and the indicator panel is another. They belong to
+no subsystem, so they cannot sit in one.
+
+### They are findings that never stop firing
+
+Mechanically this is the rules engine from `90-insights.js`, with one difference:
+
+| | Finding | Indicator |
+|---|---|---|
+| When shown | only when it fires | **always** |
+| Carries | a condition | **a value, a trend, a threshold** |
+| Reads from | any provider | any provider |
+
+Same evaluation, same templated text, same "no hand-written prose". An indicator that crosses
+a threshold **becomes** a finding — so the drawer and the panel are one system seen twice.
+
+### ⚠️ Confidence propagates, and takes the worst of its inputs
+
+Días de autonomía built on a **stale herd count** and an **estimated litres-per-head** is a soft
+number wearing a hard number's clothes. An indicator must show the weakest link in its chain,
+not an average of it — the same discipline as `pos_confianza` on the water graph and `VIGENCIA_H`
+on readings.
+
+**A compound indicator is the easiest place in this whole application to lie by accident.**
+
 ## Rules this has to keep
 
 Carried from [`README.md`](README.md), and none of them change here:

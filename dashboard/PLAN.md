@@ -62,15 +62,35 @@ The house system is the pilot. `operations/sensors/sources.json` holds what we k
 minimal test (`/ISAPI/System/deviceInfo`). Needs the panel model and network access before
 any code is worth writing.
 
-### 4 · Slope-shaded surface
+### 4 · Compound indicators — `general/estado` 🔴 **the highest-value idea on this list**
+
+Cross-subsystem numbers, in the panel described in [`ARCHITECTURE.md`](ARCHITECTURE.md).
+Candidates, roughly by value. **None built.** Several are blocked on data we do not have yet,
+and that is fine — the blocked ones double as an argument for collecting it.
+
+| Indicator | Combines | Decides | Blocked on |
+|---|---|---|---|
+| **Días de autonomía de agua** | almacenamiento × hato × L/res/día | cuándo vender o acarrear agua | conteo fresco; L/res sin medir |
+| **Autonomía del ramal norte** | tanques altos × reses del norte | el ramal sin almacenamiento es el que primero se seca | qué bebederos cuelgan de dónde |
+| **Lo que compraría la represa** | volumen del lago × demanda diaria | pone precio a la ruta por gravedad: *"la represa vale N días de hato"* | profundidad del lago |
+| **Área efectiva de pastoreo** | área abierta − pendiente >15° − distancia al bebedero | la carga real no es reses ÷ hectáreas | potreros |
+| **Carga por potrero** | reses × potrero × pendiente | dónde poner cercas y agua | potreros + registro de movidas |
+| **Costo por res por día vs ganancia diaria** | costos × hato × kilos | si cada animal paga su renta | contabilidad + báscula |
+| **Capital inmovilizado vs pérdida mensual** | hato × valor × P&G | una pérdida sobre capital quieto es peor que sobre uno que rota | contabilidad |
+| **Riesgo de verano** | autonomía × pronóstico | cuántos días de margen quedan | fuente de clima |
+
+> **The one Manuel already valued** — storage against herd size — is the template: it turned two
+> inert facts into a date on the calendar.
+
+### 5 · Slope-shaded surface
 The cursor reports slope already. Missing: the coloured surface in 2D and on the 3D mesh.
 **A third of the farm is ≥15°**, and cattle under-graze steep ground.
 
-### 5 · Potrero polygons
+### 6 · Potrero polygons
 The data work is in [`../PLAN.md`](../PLAN.md); the app side is a layer plus, eventually,
 per-potrero attributes. **This is what unblocks Ganado.**
 
-### 6 · Deferred on purpose
+### 7 · Deferred on purpose
 Tables/CRUD · charts · per-view state persistence beyond the hash · anything for Ganado
 before there is cattle data.
 
