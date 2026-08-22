@@ -6,7 +6,8 @@
    "en_linea": "reportando",
    "sin_datos": "integrada pero sin lecturas recientes",
    "por_investigar": "el equipo existe; falta saber cómo sacarle los datos",
-   "planificado": "todavía no existe"
+   "planificado": "todavía no existe",
+   "a_mano": "llega dato fresco, pero transcrito por una persona — el equipo NO está conectado"
   },
   "nota_ids": "Los ids de entidad son los del grafo de agua (rompecargas, tanques-intermedios…). Cuando se haga el namespacing pasarán a agua:rompecargas.",
   "actualizado": "2026-08-22",
@@ -16,7 +17,7 @@
    "automatico": "un equipo lo reporta solo"
   },
   "origen_vs_fuente": "`origen` es una propiedad de la LECTURA (a mano / automático), no de la fuente. Cualquier fuente real se puede leer a mano — la temperatura de la Hikvision entró transcrita por Manuel y sigue siendo de la Hikvision. Por eso no existe una fuente llamada 'anotación manual': sería confundir el canal con el mensajero.",
-  "estado_declarado_vs_real": "El `estado` de este archivo es el de la INTEGRACIÓN (planificado / por investigar / conectado). El visor muestra el estado REAL, derivado de si llegó un dato: una fuente declarada 'en línea' que lleva días callada se muestra 'sin datos'. Declarar no es medir."
+  "estado_declarado_vs_real": "El `estado` de este archivo es el de la INTEGRACIÓN. El visor muestra el estado REAL: 'en línea' sólo si llegó una lectura AUTOMÁTICA y reciente; 'a mano' si el dato es fresco pero lo escribió una persona — es dato real y equipo desconectado a la vez; 'sin datos' si se declaró conectado y lleva días callado. Declarar no es medir."
  },
  "fuentes": [
   {

@@ -5,6 +5,7 @@
    That is what lets the viewer show levels today, with no hardware at all. */
 const SRC_STATE={
   en_linea:      ['#00e676','en línea'],
+  a_mano:        ['#4fc3f7','a mano'],
   sin_datos:     ['#ffd54f','sin datos'],
   por_investigar:['#ff9100','por investigar'],
   planificado:   ['#78909c','planificado'],
@@ -65,16 +66,21 @@ function spark(live){
 }
 /* A source is "flowing" if something it produced arrived recently — not merely if we
    have declared it online. Manual transcription counts: data is data. */
-function sourceLive(f){
-  const R=Object.values(D.readings||{});
-  return R.some(r=>r.fuente===f.id && readingAge(r.ts).hours < 48);
+function freshFrom(f){
+  return Object.values(D.readings||{})
+    .find(r=>r.fuente===f.id && readingAge(r.ts).hours < 48) || null;
 }
+/* Data is arriving — by whatever route. The sparkline shows flow, the pill shows
+   whether the DEVICE is connected. A hand-typed value is real data and a
+   disconnected sensor at the same time, and the row should say both. */
+function sourceLive(f){ return !!freshFrom(f); }
 
 /* Declared status is an intention; this is what is true. A source declared online that
    has been silent for days shows "sin datos", because declaring is not measuring.
    The pill and the sparkline both read from data flow, so they cannot disagree. */
 function effState(f){
-  if(sourceLive(f)) return 'en_linea';
+  const r=freshFrom(f);
+  if(r) return r.origen==='automatico' ? 'en_linea' : 'a_mano';
   if(f.estado==='en_linea') return 'sin_datos';
   return f.estado;
 }
@@ -108,7 +114,7 @@ function renderLecturas(){
 
 function renderFuentes(){
   const S=(D.sources&&D.sources.fuentes)||[];
-  const live=S.filter(sourceLive).length;
+  const live=S.filter(f=>effState(f)==='en_linea').length;
   document.getElementById('pageInner').innerHTML=`
     <div class="sect"><h2>Fuentes</h2><span class="n">${live} de ${S.length} en línea</span></div>
     <div class="rows">${S.map(rowSource).join('')}</div>`;
