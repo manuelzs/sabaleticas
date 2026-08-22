@@ -251,6 +251,38 @@
    ],
    "cerca real que une dos cercas casi paralelas (6,2° entre sí) — no engancha en vértices sino a media luz de cada una: 91,7 m, a 80,0° de una y 86,2° de la otra. Los dos puntos los marcó Manuel sobre las aristas, y caen a 0,0 y 0,1 m de ellas.",
    true
+  ],
+  [
+   37,
+   [
+    -75.604714,
+    5.797509
+   ],
+   "cerca real desde el vértice 37 (arriba de la represa) hacia el nororiente",
+   true
+  ],
+  [
+   [
+    -75.604714,
+    5.797509
+   ],
+   [
+    -75.604635,
+    5.797623
+   ],
+   "quiebrapatas — por aquí cruza la vía principal (a 3,1 m del tramo). NO hay cerca: el potrero cierra igual porque el ganado no lo pasa."
+  ],
+  [
+   [
+    -75.604635,
+    5.797623
+   ],
+   [
+    -75.604491,
+    5.798
+   ],
+   "cerca real hasta el lindero; muere a media luz de un tramo de 28 m, sin vértice (a 12,0 m de un extremo y 16,3 m del otro)",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

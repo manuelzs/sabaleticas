@@ -792,6 +792,78 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 37–punto",
+    "longitud_m": 58,
+    "motivo": "cerca real desde el vértice 37 (arriba de la represa) hacia el nororiente",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.605119,
+      5.797174
+     ],
+     [
+      -75.604714,
+      5.797509
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 15,
+    "motivo": "quiebrapatas — por aquí cruza la vía principal (a 3,1 m del tramo). NO hay cerca: el potrero cierra igual porque el ganado no lo pasa.",
+    "es_cerca": false,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.604714,
+      5.797509
+     ],
+     [
+      -75.604635,
+      5.797623
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 45,
+    "motivo": "cerca real hasta el lindero; muere a media luz de un tramo de 28 m, sin vértice (a 12,0 m de un extremo y 16,3 m del otro)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.604635,
+      5.797623
+     ],
+     [
+      -75.604491,
+      5.798
+     ]
+    ]
+   }
   }
  ]
 }

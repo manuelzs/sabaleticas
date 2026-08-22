@@ -529,6 +529,52 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 37–punto",
+    "longitud_m": 58,
+    "fuente": "[owner] cerca real desde el vértice 37 (arriba de la represa) hacia el nororiente",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.605119,
+      5.797174
+     ],
+     [
+      -75.604714,
+      5.797509
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 45,
+    "fuente": "[owner] cerca real hasta el lindero; muere a media luz de un tramo de 28 m, sin vértice (a 12,0 m de un extremo y 16,3 m del otro)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.604635,
+      5.797623
+     ],
+     [
+      -75.604491,
+      5.798
+     ]
+    ]
+   }
   }
  ]
 }
