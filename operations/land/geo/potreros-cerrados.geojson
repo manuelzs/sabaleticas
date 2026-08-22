@@ -1469,8 +1469,8 @@
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",
-    "area_ha": 5.7,
-    "area_m2": 56952,
+    "area_ha": 5.71,
+    "area_m2": 57109,
     "agua": [
      {
       "id": "agua:beb-3",
@@ -1534,8 +1534,8 @@
        5.799602
       ],
       [
-       -75.612183,
-       5.798967
+       -75.612176,
+       5.798905
       ],
       [
        -75.61193,
@@ -3091,8 +3091,8 @@
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",
-    "area_ha": 3.35,
-    "area_m2": 33482,
+    "area_ha": 3.31,
+    "area_m2": 33114,
     "agua": [
      {
       "id": "agua:beb-8",
@@ -3194,8 +3194,8 @@
        5.799168
       ],
       [
-       -75.612183,
-       5.798967
+       -75.612176,
+       5.798905
       ],
       [
        -75.612872,
@@ -4168,12 +4168,19 @@
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",
-    "area_ha": 2.09,
-    "area_m2": 20861,
-    "agua": [],
+    "area_ha": 2.11,
+    "area_m2": 21073,
+    "agua": [
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
     "sal": [],
-    "sin_agua": true,
-    "solo_natural": false,
+    "sin_agua": false,
+    "solo_natural": true,
     "agua_por_confirmar": true,
     "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
     "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
@@ -4224,8 +4231,8 @@
        5.798926
       ],
       [
-       -75.612183,
-       5.798967
+       -75.612176,
+       5.798905
       ],
       [
        -75.612391,

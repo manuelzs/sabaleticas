@@ -702,7 +702,7 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre 25–punto",
-    "longitud_m": 74,
+    "longitud_m": 81,
     "motivo": "se prolonga al sur en su misma dirección (rumbo 161,8°) hasta cruzar con la prolongación al este de la cerca 28–29",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
@@ -715,8 +715,8 @@
       5.799602
      ],
      [
-      -75.612183,
-      5.798967
+      -75.612176,
+      5.798905
      ]
     ]
    }
@@ -726,7 +726,7 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre 28–punto",
-    "longitud_m": 76,
+    "longitud_m": 77,
     "motivo": "la cerca 28–29 se prolonga al este en su misma dirección (rumbo 86,6°) hasta cruzar con la que baja del extremo 25",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
@@ -739,8 +739,8 @@
       5.798926
      ],
      [
-      -75.612183,
-      5.798967
+      -75.612176,
+      5.798905
      ]
     ]
    }
@@ -1398,7 +1398,7 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre punto–punto",
-    "longitud_m": 36,
+    "longitud_m": 40,
     "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 11 de 11)",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
@@ -1411,8 +1411,8 @@
       5.799168
      ],
      [
-      -75.612183,
-      5.798967
+      -75.612176,
+      5.798905
      ]
     ]
    }

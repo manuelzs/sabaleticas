@@ -443,7 +443,7 @@
    "properties": {
     "tipo": "cerca_inferida",
     "nombre": "Cerca 25–punto",
-    "longitud_m": 74,
+    "longitud_m": 81,
     "fuente": "[owner] se prolonga al sur en su misma dirección (rumbo 161,8°) hasta cruzar con la prolongación al este de la cerca 28–29",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
@@ -455,8 +455,8 @@
       5.799602
      ],
      [
-      -75.612183,
-      5.798967
+      -75.612176,
+      5.798905
      ]
     ]
    }
@@ -466,7 +466,7 @@
    "properties": {
     "tipo": "cerca_inferida",
     "nombre": "Cerca 28–punto",
-    "longitud_m": 76,
+    "longitud_m": 77,
     "fuente": "[owner] la cerca 28–29 se prolonga al este en su misma dirección (rumbo 86,6°) hasta cruzar con la que baja del extremo 25",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
@@ -478,8 +478,8 @@
       5.798926
      ],
      [
-      -75.612183,
-      5.798967
+      -75.612176,
+      5.798905
      ]
     ]
    }
@@ -1041,7 +1041,7 @@
    "properties": {
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
-    "longitud_m": 36,
+    "longitud_m": 40,
     "fuente": "[owner] cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 11 de 11)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
@@ -1053,8 +1053,8 @@
       5.799168
      ],
      [
-      -75.612183,
-      5.798967
+      -75.612176,
+      5.798905
      ]
     ]
    }

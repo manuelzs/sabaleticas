@@ -219,8 +219,8 @@
   [
    25,
    [
-    -75.612183,
-    5.798967
+    -75.612176,
+    5.798905
    ],
    "se prolonga al sur en su misma dirección (rumbo 161,8°) hasta cruzar con la prolongación al este de la cerca 28–29",
    true
@@ -228,8 +228,8 @@
   [
    28,
    [
-    -75.612183,
-    5.798967
+    -75.612176,
+    5.798905
    ],
    "la cerca 28–29 se prolonga al este en su misma dirección (rumbo 86,6°) hasta cruzar con la que baja del extremo 25",
    true
@@ -464,8 +464,8 @@
      5.799168
     ],
     [
-     -75.612183,
-     5.798967
+     -75.612176,
+     5.798905
     ]
    ],
    "es_cerca": true,
@@ -539,6 +539,23 @@
     "polilínea [49] vértice 6"
    ],
    "motivo": "[owner, 2026-08-22] el cruce se corre 4,0 m al norte para pegarse mejor al drenaje"
+  },
+  {
+   "de": [
+    -75.612183,
+    5.798968
+   ],
+   "a": [
+    -75.612176,
+    5.798905
+   ],
+   "metros": 7.0,
+   "refs": [
+    "par [29] extremo 1",
+    "par [30] extremo 1",
+    "polilínea [48] vértice 11"
+   ],
+   "motivo": "[owner, 2026-08-22] el cruce de las prolongaciones 25 y 28 se corre 7,0 m al sur para seguir el drenaje"
   }
  ]
 }
