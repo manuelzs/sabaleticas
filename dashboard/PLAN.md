@@ -62,11 +62,17 @@ The house system is the pilot. `operations/sensors/sources.json` holds what we k
 minimal test (`/ISAPI/System/deviceInfo`). Needs the panel model and network access before
 any code is worth writing.
 
-### 4 · Compound indicators — `general/estado` 🔴 **the highest-value idea on this list**
+### 4 · Compound indicators — `general/estado` ✅ **first version built**
 
-Cross-subsystem numbers, in the panel described in [`ARCHITECTURE.md`](ARCHITECTURE.md).
-Candidates, roughly by value. **None built.** Several are blocked on data we do not have yet,
-and that is fine — the blocked ones double as an argument for collecting it.
+Three computed (autonomía de agua **8–12 días**, reserva por animal, carga) and four shown as
+blocked, each naming what it waits on. Every indicator lists its inputs and takes the
+confidence of the **worst** one.
+
+Still to add — the table below. And a **`scraped` origin** for readings, when we poll IGAC or
+price sources.
+
+Candidates still to build, roughly by value. The blocked ones double as an argument for
+collecting what they wait on.
 
 | Indicator | Combines | Decides | Blocked on |
 |---|---|---|---|

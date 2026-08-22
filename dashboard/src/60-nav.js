@@ -6,7 +6,8 @@
 const NAV=[
   /* The shared surface: every subsystem's layers on one map. Not a subsystem itself —
      it is the orientation view, where water is read against land. */
-  {id:'general', label:'General', views:[['mapa','Mapa'],['3d','3D']]},
+  {id:'general', label:'General',
+   views:[['estado','Estado'],['mapa','Mapa'],['3d','3D']]},
   {id:'agua',   label:'Agua',   views:[['esquema','Esquema'],['mapa','Mapa']]},
   /* A subsystem earns a tab when it offers a view the shared surface cannot.
      Agua does — the schematic. Predio does not yet: its map is General with fewer
@@ -67,7 +68,7 @@ function navRender(){
    need the map chrome out of the way entirely. */
 const PAGE_VIEWS={lecturas:renderLecturas, fuentes:renderFuentes,
                   hato:renderHato, movimientos:renderMovimientos,
-                  guias:renderGuias};
+                  guias:renderGuias, estado:renderEstado};
 
 function navApply(){
   const page=PAGE_VIEWS[route.view];

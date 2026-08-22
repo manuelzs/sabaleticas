@@ -73,3 +73,35 @@ function freshness(ts, magnitud){
   return           {estado:'obsoleto',   col:'#ff5252', label, hours:h, vigencia:v};
 }
 
+/* ---- trends -------------------------------------------------------------
+   A top-level number says where you are; the trend says where you are going, and
+   for a farm that is usually the more actionable half. One mechanism for all of
+   them: a herd count, a tank level and a temperature are the same shape. */
+function series(entidad, magnitud){
+  return (D.series && D.series[entidad+'|'+magnitud]) || [];
+}
+function trend(entidad, magnitud){
+  const S=series(entidad,magnitud).filter(r=>r.valor!=='' && !isNaN(+r.valor));
+  if(S.length<2) return {n:S.length, ok:false};
+  const a=+S[0].valor, b=+S[S.length-1].valor;
+  const dias=Math.max(1,Math.round((Date.parse(S[S.length-1].ts)-Date.parse(S[0].ts))/864e5));
+  return {n:S.length, ok:true, from:a, to:b, delta:b-a,
+          pct: a? (b-a)/a*100 : null, dias,
+          pts:S.map(r=>+r.valor), desde:S[0].ts, hasta:S[S.length-1].ts};
+}
+/* Inline sparkline for a stat card. Says "one measurement" rather than drawing a
+   flat line, because a flat line would imply we had looked twice. */
+function trendMark(entidad, magnitud, invertir){
+  const t=trend(entidad,magnitud);
+  if(!t.ok) return `<div class="tr none">${t.n===1?'1 medición · sin tendencia':'sin serie'}</div>`;
+  const lo=Math.min(...t.pts), hi=Math.max(...t.pts), rng=(hi-lo)||1;
+  const w=64, h=18;
+  const d=t.pts.map((v,i)=>`${(i/(t.pts.length-1)*w).toFixed(1)},${(h-(v-lo)/rng*h).toFixed(1)}`);
+  const up=t.delta>0, bueno = invertir ? !up : up;
+  const col = t.delta===0 ? '#8b98a5' : (bueno ? '#00e676' : '#ff9100');
+  return `<div class="tr" style="--acc:${col}">
+    <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><path d="M${d.join(' L')}"/></svg>
+    <span>${t.delta>0?'▲':t.delta<0?'▼':'—'} ${Math.abs(t.delta).toLocaleString('es-CO')}
+      <i>en ${t.dias} d</i></span></div>`;
+}
+

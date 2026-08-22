@@ -208,6 +208,28 @@ holds them only up to a date. **Silence after that date means "not yet given to 
 So both cattle views open with the horizon, and the monthly chart marks the end of the record
 with a red rule and hatched ground beyond it.
 
+## Everything measured is a reading
+
+`[Manuel, 2026-08-22]` *"I love how you connected the herd count with the readings. That is
+definitely a reading. Let's keep making sure that input data is always like that, even if it
+is a manual reading."*
+
+**A herd count, a tank level and a temperature are the same shape**: an entity, a magnitude, a
+value, a timestamp, and how it was obtained. So they share one series, and everything built on
+top of that — freshness, staleness, trends, alerts — is written **once**.
+
+| | |
+|---|---|
+| The rule | if it is measured and it changes over time, it is a reading |
+| Not a reading | structure that does not vary with time — a tank's capacity, a parcel's area, the age *bands* of the herd |
+| `origen` | `manual` · `automatico` · and later `scraped` — a page we poll (IGAC, prices) is just another writer |
+
+The payoff was immediate: the moment the SINIGAN count became a reading, the herd card got a
+trend and the autonomy indicator got an input, with no new machinery.
+
+> **Nothing gets a bespoke pipeline because of where it came from.** A person typing, a LoRa
+> node and a scraper all append to the same series and are distinguished by one field.
+
 ## Compound indicators — the reason the subsystems share a roof
 
 `[Manuel, 2026-08-22]` *"You combined water capacity, land size and herd size and told me

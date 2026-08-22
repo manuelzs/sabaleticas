@@ -151,6 +151,27 @@ def _farm(root: Path, geo: Path):
     return cfg
 
 
+def _series(path: Path):
+    """The full time series per (entity, magnitude), oldest first.
+
+    A herd count and a tank level are the same kind of thing: a value, an entity, a
+    date. Keeping them in one series means a trend is one mechanism, not two.
+    """
+    if not path.exists():
+        return {}
+    import csv
+    out = {}
+    with path.open(encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            if not r.get("entidad") or not r.get("ts"):
+                continue
+            out.setdefault(f"{r['entidad']}|{r['magnitud']}", []).append(
+                {k: (v or "") for k, v in r.items()})
+    for v in out.values():
+        v.sort(key=lambda r: r["ts"])
+    return out
+
+
 def _latest_readings(path: Path):
     """Most recent value per (entity, magnitude).
 
@@ -285,6 +306,7 @@ def build(root: Path) -> Path:
     src_f = root / "operations" / "sensors" / "sources.json"
     sources = json.loads(src_f.read_text(encoding="utf-8")) if src_f.exists() else None
     readings = _latest_readings(root / "data" / "readings.csv")
+    series = _series(root / "data" / "readings.csv")
     herd_f = root / "data" / "herd.json"
     herd = json.loads(herd_f.read_text(encoding="utf-8")) if herd_f.exists() else None
     movements = _movements(root / "data" / "gsmi_movements.csv")
@@ -294,6 +316,7 @@ def build(root: Path) -> Path:
         "net": net,                       # the water graph, for the schematic view
         "sources": sources,               # data sources, automated and manual
         "readings": readings,             # latest value per entity+magnitude
+        "series": series,                 # the whole history, for trends
         "herd": herd,                     # SINIGAN inventory snapshot
         "movements": movements,           # GSMI movement guides
         "tipoColour": TIPO_COLOUR,

@@ -18,11 +18,12 @@ function horizon(fecha, que, extra){
     ocurrido. En la finca se registra todo; lo que falta es la entrega.${extra?' '+extra:''}</span>
   </div>`;
 }
-function statCard(big,unit,mag,ent,meta,acc){
+function statCard(big,unit,mag,ent,meta,acc,tr){
   return `<div class="card" style="--acc:${acc||'#4fc3f7'}">
     <div class="top"><span class="dot"></span>${mag}</div>
     <div class="big">${big}<small>${unit||''}</small></div>
-    <div class="ent">${ent}</div>${meta?`<div class="meta">${meta}</div>`:''}</div>`;
+    <div class="ent">${ent}</div>${meta?`<div class="meta">${meta}</div>`:''}
+    ${tr||''}</div>`;
 }
 function barRow(label,segments,total,max){
   const w=s=>`${(s.head/max*100).toFixed(1)}%`;
@@ -51,11 +52,12 @@ function renderHato(){
       <span>cota superior</span>
     </div>
     <div class="cards">
-      ${statCard(H.total,'','reses','Hato',`al ${H.fecha}`,f.col)}
+      ${statCard(H.total,'','reses','Hato',`al ${H.fecha}`,f.col,
+        trendMark('hato','conteo',true))}
       ${statCard(H.por_sexo.hembras,'',
         `hembras · ${Math.round(H.por_sexo.hembras/H.total*100)} %`,'Ceba','','#f06292')}
       ${statCard(ha?(H.total/ha).toFixed(2):'—','res/ha','carga',
-        `sobre ${ha} ha totales`,'','#ffd54f')}
+        `sobre ${ha} ha totales`,'','#ffd54f', trendMark('hato','conteo',true))}
       ${statCard(rows.filter(r=>r.orden>=4&&r.orden<=5).reduce((a,r)=>a+r.total,0),'',
         'entre 1 y 3 años','Banda dominante','','#4fc3f7')}
     </div>
