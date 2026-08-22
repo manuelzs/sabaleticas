@@ -139,9 +139,19 @@ function drawGeom(g,kind,fill){
   }
   if(t==='Point'||t==='MultiPoint'){
     const ps = t==='Point'?[c]:c;
-    for(const p of ps){ const s=toScreen(p[0],p[1]);
-      cx.fillStyle=cx.strokeStyle; cx.beginPath(); cx.arc(s[0],s[1],5.5,0,7); cx.fill();
-      cx.save(); cx.strokeStyle='#0b0e11'; cx.lineWidth=2; cx.stroke(); cx.restore(); }
+    const shp = g.shp || 'circle', r=6;
+    for(const p of ps){
+      const s=toScreen(p[0],p[1]); const [x,y]=s;
+      cx.fillStyle=cx.strokeStyle; cx.beginPath();
+      if(shp==='square')        cx.rect(x-r,y-r,2*r,2*r);
+      else if(shp==='triangle'){cx.moveTo(x,y-r-1);cx.lineTo(x+r+1,y+r);cx.lineTo(x-r-1,y+r);cx.closePath();}
+      else if(shp==='diamond'){ cx.moveTo(x,y-r-1);cx.lineTo(x+r+1,y);cx.lineTo(x,y+r+1);cx.lineTo(x-r-1,y);cx.closePath();}
+      else if(shp==='house'){   cx.moveTo(x-r,y+r);cx.lineTo(x-r,y-1);cx.lineTo(x,y-r-2);
+                                cx.lineTo(x+r,y-1);cx.lineTo(x+r,y+r);cx.closePath();}
+      else                      cx.arc(x,y,r-0.5,0,7);
+      cx.fill();
+      cx.save(); cx.strokeStyle='#0b0e11'; cx.lineWidth=2; cx.stroke(); cx.restore();
+    }
     return;
   }
   const lines = t==='MultiLineString'?c : t==='LineString'?[c] : [];

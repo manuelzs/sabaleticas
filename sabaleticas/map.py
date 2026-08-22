@@ -93,6 +93,15 @@ TIPO_COLOUR = {
     "tanque": "#00e5ff", "nacimiento": "#7cffcb", "bebedero": "#4dd0e1",
     "represa": "#0091ea", "rompecargas": "#ffd54f", "bocatoma": "#26c6da", "tuberia": "#b388ff",
     "casa": "#ff8a65", "potrero": "#ffee58",
+    "derivacion": "#ff9100", "valvula": "#ffab40",
+}
+
+# Marker shape by type. Circles are reserved for tanks and the reservoir.
+TIPO_SHAPE = {
+    "tanque": "circle", "represa": "circle",
+    "derivacion": "square", "valvula": "square", "rompecargas": "square",
+    "nacimiento": "triangle", "bocatoma": "triangle",
+    "bebedero": "diamond", "casa": "house",
 }
 
 
@@ -120,6 +129,7 @@ def _collect(geo: Path):
             tipo = props.get("tipo")
             if tipo in TIPO_COLOUR:
                 item["col"] = TIPO_COLOUR[tipo]
+                item["shp"] = TIPO_SHAPE.get(tipo, "circle")
                 item["l"] = str(props.get("nombre") or label)[:60]
             feats.append(item)
         if feats:

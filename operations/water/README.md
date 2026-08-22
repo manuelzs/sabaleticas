@@ -371,21 +371,36 @@ I searched the terrain model for the shortest route that never rises above the l
 | Average gradient | **2.11%** — a healthy slope for a gravity main |
 | **Vertical clearance at the tightest point** | **0.2 m** |
 
-> ### The verdict is "maybe", and the maybe is entirely about that 0.2 m.
-> 759 m of pipe at 2.11% is an unremarkable, buildable gravity line — far more attractive than
-> the 4 km alternatives. But it only works if the ground genuinely stays below the lake surface
-> the whole way, and **the model says it does so by 20 centimetres.**
+> ### ✅ Confirmed on the ground by Manuel (2026-08-21): crossing El Guaico, the terrain stays
+> below the lake the whole way.
 >
-> A 5 m terrain model carries roughly ±1–2 m of vertical error. **Our margin is smaller than
-> the error bar**, so this cannot be settled from a desk. It is neither confirmed nor ruled
-> out — the data simply cannot see at that precision.
+> The terrain model gave this only a 0.2 m margin — inside its own ±1–2 m error bar — so from
+> the desk it was unresolvable. **Manuel's knowledge of the ground settles it.** 759 m of pipe
+> at a 2.11% gradient: no pump, no power, no fuel, nothing to fail.
 
-**How to settle it, cheaply:** run a level along the proposed line. (A drone survey would also
-answer it, and this is the one question that would justify paying for one — see
-[`../land/imagery-options.md`](../land/imagery-options.md).) A builder's level, or even
-a long clear hose filled with water, walked from the lake edge toward the mid tanks, would
-answer definitively in an afternoon. If real ground gives 2–3 m of clearance instead of 0.2,
-this becomes the best option on the table — **no pump, no power, no fuel, nothing to fail.**
+**This is now the best technical option available**, and the obstacle is no longer engineering
+— it is 662 m of pipe across somebody else's land.
+
+### Why it can't stay on our own land
+
+Keeping inside our boundary means going **over the hill the rompecargas sits on** — and the
+rompecargas is at **798 m, the top of that hill, 20 m above the lake**. Manuel asked exactly
+the right question: could a gravity hose simply run over a 20 m rise?
+
+> ### No — and it isn't close. That is a siphon, and 20 m is beyond what physics permits.
+>
+> A siphon works because **atmospheric pressure pushes** water up the rising leg. The ceiling
+> is set by atmospheric pressure alone, and at our 778 m elevation that supports only
+> **9.4 m of water column** — falling to roughly **6–7 m in practice**, because dissolved air
+> comes out of solution at the crest and accumulates until the column breaks.
+>
+> We would need **20 m: more than double the theoretical limit and about triple the practical
+> one.** No pipe diameter, material or workmanship changes this. It is a property of the
+> atmosphere, not of the plumbing.
+
+So the choice is binary: **cross El Guaico and use gravity, or stay on our land and pump.**
+There is no third option over the hill — which is very likely why the rompecargas sits exactly
+where it does.
 
 **The negotiation is the other half.** 662 m of buried line through a lemon orchard is a real
 ask, but a modest one: temporary, buried, no structures, and lemons need water too — a shared
@@ -475,6 +490,33 @@ Two caveats, honestly:
 
 Also worth checking: a **second water body of 0.81 ha at 776 m sits ~260 m south**, just
 *outside* our mapped boundary. Given how close it is, worth confirming whether it is ours.
+
+### 🔴 The north side has no buffer
+
+Manuel (2026-08-21): a **T-junction on the main, between the rompecargas and the mid tanks,
+splits the farm into a north branch and a south branch.**
+
+> **The south side has the mid tanks (~60,000 L) as its reservoir. The north side has no
+> storage at all** — it is fed straight off the line.
+
+That asymmetry matters more than it sounds, and it changes how failure looks:
+
+- **If inflow stops, the two halves fail on completely different clocks.** The south coasts on
+  60,000 L — days. **The north runs dry as soon as the line does — hours.**
+- So the 10–14 day autonomy figure in this document is **an average that describes neither
+  half.** It is roughly right for the south and badly wrong for the north.
+- It also reframes the cheapest possible improvement: **putting even one modest tank on the
+  north branch** buys that half its own buffer. A 10,000 L tank is far cheaper than a pump, a
+  pipeline or a negotiation with a neighbour — and it converts the north side from
+  zero-autonomy to days.
+
+**Open questions:** how many bebederos hang off each branch, how many hectares and how many
+head each side normally carries, and whether the T can be valved to favour one side when
+supply is short. That last one is free and might be the difference between losing half the
+farm's water and losing none of it.
+
+📍 Marker pending Manuel's coordinate — it will render as a **square** (circles are reserved
+for tanks).
 
 ### The system in one picture
 
