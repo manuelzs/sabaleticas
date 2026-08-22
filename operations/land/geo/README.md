@@ -472,6 +472,28 @@ Worth noting the farm touches **three municipalities** — La Pintada, Santa Bá
 Fredonia (the whole western flank, across the Poblanco). Another reason to query the cadastre
 by matrícula rather than by municipality.
 
+### LOS BUHOS (010-4129, Fredonia) — closed, nothing to act on
+
+Manuel had heard the property once belonged to a narcotraficante and spent years tied up in
+legal trouble. **Searched and dropped** (2026-08-21):
+
+- Nothing in the Sociedad de Activos Especiales open datasets, the Rama Judicial process API,
+  or Fiscalía publications ties 010-4129 to extinción de dominio or state administration.
+- That is a **weak negative**. Colombia publishes embargo and extinción-de-dominio status
+  nowhere at parcel level — only the folio carries it — and extinción cases are indexed under
+  the *owner's* name, not the finca's.
+- The premise is real for the municipality though: El Espectador (Oct 2022) reports **Fredonia
+  holds 36.4 of Antioquia's 67.3 ha** of narco-derived land passed to the Fondo de Tierras.
+  No predio names given. `[press]`
+
+**Manuel closed it** `[owner, 2026-08-21]`: *"just gossip… the problem is 20 or 30 years old, so
+it might not be in any online records."* Which matches — a 1990s proceeding predates every
+database searched. His read of the orthophoto: the predio is **mostly forest, overgrown through
+the years it was in trouble, bought a couple of years ago, and now being cleared.**
+
+Not worth the 23.000 pesos for a certificado de tradición unless something on that boundary
+ever becomes contentious. Recorded so nobody researches it twice.
+
 **BELLAVISTA (023-20857) is the parcel holding the disputed northern tip.** Sampling 60–110 m
 north of our boundary across all 69 northern vertices returns Bellavista 112 times out of 138 —
 so the cadastre has actively drawn that line and placed the land beyond it, rather than leaving

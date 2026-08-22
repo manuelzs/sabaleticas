@@ -960,8 +960,21 @@ function init3d(){
   gl.enable(gl.DEPTH_TEST); gl.clearColor(0.05,0.07,0.08,1);
 
   /* second program: plain coloured lines, draped on the surface */
-  const lvs=`attribute vec3 p;uniform mat4 mvp;uniform float ex;uniform float lift;
-    void main(){gl_Position=mvp*vec4(p.x, p.y*ex+lift, p.z, 1.0);}`;
+  /* gl.lineWidth() is clamped to 1 px in Chrome, so every segment is expanded
+     into a quad here: both endpoints are projected, and the vertex is pushed
+     sideways along the screen-space normal by half the wanted width. */
+  const lvs=`attribute vec3 pa;attribute vec3 pb;attribute float side;attribute float endf;
+    uniform mat4 mvp;uniform float ex;uniform float lift;uniform vec2 res;uniform float w;
+    void main(){
+      vec4 ca=mvp*vec4(pa.x, pa.y*ex+lift, pa.z, 1.0);
+      vec4 cb=mvp*vec4(pb.x, pb.y*ex+lift, pb.z, 1.0);
+      vec4 c=mix(ca,cb,endf);
+      vec2 sa=ca.xy/ca.w*res, sb=cb.xy/cb.w*res;
+      vec2 d=sb-sa;
+      float l=length(d);
+      vec2 n=l>1e-6 ? vec2(-d.y,d.x)/l : vec2(0.0);
+      c.xy += n*side*w*c.w/res;
+      gl_Position=c;}`;
   const lfs=`precision mediump float;uniform vec3 col;
     void main(){gl_FragColor=vec4(col,1.0);}`;
   const lp=gl.createProgram();
@@ -983,13 +996,16 @@ function hex2rgb(h){
   const v=parseInt(h.slice(1),16);
   return [((v>>16)&255)/255, ((v>>8)&255)/255, (v&255)/255];
 }
-/* Walk a layer's geometry and emit GL_LINES segment pairs in mesh space. */
+/* Walk a layer's geometry and emit one quad (6 vertices) per segment, in mesh
+   space. Stride is 8 floats: start xyz, end xyz, which side, which endpoint. */
+const QUAD=[[-1,0],[1,0],[-1,1], [-1,1],[1,0],[1,1]];
 function drapeVerts(L,lo,hi,VS,AR){
   const out=[];
+  const seg=(a,b)=>{ for(const q of QUAD) out.push(a[0],a[1],a[2], b[0],b[1],b[2], q[0],q[1]); };
   const push=(ring,close)=>{
     const pr=ring.map(c=>geoTo3d(c[0],c[1],lo,hi,VS,AR));
-    for(let k=0;k<pr.length-1;k++) out.push(...pr[k],...pr[k+1]);
-    if(close&&pr.length>2) out.push(...pr[pr.length-1],...pr[0]);
+    for(let k=0;k<pr.length-1;k++) seg(pr[k],pr[k+1]);
+    if(close&&pr.length>2) seg(pr[pr.length-1],pr[0]);
   };
   for(const f of L.features){
     const t=f.t,c=f.c;
@@ -1005,22 +1021,27 @@ function draw3dLayers(){
   const {gl,lp,lbuf,lo,hi,VS,AR}=g3;
   gl.useProgram(lp);
   gl.bindBuffer(gl.ARRAY_BUFFER,lbuf);
-  const loc=gl.getAttribLocation(lp,'p');
-  gl.enableVertexAttribArray(loc);
-  gl.vertexAttribPointer(loc,3,gl.FLOAT,false,0,0);
+  const S=32;                                                // 8 floats per vertex
+  const at=['pa','pb','side','endf'].map((n,i)=>{
+    const a=gl.getAttribLocation(lp,n);
+    gl.enableVertexAttribArray(a);
+    gl.vertexAttribPointer(a, i<2?3:1, gl.FLOAT, false, S, [0,12,24,28][i]);
+    return a;});
   gl.uniformMatrix4fv(gl.getUniformLocation(lp,'mvp'),false,g3.mvp);
   gl.uniform1f(gl.getUniformLocation(lp,'ex'),exag);
   gl.uniform1f(gl.getUniformLocation(lp,'lift'),VS*0.012);   // clear of the surface
+  gl.uniform2f(gl.getUniformLocation(lp,'res'),c3.width*0.5,c3.height*0.5);
+  const wloc=gl.getUniformLocation(lp,'w');
   for(const L of D.layers){
     if(!L.on) continue;
     if(!L._v3) L._v3=drapeVerts(L,lo,hi,VS,AR);              // cached per layer
     if(!L._v3.length) continue;
     gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(L._v3),gl.DYNAMIC_DRAW);
     gl.uniform3fv(gl.getUniformLocation(lp,'col'),hex2rgb(L.colour));
-    gl.lineWidth(2);
-    gl.drawArrays(gl.LINES,0,L._v3.length/3);
+    gl.uniform1f(wloc, Math.max(1.6, L.width*1.5)*devicePixelRatio);
+    gl.drawArrays(gl.TRIANGLES,0,L._v3.length/8);
   }
-  if(loc!==g3.bpos.a && loc!==g3.buv.a) gl.disableVertexAttribArray(loc);
+  for(const a of at) if(a!==g3.bpos.a && a!==g3.buv.a) gl.disableVertexAttribArray(a);
   gl.useProgram(g3.pr);
 }
 function render3d(){
