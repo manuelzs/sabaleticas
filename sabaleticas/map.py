@@ -16,9 +16,8 @@ import base64
 import json
 from pathlib import Path
 
-# Geographic bounds of the orthophoto, matching the .jgw world files.
-BOUNDS = dict(minx=-75.620699, miny=5.791309, maxx=-75.600434, maxy=5.809376)
-
+# Farm identity and map extent live in farm.json, not here — one place to edit
+# when this is pointed at a different farm.
 GEO_REL = "../operations/land/geo"          # dashboard/ -> geo/, as the browser sees it
 
 # label, file (relative to geo/), kind, colour, width, fill
@@ -117,6 +116,28 @@ def _owners(geo: Path):
         return {}
 
 
+def _farm(root: Path, geo: Path):
+    """Farm identity for the page header.
+
+    Area and municipios are *derived from the cadastral boundary*, never typed, so
+    the header cannot drift out of step with the data the map draws. The farm has
+    two parcels under one matrícula, in two different municipalities.
+    """
+    cfg = json.loads((root / "farm.json").read_text(encoding="utf-8"))
+    feats = json.loads((geo / "boundary.geojson").read_text(encoding="utf-8")).get("features", [])
+    area = sum((f.get("properties") or {}).get("area_ha") or 0 for f in feats)
+    muni = []
+    for f in feats:
+        m = ((f.get("properties") or {}).get("municipio") or "").split(" (")[0].strip()
+        if m and m not in muni:
+            muni.append(m)
+    cfg["area_ha"] = round(area, 2)
+    cfg["municipios"] = muni
+    where = " y ".join(muni) if muni else cfg.get("departamento", "")
+    cfg["subtitle"] = f"{area:,.2f} ha · {where} · {cfg.get('departamento','')}".replace(",", " ")
+    return cfg
+
+
 def _collect(geo: Path):
     out = []
     owners = _owners(geo)
@@ -200,8 +221,10 @@ def build(root: Path) -> Path:
     tex = ("data:image/jpeg;base64," + base64.b64encode(tex_path.read_bytes()).decode()
            if tex_path.exists() else "")
 
+    farm = _farm(root, geo)
     payload = json.dumps({
-        "bounds": BOUNDS,
+        "farm": farm,
+        "bounds": farm["bounds"],
         "layers": _collect(geo),
         "dem": dem,
         "ortho": ortho,

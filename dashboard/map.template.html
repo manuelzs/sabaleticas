@@ -37,8 +37,8 @@
 <canvas id="cv3" style="display:none"></canvas>
 
 <div class="panel" id="side">
-  <h1>Hacienda Sabaleticas</h1>
-  <div class="sub">151.85 ha · La Pintada, Antioquia</div>
+  <h1 id="fname">—</h1>
+  <div class="sub" id="fsub">—</div>
   <div style="color:var(--muted);font-size:11px;margin:2px 0 3px;letter-spacing:.4px">FONDOS</div>
   <label style="gap:8px"><input type="checkbox" id="baseOn" checked>
     <span class="sw" style="background:#78909c"></span>Foto aérea</label>
@@ -120,6 +120,10 @@
 <script>
 const D = /*__DATA__*/;
 const B = D.bounds, cv = document.getElementById('cv'), cx = cv.getContext('2d');
+/* header comes from farm.json + the cadastral boundary — never hard-coded here */
+document.getElementById('fname').textContent = D.farm.name;
+document.getElementById('fsub').textContent  = D.farm.subtitle;
+document.title = D.farm.name + ' — visor';
 let W=0,H=0, view={x:0,y:0,s:1}, img=null, measuring=false, pts=[];
 
 /* ---- projection: plate carrée, matching the orthophoto's world file ---- */
