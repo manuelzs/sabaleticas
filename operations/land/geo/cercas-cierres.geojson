@@ -2304,6 +2304,222 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 24,
+    "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje. (tramo 1 de 9)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615794,
+      5.805212
+     ],
+     [
+      -75.615614,
+      5.80509
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 56,
+    "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje. (tramo 2 de 9)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615614,
+      5.80509
+     ],
+     [
+      -75.615149,
+      5.804894
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 22,
+    "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje. (tramo 3 de 9)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615149,
+      5.804894
+     ],
+     [
+      -75.615009,
+      5.804747
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 25,
+    "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje. (tramo 4 de 9)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615009,
+      5.804747
+     ],
+     [
+      -75.61492,
+      5.804543
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 30,
+    "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje. (tramo 5 de 9)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.61492,
+      5.804543
+     ],
+     [
+      -75.614763,
+      5.804321
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 38,
+    "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje. (tramo 6 de 9)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614763,
+      5.804321
+     ],
+     [
+      -75.614424,
+      5.804304
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 33,
+    "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje. (tramo 7 de 9)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614424,
+      5.804304
+     ],
+     [
+      -75.614165,
+      5.804454
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 23,
+    "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje. (tramo 8 de 9)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614165,
+      5.804454
+     ],
+     [
+      -75.613964,
+      5.804507
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 30,
+    "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje. (tramo 9 de 9)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.613964,
+      5.804507
+     ],
+     [
+      -75.613694,
+      5.804545
+     ]
+    ]
+   }
   }
  ]
 }

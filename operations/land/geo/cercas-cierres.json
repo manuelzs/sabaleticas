@@ -686,6 +686,52 @@
    ],
    "es_cerca": true,
    "motivo": "cerca real nueva por el drenaje 37 (tramos 9–15), 156.6 m. Al SUR corta el lindero en -75.616246,5.793950. Al NORTE NO arranca del vértice de Congo sino de donde muere la cerca del IGAC, 49,2 m más abajo: esa cerca ya une el vértice con este punto, y arrancar arriba ponía 66 m de cerca dictada encima de sus 49 m con 1,6° de diferencia — el atajo casi paralelo que impide cerrar caras. Al empezar aquí, la conexión con el vértice la sigue dando la cerca del IGAC y no hay línea repetida."
+  },
+  {
+   "polilinea": [
+    [
+     -75.615794,
+     5.805212
+    ],
+    [
+     -75.615614,
+     5.80509
+    ],
+    [
+     -75.615149,
+     5.804894
+    ],
+    [
+     -75.615009,
+     5.804747
+    ],
+    [
+     -75.61492,
+     5.804543
+    ],
+    [
+     -75.614763,
+     5.804321
+    ],
+    [
+     -75.614424,
+     5.804304
+    ],
+    [
+     -75.614165,
+     5.804454
+    ],
+    [
+     -75.613964,
+     5.804507
+    ],
+    [
+     -75.613694,
+     5.804545
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
