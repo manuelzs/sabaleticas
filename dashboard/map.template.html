@@ -114,6 +114,8 @@
   <div><b>altura</b> <span id="rele">—</span></div>
   <div id="rcurw" style="display:none"><b>curva</b> <span id="rcur">—</span></div>
   <div><b>pendiente</b> <span id="rslp">—</span></div>
+  <div style="margin-top:5px;opacity:.75;font-size:11px">
+    <b>C</b> captura el punto · <b><span id="rcapn">0</span></b> capturados · <b>X</b> borra</div>
 </div>
 
 <div id="scale"><div id="sbar" style="width:100px"></div><span id="slab">—</span></div>
@@ -125,6 +127,7 @@ const B = D.bounds, cv = document.getElementById('cv'), cx = cv.getContext('2d')
 document.getElementById('fname').textContent = D.farm.name;
 document.getElementById('fsub').textContent  = D.farm.subtitle;
 document.title = D.farm.name + ' — visor';
+addEventListener('load',()=>capSave());
 let W=0,H=0, view={x:0,y:0,s:1}, img=null, measuring=false, pts=[];
 
 /* ---- projection: plate carrée, matching the orthophoto's world file ---- */
@@ -218,6 +221,20 @@ function drawGeom(g,kind,fill){
   const lines = t==='MultiLineString'?c : t==='LineString'?[c] : [];
   for(const line of lines){ ringPath(line); cx.stroke(); }
 }
+/* ---- point capture: bank cursor positions instead of screenshotting them ---- */
+let lastG=null, captured=[];
+try{ captured=JSON.parse(localStorage.getItem('sab_captured')||'[]'); }catch(e){ captured=[]; }
+function capSave(){
+  try{ localStorage.setItem('sab_captured',JSON.stringify(captured)); }catch(e){}
+  const el=document.getElementById('rcapn'); if(el) el.textContent=captured.length;
+}
+addEventListener('keydown',e=>{
+  if(e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName||'')) return;
+  const k=(e.key||'').toLowerCase();
+  if(k==='c' && lastG){ captured.push(Object.assign({n:captured.length+1},lastG)); capSave(); }
+  else if(k==='x'){ captured=[]; capSave(); }
+});
+
 /* ---- hover highlight: light up the contour nearest the cursor ---- */
 let hoverC=null;                       // {L,f} of the contour under the pointer
 const HOVER_PX=12;                     // how close the cursor has to get
@@ -464,6 +481,8 @@ addEventListener('mousemove',e=>{
   document.getElementById('rlon').textContent=g[0].toFixed(6);
   document.getElementById('rele').textContent = z?z.toFixed(0)+' m':'sin dato';
   const sl=slopeAt(g[0],g[1]);
+  lastG={lon:+g[0].toFixed(6), lat:+g[1].toFixed(6),
+         elev_m: z!=null?+z.toFixed(0):null, slope_deg: sl?+sl.deg.toFixed(1):null};
   document.getElementById('rslp').textContent =
     sl ? `${sl.deg.toFixed(1)}° (${sl.pct.toFixed(0)} %)` : 'sin dato';
   if(!is3d){
