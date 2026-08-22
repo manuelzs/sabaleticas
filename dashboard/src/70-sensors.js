@@ -50,48 +50,46 @@ function cardReading(r){
     ${r.nota?`<div class="meta">${r.nota}</div>`:''}
   </div>`;
 }
-function cardSource(f){
+/* Two periods wide so it can slide one period and repeat seamlessly. */
+function sparkPath(live){
+  const pts=[];
+  for(let x=0;x<=132;x+=3){
+    const y = live ? 11 - 6.5*Math.sin(x/66*Math.PI*2) : 11;
+    pts.push(`${x},${y.toFixed(1)}`);
+  }
+  return 'M'+pts.join(' L');
+}
+function spark(live){
+  return `<svg class="spark${live?' live':''}" viewBox="0 0 66 22" preserveAspectRatio="none">
+    <path d="${sparkPath(live)}"/></svg>`;
+}
+/* A source is "flowing" if something it produced arrived recently — not merely if we
+   have declared it online. Manual transcription counts: data is data. */
+function sourceLive(f){
+  const R=Object.values(D.readings||{});
+  return R.some(r=>r.fuente===f.id && readingAge(r.ts).hours < 48);
+}
+function rowSource(f){
   const [col,label]=SRC_STATE[f.estado]||['#78909c',f.estado||'?'];
-  const ghost=f.estado==='planificado'||f.estado==='por_investigar';
+  const live=sourceLive(f);
   const canales=(f.canales||[]).map(c=>c.magnitud).join(' · ')||'—';
   const pend=(Array.isArray(f.pendiente)?f.pendiente:f.pendiente?[f.pendiente]:[]);
-  return `<div class="card${ghost?' ghost':''}" style="--acc:${col}">
-    <div class="top"><span class="dot"></span>${label}</div>
-    <div class="big" style="font-size:19px">${canales}</div>
-    <div class="mag">${f.origen==='manual'?'anotación humana':(f.transporte||'—')}</div>
-    <div class="ent">${f.nombre}</div>
-    <div class="meta">${f.entidad?entityName(f.entidad):'cualquier entidad'}</div>
-    ${f.por_que_importa?`<div class="why">${f.por_que_importa}</div>`:''}
-    ${pend.length?`<div class="why"><ul>${pend.map(p=>`<li>${p}</li>`).join('')}</ul></div>`:''}
-  </div>`;
-}
-
-/* Everything we have decided to measure but have not measured yet. Derived from the
-   sources — no placeholder rows in readings.csv, because a reading with no value is not
-   a reading. These are slots, and they say plainly what would fill them. */
-function pendingSlots(){
-  const R=D.readings||{}, out=[];
-  for(const f of (D.sources&&D.sources.fuentes)||[]){
-    if(!f.entidad) continue;
-    for(const c of f.canales||[]){
-      const mag=c.magnitud;
-      if(R[f.entidad+'|'+mag]) continue;
-      if(out.some(o=>o.entidad===f.entidad && o.magnitud===mag)) continue;
-      out.push({entidad:f.entidad, magnitud:mag, unidad:c.unidad||'',
-                fuente:f.nombre, estado:f.estado});
-    }
-  }
-  return out;
-}
-function cardPending(p){
-  const cap=(D.net&&D.net.nodes||[]).find(n=>n.id===p.entidad);
-  const lit=cap&&cap.capacidad_l ? cap.capacidad_l.toLocaleString('es-CO')+' L' : '';
-  return `<div class="card ghost" style="--acc:#78909c">
-    <div class="top"><span class="dot"></span>esperando primera lectura</div>
-    <div class="big">—<small>${p.unidad}</small></div>
-    <div class="mag">${p.magnitud}</div>
-    <div class="ent">${entityName(p.entidad)}</div>
-    <div class="meta">${lit?lit+' · ':''}${p.fuente}</div>
+  return `<div class="row" style="--acc:${col}">
+    <div class="main">
+      <div class="nm">${f.nombre}</div>
+      ${f.por_que_importa?`<div class="why">${f.por_que_importa}</div>`:''}
+      ${pend.length?`<div class="why"><ul>${pend.map(p=>`<li>${p}</li>`).join('')}</ul></div>`:''}
+    </div>
+    <div class="side">
+      <div class="col"><div class="k">canales</div><div class="v">${canales}</div></div>
+      <div class="col"><div class="k">entidad</div>
+        <div class="v">${f.entidad?entityName(f.entidad):'cualquiera'}</div></div>
+      <div class="col narrow"><div class="k">origen</div>
+        <div class="v">${f.origen==='manual'?'✍︎ manual':'⚙ automático'}</div></div>
+      <div class="col narrow"><div class="k">estado</div>
+        <div class="v"><span class="pill" style="background:${col}22;color:${col}">${label}</span></div></div>
+      ${spark(live)}
+    </div>
   </div>`;
 }
 
@@ -109,5 +107,5 @@ function renderFuentes(){
   const live=S.filter(f=>f.estado==='en_linea').length;
   document.getElementById('pageInner').innerHTML=`
     <div class="sect"><h2>Fuentes</h2><span class="n">${live} de ${S.length} en línea</span></div>
-    <div class="cards">${S.map(cardSource).join('')}</div>`;
+    <div class="rows">${S.map(rowSource).join('')}</div>`;
 }
