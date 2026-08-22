@@ -23,16 +23,16 @@
    "properties": {
     "tipo": "tanque",
     "nombre": "Tanque principal 1 (~50.000 L)",
-    "altura_m": 813,
+    "altura_m": 811,
     "capacidad_l": 50000,
-    "confianza": "posición: media · capacidad: baja",
-    "fuente": "[owner, unverified] capacidad y conteo de memoria. Posición aproximada: junto a la casa de la entrada."
+    "confianza": "posición: alta · capacidad: baja",
+    "fuente": "[owner] coordenada exacta dada por Manuel 2026-08-21 desde el visor. Capacidad ~50.000 L = estimación de memoria."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.60239,
-     5.79529
+     -75.602603,
+     5.795199
     ]
    }
   },
@@ -41,16 +41,16 @@
    "properties": {
     "tipo": "tanque",
     "nombre": "Tanque principal 2 (~20.000 L)",
-    "altura_m": 813,
+    "altura_m": 811,
     "capacidad_l": 20000,
-    "confianza": "posición: media · capacidad: baja",
-    "fuente": "[owner, unverified] capacidad y conteo de memoria. Posición aproximada: junto a la casa de la entrada."
+    "confianza": "posición del conjunto: alta · posición individual: sin confirmar · capacidad: baja",
+    "fuente": "[owner] Manuel confirmó UNA coordenada para el conjunto de tanques altos (5.795199, -75.602603). Este marcador se dibuja ~10 m al oeste SOLO para que los dos no se superpongan — no es una posición medida."
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.6025,
-     5.79534
+     -75.602693,
+     5.795199
     ]
    }
   },
@@ -368,7 +368,7 @@
    "properties": {
     "tipo": "tuberia",
     "nombre": "Tanques altos → rompecargas (INDICATIVA)",
-    "desnivel_m": 15,
+    "desnivel_m": 13,
     "confianza": "solo los extremos son reales; el trazado es esquemático",
     "fuente": "Une puntos confirmados por Manuel. Se reemplaza con el levantamiento de tubería."
    },
@@ -376,8 +376,8 @@
     "type": "LineString",
     "coordinates": [
      [
-      -75.60244,
-      5.79531
+      -75.602603,
+      5.795199
      ],
      [
       -75.606162,

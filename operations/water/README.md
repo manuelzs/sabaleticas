@@ -294,7 +294,7 @@ The confirmed profile, now that every point has a real coordinate:
 
 | | Elevation | |
 |---|---|---|
-| Tanques altos (entrada) | **813 m** | |
+| Tanques altos (entrada) | **811 m** | 5.795199, −75.602603 |
 | **Tanque rompecargas** | **798 m** | 5.797126, −75.606162 |
 | **Represa (el lago)** | **778 m** | 5.796346, −75.605185 |
 | Tanques intermedios | **762 m** | 5.797095, −75.609996 |
@@ -462,7 +462,7 @@ surface of **0.56 ha (5,647 m²)** `[IGAC 1:5000]`. Set against the rest of the 
 
 | | Elevation | Relative to the lake |
 |---|---|---|
-| Top tanks | 813 m | 35 m **above** — a pump would be needed |
+| Top tanks | 811 m | 33 m **above** — a pump would be needed |
 | **Mid tanks** | **762 m** | **16 m BELOW the lake** |
 | Main house | 705 m | 73 m below |
 | Lowest ground | 627 m | 151 m below |
@@ -529,12 +529,12 @@ for tanks).
   2 bocatomas on 2 quebradas          ← the only inflow, both surface water
             │
             ▼
-  TOP TANKS · entrance · 813 m        50,000 L main + 20,000 L reserve
+  TOP TANKS · entrance · 811 m        50,000 L main + 20,000 L reserve
   (manual switchover)                 = 70,000 L
             │
             ▼
   MID TANKS · 5.797095,-75.609996     3 × ~20,000 L = ~60,000 L
-             762 m                    ← 51 m below the top tanks, 860 m away
+             762 m                    ← 49 m below the top tanks, 860 m away
             │
       ┌─────┴─────┐
       ▼           ▼
@@ -550,13 +550,13 @@ described the mid cluster. That is the single biggest correction here, and it is
 
 | Leg | Drop | Distance | Static pressure |
 |---|---|---|---|
-| Top tanks (813 m) → mid tanks (762 m) | **51 m** | ~860 m | ~5.0 bar |
+| Top tanks (811 m) → mid tanks (762 m) | **49 m** | ~860 m | ~4.8 bar |
 | Mid tanks (762 m) → main house (705 m) | **57 m** | ~694 m | ~5.6 bar |
 | Mid tanks → lowest ground on the farm (627 m) | 135 m | — | ~13.2 bar |
 
 **Both working legs sit around 5–6 bar** — comfortably inside ordinary pipe rating, and
 gravity-fed throughout. That is a much healthier picture than the single-stage assumption
-this document started with, where the house appeared to hang off 108 m of head at ~10.6 bar.
+this document started with, where the house appeared to hang off 106 m of head at ~10.4 bar.
 
 **The two tanks in series are doing real work**: the mid cluster acts as a break-pressure
 stage as well as storage, splitting one punishing drop into two mild ones. Whoever designed
@@ -583,10 +583,10 @@ The terrain backs the shape of this exactly, which raises confidence in the rest
 
 Head converts to pressure at roughly **1 bar per 10.2 m** of water column. So:
 
-| From the tanks (813 m) to… | Drop | Static pressure |
+| From the tanks (811 m) to… | Drop | Static pressure |
 |---|---|---|
-| The big house (705 m) | **108 m** | **~10.6 bar** |
-| The lowest ground (627 m) | **186 m** | **~18 bar** |
+| The big house (705 m) | **106 m** | **~10.4 bar** |
+| The lowest ground (627 m) | **184 m** | **~18 bar** |
 
 Common pressure-pipe classes sit in the region of 10–14 bar _(needs confirming against what
 is actually installed — `[unsourced]`)_. If that is right, **the lower reaches of this system

@@ -478,7 +478,8 @@ D.layers.forEach((L,i)=>{
     `<label><input type="checkbox" id="${id}" ${L.on?'checked':''}>
      <span class="sw" style="background:${L.colour}"></span>${L.name}</label>`);
   setTimeout(()=>document.getElementById(id).onchange=e=>{
-    L.on=e.target.checked; saveLayers(); draw();});
+    L.on=e.target.checked; saveLayers();
+    if(is3d) render3d(); else draw();});
 });
 
 addEventListener('resize',resize);
@@ -940,8 +941,9 @@ function init3d(){
   function buf(data,loc,n){const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);
     gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(data),gl.STATIC_DRAW);
     const a=gl.getAttribLocation(pr,loc);gl.enableVertexAttribArray(a);
-    gl.vertexAttribPointer(a,n,gl.FLOAT,false,0,0);}
-  buf(pos,'p',3); buf(uv,'t',2);
+    gl.vertexAttribPointer(a,n,gl.FLOAT,false,0,0);
+    return {b,a,n};}
+  const bpos=buf(pos,'p',3), buv=buf(uv,'t',2);
   const ib=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);
   gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint32Array(idx),gl.STATIC_DRAW);
   const ext=gl.getExtension('OES_element_index_uint');
@@ -956,11 +958,80 @@ function init3d(){
     render3d();};
   im.src=D.tex;
   gl.enable(gl.DEPTH_TEST); gl.clearColor(0.05,0.07,0.08,1);
-  return {gl,pr,n:idx.length,ext,lo,hi,VS,AR};
+
+  /* second program: plain coloured lines, draped on the surface */
+  const lvs=`attribute vec3 p;uniform mat4 mvp;uniform float ex;uniform float lift;
+    void main(){gl_Position=mvp*vec4(p.x, p.y*ex+lift, p.z, 1.0);}`;
+  const lfs=`precision mediump float;uniform vec3 col;
+    void main(){gl_FragColor=vec4(col,1.0);}`;
+  const lp=gl.createProgram();
+  gl.attachShader(lp,sh(gl.VERTEX_SHADER,lvs));
+  gl.attachShader(lp,sh(gl.FRAGMENT_SHADER,lfs));
+  gl.linkProgram(lp);
+  const lbuf=gl.createBuffer();
+  return {gl,pr,n:idx.length,ext,lo,hi,VS,AR,lp,lbuf,bpos,buv};
+}
+
+/* Convert a lon/lat to the 3D mesh's normalised space, sampling the terrain for height. */
+function geoTo3d(lon,lat,lo,hi,VS,AR){
+  const fx=(lon-B.minx)/(B.maxx-B.minx), fy=(lat-B.miny)/(B.maxy-B.miny);
+  let z=elev(lon,lat);
+  if(z==null) z=lo;
+  return [fx-0.5, ((z-lo)/(hi-lo))*VS, (0.5-fy)*AR];
+}
+function hex2rgb(h){
+  const v=parseInt(h.slice(1),16);
+  return [((v>>16)&255)/255, ((v>>8)&255)/255, (v&255)/255];
+}
+/* Walk a layer's geometry and emit GL_LINES segment pairs in mesh space. */
+function drapeVerts(L,lo,hi,VS,AR){
+  const out=[];
+  const push=(ring,close)=>{
+    const pr=ring.map(c=>geoTo3d(c[0],c[1],lo,hi,VS,AR));
+    for(let k=0;k<pr.length-1;k++) out.push(...pr[k],...pr[k+1]);
+    if(close&&pr.length>2) out.push(...pr[pr.length-1],...pr[0]);
+  };
+  for(const f of L.features){
+    const t=f.t,c=f.c;
+    if(t==='Polygon')            c.forEach(r=>push(r,true));
+    else if(t==='MultiPolygon')  c.forEach(p=>p.forEach(r=>push(r,true)));
+    else if(t==='LineString')    push(c,false);
+    else if(t==='MultiLineString') c.forEach(l=>push(l,false));
+  }
+  return out;
+}
+function draw3dLayers(){
+  if(!g3) return;
+  const {gl,lp,lbuf,lo,hi,VS,AR}=g3;
+  gl.useProgram(lp);
+  gl.bindBuffer(gl.ARRAY_BUFFER,lbuf);
+  const loc=gl.getAttribLocation(lp,'p');
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc,3,gl.FLOAT,false,0,0);
+  gl.uniformMatrix4fv(gl.getUniformLocation(lp,'mvp'),false,g3.mvp);
+  gl.uniform1f(gl.getUniformLocation(lp,'ex'),exag);
+  gl.uniform1f(gl.getUniformLocation(lp,'lift'),VS*0.012);   // clear of the surface
+  for(const L of D.layers){
+    if(!L.on) continue;
+    if(!L._v3) L._v3=drapeVerts(L,lo,hi,VS,AR);              // cached per layer
+    if(!L._v3.length) continue;
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(L._v3),gl.DYNAMIC_DRAW);
+    gl.uniform3fv(gl.getUniformLocation(lp,'col'),hex2rgb(L.colour));
+    gl.lineWidth(2);
+    gl.drawArrays(gl.LINES,0,L._v3.length/3);
+  }
+  if(loc!==g3.bpos.a && loc!==g3.buv.a) gl.disableVertexAttribArray(loc);
+  gl.useProgram(g3.pr);
 }
 function render3d(){
   if(!g3) return;
-  const {gl,pr,n}=g3;
+  const {gl,pr,n,bpos,buv}=g3;
+  gl.useProgram(pr);
+  for(const v of [bpos,buv]){                 // attrib state is global, not per-program
+    gl.bindBuffer(gl.ARRAY_BUFFER,v.b);
+    gl.enableVertexAttribArray(v.a);
+    gl.vertexAttribPointer(v.a,v.n,gl.FLOAT,false,0,0);
+  }
   c3.width=W*devicePixelRatio; c3.height=H*devicePixelRatio;
   c3.style.width=W+'px'; c3.style.height=H+'px';
   gl.viewport(0,0,c3.width,c3.height);
@@ -968,9 +1039,11 @@ function render3d(){
   const e=[Math.cos(cam.el)*Math.sin(cam.az)*cam.d, Math.sin(cam.el)*cam.d,
            Math.cos(cam.el)*Math.cos(cam.az)*cam.d];
   const mvp=mul(persp(0.9,W/H,0.01,20), look(e,[0,0.03,0],[0,1,0]));
+  g3.mvp=mvp;
   gl.uniformMatrix4fv(gl.getUniformLocation(pr,'mvp'),false,mvp);
   gl.uniform1f(gl.getUniformLocation(pr,'ex'),exag);
   gl.drawElements(gl.TRIANGLES,n,gl.UNSIGNED_INT,0);
+  draw3dLayers();
 }
 function set3d(on){
   is3d=on;
