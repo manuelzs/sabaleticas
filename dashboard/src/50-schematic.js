@@ -48,45 +48,48 @@ function pidTank(x,y,n,col,k){
   }
   return {hx:w/2, hy:h/2};
 }
+/* Symbol and size come from the entity-type registry, so a type looks the same
+   everywhere and changing it is one line in dashboard/entity-types.json. */
+function tipoDef(t){ return (D.tipos&&D.tipos[t]) || {esquema:'dot', ancho:0.72, color:'#90a4ae'}; }
+
 function pidSymbol(x,y,n,col,k){
-  const t=n.tipo, r=9*k;
-  if(t==='tanque') return pidTank(x,y,n,col,k);
+  const def=tipoDef(n.tipo), r=9*k;
+  if(def.esquema==='tank') return pidTank(x,y,n,col,k);
   cxp.beginPath();
-  if(t==='rompecargas'){ cxp.rect(x-r*1.6,y-r*1.1,r*3.2,r*2.2); }
-  else if(t==='bebedero'){ cxp.moveTo(x-r*1.3,y-r*0.8); cxp.lineTo(x+r*1.3,y-r*0.8);
-                           cxp.lineTo(x+r*0.8,y+r*0.8); cxp.lineTo(x-r*0.8,y+r*0.8); cxp.closePath(); }
-  else if(t==='casa'){ cxp.moveTo(x-r,y+r); cxp.lineTo(x-r,y-r*0.2); cxp.lineTo(x,y-r*1.3);
-                       cxp.lineTo(x+r,y-r*0.2); cxp.lineTo(x+r,y+r); cxp.closePath(); }
-  else if(t==='represa'){ cxp.ellipse(x,y,r*2.1,r*1.1,0,0,7); }
-  else if(t==='bocatoma'){ cxp.moveTo(x,y-r*1.2); cxp.lineTo(x+r*1.2,y+r*0.8);
-                           cxp.lineTo(x-r*1.2,y+r*0.8); cxp.closePath(); }
-  else if(t==='ventosa'){ const w=r*0.42;
-      cxp.moveTo(x,y-r*1.4); cxp.lineTo(x+r,y-r*0.1); cxp.lineTo(x+w,y-r*0.1);
-      cxp.lineTo(x+w,y+r); cxp.lineTo(x-w,y+r); cxp.lineTo(x-w,y-r*0.1);
-      cxp.lineTo(x-r,y-r*0.1); cxp.closePath(); }
-  else if(t==='valvula'){ cxp.moveTo(x-r,y-r*0.8); cxp.lineTo(x,y); cxp.lineTo(x-r,y+r*0.8);
-      cxp.closePath(); cxp.moveTo(x+r,y-r*0.8); cxp.lineTo(x,y); cxp.lineTo(x+r,y+r*0.8);
-      cxp.closePath(); }
-  else { cxp.arc(x,y,r*0.72,0,7); }
-  cxp.fillStyle = (t==='derivacion') ? col : 'rgba(8,12,16,.95)';
+  switch(def.esquema){
+    case 'chamber': cxp.rect(x-r*1.6,y-r*1.1,r*3.2,r*2.2); break;
+    case 'trough':  cxp.moveTo(x-r*1.3,y-r*0.8); cxp.lineTo(x+r*1.3,y-r*0.8);
+                    cxp.lineTo(x+r*0.8,y+r*0.8); cxp.lineTo(x-r*0.8,y+r*0.8); cxp.closePath(); break;
+    case 'house':   cxp.moveTo(x-r,y+r); cxp.lineTo(x-r,y-r*0.2); cxp.lineTo(x,y-r*1.3);
+                    cxp.lineTo(x+r,y-r*0.2); cxp.lineTo(x+r,y+r); cxp.closePath(); break;
+    case 'pond':    cxp.ellipse(x,y,r*2.1,r*1.1,0,0,7); break;
+    case 'intake':  cxp.moveTo(x,y-r*1.2); cxp.lineTo(x+r*1.2,y+r*0.8);
+                    cxp.lineTo(x-r*1.2,y+r*0.8); cxp.closePath(); break;
+    case 'vent':  { const w=r*0.42;
+                    cxp.moveTo(x,y-r*1.4); cxp.lineTo(x+r,y-r*0.1); cxp.lineTo(x+w,y-r*0.1);
+                    cxp.lineTo(x+w,y+r); cxp.lineTo(x-w,y+r); cxp.lineTo(x-w,y-r*0.1);
+                    cxp.lineTo(x-r,y-r*0.1); cxp.closePath(); break; }
+    case 'valve':   cxp.moveTo(x-r,y-r*0.8); cxp.lineTo(x,y); cxp.lineTo(x-r,y+r*0.8);
+                    cxp.closePath(); cxp.moveTo(x+r,y-r*0.8); cxp.lineTo(x,y);
+                    cxp.lineTo(x+r,y+r*0.8); cxp.closePath(); break;
+    default:        cxp.arc(x,y,r*0.72,0,7);
+  }
+  cxp.fillStyle = def.esquema==='dot' ? col : 'rgba(8,12,16,.95)';
   cxp.fill();
-  if(n.cota_nominal){ cxp.setLineDash([4,3]); }            // placed by inference, not measured
+  if(n.cota_nominal) cxp.setLineDash([4,3]);            // placed by inference, not measured
   cxp.strokeStyle=col; cxp.lineWidth=2*Math.min(1.6,k); cxp.stroke(); cxp.setLineDash([]);
-  const W_={rompecargas:1.6, bebedero:1.3, represa:2.1, bocatoma:1.2, casa:1.0,
-            ventosa:1.0, valvula:1.0}[t] || 0.72;
-  return {hx:r*W_, hy:r*1.3};
+  return {hx:r*(def.ancho||0.72), hy:r*1.3};
 }
 
-/* Symbol size without drawing it — edges must be routed before nodes are painted. */
+/* Same registry, so the router's idea of a symbol's size can never drift from the
+   symbol actually drawn. This table used to exist twice in this file. */
 function symExtent(n,k){
-  const r=9*k;
-  if(n.tipo==='tanque'){
+  const def=tipoDef(n.tipo), r=9*k;
+  if(def.esquema==='tank'){
     const units=n.unidades&&n.unidades.length||1;
     return {hx:Math.max(46,22*units)*k/2, hy:34*k/2};
   }
-  const W_={rompecargas:1.6, bebedero:1.3, represa:2.1, bocatoma:1.2, casa:1.0,
-            ventosa:1.0, valvula:1.0}[n.tipo] || 0.72;
-  return {hx:r*W_, hy:r*1.3};
+  return {hx:r*(def.ancho||0.72), hy:r*1.3};
 }
 
 /* ---- edge routing -------------------------------------------------------
@@ -199,7 +202,7 @@ function drawPid(){
   const hits=(a)=>boxes.some(b=>!(a.x1<b.x0||a.x0>b.x1||a.y1<b.y0||a.y0>b.y1));
   for(const n of pidNodes()){
     const [x,y]=pidXY(n);
-    const col=(D.tipoColour||{})[n.tipo]||'#90a4ae';
+    const col=tipoDef(n.tipo).color||'#90a4ae';
     const S=pidSymbol(x,y,n,col,k);
     const lines=[(n.nombre||n.id).replace(/\s*\(.*?\)\s*/g,' ').trim()];
     const sub=[ n.cota_m!=null ? n.cota_m+' m' : (n.cota_nominal?'cota ?':''),
@@ -254,10 +257,10 @@ function setPid(on){
   cvp.style.display = on ? 'block' : 'none';
   document.getElementById('btnPid').classList.toggle('on',on);
   document.getElementById('btn3d').style.display = on ? 'none' : 'inline-block';
-  for(const id of ['side','read','scale']) document.getElementById(id).style.display = on?'none':'';
-  for(const id of ['btnMeasure','btnClear','btnReset'])
-    { const b=document.getElementById(id); if(b) b.style.display = on?'none':''; }
-  const h=document.getElementById('mout'); if(h) h.style.display = on?'none':'';
+  // the schematic has no geography: layers, cursor, scale and the measure tools mean
+  // nothing here, and an empty tools panel is worse than none
+  for(const id of ['side','read','scale','tools'])
+    { const el=document.getElementById(id); if(el) el.style.display = on?'none':''; }
   if(on) drawPid(); else draw();
 }
 if(D.net && D.net.nodes && D.net.nodes.some(n=>n.pid)){

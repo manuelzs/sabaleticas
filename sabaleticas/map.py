@@ -100,22 +100,11 @@ def _round_geom(coords, dp=6):
     return coords
 
 
-# Per-feature symbology inside a layer, keyed on the `tipo` property. Without this every
-# point in a layer renders identically — which had a casa reading as a tanque.
-TIPO_COLOUR = {
-    "tanque": "#00e5ff", "nacimiento": "#7cffcb", "bebedero": "#4dd0e1",
-    "represa": "#0091ea", "rompecargas": "#ffd54f", "bocatoma": "#26c6da", "tuberia": "#b388ff",
-    "casa": "#ff8a65", "potrero": "#ffee58", "ruta_candidata": "#00e676",
-    "derivacion": "#ff9100", "valvula": "#ffab40", "ventosa": "#b2ff59",
-}
-
-# Marker shape by type. Circles are reserved for tanks and the reservoir.
-TIPO_SHAPE = {
-    "tanque": "circle", "represa": "circle",
-    "derivacion": "square", "valvula": "square", "rompecargas": "square",
-    "nacimiento": "triangle", "bocatoma": "triangle",
-    "bebedero": "diamond", "casa": "house", "ventosa": "vent",
-}
+# Per-feature symbology comes from the single entity-type registry, so changing an
+# icon is one line in dashboard/entity-types.json rather than five files.
+def _types(dash: Path):
+    f = dash / "entity-types.json"
+    return json.loads(f.read_text(encoding="utf-8"))["tipos"] if f.exists() else {}
 
 
 def _owners(geo: Path):
@@ -203,7 +192,7 @@ def _movements(path: Path):
         return [{k: (v or "") for k, v in r.items()} for r in csv.DictReader(f)]
 
 
-def _collect(geo: Path):
+def _collect(geo: Path, TIPOS):
     out = []
     owners = _owners(geo)
     for name, rel, kind, colour, width, fill in LAYERS:
@@ -235,9 +224,9 @@ def _collect(geo: Path):
             if props.get("estilo") == "discontinuo":   # unconfirmed connection
                 item["dash"] = [9, 7]
             tipo = props.get("tipo")
-            if tipo in TIPO_COLOUR:
-                item["col"] = TIPO_COLOUR[tipo]
-                item["shp"] = TIPO_SHAPE.get(tipo, "circle")
+            if tipo in TIPOS:
+                item["col"] = TIPOS[tipo]["color"]
+                item["shp"] = TIPOS[tipo].get("mapa", "circle")
                 item["l"] = str(props.get("nombre") or label)[:60]
             feats.append(item)
         if feats:
@@ -297,6 +286,7 @@ def build(root: Path) -> Path:
     tex = ("data:image/jpeg;base64," + base64.b64encode(tex_path.read_bytes()).decode()
            if tex_path.exists() else "")
 
+    tipos = _types(dash)
     farm = _farm(root, geo)
     net = json.loads((geo / "water-network.json").read_text(encoding="utf-8")) \
         if (geo / "water-network.json").exists() else None
@@ -319,10 +309,9 @@ def build(root: Path) -> Path:
         "series": series,                 # the whole history, for trends
         "herd": herd,                     # SINIGAN inventory snapshot
         "movements": movements,           # GSMI movement guides
-        "tipoColour": TIPO_COLOUR,
-        "tipoShape": TIPO_SHAPE,
+        "tipos": tipos,                   # the single entity-type registry
         "bounds": farm["bounds"],
-        "layers": _collect(geo),
+        "layers": _collect(geo, tipos),
         "dem": dem,
         "ortho": ortho,
         "mesh": _mesh(dem) if dem else None,

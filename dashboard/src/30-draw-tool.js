@@ -2,10 +2,9 @@
    UI hidden by default; set DRAW_UI = true to expose the controls again. */
 const DRAW_UI=false;
 if(DRAW_UI) document.getElementById('drawUI').style.display='block';
-const GEOM={tanque:'point',nacimiento:'point',bebedero:'point',
-            represa:'polygon',tuberia:'line',potrero:'polygon',otro:'line'};
-const DCOL={tanque:'#00e5ff',nacimiento:'#7cffcb',bebedero:'#4dd0e1',represa:'#0091ea',
-            tuberia:'#b388ff',potrero:'#ffee58',otro:'#b39ddb'};
+/* geometry and colour per type come from the registry, not a second copy here */
+const GEOM=Object.fromEntries(Object.entries(D.tipos||{}).map(([k,v])=>[k,v.geom||'point']));
+const DCOL=Object.fromEntries(Object.entries(D.tipos||{}).map(([k,v])=>[k,v.color]));
 let drawn=[], draft=null, drawing=false;
 try{ drawn=JSON.parse(localStorage.getItem('sab_drawn')||'[]'); }catch(e){ drawn=[]; }
 const save=()=>{ try{localStorage.setItem('sab_drawn',JSON.stringify(drawn));}catch(e){} };

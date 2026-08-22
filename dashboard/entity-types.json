@@ -1,0 +1,28 @@
+{
+ "_nota": "Registro ÚNICO de tipos de entidad. Antes esto vivía repartido en cinco sitios — sabaleticas/map.py, 30-draw-tool.js y dos tablas duplicadas dentro de 50-schematic.js — así que cambiar el icono de una T obligaba a tocar todas. Ahora se cambia aquí y cambia en todas partes.",
+ "_campos": {
+  "label": "nombre legible del tipo",
+  "color": "color en mapa y esquema",
+  "mapa": "forma del marcador en el mapa 2D: circle · square · triangle · diamond · house · vent",
+  "esquema": "símbolo en el P&ID: tank · chamber · trough · house · pond · intake · vent · valve · dot",
+  "ancho": "semiancho del símbolo en el esquema, múltiplo del radio base",
+  "geom": "geometría por defecto al dibujar: point · line · polygon",
+  "atributos": "qué lleva este tipo — lo leerán las tablas y los formularios cuando existan"
+ },
+ "tipos": {
+  "tanque":      {"label":"Tanque",       "color":"#00e5ff","mapa":"circle",  "esquema":"tank",   "ancho":1.0,  "geom":"point",  "atributos":["capacidad_l","nivel"]},
+  "represa":     {"label":"Represa",      "color":"#0091ea","mapa":"circle",  "esquema":"pond",   "ancho":2.1,  "geom":"polygon","atributos":["area_m2","profundidad_m","nivel"]},
+  "rompecargas": {"label":"Rompecargas",  "color":"#ffd54f","mapa":"square",  "esquema":"chamber","ancho":1.6,  "geom":"point",  "atributos":["capacidad_l","nivel"]},
+  "derivacion":  {"label":"T / derivación","color":"#ff9100","mapa":"square", "esquema":"dot",    "ancho":0.72, "geom":"point",  "atributos":["valvula"]},
+  "valvula":     {"label":"Válvula",      "color":"#ffab40","mapa":"square",  "esquema":"valve",  "ancho":1.0,  "geom":"point",  "atributos":["estado"]},
+  "ventosa":     {"label":"Ventosa",      "color":"#b2ff59","mapa":"vent",    "esquema":"vent",   "ancho":1.0,  "geom":"point",  "atributos":[]},
+  "bebedero":    {"label":"Bebedero",     "color":"#4dd0e1","mapa":"diamond", "esquema":"trough", "ancho":1.3,  "geom":"point",  "atributos":["potrero"]},
+  "bocatoma":    {"label":"Bocatoma",     "color":"#26c6da","mapa":"triangle","esquema":"intake", "ancho":1.2,  "geom":"point",  "atributos":["quebrada","caudal_ls"]},
+  "nacimiento":  {"label":"Nacimiento",   "color":"#7cffcb","mapa":"triangle","esquema":"intake", "ancho":1.2,  "geom":"point",  "atributos":["caudal_ls"]},
+  "casa":        {"label":"Casa",         "color":"#ff8a65","mapa":"house",   "esquema":"house",  "ancho":1.0,  "geom":"point",  "atributos":[]},
+  "tuberia":     {"label":"Tubería",      "color":"#b388ff","mapa":"line",    "esquema":"line",   "ancho":0,    "geom":"line",   "atributos":["diametro_mm","material"]},
+  "ruta_candidata":{"label":"Ruta candidata","color":"#00e676","mapa":"line", "esquema":"line",   "ancho":0,    "geom":"line",   "atributos":[]},
+  "potrero":     {"label":"Potrero",      "color":"#ffee58","mapa":"polygon", "esquema":"dot",    "ancho":0,    "geom":"polygon","atributos":["area_ha","pasto","pendiente"]},
+  "otro":        {"label":"Otro",         "color":"#b39ddb","mapa":"circle",  "esquema":"dot",    "ancho":0.72, "geom":"line",   "atributos":[]}
+ }
+}
