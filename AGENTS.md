@@ -58,6 +58,7 @@ trust his recollection if it conflicts with the data.*
 | `experiments/` | On-farm trial methodology + template |
 | `decisions/` | Decision log |
 | `strategy/` | Whole-operation direction — e.g. `diversification.md` (citrus/solar, parked) |
+| `dashboard/` | **Farm dashboard project** — the map app (template + generated `viewer.html`) and `README.md`, the phased plan for potreros → cattle location → calendar → live sensors. Blocker: **no potrero layer yet** |
 
 ## Data layer
 
@@ -77,7 +78,7 @@ Stdlib-only; `prices fetch` needs `pdftotext` (poppler). Run via `uv run sabalet
 - `sabaleticas prices show` — current market benchmarks
 - `sabaleticas prices fetch [--dry-run]` — pull the latest **Central Ganadera Medellín** boletín → `price_benchmarks.csv` (run weekly)
 - `sabaleticas movements` — GSMI sales cadence & channels
-- `sabaleticas map` — build + open `operations/land/geo/viewer.html`: offline map (own orthophoto as basemap, IGAC layers, elevation at cursor, distance + gravity-feed measure). Plain canvas/JS, **no mapping library**, stdlib-only generator in `sabaleticas/map.py`
+- `sabaleticas map` — build + open `dashboard/viewer.html`: offline map (own 0.5 m orthophoto as basemap, IGAC layers, 5 m/25 m contours, elevation at cursor, distance + gravity-feed measure, **optional 3D terrain toggle — 2D stays primary**). Plain canvas/WebGL/JS, **no mapping library**; template in `dashboard/map.template.html`, stdlib-only builder in `sabaleticas/map.py`
 
 ## Research library
 

@@ -7,7 +7,7 @@ Stdlib only (argparse + urllib + sqlite3). `prices fetch` also needs the
   sabaleticas prices show    show current market-price benchmarks
   sabaleticas prices fetch   pull latest Central Ganadera boletín -> price_benchmarks.csv
   sabaleticas movements      summarize GSMI sales cadence & channels
-  sabaleticas map            build + open the local map viewer (linderos, cercas, agua, relieve)
+  sabaleticas map            build + open the farm dashboard (dashboard/viewer.html)
 
 (Also runnable without install: `python -m sabaleticas ...` or `uv run sabaleticas ...`.)
 """
@@ -149,8 +149,8 @@ def cmd_map(args):
     """Build the offline map viewer and (unless --no-open) open it."""
     from . import map as mapmod
     out = mapmod.build(ROOT)
-    kb = out.stat().st_size / 1024
-    print(f"viewer: {out}  ({kb:.0f} KB)")
+    mb = out.stat().st_size / 1024 / 1024
+    print(f"dashboard: {out}  ({mb:.1f} MB)")
     if not args.no_open:
         opener = {"darwin": "open", "win32": "start"}.get(sys.platform, "xdg-open")
         try:

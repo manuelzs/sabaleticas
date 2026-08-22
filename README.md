@@ -27,6 +27,7 @@ build up over time into a clear picture of the business.
 | [`operations/`](operations/) | The yearly cycle, processes, calendar, labor, infrastructure |
 | [`operations/water/`](operations/water/README.md) | Water & verano carrying capacity — active project |
 | [`operations/land/geo/`](operations/land/geo/README.md) | Turning the 2003 paper plano into real geometry (GeoJSON) |
+| [`dashboard/`](dashboard/README.md) | **Farm dashboard project** — the map app + the plan for live operational data |
 | [`decisions/`](decisions/) | Decision log — what we chose, why, and what happened |
 
 ## Data architecture
@@ -61,7 +62,7 @@ A stdlib-only Python package (`sabaleticas/`), packaged with `pyproject.toml` (h
 | `sabaleticas prices show` | Show current market-price benchmarks |
 | `sabaleticas prices fetch [--dry-run]` | Pull the latest **Central Ganadera Medellín** boletín, parse macho/hembra cebada $/kg, append to `price_benchmarks.csv`, rebuild. Run weekly. |
 | `sabaleticas movements` | Summarize GSMI sales cadence & channels |
-| `sabaleticas map` | Build + open the **offline map viewer** — orthophoto, linderos, cercas, agua, elevation readout, gravity-feed measure tool |
+| `sabaleticas map` | Build + open the **farm dashboard** ([`dashboard/`](dashboard/)) — orthophoto, layers, elevation readout, gravity-feed measure, optional 3D terrain |
 Views: `animal_gain` (gain + ADG per animal), `lote_margin`, `source_leaderboard`.
 
 ## Working agreement
