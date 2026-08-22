@@ -113,6 +113,7 @@
   <div><b>lat</b> <span id="rlat">—</span> &nbsp; <b>lon</b> <span id="rlon">—</span></div>
   <div><b>altura</b> <span id="rele">—</span></div>
   <div id="rcurw" style="display:none"><b>curva</b> <span id="rcur">—</span></div>
+  <div><b>pendiente</b> <span id="rslp">—</span></div>
 </div>
 
 <div id="scale"><div id="sbar" style="width:100px"></div><span id="slab">—</span></div>
@@ -146,6 +147,24 @@ function elev(lon,lat){
   const i=Math.round((lon-d.minx)/d.dlon), j=Math.round((lat-d.miny)/d.dlat);
   if(i<0||j<0||j>=d.ny||i>=d.nx) return null;
   return d.grid[j][i];
+}
+
+/* Slope from the terrain grid itself, not from the contours — the contours were
+   derived from this grid, so going back to it is strictly more information.
+   Horn's 3x3 operator, the standard GIS estimator. */
+function slopeAt(lon,lat){
+  const d=D.dem; if(!d) return null;
+  const i=Math.round((lon-d.minx)/d.dlon), j=Math.round((lat-d.miny)/d.dlat);
+  if(i<1||j<1||j>=d.ny-1||i>=d.nx-1) return null;
+  const w=[[-1,0,1].map(a=>d.grid[j-1][i+a]),
+           [-1,0,1].map(a=>d.grid[j  ][i+a]),
+           [-1,0,1].map(a=>d.grid[j+1][i+a])];
+  for(const r of w) for(const v of r) if(v==null) return null;
+  const cxm=d.dlon*LON2M, cym=d.dlat*LAT2M;
+  const dzdx=((w[0][2]+2*w[1][2]+w[2][2])-(w[0][0]+2*w[1][0]+w[2][0]))/(8*cxm);
+  const dzdy=((w[2][0]+2*w[2][1]+w[2][2])-(w[0][0]+2*w[0][1]+w[0][2]))/(8*cym);
+  const g=Math.hypot(dzdx,dzdy);
+  return {deg: Math.atan(g)*180/Math.PI, pct: g*100};
 }
 
 /* ---- drawing ---- */
@@ -439,6 +458,9 @@ addEventListener('mousemove',e=>{
   document.getElementById('rlat').textContent=g[1].toFixed(6);
   document.getElementById('rlon').textContent=g[0].toFixed(6);
   document.getElementById('rele').textContent = z?z.toFixed(0)+' m':'sin dato';
+  const sl=slopeAt(g[0],g[1]);
+  document.getElementById('rslp').textContent =
+    sl ? `${sl.deg.toFixed(1)}° (${sl.pct.toFixed(0)} %)` : 'sin dato';
   if(!is3d){
     const hc=findContour(e.clientX,e.clientY);
     const nf=hc?hc.f:null, of=hoverC?hoverC.f:null;

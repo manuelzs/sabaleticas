@@ -150,10 +150,23 @@ effort estimates so it can be picked up cheaply later.
 slightly longer one.** Nothing here is hard — it is all the same mesh with different shading,
 and the terrain grid is already in the page.
 
-Worth saying which one earns its keep: **slope shading**. About 22% of the farm is steep
-(15–25°), cattle under-graze steep ground, and seeing that against the potrero layout would
-directly inform where to put fences and water. The rest is mostly pleasure — which is a fine
-reason, just not the same reason.
+Worth saying which one earns its keep: **slope shading**. Measured from the terrain grid over
+the 156.9 ha it covers inside the boundary `[derived, IGAC MDT 5 m, Horn 3×3]`:
+
+| Slope | Area | Share |
+|---|---|---|
+| 0–5° llano | 21.2 ha | 13.5 % |
+| 5–15° suave | 84.8 ha | 54.1 % |
+| **15–25° pendiente** | **41.9 ha** | **26.7 %** |
+| 25–35° fuerte | 8.3 ha | 5.3 % |
+| >35° muy fuerte | 0.7 ha | 0.4 % |
+
+**A third of the farm is at 15° or steeper.** Cattle under-graze steep ground, so seeing that
+against the potrero layout would directly inform where to put fences and water. The rest of the
+3D backlog is mostly pleasure — a fine reason, just not the same one.
+
+The cursor already reports slope anywhere on the map. What is missing is the **shaded layer**:
+a colour ramp over the whole surface, in 2D and on the 3D mesh.
 
 ## Where this might go
 
