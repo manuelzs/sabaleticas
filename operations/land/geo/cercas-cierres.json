@@ -236,8 +236,8 @@
   ],
   [
    [
-    -75.614467,
-    5.798831
+    -75.614472,
+    5.798867
    ],
    [
     -75.614275,
@@ -498,8 +498,8 @@
      5.798729
     ],
     [
-     -75.614467,
-     5.798831
+     -75.614472,
+     5.798867
     ],
     [
      -75.614926,
@@ -522,5 +522,23 @@
  "_entidad": "Un cierre [n, \"agua:beb-3\"] une el extremo n a esa entidad. Es la forma natural cuando varias cercas concurren en un mismo punto — un bebedero, un saladero — porque deja escrito POR QUE se juntan ahí, no sólo que se juntan.",
  "_es_cerca": "Un 4º elemento true marca un cierre que ES una cerca real, sólo que el IGAC no la capturó — casi siempre porque el dosel tapa la vista. Esos salen además a cercas-inferidas.geojson y se dibujan como cerca. Un quiebrapatas o el corte para un bebedero NO llevan la marca: ahí de verdad no hay cerca.",
  "_coordenada": "Un cierre [n, [lon, lat]] une el extremo n a una coordenada concreta — típicamente un vértice del lindero que Manuel señala con la tecla C. Sirve cuando la cerca llega al lindero en un quiebre y no hay ningún otro extremo numerado al que engancharla.",
- "_polilinea": "Un cierre puede ser {\"polilinea\": [[lon,lat],...], \"motivo\":…, \"es_cerca\":…} cuando la cerca es UNA sola cosa con muchos tramos — por ejemplo, cuando sigue un drenaje. Se expande a pares al leerlo, así que aguas abajo no cambia nada; sólo evita enterrar una cerca en trece entradas sueltas."
+ "_polilinea": "Un cierre puede ser {\"polilinea\": [[lon,lat],...], \"motivo\":…, \"es_cerca\":…} cuando la cerca es UNA sola cosa con muchos tramos — por ejemplo, cuando sigue un drenaje. Se expande a pares al leerlo, así que aguas abajo no cambia nada; sólo evita enterrar una cerca en trece entradas sueltas.",
+ "_movimientos": [
+  {
+   "de": [
+    -75.614467,
+    5.798831
+   ],
+   "a": [
+    -75.614472,
+    5.798867
+   ],
+   "metros": 4.0,
+   "refs": [
+    "par [31] extremo 0",
+    "polilínea [49] vértice 6"
+   ],
+   "motivo": "[owner, 2026-08-22] el cruce se corre 4,0 m al norte para pegarse mejor al drenaje"
+  }
+ ]
 }
