@@ -2640,6 +2640,246 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 51,
+    "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003. (tramo 1 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618743,
+      5.806856
+     ],
+     [
+      -75.618758,
+      5.806399
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 28,
+    "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003. (tramo 2 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618758,
+      5.806399
+     ],
+     [
+      -75.61881,
+      5.80615
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 19,
+    "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003. (tramo 3 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.61881,
+      5.80615
+     ],
+     [
+      -75.618866,
+      5.80599
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 50,
+    "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003. (tramo 4 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618866,
+      5.80599
+     ],
+     [
+      -75.619025,
+      5.80557
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 26,
+    "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003. (tramo 5 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.619025,
+      5.80557
+     ],
+     [
+      -75.619036,
+      5.805339
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 24,
+    "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003. (tramo 6 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.619036,
+      5.805339
+     ],
+     [
+      -75.619151,
+      5.80515
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 27,
+    "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003. (tramo 7 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.619151,
+      5.80515
+     ],
+     [
+      -75.619285,
+      5.804941
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 17,
+    "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003. (tramo 8 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.619285,
+      5.804941
+     ],
+     [
+      -75.619363,
+      5.804807
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 45,
+    "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003. (tramo 9 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.619363,
+      5.804807
+     ],
+     [
+      -75.619486,
+      5.804421
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 13,
+    "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003. (tramo 10 de 10)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.619486,
+      5.804421
+     ],
+     [
+      -75.619512,
+      5.804304
+     ]
+    ]
+   }
   }
  ]
 }

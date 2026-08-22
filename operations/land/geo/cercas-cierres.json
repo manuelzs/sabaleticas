@@ -754,6 +754,56 @@
    ],
    "es_cerca": true,
    "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje."
+  },
+  {
+   "polilinea": [
+    [
+     -75.618743,
+     5.806856
+    ],
+    [
+     -75.618758,
+     5.806399
+    ],
+    [
+     -75.61881,
+     5.80615
+    ],
+    [
+     -75.618866,
+     5.80599
+    ],
+    [
+     -75.619025,
+     5.80557
+    ],
+    [
+     -75.619036,
+     5.805339
+    ],
+    [
+     -75.619151,
+     5.80515
+    ],
+    [
+     -75.619285,
+     5.804941
+    ],
+    [
+     -75.619363,
+     5.804807
+    ],
+    [
+     -75.619486,
+     5.804421
+    ],
+    [
+     -75.619512,
+     5.804304
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "cerca real dentro de EL GUAICO, de lindero a lindero (norte a sur), 11 puntos capturados por Manuel sobre la ortofoto. Las dos puntas se llevan EXACTAMENTE sobre el anillo del lote (estaban a 0,3 y 0,1 m). Aquí no hay MDT — la cota salió nula en los once puntos — así que la traza sale sólo de la foto y del plano de 2003."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

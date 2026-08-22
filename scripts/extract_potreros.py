@@ -1201,8 +1201,25 @@ def main():
     for a, ring, e in dictados:
         if not e.get("subdividir_con_grafo"):
             continue
-        dentro = [l for l in lines
-                  if len(l) > 1 and all(inside(p, [[ring]]) for p in l)]
+        # "inside" has to allow a point that sits ON the ring: a fence that divides an
+        # enclosure runs boundary to boundary, so its two tips belong exactly on it, and a
+        # strict test would throw the whole fence out for being correct.
+        def _dentro(p, r=ring):
+            if inside(p, [[r]]):
+                return True
+            for a, b in zip(r, r[1:] + r[:1]):
+                ax, ay = a[0] * LON2M, a[1] * LAT2M
+                bx, by = b[0] * LON2M, b[1] * LAT2M
+                px, py = p[0] * LON2M, p[1] * LAT2M
+                dx, dy = bx - ax, by - ay
+                dd = dx * dx + dy * dy
+                if dd == 0:
+                    continue
+                t = max(0.0, min(1.0, ((px - ax) * dx + (py - ay) * dy) / dd))
+                if math.hypot(px - (ax + t * dx), py - (ay + t * dy)) <= 2.0:
+                    return True
+            return False
+        dentro = [l for l in lines if len(l) > 1 and all(_dentro(p) for p in l)]
         if not dentro:
             continue
         sl = node_lines([list(ring)] + dentro)
