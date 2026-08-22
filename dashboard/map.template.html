@@ -32,10 +32,32 @@
  #scale{position:absolute;bottom:14px;right:14px;text-align:center;color:#fff;
    text-shadow:0 1px 3px #000;font-size:11px}
  #scale div{height:5px;border:2px solid #fff;border-top:none}
+ /* navigation: subsystem tabs, then the views that subsystem offers */
+ #nav{position:absolute;top:12px;left:50%;transform:translateX(-50%);
+   display:flex;flex-direction:column;align-items:center;gap:7px;z-index:5}
+ #tabs,#views{display:flex;gap:6px;background:var(--panel);border:1px solid var(--line);
+   border-radius:10px;padding:5px;box-shadow:0 6px 24px rgba(0,0,0,.45)}
+ #tabs button{padding:6px 15px;border-color:transparent;background:transparent;color:var(--muted)}
+ #tabs button:hover{background:#263039;color:var(--ink)}
+ #tabs button.on{background:#0b5c72;border-color:#0e7f9c;color:#fff}
+ #tabs button[disabled]{opacity:.38;cursor:not-allowed}
+ #tabs button[disabled]:hover{background:transparent;color:var(--muted)}
+ #views{padding:4px}
+ #views button{padding:4px 12px;font-size:12px;border-color:transparent;background:transparent;
+   color:var(--muted)}
+ #views button:hover{background:#263039;color:var(--ink)}
+ #views button.on{background:#263039;color:var(--ink);border-color:var(--line)}
+ #views:empty{display:none}
+ /* the nav supersedes the old inline toggles */
+ #btn3d,#btnPid{display:none!important}
+ .grp{margin:9px 0 2px;color:var(--muted);font-size:10px;letter-spacing:.09em;
+   text-transform:uppercase}
 </style></head><body><div id="wrap">
 <canvas id="cv"></canvas>
 <canvas id="cv3" style="display:none"></canvas>
 <canvas id="cvp" style="display:none"></canvas>
+
+<div id="nav"><div id="tabs"></div><div id="views"></div></div>
 
 <div class="panel" id="side">
   <h1 id="fname">—</h1>

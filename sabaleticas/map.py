@@ -22,6 +22,16 @@ from . import network
 # when this is pointed at a different farm.
 GEO_REL = "../operations/land/geo"          # dashboard/ -> geo/, as the browser sees it
 
+# Which subsystem each layer belongs to. The Finca view shows them all, grouped;
+# a subsystem view shows only its own. See dashboard/ARCHITECTURE.md.
+LAYER_GROUP = {
+    "Linderos": "predio", "Cercas": "predio", "Vecinos (con nombre)": "predio",
+    "Bosque": "predio", "Vías": "predio", "Construcciones": "predio",
+    "Curvas 5 m": "predio", "Curvas 25 m": "predio",
+    "Drenajes": "agua", "Cauces (área)": "agua", "Depósitos de agua": "agua",
+    "Agua: infraestructura": "agua", "Ruta gravedad (candidata)": "agua",
+}
+
 # label, file (relative to geo/), kind, colour, width, fill
 LAYERS = [
     ("Linderos",                "boundary.geojson",                    "poly", "#ff1744", 3.0, None),
@@ -177,7 +187,8 @@ def _collect(geo: Path):
             feats.append(item)
         if feats:
             out.append({"name": name, "kind": kind, "colour": colour, "width": width,
-                        "fill": fill, "on": name in DEFAULT_ON, "features": feats})
+                        "fill": fill, "on": name in DEFAULT_ON, "features": feats,
+                        "grupo": LAYER_GROUP.get(name, "predio")})
     return out
 
 

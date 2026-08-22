@@ -1,23 +1,69 @@
-/* ---- view routing in the URL hash --------------------------------------
-   #mapa · #3d · #esquema. Reloading keeps you where you were, and a view is
-   now linkable. This is also the seam the subsystem tabs will plug into:
-   #agua/esquema and #ganado/tabla are the same mechanism with a second part. */
-function setMode(m){
-  if(m==='esquema'){ if(!isPid) setPid(true); }
-  else if(m==='3d'){ if(isPid) setPid(false); if(!is3d) set3d(true); }
-  else { if(isPid) setPid(false); if(is3d) set3d(false); }
-  if(location.hash.slice(1)!==m){ try{ history.replaceState(null,'','#'+m); }catch(e){} }
-}
-function modeFromHash(){
-  const m=(location.hash||'').slice(1).split('/')[0];
-  return ['mapa','3d','esquema'].includes(m) ? m : null;
-}
-addEventListener('hashchange',()=>{ const m=modeFromHash(); if(m) setMode(m); });
-/* after 'load', so the canvas has been sized and restoreView() has already run —
-   otherwise the restored 2D/3D state would overwrite whatever the hash asked for */
-addEventListener('load',()=>{
-  const m=modeFromHash();
-  if(m) setMode(m);                                  // the hash wins over saved state
-  else setMode(is3d ? '3d' : 'mapa');
-});
+/* ---- navigation: subsystems × views ------------------------------------
+   Subsystems are data providers; views are renderers. The map is the one view
+   every subsystem can contribute to, which is why "Finca" exists as its own tab
+   rather than the map being duplicated inside each subsystem.
+   See dashboard/ARCHITECTURE.md. Route lives in the hash: #agua/esquema. */
+const NAV=[
+  {id:'finca',  label:'Finca',  views:[['mapa','Mapa'],['3d','3D']]},
+  {id:'agua',   label:'Agua',   views:[['esquema','Esquema'],['mapa','Mapa']]},
+  {id:'predio', label:'Predio', views:[['mapa','Mapa']]},
+  {id:'ganado', label:'Ganado', views:[], disabled:true, why:'sin datos todavía'},
+];
+const NAV_LEGACY={mapa:'finca/mapa','3d':'finca/3d',esquema:'agua/esquema'};
+let route={tab:'finca', view:'mapa'};
 
+function navSub(id){ return NAV.find(s=>s.id===id); }
+
+function navRender(){
+  const tabs=document.getElementById('tabs'), views=document.getElementById('views');
+  tabs.innerHTML=''; views.innerHTML='';
+  for(const s of NAV){
+    const b=document.createElement('button');
+    b.textContent=s.label;
+    if(s.id===route.tab) b.className='on';
+    if(s.disabled){ b.disabled=true; b.title=s.why||''; }
+    else b.onclick=()=>navGo(s.id);
+    tabs.appendChild(b);
+  }
+  const sub=navSub(route.tab);
+  if(sub && sub.views.length>1) for(const [id,label] of sub.views){
+    const b=document.createElement('button');
+    b.textContent=label;
+    if(id===route.view) b.className='on';
+    b.onclick=()=>navGo(route.tab,id);
+    views.appendChild(b);
+  }
+}
+
+function navApply(){
+  if(route.view==='esquema'){ if(!isPid) setPid(true); }
+  else if(route.view==='3d'){ if(isPid) setPid(false); if(!is3d) set3d(true); }
+  else { if(isPid) setPid(false); if(is3d) set3d(false); }
+  buildLayers(route.tab==='finca' ? null : route.tab);   // scope the layer list
+  navRender();
+  const h=route.tab+'/'+route.view;
+  if(location.hash.slice(1)!==h){ try{ history.replaceState(null,'','#'+h); }catch(e){} }
+}
+
+function navGo(tab,view){
+  const sub=navSub(tab);
+  if(!sub || sub.disabled) return;
+  const ids=sub.views.map(v=>v[0]);
+  route={tab, view: ids.includes(view) ? view : ids[0]};
+  navApply();
+}
+
+function navFromHash(){
+  let h=(location.hash||'').slice(1);
+  if(NAV_LEGACY[h]) h=NAV_LEGACY[h];                     // old #mapa / #3d / #esquema
+  const [t,v]=h.split('/');
+  const sub=navSub(t);
+  return (sub && !sub.disabled) ? {tab:t, view:v} : null;
+}
+
+addEventListener('hashchange',()=>{ const r=navFromHash(); if(r) navGo(r.tab,r.view); });
+addEventListener('load',()=>{                            // after the basemap has sized things
+  const r=navFromHash();
+  if(r) navGo(r.tab,r.view);
+  else navGo(is3d ? 'finca' : 'finca', is3d ? '3d' : 'mapa');
+});

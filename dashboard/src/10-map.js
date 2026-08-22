@@ -414,16 +414,31 @@ const saveLayers=()=>{ try{
   localStorage.setItem('sab_layers',JSON.stringify(o));
 }catch(e){} };
 
+/* The layer list is grouped by the subsystem each layer belongs to, and can be
+   scoped to one of them. Finca shows everything; a subsystem view shows its own. */
 const box=document.getElementById('layers');
-D.layers.forEach((L,i)=>{
-  const id='L'+i;
-  box.insertAdjacentHTML('beforeend',
-    `<label><input type="checkbox" id="${id}" ${L.on?'checked':''}>
-     <span class="sw" style="background:${L.colour}"></span>${L.name}</label>`);
-  setTimeout(()=>document.getElementById(id).onchange=e=>{
-    L.on=e.target.checked; saveLayers();
-    if(is3d) render3d(); else draw();});
-});
+const GRUPO={agua:'Agua', predio:'Predio', ganado:'Ganado'};
+function buildLayers(only){
+  box.innerHTML='';
+  const groups={};
+  D.layers.forEach((L,i)=>{ const g=L.grupo||'predio'; (groups[g]=groups[g]||[]).push([L,i]); });
+  const keys=Object.keys(groups).sort();
+  for(const g of keys){
+    if(only && g!==only) continue;
+    if(!only && keys.length>1)
+      box.insertAdjacentHTML('beforeend',`<div class="grp">${GRUPO[g]||g}</div>`);
+    for(const [L,i] of groups[g]){
+      const id='L'+i;
+      box.insertAdjacentHTML('beforeend',
+        `<label><input type="checkbox" id="${id}" ${L.on?'checked':''}>
+         <span class="sw" style="background:${L.colour}"></span>${L.name}</label>`);
+      document.getElementById(id).onchange=e=>{
+        L.on=e.target.checked; saveLayers();
+        if(isPid) drawPid(); else if(is3d) render3d(); else draw();};
+    }
+  }
+}
+buildLayers(null);
 
 addEventListener('resize',resize);
 if(D.ortho){

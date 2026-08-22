@@ -16,15 +16,34 @@
 | **Hydraulic schematic**, Y = real elevation, collision-aware routing | ✅ |
 | Point capture (`C`) · contour hover · view in the URL hash | ✅ |
 | Generated verification checklist (`water_inventory.py`) | ✅ |
+| **JS split into `src/*.js`**, concatenated by the builder — no bundler | ✅ |
+| **Subsystem tabs × views**, routed in the hash (`#agua/esquema`) | ✅ |
 
 ## Open
 
-### 1 · Navigation and the three axes *(next)*
-See [`ARCHITECTURE.md`](ARCHITECTURE.md). Build the seam, not the cathedral.
+### 1 · Navigation — ✅ **built, seam only**
+`Finca · Agua · Predio · Ganado(off)`, each with its own views, routed in the hash.
+Layers are grouped by subsystem and scoped to the active tab. **No framework** — a ~90-line
+registry and router; the heavy lifting is canvas, which a framework would not help with.
+
+**Deliberately absent:** the `Trabajo` tab (no tickets yet), tables, and anything for Ganado
+before there is cattle data.
 
 ### 2 · Globally unique entity ids — 🔴 **high priority, next session**
 `agua:rompecargas` rather than `rompecargas`. A rename today; a migration once readings and
 tickets reference the old ids.
+
+### 2b · One entity-type registry — 🔴 **same refactor as the ids**
+`[Manuel, 2026-08-22]` *"All the T junctions use a square. It should be only defined in one
+place. If I wanted to change the icon for T junctions, we should just change one line."*
+
+Right now a type's appearance is spread across **three** places: `TIPO_COLOUR` and `TIPO_SHAPE`
+in `sabaleticas/map.py`, and the symbol drawing in `50-schematic.js`. One registry should own
+**id, label, colour, map symbol, schematic symbol, and what attributes the type carries**
+(a tank has capacity and a level; a junction has a valve state).
+
+That registry is also what the future table and ticket views read to know how to render a type,
+so it is not only cosmetic.
 
 ### 3 · Attachment model
 Readings, tickets and alerts are **one mechanism**: something keyed to an entity id, rendered
