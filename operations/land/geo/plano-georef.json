@@ -1,0 +1,15 @@
+{
+ "kind": "affine",
+ "m": [
+  2945.4713535761407,
+  -549.7548796685664,
+  -8375221.906587569,
+  -686.4782154461133,
+  -2012.1071660392674,
+  642581.3974852763
+ ],
+ "fitted_on": 8,
+ "rms_m": 13.81,
+ "max_m": 28.5,
+ "note": "uv (0..1 across the plan image) -> metres in a local frame; divide x by LON2M and y by LAT2M for degrees"
+}

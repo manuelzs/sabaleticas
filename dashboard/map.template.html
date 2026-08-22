@@ -408,7 +408,7 @@ document.getElementById('planoRotL').onclick=()=>{PL.rot-=0.5;savePlano();draw()
 document.getElementById('planoRotR').onclick=()=>{PL.rot+=0.5;savePlano();draw();};
 document.getElementById('planoReset').onclick=()=>{
   const on=PL.on, op=PL.op; PL=Object.assign({},PL_DEF); PL.on=on; PL.op=op; savePlano();
-  mpPairs=[]; mpModel=null; mpPending=null; mpSave();
+  mpPairs=[]; mpModel=MP_SEED; mpPending=null; mpSave();
   document.getElementById('planoHint').textContent='Reiniciado.'; draw();};
 
 /* --- two-point calibration: match a feature on the plan to the same feature on the photo --- */
@@ -490,6 +490,10 @@ function drawPlanoWarped(){
      homography  8 dof  (4+ pts)  + perspective  (a phone photo of a flat sheet)
    Residuals are reported per model so we can see WHY the plan misfits, not just fix it. */
 let mpOn=false, mpPending=null, mpPairs=[], mpModel=null;
+// Affine fitted on Manuel's first 8 control points, 2026-08-21: RMS 13.81 m, max 28.5 m
+// (down from 43.6 / 82 on the 2-point placement). uv(0..1) -> metres in the local frame.
+const MP_SEED={kind:'affine',m:[2945.471354, -549.754880, -8375221.906588, -686.478215, -2012.107166, 642581.397485]};
+mpModel=MP_SEED;
 try{ const r=JSON.parse(localStorage.getItem('sab_plano_pairs')||'null');
      if(r){ mpPairs=r.pairs||[]; mpModel=r.model||null; } }catch(e){}
 const mpSave=()=>{ try{localStorage.setItem('sab_plano_pairs',
@@ -497,6 +501,12 @@ const mpSave=()=>{ try{localStorage.setItem('sab_plano_pairs',
 
 /* geo <-> image UV under the CURRENT similarity placement */
 function geoToUv(g){
+  if(mpModel && mpModel.kind==='affine'){          // invert the fitted affine
+    const m=mpModel.m, X=g[0]*LON2M, Y=g[1]*LAT2M;
+    const det=m[0]*m[4]-m[1]*m[3];
+    const dx=X-m[2], dy=Y-m[5];
+    return [ ( m[4]*dx - m[1]*dy)/det, (-m[3]*dx + m[0]*dy)/det ];
+  }
   const ar=planoImg? planoImg.naturalHeight/planoImg.naturalWidth : 0.74;
   const hDeg=PL.w*ar*(LON2M/LAT2M);
   let dx=(g[0]-PL.lon)*LON2M, dy=(g[1]-PL.lat)*LAT2M;
