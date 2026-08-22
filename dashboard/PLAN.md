@@ -98,7 +98,20 @@ collecting what they wait on.
 The cursor reports slope already. Missing: the coloured surface in 2D and on the 3D mesh.
 **A third of the farm is ≥15°**, and cattle under-graze steep ground.
 
-### 6 · Potrero polygons
+### 6 · Potrero polygons — 🟡 **in progress**
+
+`scripts/extract_potreros.py` builds a planar graph from IGAC's fences plus the parcel
+boundary, nodes it, applies the closures Manuel dictates, and walks the faces.
+
+> #### A fence layer and an enclosure layer are not the same thing
+> `[owner, 2026-08-22]` Where a **quiebrapatas** closes a road crossing there is no physical
+> fence — IGAC is right to leave the gap. But the **potrero is closed** as far as the cattle are
+> concerned. So the fence layer keeps its gaps and the potrero layer closes them, each closure
+> carrying its reason.
+
+Loose ends are numbered **north to south, stably across runs**, so a number Manuel says out
+loud stays valid after other gaps close. Closures live in `cercas-cierres.json` as pairs of
+numbers, draw green, and are flagged if implausibly long.
 The data work is in [`../PLAN.md`](../PLAN.md); the app side is a layer plus, eventually,
 per-potrero attributes. **This is what unblocks Ganado.**
 

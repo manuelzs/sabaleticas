@@ -7,6 +7,145 @@
     "tipo": "potrero",
     "nombre": "Potrero 1",
     "n": 1,
+    "area_ha": 12.16,
+    "area_m2": 121554,
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.611504,
+       5.804018
+      ],
+      [
+       -75.612722,
+       5.803423
+      ],
+      [
+       -75.61203,
+       5.802605
+      ],
+      [
+       -75.611413,
+       5.802377
+      ],
+      [
+       -75.611058,
+       5.802364
+      ],
+      [
+       -75.611011,
+       5.802484
+      ],
+      [
+       -75.611058,
+       5.802364
+      ],
+      [
+       -75.610794,
+       5.801408
+      ],
+      [
+       -75.611058,
+       5.802364
+      ],
+      [
+       -75.611413,
+       5.802377
+      ],
+      [
+       -75.61203,
+       5.802605
+      ],
+      [
+       -75.612722,
+       5.803423
+      ],
+      [
+       -75.614448,
+       5.802543
+      ],
+      [
+       -75.614802,
+       5.802362
+      ],
+      [
+       -75.612954,
+       5.801327
+      ],
+      [
+       -75.612318,
+       5.801341
+      ],
+      [
+       -75.61081,
+       5.801357
+      ],
+      [
+       -75.610749,
+       5.801363
+      ],
+      [
+       -75.609827,
+       5.801367
+      ],
+      [
+       -75.60927,
+       5.802581
+      ],
+      [
+       -75.609691,
+       5.803019
+      ],
+      [
+       -75.609735,
+       5.803065
+      ],
+      [
+       -75.61021,
+       5.80356
+      ],
+      [
+       -75.610659,
+       5.803257
+      ],
+      [
+       -75.610955,
+       5.802595
+      ],
+      [
+       -75.610659,
+       5.803257
+      ],
+      [
+       -75.61021,
+       5.80356
+      ],
+      [
+       -75.610238,
+       5.803588
+      ],
+      [
+       -75.610912,
+       5.804307
+      ],
+      [
+       -75.611504,
+       5.804018
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 2",
+    "n": 2,
     "area_ha": 4.36,
     "area_m2": 43609,
     "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
@@ -64,8 +203,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 2",
-    "n": 2,
+    "nombre": "Potrero 3",
+    "n": 3,
     "area_ha": 3.62,
     "area_m2": 36249,
     "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
@@ -122,6 +261,61 @@
       [
        -75.611084,
        5.798518
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 4",
+    "n": 4,
+    "area_ha": 1.82,
+    "area_m2": 18233,
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.607628,
+       5.797584
+      ],
+      [
+       -75.608068,
+       5.79777
+      ],
+      [
+       -75.60881,
+       5.797939
+      ],
+      [
+       -75.608871,
+       5.797948
+      ],
+      [
+       -75.60904,
+       5.797977
+      ],
+      [
+       -75.609196,
+       5.796954
+      ],
+      [
+       -75.608006,
+       5.796789
+      ],
+      [
+       -75.607571,
+       5.796742
+      ],
+      [
+       -75.607628,
+       5.797584
       ]
      ]
     ]

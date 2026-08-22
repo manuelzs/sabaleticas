@@ -1,5 +1,23 @@
 {
  "_nota": "Cierres dictados por Manuel, por NÚMERO de extremo suelto. Los números salen de cercas-abiertas.geojson y son estables entre corridas. Cada par añade una arista al grafo antes de extraer las caras.",
- "cierres": [],
- "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros."
+ "cierres": [
+  [
+   32,
+   33
+  ],
+  [
+   16,
+   17
+  ],
+  [
+   14,
+   15
+  ],
+  [
+   21,
+   22
+  ]
+ ],
+ "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
+ "_por_que": "[owner, 2026-08-22] La capa de CERCAS y la de POTREROS no son lo mismo. Donde hay un quiebrapatas en un camino no hay cerca física — el dato del IGAC está bien —, pero el potrero SÍ está cerrado para el ganado. Las cercas se quedan abiertas; los potreros se cierran. Cada cierre puede llevar su motivo."
 }

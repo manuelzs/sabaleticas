@@ -1,4 +1,97 @@
 {
  "type": "FeatureCollection",
- "features": []
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 32–33",
+    "longitud_m": 7,
+    "motivo": "sin especificar",
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608871,
+      5.797948
+     ],
+     [
+      -75.60881,
+      5.797939
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 16–17",
+    "longitud_m": 12,
+    "motivo": "sin especificar",
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608444,
+      5.800733
+     ],
+     [
+      -75.608498,
+      5.800636
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 14–15",
+    "longitud_m": 7,
+    "motivo": "sin especificar",
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610749,
+      5.801363
+     ],
+     [
+      -75.61081,
+      5.801357
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 21–22",
+    "longitud_m": 12,
+    "motivo": "sin especificar",
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612674,
+      5.800419
+     ],
+     [
+      -75.612627,
+      5.800322
+     ]
+    ]
+   }
+  }
+ ]
 }

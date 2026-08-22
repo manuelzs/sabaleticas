@@ -269,14 +269,20 @@ def main():
     cierres, hechos = [], 0
     f_c = GEO / CIERRES
     if f_c.exists():
-        for a, b in json.loads(f_c.read_text(encoding="utf-8"))["cierres"]:
+        for c in json.loads(f_c.read_text(encoding="utf-8"))["cierres"]:
+            a, b = c[0], c[1]
+            motivo = c[2] if len(c) > 2 else ""
             va, vb = by_num.get(a), by_num.get(b)
             if va is None or vb is None:
                 print(f"  ⚠ cierre {a}–{b}: número no encontrado")
                 continue
+            d_m = math.hypot((pos[vb][0] - pos[va][0]) * LON2M,
+                             (pos[vb][1] - pos[va][1]) * LAT2M)
+            flag = "  ⚠ muy largo, ¿número equivocado?" if d_m > 120 else ""
+            print(f"    cierre {a}–{b}: {d_m:6.1f} m{flag}")
             adj[va].add(vb)
             adj[vb].add(va)
-            cierres.append((a, b, pos[va], pos[vb]))
+            cierres.append((a, b, pos[va], pos[vb], motivo, round(d_m)))
             hechos += 1
     if hechos:
         print(f"  cierres aplicados: {hechos}")
@@ -326,11 +332,13 @@ def main():
                    ensure_ascii=False), encoding="utf-8")
 
     cfeats = [{"type": "Feature", "properties": {
-        "tipo": "cierre", "nombre": f"Cierre {a}–{b}",
-        "fuente": "[owner] Cierre dictado por Manuel."},
+        "tipo": "cierre", "nombre": f"Cierre {a}–{b}", "longitud_m": dm,
+        "motivo": mot or "sin especificar",
+        "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el "
+                  "POTRERO, que es lo que importa para el ganado."},
         "geometry": {"type": "LineString", "coordinates": [
             [round(pa[0], 6), round(pa[1], 6)], [round(pb[0], 6), round(pb[1], 6)]]}}
-        for a, b, pa, pb in cierres]
+        for a, b, pa, pb, mot, dm in cierres]
     (GEO / "cercas-cierres.geojson").write_text(
         json.dumps({"type": "FeatureCollection", "features": cfeats}, indent=1,
                    ensure_ascii=False), encoding="utf-8")
