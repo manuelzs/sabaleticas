@@ -200,6 +200,15 @@
    ],
    "cerca real hasta la esquina SUROCCIDENTAL del corral",
    true
+  ],
+  [
+   8,
+   [
+    -75.616151,
+    5.804577
+   ],
+   "cerca real hasta el vértice del lindero que marcó Manuel",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

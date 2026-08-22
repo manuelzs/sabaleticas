@@ -53,22 +53,6 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_abierta",
-    "nombre": "Cerca abierta 8",
-    "n": 8,
-    "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -75.615958,
-     5.804537
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_abierta",
     "nombre": "Cerca abierta 25",
     "n": 25,
     "fuente": "[derived] Extremo de cerca que no conecta con nada. El número es estable entre corridas: sirve para dictar cierres."

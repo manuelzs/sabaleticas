@@ -648,6 +648,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 8–punto",
+    "longitud_m": 22,
+    "motivo": "cerca real hasta el vértice del lindero que marcó Manuel",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615958,
+      5.804537
+     ],
+     [
+      -75.616151,
+      5.804577
+     ]
+    ]
+   }
   }
  ]
 }
