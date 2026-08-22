@@ -600,6 +600,54 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 39–punto",
+    "longitud_m": 20,
+    "motivo": "cerca real hasta la esquina NOROCCIDENTAL del corral",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615696,
+      5.796693
+     ],
+     [
+      -75.615541,
+      5.796607
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 41–punto",
+    "longitud_m": 24,
+    "motivo": "cerca real hasta la esquina SUROCCIDENTAL del corral",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615718,
+      5.796307
+     ],
+     [
+      -75.615555,
+      5.796451
+     ]
+    ]
+   }
   }
  ]
 }

@@ -187,6 +187,93 @@ def aristas_paralelas(pos, adj, tol_deg=3.0):
     return malas
 
 
+def recortar_en_corrales(feats, verbose=False):
+    """Cut fences off at the corral wall instead of letting them run on inside it.
+
+    The satellite traces the pen and its approaches as one line, so a fence arrives at the
+    corral and carries on across it. On the ground it ends AT the wall — the wall is the
+    fence from there in. Left alone, the stub inside kept loose end 40 dangling in the
+    middle of the pen with nothing to close against.
+
+    Only the part strictly inside is removed, and the crossing point is inserted exactly on
+    the wall, so the fence still meets the corral and noding turns that into a real
+    junction. A line that crosses right through comes back out as two pieces.
+    """
+    f_gan = GEO / "ganado-infraestructura.geojson"
+    if not f_gan.exists():
+        return feats
+    corrales = []
+    for f in json.loads(f_gan.read_text(encoding="utf-8"))["features"]:
+        if f["properties"].get("tipo") != "corral":
+            continue
+        g = f["geometry"]
+        rings = g["coordinates"] if g["type"] == "Polygon" else \
+            [r for p in g["coordinates"] for r in p]
+        corrales += [[tuple(c[:2]) for c in r] for r in rings]
+    if not corrales:
+        return feats
+
+    def dentro(p):
+        return any(inside(p, [[r]]) for r in corrales)
+
+    def corte(a, b):
+        """Where segment a->b first leaves/enters a wall, walking from a."""
+        ax, ay = a[0] * LON2M, a[1] * LAT2M
+        bx, by = b[0] * LON2M, b[1] * LAT2M
+        best = None
+        for r in corrales:
+            for c, d in zip(r, r[1:] + r[:1]):
+                cx_, cy_ = c[0] * LON2M, c[1] * LAT2M
+                dx_, dy_ = d[0] * LON2M, d[1] * LAT2M
+                den = (bx - ax) * (dy_ - cy_) - (by - ay) * (dx_ - cx_)
+                if abs(den) < 1e-12:
+                    continue
+                t = ((cx_ - ax) * (dy_ - cy_) - (cy_ - ay) * (dx_ - cx_)) / den
+                u = ((cx_ - ax) * (by - ay) - (cy_ - ay) * (bx - ax)) / den
+                if 0.0 <= t <= 1.0 and 0.0 <= u <= 1.0 and (best is None or t < best[0]):
+                    best = (t, ((ax + t * (bx - ax)) / LON2M, (ay + t * (by - ay)) / LAT2M))
+        return best[1] if best else None
+
+    quitados, out = 0, []
+    for f in feats:
+        g = f["geometry"]
+        lss = [g["coordinates"]] if g["type"] == "LineString" else g["coordinates"]
+        piezas = []
+        for ln in lss:
+            pts = [tuple(c[:2]) for c in ln]
+            if not any(dentro(p) for p in pts):
+                piezas.append(pts)
+                continue
+            quitados += sum(1 for p in pts if dentro(p))
+            cur = [] if dentro(pts[0]) else [pts[0]]
+            for a, b in zip(pts, pts[1:]):
+                ia, ib = dentro(a), dentro(b)
+                if not ia and not ib:
+                    cur.append(b)
+                elif not ia and ib:                     # going in: stop at the wall
+                    x = corte(a, b)
+                    if x:
+                        cur.append(x)
+                    if len(cur) > 1:
+                        piezas.append(cur)
+                    cur = []
+                elif ia and not ib:                     # coming out: start at the wall
+                    x = corte(b, a)
+                    cur = ([x] if x else []) + [b]
+            if len(cur) > 1:
+                piezas.append(cur)
+        if not piezas:
+            continue
+        if len(piezas) == 1:
+            f = dict(f, geometry={"type": "LineString", "coordinates": piezas[0]})
+        else:
+            f = dict(f, geometry={"type": "MultiLineString", "coordinates": piezas})
+        out.append(f)
+    if verbose and quitados:
+        print(f"  corral: {quitados} vértices de cerca recortados dentro del corral")
+    return out
+
+
 def load_lines(tag=False):
     out = []
     for f in cercas_propias(write=False):
@@ -327,6 +414,7 @@ def cercas_propias(write=True):
                 keep = False
         (ours if keep else theirs).append(f)
     ours = pegar_al_lindero(ours, polys, verbose=write)
+    ours = recortar_en_corrales(ours, verbose=write)
     if write:
         (GEO / "cercas-propias.geojson").write_text(
             json.dumps({"type": "FeatureCollection", "features": ours}, indent=1,

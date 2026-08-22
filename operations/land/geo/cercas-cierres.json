@@ -182,6 +182,24 @@
    ],
    "cerca real entre un vértice de la represa y un vértice del lindero — la represa y el lindero hacen de bordes del potrero",
    true
+  ],
+  [
+   39,
+   [
+    -75.615541,
+    5.796607
+   ],
+   "cerca real hasta la esquina NOROCCIDENTAL del corral",
+   true
+  ],
+  [
+   41,
+   [
+    -75.615555,
+    5.796451
+   ],
+   "cerca real hasta la esquina SUROCCIDENTAL del corral",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
