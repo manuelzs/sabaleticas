@@ -209,6 +209,22 @@
     5.798205
    ],
    "fuente": "[owner + plano 2007, 2026-08-22] Manuel confirmó la forma y el nombre del potrero 34 de la corrida del 2026-08-22 — la cara de 1,47 ha que salió de la cerca nueva por el drenaje 12. «SILENCIO» ya aparecía en el plano de 2007 en esa zona."
+  },
+  {
+   "nombre": "Rincón",
+   "punto": [
+    -75.613509,
+    5.793582
+   ],
+   "fuente": "[owner, 2026-08-22] Manuel pidió ponerle el nombre YA aunque la forma siga sin verificar. Nombre y borde son cosas distintas: el nombre lo sabe él; el borde depende del Mojón 15, que queda al sur, fuera de la cara. La cara sigue en por_verificar."
+  },
+  {
+   "nombre": "Alejandría",
+   "punto": [
+    -75.618102,
+    5.797417
+   ],
+   "fuente": "[owner + plano 2007, 2026-08-22] Manuel verificó la cara de 5,72 ha que salió al partir el bloque de 15,48 ha con la cerca del drenaje 34. «ALEJANDRIA» era uno de los siete nombres de 2007 dentro del bloque grande del que viene."
   }
  ]
 }

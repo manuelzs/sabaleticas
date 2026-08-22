@@ -48,17 +48,6 @@
  ],
  "_confirmado": "«confirmado»: true si lo dice Manuel; false si sólo lo dice un plano. Un candidato de plano NO se da por bueno: el de 2007 tiene 19 años y un ajuste con 19,6 m de rms, y las cercas se han movido desde entonces.",
  "_ojo_no_es_prueba": "[owner, 2026-08-22] Que el plano de 2007 muestre una división NO prueba que exista hoy. En veinte años la finca no sólo se ha subdividido: también se han QUITADO divisiones. Un rótulo de 2007 dentro de una cara de hoy dice cómo estaba en 2007, no cómo está. Sirve para saber qué mirar y con qué nombre, no para partir nada. Lo confirma Manuel en campo.",
- "nombres_en_espera": [
-  {
-   "punto": [
-    -75.613509,
-    5.793582
-   ],
-   "nombre": "Rincón",
-   "confirmado": false,
-   "fuente": "[owner, 2026-08-22] Manuel dice que se llama Rincón.",
-   "por_que_no_se_aplica": "La cara puede no estar terminada. El Mojón 15 queda 56 m AL SUR de ella, fuera, y puede que el potrero llegue hasta allá. Si el borde se extiende, el nombre quedaría pegado a otra geometría — y los nombres se anclan a un punto justamente para no moverse. Se aplica cuando el borde esté decidido."
-  }
- ],
- "_nombres_en_espera": "Nombres que Manuel ya dijo pero que NO se registran todavía porque la cara puede cambiar de forma. Aplicarlos ahora ataría el nombre a una geometría provisional."
+ "nombres_en_espera": [],
+ "_nombres_en_espera": "Nombres que Manuel ya dijo pero que NO se registran todavía porque la cara puede cambiar de forma. Aplicarlos ahora ataría el nombre a una geometría provisional. [2026-08-22] Rincón salió de aquí: Manuel prefirió nombrarlo ya y dejar la FORMA en por_verificar. El estado dice lo que falta; el nombre no tiene por qué esperarlo."
 }
