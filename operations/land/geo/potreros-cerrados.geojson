@@ -1,0 +1,131 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 1",
+    "n": 1,
+    "area_ha": 4.36,
+    "area_m2": 43609,
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.61373,
+       5.80554
+      ],
+      [
+       -75.613617,
+       5.805483
+      ],
+      [
+       -75.613694,
+       5.804545
+      ],
+      [
+       -75.611504,
+       5.804018
+      ],
+      [
+       -75.610912,
+       5.804307
+      ],
+      [
+       -75.611799,
+       5.805322
+      ],
+      [
+       -75.611883,
+       5.805419
+      ],
+      [
+       -75.612134,
+       5.805848
+      ],
+      [
+       -75.613439,
+       5.806115
+      ],
+      [
+       -75.61373,
+       5.80554
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 2",
+    "n": 2,
+    "area_ha": 3.62,
+    "area_m2": 36249,
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.611084,
+       5.798518
+      ],
+      [
+       -75.61167,
+       5.797108
+      ],
+      [
+       -75.610995,
+       5.797106
+      ],
+      [
+       -75.61014,
+       5.797045
+      ],
+      [
+       -75.60923,
+       5.796959
+      ],
+      [
+       -75.609196,
+       5.796954
+      ],
+      [
+       -75.60904,
+       5.797977
+      ],
+      [
+       -75.609214,
+       5.797995
+      ],
+      [
+       -75.609875,
+       5.798241
+      ],
+      [
+       -75.610229,
+       5.798342
+      ],
+      [
+       -75.610992,
+       5.798738
+      ],
+      [
+       -75.611084,
+       5.798518
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

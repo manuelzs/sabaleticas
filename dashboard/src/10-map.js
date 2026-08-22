@@ -40,6 +40,12 @@ function drawGeom(g,kind,fill){
                                 cx.moveTo(x,y-r-2); cx.lineTo(x+r,y-1); cx.lineTo(x+w,y-1);
                                 cx.lineTo(x+w,y+r); cx.lineTo(x-w,y+r); cx.lineTo(x-w,y-1);
                                 cx.lineTo(x-r,y-1); cx.closePath();}
+      else if(shp==='x'){       // a broken fence end — deliberately loud
+                                cx.save(); cx.strokeStyle=g.col||'#ff5252'; cx.lineWidth=2.4;
+                                cx.beginPath();
+                                cx.moveTo(x-r*0.8,y-r*0.8); cx.lineTo(x+r*0.8,y+r*0.8);
+                                cx.moveTo(x+r*0.8,y-r*0.8); cx.lineTo(x-r*0.8,y+r*0.8);
+                                cx.stroke(); cx.restore(); return; }
       else                      cx.arc(x,y,r-0.5,0,7);
       cx.fill();
       cx.save(); cx.strokeStyle='#0b0e11'; cx.lineWidth=2; cx.stroke(); cx.restore();
