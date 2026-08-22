@@ -564,7 +564,38 @@ function findContour(px,py){
   }
   return best;
 }
+/* ---- hover a polygon's LABEL, light up the polygon ---- */
+/* The boxes are collected while drawing, because that is the only place the label's real
+   position and size are known — they depend on the font and on the zoom. */
+let labelBoxes=[], hoverL=null;
+function findLabel(px,py){
+  for(let i=labelBoxes.length-1;i>=0;i--){          // last drawn is on top
+    const b=labelBoxes[i];
+    if(px>=b.x0&&px<=b.x1&&py>=b.y0&&py<=b.y1) return b;
+  }
+  return null;
+}
+function drawHoverPoly(){
+  if(!hoverL || !hoverL.L.on) return;
+  const {L,f}=hoverL, col=f.col||L.colour;
+  cx.save();
+  cx.lineJoin='round'; cx.lineCap='round';
+  const rings = f.t==='Polygon' ? [f.c[0]] : f.c.map(p=>p[0]);
+  cx.beginPath();
+  for(const r of rings){
+    r.forEach((p,k)=>{const q=toScreen(p[0],p[1]); k?cx.lineTo(q[0],q[1]):cx.moveTo(q[0],q[1]);});
+    cx.closePath();
+  }
+  cx.fillStyle=lighten(col,.5).replace('rgb(','rgba(').replace(')',',.18)');
+  cx.fill();
+  cx.shadowColor=col; cx.shadowBlur=14;
+  cx.strokeStyle=lighten(col,.55); cx.lineWidth=L.width+3;
+  cx.stroke();
+  cx.restore();
+}
+
 function draw(){
+  labelBoxes=[];
   cx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
   cx.clearRect(0,0,W,H);
   cx.fillStyle='#0d1114'; cx.fillRect(0,0,W,H);
@@ -623,6 +654,12 @@ function draw(){
           cx.fillStyle='#cfd8dc'; cx.fillText(sub2,s0[0],s0[1]+dy+15);
         }
         cx.textAlign='left';
+        let wmax=0;
+        cx.font='bold 19px system-ui'; wmax=cx.measureText(name).width;
+        if(sub){ cx.font='bold 13px system-ui'; wmax=Math.max(wmax,cx.measureText(sub).width); }
+        if(sub2){ cx.font='11px system-ui'; wmax=Math.max(wmax,cx.measureText(sub2).width); }
+        labelBoxes.push({L,f,x0:s0[0]-wmax/2-6, x1:s0[0]+wmax/2+6,
+                             y0:s0[1]-19, y1:s0[1]+dy+(sub2?19:6)});
       } else {
         cx.font='bold 13px system-ui'; cx.lineWidth=3.5;
         cx.strokeStyle='rgba(0,0,0,.8)'; cx.strokeText(f.l,s0[0]+9,s0[1]-7);
@@ -665,6 +702,7 @@ function draw(){
     cx.fillStyle='#fff'; cx.font='bold 12px system-ui';
     cx.fillText((k%2?'FOTO ':'DIBUJO ')+(Math.floor(k/2)+1), s0[0]+9, s0[1]-6);
   }
+  drawHoverPoly();
   drawOverlay();
   drawEdges();
   if(pts.length){
@@ -779,6 +817,9 @@ addEventListener('mousemove',e=>{
     if(nf!==of){ hoverC=hc; draw(); }               // only repaint when it actually changes
     document.getElementById('rcurw').style.display = hoverC?'block':'none';
     if(hoverC) document.getElementById('rcur').textContent=hoverC.f.l||'—';
+    const hl=findLabel(e.clientX,e.clientY);
+    if((hl?hl.f:null)!==(hoverL?hoverL.f:null)){ hoverL=hl; draw(); }
+    if(!edgeMode) cv.style.cursor = hoverL?'pointer':'';
     if(edgeMode){
       const he=findEdge(e.clientX,e.clientY);
       const nk=he?edgeKey(he):'', ok=hoverE?edgeKey(hoverE):'';
