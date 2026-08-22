@@ -1174,6 +1174,14 @@ def main():
     estados = json.loads(f_est.read_text(encoding="utf-8"))["estados"] \
         if f_est.exists() else []
 
+    # Subdivisions Manuel already knows about but that have no fence yet. The names and
+    # which side each lies on are usually known long before the exact line is, and if they
+    # are not written down they are lost. This is MEMORY, not geometry: a face listed here
+    # is still one face until the fence exists.
+    f_sub = GEO / "potreros-subdivisiones.json"
+    subdiv = json.loads(f_sub.read_text(encoding="utf-8"))["pendientes"] \
+        if f_sub.exists() else []
+
     # salt points, from the cattle-infrastructure layer
     saladeros = []
     fg = GEO / "ganado-infraestructura.geojson"
@@ -1204,12 +1212,15 @@ def main():
             sin_agua.append((i, a / 10000, "sin bebedero mapeado — POR CONFIRMAR"))
         prop = next((n for n in nombres if inside(n["punto"], [[ring]])), None)
         est = next((e for e in estados if inside(e["punto"], [[ring]])), None)
+        sub = next((x for x in subdiv if inside(x["punto"], [[ring]])), None)
         feats.append({"type": "Feature", "properties": {
             "tipo": "potrero",
             "nombre": prop["nombre"] if prop else f"Potrero {i}",
             "n": i, "nombrado": bool(prop),
             "estado": est["estado"] if est else None,
             "estado_nota": (est or {}).get("nota", ""),
+            "subdivide_en": [p["nombre"] for p in sub["partes"]] if sub else [],
+            "subdivide_nota": (sub or {}).get("nota", ""),
             "area_ha": round(a / 10000, 2), "area_m2": round(a),
             "agua": fuentes,
             "sal": sal,
@@ -1397,6 +1408,15 @@ def main():
             resto.setdefault(e or "sin marcar", []).append(f["properties"]["nombre"])
     for e, ns in sorted(resto.items(), key=lambda t: -len(t[1])):
         print(f"      {e}: {len(ns)} — {', '.join(ns)}")
+    pend = [f for f in feats if f["properties"].get("subdivide_en")]
+    if pend:
+        print("  subdivisiones que ya sabemos y aún no tienen cerca:")
+        for f in pend:
+            p = f["properties"]
+            partes = next(x for x in subdiv if inside(x["punto"], [[f["geometry"]["coordinates"][0]]]))
+            det = " · ".join(f"{q['nombre']} ({q['lado']})" for q in partes["partes"])
+            linea = "línea POR DEFINIR" if not partes.get("linea") else "línea conocida"
+            print(f"      {p['nombre']} ({p['area_ha']} ha) → {det} — {linea}")
     inf = [{"type": "Feature", "properties": {
         "tipo": "cerca_inferida", "nombre": f"Cerca {a}–{b}", "longitud_m": dm,
         "fuente": f"[owner] {mot}",

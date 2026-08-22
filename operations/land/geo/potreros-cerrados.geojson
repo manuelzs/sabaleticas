@@ -10,6 +10,8 @@
     "nombrado": false,
     "estado": "por_subdividir",
     "estado_nota": "los nombres del plano de 2007 que caen dentro dicen en cuántos se parte",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 15.4,
     "area_m2": 153985,
     "agua": [
@@ -337,6 +339,8 @@
     "nombrado": false,
     "estado": null,
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 10.15,
     "area_m2": 101477,
     "agua": [
@@ -502,6 +506,8 @@
     "nombrado": false,
     "estado": null,
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 9.07,
     "area_m2": 90701,
     "agua": [
@@ -643,6 +649,8 @@
     "nombrado": false,
     "estado": null,
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 7.73,
     "area_m2": 77271,
     "agua": [
@@ -784,6 +792,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 6.8,
     "area_m2": 67953,
     "agua": [
@@ -1027,6 +1037,8 @@
     "nombrado": false,
     "estado": null,
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 6.38,
     "area_m2": 63784,
     "agua": [
@@ -1226,6 +1238,11 @@
     "nombrado": false,
     "estado": "por_subdividir",
     "estado_nota": "los nombres del plano de 2007 que caen dentro dicen en cuántos se parte",
+    "subdivide_en": [
+     "Argelia",
+     "Marruecos"
+    ],
+    "subdivide_nota": "La línea exacta está POR DEFINIR — Manuel la ve dudosa por ahora.",
     "area_ha": 6.28,
     "area_m2": 62800,
     "agua": [
@@ -1489,6 +1506,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 5.91,
     "area_m2": 59093,
     "agua": [
@@ -1692,6 +1711,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 5.71,
     "area_m2": 57143,
     "agua": [
@@ -1787,6 +1808,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 5.42,
     "area_m2": 54189,
     "agua": [
@@ -2066,6 +2089,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 5.12,
     "area_m2": 51158,
     "agua": [
@@ -2159,6 +2184,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 5.02,
     "area_m2": 50168,
     "agua": [
@@ -2398,6 +2425,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 4.49,
     "area_m2": 44912,
     "agua": [
@@ -2483,6 +2512,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 4.46,
     "area_m2": 44609,
     "agua": [
@@ -2566,6 +2597,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 4.36,
     "area_m2": 43609,
     "agua": [
@@ -2641,6 +2674,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 4.28,
     "area_m2": 42821,
     "agua": [
@@ -2734,6 +2769,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 4.03,
     "area_m2": 40259,
     "agua": [
@@ -2937,6 +2974,8 @@
     "nombrado": false,
     "estado": null,
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 3.91,
     "area_m2": 39090,
     "agua": [
@@ -3044,6 +3083,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 3.76,
     "area_m2": 37593,
     "agua": [
@@ -3125,6 +3166,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 3.74,
     "area_m2": 37361,
     "agua": [
@@ -3220,6 +3263,8 @@
     "nombrado": false,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 3.23,
     "area_m2": 32317,
     "agua": [
@@ -3316,6 +3361,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 3.21,
     "area_m2": 32093,
     "agua": [
@@ -3414,6 +3461,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 3.11,
     "area_m2": 31102,
     "agua": [
@@ -3501,6 +3550,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 2.99,
     "area_m2": 29899,
     "agua": [
@@ -3610,6 +3661,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 2.73,
     "area_m2": 27331,
     "agua": [
@@ -3705,6 +3758,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 2.39,
     "area_m2": 23935,
     "agua": [
@@ -3792,6 +3847,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 2.33,
     "area_m2": 23323,
     "agua": [],
@@ -3904,6 +3961,8 @@
     "nombrado": false,
     "estado": null,
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 2.3,
     "area_m2": 22975,
     "agua": [
@@ -4031,6 +4090,8 @@
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 2.09,
     "area_m2": 20861,
     "agua": [],
@@ -4107,6 +4168,8 @@
     "nombrado": false,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 1.96,
     "area_m2": 19594,
     "agua": [
@@ -4228,6 +4291,8 @@
     "nombrado": false,
     "estado": "final",
     "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 1.9,
     "area_m2": 18962,
     "agua": [

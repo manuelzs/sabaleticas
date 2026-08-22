@@ -245,6 +245,9 @@ def _collect(geo: Path, TIPOS):
                 sub2 = f"{props['area_ha']} ha"
                 if est and est != "final":
                     sub2 += f" · {est.replace('_', ' ')}"
+                # the parts are known before the fence is; say so on the map
+                if props.get("subdivide_en"):
+                    sub2 += " → " + " + ".join(props["subdivide_en"])
                 item_sub2, item_mal = sub2, est != "final"
             if props.get("lado") and props.get("area_ha"):      # neighbours: name / owner / side+area
                 who = (owners.get(props.get("matricula") or "", {}) or {}).get("owner", "")

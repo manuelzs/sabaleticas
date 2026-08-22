@@ -1,0 +1,27 @@
+{
+ "_nota": "Subdivisiones que Manuel sabe que faltan, ancladas a un PUNTO dentro de la cara actual. Igual que los nombres y los estados: la numeración se baraja en cada corrida, el punto no.",
+ "_para_que": "Guardar lo que ya se sabe de una cara ANTES de poder partirla. El nombre de cada parte y de qué lado queda suelen saberse mucho antes que la línea exacta, y si no se anotan se pierden.",
+ "_linea": "«linea»: null mientras no se sepa por dónde va el corte. Cuando se sepa, se dicta como cierre normal en cercas-cierres.json y esta entrada se retira.",
+ "_ojo": "Que una cara tenga aquí sus partes NO la parte. Sigue siendo una sola cara en potreros-cerrados.geojson hasta que exista la cerca. Esto es memoria, no geometría.",
+ "pendientes": [
+  {
+   "punto": [
+    -75.615807,
+    5.793923
+   ],
+   "partes": [
+    {
+     "nombre": "Argelia",
+     "lado": "oriente"
+    },
+    {
+     "nombre": "Marruecos",
+     "lado": "occidente"
+    }
+   ],
+   "linea": null,
+   "fuente": "[owner, 2026-08-22] Manuel: el potrero 7 de la corrida del 2026-08-22 (6,28 ha) son en realidad dos.",
+   "nota": "La línea exacta está POR DEFINIR — Manuel la ve dudosa por ahora."
+  }
+ ]
+}
