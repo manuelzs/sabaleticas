@@ -5,8 +5,8 @@
  "potreros": [
   {
    "del_lindero": "LO 1 EL GUAICO",
-   "nombre_sugerido": "El Guaico",
-   "nota": "Contorno catastral del lote, 18,88 ha. Pendiente de subdividir: el IGAC no tiene NINGUNA cerca dibujada aquí, así que las divisiones habrá que digitalizarlas de la ortofoto o dictarlas."
+   "nota": "Contorno catastral del lote LO 1 EL GUAICO, 18,75 ha. NO lleva nombre: «El Guaico» es el nombre del LOTE, no de un potrero, y ponérselo a esta cara haría creer que es un potrero cuando es un contenedor. Manuel calcula unas SIETE subdivisiones adentro. El IGAC no tiene ninguna cerca dibujada aquí, así que habrá que digitalizarlas de la ortofoto o dictarlas.",
+   "subdivisiones_esperadas": 7
   }
  ]
 }

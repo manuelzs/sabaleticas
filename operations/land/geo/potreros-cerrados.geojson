@@ -5,9 +5,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "El Guaico",
+    "nombre": "Potrero 1",
     "n": 1,
-    "nombrado": true,
+    "nombrado": false,
     "estado": "por_subdividir",
     "estado_nota": "es el lote entero; adentro hay varios potreros que Manuel dará después. El IGAC no tiene ninguna cerca dibujada aquí, así que las divisiones habrá que digitalizarlas o dictarlas.",
     "subdivide_en": [],
@@ -21,7 +21,7 @@
     "agua_por_confirmar": true,
     "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
     "dictado": true,
-    "dictado_nota": "Contorno catastral del lote, 18,88 ha. Pendiente de subdividir: el IGAC no tiene NINGUNA cerca dibujada aquí, así que las divisiones habrá que digitalizarlas de la ortofoto o dictarlas.",
+    "dictado_nota": "Contorno catastral del lote LO 1 EL GUAICO, 18,75 ha. NO lleva nombre: «El Guaico» es el nombre del LOTE, no de un potrero, y ponérselo a esta cara haría creer que es un potrero cuando es un contenedor. Manuel calcula unas SIETE subdivisiones adentro. El IGAC no tiene ninguna cerca dibujada aquí, así que habrá que digitalizarlas de la ortofoto o dictarlas.",
     "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
     "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
    },
