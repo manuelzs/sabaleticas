@@ -422,7 +422,61 @@
    ],
    "cerca real curva entre dos vértices existentes, tramo 3 de 3. Va de la punta de la prolongación de la cerca 49 al final de la cerca 50, pasando por los dos puntos intermedios que marcó Manuel: 59,0 m por la curva contra 57,2 m en recta.",
    true
-  ]
+  ],
+  {
+   "polilinea": [
+    [
+     -75.610425,
+     5.800051
+    ],
+    [
+     -75.610598,
+     5.800034
+    ],
+    [
+     -75.610791,
+     5.800009
+    ],
+    [
+     -75.610888,
+     5.799934
+    ],
+    [
+     -75.610945,
+     5.799827
+    ],
+    [
+     -75.610986,
+     5.799503
+    ],
+    [
+     -75.611028,
+     5.799398
+    ],
+    [
+     -75.611107,
+     5.799319
+    ],
+    [
+     -75.611316,
+     5.799215
+    ],
+    [
+     -75.611738,
+     5.799222
+    ],
+    [
+     -75.61193,
+     5.799168
+    ],
+    [
+     -75.612183,
+     5.798967
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada."
+  }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
  "_por_que": "[owner, 2026-08-22] La capa de CERCAS y la de POTREROS no son lo mismo. Donde no hay cerca física el IGAC hace bien en dejar el hueco, pero el POTRERO puede estar cerrado igual para el ganado. Las cercas se quedan abiertas; los potreros se cierran.",

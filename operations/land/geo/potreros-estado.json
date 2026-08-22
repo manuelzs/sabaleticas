@@ -246,6 +246,15 @@
    "estado": "por_verificar",
    "nota": "Manuel dice que es Rincón, pero el Mojón 15 queda 56 m al sur, fuera de la cara: puede que el potrero llegue hasta allá. Nombre en espera hasta decidir el borde.",
    "fuente": "[owner, 2026-08-22] Manuel lo marcó como «por_verificar» sobre el Potrero 34 de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.613727,
+    5.794979
+   ],
+   "estado": "final",
+   "nota": "confirmado por Manuel; el levantamiento de 2007 no le da nombre",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 28 de la corrida del 2026-08-22."
   }
  ]
 }

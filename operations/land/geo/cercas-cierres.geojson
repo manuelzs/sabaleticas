@@ -1176,6 +1176,270 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 19,
+    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 1 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610425,
+      5.800051
+     ],
+     [
+      -75.610598,
+      5.800034
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 22,
+    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 2 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610598,
+      5.800034
+     ],
+     [
+      -75.610791,
+      5.800009
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 14,
+    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 3 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610791,
+      5.800009
+     ],
+     [
+      -75.610888,
+      5.799934
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 13,
+    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 4 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610888,
+      5.799934
+     ],
+     [
+      -75.610945,
+      5.799827
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 36,
+    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 5 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610945,
+      5.799827
+     ],
+     [
+      -75.610986,
+      5.799503
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 13,
+    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 6 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610986,
+      5.799503
+     ],
+     [
+      -75.611028,
+      5.799398
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 12,
+    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 7 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.611028,
+      5.799398
+     ],
+     [
+      -75.611107,
+      5.799319
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 26,
+    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 8 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.611107,
+      5.799319
+     ],
+     [
+      -75.611316,
+      5.799215
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 47,
+    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 9 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.611316,
+      5.799215
+     ],
+     [
+      -75.611738,
+      5.799222
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 22,
+    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 10 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.611738,
+      5.799222
+     ],
+     [
+      -75.61193,
+      5.799168
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 36,
+    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 11 de 11)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.61193,
+      5.799168
+     ],
+     [
+      -75.612183,
+      5.798967
+     ]
+    ]
+   }
   }
  ]
 }
