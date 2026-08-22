@@ -575,6 +575,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 122,
+    "fuente": "[owner] cerca real confirmada en terreno: del vértice del potrero hasta el lindero de enfrente. Muere sobre la línea, no en un vértice (al 7 % de un tramo de 90 m). 121,7 m subiendo 25 m.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612934,
+      5.79576
+     ],
+     [
+      -75.611977,
+      5.796302
+     ]
+    ]
+   }
   }
  ]
 }

@@ -283,6 +283,18 @@
    ],
    "cerca real hasta el lindero; muere a media luz de un tramo de 28 m, sin vértice (a 12,0 m de un extremo y 16,3 m del otro)",
    true
+  ],
+  [
+   [
+    -75.612934,
+    5.79576
+   ],
+   [
+    -75.611977,
+    5.796302
+   ],
+   "cerca real confirmada en terreno: del vértice del potrero hasta el lindero de enfrente. Muere sobre la línea, no en un vértice (al 7 % de un tramo de 90 m). 121,7 m subiendo 25 m.",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
