@@ -653,6 +653,39 @@ This supersedes nothing above — it is the list of things **only a site visit c
    **Do this before commissioning a survey**, not after — it tells the surveyor where to look
    and stops us paying someone to rediscover it.
 
+### 🔴 The bocatomas are off our land — and unmapped
+
+`[owner, 2026-08-22]` *"They are not in our land. They are to the east. I can't get the name of
+the exact creek… we probably even have some more paperwork for the water rights."*
+
+**Every litre this farm uses enters through two intakes on somebody else's property.** That is
+the largest single dependency in the operation, and we currently have **no coordinates, no
+creek name, and no sight of the paperwork.**
+
+Why this outranks the distribution puzzles: the pipes can be traced any afternoon. **A water
+right cannot be recovered in an afternoon**, and it fails exactly when a drought makes it
+matter — which is the scenario this whole project exists for.
+
+#### To find, when Manuel has time
+
+| Document | What to read off it |
+|---|---|
+| **Concesión de aguas — CORANTIOQUIA** (the regional authority for the suroeste) | The **expediente number**, the **flow granted in L/s**, the **source named**, and above all the **expiry date**. Concesiones are time-limited and must be renewed |
+| **Servidumbre de acueducto** over the land the intakes sit on | Whether it is written and **registered** — a handshake does not survive the sale of that property |
+| Any correspondence about the quebradas | Which creek, and whether any restriction has ever been imposed |
+
+#### The three questions that matter most
+
+1. **Is the concesión current, or has it lapsed?** An expired one is a vulnerability nobody
+   notices until the authority or a neighbour raises it.
+2. **How many L/s are we legally entitled to?** That is the ceiling on supply, and it may be
+   lower than what we take. Worth knowing *before* comparing it to the ~10–17 m³/día estimate.
+3. **Who owns the land the bocatomas sit on, and does the easement survive a sale?** The same
+   question as El Guaico — and Los Búhos next door has just changed hands.
+
+⚠️ In a declared drought CORANTIOQUIA can restrict abstraction. **A farm whose paperwork is in
+order is in a very different position from one whose is not.**
+
 ### The open questions, to settle on site
 6c. **Where do Bebederos 5, 6 and 7 connect?** `[hypothesis, Manuel concurs 2026-08-22]` The
    source must be above ~717 m, and only the **ramal norte** qualifies nearby. Most likely
