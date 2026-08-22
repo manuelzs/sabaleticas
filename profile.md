@@ -63,7 +63,7 @@ resolved**; both are shown rather than picking one silently.
 
 ## The herd
 
-- **Total head:** 266 (per SINIGAN registry, 2026-05-21, all VIVO)
+- **Total head:** ⚠️ **266 is stale** `[SINIGAN, 2026-05-21]` — **sales in progress since**, so the real number is lower and moving. Treat 266 as a conservative upper bound
 - **Operation type:** **Ceba de hembras** — buy **females**, fatten, sell on weight. Females are the deliberate strategy.
 - **Born-on-farm calves:** some purchased females arrive **pregnant**; their calves are born here, raised to weaning, and sold around then — **not fattened**. The 10 males in the herd are these born-on-farm animals.
 - **Breed(s):** TBD (likely Cebú/Brahman or crosses — _to confirm_)

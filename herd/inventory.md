@@ -5,6 +5,12 @@ Sabaleticas), pulled 2026-05-21. All animals VIVO.
 
 **As of:** 2026-05-21 · **Source:** SINIGAN/SNIITA V6 · **Total: 266**
 
+> ⚠️ **STALE as of 2026-08-21.** Manuel is **actively selling a good number of animals**,
+> ahead of further price falls. The real head count is **below 266 and moving**. Every
+> per-head and per-hectare figure in this repo still uses 266 and should be read as a
+> **conservative upper bound** until we get a fresh count. Re-pull from SINIGAN, or take
+> Manuel's number, once the sales settle.
+
 ## By sex
 
 | Sex | Head |

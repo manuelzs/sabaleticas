@@ -46,7 +46,21 @@ the upper end when it's hot `[S42]` — and our August mean daily maximum is **3
 | 300 kg | 9,576 L/day | **7.3 days** |
 | 400 kg | 12,768 L/day | **5.5 days** |
 
-> ### Call it **five to seven days.** That is the whole buffer.
+But the two tanks are a **main (50,000 L) and a reserve (20,000 L)**, not one pooled 70,000 L.
+So there are two different numbers, and the smaller one is the one that bites first:
+
+| | Storage | 300 kg | 400 kg |
+|---|---|---|---|
+| **Main tank alone**, before anyone switches over | 50,000 L | **5.2 days** | **3.9 days** |
+| Both, once the reserve is brought in | 70,000 L | 7.3 days | 5.5 days |
+
+> ### Call it **four to five days on the main tank, and seven at the absolute outside.**
+
+⚠️ **The switchover is manual.** That means the reserve only helps if someone *notices* in
+time. If the main runs down unobserved — overnight, or over a weekend — the buffer is the
+main tank alone, and the reserve is 20,000 L of water we own and didn't use. A float alarm or
+a simple daily level reading closes that gap for almost nothing, and it is the cheapest
+resilience improvement on this page.
 
 Two caveats, pulling opposite ways and roughly cancelling: not every animal drinks from the
 tanks today (some potreros have natural water) — but in the scenario we're worried about,
@@ -93,9 +107,18 @@ Manuel spent last weekend surveying the water infrastructure. Current state `[ow
 We have roughly **three months** before the December–March window. Sequenced by cost per day
 of autonomy bought:
 
-### 1. Connect what already exists *(cheapest, do first)*
-Every disconnected tank is storage we already own. Each 10,000 L added is **roughly one more
-day** of herd autonomy at current numbers. Nothing else on this list has that ratio.
+### 1. Make the storage we already own actually usable *(cheapest, do first)*
+**Correction (2026-08-21): the two main tanks are NOT disconnected** — I had misread that.
+Both are plumbed in, main and reserve, with a manual switchover. What Manuel flagged is
+**smaller tanks elsewhere that aren't connected properly** (detail still to come).
+
+Two cheap wins remain, and both are about *usability* rather than capacity:
+
+- **Close the manual-switchover gap** — a float alarm, or a daily level reading written down.
+  Without it the reserve's 20,000 L is only available if someone happens to look in time.
+- **The smaller tanks**, once Manuel describes them. Storage that physically exists but isn't
+  plumbed in is the cheapest water on the farm: roughly **every 10,000 L made usable is
+  another day** of herd autonomy. Nothing bought new comes close to that ratio.
 
 ### 2. Start measuring **now**, while conditions are normal
 This is free and it expires. **You cannot detect a 40% decline in a quebrada you never
@@ -117,9 +140,17 @@ February. Same for the **over-pressure question** — 108 m of head to the big h
 186 m to the lowest ground (see above) is the kind of fault that surfaces when a line is
 finally run hard.
 
-### 4. Decide the herd question — and decide it early
-This is the uncomfortable one, and it is the reason this document keeps pointing back at the
-financials.
+### 4. The herd question — ✅ already in hand
+**Manuel is actively selling** (2026-08-21), a good number of animals, ahead of further price
+falls. So this section is recording a decision already taken, not proposing one.
+
+Worth noting because it lands directly on this page: **destocking is also a water action.**
+At 36 L/head/day, every **10 head sold adds roughly a quarter-day** of autonomy across the
+whole system — and unlike every other item here, it costs nothing and raises cash. The herd
+count in this document is therefore **falling and stale**; the autonomy figures above are a
+conservative ceiling on demand.
+
+The reasoning that made it the right call, kept for the record:
 
 - We are stocked at roughly **2.1–2.3 head/ha of potrero**, **above** the 1–2/ha rotated
   benchmark ([`../land/geo/README.md`](../land/geo/README.md)).
@@ -139,9 +170,7 @@ financials.
 > when the animals are worth least. The farms that do well in an El Niño are the ones that
 > moved before the rush.
 
-**This is a decision for Manuel, not a recommendation to act on** — and it needs the P&L to
-size properly, which lands around the close of August. But it should be *considered* now
-rather than in December, because by December the option has passed.
+How far to take it still needs the P&L, which lands around the close of August.
 
 ## Why water gets its own project
 
@@ -188,9 +217,10 @@ Recorded because it is the first coherent description of the system we have.
 
 1. **Two sources, both outside the farm**, which we hold **water rights** on. They feed the
    farm — this is how water gets in at all.
-2. **Two tanks at the top**, beside the little house at the entrance:
-   **~50,000 L and ~20,000 L**. *(Manuel: "I do know there are two sources, I do know there
-   are two tanks. I just don't know the capacity.")*
+2. **Two tanks at the top**, beside the little house at the entrance: a **~50,000 L main**
+   and a **~20,000 L reserve**. **Both are plumbed into the system**, arranged so one backs
+   up the other, with a **manual switchover** if the main fails. *(Capacities from memory —
+   Manuel: "I just don't know the capacity.")*
 3. **Distribution runs from those two tanks across the farm.**
 4. **Potreros without natural water have a small trough (bebedero)** for the cattle. This is
    a large share of total use.

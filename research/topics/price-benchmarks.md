@@ -1,3 +1,21 @@
+> ## 🔴 The primary source has gone dark (checked 2026-08-21)
+> **Central Ganadera Medellín has published no boletín since 24 April 2026** — verified
+> against their WordPress media library directly, not just the rendered page. Boletín 16 is
+> the last one. `sabaleticas prices fetch` is working correctly; there is simply nothing new
+> to fetch.
+>
+> This matters because Central Ganadera was **the only source we had with finished-female
+> (hembra cebada) prices** — the exact category we sell. Until it resumes or we find a
+> replacement, our benchmark table is four months stale.
+>
+> **The best current price signal we have is Manuel's own market activity**: he is selling
+> now and being offered **~9,200 COP/kg** (2026-08-21, `[owner, unverified]`), against
+> **9,671** at Central Ganadera on 24 April — **about 4.9% lower**. Recorded in
+> `data/price_benchmarks.csv`.
+>
+> **To do:** find a replacement source with hembra cebada prices (Subastar [S40], Fedegán's
+> price pages, or the feria directly), and repoint the fetcher.
+
 # Published cattle-price benchmarks (Colombia) — for Hacienda Sabaleticas
 
 **Purpose:** External, publicly published price references to compare against the ranch's own

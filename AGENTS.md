@@ -109,8 +109,8 @@ from AGROSAVIA, Fedegán, CIPAV, CONtexto Ganadero, Central Ganadera, universiti
 - **Diagnosis (`financials/diagnosis.md`):** leading suspects **H1 (low turnover) + H4
   (subscale fixed cost) + H6 (weak channel)**. Ceba is a velocity business; the herd looks
   like it accumulates and dribbles out cheaply.
-- **Market benchmark (Medellín, Apr 2026):** hembra cebada ~**9,671 COP/kg**, macho cebado
-  ~**11,644**; hembra ~17% below macho. Antioquia/Medellín is a strong selling region.
+- **Market benchmark:** hembra cebada ~**9,671 COP/kg**, macho cebado ~**11,644** (Medellín, Apr 2026); hembra ~17% below macho. ⚠️ **Central Ganadera stopped publishing after 2026-04-24** — the fetcher works, the source went dark, and it was our only hembra-cebada source. Latest real signal: **~9,200 offered to Manuel, 2026-08-21** `[owner]`, ~4.9% below April.
+- **Herd:** ⚠️ **266 is stale** — Manuel is selling actively as of 2026-08-21, so the count is lower and moving. All per-head/per-hectare figures are conservative upper bounds.
 - **Grain finishing:** researched — poor fit in Colombia (imported grain, no marbling premium).
 
 ## What's pending (the real unlock)

@@ -8,3 +8,4 @@ obs_date,source,category,region,weight_range,cop_per_kg,notes
 2026-03-07,BMC/Fedegan,macho gordo,nacional,,9885,early Mar 2026 consolidated [S39]
 2026-02-06,Central Ganadera Medellin,hembra cebada,Medellin,,9215,Boletin N05 Feb 2-6 2026 [S37]
 2026-02-06,Central Ganadera Medellin,macho cebado,Medellin,,11279,Boletin N05 Feb 2-6 2026 [S37]
+2026-08-21,Manuel (oferta de comprador),hembra cebada,La Pintada,,9200,"[owner, unverified] ~9.200 que le ofrecen en la venta en curso. vs 9.671 de Central Ganadera Medellin 2026-04-24 = -4,9%. No es un benchmark publicado: es un precio real ofrecido, que para consignacion suele ir por debajo de la feria"
