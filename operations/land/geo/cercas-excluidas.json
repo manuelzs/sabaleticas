@@ -29,6 +29,14 @@
    ],
    "motivo": "[owner, 2026-08-22] No existe. Ahí no hay cerca — el IGAC la detectó porque el trazo va pegado a la vía.",
    "nota": "Señalada con la herramienta de aristas. Es la cerca 34 completa (15 vértices, de -75.614112,5.795606 a -75.611697,5.797); no debe aparecer ni en cercas ni en potreros."
+  },
+  {
+   "punto": [
+    -75.613111,
+    5.807519
+   ],
+   "motivo": "[owner, 2026-08-22] Manuel: es un artefacto. El lindero corre en paralelo y es el que cierra de verdad el potrero.",
+   "nota": "Cerca 24 del IGAC, dos vértices, 97,7 m. Duplica el lindero de punta a punta: arranca a 0,0 m de él y se abre hasta 5,8 m. Manuel señaló sólo la mitad de arriba; se quita entera porque la mitad de abajo va a 0–3 m del lindero y volvería a dejar el par de aristas casi paralelas que acabamos de limpiar. Al ir pegada al lindero no se pierde geometría."
   }
  ]
 }

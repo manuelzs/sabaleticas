@@ -832,17 +832,25 @@ def main():
             # vertex — match by proximity, not equality
             def near(q):
                 return math.hypot((q[0] - p[0]) * LON2M, (q[1] - p[1]) * LAT2M) <= TOL
-            hd = None
+            # The LONGEST last segment wins, not the first line that happens to touch.
+            # Several fragments can end on one loose end — point 6 has 0.2 m stubs, one of
+            # them pointing 116.5°, the exact opposite of the fence's real 296.9° heading.
+            # Taking the first match would have fired the extension backwards.
+            hd, p_real, best_len = None, None, -1.0
             for l in lines:
                 if len(l) < 2:
                     continue
                 if near(l[0]):
-                    hd = (l[0][0] - l[1][0], l[0][1] - l[1][1])
+                    cand, q = (l[0][0] - l[1][0], l[0][1] - l[1][1]), l[0]
                 elif near(l[-1]):
-                    hd = (l[-1][0] - l[-2][0], l[-1][1] - l[-2][1])
-                if hd:
-                    p = l[0] if near(l[0]) else l[-1]      # use the real vertex
-                    break
+                    cand, q = (l[-1][0] - l[-2][0], l[-1][1] - l[-2][1]), l[-1]
+                else:
+                    continue
+                ln_m = math.hypot(cand[0] * LON2M, cand[1] * LAT2M)
+                if ln_m > best_len:
+                    hd, p_real, best_len = cand, q, ln_m
+            if hd:
+                p = p_real                                 # use the real vertex
             if not hd:
                 print(f"  ⚠ extender {c[0]}: no se halló la cerca de origen")
                 continue
@@ -1098,7 +1106,13 @@ def main():
             if n_cor / n_tot > 0.8:
                 print(f"      descartada por ser corral: {a:.0f} m²")
                 continue
-        if sum(1 for k in cyc if k in bkeys) / len(cyc) > 0.9:
+        # ALL of them, not 90 %. A potrero in a corner of the farm is bounded by lindero on
+        # two or three sides, and the lindero is densely vertexed, so real paddocks sit at
+        # 80-90 % — measured: 85.4 % on a 20.81 ha one, 80.0 % on a 2.33 ha one. The 0.9
+        # threshold cut straight through live data and threw away a real 4.03 ha enclosure
+        # at 90.2 %. A face that is genuinely just parcel outline has no fence in it at all;
+        # anything closed by even one fence keeps a vertex that is not the boundary's.
+        if all(k in bkeys for k in cyc):
             if a / 10000 > 2:
                 print(f"      descartada por ser el contorno del predio: {a/10000:.2f} ha")
             continue                             # this face IS a parcel outline, not a potrero

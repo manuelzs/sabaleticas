@@ -414,6 +414,52 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 6–→",
+    "longitud_m": 38,
+    "fuente": "[owner] se prolonga al noroeste en su misma dirección hasta cortar el lindero",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615326,
+      5.806351
+     ],
+     [
+      -75.615634,
+      5.806518
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 4–→",
+    "longitud_m": 47,
+    "fuente": "[owner] se prolonga al noroeste en su misma dirección hasta cortar el lindero",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614108,
+      5.807143
+     ],
+     [
+      -75.61432,
+      5.807502
+     ]
+    ]
+   }
   }
  ]
 }

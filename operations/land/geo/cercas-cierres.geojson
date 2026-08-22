@@ -672,6 +672,54 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 6–→",
+    "longitud_m": 38,
+    "motivo": "se prolonga al noroeste en su misma dirección hasta cortar el lindero",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615326,
+      5.806351
+     ],
+     [
+      -75.615634,
+      5.806518
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 4–→",
+    "longitud_m": 47,
+    "motivo": "se prolonga al noroeste en su misma dirección hasta cortar el lindero",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614108,
+      5.807143
+     ],
+     [
+      -75.61432,
+      5.807502
+     ]
+    ]
+   }
   }
  ]
 }
