@@ -81,6 +81,22 @@
     5.805177
    ],
    "fuente": "[owner, 2026-08-22] Manuel lo identificó como el potrero 11 de la corrida del 2026-08-22 (era el 10 antes de que la cerca del extremo 8 renumerara)."
+  },
+  {
+   "nombre": "El Bosque",
+   "punto": [
+    -75.61343,
+    5.807318
+   ],
+   "fuente": "[owner, 2026-08-22] Manuel lo identificó como el potrero 21 de la corrida del 2026-08-22."
+  },
+  {
+   "nombre": "Sabaleticas",
+   "punto": [
+    -75.615547,
+    5.80722
+   ],
+   "fuente": "[owner, 2026-08-22] Manuel lo identificó como el potrero 13 de la corrida del 2026-08-22."
   }
  ]
 }

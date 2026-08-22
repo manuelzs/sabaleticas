@@ -366,8 +366,8 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre 12–punto",
-    "longitud_m": 43,
-    "motivo": "cerca real hasta el vértice donde se juntan los potreros — 10 m al norte y 16 m al este del quiebre del lindero, según Manuel",
+    "longitud_m": 46,
+    "motivo": "cerca real hasta el vértice del lindero donde se juntan los potreros — 10 m al norte y 16 m al este del quiebre, según Manuel. Ajustado 3,3 m al norte para caer EXACTAMENTE sobre el vértice del lindero: quedaba justo fuera de los 2 m de tolerancia del noding y dejaba el potrero abierto por ahí.",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
@@ -380,7 +380,7 @@
      ],
      [
       -75.617129,
-      5.802296
+      5.802326
      ]
     ]
    }

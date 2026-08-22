@@ -336,6 +336,27 @@ def recortar_zonas(feats, verbose=False):
     return out
 
 
+# Parcels kept OUT of the fence graph, though they are still ours and still drawn.
+#
+# The property is two parcels on one matrícula: AP 1 SABALETITAS (151.85 ha) and
+# LO 1 EL GUAICO (18.88 ha), 170.73 ha together. Their outlines run parallel a few metres
+# apart along the west — [owner, 2026-08-22] Manuel: that is not a digitising error, they
+# are the two BANKS OF THE RIVER. The river is not ours (it never is), so each parcel stops
+# at its own bank and the gap between them, median 11.4 m, is the water. The land on both
+# sides is ours and the whole thing is fenced off, which is why the double line looks like
+# a mistake and is not one.
+#
+# For the graph it is still a problem: the two outlines cross, and a face walk coming down
+# the western boundary reaches that crossing and turns back north along the far bank, so no
+# enclosure on that side can ever close. El Guaico gives nothing back — no potrero uses a
+# single one of its vertices, because IGAC has no fence data there at all.
+#
+# So it is kept out of the GRAPH only. It still counts as ours for the inside test and
+# still draws on the map. Revisit when El Guaico's fences are digitised from the orthophoto:
+# then it needs its own outline back, and the river between the banks must stay outside
+# every potrero.
+FUERA_DEL_GRAFO = {"LO 1 EL GUAICO"}
+
 def load_lines(tag=False):
     out = []
     for f in cercas_propias(write=False):
@@ -347,6 +368,8 @@ def load_lines(tag=False):
     n_cerca = len(out)
     bnd = json.loads((GEO / "boundary.geojson").read_text(encoding="utf-8"))
     for f in bnd["features"]:
+        if f["properties"].get("name") in FUERA_DEL_GRAFO:
+            continue
         g = f["geometry"]
         rings = [g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]
         for poly in rings:
