@@ -1,0 +1,28 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 30–35",
+    "longitud_m": 113,
+    "fuente": "[owner] cerca real bajo dosel — el satélite no la ve",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616051,
+      5.798078
+     ],
+     [
+      -75.616726,
+      5.797314
+     ]
+    ]
+   }
+  }
+ ]
+}

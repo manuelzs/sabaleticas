@@ -8,6 +8,7 @@
     "nombre": "Cierre 32–33",
     "longitud_m": 7,
     "motivo": "bebedero — la cerca se parte para que el ganado tome de ambos lados. NO está en la red de agua (95 m del punto conocido más cercano).",
+    "es_cerca": false,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -31,6 +32,7 @@
     "nombre": "Cierre 16–17",
     "longitud_m": 12,
     "motivo": "coincide a 0 m con Bebedero 2, ya confirmado en ortofoto — el hueco es la cerca partiéndose para el bebedero",
+    "es_cerca": false,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -54,6 +56,7 @@
     "nombre": "Cierre 21–22",
     "longitud_m": 12,
     "motivo": "[ABIERTA] Hay algo, pero Manuel no distingue si es bebedero o saladero. Importa: si es bebedero, hay que conectarlo a la red de agua. 234 m del punto conocido más cercano.",
+    "es_cerca": false,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -77,6 +80,7 @@
     "nombre": "Cierre 19–20",
     "longitud_m": 20,
     "motivo": "Bebedero 4 — identificado aquí por Manuel; el bebedero se reubicó a este punto",
+    "es_cerca": false,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -100,6 +104,7 @@
     "nombre": "Cierre 31–34",
     "longitud_m": 8,
     "motivo": "quiebrapatas",
+    "es_cerca": false,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -123,6 +128,7 @@
     "nombre": "Cierre 42–43",
     "longitud_m": 10,
     "motivo": "quiebrapatas",
+    "es_cerca": false,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -146,6 +152,7 @@
     "nombre": "Cierre 10–11",
     "longitud_m": 14,
     "motivo": "saladero",
+    "es_cerca": false,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -169,6 +176,7 @@
     "nombre": "Cierre 13–beb-3",
     "longitud_m": 5,
     "motivo": "concurre en el Bebedero 3",
+    "es_cerca": false,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -192,6 +200,7 @@
     "nombre": "Cierre 14–beb-3",
     "longitud_m": 4,
     "motivo": "concurre en el Bebedero 3",
+    "es_cerca": false,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -215,6 +224,7 @@
     "nombre": "Cierre 15–beb-3",
     "longitud_m": 3,
     "motivo": "concurre en el Bebedero 3",
+    "es_cerca": false,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -227,6 +237,30 @@
      [
       -75.610781,
       5.801364
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 30–35",
+    "longitud_m": 113,
+    "motivo": "cerca real bajo dosel — el satélite no la ve",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616051,
+      5.798078
+     ],
+     [
+      -75.616726,
+      5.797314
      ]
     ]
    }

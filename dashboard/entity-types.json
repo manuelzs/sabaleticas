@@ -192,6 +192,15 @@
    "atributos": [
     "potrero"
    ]
+  },
+  "cerca_inferida": {
+   "label": "Cerca inferida",
+   "color": "#ff8ae2",
+   "mapa": "line",
+   "esquema": "line",
+   "ancho": 0,
+   "geom": "line",
+   "atributos": []
   }
  }
 }

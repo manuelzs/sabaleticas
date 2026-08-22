@@ -50,6 +50,12 @@
    15,
    "agua:beb-3",
    "concurre en el Bebedero 3"
+  ],
+  [
+   30,
+   35,
+   "cerca real bajo dosel — el satélite no la ve",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
@@ -57,5 +63,6 @@
  "_motivo": "El motivo lo DICE Manuel, nunca se infiere. Un hueco puede ser un quiebrapatas, un bebedero con la cerca partida para que el ganado tome de ambos lados, un saladero, una puerta, o simplemente cerca que el satélite no vio. Vocabulario abierto; si no se sabe, queda 'sin especificar'.",
  "_ojo_bosque": "[owner, 2026-08-22] NO deducir cierres de la capa Bosque. En la mayor parte del bosque SÍ hay cerca — lo que pasa es que el satélite no la detecta bajo el dosel. La correlación entre hueco y borde de bosque es de VISIBILIDAD, no de barrera.",
  "_extend": "Un cierre [n, \"@extend\"] prolonga la cerca del extremo n EN SU MISMA DIRECCION hasta cruzar otra cerca, y parte esa cerca ahí. Es para cuando una cerca muere en T sobre otra: no se puede expresar uniendo dos extremos numerados, y bajar una perpendicular inventaria un quiebre que no existe.",
- "_entidad": "Un cierre [n, \"agua:beb-3\"] une el extremo n a esa entidad. Es la forma natural cuando varias cercas concurren en un mismo punto — un bebedero, un saladero — porque deja escrito POR QUE se juntan ahí, no sólo que se juntan."
+ "_entidad": "Un cierre [n, \"agua:beb-3\"] une el extremo n a esa entidad. Es la forma natural cuando varias cercas concurren en un mismo punto — un bebedero, un saladero — porque deja escrito POR QUE se juntan ahí, no sólo que se juntan.",
+ "_es_cerca": "Un 4º elemento true marca un cierre que ES una cerca real, sólo que el IGAC no la capturó — casi siempre porque el dosel tapa la vista. Esos salen además a cercas-inferidas.geojson y se dibujan como cerca. Un quiebrapatas o el corte para un bebedero NO llevan la marca: ahí de verdad no hay cerca."
 }

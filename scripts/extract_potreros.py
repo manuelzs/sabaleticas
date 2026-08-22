@@ -548,6 +548,7 @@ def main():
         for c in json.loads(f_c.read_text(encoding="utf-8"))["cierres"]:
             a, b = c[0], c[1]
             motivo = c[2] if len(c) > 2 else ""
+            es_cerca = bool(c[3]) if len(c) > 3 else False
             if b in ents:
                 va = by_num.get(a)
                 pt = ents[b]
@@ -573,7 +574,7 @@ def main():
                 print(f"    {a} → {b}: {d_m:6.1f} m{flag}")
                 adj[va].add(vb)
                 adj[vb].add(va)
-                cierres.append((a, b.split(":")[-1], pos[va], pos[vb], motivo, round(d_m)))
+                cierres.append((a, b.split(":")[-1], pos[va], pos[vb], motivo, round(d_m), es_cerca))
                 hechos += 1
                 continue
             if b == "@extend":
@@ -593,7 +594,7 @@ def main():
                     continue
                 adj[va].add(vb)
                 adj[vb].add(va)
-                cierres.append((a, "→", pos[va], pos[vb], motivo, round(dist)))
+                cierres.append((a, "→", pos[va], pos[vb], motivo, round(dist), es_cerca))
                 hechos += 1
                 continue
             va, vb = by_num.get(a), by_num.get(b)
@@ -606,7 +607,7 @@ def main():
             print(f"    cierre {a}–{b}: {d_m:6.1f} m{flag}")
             adj[va].add(vb)
             adj[vb].add(va)
-            cierres.append((a, b, pos[va], pos[vb], motivo, round(d_m)))
+            cierres.append((a, b, pos[va], pos[vb], motivo, round(d_m), es_cerca))
             hechos += 1
     if hechos:
         print(f"  cierres aplicados: {hechos}")
@@ -720,12 +721,12 @@ def main():
 
     cfeats = [{"type": "Feature", "properties": {
         "tipo": "cierre", "nombre": f"Cierre {a}–{b}", "longitud_m": dm,
-        "motivo": mot or "sin especificar",
+        "motivo": mot or "sin especificar", "es_cerca": _c,
         "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el "
                   "POTRERO, que es lo que importa para el ganado."},
         "geometry": {"type": "LineString", "coordinates": [
             [round(pa[0], 6), round(pa[1], 6)], [round(pb[0], 6), round(pb[1], 6)]]}}
-        for a, b, pa, pb, mot, dm in cierres]
+        for a, b, pa, pb, mot, dm, _c in cierres]
     (GEO / "cercas-cierres.geojson").write_text(
         json.dumps({"type": "FeatureCollection", "features": cfeats}, indent=1,
                    ensure_ascii=False), encoding="utf-8")
@@ -744,8 +745,10 @@ def main():
         NO_AGUA = ("quiebrapatas", "puerta", "portillo", "saladero")
         AGUA = ("bebedero", "tanque", "agua", "abrevadero")
         print("  contra la red de agua:")
-        for a, b, pa, pb, mot, _ in cierres:
+        for a, b, pa, pb, mot, _, _c in cierres:
             m = (mot or "").lower()
+            if _c:                                    # it is a fence, not a water point
+                continue
             if any(w in m for w in NO_AGUA) and not any(w in m for w in AGUA):
                 continue
             mid = ((pa[0] + pb[0]) / 2, (pa[1] + pb[1]) / 2)
@@ -767,9 +770,33 @@ def main():
         con = len(feats) - len(sin_sal)
         print(f"  saladero asignado: {con} de {len(feats)} potreros"
               + (f" (sin saladero MAPEADO: {', '.join(map(str, sin_sal))})" if sin_sal else ""))
+    grandes = [f for f in feats if f["properties"]["area_ha"] >= 20]
+    for f in grandes:
+        f["properties"]["probable_resto"] = True
+        f["properties"]["nota"] = (
+            "⚠ Cara muy grande. Casi seguro NO es un potrero sino el RESTO todavía sin "
+            "subdividir: las cercas interiores que lo parten aún tienen huecos abiertos. "
+            "Se irá partiendo a medida que se cierren.")
+    if grandes:
+        print("  ⚠ caras ≥20 ha (probable resto sin subdividir): "
+              + ", ".join(f'{f["properties"]["nombre"]} {f["properties"]["area_ha"]} ha'
+                          for f in grandes))
     named = sum(1 for f in feats if f["properties"].get("nombrado"))
     if named:
         print(f"  con nombre: {named} de {len(feats)}")
+    inf = [{"type": "Feature", "properties": {
+        "tipo": "cerca_inferida", "nombre": f"Cerca {a}–{b}", "longitud_m": dm,
+        "fuente": f"[owner] {mot}",
+        "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."},
+        "geometry": {"type": "LineString", "coordinates": [
+            [round(pa[0], 6), round(pa[1], 6)], [round(pb[0], 6), round(pb[1], 6)]]}}
+        for a, b, pa, pb, mot, dm, c_ in cierres if c_]
+    (GEO / "cercas-inferidas.geojson").write_text(
+        json.dumps({"type": "FeatureCollection", "features": inf}, indent=1,
+                   ensure_ascii=False), encoding="utf-8")
+    if inf:
+        print(f"  cercas reales que el IGAC no vio: {len(inf)}")
+
     tot = sum(a for a, _ in polys) / 10000
     print(f"  {len(polys)} potreros cerrados · {tot:.1f} ha en total"
           + (f"  ({fuera} descartados por caer fuera del lindero)" if fuera else ""))

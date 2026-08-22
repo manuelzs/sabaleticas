@@ -30,6 +30,7 @@ LAYER_GROUP = {
     "Bosque": "predio", "Vías": "predio", "Construcciones": "predio",
     "Curvas 5 m": "predio", "Curvas 25 m": "predio",
     "Ganado: infraestructura": "ganado",
+    "Cercas (bajo dosel)": "predio",
     "Potreros (cerrados)": "predio", "Cercas abiertas": "predio",
     "Cierres (dictados)": "predio",
     "Drenajes": "agua", "Cauces (área)": "agua", "Depósitos de agua": "agua",
@@ -40,6 +41,7 @@ LAYER_GROUP = {
 LAYERS = [
     ("Linderos",                "boundary.geojson",                    "poly", "#ff1744", 3.0, None),
     ("Cercas",                  "cercas-propias.geojson",              "line", "#ff2ecc", 1.7, None),
+    ("Cercas (bajo dosel)",     "cercas-inferidas.geojson",            "line", "#ff8ae2", 1.7, None),
     ("Drenajes",                "igac-1to5000/Drenaje.geojson",        "line", "#4fc3f7", 1.4, None),
     ("Cauces (área)",           "igac-1to5000/Drenaje_R.geojson",      "poly", "#29b6f6", 1.0, "rgba(41,182,246,.35)"),
     ("Depósitos de agua",       "igac-1to5000/Deposito_Agua_R.geojson","poly", "#00e5ff", 2.0, "rgba(0,229,255,.45)"),
@@ -56,7 +58,7 @@ LAYERS = [
     ("Cercas abiertas",         "cercas-abiertas.geojson",             "line", "#ff5252", 1.0, None),
     ("Cierres (dictados)",      "cercas-cierres.geojson",              "line", "#00e676", 2.6, None),
 ]
-DEFAULT_ON = {"Linderos", "Cercas", "Potreros (cerrados)", "Cercas abiertas", "Cierres (dictados)",
+DEFAULT_ON = {"Linderos", "Cercas", "Cercas (bajo dosel)", "Potreros (cerrados)", "Cercas abiertas", "Cierres (dictados)",
               "Ganado: infraestructura", "Drenajes",
               "Depósitos de agua", "Curvas 25 m", "Agua: infraestructura"}
 
