@@ -4,11 +4,12 @@
   "regla": "La conectividad vive en from/to por ID, NUNCA en el nombre. Longitudes, desniveles y gradientes se CALCULAN, no se guardan.",
   "generado_desde": "water-infrastructure.geojson, migración 2026-08-22",
   "vistas": "geo = mapa (lon/lat). pid = diagrama esquemático (x/y), aún sin asignar.",
-  "pid": "Coordenadas del esquema: x = carril, colocado a mano por legibilidad; y = COTA REAL en metros. Al ser un sistema por gravedad, la altura es la lógica del sistema: lo que está arriba puede alimentar lo que está abajo, y eso se ve de un vistazo."
+  "pid": "Coordenadas del esquema: x = carril, colocado a mano por legibilidad; y = COTA REAL en metros. Al ser un sistema por gravedad, la altura es la lógica del sistema: lo que está arriba puede alimentar lo que está abajo, y eso se ve de un vistazo.",
+  "ids": "Los ids son GLOBALES: <subsistema>:<id-local>. Sin el prefijo, un potrero y una T podrían llamarse igual, y una lectura o un aviso apuntando a 't-1' no tendría forma de decir a cuál. El prefijo es el nombre de la pestaña: agua, ganado, predio."
  },
  "nodes": [
   {
-   "id": "casa-entrada",
+   "id": "agua:casa-entrada",
    "tipo": "casa",
    "nombre": "Casa de la entrada",
    "cota_m": 813,
@@ -28,7 +29,7 @@
    ]
   },
   {
-   "id": "tanque-alto-1",
+   "id": "agua:tanque-alto-1",
    "tipo": "tanque",
    "nombre": "Tanque principal 1 (~50.000 L)",
    "cota_m": 811,
@@ -50,7 +51,7 @@
    "capacidad_l": 50000
   },
   {
-   "id": "tanque-alto-2",
+   "id": "agua:tanque-alto-2",
    "tipo": "tanque",
    "nombre": "Tanque principal 2 (~20.000 L)",
    "cota_m": 811,
@@ -72,7 +73,7 @@
    "capacidad_l": 20000
   },
   {
-   "id": "rompecargas",
+   "id": "agua:rompecargas",
    "tipo": "rompecargas",
    "nombre": "Tanque rompecargas (~2.000 L)",
    "cota_m": 798,
@@ -97,7 +98,7 @@
    "capacidad_l": 2000
   },
   {
-   "id": "t-norte",
+   "id": "agua:t-norte",
    "tipo": "derivacion",
    "nombre": "T del norte",
    "cota_m": 775,
@@ -119,7 +120,7 @@
    ]
   },
   {
-   "id": "casa-principal",
+   "id": "agua:casa-principal",
    "tipo": "casa",
    "nombre": "Casa principal",
    "cota_m": 705,
@@ -140,7 +141,7 @@
    ]
   },
   {
-   "id": "tanques-intermedios",
+   "id": "agua:tanques-intermedios",
    "tipo": "tanque",
    "nombre": "Tanques intermedios",
    "cota_m": 762,
@@ -180,7 +181,7 @@
    "interconexion": "[owner] DESCONOCIDA. Son tres tanques de ~20.000 L cada uno. No sabemos si están en serie, en paralelo o con un manifold, ni tenemos posición individual — sólo una coordenada del conjunto."
   },
   {
-   "id": "represa",
+   "id": "agua:represa",
    "tipo": "represa",
    "nombre": "Represa principal (el lago)",
    "cota_m": 778,
@@ -435,7 +436,7 @@
    ]
   },
   {
-   "id": "ventosa-1",
+   "id": "agua:ventosa-1",
    "tipo": "ventosa",
    "nombre": "Ventosa (plano 2003) — entre T-1 y T-2",
    "cota_m": 739,
@@ -458,7 +459,7 @@
    ]
   },
   {
-   "id": "beb-2",
+   "id": "agua:beb-2",
    "tipo": "bebedero",
    "nombre": "Bebedero 2",
    "cota_m": 748,
@@ -480,7 +481,7 @@
    ]
   },
   {
-   "id": "beb-3",
+   "id": "agua:beb-3",
    "tipo": "bebedero",
    "nombre": "Bebedero 3",
    "cota_m": 729,
@@ -502,7 +503,7 @@
    ]
   },
   {
-   "id": "beb-4",
+   "id": "agua:beb-4",
    "tipo": "bebedero",
    "nombre": "Bebedero 4 (aprox.)",
    "cota_m": 700,
@@ -525,7 +526,7 @@
    ]
   },
   {
-   "id": "t-1",
+   "id": "agua:t-1",
    "tipo": "derivacion",
    "nombre": "T-1 abajo de intermedios",
    "cota_m": 747,
@@ -546,7 +547,7 @@
    ]
   },
   {
-   "id": "t-2",
+   "id": "agua:t-2",
    "tipo": "derivacion",
    "nombre": "T-2 abajo de intermedios",
    "cota_m": 720,
@@ -570,7 +571,7 @@
    ]
   },
   {
-   "id": "t-3",
+   "id": "agua:t-3",
    "tipo": "derivacion",
    "nombre": "T-3 abajo de intermedios",
    "cota_m": 717,
@@ -594,7 +595,7 @@
    ]
   },
   {
-   "id": "beb-1",
+   "id": "agua:beb-1",
    "tipo": "bebedero",
    "nombre": "Bebedero 1",
    "cota_m": 717,
@@ -620,7 +621,7 @@
    ]
   },
   {
-   "id": "beb-5",
+   "id": "agua:beb-5",
    "tipo": "bebedero",
    "nombre": "Bebedero 5 (aprox.)",
    "cota_m": 714,
@@ -644,7 +645,7 @@
    ]
   },
   {
-   "id": "beb-6",
+   "id": "agua:beb-6",
    "tipo": "bebedero",
    "nombre": "Bebedero 6 (aprox.)",
    "cota_m": 678,
@@ -667,7 +668,7 @@
    ]
   },
   {
-   "id": "beb-7",
+   "id": "agua:beb-7",
    "tipo": "bebedero",
    "nombre": "Bebedero 7 (aprox.)",
    "cota_m": 675,
@@ -690,7 +691,7 @@
    ]
   },
   {
-   "id": "t-4",
+   "id": "agua:t-4",
    "tipo": "derivacion",
    "nombre": "T-4 arriba de intermedios",
    "cota_m": 767,
@@ -715,7 +716,7 @@
    ]
   },
   {
-   "id": "beb-8",
+   "id": "agua:beb-8",
    "tipo": "bebedero",
    "nombre": "Bebedero 8 (aprox.)",
    "cota_m": 693,
@@ -738,7 +739,7 @@
    ]
   },
   {
-   "id": "beb-9",
+   "id": "agua:beb-9",
    "tipo": "bebedero",
    "nombre": "Bebedero 9 (aprox.)",
    "cota_m": 732,
@@ -760,7 +761,7 @@
    ]
   },
   {
-   "id": "bocatoma-1",
+   "id": "agua:bocatoma-1",
    "tipo": "bocatoma",
    "nombre": "Bocatoma 1",
    "cota_m": null,
@@ -780,7 +781,7 @@
    }
   },
   {
-   "id": "bocatoma-2",
+   "id": "agua:bocatoma-2",
    "tipo": "bocatoma",
    "nombre": "Bocatoma 2",
    "cota_m": null,
@@ -800,7 +801,7 @@
    }
   },
   {
-   "id": "valvula-cambio",
+   "id": "agua:valvula-cambio",
    "tipo": "valvula",
    "nombre": "Válvula de cambio",
    "cota_m": null,
@@ -824,9 +825,9 @@
  ],
  "edges": [
   {
-   "id": "rompecargas--t-norte",
-   "from": "rompecargas",
-   "to": "t-norte",
+   "id": "agua:rompecargas--agua:t-norte",
+   "from": "agua:rompecargas",
+   "to": "agua:t-norte",
    "nombre": "Rompecargas → T del norte (INDICATIVA)",
    "props": {
     "tipo": "tuberia",
@@ -835,9 +836,9 @@
    }
   },
   {
-   "id": "t-norte--beb-2",
-   "from": "t-norte",
-   "to": "beb-2",
+   "id": "agua:t-norte--agua:beb-2",
+   "from": "agua:t-norte",
+   "to": "agua:beb-2",
    "nombre": "T del norte → Bebedero 2 (APROXIMADA)",
    "props": {
     "tipo": "tuberia",
@@ -846,9 +847,9 @@
    }
   },
   {
-   "id": "beb-2--beb-3",
-   "from": "beb-2",
-   "to": "beb-3",
+   "id": "agua:beb-2--agua:beb-3",
+   "from": "agua:beb-2",
+   "to": "agua:beb-3",
    "nombre": "Bebedero 2 → 3 (APROXIMADA)",
    "props": {
     "tipo": "tuberia",
@@ -858,9 +859,9 @@
    }
   },
   {
-   "id": "beb-3--beb-4",
-   "from": "beb-3",
-   "to": "beb-4",
+   "id": "agua:beb-3--agua:beb-4",
+   "from": "agua:beb-3",
+   "to": "agua:beb-4",
    "nombre": "Bebedero 3 → 4 (APROXIMADA)",
    "props": {
     "tipo": "tuberia",
@@ -870,9 +871,9 @@
    }
   },
   {
-   "id": "t-norte--t-4",
-   "from": "t-norte",
-   "to": "t-4",
+   "id": "agua:t-norte--agua:t-4",
+   "from": "agua:t-norte",
+   "to": "agua:t-4",
    "nombre": "T del norte → T-4",
    "props": {
     "tipo": "tuberia",
@@ -883,9 +884,9 @@
    }
   },
   {
-   "id": "t-4--tanques-intermedios",
-   "from": "t-4",
-   "to": "tanques-intermedios",
+   "id": "agua:t-4--agua:tanques-intermedios",
+   "from": "agua:t-4",
+   "to": "agua:tanques-intermedios",
    "nombre": "T-4 → tanques intermedios",
    "props": {
     "tipo": "tuberia",
@@ -896,9 +897,9 @@
    }
   },
   {
-   "id": "tanques-intermedios--t-1",
-   "from": "tanques-intermedios",
-   "to": "t-1",
+   "id": "agua:tanques-intermedios--agua:t-1",
+   "from": "agua:tanques-intermedios",
+   "to": "agua:t-1",
    "nombre": "Tanques intermedios → T-1 (APROXIMADA)",
    "props": {
     "tipo": "tuberia",
@@ -907,9 +908,9 @@
    }
   },
   {
-   "id": "t-1--ventosa-1",
-   "from": "t-1",
-   "to": "ventosa-1",
+   "id": "agua:t-1--agua:ventosa-1",
+   "from": "agua:t-1",
+   "to": "agua:ventosa-1",
    "nombre": "T-1 → ventosa",
    "props": {
     "tipo": "tuberia",
@@ -919,9 +920,9 @@
    }
   },
   {
-   "id": "ventosa-1--t-2",
-   "from": "ventosa-1",
-   "to": "t-2",
+   "id": "agua:ventosa-1--agua:t-2",
+   "from": "agua:ventosa-1",
+   "to": "agua:t-2",
    "nombre": "Ventosa → T-2",
    "props": {
     "tipo": "tuberia",
@@ -931,9 +932,9 @@
    }
   },
   {
-   "id": "t-2--t-3",
-   "from": "t-2",
-   "to": "t-3",
+   "id": "agua:t-2--agua:t-3",
+   "from": "agua:t-2",
+   "to": "agua:t-3",
    "nombre": "T-2 → T-3 (APROXIMADA)",
    "props": {
     "tipo": "tuberia",
@@ -942,9 +943,9 @@
    }
   },
   {
-   "id": "t-3--casa-principal",
-   "from": "t-3",
-   "to": "casa-principal",
+   "id": "agua:t-3--agua:casa-principal",
+   "from": "agua:t-3",
+   "to": "agua:casa-principal",
    "nombre": "T-3 → casa principal (APROXIMADA)",
    "props": {
     "tipo": "tuberia",
@@ -953,9 +954,9 @@
    }
   },
   {
-   "id": "beb-5--beb-6",
-   "from": "beb-5",
-   "to": "beb-6",
+   "id": "agua:beb-5--agua:beb-6",
+   "from": "agua:beb-5",
+   "to": "agua:beb-6",
    "nombre": "Bebedero 5 → 6 (trazado esquemático)",
    "props": {
     "tipo": "tuberia",
@@ -965,9 +966,9 @@
    }
   },
   {
-   "id": "beb-6--beb-7",
-   "from": "beb-6",
-   "to": "beb-7",
+   "id": "agua:beb-6--agua:beb-7",
+   "from": "agua:beb-6",
+   "to": "agua:beb-7",
    "nombre": "Bebedero 6 → 7 (trazado esquemático)",
    "props": {
     "tipo": "tuberia",
@@ -976,9 +977,9 @@
    }
   },
   {
-   "id": "t-2--beb-8",
-   "from": "t-2",
-   "to": "beb-8",
+   "id": "agua:t-2--agua:beb-8",
+   "from": "agua:t-2",
+   "to": "agua:beb-8",
    "nombre": "T-2 → Bebedero 8 (trazado esquemático)",
    "props": {
     "tipo": "tuberia",
@@ -987,9 +988,9 @@
    }
   },
   {
-   "id": "t-1--beb-9",
-   "from": "t-1",
-   "to": "beb-9",
+   "id": "agua:t-1--agua:beb-9",
+   "from": "agua:t-1",
+   "to": "agua:beb-9",
    "nombre": "T-1 → Bebedero 9 (trazado esquemático)",
    "props": {
     "tipo": "tuberia",
@@ -997,9 +998,9 @@
    }
   },
   {
-   "id": "beb-3--beb-5",
-   "from": "beb-3",
-   "to": "beb-5",
+   "id": "agua:beb-3--agua:beb-5",
+   "from": "agua:beb-3",
+   "to": "agua:beb-5",
    "nombre": "Bebedero 3 → 5 — HIPOTÉTICA",
    "estilo": "discontinuo",
    "hipotetica": true,
@@ -1010,36 +1011,36 @@
    }
   },
   {
-   "id": "tanque-alto-1--valvula-cambio",
-   "from": "tanque-alto-1",
-   "to": "valvula-cambio",
+   "id": "agua:tanque-alto-1--agua:valvula-cambio",
+   "from": "agua:tanque-alto-1",
+   "to": "agua:valvula-cambio",
    "nombre": "Tanque principal 1 → válvula de cambio",
    "props": {
     "fuente": "[owner, 2026-08-22] Conexión real; trazado desconocido."
    }
   },
   {
-   "id": "tanque-alto-2--valvula-cambio",
-   "from": "tanque-alto-2",
-   "to": "valvula-cambio",
+   "id": "agua:tanque-alto-2--agua:valvula-cambio",
+   "from": "agua:tanque-alto-2",
+   "to": "agua:valvula-cambio",
    "nombre": "Tanque principal 2 → válvula de cambio",
    "props": {
     "fuente": "[owner, 2026-08-22] Conexión real; trazado desconocido."
    }
   },
   {
-   "id": "valvula-cambio--rompecargas",
-   "from": "valvula-cambio",
-   "to": "rompecargas",
+   "id": "agua:valvula-cambio--agua:rompecargas",
+   "from": "agua:valvula-cambio",
+   "to": "agua:rompecargas",
    "nombre": "Válvula de cambio → rompecargas",
    "props": {
     "fuente": "[owner, 2026-08-22] Conexión real; trazado desconocido."
    }
   },
   {
-   "id": "bocatoma-1--tanque-alto-1",
-   "from": "bocatoma-1",
-   "to": "tanque-alto-1",
+   "id": "agua:bocatoma-1--agua:tanque-alto-1",
+   "from": "agua:bocatoma-1",
+   "to": "agua:tanque-alto-1",
    "nombre": "Bocatoma 1 → tanques altos (conducción)",
    "estilo": "discontinuo",
    "hipotetica": true,
@@ -1048,9 +1049,9 @@
    }
   },
   {
-   "id": "bocatoma-2--tanque-alto-1",
-   "from": "bocatoma-2",
-   "to": "tanque-alto-1",
+   "id": "agua:bocatoma-2--agua:tanque-alto-1",
+   "from": "agua:bocatoma-2",
+   "to": "agua:tanque-alto-1",
    "nombre": "Bocatoma 2 → tanques altos (conducción)",
    "estilo": "discontinuo",
    "hipotetica": true,
@@ -1059,9 +1060,9 @@
    }
   },
   {
-   "id": "tanque-alto-1--casa-entrada",
-   "from": "tanque-alto-1",
-   "to": "casa-entrada",
+   "id": "agua:tanque-alto-1--agua:casa-entrada",
+   "from": "agua:tanque-alto-1",
+   "to": "agua:casa-entrada",
    "nombre": "Tanques altos → casa de la entrada — HIPOTÉTICA",
    "estilo": "discontinuo",
    "hipotetica": true,
@@ -1071,9 +1072,9 @@
    }
   },
   {
-   "id": "t-2--beb-1",
-   "from": "t-2",
-   "to": "beb-1",
+   "id": "agua:t-2--agua:beb-1",
+   "from": "agua:t-2",
+   "to": "agua:beb-1",
    "nombre": "T-2 → Bebedero 1 — SIN CONFIRMAR",
    "estilo": "discontinuo",
    "hipotetica": true,

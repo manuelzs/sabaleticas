@@ -39,11 +39,12 @@ registry and router; the heavy lifting is canvas, which a framework would not he
 **Deliberately absent:** the `Trabajo` tab (no tickets yet), tables, and anything for Ganado
 before there is cattle data.
 
-### 2 · Globally unique entity ids — 🔴 **high priority, next session**
-`agua:rompecargas` rather than `rompecargas`. A rename today; a migration once readings and
-tickets reference the old ids.
+### 2 · Globally unique entity ids — ✅ **done 2026-08-22**
+`agua:rompecargas`, `ganado:hato`, `predio:finca`. The prefix is the subsystem — the same word
+as the tab. Migrated by `scripts/namespace_ids.py`; JS refers to them through `ENT` in
+`00-core.js` rather than typing the string in four places.
 
-### 2b · One entity-type registry — 🔴 **same refactor as the ids**
+### 2b · One entity-type registry — ✅ **done 2026-08-22**
 `[Manuel, 2026-08-22]` *"All the T junctions use a square. It should be only defined in one
 place. If I wanted to change the icon for T junctions, we should just change one line."*
 

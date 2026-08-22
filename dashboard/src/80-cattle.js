@@ -53,18 +53,18 @@ function renderHato(){
     </div>
     <div class="cards">
       ${statCard(H.total,'','reses','Hato',`al ${H.fecha}`,f.col,
-        trendMark('hato','conteo',true))}
+        trendMark(ENT.hato,'conteo',true))}
       ${statCard(H.por_sexo.hembras,'',
         `hembras · ${Math.round(H.por_sexo.hembras/H.total*100)} %`,'Ceba','','#f06292')}
       ${statCard(ha?(H.total/ha).toFixed(2):'—','res/ha','carga',
-        `sobre ${ha} ha totales`,'','#ffd54f', trendMark('hato','conteo',true))}
+        `sobre ${ha} ha totales`,'','#ffd54f', trendMark(ENT.hato,'conteo',true))}
       ${statCard(rows.filter(r=>r.orden>=4&&r.orden<=5).reduce((a,r)=>a+r.total,0),'',
         'entre 1 y 3 años','Banda dominante','','#4fc3f7')}
     </div>
 
     ${(()=>{ const S=herdSeries(); if(!S) return '';
       return `<div class="sect"><h2>Hato en el tiempo</h2>
-        <span class="n">reconstruido desde el conteo del ${D.readings['hato|conteo'].ts.slice(0,10)}</span></div>
+        <span class="n">reconstruido desde el conteo del ${D.readings[ENT.hato+'|conteo'].ts.slice(0,10)}</span></div>
       ${herdChart()}
       <div class="legend">
         <span><i style="background:#00e676"></i>reconstruido</span>
@@ -87,7 +87,7 @@ function renderHato(){
    every movement without one is drawn as an explicit break in what we know — never
    smoothed over. */
 function herdSeries(){
-  const anchor=(D.readings||{})['hato|conteo'];
+  const anchor=(D.readings||{})[ENT.hato+'|conteo'];
   if(!anchor) return null;
   const t0=Date.parse(anchor.ts+'T12:00:00'), n0=+anchor.valor;
   const mv=(D.movements||[])

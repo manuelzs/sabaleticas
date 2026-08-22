@@ -16,7 +16,7 @@ function almacenamiento(){
           detalle:t.map(n=>`${n.nombre.replace(/\s*\(.*?\)\s*/g,'')} ${n.capacidad_l.toLocaleString('es-CO')} L`)};
 }
 function hatoActual(){
-  const r=(D.readings||{})['hato|conteo'];
+  const r=(D.readings||{})[ENT.hato+'|conteo'];
   if(!r) return null;
   return {n:+r.valor, ts:r.ts, f:freshness(r.ts,'conteo')};
 }

@@ -73,6 +73,10 @@ function freshness(ts, magnitud){
   return           {estado:'obsoleto',   col:'#ff5252', label, hours:h, vigencia:v};
 }
 
+/* Entity ids are GLOBAL: <subsistema>:<id-local>. Named here so a rename is one edit,
+   and so nothing has to guess which subsystem a bare id belonged to. */
+const ENT = {hato:'ganado:hato', finca:'predio:finca'};
+
 /* ---- trends -------------------------------------------------------------
    A top-level number says where you are; the trend says where you are going, and
    for a farm that is usually the more actionable half. One mechanism for all of

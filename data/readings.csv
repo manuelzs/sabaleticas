@@ -1,3 +1,3 @@
 ts,entidad,magnitud,valor,unidad,origen,fuente,nota
-2026-08-22T00:00,casa-principal,temperatura,27,°C,manual,seguridad-casa-principal,Leída por Manuel en la app Hik-Connect. Hora aproximada (medianoche).
-2026-05-21,hato,conteo,266,reses,manual,sinigan,Extracción SINIGAN/SNIITA V6 — un predio, todos VIVO.
+2026-08-22T00:00,agua:casa-principal,temperatura,27,°C,manual,seguridad-casa-principal,Leída por Manuel en la app Hik-Connect. Hora aproximada (medianoche).
+2026-05-21,ganado:hato,conteo,266,reses,manual,sinigan,"Extracción SINIGAN/SNIITA V6, un predio, todos VIVO."

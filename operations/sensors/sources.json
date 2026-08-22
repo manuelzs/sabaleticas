@@ -17,14 +17,15 @@
    "automatico": "un equipo lo reporta solo"
   },
   "origen_vs_fuente": "`origen` es una propiedad de la LECTURA (a mano / automático), no de la fuente. Cualquier fuente real se puede leer a mano — la temperatura de la Hikvision entró transcrita por Manuel y sigue siendo de la Hikvision. Por eso no existe una fuente llamada 'anotación manual': sería confundir el canal con el mensajero.",
-  "estado_declarado_vs_real": "El `estado` de este archivo es el de la INTEGRACIÓN. El visor muestra el estado REAL: 'en línea' sólo si llegó una lectura AUTOMÁTICA y reciente; 'a mano' si el dato es fresco pero lo escribió una persona — es dato real y equipo desconectado a la vez; 'sin datos' si se declaró conectado y lleva días callado. Declarar no es medir."
+  "estado_declarado_vs_real": "El `estado` de este archivo es el de la INTEGRACIÓN. El visor muestra el estado REAL: 'en línea' sólo si llegó una lectura AUTOMÁTICA y reciente; 'a mano' si el dato es fresco pero lo escribió una persona — es dato real y equipo desconectado a la vez; 'sin datos' si se declaró conectado y lleva días callado. Declarar no es medir.",
+  "ids": "Las entidades usan ids globales: <subsistema>:<id-local>."
  },
  "fuentes": [
   {
    "id": "seguridad-casa-principal",
    "nombre": "Hikvision — casa principal (cámaras, PIR, alarma)",
    "tipo": "sistema-de-terceros",
-   "entidad": "casa-principal",
+   "entidad": "agua:casa-principal",
    "estado": "por_investigar",
    "transporte": "ISAPI sobre la red local (por confirmar)",
    "canales": [
@@ -73,7 +74,7 @@
    "id": "nivel-rompecargas",
    "nombre": "Nivel — tanque rompecargas",
    "tipo": "flotadores",
-   "entidad": "rompecargas",
+   "entidad": "agua:rompecargas",
    "estado": "planificado",
    "transporte": "LoRa",
    "canales": [
@@ -96,7 +97,7 @@
    "id": "nivel-tanques-intermedios",
    "nombre": "Nivel — tanques intermedios",
    "tipo": "ultrasonido",
-   "entidad": "tanques-intermedios",
+   "entidad": "agua:tanques-intermedios",
    "estado": "planificado",
    "transporte": "LoRa",
    "canales": [
@@ -114,7 +115,7 @@
    "id": "nivel-tanques-altos",
    "nombre": "Nivel — tanques altos",
    "tipo": "ultrasonido",
-   "entidad": "tanque-alto-1",
+   "entidad": "agua:tanque-alto-1",
    "estado": "planificado",
    "transporte": "LoRa",
    "canales": [
@@ -131,7 +132,7 @@
    "id": "nivel-represa",
    "nombre": "Nivel — represa",
    "tipo": "presion-sumergible",
-   "entidad": "represa",
+   "entidad": "agua:represa",
    "estado": "planificado",
    "transporte": "LoRa",
    "canales": [
@@ -149,7 +150,7 @@
    "nombre": "Lluvia — estación meteorológica cercana",
    "tipo": "fuente-publica",
    "origen": "automatico",
-   "entidad": "finca",
+   "entidad": "predio:finca",
    "estado": "planificado",
    "transporte": "scraping o API pública",
    "canales": [
