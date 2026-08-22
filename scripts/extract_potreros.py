@@ -357,6 +357,31 @@ def recortar_zonas(feats, verbose=False):
 # every potrero.
 FUERA_DEL_GRAFO = {"LO 1 EL GUAICO"}
 
+def leer_cierres(path):
+    """Read the closures, expanding any polyline form into ordinary pairs.
+
+    A fence that follows a drain, or bends through several points, is one THING but many
+    segments. Writing it as thirteen separate two-point closures buries it; writing it as a
+    polyline and expanding here keeps the file readable and leaves every downstream step —
+    resolution, noding, the graph, the output — working on pairs exactly as before.
+
+        {"polilinea": [[lon,lat], ...], "motivo": "...", "es_cerca": true}
+    """
+    raw = json.loads(path.read_text(encoding="utf-8"))["cierres"]
+    out = []
+    for c in raw:
+        if isinstance(c, dict) and c.get("polilinea"):
+            pts = c["polilinea"]
+            n = len(pts) - 1
+            for i, (a, b) in enumerate(zip(pts, pts[1:]), 1):
+                mot = c.get("motivo", "")
+                out.append([a, b, f"{mot} (tramo {i} de {n})" if mot else "",
+                            bool(c.get("es_cerca"))])
+        else:
+            out.append(c)
+    return out
+
+
 def load_lines(tag=False):
     out = []
     for f in cercas_propias(write=False):
@@ -826,7 +851,7 @@ def main():
         return tuple(p) if p else None
 
     if f_c0.exists():
-        for c in json.loads(f_c0.read_text(encoding="utf-8"))["cierres"]:
+        for c in leer_cierres(f_c0):
             if len(c) < 4 or not c[3] or c[1] == "@extend":
                 continue
             pa, pb = resolve(c[0]), resolve(c[1])
@@ -835,7 +860,7 @@ def main():
                 ya_geom.add((json.dumps(c[0]), json.dumps(c[1])))
 
     if f_c0.exists():
-        for c in json.loads(f_c0.read_text(encoding="utf-8"))["cierres"]:
+        for c in leer_cierres(f_c0):
             if isinstance(c[0], list):
                 ext_pts.append(tuple(c[0]))
             if isinstance(c[1], list):
@@ -984,7 +1009,7 @@ def main():
     cierres, hechos = [], 0
     f_c = GEO / CIERRES
     if f_c.exists():
-        for c in json.loads(f_c.read_text(encoding="utf-8"))["cierres"]:
+        for c in leer_cierres(f_c):
             a, b = c[0], c[1]
             motivo = c[2] if len(c) > 2 else ""
             es_cerca = bool(c[3]) if len(c) > 3 else False
