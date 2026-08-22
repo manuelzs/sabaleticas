@@ -208,11 +208,11 @@ function draw(){
   }
   if(calStep>=0) for(let k=0;k<calPts.length;k++){
     const s0=toScreen(calPts[k][0],calPts[k][1]);
-    cx.fillStyle = k%2 ? '#00e676' : '#e0c9a6';
+    cx.fillStyle = k%2 ? '#00e676' : '#e0c9a6';   // green = photo, cream = drawing
     cx.strokeStyle='#000'; cx.lineWidth=2;
     cx.beginPath(); cx.arc(s0[0],s0[1],6,0,7); cx.fill(); cx.stroke();
     cx.fillStyle='#fff'; cx.font='bold 11px system-ui';
-    cx.fillText((k%2?'foto ':'plano ')+(Math.floor(k/2)+1), s0[0]+9, s0[1]-6);
+    cx.fillText((k%2?'FOTO ':'DIBUJO ')+(Math.floor(k/2)+1), s0[0]+9, s0[1]-6);
   }
   drawOverlay();
   if(pts.length){
@@ -392,10 +392,12 @@ document.getElementById('planoReset').onclick=()=>{
 /* --- two-point calibration: match a feature on the plan to the same feature on the photo --- */
 let calStep=-1, calPts=[];
 const CAL_MSG=[
- 'Punto 1: clic sobre el rasgo <b>EN EL PLANO</b>.',
- 'Punto 1: ahora clic sobre el <b>MISMO rasgo en la FOTO</b>.',
- 'Punto 2: clic sobre otro rasgo <b>EN EL PLANO</b> (lejos del primero).',
- 'Punto 2: ahora el <b>MISMO rasgo en la FOTO</b>.'];
+ '<b>1a · DIBUJO</b> — clic sobre el rasgo tal como aparece en el <b>plano a mano</b> ' +
+   '(las líneas de lápiz). Sube la opacidad para verlo mejor.',
+ '<b>1b · FOTO</b> — clic sobre ese <b>mismo sitio real</b> en la <b>foto aérea</b> de abajo ' +
+   '(pasto, árboles, río). Baja la opacidad para verla.',
+ '<b>2a · DIBUJO</b> — otro rasgo en el <b>plano a mano</b>, lo más lejos posible del primero.',
+ '<b>2b · FOTO</b> — ese mismo sitio real en la <b>foto aérea</b>.'];
 function calClick(g){
   calPts.push(g); calStep++;
   if(calStep<4){ document.getElementById('planoHint').innerHTML=CAL_MSG[calStep]; draw(); return; }
@@ -427,6 +429,7 @@ document.getElementById('planoCal').onclick=e=>{
   planoAlign=false; document.getElementById('planoAlign').classList.remove('on');
   calStep=0; calPts=[]; e.target.classList.add('on');
   document.getElementById('planoHint').innerHTML=CAL_MSG[0];
+  draw();
 };
 
 if(D.plano && PL.on){ planoImg=new Image(); planoImg.onload=()=>draw(); planoImg.src=D.plano; }
