@@ -506,6 +506,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 92,
+    "fuente": "[owner] cerca real que une dos cercas casi paralelas (6,2° entre sí) — no engancha en vértices sino a media luz de cada una: 91,7 m, a 80,0° de una y 86,2° de la otra. Los dos puntos los marcó Manuel sobre las aristas, y caen a 0,0 y 0,1 m de ellas.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614467,
+      5.798831
+     ],
+     [
+      -75.614275,
+      5.798024
+     ]
+    ]
+   }
   }
  ]
 }

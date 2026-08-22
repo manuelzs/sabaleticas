@@ -1094,199 +1094,6 @@
     "nombrado": false,
     "estado": null,
     "estado_nota": "",
-    "area_ha": 12.98,
-    "area_m2": 129787,
-    "agua": [
-     {
-      "id": "agua:beb-3",
-      "nombre": "Bebedero 3",
-      "tipo": "bebedero",
-      "confianza": "alta"
-     },
-     {
-      "id": "agua:beb-8",
-      "nombre": "Bebedero 8 (aprox.)",
-      "tipo": "bebedero",
-      "confianza": "baja"
-     },
-     {
-      "id": "agua:beb-9",
-      "nombre": "Bebedero 9",
-      "tipo": "bebedero",
-      "confianza": "alta"
-     },
-     {
-      "id": null,
-      "nombre": "drenaje",
-      "tipo": "natural",
-      "confianza": "IGAC"
-     }
-    ],
-    "sal": [],
-    "sin_agua": false,
-    "solo_natural": false,
-    "agua_por_confirmar": false,
-    "agua_nota": "",
-    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
-    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
-   },
-   "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -75.615696,
-       5.796693
-      ],
-      [
-       -75.615493,
-       5.797618
-      ],
-      [
-       -75.615344,
-       5.797812
-      ],
-      [
-       -75.615115,
-       5.797881
-      ],
-      [
-       -75.613876,
-       5.798092
-      ],
-      [
-       -75.612183,
-       5.798372
-      ],
-      [
-       -75.611589,
-       5.798486
-      ],
-      [
-       -75.611084,
-       5.798518
-      ],
-      [
-       -75.610992,
-       5.798738
-      ],
-      [
-       -75.610425,
-       5.800051
-      ],
-      [
-       -75.610312,
-       5.800313
-      ],
-      [
-       -75.609827,
-       5.801367
-      ],
-      [
-       -75.610749,
-       5.801363
-      ],
-      [
-       -75.610781,
-       5.801364
-      ],
-      [
-       -75.61081,
-       5.801357
-      ],
-      [
-       -75.612318,
-       5.801341
-      ],
-      [
-       -75.612954,
-       5.801327
-      ],
-      [
-       -75.612845,
-       5.800974
-      ],
-      [
-       -75.612674,
-       5.800419
-      ],
-      [
-       -75.612627,
-       5.800322
-      ],
-      [
-       -75.612391,
-       5.799602
-      ],
-      [
-       -75.612183,
-       5.798967
-      ],
-      [
-       -75.612872,
-       5.798926
-      ],
-      [
-       -75.615282,
-       5.798782
-      ],
-      [
-       -75.616051,
-       5.798078
-      ],
-      [
-       -75.616726,
-       5.797314
-      ],
-      [
-       -75.616763,
-       5.796373
-      ],
-      [
-       -75.616734,
-       5.796
-      ],
-      [
-       -75.616515,
-       5.795961
-      ],
-      [
-       -75.616319,
-       5.796002
-      ],
-      [
-       -75.615926,
-       5.796184
-      ],
-      [
-       -75.615718,
-       5.796307
-      ],
-      [
-       -75.615555,
-       5.796451
-      ],
-      [
-       -75.615541,
-       5.796607
-      ],
-      [
-       -75.615696,
-       5.796693
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "potrero",
-    "nombre": "Potrero 4",
-    "n": 4,
-    "nombrado": false,
-    "estado": null,
-    "estado_nota": "",
     "area_ha": 12.74,
     "area_m2": 127439,
     "agua": [
@@ -1595,8 +1402,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 5",
-    "n": 5,
+    "nombre": "Potrero 4",
+    "n": 4,
     "nombrado": false,
     "estado": null,
     "estado_nota": "",
@@ -1751,6 +1558,147 @@
       [
        -75.61373,
        5.80554
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 5",
+    "n": 5,
+    "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
+    "area_ha": 9.07,
+    "area_m2": 90701,
+    "agua": [
+     {
+      "id": "agua:beb-3",
+      "nombre": "Bebedero 3",
+      "tipo": "bebedero",
+      "confianza": "alta"
+     },
+     {
+      "id": "agua:beb-8",
+      "nombre": "Bebedero 8 (aprox.)",
+      "tipo": "bebedero",
+      "confianza": "baja"
+     },
+     {
+      "id": "agua:beb-9",
+      "nombre": "Bebedero 9",
+      "tipo": "bebedero",
+      "confianza": "alta"
+     },
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": false,
+    "agua_por_confirmar": false,
+    "agua_nota": "",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.614275,
+       5.798024
+      ],
+      [
+       -75.613876,
+       5.798092
+      ],
+      [
+       -75.612183,
+       5.798372
+      ],
+      [
+       -75.611589,
+       5.798486
+      ],
+      [
+       -75.611084,
+       5.798518
+      ],
+      [
+       -75.610992,
+       5.798738
+      ],
+      [
+       -75.610425,
+       5.800051
+      ],
+      [
+       -75.610312,
+       5.800313
+      ],
+      [
+       -75.609827,
+       5.801367
+      ],
+      [
+       -75.610749,
+       5.801363
+      ],
+      [
+       -75.610781,
+       5.801364
+      ],
+      [
+       -75.61081,
+       5.801357
+      ],
+      [
+       -75.612318,
+       5.801341
+      ],
+      [
+       -75.612954,
+       5.801327
+      ],
+      [
+       -75.612845,
+       5.800974
+      ],
+      [
+       -75.612674,
+       5.800419
+      ],
+      [
+       -75.612627,
+       5.800322
+      ],
+      [
+       -75.612391,
+       5.799602
+      ],
+      [
+       -75.612183,
+       5.798967
+      ],
+      [
+       -75.612872,
+       5.798926
+      ],
+      [
+       -75.614467,
+       5.798831
+      ],
+      [
+       -75.614275,
+       5.798024
       ]
      ]
     ]
@@ -2301,13 +2249,13 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 9",
+    "nombre": "Bilbao",
     "n": 9,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "area_ha": 5.12,
-    "area_m2": 51161,
+    "area_m2": 51158,
     "agua": [
      {
       "id": "agua:beb-4",
@@ -2349,6 +2297,10 @@
       [
        -75.615282,
        5.798782
+      ],
+      [
+       -75.614467,
+       5.798831
       ],
       [
        -75.612872,
@@ -2533,6 +2485,10 @@
       [
        -75.613876,
        5.798092
+      ],
+      [
+       -75.614275,
+       5.798024
       ],
       [
        -75.615115,
@@ -2925,8 +2881,115 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Serengueti",
+    "nombre": "Potrero 15",
     "n": 15,
+    "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
+    "area_ha": 3.91,
+    "area_m2": 39090,
+    "agua": [
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": true,
+    "agua_por_confirmar": true,
+    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.615696,
+       5.796693
+      ],
+      [
+       -75.615493,
+       5.797618
+      ],
+      [
+       -75.615344,
+       5.797812
+      ],
+      [
+       -75.615115,
+       5.797881
+      ],
+      [
+       -75.614275,
+       5.798024
+      ],
+      [
+       -75.614467,
+       5.798831
+      ],
+      [
+       -75.615282,
+       5.798782
+      ],
+      [
+       -75.616051,
+       5.798078
+      ],
+      [
+       -75.616726,
+       5.797314
+      ],
+      [
+       -75.616763,
+       5.796373
+      ],
+      [
+       -75.616734,
+       5.796
+      ],
+      [
+       -75.616515,
+       5.795961
+      ],
+      [
+       -75.616319,
+       5.796002
+      ],
+      [
+       -75.615926,
+       5.796184
+      ],
+      [
+       -75.615718,
+       5.796307
+      ],
+      [
+       -75.615555,
+       5.796451
+      ],
+      [
+       -75.615541,
+       5.796607
+      ],
+      [
+       -75.615696,
+       5.796693
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Serengueti",
+    "n": 16,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3007,7 +3070,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Balkanes",
-    "n": 16,
+    "n": 17,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3101,8 +3164,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 17",
-    "n": 17,
+    "nombre": "Potrero 18",
+    "n": 18,
     "nombrado": false,
     "estado": "final",
     "estado_nota": "",
@@ -3198,7 +3261,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Lajas",
-    "n": 18,
+    "n": 19,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3296,7 +3359,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Paraíso",
-    "n": 19,
+    "n": 20,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3383,7 +3446,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Consuelo",
-    "n": 20,
+    "n": 21,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3463,7 +3526,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Ciruelo",
-    "n": 21,
+    "n": 22,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3550,7 +3613,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "El Bosque",
-    "n": 22,
+    "n": 23,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3661,10 +3724,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 23",
-    "n": 23,
-    "nombrado": false,
-    "estado": null,
+    "nombre": "Toledo",
+    "n": 24,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "area_ha": 2.09,
     "area_m2": 20861,
@@ -3737,8 +3800,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 24",
-    "n": 24,
+    "nombre": "Potrero 25",
+    "n": 25,
     "nombrado": false,
     "estado": "final",
     "estado_nota": "",
@@ -3858,8 +3921,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 25",
-    "n": 25,
+    "nombre": "Potrero 26",
+    "n": 26,
     "nombrado": false,
     "estado": "final",
     "estado_nota": "",

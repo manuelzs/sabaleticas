@@ -768,6 +768,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 92,
+    "motivo": "cerca real que une dos cercas casi paralelas (6,2° entre sí) — no engancha en vértices sino a media luz de cada una: 91,7 m, a 80,0° de una y 86,2° de la otra. Los dos puntos los marcó Manuel sobre las aristas, y caen a 0,0 y 0,1 m de ellas.",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614467,
+      5.798831
+     ],
+     [
+      -75.614275,
+      5.798024
+     ]
+    ]
+   }
   }
  ]
 }
