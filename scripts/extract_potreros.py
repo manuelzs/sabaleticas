@@ -66,21 +66,31 @@ def pegar_al_lindero(feats, polys, verbose=False):
         return best
 
     def camino(u, v):
-        """Lindero vertices strictly between two located points, the short way round."""
-        ri, i, ti, _ = u
-        rj, j, tj, _ = v
+        """Lindero vertices strictly between two located points, ordered u -> v.
+
+        Orientation matters and cost a rebuild: the ring runs west to east, fence 12 runs
+        east to west, and splicing the path in ring order left two ~450 m jumps across
+        the middle of the farm. The path is also sanity-checked against the straight line
+        between its ends — going the wrong way round a closed ring is otherwise silent.
+        """
+        ri, i, ti, pi = u
+        rj, j, tj, pj = v
         if ri != rj:
-            return []
+            return None
         r = rings[ri]
-        cerrado = r[0] == r[-1]
-        n = len(r) - 1 if cerrado else len(r)
-        if (j, tj) < (i, ti):
-            i, j = j, i
-        adelante = list(range(i + 1, j + 1))
-        if not cerrado:
-            return [r[k] for k in adelante]
-        atras = [k % n for k in range(j + 1, i + 1 + n)]
-        return [r[k] for k in (adelante if len(adelante) <= len(atras) else atras)]
+        fwd = (i, ti) <= (j, tj)
+        lo, hi = (i, j) if fwd else (j, i)
+        path = [r[k] for k in range(lo + 1, hi + 1)]
+        if not fwd:
+            path = path[::-1]
+        recta = math.hypot((pj[0] - pi[0]) * LON2M, (pj[1] - pi[1]) * LAT2M)
+        largo, prev = 0.0, pi
+        for p in path + [pj]:
+            largo += math.hypot((p[0] - prev[0]) * LON2M, (p[1] - prev[1]) * LAT2M)
+            prev = p
+        if recta > 1.0 and largo > 3.0 * recta:
+            return None                       # went the long way round; refuse it
+        return path
 
     movidos = tot = 0
     out = []
@@ -116,9 +126,17 @@ def pegar_al_lindero(feats, polys, verbose=False):
                 while j + 1 < len(pts) and marca[j + 1] is not None:
                     j += 1
                 a_loc, b_loc = marca[k][1], marca[j][1]
+                mid = camino(a_loc, b_loc) if j > k else []
+                if mid is None:
+                    print(f"  ⚠ corrección: no se pudo trazar el lindero entre "
+                          f"{a_loc[3][0]:.6f},{a_loc[3][1]:.6f} y "
+                          f"{b_loc[3][0]:.6f},{b_loc[3][1]:.6f} — tramo sin tocar")
+                    res += pts[k:j + 1]
+                    k = j + 1
+                    continue
                 res.append(a_loc[3])
                 if j > k:
-                    res += camino(a_loc, b_loc)
+                    res += mid
                     res.append(b_loc[3])
                 movidos += j - k + 1
                 tot += sum(marca[q][0] for q in range(k, j + 1))
@@ -188,17 +206,35 @@ def load_lines(tag=False):
     return (out, n_cerca) if tag else out
 
 
-def node_lines(lines, tol=TOL, extra=(), extra_tol=6.0):
-    """Split every segment where another line's endpoint lands on it.
+def node_lines(lines, tol=TOL, extra=(), extra_tol=6.0, inner_tol=0.5):
+    """Split every segment where another line's vertex lands on it.
 
     This is the whole problem. IGAC's fences genuinely meet — one ends *on* another —
     but the junction is not a vertex on the line being touched, so a naive graph never
     sees it. 57 of 60 loose ends sit within 5 m of another fence, median 0 m: they are
     touching, not gapped. Noding turns a pile of fragments into a connected network.
+
+    ENDPOINTS split at `tol`, because an end stopping a couple of metres short of the
+    line it meets is still meeting it. INTERIOR vertices split only at `inner_tol`, where
+    the two lines are already coincident — typically a fence digitised right on the
+    lindero but carrying its own vertex spacing. Skipping those left the longer line
+    unsplit and a shortcut edge running parallel to its own halves, which silently stops
+    faces closing; 25 nodes were carrying one. A loose tolerance here would instead
+    shatter every fence that merely passes near another.
     """
-    ends = list(extra)
+    ends = [(p, extra_tol) for p in extra]
     for l in lines:
-        ends += [l[0], l[-1]]
+        ends.append((l[0], tol))
+        ends.append((l[-1], tol))
+        for p in l[1:-1]:
+            ends.append((p, inner_tol))
+
+    # A grid, because every vertex against every segment is ~10^8 comparisons here.
+    CELL = 25.0
+    grid = {}
+    for p, lim in ends:
+        grid.setdefault((int(p[0] * LON2M / CELL), int(p[1] * LAT2M / CELL)), []).append((p, lim))
+
     out = []
     for l in lines:
         new_l = [l[0]]
@@ -207,23 +243,25 @@ def node_lines(lines, tol=TOL, extra=(), extra_tol=6.0):
             bx, by = b[0] * LON2M, b[1] * LAT2M
             dx, dy = bx - ax, by - ay
             dd = dx * dx + dy * dy
-            hits = []
-            extra_set = set(extra)
-            for p in ends:
-                px, py = p[0] * LON2M, p[1] * LAT2M
-                t = 0.0 if dd == 0 else ((px - ax) * dx + (py - ay) * dy) / dd
-                if t <= 1e-9 or t >= 1 - 1e-9:
-                    continue
-                lim = extra_tol if p in extra_set else tol
-                if math.hypot(px - (ax + t * dx), py - (ay + t * dy)) <= lim:
-                    hits.append((t, p))
+            hits, seen = [], set()
+            for gx in range(int(min(ax, bx) / CELL) - 1, int(max(ax, bx) / CELL) + 2):
+                for gy in range(int(min(ay, by) / CELL) - 1, int(max(ay, by) / CELL) + 2):
+                    for p, lim in grid.get((gx, gy), ()):
+                        if p in seen:
+                            continue
+                        seen.add(p)
+                        px, py = p[0] * LON2M, p[1] * LAT2M
+                        t = 0.0 if dd == 0 else ((px - ax) * dx + (py - ay) * dy) / dd
+                        if t <= 1e-9 or t >= 1 - 1e-9:
+                            continue
+                        if math.hypot(px - (ax + t * dx), py - (ay + t * dy)) <= lim:
+                            hits.append((t, p))
             for _, p in sorted(hits):
                 if p != new_l[-1]:
                     new_l.append(p)
             new_l.append(b)
         out.append(new_l)
     return out
-
 
 def cercas_propias(write=True):
     """Split IGAC's fences into ours and the neighbours'.

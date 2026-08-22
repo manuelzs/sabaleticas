@@ -13,6 +13,14 @@
   {
    "por_extremo": 18,
    "motivo": "[owner, 2026-08-22] No es nuestra."
+  },
+  {
+   "punto": [
+    -75.606957,
+    5.794439
+   ],
+   "motivo": "[owner, 2026-08-22] Está fuera del predio.",
+   "nota": "Señalada con la herramienta de aristas: tramo de 230,1 m hasta -75.606324,5.796421."
   }
  ]
 }
