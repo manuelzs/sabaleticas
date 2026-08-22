@@ -619,5 +619,5 @@
    }
   }
  ],
- "_umbral": "Verde = a menos de 25 m del lindero; rojo = más. El umbral es el rms del ajuste (19,6 m) redondeado hacia arriba, no una tolerancia topográfica."
+ "_umbral": "Verde: a menos de 25 m del lindero. Rojo: más lejos y SIN explicar — hay que mirarlo. Cian: más lejos pero explicado, marca el playón (ver playon.md). Café: no es mojón de lindero, es referencia de vía. El umbral de 25 m es el rms del ajuste (19,6 m) redondeado, no una tolerancia topográfica."
 }

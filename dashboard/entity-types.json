@@ -272,6 +272,17 @@
    "atributos": [
     "d_lindero_m"
    ]
+  },
+  "mojon_playon": {
+   "label": "Mojón 2007 (playón)",
+   "color": "#26c6da",
+   "mapa": "triangle",
+   "esquema": "dot",
+   "ancho": 1.0,
+   "geom": "point",
+   "atributos": [
+    "d_lindero_m"
+   ]
   }
  }
 }
