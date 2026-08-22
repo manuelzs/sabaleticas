@@ -197,7 +197,8 @@ function draw(){
       drawGeom(f,L.kind,L.fill);
     }
     // labels for named features (water infrastructure etc.), only when zoomed in enough
-    if(view.s>3000) for(const f of L.features){
+    const labelZoom = (L.name.indexOf('Vecinos')===0) ? 700 : 3000;
+    if(view.s>labelZoom) for(const f of L.features){
       if(!f.l) continue;
       let p0=null;
       if(f.t==='Point') p0=f.c;
@@ -209,9 +210,26 @@ function draw(){
       }
       if(!p0) continue;
       const s0=toScreen(p0[0],p0[1]);
-      cx.font='bold 13px system-ui'; cx.lineWidth=3.5;
-      cx.strokeStyle='rgba(0,0,0,.8)'; cx.strokeText(f.l,s0[0]+9,s0[1]-7);
-      cx.fillStyle= f.col || L.colour; cx.fillText(f.l,s0[0]+9,s0[1]-7);
+      const isPoly = f.t!=='Point';
+      if(isPoly){
+        // Neighbour parcels: large centred label, name on top, detail beneath.
+        const parts=f.l.split(' · ');
+        const name=parts[0], sub=parts.slice(1).join(' · ');
+        cx.textAlign='center';
+        cx.font='bold 19px system-ui'; cx.lineWidth=5;
+        cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(name,s0[0],s0[1]);
+        cx.fillStyle='#ffffff'; cx.fillText(name,s0[0],s0[1]);
+        if(sub){
+          cx.font='bold 13px system-ui'; cx.lineWidth=4;
+          cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(sub,s0[0],s0[1]+17);
+          cx.fillStyle= f.col || L.colour; cx.fillText(sub,s0[0],s0[1]+17);
+        }
+        cx.textAlign='left';
+      } else {
+        cx.font='bold 13px system-ui'; cx.lineWidth=3.5;
+        cx.strokeStyle='rgba(0,0,0,.8)'; cx.strokeText(f.l,s0[0]+9,s0[1]-7);
+        cx.fillStyle= f.col || L.colour; cx.fillText(f.l,s0[0]+9,s0[1]-7);
+      }
       cx.lineWidth=L.width;
     }
   }
@@ -248,6 +266,21 @@ function draw(){
     pts.forEach(p=>{const s=toScreen(p[0],p[1]);
       cx.fillStyle='#ff1744';cx.strokeStyle='#fff';cx.lineWidth=2;
       cx.beginPath();cx.arc(s[0],s[1],5,0,7);cx.fill();cx.stroke();});
+    for(let i=1;i<pts.length-1;i++){          // arc + value at each interior vertex
+      const A=angleAt(pts[i-1],pts[i],pts[i+1]); if(A===null) continue;
+      const b=toScreen(pts[i][0],pts[i][1]);
+      const a=toScreen(pts[i-1][0],pts[i-1][1]), c=toScreen(pts[i+1][0],pts[i+1][1]);
+      const a1=Math.atan2(a[1]-b[1],a[0]-b[0]), a2=Math.atan2(c[1]-b[1],c[0]-b[0]);
+      let d=a2-a1; while(d>Math.PI)d-=2*Math.PI; while(d<-Math.PI)d+=2*Math.PI;
+      cx.strokeStyle='#ffd54f'; cx.lineWidth=2; cx.setLineDash([]);
+      cx.beginPath(); cx.arc(b[0],b[1],26,a1,a1+d,d<0); cx.stroke();
+      const mid=a1+d/2;
+      cx.font='bold 13px system-ui';
+      cx.strokeStyle='rgba(0,0,0,.85)'; cx.lineWidth=3;
+      cx.strokeText(A.toFixed(1)+'°', b[0]+Math.cos(mid)*38-12, b[1]+Math.sin(mid)*38+4);
+      cx.fillStyle='#ffd54f';
+      cx.fillText(A.toFixed(1)+'°', b[0]+Math.cos(mid)*38-12, b[1]+Math.sin(mid)*38+4);
+    }
   }
   scaleBar();
 }
@@ -312,6 +345,15 @@ cv.addEventListener('wheel',e=>{
   draw();
 },{passive:false});
 
+/* interior angle at vertex b, in a local metric frame */
+function angleAt(a,b,c){
+  const v1=[(a[0]-b[0])*LON2M,(a[1]-b[1])*LAT2M];
+  const v2=[(c[0]-b[0])*LON2M,(c[1]-b[1])*LAT2M];
+  const n1=Math.hypot(...v1), n2=Math.hypot(...v2);
+  if(n1<1e-6||n2<1e-6) return null;
+  const cs=Math.max(-1,Math.min(1,(v1[0]*v2[0]+v1[1]*v2[1])/(n1*n2)));
+  return Math.acos(cs)*180/Math.PI;
+}
 function report(){
   const o=document.getElementById('mout');
   if(pts.length<2){o.innerHTML='Punto 1 marcado. Haz clic en el siguiente.';return;}
@@ -326,6 +368,27 @@ function report(){
       : d>2 ? '↑ sube '+d.toFixed(0)+' m — <b>necesita bombeo</b>'
             : 'prácticamente al mismo nivel')+'</div>';
     if(tot>0&&Math.abs(d)>0) h+='<div><b>pendiente</b> '+(100*d/tot).toFixed(1)+'%</div>';
+  }
+  // three or more points: interior angles, and the area if it closes a triangle
+  if(pts.length>=3){
+    const angs=[];
+    for(let i=1;i<pts.length-1;i++){
+      const A=angleAt(pts[i-1],pts[i],pts[i+1]);
+      if(A!==null) angs.push({i:i+1,A});
+    }
+    if(angs.length){
+      h+='<div style="margin-top:6px"><b>ángulos</b> '+
+        angs.map(x=>`en pt${x.i}: <b>${x.A.toFixed(1)}°</b>`).join(' · ')+'</div>';
+    }
+    if(pts.length===3){
+      const s1=dist(pts[0],pts[1]), s2=dist(pts[1],pts[2]);
+      const A=angs.length?angs[0].A:null;
+      if(A!==null){
+        const ar=0.5*s1*s2*Math.sin(A*Math.PI/180);
+        h+=`<div><b>triángulo</b> ${s1.toFixed(0)} m × ${s2.toFixed(0)} m @ ${A.toFixed(1)}°`+
+           ` → <b>${(ar/10000).toFixed(3)} ha</b> (${ar.toFixed(0)} m²)</div>`;
+      }
+    }
   }
   o.innerHTML=h;
 }

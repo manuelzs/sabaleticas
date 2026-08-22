@@ -139,7 +139,36 @@ that before the numbers did.
 And per Manuel, **the river moves constantly**. A boundary defined by a watercourse moves with
 it, so the area itself changes over time and neither document is stale so much as *dated*.
 
-### The residual after the playón: 0.78 ha
+### ✅ The residual IS the northern triangle — the plan now reconciles completely
+
+Manuel corrected his own field estimate: the sides are **marked on the drawing as 130 m and
+120 m**, and the apex is **~80°**, not the 40° he first guessed.
+
+> **Area = ½ × 130 × 120 × sin 80° = 7,682 m² = 0.768 ha**
+> **Residual after the playón = 0.780 ha**
+> **Difference: 118 m² — 1.5%**
+
+Two completely independent routes — subtracting the cadastre and playón from the plan total,
+versus multiplying two side lengths written on the drawing in 2003 — land on the same number.
+
+| | |
+|---|---|
+| Cadastre, both parcels | 170.73 ha |
+| Playón (river terrace) | 21.90 ha |
+| **Northern triangle** | **0.77 ha** |
+| **Total** | **193.40 ha** |
+| 2003 plan says | 193.41 ha |
+| **Unexplained** | **0.01 ha** |
+
+**Every hectare of the 2003 plan is now accounted for.** The plan was right; the difference was
+one parcel of river terrace the cadastre excludes as non-titleable, and one triangle it has
+placed on the wrong side of a boundary.
+
+That is also the strongest evidence yet on the triangle. It is not a drafting artefact or a
+rounding error — **it is a measured, dimensioned parcel that the plan's own area table counted
+as ours.**
+
+### The earlier, weaker reading of the residual
 
 | | |
 |---|---|
