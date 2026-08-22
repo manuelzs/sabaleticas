@@ -854,6 +854,28 @@
    ],
    "es_cerca": true,
    "motivo": "segunda cerca dentro de EL GUAICO, 446.0 m, 11 puntos capturados por Manuel sobre la ortofoto. La punta NORTE se lleva al anillo del lote (estaba a 0,1 m). La punta SUR queda SUELTA a propósito: está a 33,9 m del anillo y no llega — la cerrará otro juego de puntos que Manuel dará después y que cruza con ésta. Por eso todavía no parte nada. Sin MDT: nueve de los once puntos salieron sin cota."
+  },
+  {
+   "polilinea": [
+    [
+     -75.618791,
+     5.802689
+    ],
+    [
+     -75.618419,
+     5.802849
+    ],
+    [
+     -75.617703,
+     5.803152
+    ],
+    [
+     -75.617401,
+     5.803243
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "tercera cerca dentro de EL GUAICO, 165.8 m, de lindero a lindero (occidente a oriente). Es la que CIERRA la segunda: su tercer punto es exactamente la punta sur que se había dejado suelta. Los tres puntos que no eran exactos se ajustaron en vez de dejarlos al margen del noding — las dos puntas al anillo (0,7 y 0,3 m) y el cruce a la punta suelta (0,25 m)."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

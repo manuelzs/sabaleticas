@@ -2691,6 +2691,75 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 45,
+    "fuente": "[owner] tercera cerca dentro de EL GUAICO, 165.8 m, de lindero a lindero (occidente a oriente). Es la que CIERRA la segunda: su tercer punto es exactamente la punta sur que se había dejado suelta. Los tres puntos que no eran exactos se ajustaron en vez de dejarlos al margen del noding — las dos puntas al anillo (0,7 y 0,3 m) y el cruce a la punta suelta (0,25 m). (tramo 1 de 3)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618791,
+      5.802689
+     ],
+     [
+      -75.618419,
+      5.802849
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 86,
+    "fuente": "[owner] tercera cerca dentro de EL GUAICO, 165.8 m, de lindero a lindero (occidente a oriente). Es la que CIERRA la segunda: su tercer punto es exactamente la punta sur que se había dejado suelta. Los tres puntos que no eran exactos se ajustaron en vez de dejarlos al margen del noding — las dos puntas al anillo (0,7 y 0,3 m) y el cruce a la punta suelta (0,25 m). (tramo 2 de 3)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.618419,
+      5.802849
+     ],
+     [
+      -75.617703,
+      5.803152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 35,
+    "fuente": "[owner] tercera cerca dentro de EL GUAICO, 165.8 m, de lindero a lindero (occidente a oriente). Es la que CIERRA la segunda: su tercer punto es exactamente la punta sur que se había dejado suelta. Los tres puntos que no eran exactos se ajustaron en vez de dejarlos al margen del noding — las dos puntas al anillo (0,7 y 0,3 m) y el cruce a la punta suelta (0,25 m). (tramo 3 de 3)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617703,
+      5.803152
+     ],
+     [
+      -75.617401,
+      5.803243
+     ]
+    ]
+   }
   }
  ]
 }
