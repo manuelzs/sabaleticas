@@ -860,7 +860,8 @@
     "alimentado_por": "[pendiente] Sin conexión conocida con la línea principal.",
     "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros.",
     "pos_confianza": "baja",
-    "pos_motivo": "aproximada (Manuel)"
+    "pos_motivo": "aproximada (Manuel)",
+    "hipotesis_alimentacion": "[derived + owner, 2026-08-22] Alimentado desde una T sobre el ramal norte, en o justo antes del Bebedero 3 (729 m, 311 m, +15 m de carga). El tramo 3→4 pasa más cerca (262 m) pero sólo a ~719 m: 5 m de carga es poco para 300 m de tubería. Manuel coincide con el análisis; NO verificable desde la ortofoto. VERIFICAR EN CAMPO."
    },
    "geometry": {
     "type": "Point",
@@ -922,7 +923,8 @@
     "longitud_m": 231,
     "desnivel_m": 36,
     "fuente": "[owner, 2026-08-21] Orden confirmado por Manuel: 5 → 6 → 7. Las posiciones de los tres extremos son aproximadas, así que longitudes y gradientes son orientativos.",
-    "confianza": "conexión y orden: ALTA (Manuel) · extremos: BAJA · trazado: esquemático"
+    "confianza": "conexión y orden: ALTA (Manuel) · extremos: BAJA · trazado: esquemático",
+    "hipotesis_alimentacion": "[derived + owner, 2026-08-22] Alimentado desde una T sobre el ramal norte, en o justo antes del Bebedero 3 (729 m, 311 m, +15 m de carga). El tramo 3→4 pasa más cerca (262 m) pero sólo a ~719 m: 5 m de carga es poco para 300 m de tubería. Manuel coincide con el análisis; NO verificable desde la ortofoto. VERIFICAR EN CAMPO."
    },
    "geometry": {
     "type": "LineString",

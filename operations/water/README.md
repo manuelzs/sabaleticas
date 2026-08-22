@@ -653,6 +653,13 @@ This supersedes nothing above — it is the list of things **only a site visit c
    **Do this before commissioning a survey**, not after — it tells the surveyor where to look
    and stops us paying someone to rediscover it.
 
+### The open questions, to settle on site
+6c. **Where do Bebederos 5, 6 and 7 connect?** `[hypothesis, Manuel concurs 2026-08-22]` The
+   source must be above ~717 m, and only the **ramal norte** qualifies nearby. Most likely
+   **a T at or just before Bebedero 3** (729 m, 311 m away, +15 m of head). The 3 → 4 leg passes
+   closer at 262 m but sits at ~719 m — 5 m of head is thin for 300 m of pipe.
+   **Not visible in the orthophoto. Look for the split around Bebedero 3.**
+
 ### Along the lines
 7. **Walk the pipes with a GPS track**, not paper. Same walk, same person, real coordinates.
    **Record construction type as you go** — buried, deep-trenched, surface-laid, or aerial —
