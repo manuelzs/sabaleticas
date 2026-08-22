@@ -736,6 +736,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 50–punto",
+    "longitud_m": 56,
+    "fuente": "[owner] cerca real hasta el lindero (56,0 m, rumbo 109,6°). Muere sobre la línea, no en un vértice: al 14 % de un tramo de 140 m. El punto que marcó Manuel cayó a 0,0 m del lindero.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.613385,
+      5.794191
+     ],
+     [
+      -75.612908,
+      5.794021
+     ]
+    ]
+   }
   }
  ]
 }

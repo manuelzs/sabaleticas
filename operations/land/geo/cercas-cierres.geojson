@@ -1080,6 +1080,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 50–punto",
+    "longitud_m": 56,
+    "motivo": "cerca real hasta el lindero (56,0 m, rumbo 109,6°). Muere sobre la línea, no en un vértice: al 14 % de un tramo de 140 m. El punto que marcó Manuel cayó a 0,0 m del lindero.",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.613385,
+      5.794191
+     ],
+     [
+      -75.612908,
+      5.794021
+     ]
+    ]
+   }
   }
  ]
 }

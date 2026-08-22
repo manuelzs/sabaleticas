@@ -377,6 +377,15 @@
    ],
    "cerca real: del extremo nuevo (la prolongación de 49) al vértice que marcó Manuel — 46,4 m, rumbo 236,3°. El punto capturado cayó a 0,1 m de un vértice ya existente.",
    true
+  ],
+  [
+   50,
+   [
+    -75.612908,
+    5.794021
+   ],
+   "cerca real hasta el lindero (56,0 m, rumbo 109,6°). Muere sobre la línea, no en un vértice: al 14 % de un tramo de 140 m. El punto que marcó Manuel cayó a 0,0 m del lindero.",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
