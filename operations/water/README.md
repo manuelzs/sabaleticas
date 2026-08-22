@@ -403,6 +403,45 @@ two to three times demand.** The system is losing water to *stoppages*, not to s
 > that: the 7 m difference between route options, the 49 m vs 13 m gradient asymmetry. The ones
 > that do not are the small ones: a 0.50 m clearance, a 1.9 m hump.
 
+### ⚠️⚠️ The bigger problem: the pipe does not follow the ground
+
+`[owner, 2026-08-21]` A second and **larger** source of divergence than the coordinates:
+
+> *"The humps might be not as humpy as you think. In some places they have dug deeper trenches,
+> and where hoses go down into deep creeks, they hang the hose from side to side above the
+> creek. Not everything is underground either, so it might be a little bit aerial."*
+
+Every terrain profile in this document assumes **pipe elevation = ground elevation.** Three
+construction facts break that assumption, and they all break it in the same direction:
+
+| What was built | Effect on the profile |
+|---|---|
+| **Deeper trenches at high spots** | Cuts the tops off humps. The pipe crosses **below** the summit the model sees |
+| **Aerial spans across deep creeks** | **Removes the dip entirely.** The pipe takes the chord; the model takes the valley floor |
+| **Surface-laid sections** | Pipe sits at or slightly above ground, roughly as modelled |
+
+> ### This weakens my strongest air-trap finding, and I should say so directly.
+> The **20.9 m "climb" into the rompecargas** and the **10.6 m "climb" into tanque norte 1**
+> were computed by walking the ground down into a valley and back up. **If those valleys are
+> creeks the hose spans aerially, neither climb exists in the pipe** — the hose goes straight
+> across. I called those two "large enough to survive" the coordinate error. They survive *that*
+> error; they may not survive *this* one.
+
+**What does not change:** Manuel observes air entering and blocking the lines. That is
+observation, not model. **Air traps exist. The terrain model just cannot tell us where.**
+
+And an aerial crossing does not remove the problem so much as move it: a span **sags**, so its
+low point is mid-creek — but the **two banks, where the pipe lifts off the ground, become local
+high points.** Those are the new candidate air traps, and conveniently they are the easiest
+places in the whole system to reach and to fit a ventosa.
+
+> **Conclusion: ventosa placement cannot be computed. It has to be walked.**
+> The recommendation to fit them stands — the 2003 plan proves the original designers agreed —
+> but *where* is a field question, and the terrain model has now given all the help it can.
+
+Two further consequences of exposed pipe worth carrying to the survey: **UV degradation and
+thermal cycling** on anything sun-exposed, and **flood debris** at creek crossings in invierno.
+
 ### The T del norte — an uncontrolled split, and the north loses it
 
 `[owner, 2026-08-21]` **5.797082, −75.607946 · 775 m**, on the leg between the rompecargas and
@@ -454,9 +493,10 @@ direction.** Diameters are on the field list for exactly this reason.
 > The rompecargas inlet climbs **20.9 m**. Tanque norte 1's inlet climbs **10.6 m**. Same shape,
 > twice. That is a property of how the system was laid out, not an accident of one pipe.
 
-⚠️ **But see the coordinate-quality note above.** These humps are sampled along straight lines
-between points that may be 10–15 m off. The **20.9 m and 10.6 m climbs are large enough to
-survive that**; the +1.9 m on the last leg is not, and should be ignored until surveyed.
+⚠️ **Both caveats above apply, and the second one bites hardest here.** These humps are sampled
+along straight lines between points that may be 10–15 m off — and, more seriously, **they assume
+the pipe follows the ground.** If the deep dips are creeks the hose spans aerially, these climbs
+are artefacts. **Do not act on this table; walk the line.**
 
 So when the rompecargas runs to air, the branch that stays blocked is the one with the most
 summits and the longest run — **the north, 1.1 km of it, with nothing stored downstream.**
@@ -556,6 +596,11 @@ This supersedes nothing above — it is the list of things **only a site visit c
 
 ### Along the lines
 7. **Walk the pipes with a GPS track**, not paper. Same walk, same person, real coordinates.
+   **Record construction type as you go** — buried, deep-trenched, surface-laid, or aerial —
+   because the terrain model is blind to all four `[owner, 2026-08-21]`.
+7b. **Photograph every creek crossing**, and note where the pipe **lifts off the ground**. Those
+   lift-off points are now the prime air-trap candidates, and they are also the easiest places
+   to fit a ventosa.
 8. **Check the 2003 ventosa at 5.796878, −75.612092** — still there? still working?
    **A seized ventosa is indistinguishable from no ventosa.**
 9. **Sweep the 2003 plan for more ventosas.** Manuel, 2026-08-21: *"There are probably more air
