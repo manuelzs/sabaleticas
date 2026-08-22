@@ -46,15 +46,24 @@ the upper end when it's hot `[S42]` — and our August mean daily maximum is **3
 | 300 kg | 9,576 L/day | **7.3 days** |
 | 400 kg | 12,768 L/day | **5.5 days** |
 
-But the two tanks are a **main (50,000 L) and a reserve (20,000 L)**, not one pooled 70,000 L.
-So there are two different numbers, and the smaller one is the one that bites first:
+Storage comes in **three usable steps**, and each one bites at a different moment:
 
 | | Storage | 300 kg | 400 kg |
 |---|---|---|---|
-| **Main tank alone**, before anyone switches over | 50,000 L | **5.2 days** | **3.9 days** |
-| Both, once the reserve is brought in | 70,000 L | 7.3 days | 5.5 days |
+| Top **main tank alone**, before anyone switches over | 50,000 L | 5.2 days | **3.9 days** |
+| Top main + reserve | 70,000 L | 7.3 days | 5.5 days |
+| **Whole system**, including the mid cluster | **~130,000 L** | **13.6 days** | **10.2 days** |
 
-> ### Call it **four to five days on the main tank, and seven at the absolute outside.**
+> ### So roughly **ten days to two weeks** across the whole system — but under four days on
+> the top main tank alone if nobody intervenes.
+
+Two things make the real figure better than the table:
+
+- **The garden is discretionary demand.** Manuel: *"in a bad situation we stop watering the
+  garden to leave everything for the animals."* That is a **reserve you release rather than
+  water you buy** — and it costs nothing. Worth measuring what the house actually uses, so we
+  know how many days that lever is worth.
+- **The herd is shrinking** — sales are in progress, so 266 is a conservative ceiling.
 
 ⚠️ **The switchover is manual.** That means the reserve only helps if someone *notices* in
 time. If the main runs down unobserved — overnight, or over a weekend — the buffer is the
@@ -221,11 +230,39 @@ Recorded because it is the first coherent description of the system we have.
    and a **~20,000 L reserve**. **Both are plumbed into the system**, arranged so one backs
    up the other, with a **manual switchover** if the main fails. *(Capacities from memory —
    Manuel: "I just don't know the capacity.")*
-3. **Distribution runs from those two tanks across the farm.**
-4. **Potreros without natural water have a small trough (bebedero)** for the cattle. This is
-   a large share of total use.
-5. **The big house in the southwest** is the other main draw.
+3. **Distribution runs from those two tanks across the farm** — and it is **two-stage**, not
+   one. See below.
+4. **A second tank cluster mid-farm: three tanks, ~20,000 L each** (at least), so **~60,000 L**.
+   Sited **near a house, a little above it** — position still to be pinned down. They are
+   **filled from the top tanks**, and they serve:
+   - **the house**, which is *recreational* and consumes a significant amount, including
+     **garden watering**; and
+   - **about half the cattle drinking points in that area.**
+5. **Potreros without natural water have a small trough (bebedero)**. A large share of total
+   use, and split between the two stages.
 6. **The big reservoir inside the farm is a separate system** — it does not feed the tanks.
+
+### The system in one picture
+
+```
+  2 bocatomas on 2 quebradas          ← the only inflow, both surface water
+            │
+            ▼
+  TOP TANKS · entrance · 813 m        50,000 L main + 20,000 L reserve
+  (manual switchover)                 = 70,000 L
+            │
+            ▼
+  MID TANKS · mid-farm · ~717-730 m   3 × ~20,000 L = ~60,000 L
+            │
+      ┌─────┴─────┐
+      ▼           ▼
+   the house    ~half the bebederos in that area
+   (garden =
+   discretionary)
+```
+
+**Total storage ≈ 130,000 L**, roughly double what this document assumed before Manuel
+described the mid cluster. That is the single biggest correction here, and it is good news.
 
 ### What the data independently confirms
 
@@ -360,6 +397,22 @@ estimates:
 
 ## Open questions for the discussion
 
+0aa. **Where exactly are the three mid tanks?** They must sit below the top tanks (813 m) and
+   above the house they feed. Built features the cadastre already maps in that band, closest
+   to the main house first — Manuel only needs to point at one:
+
+   | Candidate | Elevation | From the main house |
+   |---|---|---|
+   | **5.79617, −75.61426** | **717 m** | 221 m — *closest fit to "near a house, a bit further up"* |
+   | 5.80038, −75.61266 | 719 m | 585 m |
+   | 5.80136, −75.61078 | 729 m | 810 m |
+   | 5.79794, −75.60885 | 762 m | 833 m |
+
+0ab. **How much does the house actually use?** It is the one load we can switch off, so its
+   size is the size of that lever.
+0ac. **Which bebederos are on the mid cluster and which on the top tanks?** Manuel says the
+   mid tanks feed "about half" of those in that area — so the two stages fail at different
+   times, and knowing which potreros hang off which decides what we lose first.
 0. **The two external sources** — what are they (nacimientos? a bocatoma on a quebrada? a
    veredal aqueduct)? Where? Is the water right a **concesión de aguas** from Corantioquia,
    and is it current? A source outside the farm we don't fully control is the single biggest
