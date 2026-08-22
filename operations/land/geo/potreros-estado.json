@@ -294,6 +294,15 @@
    ],
    "estado": "final",
    "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 19 de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.617857,
+    5.804617
+   ],
+   "estado": "por_subdividir",
+   "nota": "es el lote entero; adentro hay varios potreros que Manuel dará después. El IGAC no tiene ninguna cerca dibujada aquí, así que las divisiones habrá que digitalizarlas o dictarlas.",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «por_subdividir» sobre el El Guaico de la corrida del 2026-08-22."
   }
  ]
 }
