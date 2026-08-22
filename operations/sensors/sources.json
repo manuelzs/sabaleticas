@@ -143,6 +143,39 @@
    ],
    "por_que_importa": "Sólo si avanza la ruta por gravedad o la bomba. El margen de esa ruta lo fija el nivel MÍNIMO de trabajo, no el nivel lleno.",
    "origen": "automatico"
+  },
+  {
+   "id": "clima-estacion-cercana",
+   "nombre": "Lluvia — estación meteorológica cercana",
+   "tipo": "fuente-publica",
+   "origen": "automatico",
+   "entidad": "finca",
+   "estado": "planificado",
+   "transporte": "scraping o API pública",
+   "canales": [
+    {
+     "id": "lluvia",
+     "magnitud": "lluvia",
+     "unidad": "mm"
+    },
+    {
+     "id": "temperatura",
+     "magnitud": "temperatura",
+     "unidad": "°C"
+    }
+   ],
+   "por_que_importa": "La lluvia es el insumo que falta para casi todo lo importante: recarga de quebradas y represa, crecimiento del pasto, y el riesgo de verano. Sin ella, la autonomía de agua es un número estático cuando debería ser un pronóstico.",
+   "candidatos": [
+    "IDEAM — estaciones públicas, datos abiertos",
+    "Aeropuerto o estación cercana vía API meteorológica",
+    "Redes de estaciones privadas (Weather Underground y similares)"
+   ],
+   "pendiente": [
+    "Qué estación está más cerca y a qué altura — La Pintada es tierra caliente y una estación de altura no sirve de proxy.",
+    "Resolución temporal y latencia de los datos.",
+    "Cuánto histórico se puede descargar de una vez."
+   ],
+   "futuro": "[owner, 2026-08-22] A futuro, una estación meteorológica sencilla EN la finca. El proxy sirve para empezar; la lluvia es muy local en terreno quebrado."
   }
  ]
 }

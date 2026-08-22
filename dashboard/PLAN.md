@@ -107,3 +107,18 @@ before there is cattle data.
 3. **Offline first**, single file, stdlib only, no build step.
 4. **Never look more confident than the data.** Dashed hypotheticals, confidence dots, the
    *cota desconocida* band, and a router that cannot draw a connection that does not exist.
+5. **Labels may be written. Claims must be computed — and both must be readable.**
+   A *label* names what you are looking at and is identical on every farm; writing it is fine.
+   A *claim* asserts something about **this** data, so it must be derived and must vanish when
+   its condition does. **And a claim nobody can parse is worthless however correct it is** —
+   prefer a number with a plain label over a clever sentence.
+   > The test: would this sentence still be true on a different farm tomorrow?
+6. **Every number must answer a question someone actually has.** *"85 guías"* is a fact about
+   the extract, not the business. Prefer windows, rates and shares over totals of what we happen
+   to hold.
+7. **Everything measured is a reading.** One series for herd counts, tank levels and
+   temperature. `origen` distinguishes `manual` · `automatico` · `scraped`.
+8. **Flows, stocks and coverage draw differently.** Event strips or cumulative curves for flows;
+   step lines for stocks; coverage always drawn and never interpolated.
+9. **Reach across subsystems wherever it decides something.** A figure from one subsystem
+   describes; a figure from two decides.

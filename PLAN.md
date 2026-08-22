@@ -98,6 +98,24 @@ would not have stopped it.
 - The rompecargas wants **two float switches, not an ultrasonic** — it is a buried concrete pit.
 - A **sight tube and a daily photo** costs almost nothing and would have caught this months ago.
 
+## 7b · Lluvia — el insumo que falta para casi todo
+
+`[Manuel, 2026-08-22]` *"Necesitamos mejor información del clima, sobre todo lluvia."*
+
+Sin lluvia, la autonomía de agua es un número estático cuando debería ser un **pronóstico**, y
+el crecimiento del pasto no tiene explicación. Es el dato que conecta agua, potreros y ganado.
+
+**Mañana:** buscar una **estación cercana** que sirva de proxy — IDEAM u otra fuente pública.
+La pregunta que decide cuál sirve: **a qué altura está.** La Pintada es tierra caliente; una
+estación de altura no representa esta lluvia.
+
+**A futuro:** una estación sencilla **en la finca**. En terreno quebrado la lluvia es muy local,
+así que el proxy sirve para empezar y no para siempre.
+
+Registrada como fuente en
+[`operations/sensors/sources.json`](operations/sensors/sources.json) — entra por el mismo
+camino que todo lo demás, con `origen: scraped`.
+
 ## 8 · Land and paperwork *(Manuel, when convenient)*
 
 - **Impuesto predial** — which predios, what área
