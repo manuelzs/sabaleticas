@@ -18,6 +18,8 @@
 | Generated verification checklist (`water_inventory.py`) | ✅ |
 | **JS split into `src/*.js`**, concatenated by the builder — no bundler | ✅ |
 | **Subsystem tabs × views**, routed in the hash (`#agua/esquema`) | ✅ |
+| **Sensores tab** — readings + sources, first DOM view | ✅ |
+| **Readings render everywhere** — map chip, schematic tank fill, list — by entity id | ✅ |
 
 ## Open
 
@@ -45,9 +47,17 @@ in `sabaleticas/map.py`, and the symbol drawing in `50-schematic.js`. One regist
 That registry is also what the future table and ticket views read to know how to render a type,
 so it is not only cosmetic.
 
-### 3 · Attachment model
-Readings, tickets and alerts are **one mechanism**: something keyed to an entity id, rendered
-by whichever view cares. Build it when the first sensor lands, not before.
+### 3 · Attachment model — ✅ **half built**
+Readings work: `data/readings.csv` → latest per entity+magnitude → rendered by the map, the
+schematic and the Sensores list, all resolving by entity id. **A manual note and an automated
+reading are the same object**, differing only in `origen` and expected freshness.
+
+Still to come: **tickets and alerts on the same mechanism**, and the `Trabajo` tab.
+
+### 3b · Collecting Hikvision automatically
+The house system is the pilot. `operations/sensors/sources.json` holds what we know and the
+minimal test (`/ISAPI/System/deviceInfo`). Needs the panel model and network access before
+any code is worth writing.
 
 ### 4 · Slope-shaded surface
 The cursor reports slope already. Missing: the coloured surface in 2D and on the 3D mesh.

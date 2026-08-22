@@ -77,7 +77,7 @@ function drawReadings(){
       if(!rs.length) continue;
       seen[f.eid]=1;
       const p=toScreen(f.c[0],f.c[1]);
-      let dy=-16;
+      let dy=-27;                       // clear of the feature's own label
       for(const r of rs){
         const a=(typeof readingAge==='function') ? readingAge(r.ts) : {col:'#00e676'};
         const txt=`${r.valor} ${r.unidad||''}`.trim();
