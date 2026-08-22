@@ -222,16 +222,17 @@ function draw(){
         cx.font='bold 19px system-ui'; cx.lineWidth=5;
         cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(name,s0[0],s0[1]);
         cx.fillStyle='#ffffff'; cx.fillText(name,s0[0],s0[1]);
-        if(sub){
+        let dy=0;
+        if(sub){                                   // owner line only when we know it
+          dy=18;
           cx.font='bold 13px system-ui'; cx.lineWidth=4;
-          cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(sub,s0[0],s0[1]+18);
-          cx.fillStyle= sub.indexOf('por confirmar')>=0 ? '#90a4ae' : '#ffd54f';
-          cx.fillText(sub,s0[0],s0[1]+18);
+          cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(sub,s0[0],s0[1]+dy);
+          cx.fillStyle='#ffd54f'; cx.fillText(sub,s0[0],s0[1]+dy);
         }
         if(sub2){
           cx.font='11px system-ui'; cx.lineWidth=3.5;
-          cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(sub2,s0[0],s0[1]+33);
-          cx.fillStyle='#cfd8dc'; cx.fillText(sub2,s0[0],s0[1]+33);
+          cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(sub2,s0[0],s0[1]+dy+15);
+          cx.fillStyle='#cfd8dc'; cx.fillText(sub2,s0[0],s0[1]+dy+15);
         }
         cx.textAlign='left';
       } else {
@@ -307,15 +308,38 @@ function resize(){
   cv.width=W*devicePixelRatio;cv.height=H*devicePixelRatio;
   cv.style.width=W+'px';cv.style.height=H+'px';draw();
 }
+/* --- session persistence: pan, zoom, 3D camera --- */
+let saveT=null;
+function saveView(){
+  clearTimeout(saveT);
+  saveT=setTimeout(()=>{ try{
+    localStorage.setItem('sab_view', JSON.stringify({
+      x:view.x, y:view.y, s:view.s, is3d:is3d, cam:cam, exag:exag}));
+  }catch(e){} }, 300);
+}
+function restoreView(){
+  try{
+    const v=JSON.parse(localStorage.getItem('sab_view')||'null');
+    if(!v || !isFinite(v.s) || v.s<=0) return false;
+    view={x:v.x, y:v.y, s:v.s};
+    if(v.cam) cam=v.cam;
+    if(typeof v.exag==='number'){ exag=v.exag;
+      const e=document.getElementById('exag'); if(e){e.value=exag;
+        document.getElementById('exagv').textContent=exag+'×';} }
+    if(v.is3d && D.tex && D.mesh) setTimeout(()=>set3d(true),0);
+    return true;
+  }catch(e){ return false; }
+}
 function reset(){
   const s=Math.min(W/1, H/aspect())*0.92;
-  view={s:s, x:(W-s)/2, y:(H-s*aspect())/2}; draw();
+  view={s:s, x:(W-s)/2, y:(H-s*aspect())/2}; saveView(); draw();
 }
 let drag=null;
 cv.addEventListener('mousedown',e=>{
   if(planoAlign && PL.on){ drag={x:e.clientX,y:e.clientY,plon:PL.lon,plat:PL.lat,plano:true,moved:false}; return; }
   drag={x:e.clientX,y:e.clientY,vx:view.x,vy:view.y,moved:false};});
 addEventListener('mouseup',e=>{
+  if(drag && !drag.plano && drag.moved) saveView();
   if(drag && drag.plano){ savePlano(); drag=null; return; }
   if(drag && !drag.moved && mpOn){ mpClick(toGeo(e.clientX,e.clientY)); drag=null; return; }
   if(drag && !drag.moved && calStep>=0){ calClick(toGeo(e.clientX,e.clientY)); drag=null; return; }
@@ -351,7 +375,7 @@ cv.addEventListener('wheel',e=>{
   const r=view.s/old;
   view.x=e.clientX-(e.clientX-view.x)*r;
   view.y=e.clientY-(e.clientY-view.y)*r;
-  draw();
+  saveView(); draw();
 },{passive:false});
 
 /* interior angle at vertex b, in a local metric frame */
@@ -431,10 +455,10 @@ D.layers.forEach((L,i)=>{
 addEventListener('resize',resize);
 if(D.ortho){
   img=new Image();
-  img.onload=()=>{resize();reset();};
-  img.onerror=()=>{img=null;resize();reset();};
+  img.onload=()=>{resize(); if(!restoreView()) reset(); draw();};
+  img.onerror=()=>{img=null;resize(); if(!restoreView()) reset(); draw();};
   img.src=D.ortho;
-} else { resize(); reset(); }
+} else { resize(); if(!restoreView()) reset(); draw(); }
 /* ================= 2003 plan overlay (georeferencing by eye) ================= */
 // Baseline from Manuel's 2-point calibration, 2026-08-21. Kept as the default so a cleared
 // browser doesn't lose it. Note rot ~11.7 deg: the scan is NOT square to north.
@@ -923,7 +947,7 @@ function set3d(on){
   document.getElementById('cv').style.display=on?'none':'block';
   c3.style.display=on?'block':'none';
   document.getElementById('ex3d').style.display=on?'block':'none';
-  document.getElementById('btn3d').classList.toggle('on',on);
+  document.getElementById('btn3d').classList.toggle('on',on); saveView();
   document.getElementById('read').style.opacity=on?0.35:1;
   if(on){ if(!g3) g3=init3d(); render3d(); } else draw();
 }
@@ -932,16 +956,16 @@ if(D.tex && D.mesh){
   b.onclick=()=>set3d(!is3d);
   document.getElementById('exag').oninput=e=>{
     exag=parseFloat(e.target.value);
-    document.getElementById('exagv').textContent=exag+'×'; render3d();};
+    document.getElementById('exagv').textContent=exag+'×'; saveView(); render3d();};
   let d3=null;
   c3.addEventListener('mousedown',e=>{d3={x:e.clientX,y:e.clientY,az:cam.az,el:cam.el};});
   addEventListener('mouseup',()=>{d3=null;});
   addEventListener('mousemove',e=>{ if(!d3)return;
     cam.az=d3.az-(e.clientX-d3.x)*0.005;
     cam.el=Math.max(0.05,Math.min(1.45,d3.el+(e.clientY-d3.y)*0.005));
-    render3d();});
+    saveView(); render3d();});
   c3.addEventListener('wheel',e=>{e.preventDefault();
-    cam.d=Math.max(0.6,Math.min(6,cam.d*Math.exp(e.deltaY*0.0012))); render3d();},{passive:false});
+    cam.d=Math.max(0.6,Math.min(6,cam.d*Math.exp(e.deltaY*0.0012))); saveView(); render3d();},{passive:false});
   addEventListener('resize',()=>{ if(is3d) render3d(); });
 }
 

@@ -136,7 +136,7 @@ def _collect(geo: Path):
             label = props.get("name") or props.get("DIRECCION") or ""
             if props.get("lado") and props.get("area_ha"):      # neighbours: name / owner / side+area
                 who = (owners.get(props.get("matricula") or "", {}) or {}).get("owner", "")
-                label = (f"{props['name']} · {who or 'propietario por confirmar'}"
+                label = (f"{props['name']} · {who}"
                          f" · {props['lado']} · {props['area_ha']} ha")
             if not label and props.get("elev"):
                 label = f"{props['elev']} m"

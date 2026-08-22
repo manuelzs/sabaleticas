@@ -478,6 +478,24 @@ so the cadastre has actively drawn that line and placed the land beyond it, rath
 a gap. Two other Bellavista parcels exist nearby (023-20858, and Bellavista Aures 023-7914) but
 neither adjoins us.
 
+## Who owns what
+
+`neighbour-owners.json` holds owner names, hand-maintained because **the public cadastre does
+not publish them** — its `DIRECCION` field is the *property* name, not the owner. Names are
+shown on the map beneath each predio; where we don't know one, nothing is drawn.
+
+| Predio | Side | Owner |
+|---|---|---|
+| **EL GUAICO** (023-16154) | SE | **Manuela y Amalia Londoño** `[owner]` |
+| **AP 2 PARTE ALTA** (023-16155) | SE | **Manuela y Amalia Londoño** — *part of El Guaico* `[owner]` |
+| BELLAVISTA (023-20857) | N | *unknown* — was a cousin's, believed sold. **Holds the disputed triangle** |
+| The other nine | | *unknown* |
+
+Worth noting on AP 2: it carries a **separate matrícula** from El Guaico and its polygon sits
+**~149 m away**, not contiguous — yet it is the same property in practice. A useful reminder
+that one holding can span several matrículas and non-touching polygons, which is exactly the
+trap that hid our own Santa Bárbara parcel.
+
 ## History — long possession `[owner, unverified]`
 
 Per Manuel (2026-08-21), and directly relevant to the northern tip:
