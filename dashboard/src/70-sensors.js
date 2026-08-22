@@ -42,47 +42,48 @@ function renderSensores(){
   const R=Object.values(D.readings||{});
   const box=document.getElementById('pageInner');
 
-  const readRows = R.length ? R.map(r=>{
+  const reading=r=>{
     const a=readingAge(r.ts);
-    return `<tr>
-      <td><b>${entityName(r.entidad)}</b><div class="sub2">${r.entidad}</div></td>
-      <td>${r.magnitud}</td>
-      <td class="val">${r.valor} ${r.unidad||''}</td>
-      <td><span class="pill" style="background:${a.col}22;color:${a.col}">${a.label}</span>
-          <div class="sub2">${r.ts}</div></td>
-      <td>${r.origen==='manual'?'✍︎ manual':'⚙ automático'}<div class="sub2">${r.fuente||''}</div></td>
-      <td class="sub2">${r.nota||''}</td>
-    </tr>`;}).join('')
-    : `<tr><td colspan="6" class="sub2">Sin lecturas todavía. Una anotación manual ya cuenta:
-        añade una fila a <code>data/readings.csv</code> y aparece aquí y en el mapa.</td></tr>`;
+    return `<div class="card" style="--acc:${a.col}">
+      <div class="top"><span class="dot"></span>${a.label}</div>
+      <div class="big">${r.valor}<small>${r.unidad||''}</small></div>
+      <div class="mag">${r.magnitud}</div>
+      <div class="ent">${entityName(r.entidad)}</div>
+      <div class="meta">${r.origen==='manual'?'✍︎ anotado a mano':'⚙ automático'}${
+        r.fuente?' · '+r.fuente:''}</div>
+      ${r.nota?`<div class="meta">${r.nota}</div>`:''}
+    </div>`;};
 
-  const srcRows=S.map(f=>{
+  const source=f=>{
     const [col,label]=SRC_STATE[f.estado]||['#78909c',f.estado||'?'];
-    const canales=(f.canales||[]).map(c=>c.magnitud+(c.unidad?` (${c.unidad})`:'')).join(' · ');
+    const ghost=f.estado==='planificado'||f.estado==='por_investigar';
+    const canales=(f.canales||[]).map(c=>c.magnitud).join(' · ')||'—';
     const pend=(Array.isArray(f.pendiente)?f.pendiente:f.pendiente?[f.pendiente]:[]);
-    return `<tr>
-      <td><b>${f.nombre}</b>
-          ${f.por_que_importa?`<div class="sub2">${f.por_que_importa}</div>`:''}
-          ${pend.length?`<ul class="todo">${pend.map(p=>`<li>${p}</li>`).join('')}</ul>`:''}</td>
-      <td><span class="pill" style="background:${col}22;color:${col}">${label}</span></td>
-      <td>${f.origen==='manual'?'✍︎ manual':'⚙ automático'}</td>
-      <td>${f.entidad?entityName(f.entidad):'—'}</td>
-      <td>${canales||'—'}</td>
-      <td>${f.transporte||'—'}</td>
-    </tr>`;}).join('');
+    return `<div class="card${ghost?' ghost':''}" style="--acc:${col}">
+      <div class="top"><span class="dot"></span>${label}</div>
+      <div class="big" style="font-size:19px">${canales}</div>
+      <div class="mag">${f.origen==='manual'?'anotación humana':(f.transporte||'—')}</div>
+      <div class="ent">${f.nombre}</div>
+      <div class="meta">${f.entidad?entityName(f.entidad):'cualquier entidad'}</div>
+      ${f.por_que_importa?`<div class="why">${f.por_que_importa}</div>`:''}
+      ${pend.length?`<div class="why"><ul>${pend.map(p=>`<li>${p}</li>`).join('')}</ul></div>`:''}
+    </div>`;};
 
+  const live=S.filter(f=>f.estado==='en_linea').length;
   box.innerHTML=`
-    <h2>Lecturas</h2>
-    <p class="lead">Una lectura es <b>entidad + magnitud + valor + fecha + cómo se obtuvo</b>.
-      Una anotación a mano vale igual que una automática — cambia el <b>origen</b> y la frescura
-      que cabe esperar, no la lectura. Por eso esto funciona hoy, sin comprar nada.</p>
-    <table><thead><tr><th>Entidad</th><th>Magnitud</th><th>Valor</th><th>Actualizado</th>
-      <th>Origen</th><th>Nota</th></tr></thead><tbody>${readRows}</tbody></table>
+    <div class="sect"><h2>Lecturas</h2><span class="n">${R.length} · última por entidad</span></div>
+    <p class="lead">Entidad + magnitud + valor + fecha + <b>cómo se obtuvo</b>. Una anotación a
+      mano vale igual que una automática: cambia el <b>origen</b> y la frescura que cabe esperar,
+      no la lectura. Por eso esto funciona hoy, sin comprar nada.</p>
+    <div class="cards">${
+      R.length ? R.map(reading).join('')
+      : `<div class="card ghost" style="--acc:#78909c"><div class="top">sin lecturas</div>
+         <div class="big" style="font-size:19px">—</div>
+         <div class="why">Añade una fila a <code>data/readings.csv</code> y aparece aquí,
+         en el mapa y en el esquema.</div></div>`}</div>
 
-    <h2 style="margin-top:34px">Fuentes</h2>
-    <p class="lead">De dónde vienen (o vendrán) esas lecturas.
-      <b>${S.filter(f=>f.estado==='en_linea').length} de ${S.length} en línea.</b>
-      La regla del proyecto sigue siendo <b>arreglar primero, medir después</b>.</p>
-    <table><thead><tr><th>Fuente</th><th>Estado</th><th>Origen</th><th>Entidad</th>
-      <th>Canales</th><th>Transporte</th></tr></thead><tbody>${srcRows}</tbody></table>`;
+    <div class="sect"><h2>Fuentes</h2><span class="n">${live} de ${S.length} en línea</span></div>
+    <p class="lead">De dónde vienen, o vendrán, esas lecturas.
+      La regla sigue siendo <b>arreglar primero, medir después</b>.</p>
+    <div class="cards">${S.map(source).join('')}</div>`;
 }

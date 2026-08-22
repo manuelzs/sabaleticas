@@ -66,7 +66,11 @@ addEventListener('keydown',e=>{
 /* Live readings on the map. A reading carries its AGE as prominently as its value —
    a manual note from three weeks ago should not look like a fresh one, and the colour
    of the dot says which it is. Same data the schematic and the Sensores list use. */
+let showReadings=true;
+try{ const v=localStorage.getItem('sab_readings'); if(v!==null) showReadings=(v==='1'); }catch(e){}
+
 function drawReadings(){
+  if(!showReadings) return;
   const R=D.readings; if(!R || !Object.keys(R).length) return;
   const seen={};
   for(const L of D.layers){
@@ -456,6 +460,16 @@ function buildLayers(only){
   const groups={};
   D.layers.forEach((L,i)=>{ const g=L.grupo||'predio'; (groups[g]=groups[g]||[]).push([L,i]); });
   const keys=Object.keys(groups).sort();
+  if((!only || only==='datos') && D.readings && Object.keys(D.readings).length){
+    box.insertAdjacentHTML('beforeend',
+      `<div class="grp">Datos</div>
+       <label><input type="checkbox" id="Lrd" ${showReadings?'checked':''}>
+       <span class="sw" style="background:#00e676"></span>Lecturas en vivo</label>`);
+    document.getElementById('Lrd').onchange=e=>{
+      showReadings=e.target.checked;
+      try{ localStorage.setItem('sab_readings',showReadings?'1':'0'); }catch(x){}
+      if(!isPid && !is3d) draw();};
+  }
   for(const g of keys){
     if(only && g!==only) continue;
     if(!only && keys.length>1)
