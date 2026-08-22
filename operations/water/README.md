@@ -380,7 +380,9 @@ I searched the terrain model for the shortest route that never rises above the l
 > the error bar**, so this cannot be settled from a desk. It is neither confirmed nor ruled
 > out — the data simply cannot see at that precision.
 
-**How to settle it, cheaply:** run a level along the proposed line. A builder's level, or even
+**How to settle it, cheaply:** run a level along the proposed line. (A drone survey would also
+answer it, and this is the one question that would justify paying for one — see
+[`../land/imagery-options.md`](../land/imagery-options.md).) A builder's level, or even
 a long clear hose filled with water, walked from the lake edge toward the mid tanks, would
 answer definitively in an afternoon. If real ground gives 2–3 m of clearance instead of 0.2,
 this becomes the best option on the table — **no pump, no power, no fuel, nothing to fail.**
