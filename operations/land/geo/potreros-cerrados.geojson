@@ -2817,10 +2817,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 17",
+    "nombre": "Consuelo",
     "n": 17,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "area_ha": 2.73,
     "area_m2": 27319,
