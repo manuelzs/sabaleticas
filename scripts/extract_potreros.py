@@ -953,6 +953,13 @@ def main():
     nombres = json.loads(f_nom.read_text(encoding="utf-8"))["nombres"] \
         if f_nom.exists() else []
 
+    # Audit state, anchored the same way and for the same reason. NEVER inferred: a face
+    # that closes can still be wrong — the 23.31 ha one in the northwest closed over a
+    # shortcut and looked perfect. Only Manuel, on the orthophoto, can call a border real.
+    f_est = GEO / "potreros-estado.json"
+    estados = json.loads(f_est.read_text(encoding="utf-8"))["estados"] \
+        if f_est.exists() else []
+
     # salt points, from the cattle-infrastructure layer
     saladeros = []
     fg = GEO / "ganado-infraestructura.geojson"
@@ -982,10 +989,13 @@ def main():
         elif not conducida:
             sin_agua.append((i, a / 10000, "sin bebedero mapeado — POR CONFIRMAR"))
         prop = next((n for n in nombres if inside(n["punto"], [[ring]])), None)
+        est = next((e for e in estados if inside(e["punto"], [[ring]])), None)
         feats.append({"type": "Feature", "properties": {
             "tipo": "potrero",
             "nombre": prop["nombre"] if prop else f"Potrero {i}",
             "n": i, "nombrado": bool(prop),
+            "estado": est["estado"] if est else None,
+            "estado_nota": (est or {}).get("nota", ""),
             "area_ha": round(a / 10000, 2), "area_m2": round(a),
             "agua": fuentes,
             "sal": sal,
@@ -1080,6 +1090,20 @@ def main():
     named = sum(1 for f in feats if f["properties"].get("nombrado"))
     if named:
         print(f"  con nombre: {named} de {len(feats)}")
+    # The audit. Read it as "how much of the farm do we actually believe", by AREA — a
+    # confirmed 1.9 ha and a confirmed 35 ha are not the same amount of certainty.
+    fin = [f for f in feats if f["properties"].get("estado") == "final"]
+    ha_fin = sum(f["properties"]["area_ha"] for f in fin)
+    ha_tot = sum(f["properties"]["area_ha"] for f in feats)
+    print(f"  auditoría: {len(fin)} de {len(feats)} confirmados "
+          f"({ha_fin:.1f} de {ha_tot:.1f} ha, {100*ha_fin/ha_tot if ha_tot else 0:.0f} %)")
+    resto = {}
+    for f in feats:
+        e = f["properties"].get("estado")
+        if e != "final":
+            resto.setdefault(e or "sin marcar", []).append(f["properties"]["nombre"])
+    for e, ns in sorted(resto.items(), key=lambda t: -len(t[1])):
+        print(f"      {e}: {len(ns)} — {', '.join(ns)}")
     inf = [{"type": "Feature", "properties": {
         "tipo": "cerca_inferida", "nombre": f"Cerca {a}–{b}", "longitud_m": dm,
         "fuente": f"[owner] {mot}",

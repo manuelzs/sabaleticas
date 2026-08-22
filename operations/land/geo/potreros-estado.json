@@ -1,0 +1,46 @@
+{
+ "_nota": "Estado de auditoría de cada potrero, anclado a un PUNTO igual que los nombres. La numeración va por área y se baraja en cuanto aparece o desaparece una cara, así que una lista por número se pudre en la primera corrida. El punto se pega al lugar.",
+ "_lo_dice_manuel": "El estado NUNCA se infiere. Que una cara cierre no quiere decir que sus bordes sean correctos — la cara de 23,31 ha del noroeste cerraba sobre un atajo y parecía perfecta. Sólo Manuel, mirando la ortofoto, sabe si un borde es real.",
+ "_estados": {
+  "final": "Los bordes son CORRECTOS. Puede faltarle el nombre — eso no lo hace menos final; simplemente Manuel no lo sabe todavía.",
+  "por_subdividir": "Cierra, pero es un resto: por dentro hay más de un potrero.",
+  "abierto": "Todavía no cierra, o cierra por donde no debe. Faltan cercas por dictar.",
+  "por_ajustar": "Cierra y es un solo potrero, pero algún borde está mal trazado.",
+  "(sin marcar)": "No auditado todavía. Es el estado por defecto y NO significa que esté bien."
+ },
+ "_vocabulario_abierto": "Si Manuel describe un estado que no está en la lista, se añade aquí con sus palabras; no se fuerza en una de las cuatro casillas.",
+ "estados": [
+  {
+   "punto": [
+    -75.609607,
+    5.798927
+   ],
+   "estado": "final",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Serengueti de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.608282,
+    5.79859
+   ],
+   "estado": "final",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Ciruelo de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.610244,
+    5.797715
+   ],
+   "estado": "final",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Balkanes de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.608415,
+    5.797379
+   ],
+   "estado": "final",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 18 de la corrida del 2026-08-22."
+  }
+ ]
+}

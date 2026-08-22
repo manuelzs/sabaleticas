@@ -110,6 +110,33 @@ hayamos ubicado su bebedero. Las dos quedan abiertas.
   encima, selección múltiple con ⌘, entre capas) para poder señalar exactamente de qué línea
   habla, en vez de describirla.
 
+## La auditoría: qué creemos de verdad
+
+[`geo/potreros-estado.json`](geo/potreros-estado.json) — anclado a un PUNTO, por lo mismo que
+los nombres: la numeración va por área y se baraja en cuanto aparece o desaparece una cara.
+
+Se marca con `scripts/estado_potrero.py "Potrero 8" final`, diciendo el número que se ve en el
+mapa en ese momento; el script lo convierte al punto.
+
+| Estado | Qué significa |
+|---|---|
+| `final` | Los bordes son **correctos**. Puede faltarle el nombre — eso no lo hace menos final. |
+| `por_subdividir` | Cierra, pero es un resto: por dentro hay más de un potrero. |
+| `abierto` | Todavía no cierra, o cierra por donde no debe. |
+| `por_ajustar` | Es un solo potrero, pero algún borde está mal trazado. |
+| *(sin marcar)* | **No auditado.** No quiere decir que esté bien. |
+
+**El estado no se infiere nunca.** Que una cara cierre no dice nada de si sus bordes son
+reales: la cara de 23,31 ha del noroeste cerraba sobre un atajo de 97,7 m y parecía perfecta
+durante días. Sólo Manuel, sobre la ortofoto, puede confirmar un borde.
+
+En el mapa, **lo confirmado no lleva marca y lo no confirmado lleva `?`** — decisión de Manuel,
+y es la correcta: así un mapa limpio es un mapa terminado, y «sin auditar» pesa lo mismo que
+«auditado y mal», que es la verdad, porque ambos siguen necesitándolo a él.
+
+El resumen se mide **por área**, no por número de potreros: un potrero confirmado de 1,9 ha y
+uno de 35,8 ha no son la misma cantidad de certeza.
+
 ## Los nombres son del lugar, no del número
 
 La numeración va por área y se baraja cada vez que aparece una cara nueva, así que los nombres

@@ -221,7 +221,14 @@ def _collect(geo: Path, TIPOS):
             props = f.get("properties") or {}
             label = props.get("name") or props.get("DIRECCION") or ""
             if props.get("tipo") == "potrero" and props.get("area_ha"):
-                label = f"{props.get('nombre','')} · {props['area_ha']} ha"
+                # Manuel: nothing special on the ones he has confirmed, a marker on the
+                # ones he has not. So a clean map is a finished map, and "not audited yet"
+                # looks the same as "audited and wrong" — both still need him.
+                est = props.get("estado")
+                marca = "" if est == "final" else " ?"
+                label = f"{props.get('nombre','')}{marca} · {props['area_ha']} ha"
+                if est and est != "final":
+                    label += f" · {est.replace('_', ' ')}"
             if props.get("lado") and props.get("area_ha"):      # neighbours: name / owner / side+area
                 who = (owners.get(props.get("matricula") or "", {}) or {}).get("owner", "")
                 label = (f"{props['name']} · {who}"

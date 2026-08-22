@@ -8,6 +8,8 @@
     "nombre": "Potrero 1",
     "n": 1,
     "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 35.79,
     "area_m2": 357861,
     "agua": [
@@ -749,6 +751,8 @@
     "nombre": "Potrero 2",
     "n": 2,
     "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 20.81,
     "area_m2": 208125,
     "agua": [
@@ -1306,6 +1310,8 @@
     "nombre": "Potrero 3",
     "n": 3,
     "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 12.74,
     "area_m2": 127439,
     "agua": [
@@ -1617,6 +1623,8 @@
     "nombre": "Potrero 4",
     "n": 4,
     "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 5.91,
     "area_m2": 59093,
     "agua": [
@@ -1818,6 +1826,8 @@
     "nombre": "Potrero 5",
     "n": 5,
     "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 5.71,
     "area_m2": 57143,
     "agua": [
@@ -1911,6 +1921,8 @@
     "nombre": "Potrero 6",
     "n": 6,
     "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 5.12,
     "area_m2": 51161,
     "agua": [
@@ -1998,6 +2010,8 @@
     "nombre": "Portugal",
     "n": 7,
     "nombrado": true,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 4.49,
     "area_m2": 44912,
     "agua": [
@@ -2081,6 +2095,8 @@
     "nombre": "Potrero 8",
     "n": 8,
     "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 4.46,
     "area_m2": 44609,
     "agua": [
@@ -2158,6 +2174,8 @@
     "nombre": "Potrero 9",
     "n": 9,
     "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 4.36,
     "area_m2": 43609,
     "agua": [
@@ -2231,6 +2249,8 @@
     "nombre": "La Mancha",
     "n": 10,
     "nombrado": true,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 4.28,
     "area_m2": 42821,
     "agua": [
@@ -2322,6 +2342,8 @@
     "nombre": "Serengueti",
     "n": 11,
     "nombrado": true,
+    "estado": "final",
+    "estado_nota": "",
     "area_ha": 3.76,
     "area_m2": 37593,
     "agua": [
@@ -2401,6 +2423,8 @@
     "nombre": "Balkanes",
     "n": 12,
     "nombrado": true,
+    "estado": "final",
+    "estado_nota": "",
     "area_ha": 3.74,
     "area_m2": 37361,
     "agua": [
@@ -2494,6 +2518,8 @@
     "nombre": "Potrero 13",
     "n": 13,
     "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 3.23,
     "area_m2": 32317,
     "agua": [
@@ -2582,6 +2608,8 @@
     "nombre": "Lajas",
     "n": 14,
     "nombrado": true,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 3.21,
     "area_m2": 32093,
     "agua": [
@@ -2678,6 +2706,8 @@
     "nombre": "Paraíso",
     "n": 15,
     "nombrado": true,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 3.11,
     "area_m2": 31102,
     "agua": [
@@ -2763,6 +2793,8 @@
     "nombre": "Ciruelo",
     "n": 16,
     "nombrado": true,
+    "estado": "final",
+    "estado_nota": "",
     "area_ha": 2.39,
     "area_m2": 23935,
     "agua": [
@@ -2848,6 +2880,8 @@
     "nombre": "Potrero 17",
     "n": 17,
     "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
     "area_ha": 1.96,
     "area_m2": 19594,
     "agua": [
@@ -2967,6 +3001,8 @@
     "nombre": "Potrero 18",
     "n": 18,
     "nombrado": false,
+    "estado": "final",
+    "estado_nota": "",
     "area_ha": 1.9,
     "area_m2": 18962,
     "agua": [
