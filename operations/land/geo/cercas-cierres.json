@@ -35,6 +35,11 @@
    42,
    43,
    "quiebrapatas"
+  ],
+  [
+   10,
+   11,
+   "saladero"
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

@@ -161,6 +161,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 10–11",
+    "longitud_m": 14,
+    "motivo": "saladero",
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610955,
+      5.802595
+     ],
+     [
+      -75.611011,
+      5.802484
+     ]
+    ]
+   }
   }
  ]
 }

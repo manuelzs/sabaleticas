@@ -1,0 +1,24 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "saladero",
+    "nombre": "Saladero 1",
+    "_id": "ganado:saladero-1",
+    "fuente": "[owner, 2026-08-22] Manuel lo identificó en el hueco de cerca 10–11.",
+    "pos_confianza": "alta",
+    "pos_motivo": "identificado en el hueco de cerca 10–11",
+    "nota": "La cerca se parte aquí para el saladero, igual que para un bebedero — por eso aparece como hueco. NO es agua: no entra en la red hidráulica ni cuenta como fuente de agua de un potrero."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.610983,
+     5.802539
+    ]
+   }
+  }
+ ]
+}

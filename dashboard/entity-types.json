@@ -181,6 +181,17 @@
    "ancho": 0,
    "geom": "line",
    "atributos": []
+  },
+  "saladero": {
+   "label": "Saladero",
+   "color": "#ce93d8",
+   "mapa": "diamond",
+   "esquema": "dot",
+   "ancho": 1.0,
+   "geom": "point",
+   "atributos": [
+    "potrero"
+   ]
   }
  }
 }
