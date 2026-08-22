@@ -40,7 +40,7 @@ LAYER_GROUP = {
 # Never simplified: their vertices are the analysis, and the edge picker reports them
 # back as coordinates we then act on.
 EXACTAS = {"Linderos", "Cercas", "Cercas (bajo dosel)", "Potreros (cerrados)",
-           "Cercas abiertas", "Cierres (dictados)", "Ganado: infraestructura",
+           "Cercas abiertas", "Pasos en la cerca", "Ganado: infraestructura",
            "Agua: infraestructura", "Playón (uso, no pastoreo)"}
 
 # Layers that share ONE checkbox. They stay separate files, separate colours and
@@ -48,6 +48,17 @@ EXACTAS = {"Linderos", "Cercas", "Cercas (bajo dosel)", "Potreros (cerrados)",
 # two saw it, IGAC's imagery or Manuel, is a question about provenance, and the map
 # already answers it in the colour. It does not need to be a switch you can get wrong.
 MENU = {"Cercas": "Cercas", "Cercas (bajo dosel)": "Cercas"}
+
+# Some layers show only part of their file. `Cierres (dictados)` held all 147 closures,
+# but 134 of them ARE the under-canopy fences — so those were being drawn twice, in two
+# colours, and appeared in the menu twice over. What is left once the fences are taken
+# out is not a "closure" at all: 13 deliberate GAPS of 3 to 20 m where the fence is cut
+# on purpose — a trough the cattle drink from on both sides, a saladero, a quiebrapatas
+# where the road goes through. That is a thing Manuel uses, so it gets its own honest
+# name instead of a technical one.
+FILTROS = {
+    "Pasos en la cerca": lambda p: not p.get("es_cerca"),
+}
 
 # label, file (relative to geo/), kind, colour, width, fill
 LAYERS = [
@@ -77,9 +88,9 @@ LAYERS = [
     ("Playón (uso, no pastoreo)","playon.geojson",                      "poly", "#26c6da", 2.0, "rgba(38,198,218,.10)"),
     ("Potreros (cerrados)",     "potreros-cerrados.geojson",           "poly", "#ffee58", 2.2, "rgba(255,238,88,.16)"),
     ("Cercas abiertas",         "cercas-abiertas.geojson",             "line", "#ff5252", 1.0, None),
-    ("Cierres (dictados)",      "cercas-cierres.geojson",              "line", "#00e676", 2.6, None),
+    ("Pasos en la cerca",       "cercas-cierres.geojson",              "line", "#00e676", 2.6, None),
 ]
-DEFAULT_ON = {"Linderos", "Cercas", "Cercas (bajo dosel)", "Potreros (cerrados)", "Cercas abiertas", "Cierres (dictados)",
+DEFAULT_ON = {"Linderos", "Cercas", "Cercas (bajo dosel)", "Potreros (cerrados)", "Cercas abiertas", "Pasos en la cerca",
               "Playón (uso, no pastoreo)",
               "Ganado: infraestructura", "Drenajes",
               "Depósitos de agua", "Curvas 25 m", "Agua: infraestructura"}
@@ -241,6 +252,8 @@ def _collect(geo: Path, TIPOS):
             if not g.get("coordinates"):
                 continue
             props = f.get("properties") or {}
+            if name in FILTROS and not FILTROS[name](props):
+                continue
             item_sub2, item_mal = None, False
             label = props.get("name") or props.get("DIRECCION") or ""
             if props.get("tipo") == "potrero" and props.get("area_ha"):
