@@ -3,29 +3,11 @@
 > **Generated from `../land/geo/water-network.json`.** Do not edit by hand —
 > run `python3 scripts/water_inventory.py`. Position confidence is stored per feature
 > as `pos_confianza`, so this file cannot drift from the map.
-## 🔴 Physically impossible as recorded
 
-Found automatically by `sabaleticas/network.py` — these edges run **uphill**, which a gravity system cannot do. The endpoints, not the pipe, are wrong.
-
-| Tramo | Problema |
-|---|---|
-| `t-3--casa-principal` | sube 10 m — imposible por gravedad — T-3 abajo de intermedios (695 m) → Casa principal (705 m) |
-| `t-3--beb-1` | sube 22 m — imposible por gravedad — T-3 abajo de intermedios (695 m) → Bebedero 1 (717 m) |
-
-
-**22 points total.** 2 contradicha · 8 baja · 4 media · 8 alta
+**25 points total.** 13 baja · 4 media · 8 alta
 
 Manuel, 2026-08-22: *"when I go to confirm at the farm, I don't want to have to go to
 every single one of these places if I already know the reality."*
-
-## 🔴 Contradicted by the terrain — the position is wrong
-
-**Do not walk to these expecting to find something.** The elevation proves the plotted point cannot do what it is recorded as doing. They need relocating, not confirming.
-
-| | Punto | Cota | Por qué |
-|---|---|---|---|
-| T / derivación | **T-2 abajo de intermedios** | 705 m | queda 12 m POR DEBAJO del Bebedero 1, que alimenta |
-| T / derivación | **T-3 abajo de intermedios** | 695 m | queda 22 m POR DEBAJO del Bebedero 1, que alimenta |
 
 ## 🟠 Approximate — needs confirming on the ground
 
@@ -39,8 +21,13 @@ every single one of these places if I already know the reality."*
 | Bebedero | **Bebedero 7 (aprox.)** | 675 m | aproximada (Manuel) |
 | Bebedero | **Bebedero 8 (aprox.)** | 693 m | aproximada (Manuel) |
 | Bebedero | **Bebedero 9 (aprox.)** | 732 m | aproximada (Manuel) |
+| Bocatoma | **Bocatoma 1** | None m | sin coordenadas — fuera del predio, al oriente |
+| Bocatoma | **Bocatoma 2** | None m | sin coordenadas — fuera del predio, al oriente |
 | Represa | **Represa principal (el lago)** | 778 m |  |
+| T / derivación | **T-2 abajo de intermedios** | 720 m | movida 50 m al sur por consistencia física — no medida |
+| T / derivación | **T-3 abajo de intermedios** | 717 m | movida 85 m al sur por consistencia física — no medida |
 | Ventosa | **Ventosa (plano 2003) — entre T-1 y T-2** | 739 m | plano 2003, anotación a mano |
+| valvula | **Válvula de cambio** | None m | existe según Manuel; ubicación exacta desconocida — dibujada junto a los tanques |
 
 ## 🟡 Good, worth a glance
 
@@ -66,4 +53,4 @@ Identified against the orthophoto or the cadastre. **Already reality.**
 | Casa | **Casa principal** | 705 m | Catastro IGAC 1:5000 |
 | Tanque | **Tanque principal 1 (~50.000 L)** | 811 m | Manuel, coordenada del visor |
 | Rompecargas | **Tanque rompecargas (~2.000 L)** | 798 m | Manuel, coordenada del visor |
-| Tanque | **Tanques intermedios (3 × ~20.000 L)** | 762 m | Manuel, coordenada del visor |
+| Tanque | **Tanques intermedios** | 762 m | Manuel, coordenada del visor |

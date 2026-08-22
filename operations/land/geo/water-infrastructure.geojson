@@ -521,20 +521,20 @@
    "properties": {
     "tipo": "derivacion",
     "nombre": "T-2 abajo de intermedios",
-    "altura_m": 705,
-    "pos_confianza": "contradicha",
-    "pos_motivo": "queda 12 m POR DEBAJO del Bebedero 1, que alimenta",
+    "altura_m": 720,
+    "pos_confianza": "baja",
+    "pos_motivo": "movida 50 m al sur por consistencia física — no medida",
     "orden_en_la_linea": 2,
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
     "confianza": "orden: alta · posición: CONTRADICHA POR EL TERRENO — no usar",
-    "contradiccion": "⚠ CONTRADICHA 2026-08-21: el bebedero del camino, de posición confirmada, está a 717 m. Esta T queda por debajo, así que no puede alimentarlo por gravedad. La posición real debe estar a ≥720 m — el terreno a esa cota más cercano al bebedero está a ~50 m al este. Manuel: 'T3 está demasiado al norte; debe estar más cerca del bebedero'.",
+    "correccion": "[derived, 2026-08-22] Movida ~50 m AL SUR desde la posición del plano. NO es una medición: es la posición más cercana que hace el sistema físicamente posible. La del plano dejaba esta T por debajo de lo que alimenta. Sigue siendo APROXIMADA — confirmar en campo.",
     "_id": "t-2"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
      -75.613651,
-     5.797096
+     5.796644
     ]
    }
   },
@@ -543,20 +543,20 @@
    "properties": {
     "tipo": "derivacion",
     "nombre": "T-3 abajo de intermedios",
-    "altura_m": 695,
-    "pos_confianza": "contradicha",
-    "pos_motivo": "queda 22 m POR DEBAJO del Bebedero 1, que alimenta",
+    "altura_m": 717,
+    "pos_confianza": "baja",
+    "pos_motivo": "movida 85 m al sur por consistencia física — no medida",
     "orden_en_la_linea": 3,
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
     "confianza": "orden: alta · posición: CONTRADICHA POR EL TERRENO — no usar",
-    "contradiccion": "⚠ CONTRADICHA 2026-08-21: el bebedero del camino, de posición confirmada, está a 717 m. Esta T queda por debajo, así que no puede alimentarlo por gravedad. La posición real debe estar a ≥720 m — el terreno a esa cota más cercano al bebedero está a ~50 m al este. Manuel: 'T3 está demasiado al norte; debe estar más cerca del bebedero'.",
+    "correccion": "[derived, 2026-08-22] Movida ~85 m AL SUR desde la posición del plano. NO es una medición: es la posición más cercana que hace el sistema físicamente posible. La del plano dejaba esta T por debajo de lo que alimenta. Sigue siendo APROXIMADA — confirmar en campo.",
     "_id": "t-3"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
      -75.614449,
-     5.797114
+     5.796345
     ]
    }
   },
@@ -965,9 +965,9 @@
    "properties": {
     "tipo": "tuberia",
     "nombre": "Ventosa → T-2",
-    "longitud_m": 174,
-    "desnivel_m": 34,
-    "gradiente_pct": 19.5,
+    "longitud_m": 175,
+    "desnivel_m": 19,
+    "gradiente_pct": 10.9,
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
     "confianza": "orden: alta · trazado y longitud: BAJA",
     "pasa_por": "[owner, 2026-08-21] La ventosa está en este tramo.",
@@ -982,7 +982,7 @@
      ],
      [
       -75.613651,
-      5.797096
+      5.796644
      ]
     ]
    }
@@ -992,9 +992,9 @@
    "properties": {
     "tipo": "tuberia",
     "nombre": "T-2 → T-3 (APROXIMADA)",
-    "longitud_m": 88,
-    "desnivel_m": 10,
-    "gradiente_pct": 11.3,
+    "longitud_m": 94,
+    "desnivel_m": 3,
+    "gradiente_pct": 3.2,
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
     "confianza": "orden: alta · trazado y longitud: BAJA",
     "_id": "t-2--t-3"
@@ -1004,11 +1004,11 @@
     "coordinates": [
      [
       -75.613651,
-      5.797096
+      5.796644
      ],
      [
       -75.614449,
-      5.797114
+      5.796345
      ]
     ]
    }
@@ -1018,9 +1018,9 @@
    "properties": {
     "tipo": "tuberia",
     "nombre": "T-3 → casa principal (APROXIMADA)",
-    "longitud_m": 209,
-    "desnivel_m": -10,
-    "gradiente_pct": -4.8,
+    "longitud_m": 198,
+    "desnivel_m": 12,
+    "gradiente_pct": 6.1,
     "fuente": "[owner, 2026-08-21] Topología confirmada por Manuel: intermedios → T-1 → T-2 → T-3 → casa. La casa NO se alimenta directo de los intermedios. Posición de T-3 aún sin confirmar, así que la longitud es orientativa.",
     "confianza": "topología: ALTA · trazado y longitud: BAJA",
     "_id": "t-3--casa-principal"
@@ -1030,38 +1030,11 @@
     "coordinates": [
      [
       -75.614449,
-      5.797114
+      5.796345
      ],
      [
       -75.61623,
       5.79648
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "tuberia",
-    "nombre": "T-3 (¿o T-2?) → Bebedero 1 — SIN CONFIRMAR",
-    "longitud_m": 111,
-    "desnivel_m": -22,
-    "gradiente_pct": -19.7,
-    "estilo": "discontinuo",
-    "fuente": "[owner, 2026-08-21] Manuel sabe que el bebedero se alimenta de una de las T, pero no de cuál. Trazo discontinuo = conexión sin confirmar. La T dibujada aquí además está mal ubicada (queda por debajo del bebedero), así que sólo indica QUE existe la conexión, no por dónde va.",
-    "confianza": "existencia de la conexión: alta · cuál T: DESCONOCIDA · trazado: ninguno",
-    "_id": "t-3--beb-1"
-   },
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.614449,
-      5.797114
-     ],
-     [
-      -75.614251,
-      5.796126
      ]
     ]
    }
@@ -1124,9 +1097,9 @@
    "properties": {
     "tipo": "tuberia",
     "nombre": "T-2 → Bebedero 8 (trazado esquemático)",
-    "longitud_m": 138,
-    "desnivel_m": 12,
-    "gradiente_pct": 8.7,
+    "longitud_m": 186,
+    "desnivel_m": 27,
+    "gradiente_pct": 14.5,
     "fuente": "[owner, 2026-08-22] Conexión confirmada por Manuel.",
     "confianza": "conexión: ALTA · trazado: ninguno — la posición de T-2 está CONTRADICHA por el terreno, así que esta línea sólo dice que la conexión existe.",
     "_id": "t-2--beb-8"
@@ -1136,7 +1109,7 @@
     "coordinates": [
      [
       -75.613651,
-      5.797096
+      5.796644
      ],
      [
       -75.614033,
@@ -1290,6 +1263,34 @@
      [
       -75.60241,
       5.79529
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "T-2 → Bebedero 1 — SIN CONFIRMAR",
+    "longitud_m": 88,
+    "desnivel_m": 3,
+    "gradiente_pct": 3.4,
+    "estilo": "discontinuo",
+    "fuente": "[derived, 2026-08-22] Manuel sabía que el bebedero cuelga de una T pero no de cuál. El terreno lo decide: moviendo T-3 al sur nunca pasa de 717 m, la misma cota del bebedero — carga cero, imposible. T-2 llega a 720 m y sí puede (3 m sobre 88 m).",
+    "advertencia": "Margen de 3 m, más fino que el error del modelo. Es la primera configuración CONSISTENTE, no una medición. VERIFICAR EN CAMPO: ¿la derivación al Bebedero 1 sale de T-2 o de T-3?",
+    "confianza": "conexión: derivada por consistencia · cuál T: hipótesis fuerte",
+    "_id": "t-2--beb-1"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.613651,
+      5.796644
+     ],
+     [
+      -75.614251,
+      5.796126
      ]
     ]
    }

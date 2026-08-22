@@ -549,44 +549,44 @@
    "id": "t-2",
    "tipo": "derivacion",
    "nombre": "T-2 abajo de intermedios",
-   "cota_m": 705,
+   "cota_m": 720,
    "geo": [
     -75.613651,
-    5.797096
+    5.796644
    ],
-   "pos_confianza": "contradicha",
-   "pos_motivo": "queda 12 m POR DEBAJO del Bebedero 1, que alimenta",
+   "pos_confianza": "baja",
+   "pos_motivo": "movida 50 m al sur por consistencia física — no medida",
    "props": {
     "orden_en_la_linea": 2,
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
     "confianza": "orden: alta · posición: CONTRADICHA POR EL TERRENO — no usar",
-    "contradiccion": "⚠ CONTRADICHA 2026-08-21: el bebedero del camino, de posición confirmada, está a 717 m. Esta T queda por debajo, así que no puede alimentarlo por gravedad. La posición real debe estar a ≥720 m — el terreno a esa cota más cercano al bebedero está a ~50 m al este. Manuel: 'T3 está demasiado al norte; debe estar más cerca del bebedero'."
+    "correccion": "[derived, 2026-08-22] Movida ~50 m AL SUR desde la posición del plano. NO es una medición: es la posición más cercana que hace el sistema físicamente posible. La del plano dejaba esta T por debajo de lo que alimenta. Sigue siendo APROXIMADA — confirmar en campo."
    },
    "pid": [
     50,
-    705
+    720
    ]
   },
   {
    "id": "t-3",
    "tipo": "derivacion",
    "nombre": "T-3 abajo de intermedios",
-   "cota_m": 695,
+   "cota_m": 717,
    "geo": [
     -75.614449,
-    5.797114
+    5.796345
    ],
-   "pos_confianza": "contradicha",
-   "pos_motivo": "queda 22 m POR DEBAJO del Bebedero 1, que alimenta",
+   "pos_confianza": "baja",
+   "pos_motivo": "movida 85 m al sur por consistencia física — no medida",
    "props": {
     "orden_en_la_linea": 3,
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
     "confianza": "orden: alta · posición: CONTRADICHA POR EL TERRENO — no usar",
-    "contradiccion": "⚠ CONTRADICHA 2026-08-21: el bebedero del camino, de posición confirmada, está a 717 m. Esta T queda por debajo, así que no puede alimentarlo por gravedad. La posición real debe estar a ≥720 m — el terreno a esa cota más cercano al bebedero está a ~50 m al este. Manuel: 'T3 está demasiado al norte; debe estar más cerca del bebedero'."
+    "correccion": "[derived, 2026-08-22] Movida ~85 m AL SUR desde la posición del plano. NO es una medición: es la posición más cercana que hace el sistema físicamente posible. La del plano dejaba esta T por debajo de lo que alimenta. Sigue siendo APROXIMADA — confirmar en campo."
    },
    "pid": [
     50,
-    695
+    717
    ]
   },
   {
@@ -948,19 +948,6 @@
    }
   },
   {
-   "id": "t-3--beb-1",
-   "from": "t-3",
-   "to": "beb-1",
-   "nombre": "T-3 (¿o T-2?) → Bebedero 1 — SIN CONFIRMAR",
-   "estilo": "discontinuo",
-   "props": {
-    "tipo": "tuberia",
-    "estilo": "discontinuo",
-    "fuente": "[owner, 2026-08-21] Manuel sabe que el bebedero se alimenta de una de las T, pero no de cuál. Trazo discontinuo = conexión sin confirmar. La T dibujada aquí además está mal ubicada (queda por debajo del bebedero), así que sólo indica QUE existe la conexión, no por dónde va.",
-    "confianza": "existencia de la conexión: alta · cuál T: DESCONOCIDA · trazado: ninguno"
-   }
-  },
-  {
    "id": "beb-5--beb-6",
    "from": "beb-5",
    "to": "beb-6",
@@ -1076,6 +1063,19 @@
    "props": {
     "fuente": "[owner, 2026-08-22] Sabemos que existe la conexión, no por dónde va ni desde qué punto exacto.",
     "duda": "[owner] Manuel: la casa de la entrada se alimenta del tanque principal — *\"o incluso de la línea principal que viene de donde tomamos el agua\"*. Punto de derivación SIN CONFIRMAR."
+   }
+  },
+  {
+   "id": "t-2--beb-1",
+   "from": "t-2",
+   "to": "beb-1",
+   "nombre": "T-2 → Bebedero 1 — SIN CONFIRMAR",
+   "estilo": "discontinuo",
+   "hipotetica": true,
+   "props": {
+    "fuente": "[derived, 2026-08-22] Manuel sabía que el bebedero cuelga de una T pero no de cuál. El terreno lo decide: moviendo T-3 al sur nunca pasa de 717 m, la misma cota del bebedero — carga cero, imposible. T-2 llega a 720 m y sí puede (3 m sobre 88 m).",
+    "advertencia": "Margen de 3 m, más fino que el error del modelo. Es la primera configuración CONSISTENTE, no una medición. VERIFICAR EN CAMPO: ¿la derivación al Bebedero 1 sale de T-2 o de T-3?",
+    "confianza": "conexión: derivada por consistencia · cuál T: hipótesis fuerte"
    }
   }
  ]
