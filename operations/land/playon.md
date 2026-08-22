@@ -60,8 +60,15 @@ Para el modelo de agua eso significa:
 
 - **Ningún potrero tiene el río como fuente.** No contarlo, ni siquiera en los que lo tocan.
 - Es una **contingencia de sequía con mano de obra asociada**, no una fuente más de la red.
-- Un potrero que sólo tenga «drenaje» sigue siendo un potrero **sin agua conducida**. El río
-  pegado al lado no lo salva.
+- Un potrero que sólo tenga «drenaje» sigue siendo un potrero **sin agua CONDUCIDA**. Eso no
+  quiere decir que esté sin agua.
+
+**[owner, 2026-08-22] Ojo con eso último.** Varios potreros cerca del río se surten de
+**quebradas que salen del río**, o de **charcos** que quedan dentro del potrero, y ésa es su
+fuente de verdad. No es el río —al que no se llega— pero tampoco es «nada». **Queda pendiente**
+para cuando repasemos la fuente de agua potrero por potrero: ahí Manuel dirá cuáles de los
+«sólo drenaje» tienen agua real y cuáles no. Hasta entonces siguen POR CONFIRMAR, que es la
+regla que él mismo puso: *drain only se marca sin confirmar*.
 
 ## Abierto
 
