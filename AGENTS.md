@@ -1,6 +1,8 @@
 # AGENTS.md — working brief for Hacienda Sabaleticas
 
 Read this first. It's the onboarding context for any agent/session working in this repo.
+
+**For what is open right now and what it depends on, see [`PLAN.md`](PLAN.md).**
 (Companion: [`README.md`](README.md) for the human-facing layout; [`profile.md`](profile.md)
 for the operation snapshot.)
 
