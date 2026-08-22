@@ -17,6 +17,15 @@ about profit.
 3. **Forage inventory** — what grasses (and legumes) we have, their condition,
    and where. Lets us judge carrying capacity and improvement opportunities.
 
+## Watching it from space
+
+Researched and parked: [`pasture-monitoring.md`](pasture-monitoring.md). Short version — the
+free tooling (Copernicus Browser, plus Auravant's free tier which has a **grazing-circuit
+module in Spanish**) costs nothing and we are ~130,000× under the free quota. But **cloud is
+the real limit** (zero scenes under 10% cloud over a full year at tile level), **NDVI saturates
+exactly at grazing entry**, and **our ~47 ha of trees bias it by ~0.2 NDVI**. Useful as a
+*relative* paddock ranking; poor as an absolute kg-of-grass number.
+
 ## Data model (to add when the farm plan arrives)
 
 Two new tables, same CSV→SQLite pattern as the rest:
