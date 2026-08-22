@@ -616,8 +616,13 @@ function draw(){
       drawGeom(f,L.kind,L.fill);
       if(f.dash) cx.setLineDash([]);
     }
-    // labels for named features (water infrastructure etc.), only when zoomed in enough
-    const labelZoom = (L.name.indexOf('Vecinos')===0) ? 700 : 3000;
+    // labels for named features (water infrastructure etc.), only when zoomed in enough.
+    // Potreros are the exception: view.s is the farm's full width in pixels, so a 3000
+    // threshold hid every name until you were already zoomed PAST the whole property —
+    // exactly when you are trying to judge whether one needs subdividing. They stay on
+    // from 1000 and shrink instead of vanishing.
+    const isPot = L.name.indexOf('Potreros')===0;
+    const labelZoom = isPot ? 1000 : (L.name.indexOf('Vecinos')===0) ? 700 : 3000;
     if(view.s>labelZoom) for(const f of L.features){
       if(!f.l) continue;
       let p0=null;
@@ -639,8 +644,12 @@ function draw(){
         // area belongs in the quiet third line, not shouting in bold yellow.
         const sub=f.sub2!==undefined ? '' : (parts[1]||'');          // propietario
         const sub2=f.sub2!==undefined ? f.sub2 : parts.slice(2).join(' · ');
+        // 11 px right at the threshold, full 19 px once properly zoomed in.
+        const kz = isPot ? Math.max(0,Math.min(1,(view.s-1000)/3000)) : 1;
+        const fz = Math.round(11+8*kz);
+        const showSub2 = !isPot || view.s>2000;    // the area is reference, drop it first
         cx.textAlign='center';
-        cx.font='bold 19px system-ui'; cx.lineWidth=5;
+        cx.font=`bold ${fz}px system-ui`; cx.lineWidth=Math.max(3,fz*0.26);
         cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(name,s0[0],s0[1]);
         // Unconfirmed enclosures colour the NAME. The '?' alone was too easy to miss.
         cx.fillStyle= f.mal ? '#ffa726' : '#ffffff'; cx.fillText(name,s0[0],s0[1]);
@@ -651,18 +660,19 @@ function draw(){
           cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(sub,s0[0],s0[1]+dy);
           cx.fillStyle='#ffd54f'; cx.fillText(sub,s0[0],s0[1]+dy);
         }
-        if(sub2){
-          cx.font='11px system-ui'; cx.lineWidth=3.5;
+        if(sub2 && showSub2){
+          cx.font=`${Math.round(9+2*kz)}px system-ui`; cx.lineWidth=3.5;
           cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(sub2,s0[0],s0[1]+dy+15);
           cx.fillStyle='#cfd8dc'; cx.fillText(sub2,s0[0],s0[1]+dy+15);
         }
         cx.textAlign='left';
         let wmax=0;
-        cx.font='bold 19px system-ui'; wmax=cx.measureText(name).width;
+        cx.font=`bold ${fz}px system-ui`; wmax=cx.measureText(name).width;
         if(sub){ cx.font='bold 13px system-ui'; wmax=Math.max(wmax,cx.measureText(sub).width); }
-        if(sub2){ cx.font='11px system-ui'; wmax=Math.max(wmax,cx.measureText(sub2).width); }
+        if(sub2&&showSub2){ cx.font=`${Math.round(9+2*kz)}px system-ui`;
+          wmax=Math.max(wmax,cx.measureText(sub2).width); }
         labelBoxes.push({L,f,x0:s0[0]-wmax/2-6, x1:s0[0]+wmax/2+6,
-                             y0:s0[1]-19, y1:s0[1]+dy+(sub2?19:6)});
+                             y0:s0[1]-fz, y1:s0[1]+dy+((sub2&&showSub2)?fz:6)});
       } else {
         cx.font='bold 13px system-ui'; cx.lineWidth=3.5;
         cx.strokeStyle='rgba(0,0,0,.8)'; cx.strokeText(f.l,s0[0]+9,s0[1]-7);
