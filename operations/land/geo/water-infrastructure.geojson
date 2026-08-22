@@ -435,12 +435,13 @@
    "type": "Feature",
    "properties": {
     "tipo": "ventosa",
-    "nombre": "Ventosa (plano 2003)",
+    "nombre": "Ventosa (plano 2003) — entre T-1 y T-2",
     "altura_m": 739,
     "funcion": "Válvula de expulsión de aire. Deja salir el aire que se acumula en los puntos altos de la línea; sin ella la tubería se bloquea por aire.",
-    "clave": "Confirma que el diseño original YA contemplaba el problema de aire — y que esta pierna la tiene resuelta, mientras la entrada al rompecargas aparentemente no.",
-    "fuente": "[plano 2003] rotulada 'ventosa' en el plano; posición leída por Manuel sobre el calco georreferenciado 2026-08-21. Cae a ~1 m de la línea recta esquemática tanques intermedios → casa principal.",
-    "confianza": "posición: media (calco 2003, RMS ~11 m) · existencia hoy: SIN CONFIRMAR EN CAMPO"
+    "clave": "Confirma que el diseño original YA contemplaba el aire. Una ventosa marca un PUNTO ALTO de la línea, así que señala dónde cresta el tramo T-1 → T-2. La cota de 739 m sale del terreno en una posición aproximada — es coherente con estar entre T-1 (747 m) y T-2 (≥720 m), pero no es una medición.",
+    "fuente": "[plano 2003] rotulada 'ventosa'; posición leída por Manuel sobre el calco georreferenciado 2026-08-21 (±10–15 m). Su tramo lo confirma Manuel: va entre T-1 y T-2.",
+    "confianza": "posición: media (calco 2003, RMS ~11 m) · existencia hoy: SIN CONFIRMAR EN CAMPO",
+    "posicion_en_la_linea": "[owner, 2026-08-21] Entre T-1 y T-2."
    },
    "geometry": {
     "type": "Point",
@@ -742,7 +743,7 @@
     "tipo": "bebedero",
     "nombre": "Bebedero 1",
     "altura_m": 717,
-    "alimentado_por": "T-3, según Manuel",
+    "alimentado_por": "[owner, 2026-08-21] Desde una de las T — cuál, por determinar.",
     "fuente": "[owner, CONFIRMADA] Manuel 2026-08-21: posición segura — está junto al camino, con los quiebrapatas visibles en la ortofoto. Misma confianza que los tanques y las casas.",
     "confianza": "posición: ALTA · alimentación desde T-3: según Manuel",
     "clave": "A 717 m está POR ENCIMA de T-2 (705 m) y T-3 (695 m) tal como los sitúa el plano. Imposible por gravedad: las posiciones del plano en este sector están mal.",

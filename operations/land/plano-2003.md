@@ -181,3 +181,16 @@ table, the better move is to build real geometry — then areas are *computed* f
 instead of copied off a 23-year-old scan (which also dissolves the missing-10.33-ha problem).
 The approach and format decision live in [`geo/README.md`](geo/README.md); the data model
 for the eventual table is in [`../pasture.md`](../pasture.md).
+
+## ⚠️ The water lines are not from 2003
+
+`[owner, 2026-08-21]` The base survey is 2003. **The water-line markings were updated
+afterwards — last time roughly ten years ago, by Manuel's own estimate.**
+
+Treat the sheet as two documents on one page: a **surveyed base** that georeferences to ~11 m
+RMS, and **hand-added water annotations** that carry no survey control and have been measured
+20 m or more out of position. See
+[`../water/README.md`](../water/README.md) for what that did to the T-junction positions.
+
+**Read the annotations for topology — what exists, and in what order. Never for coordinates.**
+

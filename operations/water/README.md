@@ -394,6 +394,37 @@ That plus one confirmed trough brackets the two bad junctions without needing th
 > that band is a visible strip on the ground — a far better place to look in the photo than
 > anywhere the 2003 plan puts them.
 
+### The drawing is a palimpsest — and that explains the errors
+
+`[owner, 2026-08-21]` Manuel: *"the drawing is from 2003, but the markings for the water lines
+have been updated over time. I think the last update was ten years ago, so I'm just guessing."*
+
+So the sheet holds **two different kinds of information at two different accuracies**:
+
+| | Base survey — linderos, mojones, cuadro de áreas | **Water lines, added later** |
+|---|---|---|
+| Date | **2003**, surveyed by Mario Escobar R. | **~2016, guessed** — a decade of edits |
+| Method | Instrument survey, measured sides, marked mojones | **Almost certainly drawn on by hand, without survey control** |
+| How it georeferences | Fitted to **~11 m RMS** on 10 control points | **Not fitted to anything** — it inherits the base transform and adds its own error on top |
+
+> ### This is the cleanest explanation we have for what we just found.
+> The boundary fits the photo well. The water lines put **T-2 and T-3 twelve to twenty-two
+> metres below a trough they are supposed to feed.** That is not a georeferencing error — a
+> shared transform would displace everything together. It is what hand-sketched annotations
+> look like when you try to read coordinates off them.
+
+Two consequences, and they pull in opposite directions:
+
+- **Existence is more credible than I assumed.** These features were marked up long after 2003,
+  so a ventosa or a T on this sheet is more likely to be real than a 23-year-old drawing would
+  suggest.
+- **Position is less credible than I assumed.** Freehand annotation carries no survey accuracy
+  at all. **Use the markings to learn what exists and in what order — never where it is.**
+
+And it is still **up to a decade stale**: lines added, abandoned or rerouted since would not
+appear. **This raises the value of the walk-the-pipes survey again** — the only record of this
+system is a hand annotation nobody has touched in ten years.
+
 ### ⚠️ How good these coordinates are — read before trusting any profile below
 
 `[owner, 2026-08-21]` Manuel, on everything transcribed off the 2003 plan:
