@@ -288,6 +288,79 @@ Manuel corrected it from the ground, and the terrain model backs him up:
 
 **So the reservoir has to be pumped. He was right, I was wrong.**
 
+## 🔴 The failure happening right now: the rompecargas runs dry
+
+> **Reported by Manuel 2026-08-21, first verano this has appeared.** Symptom is fact; the
+> mechanism below is a **working hypothesis** pending two site measurements.
+
+### What happens
+
+1. Tanques altos stay **full** — supply from the bocatomas is fine so far.
+2. The **rompecargas empties itself**: it passes more water out than the float valve lets in.
+3. Once it runs to air, **air enters the line feeding the bebederos** and delivery stops —
+   even after the tank refills.
+4. Recovery is manual: **close the valves to the tanques intermedios**, let the rompecargas
+   fill, and the restored head pushes flow through again.
+5. Meanwhile the **tanques intermedios drain** — house, garden and ~half the bebederos.
+
+### Why, in one number
+
+The two legs have the **same pipe diameter but very different driving gradients**:
+
+| Leg | Length | Drop | Gradient | Flow at 1" `[Hazen-Williams, C=150]` |
+|---|---|---|---|---|
+| Tanques altos → rompecargas | 448 m | 13.1 m | **2.92 %** | **0.39 L/s** ≈ 34 m³/día |
+| Rompecargas → intermedios | 425 m | 34.2 m | **8.05 %** | **0.68 L/s** ≈ 59 m³/día |
+
+Flow scales with roughly √gradient, so **the outlet can pull ~1.73× what the inlet can
+deliver — regardless of diameter.** The float valve throttles the inlet further still, and the
+single outlet then splits to several branches `[owner]`.
+
+At those rates a **1.000 L** rompecargas nets −0.29 L/s and **empties in under an hour.**
+
+> **This is structural, not a fault. Matching pipe sizes was never going to match flows.**
+
+### It is an air lock, not a lost siphon
+
+Profiling the terrain model along both legs: **no crest sits above the upstream water level on
+either one.** So there is no true siphon that can "break." What forms instead are **air pockets
+at local high points**, which throttle or block flow until enough head sweeps them out — which
+is precisely what closing the valves achieves. `[derived, IGAC MDT 5 m]`
+
+⚠️ Caveat: profiles were run on the **schematic straight lines**, not the real pipe route. One
+finding worth checking on site — the straight line from the tanques altos **drops into a valley
+and climbs 20.9 m back up** to the rompecargas. If the real pipe does that, the summit sits at
+the tank inlet: a textbook air trap, and a second reason the inflow is weak.
+
+### The good news: this is a control problem, not a shortage
+
+Estimated demand on this branch is **~10–17 m³/día** `[derived, unverified]` (~130 head ×
+~50 L/día, plus the garden) against **~34 m³/día** the inlet leg can carry at 1". **Capacity is
+two to three times demand.** The system is losing water to *stoppages*, not to scarcity.
+
+### Fixes, cheapest first
+
+| | Fix | Cost |
+|---|---|---|
+| 1 | **Throttle the outlet valve permanently** so outflow ≤ inflow. Manuel already does this as an emergency measure — make it a setting, not a rescue. Continuous moderate flow beats intermittent fast flow, because the intermedios are *storage*: they care about the daily total, not the rate. | **nothing** |
+| 2 | **Raise the outlet draw-off inside the rompecargas** (internal standpipe / elbow up) plus a vortex breaker, so the tank **physically cannot drain to air.** Level falls, flow drops to match inflow, prime is never lost. | very low |
+| 3 | **Bigger rompecargas — 1.000 L → 5.000 L.** Buffer goes from ~1 h to ~5 h and rides out demand peaks. | low |
+| 4 | **Ventosas (automatic air-release valves) at the local high points**, especially at the tank inlet. | low |
+| 5 | **Inspect the float valve** — size and blockage. A ½" float on a 1" line is a classic strangle point, and this is unfiltered quebrada water. | low |
+| 6 | **Give the garden a higher take-off than the cattle** on the tanques intermedios. The garden then dies first, automatically, and the remaining volume is reserved for the bebederos — **no discipline required.** | low |
+
+### The two measurements that would settle it
+
+Both need only a watch:
+
+- **Close the outlet. Time the rompecargas filling.** 1.000 L ÷ seconds = **inflow in L/s.**
+- **Shut the inlet, open the outlet. Time it draining.** = **outflow in L/s.**
+
+If outflow > inflow, the hypothesis is confirmed and fix 1 is immediately actionable.
+
+**Still unknown:** actual pipe diameters in and out, float valve size, the real pipe routes,
+and where the single outlet splits.
+
 ## 🟢 But the pump is small — and the break-pressure tank is why
 
 The confirmed profile, now that every point has a real coordinate:
