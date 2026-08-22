@@ -6,14 +6,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon_via",
-    "nombre": "Mojón 1 — referencia de vía (2007)",
+    "nombre": "Mojón 1 — referencia de vía · 131 m",
     "_id": "predio:mojon-2007-1",
     "fuente": "[owner, 2026-08-22] Manuel: NO es un mojón de lindero. Es una referencia sobre la vía existente, con la que el topógrafo amarró el levantamiento.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
     "es_lindero": false,
-    "nota": "Se conserva porque explica cómo se ancló el plano, pero queda FUERA de cualquier estadística de lindero: mezclarlo falseaba la comparación."
+    "nota": "Se conserva porque explica cómo se ancló el plano, pero queda FUERA de cualquier estadística de lindero: mezclarlo falseaba la comparación.",
+    "d_lindero_m": 130.9
    },
    "geometry": {
     "type": "Point",
@@ -27,13 +28,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 2 (2007)",
+    "nombre": "Mojón 2 · 0 m",
     "_id": "predio:mojon-2007-2",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 0.1,
+    "nota_distancia": "A 0 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -47,13 +50,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 3 (2007)",
+    "nombre": "Mojón 3 · 3 m",
     "_id": "predio:mojon-2007-3",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 2.9,
+    "nota_distancia": "A 3 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -67,13 +72,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 4 (2007)",
+    "nombre": "Mojón 4 · 1 m",
     "_id": "predio:mojon-2007-4",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 0.5,
+    "nota_distancia": "A 1 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -87,13 +94,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 5 (2007)",
+    "nombre": "Mojón 5 · 2 m",
     "_id": "predio:mojon-2007-5",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 1.9,
+    "nota_distancia": "A 2 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -107,13 +116,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 6 (2007)",
+    "nombre": "Mojón 6 · 1 m",
     "_id": "predio:mojon-2007-6",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 0.9,
+    "nota_distancia": "A 1 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -127,13 +138,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 7 (2007)",
+    "nombre": "Mojón 7 · 4 m",
     "_id": "predio:mojon-2007-7",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 4.0,
+    "nota_distancia": "A 4 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -147,13 +160,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 8 (2007)",
+    "nombre": "Mojón 8 · 5 m",
     "_id": "predio:mojon-2007-8",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 5.3,
+    "nota_distancia": "A 5 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -167,13 +182,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 9 (2007)",
+    "nombre": "Mojón 9 · 12 m",
     "_id": "predio:mojon-2007-9",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 12.1,
+    "nota_distancia": "A 12 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -187,13 +204,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 10 (2007)",
+    "nombre": "Mojón 10 · 5 m",
     "_id": "predio:mojon-2007-10",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 4.7,
+    "nota_distancia": "A 5 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -207,13 +226,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 11 (2007)",
+    "nombre": "Mojón 11 · 10 m",
     "_id": "predio:mojon-2007-11",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 9.8,
+    "nota_distancia": "A 10 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -227,13 +248,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 12 (2007)",
+    "nombre": "Mojón 12 · 8 m",
     "_id": "predio:mojon-2007-12",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 8.5,
+    "nota_distancia": "A 8 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -247,13 +270,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 13 (2007)",
+    "nombre": "Mojón 13 · 2 m",
     "_id": "predio:mojon-2007-13",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 2.5,
+    "nota_distancia": "A 2 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -267,13 +292,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 14 (2007)",
+    "nombre": "Mojón 14 · 16 m",
     "_id": "predio:mojon-2007-14",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 16.3,
+    "nota_distancia": "A 16 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -286,14 +313,16 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "mojon",
-    "nombre": "Mojón 15 (2007)",
+    "tipo": "mojon_lejos",
+    "nombre": "Mojón 15 · 56 m ⚠",
     "_id": "predio:mojon-2007-15",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 56.4,
+    "nota_distancia": "A 56 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -306,14 +335,16 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "mojon",
-    "nombre": "Mojón 16 (2007)",
+    "tipo": "mojon_lejos",
+    "nombre": "Mojón 16 · 29 m ⚠",
     "_id": "predio:mojon-2007-16",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 28.8,
+    "nota_distancia": "A 29 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -327,13 +358,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 17 (2007)",
+    "nombre": "Mojón 17 · 14 m",
     "_id": "predio:mojon-2007-17",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 14.4,
+    "nota_distancia": "A 14 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -346,14 +379,16 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "mojon",
-    "nombre": "Mojón 18 (2007)",
+    "tipo": "mojon_lejos",
+    "nombre": "Mojón 18 · 147 m ⚠",
     "_id": "predio:mojon-2007-18",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 147.3,
+    "nota_distancia": "A 147 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -367,13 +402,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 19 (2007)",
+    "nombre": "Mojón 19 · 3 m",
     "_id": "predio:mojon-2007-19",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 3.1,
+    "nota_distancia": "A 3 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -386,14 +423,16 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "mojon",
-    "nombre": "Mojón 20 (2007)",
+    "tipo": "mojon_lejos",
+    "nombre": "Mojón 20 · 54 m ⚠",
     "_id": "predio:mojon-2007-20",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 53.6,
+    "nota_distancia": "A 54 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -407,13 +446,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 21 (2007)",
+    "nombre": "Mojón 21 · 9 m",
     "_id": "predio:mojon-2007-21",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 8.9,
+    "nota_distancia": "A 9 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -427,13 +468,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 22 (2007)",
+    "nombre": "Mojón 22 · 13 m",
     "_id": "predio:mojon-2007-22",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 13.5,
+    "nota_distancia": "A 13 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -447,13 +490,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 23 (2007)",
+    "nombre": "Mojón 23 · 9 m",
     "_id": "predio:mojon-2007-23",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 8.6,
+    "nota_distancia": "A 9 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -466,14 +511,16 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "mojon",
-    "nombre": "Mojón 24 (2007)",
+    "tipo": "mojon_lejos",
+    "nombre": "Mojón 24 · 178 m ⚠",
     "_id": "predio:mojon-2007-24",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 178.2,
+    "nota_distancia": "A 178 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -487,13 +534,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 25 (2007)",
+    "nombre": "Mojón 25 · 2 m",
     "_id": "predio:mojon-2007-25",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 1.8,
+    "nota_distancia": "A 2 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -507,13 +556,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 26 (2007)",
+    "nombre": "Mojón 26 · 0 m",
     "_id": "predio:mojon-2007-26",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 0.1,
+    "nota_distancia": "A 0 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -527,13 +578,15 @@
    "type": "Feature",
    "properties": {
     "tipo": "mojon",
-    "nombre": "Mojón 27 (2007)",
+    "nombre": "Mojón 27 · 6 m",
     "_id": "predio:mojon-2007-27",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 5.7,
+    "nota_distancia": "A 6 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -546,14 +599,16 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "mojon",
-    "nombre": "Mojón 28 (2007)",
+    "tipo": "mojon_lejos",
+    "nombre": "Mojón 28 · 60 m ⚠",
     "_id": "predio:mojon-2007-28",
     "fuente": "[derived, plano 2007] Símbolo de mojón del levantamiento Zapata & Santa María (feb-2007), reproyectado con el ajuste ICP sobre nuestras cercas y lindero.",
     "pos_confianza": "baja",
     "pos_motivo": "El ajuste tiene un rms de 19,6 m sobre 1.367 pares. NO es una coordenada topográfica: es dónde CREEMOS que cae el mojón. Sirve para comprobar a ojo, no para replantear.",
     "aviso": "Posición aproximada ±20 m.",
-    "es_lindero": true
+    "es_lindero": true,
+    "d_lindero_m": 60.0,
+    "nota_distancia": "A 60 m del lindero catastral. El ajuste del plano tiene un rms de 19,6 m, así que por debajo de 25 m un mojón es indistinguible de un calce perfecto: no prueba que coincida, sólo que no contradice. Por encima, la diferencia ya no la explica el ajuste y hay que mirarla."
    },
    "geometry": {
     "type": "Point",
@@ -563,5 +618,6 @@
     ]
    }
   }
- ]
+ ],
+ "_umbral": "Verde = a menos de 25 m del lindero; rojo = más. El umbral es el rms del ajuste (19,6 m) redondeado hacia arriba, no una tolerancia topográfica."
 }
