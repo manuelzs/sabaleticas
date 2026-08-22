@@ -116,6 +116,12 @@ Manuel spent last weekend surveying the water infrastructure. Current state `[ow
 We have roughly **three months** before the December–March window. Sequenced by cost per day
 of autonomy bought:
 
+### 0. Cost a gravity line from the lake to the mid tanks *(new, and it outranks everything)*
+The lake is **16 m above** the mid cluster and holds **tens of times** the tanks' volume. If a
+gravity connection is feasible, it converts our single-failure-mode supply into a genuinely
+redundant one, with no pump to buy, fuel or maintain. **Measure the lake's depth first** — it
+is cheap and it sizes the entire prize. Then price the pipe run.
+
 ### 1. Make the storage we already own actually usable *(cheapest, do first)*
 **Correction (2026-08-21): the two main tanks are NOT disconnected** — I had misread that.
 Both are plumbed in, main and reserve, with a manual switchover. What Manuel flagged is
@@ -240,7 +246,67 @@ Recorded because it is the first coherent description of the system we have.
    - **about half the cattle drinking points in that area.**
 5. **Potreros without natural water have a small trough (bebedero)**. A large share of total
    use, and split between the two stages.
-6. **The big reservoir inside the farm is a separate system** — it does not feed the tanks.
+6. **The big reservoir — "the lake" — is not connected to the system.** Always been there.
+   In an emergency a pump could draw from it: not enough to reach the top tanks, but enough
+   for the lower half — the three mid tanks and some bebederos beyond them.
+7. **A ~1,000 L pressure-compensation tank** sits between the top tanks and the mid tanks:
+   water flows in and straight out, holding a small standing volume. Manuel: *"we have such a
+   slope. If you don't do that, the pipes break."*
+
+   > That has a name — it is a **tanque rompecargas** (also *cámara rompe-presión*); in
+   > English, a **break-pressure tank**. It converts a long, dangerous static head into two
+   > short safe ones by returning the line to atmospheric pressure partway down. It is the
+   > standard solution for exactly the situation described, and it is **precisely what this
+   > document predicted must exist** when the single-stage head looked impossible
+   > (~10.6 bar to the house). Good instinct, correctly built — Manuel just didn't have the
+   > word for it.
+
+## 🟢 The biggest finding in this document: the lake is above the mid tanks
+
+The reservoir sits at **778 m** `[IGAC terrain model, at Manuel's coordinate]`, with a mapped
+surface of **0.56 ha (5,647 m²)** `[IGAC 1:5000]`. Set against the rest of the system:
+
+| | Elevation | Relative to the lake |
+|---|---|---|
+| Top tanks | 813 m | 35 m **above** — a pump would be needed |
+| **Mid tanks** | **762 m** | **16 m BELOW the lake** |
+| Main house | 705 m | 73 m below |
+| Lowest ground | 627 m | 151 m below |
+
+> ### The lake does not need a pump to reach the mid tanks. It is 16 m above them.
+>
+> Manuel is right that a pump can't fill the top tanks — that's a 35 m lift. But **the lower
+> half of the system doesn't require pumping at all.** A pipe and enough head is the whole
+> mechanism. No fuel, no motor, nothing to fail in the middle of a drought.
+
+### And the volume dwarfs everything else
+
+Depth is unknown, so this is a range, not a figure:
+
+| Mean depth | Stored volume | Versus the ~130,000 L of tanks |
+|---|---|---|
+| 1 m | 5.6 million L | **43×** |
+| 1.5 m | 8.5 million L | 65× |
+| 2 m | 11.3 million L | **87×** |
+
+Even at the shallowest assumption, the lake holds **roughly 590 days of herd demand** at
+9,576 L/day — against 13.6 days for the entire tank system.
+
+> **The farm's largest water asset is disconnected from the farm's water system**, in the
+> year of a forecast historic El Niño, while every litre we do use arrives through two
+> surface intakes on quebradas that the same El Niño is expected to dry.
+
+Two caveats, honestly:
+
+- **Depth is a guess.** Measuring it — a weighted line from a boat, a dozen readings — is
+  cheap and turns the most important number here from a range into a fact. **This is the
+  single highest-value measurement on the farm right now.**
+- **The lake is not immune to drought either.** It loses water to evaporation and depends on
+  runoff to refill. But it is *stored* water, which a flowing quebrada is not — that is
+  exactly the difference that matters when the streams drop.
+
+Also worth checking: a **second water body of 0.81 ha at 776 m sits ~260 m south**, just
+*outside* our mapped boundary. Given how close it is, worth confirming whether it is ours.
 
 ### The system in one picture
 
@@ -424,6 +490,11 @@ estimates:
 0ac. **Which bebederos are on the mid cluster and which on the top tanks?** Manuel says the
    mid tanks feed "about half" of those in that area — so the two stages fail at different
    times, and knowing which potreros hang off which decides what we lose first.
+0ad. **Where exactly is the break-pressure tank?** The coordinate Manuel sent
+   (5.796346, −75.605185, 778 m) lands within ~19 m of the IGAC-mapped reservoir, so I have
+   read it as **the lake**. If it was actually the rompecargas, say so and I'll swap them.
+0ae. **How deep is the lake?** The highest-value cheap measurement available.
+0af. **Is the 0.81 ha water body ~260 m south of it ours?** It sits just outside our boundary.
 0. **The two external sources** — what are they (nacimientos? a bocatoma on a quebrada? a
    veredal aqueduct)? Where? Is the water right a **concesión de aguas** from Corantioquia,
    and is it current? A source outside the farm we don't fully control is the single biggest
