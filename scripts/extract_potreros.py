@@ -42,7 +42,7 @@ def load_lines(tag=False):
     return (out, n_cerca) if tag else out
 
 
-def node_lines(lines, tol=TOL):
+def node_lines(lines, tol=TOL, extra=()):
     """Split every segment where another line's endpoint lands on it.
 
     This is the whole problem. IGAC's fences genuinely meet — one ends *on* another —
@@ -50,7 +50,7 @@ def node_lines(lines, tol=TOL):
     sees it. 57 of 60 loose ends sit within 5 m of another fence, median 0 m: they are
     touching, not gapped. Noding turns a pile of fragments into a connected network.
     """
-    ends = []
+    ends = list(extra)
     for l in lines:
         ends += [l[0], l[-1]]
     out = []
@@ -325,8 +325,97 @@ def main():
 
     cercas_propias()
     lines, n_cerca = load_lines(tag=True)
+
+    # A gap does not always close onto another gap. Often a fence simply RUNS ON and
+    # meets another fence in a T. The faithful move is to continue it in its own
+    # direction until it hits something — not to drop a perpendicular, which would
+    # invent a corner that is not there. Written as [13, "@extend"].
+    f_reg0 = GEO / "cercas-numeracion.json"
+    reg0 = json.loads(f_reg0.read_text(encoding="utf-8"))["puntos"] if f_reg0.exists() else {}
+    ext_pts, ext_for = [], {}
+    f_c0 = GEO / CIERRES
+    if f_c0.exists():
+        for c in json.loads(f_c0.read_text(encoding="utf-8"))["cierres"]:
+            if c[1] != "@extend":
+                continue
+            p = reg0.get(str(c[0]))
+            if not p:
+                continue
+            p = tuple(p)
+            # the fence's own heading, from the vertex before its loose end
+            # the registry holds the SNAPPED position, which need not equal any raw
+            # vertex — match by proximity, not equality
+            def near(q):
+                return math.hypot((q[0] - p[0]) * LON2M, (q[1] - p[1]) * LAT2M) <= TOL
+            hd = None
+            for l in lines:
+                if len(l) < 2:
+                    continue
+                if near(l[0]):
+                    hd = (l[0][0] - l[1][0], l[0][1] - l[1][1])
+                elif near(l[-1]):
+                    hd = (l[-1][0] - l[-2][0], l[-1][1] - l[-2][1])
+                if hd:
+                    p = l[0] if near(l[0]) else l[-1]      # use the real vertex
+                    break
+            if not hd:
+                print(f"  ⚠ extender {c[0]}: no se halló la cerca de origen")
+                continue
+            hx, hy = hd[0] * LON2M, hd[1] * LAT2M
+            n_ = math.hypot(hx, hy) or 1.0
+            hx, hy = hx / n_, hy / n_
+            px, py = p[0] * LON2M, p[1] * LAT2M
+            best, bt = None, 1e9
+            for l in lines:
+                for a, b in zip(l, l[1:]):
+                    if a == p or b == p:
+                        continue
+                    ax, ay = a[0] * LON2M, a[1] * LAT2M
+                    bx, by = b[0] * LON2M, b[1] * LAT2M
+                    ex, ey = bx - ax, by - ay
+                    den = hx * (-ey) - hy * (-ex)
+                    if abs(den) < 1e-12:
+                        continue
+                    rx, ry = ax - px, ay - py
+                    t = (rx * (-ey) - ry * (-ex)) / den      # along the ray
+                    u = (hx * ry - hy * rx) / den            # along the segment
+                    if t > 0.05 and 0.0 <= u <= 1.0 and t < bt:
+                        bt, best = t, (px + hx * t, py + hy * t)
+            # A straight extension only works if a fence actually crosses the ray. Often
+            # the fence it should meet ENDS right there instead, so the ray slips past its
+            # endpoint and runs on for hundreds of metres. Cap it, and fall back to the
+            # nearest point on the nearest fence — at a few metres the two are the same
+            # thing, and a 362 m edge is never what anyone meant.
+            CAP, NEAR = 60.0, 20.0
+            how = "cruce"
+            if not best or bt > CAP:
+                best, bd = None, NEAR
+                for l in lines:
+                    for a, b in zip(l, l[1:]):
+                        if a == p or b == p:
+                            continue
+                        ax, ay = a[0] * LON2M, a[1] * LAT2M
+                        bx, by = b[0] * LON2M, b[1] * LAT2M
+                        dx, dy = bx - ax, by - ay
+                        dd = dx * dx + dy * dy
+                        t2 = 0.0 if dd == 0 else max(0.0, min(1.0,
+                            ((px - ax) * dx + (py - ay) * dy) / dd))
+                        fx, fy = ax + t2 * dx, ay + t2 * dy
+                        d2 = math.hypot(px - fx, py - fy)
+                        if d2 < bd:
+                            bd, best, bt = d2, (fx, fy), d2
+                how = "punto más cercano"
+            if best:
+                pt = (best[0] / LON2M, best[1] / LAT2M)
+                ext_pts.append(pt)
+                ext_for[c[0]] = (pt, bt)
+                print(f"    extender {c[0]}: {bt:.1f} m ({how})")
+            else:
+                print(f"  ⚠ extender {c[0]}: nada por delante a menos de {CAP:.0f} m "
+                      f"ni cerca a menos de {NEAR:.0f} m")
+
     before = sum(len(l) for l in lines)
-    lines = node_lines(lines)
+    lines = node_lines(lines, extra=ext_pts)
     print(f"  noding: {before} → {sum(len(l) for l in lines)} vértices")
     pos, adj = build(lines)
     print(f"  grafo: {len(adj)} nodos, {sum(len(v) for v in adj.values())//2} aristas")
@@ -383,6 +472,26 @@ def main():
         for c in json.loads(f_c.read_text(encoding="utf-8"))["cierres"]:
             a, b = c[0], c[1]
             motivo = c[2] if len(c) > 2 else ""
+            if b == "@extend":
+                tgt = ext_for.get(a)
+                if not tgt:
+                    print(f"  ⚠ extender {a}: sin objetivo")
+                    continue
+                pt, dist = tgt
+                va = by_num.get(a)
+                vb, bd2 = None, 3.0
+                for v in adj:
+                    d2 = math.hypot((pos[v][0] - pt[0]) * LON2M, (pos[v][1] - pt[1]) * LAT2M)
+                    if d2 < bd2:
+                        vb, bd2 = v, d2
+                if va is None or vb is None:
+                    print(f"  ⚠ extender {a}: no se pudo enganchar")
+                    continue
+                adj[va].add(vb)
+                adj[vb].add(va)
+                cierres.append((a, "→", pos[va], pos[vb], motivo, round(dist)))
+                hechos += 1
+                continue
             va, vb = by_num.get(a), by_num.get(b)
             if va is None or vb is None:
                 print(f"  ⚠ cierre {a}–{b}: número no encontrado")
