@@ -9,6 +9,28 @@
     "n": 1,
     "area_ha": 12.16,
     "area_m2": 121554,
+    "agua": [
+     {
+      "id": "agua:beb-3",
+      "nombre": "Bebedero 3",
+      "tipo": "bebedero",
+      "confianza": "alta"
+     },
+     {
+      "id": "agua:beb-5",
+      "nombre": "Bebedero 5 (aprox.)",
+      "tipo": "bebedero",
+      "confianza": "baja"
+     },
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sin_agua": false,
+    "solo_natural": false,
     "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
     "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
    },
@@ -148,6 +170,22 @@
     "n": 2,
     "area_ha": 4.49,
     "area_m2": 44912,
+    "agua": [
+     {
+      "id": "agua:beb-4",
+      "nombre": "Bebedero 4",
+      "tipo": "bebedero",
+      "confianza": "alta"
+     },
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sin_agua": false,
+    "solo_natural": false,
     "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
     "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
    },
@@ -211,6 +249,16 @@
     "n": 3,
     "area_ha": 4.36,
     "area_m2": 43609,
+    "agua": [
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sin_agua": false,
+    "solo_natural": true,
     "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
     "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
    },
@@ -270,6 +318,28 @@
     "n": 4,
     "area_ha": 3.62,
     "area_m2": 36249,
+    "agua": [
+     {
+      "id": "agua:tanques-intermedios",
+      "nombre": "Tanques intermedios",
+      "tipo": "tanque",
+      "confianza": "alta"
+     },
+     {
+      "id": "agua:beb-9",
+      "nombre": "Bebedero 9 (aprox.)",
+      "tipo": "bebedero",
+      "confianza": "baja"
+     },
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sin_agua": false,
+    "solo_natural": false,
     "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
     "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
    },
@@ -337,6 +407,16 @@
     "n": 5,
     "area_ha": 1.82,
     "area_m2": 18233,
+    "agua": [
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sin_agua": false,
+    "solo_natural": true,
     "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
     "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
    },

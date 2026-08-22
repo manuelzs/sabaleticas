@@ -224,6 +224,10 @@ def _collect(geo: Path, TIPOS):
                 label = f"{props['elev']} m"
             item = {"t": g["type"], "c": _round_geom(_thin(g["coordinates"])),
                     "l": str(label)[:120], "kind": kind}
+            for k, dst in (("sin_agua", "sinAgua"), ("solo_natural", "soloNatural"),
+                           ("area_ha", "areaHa")):
+                if props.get(k) is not None:
+                    item[dst] = props[k]
             if props.get("_id"):
                 item["eid"] = props["_id"]     # so readings can attach to this feature
             if props.get("estilo") == "discontinuo":   # unconfirmed connection

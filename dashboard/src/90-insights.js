@@ -58,6 +58,15 @@ const RULES=[
       return {t:`Guías abiertas hace más de 30 d`, v:`${M.length}`,
               d:`la más antigua, ${peor} d`}; } },
 
+  { id:'potreros-sin-agua-conducida', sev:'media', ir:'general/mapa',
+    run:D=>{ const L=(D.layers||[]).find(l=>l.name.indexOf('Potreros')===0);
+      if(!L) return;
+      const mal=L.features.filter(f=>f.sinAgua || f.soloNatural);
+      if(!mal.length) return;
+      const ha=mal.reduce((s,f)=>s+(f.areaHa||0),0);
+      return {t:`Potreros sin agua conducida`, v:`${mal.length}`,
+              d:`${ha.toFixed(1)} ha · sólo quebrada`}; } },
+
   { id:'lecturas-obsoletas', sev:'media', ir:'sensores/lecturas',
     run:D=>{ const R=Object.values(D.readings||{});
       const old=R.filter(r=>freshness(r.ts,r.magnitud).estado==='obsoleto');

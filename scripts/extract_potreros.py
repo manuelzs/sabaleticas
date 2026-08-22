@@ -210,6 +210,52 @@ def inside(pt, polys):
     return False
 
 
+def agua_de(ring, net, drenajes, depositos, tol=25.0):
+    """Which water sources serve this enclosure.
+
+    Troughs are built ON boundaries, deliberately, so one serves several paddocks — a
+    trough within `tol` of the ring counts as serving it, not only one inside it. Natural
+    water counts too: a creek crossing the paddock or a pond inside it.
+
+    An enclosure with nothing is the useful case: either a trough we have not mapped, or
+    a paddock that genuinely has no water.
+    """
+    def d_ring(p):
+        best = 1e9
+        for i in range(len(ring)):
+            a, b = ring[i], ring[(i + 1) % len(ring)]
+            ax, ay = a[0] * LON2M, a[1] * LAT2M
+            bx, by = b[0] * LON2M, b[1] * LAT2M
+            px, py = p[0] * LON2M, p[1] * LAT2M
+            dx, dy = bx - ax, by - ay
+            dd = dx * dx + dy * dy
+            t = 0.0 if dd == 0 else max(0.0, min(1.0, ((px - ax) * dx + (py - ay) * dy) / dd))
+            best = min(best, math.hypot(px - (ax + t * dx), py - (ay + t * dy)))
+        return best
+
+    poly = [ring]
+    out = []
+    for n in net["nodes"]:
+        if n["tipo"] not in ("bebedero", "tanque", "represa") or not n.get("geo"):
+            continue
+        if inside(n["geo"], [poly]) or d_ring(n["geo"]) <= tol:
+            out.append({"id": n["id"], "nombre": n["nombre"], "tipo": n["tipo"],
+                        "confianza": n.get("pos_confianza", "?")})
+    for l in drenajes:
+        if any(inside(p, [poly]) for p in l):
+            out.append({"id": None, "nombre": "drenaje", "tipo": "natural",
+                        "confianza": "IGAC"})
+            break
+    for r in depositos:
+        cx = sum(p[0] for p in r) / len(r)
+        cy = sum(p[1] for p in r) / len(r)
+        if inside((cx, cy), [poly]):
+            out.append({"id": None, "nombre": "depósito de agua", "tipo": "natural",
+                        "confianza": "IGAC"})
+            break
+    return out
+
+
 def area_m2(ring):
     if len(ring) < 3:
         return 0.0
@@ -307,11 +353,43 @@ def main():
         polys.append((a, ring))
     polys.sort(key=lambda t: -t[0])
 
+    # water sources per enclosure
+    net = json.loads((GEO / "water-network.json").read_text(encoding="utf-8"))
+    dre, dep = [], []
+    fd = GEO / "igac-1to5000/Drenaje.geojson"
+    if fd.exists():
+        for f in json.loads(fd.read_text(encoding="utf-8"))["features"]:
+            g = f["geometry"]
+            if g["type"] == "LineString":
+                dre.append([tuple(c[:2]) for c in g["coordinates"]])
+            elif g["type"] == "MultiLineString":
+                dre += [[tuple(c[:2]) for c in p] for p in g["coordinates"]]
+    fp = GEO / "igac-1to5000/Deposito_Agua_R.geojson"
+    if fp.exists():
+        for f in json.loads(fp.read_text(encoding="utf-8"))["features"]:
+            g = f["geometry"]
+            rings_ = [g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]
+            for poly in rings_:
+                dep.append([tuple(c[:2]) for c in poly[0]])
+
     feats = []
+    sin_agua = []
     for i, (a, ring) in enumerate(polys, 1):
+        fuentes = agua_de(ring, net, dre, dep)
+        # A creek is not the same as a trough. In a verano the quebrada may simply not be
+        # there, so a paddock watered only by nature is exposed in exactly the season the
+        # whole water project exists for.
+        conducida = [f for f in fuentes if f["tipo"] != "natural"]
+        if not fuentes:
+            sin_agua.append((i, a / 10000, "sin ninguna fuente"))
+        elif not conducida:
+            sin_agua.append((i, a / 10000, "sólo agua natural"))
         feats.append({"type": "Feature", "properties": {
             "tipo": "potrero", "nombre": f"Potrero {i}", "n": i,
             "area_ha": round(a / 10000, 2), "area_m2": round(a),
+            "agua": fuentes,
+            "sin_agua": not fuentes,
+            "solo_natural": bool(fuentes) and not conducida,
             "fuente": f"[derived {TOL} m] Cara cerrada del grafo Cerca IGAC + linderos. "
                       "Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
             "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"},
@@ -361,6 +439,10 @@ def main():
                    "cerca de" if d < 80 else "NUEVO · lo más cercano")
             print(f"    {a}–{b}: {tag} {n['nombre']} ({d:.0f} m)")
 
+    if sin_agua:
+        print("  ⚠ potreros expuestos en verano:")
+        for i, ha, why in sin_agua:
+            print(f"      Potrero {i}: {ha:5.2f} ha — {why}")
     tot = sum(a for a, _ in polys) / 10000
     print(f"  {len(polys)} potreros cerrados · {tot:.1f} ha en total"
           + (f"  ({fuera} descartados por caer fuera del lindero)" if fuera else ""))
