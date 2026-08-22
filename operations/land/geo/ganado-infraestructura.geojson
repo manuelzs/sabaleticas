@@ -79,6 +79,90 @@
      5.796433
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "quiebrapatas",
+    "nombre": "Quiebrapatas 31–34",
+    "_id": "ganado:quiebrapatas-31-34",
+    "_generado": "quiebrapatas",
+    "ancho_m": 8,
+    "via": true,
+    "fuente": "[derived] Del cierre 31–34, que Manuel marcó como quiebrapatas. El punto es el centro del hueco.",
+    "nota": "Una vía cruza justo por aquí, lo que explica el quiebrapatas: el paso queda abierto y el ganado no.",
+    "motivo": "quiebrapatas"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.60606,
+     5.797971
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "quiebrapatas",
+    "nombre": "Quiebrapatas 42–43",
+    "_id": "ganado:quiebrapatas-42-43",
+    "_generado": "quiebrapatas",
+    "ancho_m": 10,
+    "via": true,
+    "fuente": "[derived] Del cierre 42–43, que Manuel marcó como quiebrapatas. El punto es el centro del hueco.",
+    "nota": "Una vía cruza justo por aquí, lo que explica el quiebrapatas: el paso queda abierto y el ganado no.",
+    "motivo": "quiebrapatas"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.603209,
+     5.795911
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "quiebrapatas",
+    "nombre": "Quiebrapatas punto–punto",
+    "_id": "ganado:quiebrapatas-7560467_579757",
+    "_generado": "quiebrapatas",
+    "ancho_m": 15,
+    "via": true,
+    "fuente": "[derived] Del cierre punto–punto, que Manuel marcó como quiebrapatas. El punto es el centro del hueco.",
+    "nota": "Una vía cruza justo por aquí, lo que explica el quiebrapatas: el paso queda abierto y el ganado no.",
+    "motivo": "quiebrapatas — por aquí cruza la vía principal (a 3,1 m del tramo). NO hay cerca: el potrero cierra igual porque el ganado no lo pasa."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.604675,
+     5.797566
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "quiebrapatas",
+    "nombre": "Quiebrapatas punto–punto",
+    "_id": "ganado:quiebrapatas-7561426_579610",
+    "_generado": "quiebrapatas",
+    "ancho_m": 7,
+    "via": true,
+    "fuente": "[derived] Del cierre punto–punto, que Manuel marcó como quiebrapatas. El punto es el centro del hueco.",
+    "nota": "Una vía cruza justo por aquí, lo que explica el quiebrapatas: el paso queda abierto y el ganado no.",
+    "motivo": "quiebrapatas — aquí cruza la vía principal (a 3,4 y 3,9 m de los dos puntos). NO hay cerca."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.614259,
+     5.7961
+    ]
+   }
   }
  ]
 }

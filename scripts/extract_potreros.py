@@ -1251,6 +1251,65 @@ def main():
         json.dumps({"type": "FeatureCollection", "features": cfeats}, indent=1,
                    ensure_ascii=False), encoding="utf-8")
 
+    # Quiebrapatas are cattle infrastructure, not just a hole in a fence: they are how the
+    # herd is kept out of a track that has to stay open. Manuel asked for them in the cattle
+    # layer, so they are DERIVED from the closures that name them — one source of truth,
+    # written back into ganado-infraestructura.geojson. Only features this function
+    # generated are replaced; anything hand-entered (corral, saladero, embarcadero) is left
+    # exactly as it is.
+    f_gan = GEO / "ganado-infraestructura.geojson"
+    if f_gan.exists():
+        gan = json.loads(f_gan.read_text(encoding="utf-8"))
+        gan["features"] = [f for f in gan["features"]
+                           if f["properties"].get("_generado") != "quiebrapatas"]
+        vias = []
+        fv = GEO / "igac-1to5000/Vias.geojson"
+        if fv.exists():
+            for f in json.loads(fv.read_text(encoding="utf-8"))["features"]:
+                g = f["geometry"]
+                c = g["coordinates"]
+                for ln in ([c] if g["type"] == "LineString" else c):
+                    pts = [tuple(x[:2]) for x in ln]
+                    vias += list(zip(pts, pts[1:]))
+
+        def cruza(p, q, a, b):
+            def X(o, u, w):
+                return (((u[0] - o[0]) * LON2M) * ((w[1] - o[1]) * LAT2M)
+                        - ((u[1] - o[1]) * LAT2M) * ((w[0] - o[0]) * LON2M))
+            d1, d2, d3, d4 = X(a, b, p), X(a, b, q), X(p, q, a), X(p, q, b)
+            return ((d1 > 0) != (d2 > 0)) and ((d3 > 0) != (d4 > 0))
+
+        nuevos = 0
+        for a, b, pa, pb, mot, d_m, _c in cierres:
+            if "quiebrapatas" not in (mot or "").lower():
+                continue
+            mid = ((pa[0] + pb[0]) / 2, (pa[1] + pb[1]) / 2)
+            via = any(cruza(pa, pb, x, y) for x, y in vias)
+            ident = f"{a}-{b}" if not isinstance(a, str) or not a.startswith("punto") else \
+                f"{mid[0]:.5f}_{mid[1]:.5f}".replace("-", "").replace(".", "")
+            gan["features"].append({"type": "Feature", "properties": {
+                "tipo": "quiebrapatas",
+                "nombre": f"Quiebrapatas {a}–{b}",
+                "_id": f"ganado:quiebrapatas-{ident}",
+                "_generado": "quiebrapatas",
+                "ancho_m": d_m,
+                "via": bool(via),
+                "fuente": f"[derived] Del cierre {a}–{b}, que Manuel marcó como quiebrapatas. "
+                          f"El punto es el centro del hueco.",
+                "nota": ("Una vía cruza justo por aquí, lo que explica el quiebrapatas: el paso "
+                         "queda abierto y el ganado no." if via else
+                         "No se detectó vía cruzando este hueco — puede ser un paso interno o "
+                         "una vía que el IGAC no trazó. POR CONFIRMAR."),
+                "motivo": mot}, "geometry": {"type": "Point",
+                "coordinates": [round(mid[0], 6), round(mid[1], 6)]}})
+            nuevos += 1
+        if nuevos:
+            f_gan.write_text(json.dumps(gan, indent=1, ensure_ascii=False), encoding="utf-8")
+            con = sum(1 for f in gan["features"]
+                      if f["properties"].get("_generado") == "quiebrapatas"
+                      and f["properties"].get("via"))
+            print(f"  quiebrapatas en la capa de ganado: {nuevos} ({con} con vía cruzando)")
+
     # Cross-check against the water graph. Manuel's insight: a fence gap is often a
     # trough with the fence split so cattle drink from both sides — so every closure is
     # a candidate water point, and one that is FAR from anything we know is a trough the

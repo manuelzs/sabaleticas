@@ -226,6 +226,19 @@
    "atributos": [
     "corral"
    ]
+  },
+  "quiebrapatas": {
+   "label": "Quiebrapatas",
+   "color": "#bcaaa4",
+   "mapa": "square",
+   "esquema": "dot",
+   "ancho": 1.0,
+   "geom": "point",
+   "atributos": [
+    "ancho_m",
+    "via",
+    "potreros"
+   ]
   }
  }
 }
