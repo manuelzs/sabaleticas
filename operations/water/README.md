@@ -327,6 +327,49 @@ _All figures here are engineering estimates from the terrain model and standard 
 not a quotation. A real design needs pipe sizing, a proper friction calculation and someone
 who does this for a living._
 
+### Getting power to it — the part that actually decides this
+
+Manuel (2026-08-21): the pump site has no power. Three ways to fix that, and the choice is
+less obvious than it looks because **the load is so small**.
+
+| Option | Fit | Notes |
+|---|---|---|
+| **Solar, no battery** | ✅ best fit | 148–619 W is two or three panels. **No batteries needed** — see below |
+| **Grid tap** | 🟡 workable | A line already runs from the east house to the west house, passing near the lake. Needs a new **contador** and the connection work |
+| **Diesel generator** | 🔴 poor fit | Wildly oversized for 150–600 W, and needs fuel hauled and a person to start it |
+
+> #### The tank is already the battery
+> This is the point that makes solar unusually attractive here. Solar's normal weakness is
+> storing energy — batteries are where the cost, the weight and the failures live. **We don't
+> need to store energy, because we're storing water.** The pump runs while the sun shines and
+> fills a 60,000 L tank; the cattle drink from the tank all night. A day of cloud costs
+> nothing, because the tank is days deep. This is the standard architecture for solar
+> livestock watering and it fits our situation almost exactly.
+
+> #### And an argument against leaning only on the grid
+> Colombia's electricity is heavily hydroelectric, and IDEAM warns that this El Niño will cut
+> reservoir levels and **hydroelectric generation** along with everything else `[S44]`. So
+> grid supply is under stress from *the same event* we are building this to survive. A grid
+> tap that fails in a national rationing episode fails exactly when we need the pump most.
+>
+> The same logic condemns the generator, harder: diesel needs fuel hauled up and a person to
+> start it, in the week when fuel and attention are scarcest. A generator sized for 600 W of
+> real load would run at a few percent of capacity, burning fuel to produce mostly heat.
+
+**Suggested shape, subject to quotes:** solar as the primary, with the grid tap as a booster
+if the contador turns out to be cheap — the two combine well, since the pump is small enough
+that either can carry it alone. **Get prices for the meter and connection before assuming
+solar wins**; if the line genuinely passes close, that number could be small.
+
+**What to price:**
+1. The **contador** and connection from the existing east–west line, including whatever the
+   utility requires.
+2. A **solar pump kit** — pump, controller, ~400 Wp of panel, mounting. Ask specifically for a
+   *batteryless* configuration pumping to a tank.
+3. The **pipe run** — 138 m, plus the fitting into the rompecargas.
+4. Security. A pump and panels out by a lake, far from the house, is a theft question as much
+   as an engineering one — and worth asking about before siting anything.
+
 ## The scale of what is behind that pump
 
 The reservoir sits at **778 m** `[IGAC terrain model, at Manuel's coordinate]`, with a mapped
