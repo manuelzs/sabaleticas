@@ -1646,10 +1646,12 @@ const NAV=[
      work is open", which no entity-level badge can answer. */
   {id:'trabajo',  label:'Trabajo',  views:[], disabled:true, cross:true,
    why:'tareas y alertas sobre cualquier entidad — pendiente'},
-  {id:'sensores', label:'Sensores', views:[['lista','Lista']], cross:true},
+  {id:'sensores', label:'Sensores', cross:true,
+   views:[['lecturas','Lecturas'],['fuentes','Fuentes']]},
 ];
 const NAV_LEGACY={mapa:'general/mapa','3d':'general/3d',esquema:'agua/esquema',
-                  'finca/mapa':'general/mapa','finca/3d':'general/3d'};
+                  'finca/mapa':'general/mapa','finca/3d':'general/3d',
+                  'sensores/lista':'sensores/lecturas'};
 let route={tab:'general', view:'mapa'};
 
 function navSub(id){ return NAV.find(s=>s.id===id); }
@@ -1682,7 +1684,7 @@ function navRender(){
 
 /* Views come in two kinds: canvas (mapa, 3d, esquema) and DOM (lista). The DOM ones
    need the map chrome out of the way entirely. */
-const PAGE_VIEWS={lista:renderSensores};
+const PAGE_VIEWS={lecturas:renderLecturas, fuentes:renderFuentes};
 
 function navApply(){
   const page=PAGE_VIEWS[route.view];
@@ -1769,54 +1771,58 @@ function applyReadingsToNet(){
   }
 }
 
-function renderSensores(){
-  const S=(D.sources&&D.sources.fuentes)||[];
+/* ---- the two views of the Sensores tab -------------------------------- */
+function cardReading(r){
+  const a=readingAge(r.ts);
+  return `<div class="card" style="--acc:${a.col}">
+    <div class="top"><span class="dot"></span>${a.label}</div>
+    <div class="big">${r.valor}<small>${r.unidad||''}</small></div>
+    <div class="mag">${r.magnitud}</div>
+    <div class="ent">${entityName(r.entidad)}</div>
+    <div class="meta">${r.origen==='manual'?'✍︎ anotado a mano':'⚙ automático'}${
+      r.fuente?' · '+r.fuente:''}</div>
+    ${r.nota?`<div class="meta">${r.nota}</div>`:''}
+  </div>`;
+}
+function cardSource(f){
+  const [col,label]=SRC_STATE[f.estado]||['#78909c',f.estado||'?'];
+  const ghost=f.estado==='planificado'||f.estado==='por_investigar';
+  const canales=(f.canales||[]).map(c=>c.magnitud).join(' · ')||'—';
+  const pend=(Array.isArray(f.pendiente)?f.pendiente:f.pendiente?[f.pendiente]:[]);
+  return `<div class="card${ghost?' ghost':''}" style="--acc:${col}">
+    <div class="top"><span class="dot"></span>${label}</div>
+    <div class="big" style="font-size:19px">${canales}</div>
+    <div class="mag">${f.origen==='manual'?'anotación humana':(f.transporte||'—')}</div>
+    <div class="ent">${f.nombre}</div>
+    <div class="meta">${f.entidad?entityName(f.entidad):'cualquier entidad'}</div>
+    ${f.por_que_importa?`<div class="why">${f.por_que_importa}</div>`:''}
+    ${pend.length?`<div class="why"><ul>${pend.map(p=>`<li>${p}</li>`).join('')}</ul></div>`:''}
+  </div>`;
+}
+
+function renderLecturas(){
   const R=Object.values(D.readings||{});
-  const box=document.getElementById('pageInner');
-
-  const reading=r=>{
-    const a=readingAge(r.ts);
-    return `<div class="card" style="--acc:${a.col}">
-      <div class="top"><span class="dot"></span>${a.label}</div>
-      <div class="big">${r.valor}<small>${r.unidad||''}</small></div>
-      <div class="mag">${r.magnitud}</div>
-      <div class="ent">${entityName(r.entidad)}</div>
-      <div class="meta">${r.origen==='manual'?'✍︎ anotado a mano':'⚙ automático'}${
-        r.fuente?' · '+r.fuente:''}</div>
-      ${r.nota?`<div class="meta">${r.nota}</div>`:''}
-    </div>`;};
-
-  const source=f=>{
-    const [col,label]=SRC_STATE[f.estado]||['#78909c',f.estado||'?'];
-    const ghost=f.estado==='planificado'||f.estado==='por_investigar';
-    const canales=(f.canales||[]).map(c=>c.magnitud).join(' · ')||'—';
-    const pend=(Array.isArray(f.pendiente)?f.pendiente:f.pendiente?[f.pendiente]:[]);
-    return `<div class="card${ghost?' ghost':''}" style="--acc:${col}">
-      <div class="top"><span class="dot"></span>${label}</div>
-      <div class="big" style="font-size:19px">${canales}</div>
-      <div class="mag">${f.origen==='manual'?'anotación humana':(f.transporte||'—')}</div>
-      <div class="ent">${f.nombre}</div>
-      <div class="meta">${f.entidad?entityName(f.entidad):'cualquier entidad'}</div>
-      ${f.por_que_importa?`<div class="why">${f.por_que_importa}</div>`:''}
-      ${pend.length?`<div class="why"><ul>${pend.map(p=>`<li>${p}</li>`).join('')}</ul></div>`:''}
-    </div>`;};
-
-  const live=S.filter(f=>f.estado==='en_linea').length;
-  box.innerHTML=`
+  document.getElementById('pageInner').innerHTML=`
     <div class="sect"><h2>Lecturas</h2><span class="n">${R.length} · última por entidad</span></div>
     <p class="lead">Entidad + magnitud + valor + fecha + <b>cómo se obtuvo</b>. Una anotación a
       mano vale igual que una automática: cambia el <b>origen</b> y la frescura que cabe esperar,
       no la lectura. Por eso esto funciona hoy, sin comprar nada.</p>
     <div class="cards">${
-      R.length ? R.map(reading).join('')
+      R.length ? R.map(cardReading).join('')
       : `<div class="card ghost" style="--acc:#78909c"><div class="top">sin lecturas</div>
          <div class="big" style="font-size:19px">—</div>
          <div class="why">Añade una fila a <code>data/readings.csv</code> y aparece aquí,
-         en el mapa y en el esquema.</div></div>`}</div>
+         en el mapa y en el esquema.</div></div>`}</div>`;
+}
 
+function renderFuentes(){
+  const S=(D.sources&&D.sources.fuentes)||[];
+  const live=S.filter(f=>f.estado==='en_linea').length;
+  document.getElementById('pageInner').innerHTML=`
     <div class="sect"><h2>Fuentes</h2><span class="n">${live} de ${S.length} en línea</span></div>
-    <p class="lead">De dónde vienen, o vendrán, esas lecturas.
-      La regla sigue siendo <b>arreglar primero, medir después</b>.</p>
-    <div class="cards">${S.map(source).join('')}</div>`;
+    <p class="lead">De dónde vienen, o vendrán, las lecturas. Cada una se ancla a una
+      <b>entidad</b>, y por eso un valor puede dibujarse sobre el mapa y sobre el esquema sin
+      plomería adicional. La regla sigue siendo <b>arreglar primero, medir después</b>.</p>
+    <div class="cards">${S.map(cardSource).join('')}</div>`;
 }
 </script></body></html>

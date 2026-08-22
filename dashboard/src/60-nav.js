@@ -21,10 +21,12 @@ const NAV=[
      work is open", which no entity-level badge can answer. */
   {id:'trabajo',  label:'Trabajo',  views:[], disabled:true, cross:true,
    why:'tareas y alertas sobre cualquier entidad — pendiente'},
-  {id:'sensores', label:'Sensores', views:[['lista','Lista']], cross:true},
+  {id:'sensores', label:'Sensores', cross:true,
+   views:[['lecturas','Lecturas'],['fuentes','Fuentes']]},
 ];
 const NAV_LEGACY={mapa:'general/mapa','3d':'general/3d',esquema:'agua/esquema',
-                  'finca/mapa':'general/mapa','finca/3d':'general/3d'};
+                  'finca/mapa':'general/mapa','finca/3d':'general/3d',
+                  'sensores/lista':'sensores/lecturas'};
 let route={tab:'general', view:'mapa'};
 
 function navSub(id){ return NAV.find(s=>s.id===id); }
@@ -57,7 +59,7 @@ function navRender(){
 
 /* Views come in two kinds: canvas (mapa, 3d, esquema) and DOM (lista). The DOM ones
    need the map chrome out of the way entirely. */
-const PAGE_VIEWS={lista:renderSensores};
+const PAGE_VIEWS={lecturas:renderLecturas, fuentes:renderFuentes};
 
 function navApply(){
   const page=PAGE_VIEWS[route.view];
