@@ -12,11 +12,6 @@
    "coincide a 0 m con Bebedero 2, ya confirmado en ortofoto — el hueco es la cerca partiéndose para el bebedero"
   ],
   [
-   14,
-   15,
-   "coincide a 0 m con Bebedero 3, ya confirmado en ortofoto — el hueco es la cerca partiéndose para el bebedero"
-  ],
-  [
    21,
    22,
    "[ABIERTA] Hay algo, pero Manuel no distingue si es bebedero o saladero. Importa: si es bebedero, hay que conectarlo a la red de agua. 234 m del punto conocido más cercano."
@@ -43,13 +38,24 @@
   ],
   [
    13,
-   "@extend",
-   "sigue recto hasta la cerca perpendicular donde está el Bebedero 3"
+   "agua:beb-3",
+   "concurre en el Bebedero 3"
+  ],
+  [
+   14,
+   "agua:beb-3",
+   "concurre en el Bebedero 3"
+  ],
+  [
+   15,
+   "agua:beb-3",
+   "concurre en el Bebedero 3"
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
  "_por_que": "[owner, 2026-08-22] La capa de CERCAS y la de POTREROS no son lo mismo. Donde no hay cerca física el IGAC hace bien en dejar el hueco, pero el POTRERO puede estar cerrado igual para el ganado. Las cercas se quedan abiertas; los potreros se cierran.",
  "_motivo": "El motivo lo DICE Manuel, nunca se infiere. Un hueco puede ser un quiebrapatas, un bebedero con la cerca partida para que el ganado tome de ambos lados, un saladero, una puerta, o simplemente cerca que el satélite no vio. Vocabulario abierto; si no se sabe, queda 'sin especificar'.",
  "_ojo_bosque": "[owner, 2026-08-22] NO deducir cierres de la capa Bosque. En la mayor parte del bosque SÍ hay cerca — lo que pasa es que el satélite no la detecta bajo el dosel. La correlación entre hueco y borde de bosque es de VISIBILIDAD, no de barrera.",
- "_extend": "Un cierre [n, \"@extend\"] prolonga la cerca del extremo n EN SU MISMA DIRECCION hasta cruzar otra cerca, y parte esa cerca ahí. Es para cuando una cerca muere en T sobre otra: no se puede expresar uniendo dos extremos numerados, y bajar una perpendicular inventaria un quiebre que no existe."
+ "_extend": "Un cierre [n, \"@extend\"] prolonga la cerca del extremo n EN SU MISMA DIRECCION hasta cruzar otra cerca, y parte esa cerca ahí. Es para cuando una cerca muere en T sobre otra: no se puede expresar uniendo dos extremos numerados, y bajar una perpendicular inventaria un quiebre que no existe.",
+ "_entidad": "Un cierre [n, \"agua:beb-3\"] une el extremo n a esa entidad. Es la forma natural cuando varias cercas concurren en un mismo punto — un bebedero, un saladero — porque deja escrito POR QUE se juntan ahí, no sólo que se juntan."
 }

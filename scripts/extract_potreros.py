@@ -330,12 +330,30 @@ def main():
     # meets another fence in a T. The faithful move is to continue it in its own
     # direction until it hits something — not to drop a perpendicular, which would
     # invent a corner that is not there. Written as [13, "@extend"].
+    # Closures can also name an ENTITY: [13, "agua:beb-3"]. Several fences meeting at a
+    # trough is the common case, and saying so records WHY they meet — which a pair of
+    # numbers or a bare geometric extension does not.
+    ents = {}
+    wn = GEO / "water-network.json"
+    if wn.exists():
+        for n in json.loads(wn.read_text(encoding="utf-8"))["nodes"]:
+            if n.get("geo"):
+                ents[n["id"]] = tuple(n["geo"])
+    gi = GEO / "ganado-infraestructura.geojson"
+    if gi.exists():
+        for f in json.loads(gi.read_text(encoding="utf-8"))["features"]:
+            if f["properties"].get("_id"):
+                ents[f["properties"]["_id"]] = tuple(f["geometry"]["coordinates"])
+
     f_reg0 = GEO / "cercas-numeracion.json"
     reg0 = json.loads(f_reg0.read_text(encoding="utf-8"))["puntos"] if f_reg0.exists() else {}
     ext_pts, ext_for = [], {}
     f_c0 = GEO / CIERRES
     if f_c0.exists():
         for c in json.loads(f_c0.read_text(encoding="utf-8"))["cierres"]:
+            if c[1] in ents:
+                ext_pts.append(ents[c[1]])
+                continue
             if c[1] != "@extend":
                 continue
             p = reg0.get(str(c[0]))
@@ -472,6 +490,26 @@ def main():
         for c in json.loads(f_c.read_text(encoding="utf-8"))["cierres"]:
             a, b = c[0], c[1]
             motivo = c[2] if len(c) > 2 else ""
+            if b in ents:
+                va = by_num.get(a)
+                pt = ents[b]
+                vb, bd2 = None, 5.0
+                for v in adj:
+                    d2 = math.hypot((pos[v][0] - pt[0]) * LON2M, (pos[v][1] - pt[1]) * LAT2M)
+                    if d2 < bd2:
+                        vb, bd2 = v, d2
+                if va is None or vb is None:
+                    print(f"  ⚠ {a} → {b}: no se pudo enganchar")
+                    continue
+                d_m = math.hypot((pos[vb][0] - pos[va][0]) * LON2M,
+                                 (pos[vb][1] - pos[va][1]) * LAT2M)
+                flag = "  ⚠ muy largo" if d_m > 60 else ""
+                print(f"    {a} → {b}: {d_m:6.1f} m{flag}")
+                adj[va].add(vb)
+                adj[vb].add(va)
+                cierres.append((a, b.split(":")[-1], pos[va], pos[vb], motivo, round(d_m)))
+                hechos += 1
+                continue
             if b == "@extend":
                 tgt = ext_for.get(a)
                 if not tgt:

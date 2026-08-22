@@ -51,29 +51,6 @@
    "type": "Feature",
    "properties": {
     "tipo": "cierre",
-    "nombre": "Cierre 14–15",
-    "longitud_m": 7,
-    "motivo": "coincide a 0 m con Bebedero 3, ya confirmado en ortofoto — el hueco es la cerca partiéndose para el bebedero",
-    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
-   },
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.610749,
-      5.801363
-     ],
-     [
-      -75.61081,
-      5.801357
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cierre",
     "nombre": "Cierre 21–22",
     "longitud_m": 12,
     "motivo": "[ABIERTA] Hay algo, pero Manuel no distingue si es bebedero o saladero. Importa: si es bebedero, hay que conectarlo a la red de agua. 234 m del punto conocido más cercano.",
@@ -189,9 +166,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "cierre",
-    "nombre": "Cierre 13–→",
+    "nombre": "Cierre 13–beb-3",
     "longitud_m": 6,
-    "motivo": "sigue recto hasta la cerca perpendicular donde está el Bebedero 3",
+    "motivo": "concurre en el Bebedero 3",
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -200,6 +177,52 @@
      [
       -75.610794,
       5.801408
+     ],
+     [
+      -75.61081,
+      5.801357
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 14–beb-3",
+    "longitud_m": 7,
+    "motivo": "concurre en el Bebedero 3",
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.610749,
+      5.801363
+     ],
+     [
+      -75.61081,
+      5.801357
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 15–beb-3",
+    "longitud_m": 0,
+    "motivo": "concurre en el Bebedero 3",
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.61081,
+      5.801357
      ],
      [
       -75.61081,

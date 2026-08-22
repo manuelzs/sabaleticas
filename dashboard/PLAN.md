@@ -115,6 +115,17 @@ boundary, nodes it, applies the closures Manuel dictates, and walks the faces.
 > ⚠️ **And not from the Bosque layer either.** Most of the forest *does* have fence; the imagery
 > cannot see it under canopy. Gap-near-forest is a **visibility** correlation, not a barrier.
 
+Closures come in three shapes, because fences meet in three ways:
+
+| | |
+|---|---|
+| `[a, b]` | two loose ends join |
+| `[n, "@extend"]` | a fence dies in a **T** on another fence — two endpoints cannot say that |
+| `[n, "agua:beb-3"]` | several fences **converge on a thing** — a trough, a saladero |
+
+The third is the best one to use when it applies: it records *why* they meet, so the closure
+survives as knowledge rather than as geometry.
+
 Loose ends are numbered **north to south, stably across runs**, so a number Manuel says out
 loud stays valid after other gaps close. Closures live in `cercas-cierres.json` as pairs of
 numbers, draw green, and are flagged if implausibly long.
