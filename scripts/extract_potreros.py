@@ -23,6 +23,152 @@ LON2M = 111320.0 * math.cos(math.radians(5.796))
 LAT2M = 110574.0
 
 
+def pegar_al_lindero(feats, polys, verbose=False):
+    """Move fence vertices onto the lindero where IGAC digitised them off it.
+
+    The lindero is the authority — it has never moved. Where the two disagree, the fence
+    is what is wrong. Manuel: the fence matches the lindero everywhere ELSE, so each rule
+    is fenced into an `extent`; the layer is never shifted as a whole.
+
+    The affected run is not nudged closer, it is REPLACED by the lindero's own path,
+    vertex for vertex. Two near-parallel lines over the same trace is precisely the shape
+    that stopped Serengueti closing: the face walk takes the shortcut. Made identical,
+    build() folds them into the same edges instead.
+    """
+    f_cor = GEO / "cercas-correcciones.json"
+    if not f_cor.exists():
+        return feats
+    reglas = [c for c in json.loads(f_cor.read_text(encoding="utf-8"))["correcciones"]
+              if c.get("tipo") == "pegar_al_lindero"]
+    if not reglas:
+        return feats
+
+    rings = [r for poly in polys for r in poly]          # ordered vertex lists
+
+    def locate(p):
+        """(ring, segment, t, snapped point) of the closest point on the lindero."""
+        best = (1e9, None)
+        for ri, r in enumerate(rings):
+            for i in range(len(r) - 1):
+                a, b = r[i], r[i + 1]
+                ax, ay = a[0] * LON2M, a[1] * LAT2M
+                bx, by = b[0] * LON2M, b[1] * LAT2M
+                px, py = p[0] * LON2M, p[1] * LAT2M
+                dx, dy = bx - ax, by - ay
+                dd = dx * dx + dy * dy
+                if dd == 0:
+                    continue
+                t = max(0.0, min(1.0, ((px - ax) * dx + (py - ay) * dy) / dd))
+                d = math.hypot(px - (ax + t * dx), py - (ay + t * dy))
+                if d < best[0]:
+                    best = (d, (ri, i, t, (a[0] + (b[0] - a[0]) * t,
+                                           a[1] + (b[1] - a[1]) * t)))
+        return best
+
+    def camino(u, v):
+        """Lindero vertices strictly between two located points, the short way round."""
+        ri, i, ti, _ = u
+        rj, j, tj, _ = v
+        if ri != rj:
+            return []
+        r = rings[ri]
+        cerrado = r[0] == r[-1]
+        n = len(r) - 1 if cerrado else len(r)
+        if (j, tj) < (i, ti):
+            i, j = j, i
+        adelante = list(range(i + 1, j + 1))
+        if not cerrado:
+            return [r[k] for k in adelante]
+        atras = [k % n for k in range(j + 1, i + 1 + n)]
+        return [r[k] for k in (adelante if len(adelante) <= len(atras) else atras)]
+
+    movidos = tot = 0
+    out = []
+    for f in feats:
+        g = f["geometry"]
+        tipo = g["type"]
+        lss = [g["coordinates"]] if tipo == "LineString" else g["coordinates"]
+        nuevas = []
+        for ln in lss:
+            pts = [tuple(c[:2]) for c in ln]
+            marca = []
+            for p in pts:
+                hit = None
+                for c in reglas:
+                    x0, y0, x1, y1 = c["extent"]
+                    if not (x0 <= p[0] <= x1 and y0 <= p[1] <= y1):
+                        continue
+                    d, loc = locate(p)
+                    if d <= c["tol_m"]:
+                        hit = (d, loc)
+                        break
+                marca.append(hit)
+            if not any(marca):
+                nuevas.append(pts)
+                continue
+            res, k = [], 0
+            while k < len(pts):
+                if marca[k] is None:
+                    res.append(pts[k])
+                    k += 1
+                    continue
+                j = k
+                while j + 1 < len(pts) and marca[j + 1] is not None:
+                    j += 1
+                a_loc, b_loc = marca[k][1], marca[j][1]
+                res.append(a_loc[3])
+                if j > k:
+                    res += camino(a_loc, b_loc)
+                    res.append(b_loc[3])
+                movidos += j - k + 1
+                tot += sum(marca[q][0] for q in range(k, j + 1))
+                k = j + 1
+            # collapse anything the snap made coincident
+            limpio = [res[0]]
+            for p in res[1:]:
+                if math.hypot((p[0] - limpio[-1][0]) * LON2M,
+                              (p[1] - limpio[-1][1]) * LAT2M) > 0.05:
+                    limpio.append(p)
+            nuevas.append(limpio)
+        f = dict(f, geometry={"type": tipo,
+                              "coordinates": nuevas[0] if tipo == "LineString" else nuevas})
+        out.append(f)
+    if verbose and movidos:
+        print(f"  corrección: {movidos} vértices pegados al lindero "
+              f"(desfase medio {tot / movidos:.1f} m)")
+    return out
+
+
+def aristas_paralelas(pos, adj, tol_deg=3.0):
+    """Two edges leaving one node on almost the same bearing.
+
+    This is the signature of a line laid twice — once split at its crossings, once as a
+    straight shortcut over its own halves. The face walk takes the shortcut and the
+    enclosure never closes. It cost a day on the rectangle by Bebedero 9 and it is
+    invisible in the output, so it is checked on every run.
+    """
+    malas = []
+    for u, vs in adj.items():
+        if len(vs) < 2:
+            continue
+        brg = []
+        for v in vs:
+            b = math.degrees(math.atan2((pos[v][1] - pos[u][1]) * LAT2M,
+                                        (pos[v][0] - pos[u][0]) * LON2M))
+            d = math.hypot((pos[v][0] - pos[u][0]) * LON2M,
+                           (pos[v][1] - pos[u][1]) * LAT2M)
+            brg.append((b, d, v))
+        brg.sort()
+        for i in range(len(brg)):
+            b1, d1, v1 = brg[i]
+            b2, d2, v2 = brg[(i + 1) % len(brg)]
+            dif = abs(b2 - b1)
+            dif = min(dif, 360 - dif)
+            if dif <= tol_deg and abs(d1 - d2) > 2.0:
+                malas.append((pos[u], round(dif, 1), round(min(d1, d2)), round(max(d1, d2))))
+    return malas
+
+
 def load_lines(tag=False):
     out = []
     for f in cercas_propias(write=False):
@@ -142,6 +288,7 @@ def cercas_propias(write=True):
             if any(math.hypot((p[0] - q[0]) * LON2M, (p[1] - q[1]) * LAT2M) < 2.0 for p in pts):
                 keep = False
         (ours if keep else theirs).append(f)
+    ours = pegar_al_lindero(ours, polys, verbose=write)
     if write:
         (GEO / "cercas-propias.geojson").write_text(
             json.dumps({"type": "FeatureCollection", "features": ours}, indent=1,
@@ -686,6 +833,13 @@ def main():
             hechos += 1
     if hechos:
         print(f"  cierres aplicados: {hechos}")
+
+    par = aristas_paralelas(pos, adj)
+    if par:
+        print(f"  ⚠ {len(par)} nodos con aristas casi paralelas — una línea puesta dos veces "
+              f"impide cerrar caras:")
+        for p, dif, d1, d2 in par[:6]:
+            print(f"      {p[0]:.6f},{p[1]:.6f}  {dif}° entre una de {d1} m y otra de {d2} m")
 
     fs = faces(pos, adj)
 
