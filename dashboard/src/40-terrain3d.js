@@ -179,6 +179,8 @@ function set3d(on){
   document.getElementById('ex3d').style.display=on?'block':'none';
   document.getElementById('btn3d').classList.toggle('on',on); saveView();
   document.getElementById('read').style.opacity=on?0.35:1;
+  // the compass is a fixed north-up reference; in 3D the camera orbits, so it would lie
+  const cmp=document.getElementById('compass'); if(cmp) cmp.style.display=on?'none':'block';
   if(on){ if(!g3) g3=init3d(); render3d(); } else draw();
 }
 if(D.tex && D.mesh){

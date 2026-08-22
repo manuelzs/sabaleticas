@@ -33,6 +33,16 @@
  #scale{position:absolute;bottom:14px;right:14px;text-align:center;color:#fff;
    text-shadow:0 1px 3px #000;font-size:11px}
  #scale div{height:5px;border:2px solid #fff;border-top:none}
+ /* Compass. The 2D map is always north-up, so this is a fixed reference — its job is to
+    settle east from west at a glance, which is where the mistakes happen. Hidden in 3D,
+    where the camera orbits and a fixed arrow would be a lie. */
+ #compass{position:absolute;bottom:52px;right:14px;width:44px;height:44px;
+   color:#fff;text-shadow:0 1px 3px #000;font:600 10px system-ui;opacity:.85;
+   pointer-events:none;user-select:none}
+ #compass .n{position:absolute;top:-2px;left:50%;transform:translateX(-50%)}
+ #compass .e{position:absolute;right:-1px;top:50%;transform:translateY(-50%);opacity:.75}
+ #compass .w{position:absolute;left:-1px;top:50%;transform:translateY(-50%);opacity:.75}
+ #compass svg{position:absolute;inset:0}
  /* navigation: subsystem tabs, then the views that subsystem offers */
  #nav{position:absolute;top:12px;left:50%;transform:translateX(-50%);
    display:flex;flex-direction:column;align-items:center;gap:7px;z-index:5}
@@ -273,6 +283,14 @@
   <div><b>pendiente</b> <span id="rslp">—</span></div>
   <div style="margin-top:5px;opacity:.75;font-size:11px">
     <b>C</b> captura el punto · <b><span id="rcapn">0</span></b> capturados · <b>X</b> borra</div>
+</div>
+
+<div id="compass">
+  <svg viewBox="0 0 44 44" fill="none">
+    <circle cx="22" cy="24" r="13" stroke="#fff" stroke-opacity=".45" stroke-width="1"/>
+    <path d="M22 12 L26 26 L22 23 L18 26 Z" fill="#fff"/>
+  </svg>
+  <span class="n">N</span><span class="e">E</span><span class="w">O</span>
 </div>
 
 <div id="scale"><div id="sbar" style="width:100px"></div><span id="slab">—</span></div>
