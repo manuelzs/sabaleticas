@@ -528,6 +528,8 @@
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
     "confianza": "orden: alta · posición: CONTRADICHA POR EL TERRENO — no usar",
     "correccion": "[derived, 2026-08-22] Movida ~50 m AL SUR desde la posición del plano. NO es una medición: es la posición más cercana que hace el sistema físicamente posible. La del plano dejaba esta T por debajo de lo que alimenta. Sigue siendo APROXIMADA — confirmar en campo.",
+    "ladera": "[owner, 2026-08-22] *\"Sé que esa es una loma empinada cuando te mueves al sur, he estado ahí.\"* El modelo coincide: T-2 gana 15 m en 50 m (~30 %) y T-3 gana 22 m en 85 m (~26 %). Que la corrección vaya cuesta arriba rápido es COHERENTE con el terreno real, no un artefacto.",
+    "sensibilidad": "En una ladera del ~28 %, 15 m de error horizontal son ~4 m de cota. Conocemos mejor la FRANJA DE COTA en la que tiene que estar la T que su coordenada: la restricción física es más fiable que la posición.",
     "_id": "t-2"
    },
    "geometry": {
@@ -550,6 +552,8 @@
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
     "confianza": "orden: alta · posición: CONTRADICHA POR EL TERRENO — no usar",
     "correccion": "[derived, 2026-08-22] Movida ~85 m AL SUR desde la posición del plano. NO es una medición: es la posición más cercana que hace el sistema físicamente posible. La del plano dejaba esta T por debajo de lo que alimenta. Sigue siendo APROXIMADA — confirmar en campo.",
+    "ladera": "[owner, 2026-08-22] *\"Sé que esa es una loma empinada cuando te mueves al sur, he estado ahí.\"* El modelo coincide: T-2 gana 15 m en 50 m (~30 %) y T-3 gana 22 m en 85 m (~26 %). Que la corrección vaya cuesta arriba rápido es COHERENTE con el terreno real, no un artefacto.",
+    "sensibilidad": "En una ladera del ~28 %, 15 m de error horizontal son ~4 m de cota. Conocemos mejor la FRANJA DE COTA en la que tiene que estar la T que su coordenada: la restricción física es más fiable que la posición.",
     "_id": "t-3"
    },
    "geometry": {
@@ -575,6 +579,7 @@
     "n": 1,
     "descripcion": "Junto al camino, con quiebrapatas al lado — así se identificó en la ortofoto.",
     "nombre_definitivo": "[pendiente] Manuel dará el nombre real cuando entregue los nombres de los potreros: cada bebedero pertenece a uno. Hasta entonces, numerados.",
+    "fijo": "[owner, 2026-08-22] *\"El bebedero 1 está en el lugar correcto. Ese no se mueve.\"* Punto de anclaje: las T son las variables libres.",
     "_id": "beb-1"
    },
    "geometry": {
