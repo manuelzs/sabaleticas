@@ -974,8 +974,11 @@
     "fuente": "[owner, 2026-08-22] Capturada por Manuel en el visor.",
     "confianza": "existencia: alta · posición: sin especificar (asumida aproximada hasta que Manuel confirme)",
     "supuesto": "[derived] Se asume que está sobre el tramo T del norte → tanques intermedios: cae a 75 m de la T del norte, y su cota de 767 m queda entre 775 y 762 m. CORREGIR si no.",
-    "pos_confianza": "baja",
-    "pos_motivo": "capturada por Manuel; sin especificar, asumida aproximada"
+    "pos_confianza": "media",
+    "pos_motivo": "capturada por Manuel; T real confirmada en campo, posición aproximada",
+    "confirmado": "[owner, 2026-08-22] T REAL y distinta de la T del norte: ambas están marcadas en el plano y Manuel cree haberlas visto en el terreno. En campo costó entender qué hacía la T-4, pero **al mover la válvula se confirmó que pasa agua**, así que alimenta algo — no está muerta.",
+    "tiene_valvula": "[owner] Sí. Se operó para comprobar el caudal.",
+    "prueba_pendiente": "CERRAR LA VÁLVULA Y VER QUÉ BEBEDERO SE SECA. Es la prueba definitiva del destino, cuesta nada y no requiere levantamiento."
    },
    "geometry": {
     "type": "Point",

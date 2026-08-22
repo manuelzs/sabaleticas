@@ -4,7 +4,7 @@
 > run `python3 scripts/water_inventory.py`. Position confidence is stored per feature
 > as `pos_confianza`, so this file cannot drift from the map.
 
-**21 points total.** 2 contradicha · 8 baja · 3 media · 8 alta
+**21 points total.** 2 contradicha · 7 baja · 4 media · 8 alta
 
 Manuel, 2026-08-22: *"when I go to confirm at the farm, I don't want to have to go to
 every single one of these places if I already know the reality."*
@@ -30,7 +30,6 @@ every single one of these places if I already know the reality."*
 | Bebedero | **Bebedero 7 (aprox.)** | 675 m | aproximada (Manuel) |
 | Bebedero | **Bebedero 8 (aprox.)** | 693 m | aproximada (Manuel) |
 | Bebedero | **Bebedero 9 (aprox.)** | 732 m | aproximada (Manuel) |
-| T / derivación | **T-4 arriba de intermedios** | 767 m | capturada por Manuel; sin especificar, asumida aproximada |
 | Ventosa | **Ventosa (plano 2003) — entre T-1 y T-2** | 739 m | plano 2003, anotación a mano |
 
 ## 🟡 Good, worth a glance
@@ -41,6 +40,7 @@ Probably right to within a few metres. Confirm opportunistically if you are pass
 |---|---|---|---|
 | T / derivación | **T del norte** | 775 m | Manuel: "aproximada, pero sólo por unos metros" |
 | T / derivación | **T-1 abajo de intermedios** | 747 m | Manuel cree ver la zanja de la manguera en la ortofoto |
+| T / derivación | **T-4 arriba de intermedios** | 767 m | capturada por Manuel; T real confirmada en campo, posición aproximada |
 | Tanque | **Tanque principal 2 (~20.000 L)** | 811 m | desplazado ~10 m sólo para no superponer marcadores |
 
 ## 🟢 Confirmed — do not spend time on these
