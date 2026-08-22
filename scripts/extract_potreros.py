@@ -274,6 +274,68 @@ def recortar_en_corrales(feats, verbose=False):
     return out
 
 
+def recortar_zonas(feats, verbose=False):
+    """Drop part of ONE fence, named by a point on it plus the box to clear.
+
+    A whole-feature exclusion is too blunt here: fence 12 carries both the corrected
+    southern boundary, which we want, and a 361 m tail running alongside the lindero,
+    which is a digitising duplicate. The tail converges to 0.6 m of the lindero at one end
+    and splays to 23.7 m at the other, so the potrero ring ran down one and back up the
+    other and enclosed a 360 m spike.
+
+    The box alone would not do either — it also covers fence 31, 81 m to the west. So the
+    fence is identified by a point on it, exactly as cercas-excluidas.json does, and the
+    box only applies to that one line.
+    """
+    f_cor = GEO / "cercas-correcciones.json"
+    if not f_cor.exists():
+        return feats
+    reglas = [c for c in json.loads(f_cor.read_text(encoding="utf-8"))["correcciones"]
+              if c.get("tipo") == "recortar"]
+    if not reglas:
+        return feats
+
+    quitados, out = 0, []
+    for f in feats:
+        g = f["geometry"]
+        lss = [g["coordinates"]] if g["type"] == "LineString" else g["coordinates"]
+        pts_all = [tuple(c[:2]) for ln in lss for c in ln]
+        mias = [c for c in reglas
+                if any(math.hypot((p[0] - c["por_punto"][0]) * LON2M,
+                                  (p[1] - c["por_punto"][1]) * LAT2M) < 2.0 for p in pts_all)]
+        if not mias:
+            out.append(f)
+            continue
+        piezas = []
+        for ln in lss:
+            cur = []
+            for c in [tuple(x[:2]) for x in ln]:
+                fuera = True
+                for r in mias:
+                    x0, y0, x1, y1 = r["extent"]
+                    if x0 <= c[0] <= x1 and y0 <= c[1] <= y1:
+                        fuera = False
+                        break
+                if fuera:
+                    cur.append(c)
+                else:
+                    quitados += 1
+                    if len(cur) > 1:
+                        piezas.append(cur)
+                    cur = []
+            if len(cur) > 1:
+                piezas.append(cur)
+        if not piezas:
+            continue
+        f = dict(f, geometry={"type": "LineString", "coordinates": piezas[0]}
+                 if len(piezas) == 1 else
+                 {"type": "MultiLineString", "coordinates": piezas})
+        out.append(f)
+    if verbose and quitados:
+        print(f"  recorte: {quitados} vértices de cerca quitados")
+    return out
+
+
 def load_lines(tag=False):
     out = []
     for f in cercas_propias(write=False):
@@ -415,6 +477,7 @@ def cercas_propias(write=True):
         (ours if keep else theirs).append(f)
     ours = pegar_al_lindero(ours, polys, verbose=write)
     ours = recortar_en_corrales(ours, verbose=write)
+    ours = recortar_zonas(ours, verbose=write)
     if write:
         (GEO / "cercas-propias.geojson").write_text(
             json.dumps({"type": "FeatureCollection", "features": ours}, indent=1,

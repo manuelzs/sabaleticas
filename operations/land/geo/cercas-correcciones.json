@@ -6,9 +6,29 @@
  "correcciones": [
   {
    "tipo": "pegar_al_lindero",
-   "extent": [-75.6120, 5.7960, -75.6060, 5.7975],
+   "extent": [
+    -75.612,
+    5.796,
+    -75.606,
+    5.7975
+   ],
    "tol_m": 12.0,
    "motivo": "[owner, 2026-08-22] Lindero con el vecino al sur. La cerca corre 7,4–9,6 m al SUR del lindero a lo largo de ~600 m (cercas 12, 13 y 17 del IGAC), un desfase paralelo constante: error de digitalización, no una cerca que se desvía."
+  },
+  {
+   "tipo": "recortar",
+   "por_punto": [
+    -75.612931,
+    5.794066
+   ],
+   "extent": [
+    -75.6134,
+    5.793,
+    -75.6115,
+    5.796
+   ],
+   "motivo": "[owner, 2026-08-22] Manuel: la cola de 361 m de la cerca 12 no existe — corre pegada al lindero, que ya cierra por sí solo, y el extremo 52 muere sin conectar. Las dos líneas se juntan a 0,6 m en el norte y se abren a 23,7 m en el sur, así que el anillo del potrero bajaba por una y subía por la otra formando una espiga de 360 m."
   }
- ]
+ ],
+ "_recortar": "Un cierre {tipo: recortar} borra parte de UNA cerca: la identifica por un punto sobre ella (como cercas-excluidas.json) y le quita los vértices que caen en 'extent'. Hace falta lo uno Y lo otro: excluir la cerca entera se llevaría también el tramo bueno, y el 'extent' a secas alcanzaría a otra cerca 81 m al oeste."
 }
