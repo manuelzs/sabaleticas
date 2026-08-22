@@ -341,30 +341,6 @@
    "type": "Feature",
    "properties": {
     "tipo": "cierre",
-    "nombre": "Cierre 28–29",
-    "longitud_m": 267,
-    "motivo": "cerca real que el IGAC no capturó",
-    "es_cerca": true,
-    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
-   },
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.612872,
-      5.798926
-     ],
-     [
-      -75.615282,
-      5.798782
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cierre",
     "nombre": "Cierre 12–punto",
     "longitud_m": 46,
     "motivo": "cerca real hasta el vértice del lindero donde se juntan los potreros — 10 m al norte y 16 m al este del quiebre, según Manuel. Ajustado 3,3 m al norte para caer EXACTAMENTE sobre el vértice del lindero: quedaba justo fuera de los 2 m de tolerancia del noding y dejaba el potrero abierto por ahí.",
@@ -1437,6 +1413,78 @@
      [
       -75.612183,
       5.798967
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 177,
+    "motivo": "cerca real 28–29. El tramo ORIENTE (28 → el cruce) sigue recto como estaba. El tramo OCCIDENTE ya no va recto: sigue el drenaje 34 (tramos 44 y 45), que es por donde va la cerca de verdad — 79,5 m por el drenaje contra los 90,4 m de la recta que reemplaza. Las dos puntas del drenaje se llevan a los vértices que ya existían (a 7,1 y 7,9 m) en vez de dejar muñones. (tramo 1 de 3)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612872,
+      5.798926
+     ],
+     [
+      -75.614467,
+      5.798831
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 51,
+    "motivo": "cerca real 28–29. El tramo ORIENTE (28 → el cruce) sigue recto como estaba. El tramo OCCIDENTE ya no va recto: sigue el drenaje 34 (tramos 44 y 45), que es por donde va la cerca de verdad — 79,5 m por el drenaje contra los 90,4 m de la recta que reemplaza. Las dos puntas del drenaje se llevan a los vértices que ya existían (a 7,1 y 7,9 m) en vez de dejar muñones. (tramo 2 de 3)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614467,
+      5.798831
+     ],
+     [
+      -75.614926,
+      5.798886
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 41,
+    "motivo": "cerca real 28–29. El tramo ORIENTE (28 → el cruce) sigue recto como estaba. El tramo OCCIDENTE ya no va recto: sigue el drenaje 34 (tramos 44 y 45), que es por donde va la cerca de verdad — 79,5 m por el drenaje contra los 90,4 m de la recta que reemplaza. Las dos puntas del drenaje se llevan a los vértices que ya existían (a 7,1 y 7,9 m) en vez de dejar muñones. (tramo 3 de 3)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614926,
+      5.798886
+     ],
+     [
+      -75.615282,
+      5.798782
      ]
     ]
    }

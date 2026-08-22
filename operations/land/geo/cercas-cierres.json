@@ -82,12 +82,6 @@
    true
   ],
   [
-   28,
-   29,
-   "cerca real que el IGAC no capturó",
-   true
-  ],
-  [
    12,
    [
     -75.617129,
@@ -476,6 +470,28 @@
    ],
    "es_cerca": true,
    "motivo": "cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada."
+  },
+  {
+   "polilinea": [
+    [
+     -75.612872,
+     5.798926
+    ],
+    [
+     -75.614467,
+     5.798831
+    ],
+    [
+     -75.614926,
+     5.798886
+    ],
+    [
+     -75.615282,
+     5.798782
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "cerca real 28–29. El tramo ORIENTE (28 → el cruce) sigue recto como estaba. El tramo OCCIDENTE ya no va recto: sigue el drenaje 34 (tramos 44 y 45), que es por donde va la cerca de verdad — 79,5 m por el drenaje contra los 90,4 m de la recta que reemplaza. Las dos puntas del drenaje se llevan a los vértices que ya existían (a 7,1 y 7,9 m) en vez de dejar muñones."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
