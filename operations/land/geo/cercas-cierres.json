@@ -161,6 +161,15 @@
    "@extend",
    "se prolonga al sursuroeste hasta cortar el borde norte de Serengueti",
    true
+  ],
+  [
+   37,
+   [
+    -75.605116,
+    5.79708
+   ],
+   "cerca real hasta un vértice de la represa — la represa hace de lindero del potrero",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

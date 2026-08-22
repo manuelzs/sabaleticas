@@ -299,6 +299,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 37–punto",
+    "longitud_m": 10,
+    "fuente": "[owner] cerca real hasta un vértice de la represa — la represa hace de lindero del potrero",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.605119,
+      5.797174
+     ],
+     [
+      -75.605116,
+      5.79708
+     ]
+    ]
+   }
   }
  ]
 }

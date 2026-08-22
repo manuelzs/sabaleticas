@@ -385,6 +385,29 @@ def main():
 
     cercas_propias()
     lines, n_cerca = load_lines(tag=True)
+    # Taken here, not from a slice later on: dictated fences and the reservoir get
+    # appended to `lines` further down, and a slice would count them as parcel outline.
+    bpts = {p for l in lines[n_cerca:] for p in l}
+
+    # The reservoir is a hard edge on the ground — cattle stop at the water, so a potrero
+    # can close against the shoreline. Its outline goes into the geometry like a fence,
+    # so the face walk can run along it; the lake face itself is dropped further down.
+    ESPEJOS = []
+    f_w = GEO / "water-infrastructure.geojson"
+    if f_w.exists():
+        for f in json.loads(f_w.read_text(encoding="utf-8"))["features"]:
+            g = f["geometry"]
+            if g["type"] not in ("Polygon", "MultiPolygon"):
+                continue
+            rings = g["coordinates"] if g["type"] == "Polygon" else \
+                [r for p in g["coordinates"] for r in p]
+            for r in rings:
+                ring = [tuple(c[:2]) for c in r]
+                lines.append(ring)
+                ESPEJOS.append(ring)
+        if ESPEJOS:
+            print(f"  espejos de agua como lindero: {len(ESPEJOS)} "
+                  f"({sum(len(r) for r in ESPEJOS)} vértices)")
 
     # A gap does not always close onto another gap. Often a fence simply RUNS ON and
     # meets another fence in a T. The faithful move is to continue it in its own
@@ -525,7 +548,6 @@ def main():
     pos, adj = build(lines)
     print(f"  grafo: {len(adj)} nodos, {sum(len(v) for v in adj.values())//2} aristas")
     # vertex ids that exist only because of the parcel outline
-    bpts = {p for l in lines[n_cerca:] for p in l}
     bkeys = {k for k, p in pos.items() if p in bpts}
 
     # Loose ends, numbered STABLY. The numbers are how Manuel refers to a gap out loud
@@ -681,6 +703,7 @@ def main():
         xs = [p[0] for p in ring]
         ys = [p[1] for p in ring]
         n_in = n_tot = 0
+        muestras = []
         for gx in range(12):
             for gy in range(12):
                 q = (min(xs) + (max(xs) - min(xs)) * (gx + 0.5) / 12,
@@ -688,6 +711,7 @@ def main():
                 if not inside(q, [[ring]]):
                     continue
                 n_tot += 1
+                muestras.append(q)
                 if inside(q, OURS):
                     n_in += 1
         propio = (n_in / n_tot) if n_tot else 0.0
@@ -696,6 +720,15 @@ def main():
             if a / 10000 > 2:
                 print(f"      descartada, {propio*100:.0f} % dentro del lindero: {a/10000:.2f} ha")
             continue
+        # Judged by AREA, not by vertex count: the shoreline is densely vertexed, so a
+        # real potrero that borders the lake can be mostly reservoir vertices and still
+        # be pasture. Only a face whose interior is water is the lake.
+        if ESPEJOS and n_tot:
+            n_agua = sum(1 for q in muestras if inside(q, [[r] for r in ESPEJOS]))
+            if n_agua / n_tot > 0.8:
+                if a / 10000 > 0.5:
+                    print(f"      descartada por ser espejo de agua: {a/10000:.2f} ha")
+                continue
         if sum(1 for k in cyc if k in bkeys) / len(cyc) > 0.9:
             if a / 10000 > 2:
                 print(f"      descartada por ser el contorno del predio: {a/10000:.2f} ha")

@@ -552,6 +552,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 37–punto",
+    "longitud_m": 10,
+    "motivo": "cerca real hasta un vértice de la represa — la represa hace de lindero del potrero",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.605119,
+      5.797174
+     ],
+     [
+      -75.605116,
+      5.79708
+     ]
+    ]
+   }
   }
  ]
 }
