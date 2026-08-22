@@ -507,20 +507,20 @@
   {
    "id": "agua:beb-4",
    "tipo": "bebedero",
-   "nombre": "Bebedero 4 (aprox.)",
+   "nombre": "Bebedero 4",
    "cota_m": 700,
    "geo": [
-    -75.615,
-    5.800337
+    -75.61443,
+    5.800575
    ],
-   "pos_confianza": "baja",
-   "pos_motivo": "plano 2003",
+   "pos_confianza": "alta",
+   "pos_motivo": "identificado por Manuel en el hueco de cerca 19–20",
    "props": {
     "orden_en_el_ramal": 3,
-    "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
+    "fuente": "[owner, 2026-08-22] Manuel lo identificó entre los extremos de cerca 19 y 20. Sustituye la posición leída del plano 2003.",
     "confianza": "orden: alta · posición: BAJA · capacidad: desconocida",
     "n": 4,
-    "nota": "[owner, 2026-08-21] Bebedero, no tanque de almacenamiento. El ramal norte no guarda agua: se apoya en los tanques altos."
+    "patron": "[owner] Los bebederos se construyen en LÍMITES de potrero, sobre todo donde concurren varios, para servir a más de uno. Por eso un hueco de cerca es buen indicio de bebedero — y un bebedero lejos de toda cerca es mala señal."
    },
    "pid": [
     10,

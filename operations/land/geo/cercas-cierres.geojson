@@ -92,6 +92,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 19–20",
+    "longitud_m": 20,
+    "motivo": "Bebedero 4 — identificado aquí por Manuel; el bebedero se reubicó a este punto",
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614342,
+      5.800591
+     ],
+     [
+      -75.614518,
+      5.80056
+     ]
+    ]
+   }
   }
  ]
 }

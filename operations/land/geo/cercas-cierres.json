@@ -20,6 +20,11 @@
    21,
    22,
    "[ABIERTA] Hay algo, pero Manuel no distingue si es bebedero o saladero. Importa: si es bebedero, hay que conectarlo a la red de agua. 234 m del punto conocido más cercano."
+  ],
+  [
+   19,
+   20,
+   "Bebedero 4 — identificado aquí por Manuel; el bebedero se reubicó a este punto"
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

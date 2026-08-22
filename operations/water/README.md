@@ -719,6 +719,26 @@ de todo lo conocido es infraestructura que la red **no tiene**.
 | 32–33 | Bebedero `[owner]` — **NUEVO** | 95 m |
 | 21–22 | **¿bebedero o saladero?** — sin identificar | 234 m |
 
+| 19–20 | **Bebedero 4** — Manuel lo identificó aquí; el bebedero se movió **68 m** | 0 m |
+
+### La regla que explica todo esto
+
+`[owner, 2026-08-22]` *"Los bebederos se construyen en los límites de los potreros, sobre todo
+donde varios se juntan, para que sirvan a más de uno."*
+
+Eso no es sólo una observación: es un **control de calidad de posiciones**.
+
+| | Cercas a ≤20 m | Distancia a la cerca más cercana |
+|---|---|---|
+| **Bebederos 1, 2, 3** *(confirmados)* | 2–3 | **3–7 m** |
+| Bebederos 6, 7, 8 *(aproximados)* | **0** | **24–79 m** |
+
+Un bebedero confirmado se apoya en una unión de cercas. Uno flotando en campo abierto es la
+firma de una posición mal leída del plano — que es exactamente lo que le pasaba al Bebedero 4,
+a 22 m de toda cerca antes de moverlo.
+
+> **Los bebederos 6, 7 y 8 siguen lejos de cualquier cerca.** Son los siguientes a revisar.
+
 > **21–22 es la que importa resolver.** Si es bebedero hay que conectarlo a la red y entra en
 > el reparto de caudal; si es saladero, no. Manuel no lo distingue en la foto.
 
