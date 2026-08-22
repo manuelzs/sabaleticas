@@ -204,6 +204,11 @@ function drawGeom(g,kind,fill){
       else if(shp==='diamond'){ cx.moveTo(x,y-r-1);cx.lineTo(x+r+1,y);cx.lineTo(x,y+r+1);cx.lineTo(x-r-1,y);cx.closePath();}
       else if(shp==='house'){   cx.moveTo(x-r,y+r);cx.lineTo(x-r,y-1);cx.lineTo(x,y-r-2);
                                 cx.lineTo(x+r,y-1);cx.lineTo(x+r,y+r);cx.closePath();}
+      else if(shp==='vent'){    // ventosa: an arrow, for the air leaving the line
+                                const w=r*0.40;
+                                cx.moveTo(x,y-r-2); cx.lineTo(x+r,y-1); cx.lineTo(x+w,y-1);
+                                cx.lineTo(x+w,y+r); cx.lineTo(x-w,y+r); cx.lineTo(x-w,y-1);
+                                cx.lineTo(x-r,y-1); cx.closePath();}
       else                      cx.arc(x,y,r-0.5,0,7);
       cx.fill();
       cx.save(); cx.strokeStyle='#0b0e11'; cx.lineWidth=2; cx.stroke(); cx.restore();

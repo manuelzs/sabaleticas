@@ -398,6 +398,29 @@ split is set deliberately rather than decided by gravity.
 
 **Unknown:** where the ramal norte actually runs, and what it feeds. Not mapped.
 
+### A ventosa already exists — the 2003 designers knew about air
+
+`[plano 2003]` The plan labels a **ventosa** at **5.796878, −75.612092 · 739 m**, located by
+Manuel on the georeferenced overlay. Drawn with its own arrow marker in the viewer.
+
+Two things worth taking from it:
+
+1. **The original design already handled air.** Ventosas are not a modern retrofit being
+   proposed here — they are how this system was meant to work. That makes the recommendation
+   above far less speculative: **we are restoring an idea the builders had, not importing one.**
+   It sits on the **tanques intermedios → casa principal** leg. The leg that is failing — the
+   **entrada to the rompecargas** — apparently has none.
+2. **It lands 1.1 m from the schematic straight line** for that leg, at 34 % along.
+
+> That second point is a free calibration. An independent feature off a 2003 drawing falling
+> within a metre of a line we drew by joining two endpoints says the **schematic routes are far
+> better than "indicative"** on this leg — and raises confidence in the terrain profiles run
+> along them.
+
+⚠️ **Existence today is unconfirmed.** Per Manuel's standing rule, nothing from the 2003 plan
+counts as current until checked in the field. Add it to the walk-the-pipes list: **is it still
+there, and does it still work?** A seized ventosa is indistinguishable from no ventosa.
+
 ### The two measurements that would settle it
 
 Both need only a watch:

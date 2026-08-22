@@ -478,6 +478,25 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "ventosa",
+    "nombre": "Ventosa (plano 2003)",
+    "altura_m": 739,
+    "funcion": "Válvula de expulsión de aire. Deja salir el aire que se acumula en los puntos altos de la línea; sin ella la tubería se bloquea por aire.",
+    "clave": "Confirma que el diseño original YA contemplaba el problema de aire — y que esta pierna la tiene resuelta, mientras la entrada al rompecargas aparentemente no.",
+    "fuente": "[plano 2003] rotulada 'ventosa' en el plano; posición leída por Manuel sobre el calco georreferenciado 2026-08-21. Cae a ~1 m de la línea recta esquemática tanques intermedios → casa principal.",
+    "confianza": "posición: media (calco 2003, RMS ~11 m) · existencia hoy: SIN CONFIRMAR EN CAMPO"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.612092,
+     5.796878
+    ]
+   }
   }
  ]
 }

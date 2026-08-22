@@ -93,7 +93,7 @@ TIPO_COLOUR = {
     "tanque": "#00e5ff", "nacimiento": "#7cffcb", "bebedero": "#4dd0e1",
     "represa": "#0091ea", "rompecargas": "#ffd54f", "bocatoma": "#26c6da", "tuberia": "#b388ff",
     "casa": "#ff8a65", "potrero": "#ffee58", "ruta_candidata": "#00e676",
-    "derivacion": "#ff9100", "valvula": "#ffab40",
+    "derivacion": "#ff9100", "valvula": "#ffab40", "ventosa": "#b2ff59",
 }
 
 # Marker shape by type. Circles are reserved for tanks and the reservoir.
@@ -101,7 +101,7 @@ TIPO_SHAPE = {
     "tanque": "circle", "represa": "circle",
     "derivacion": "square", "valvula": "square", "rompecargas": "square",
     "nacimiento": "triangle", "bocatoma": "triangle",
-    "bebedero": "diamond", "casa": "house",
+    "bebedero": "diamond", "casa": "house", "ventosa": "vent",
 }
 
 
