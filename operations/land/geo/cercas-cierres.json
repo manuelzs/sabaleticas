@@ -111,8 +111,8 @@
   [
    26,
    [
-    -75.608776,
-    5.799699
+    -75.608782,
+    5.79966
    ],
    "se prolonga al norte hasta cruzar con la que sube desde 27",
    true
@@ -120,16 +120,16 @@
   [
    27,
    [
-    -75.608776,
-    5.799699
+    -75.608782,
+    5.79966
    ],
    "se prolonga al noroeste hasta cruzar con la que sube desde 26",
    true
   ],
   [
    [
-    -75.608776,
-    5.799699
+    -75.608782,
+    5.79966
    ],
    [
     -75.610436,
@@ -140,8 +140,8 @@
   ],
   [
    [
-    -75.608778,
-    5.7997
+    -75.608782,
+    5.79966
    ],
    [
     -75.60904,
@@ -594,6 +594,24 @@
     "polilínea [48] vértice 0"
    ],
    "motivo": "[owner, 2026-08-22] la esquina NO de Serengueti se corre 3,2 m al sursuroeste para seguir el drenaje. Es un cruce de CUATRO potreros: Macarena, La Mancha, Serengueti y el 20."
+  },
+  {
+   "de": [
+    -75.608776,
+    5.799699
+   ],
+   "a": [
+    -75.608782,
+    5.79966
+   ],
+   "metros": 4.4,
+   "refs": [
+    "par [17] extremo 1",
+    "par [18] extremo 1",
+    "par [19] extremo 0",
+    "par [20] extremo 0"
+   ],
+   "motivo": "[owner, 2026-08-22] la T donde concurren las prolongaciones 26 y 27 se corre 4,4 m al sur para seguir el drenaje"
   }
  ]
 }

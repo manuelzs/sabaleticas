@@ -414,7 +414,7 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre 26–punto",
-    "longitud_m": 19,
+    "longitud_m": 14,
     "motivo": "se prolonga al norte hasta cruzar con la que sube desde 27",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
@@ -427,8 +427,8 @@
       5.799532
      ],
      [
-      -75.608776,
-      5.799699
+      -75.608782,
+      5.79966
      ]
     ]
    }
@@ -438,7 +438,7 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre 27–punto",
-    "longitud_m": 62,
+    "longitud_m": 61,
     "motivo": "se prolonga al noroeste hasta cruzar con la que sube desde 26",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
@@ -451,8 +451,8 @@
       5.799467
      ],
      [
-      -75.608776,
-      5.799699
+      -75.608782,
+      5.79966
      ]
     ]
    }
@@ -462,7 +462,7 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre punto–punto",
-    "longitud_m": 187,
+    "longitud_m": 188,
     "motivo": "cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
@@ -471,8 +471,8 @@
     "type": "LineString",
     "coordinates": [
      [
-      -75.608776,
-      5.799699
+      -75.608782,
+      5.79966
      ],
      [
       -75.610436,
@@ -486,7 +486,7 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre punto–punto",
-    "longitud_m": 193,
+    "longitud_m": 188,
     "motivo": "lado oriente del potrero rectangular que marcó Manuel",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
@@ -495,8 +495,8 @@
     "type": "LineString",
     "coordinates": [
      [
-      -75.608776,
-      5.799699
+      -75.608782,
+      5.79966
      ],
      [
       -75.60904,
@@ -510,7 +510,7 @@
    "properties": {
     "tipo": "cierre",
     "nombre": "Cierre 24–→",
-    "longitud_m": 26,
+    "longitud_m": 30,
     "motivo": "se prolonga al sursuroeste hasta cortar el borde norte de Serengueti",
     "es_cerca": true,
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
@@ -523,8 +523,8 @@
       5.799957
      ],
      [
-      -75.609113,
-      5.799765
+      -75.609133,
+      5.799737
      ]
     ]
    }
