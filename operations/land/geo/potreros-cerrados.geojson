@@ -1788,10 +1788,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 6",
+    "nombre": "San Matías",
     "n": 6,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "area_ha": 6.8,
     "area_m2": 67953,
