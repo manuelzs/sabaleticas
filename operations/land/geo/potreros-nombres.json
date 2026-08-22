@@ -225,6 +225,22 @@
     5.797417
    ],
    "fuente": "[owner + plano 2007, 2026-08-22] Manuel verificó la cara de 5,72 ha que salió al partir el bloque de 15,48 ha con la cerca del drenaje 34. «ALEJANDRIA» era uno de los siete nombres de 2007 dentro del bloque grande del que viene."
+  },
+  {
+   "nombre": "Argelia",
+   "punto": [
+    -75.615266,
+    5.79366
+   ],
+   "fuente": "[owner, 2026-08-22] Manuel: es el potrero 22 de la corrida del 2026-08-22, al oriente. Sale de partir con la cerca del drenaje 37 el bloque de 6,28 ha que él ya había anotado como «Argelia al oriente, Marruecos al occidente» — la partición cayó donde decía la nota."
+  },
+  {
+   "nombre": "Marruecos",
+   "punto": [
+    -75.616589,
+    5.79466
+   ],
+   "fuente": "[owner, 2026-08-22] Manuel: es el potrero 24 de la corrida del 2026-08-22, al occidente. Sale de partir con la cerca del drenaje 37 el bloque de 6,28 ha que él ya había anotado como «Argelia al oriente, Marruecos al occidente» — la partición cayó donde decía la nota."
   }
  ]
 }

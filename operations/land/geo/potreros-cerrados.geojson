@@ -3195,16 +3195,13 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 22",
+    "nombre": "Argelia",
     "n": 22,
-    "nombrado": false,
-    "estado": "por_subdividir",
-    "estado_nota": "los nombres del plano de 2007 que caen dentro dicen en cuántos se parte",
-    "subdivide_en": [
-     "Argelia",
-     "Marruecos"
-    ],
-    "subdivide_nota": "La línea exacta está POR DEFINIR — Manuel la ve dudosa por ahora.",
+    "nombrado": true,
+    "estado": "final",
+    "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
     "area_ha": 3.16,
     "area_m2": 31609,
     "agua": [
@@ -3508,10 +3505,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 24",
+    "nombre": "Marruecos",
     "n": 24,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",

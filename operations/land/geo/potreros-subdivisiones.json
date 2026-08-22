@@ -6,25 +6,6 @@
  "pendientes": [
   {
    "punto": [
-    -75.615807,
-    5.793923
-   ],
-   "partes": [
-    {
-     "nombre": "Argelia",
-     "lado": "oriente"
-    },
-    {
-     "nombre": "Marruecos",
-     "lado": "occidente"
-    }
-   ],
-   "linea": null,
-   "fuente": "[owner, 2026-08-22] Manuel: el potrero 7 de la corrida del 2026-08-22 (6,28 ha) son en realidad dos.",
-   "nota": "La línea exacta está POR DEFINIR — Manuel la ve dudosa por ahora."
-  },
-  {
-   "punto": [
     -75.616893,
     5.803838
    ],
@@ -49,5 +30,15 @@
  "_confirmado": "«confirmado»: true si lo dice Manuel; false si sólo lo dice un plano. Un candidato de plano NO se da por bueno: el de 2007 tiene 19 años y un ajuste con 19,6 m de rms, y las cercas se han movido desde entonces.",
  "_ojo_no_es_prueba": "[owner, 2026-08-22] Que el plano de 2007 muestre una división NO prueba que exista hoy. En veinte años la finca no sólo se ha subdividido: también se han QUITADO divisiones. Un rótulo de 2007 dentro de una cara de hoy dice cómo estaba en 2007, no cómo está. Sirve para saber qué mirar y con qué nombre, no para partir nada. Lo confirma Manuel en campo.",
  "nombres_en_espera": [],
- "_nombres_en_espera": "Nombres que Manuel ya dijo pero que NO se registran todavía porque la cara puede cambiar de forma. Aplicarlos ahora ataría el nombre a una geometría provisional. [2026-08-22] Rincón salió de aquí: Manuel prefirió nombrarlo ya y dejar la FORMA en por_verificar. El estado dice lo que falta; el nombre no tiene por qué esperarlo."
+ "_nombres_en_espera": "Nombres que Manuel ya dijo pero que NO se registran todavía porque la cara puede cambiar de forma. Aplicarlos ahora ataría el nombre a una geometría provisional. [2026-08-22] Rincón salió de aquí: Manuel prefirió nombrarlo ya y dejar la FORMA en por_verificar. El estado dice lo que falta; el nombre no tiene por qué esperarlo.",
+ "_hechas": [
+  {
+   "partes": [
+    "Argelia",
+    "Marruecos"
+   ],
+   "fecha": "2026-08-22",
+   "nota": "Se cumplió con la cerca por el drenaje 37: 6,28 ha → 3,16 (Argelia, oriente) + 3,12 (Marruecos, occidente). La nota se anotó antes de saber por dónde iba la línea, y la línea cayó donde decía."
+  }
+ ]
 }
