@@ -132,8 +132,8 @@
     5.799699
    ],
    [
-    -75.610425,
-    5.800051
+    -75.610436,
+    5.800024
    ],
    "cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice",
    true
@@ -420,8 +420,8 @@
   {
    "polilinea": [
     [
-     -75.610425,
-     5.800051
+     -75.610436,
+     5.800024
     ],
     [
      -75.610598,
@@ -556,6 +556,22 @@
     "polilínea [48] vértice 11"
    ],
    "motivo": "[owner, 2026-08-22] el cruce de las prolongaciones 25 y 28 se corre 7,0 m al sur para seguir el drenaje"
+  },
+  {
+   "de": [
+    -75.610425,
+    5.800051
+   ],
+   "a": [
+    -75.610436,
+    5.800024
+   ],
+   "metros": 3.2,
+   "refs": [
+    "par [19] extremo 1",
+    "polilínea [48] vértice 0"
+   ],
+   "motivo": "[owner, 2026-08-22] la esquina NO de Serengueti se corre 3,2 m al sursuroeste para seguir el drenaje. Es un cruce de CUATRO potreros: Macarena, La Mancha, Serengueti y el 20."
   }
  ]
 }

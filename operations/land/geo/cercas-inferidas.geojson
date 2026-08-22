@@ -225,8 +225,8 @@
       5.799699
      ],
      [
-      -75.610425,
-      5.800051
+      -75.610436,
+      5.800024
      ]
     ]
    }
@@ -259,7 +259,7 @@
    "properties": {
     "tipo": "cerca_inferida",
     "nombre": "Cerca 24–→",
-    "longitud_m": 25,
+    "longitud_m": 26,
     "fuente": "[owner] se prolonga al sursuroeste hasta cortar el borde norte de Serengueti",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
@@ -271,8 +271,8 @@
       5.799957
      ],
      [
-      -75.60911,
-      5.79977
+      -75.609113,
+      5.799765
      ]
     ]
    }
@@ -811,7 +811,7 @@
    "properties": {
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
-    "longitud_m": 19,
+    "longitud_m": 18,
     "fuente": "[owner] cerca real que SIGUE el drenaje 34 (tramos 23–33), señalado por Manuel con la herramienta de aristas. Las dos PUNTAS se llevan al vértice que ya existía al lado en vez de dejar un muñón: en el nororiente arranca en la esquina NO de Serengueti (el primer punto del drenaje quedaba a 3,5 m) y en el suroccidente termina en el cruce de las prolongaciones 25 y 28 (a 6,9 m). Enganchar así, y no con un tramito, evita meter un nodo nuevo al lado de una esquina ya confirmada. (tramo 1 de 11)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
@@ -819,8 +819,8 @@
     "type": "LineString",
     "coordinates": [
      [
-      -75.610425,
-      5.800051
+      -75.610436,
+      5.800024
      ],
      [
       -75.610598,
