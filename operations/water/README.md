@@ -658,13 +658,14 @@ This supersedes nothing above — it is the list of things **only a site visit c
 `[owner, 2026-08-22]` *"They are not in our land. They are to the east. I can't get the name of
 the exact creek… we probably even have some more paperwork for the water rights."*
 
-**Every litre this farm uses enters through two intakes on somebody else's property.** That is
-the largest single dependency in the operation, and we currently have **no coordinates, no
-creek name, and no sight of the paperwork.**
+**Every litre this farm uses enters through two intakes on somebody else's property.** We have
+**no coordinates and no creek name** — but the legal side turns out to be sound: the
+**servidumbre is 50+ years old and undisputed**, and the **concesión has been renewed
+regularly** `[owner, 2026-08-22]`.
 
-Why this outranks the distribution puzzles: the pipes can be traced any afternoon. **A water
-right cannot be recovered in an afternoon**, and it fails exactly when a drought makes it
-matter — which is the scenario this whole project exists for.
+> **So this is no longer a risk item — it is a missing number.** What remains is the
+> **caudal concesionado**: how many L/s we are legally entitled to. That is the ceiling on
+> supply, and it is worth knowing before comparing it against what the system actually moves.
 
 #### To find, when Manuel has time
 
@@ -676,8 +677,8 @@ matter — which is the scenario this whole project exists for.
 
 #### The three questions that matter most
 
-1. **Is the concesión current, or has it lapsed?** An expired one is a vulnerability nobody
-   notices until the authority or a neighbour raises it.
+1. ~~Is the concesión current, or has it lapsed?~~ **✅ Closed** `[owner, 2026-08-22]`: renewed
+   regularly. **Not a live risk.**
 2. **How many L/s are we legally entitled to?** That is the ceiling on supply, and it may be
    lower than what we take. Worth knowing *before* comparing it to the ~10–17 m³/día estimate.
 3. ~~Who owns the land the bocatomas sit on, and does the easement survive a sale?~~
