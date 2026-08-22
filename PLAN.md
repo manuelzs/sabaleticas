@@ -78,7 +78,12 @@ backwards through time. From 266 at 2026-05-21 the six counted guides already gi
 herd history** open up — turnover, days-on-farm, and what the herd was when each cost was
 incurred. See [`herd/movements.md`](herd/movements.md).
 
-## 5 · Potreros — the biggest unblock in the project
+## 5 · Potreros — 🟡 **en curso, ver [`operations/land/potreros.md`](operations/land/potreros.md)**
+
+**15 caras · 99.8 ha · 4 con nombre · 17 huecos** (de 60). El método, las cinco formas de cierre
+y lo que apareció de paso están en esa bitácora.
+
+## 5b · Potreros — por qué importaba
 
 > Grass, cattle location, rest periods, kg per hectare — **every one of them waits on this.**
 
