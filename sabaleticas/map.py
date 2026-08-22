@@ -34,7 +34,7 @@ LAYERS = [
     ("Bosque",                  "igac-1to5000/Bosque.geojson",         "poly", "#66bb6a", 1.0, "rgba(102,187,106,.20)"),
     ("Vías",                    "igac-1to5000/Vias.geojson",           "line", "#ffffff", 1.4, None),
     ("Construcciones",          "igac-1to5000/Construccion_R.geojson", "poly", "#ff8a65", 1.5, "rgba(255,138,101,.6)"),
-    ("Vecinos",                 "neighbours.geojson",                  "poly", "#b0bec5", 1.2, None),
+    ("Vecinos (con nombre)",   "neighbours.geojson",                  "poly", "#b0bec5", 1.6, None),
 ]
 DEFAULT_ON = {"Linderos", "Cercas (IGAC ⚠ parcial)", "Drenajes",
               "Depósitos de agua", "Curvas 25 m", "Agua: infraestructura"}
@@ -122,10 +122,12 @@ def _collect(geo: Path):
                 continue
             props = f.get("properties") or {}
             label = props.get("name") or props.get("DIRECCION") or ""
+            if props.get("lado") and props.get("area_ha"):      # neighbours: name + side + area
+                label = f"{props['name']} · {props['lado']} · {props['area_ha']} ha"
             if not label and props.get("elev"):
                 label = f"{props['elev']} m"
             item = {"t": g["type"], "c": _round_geom(_thin(g["coordinates"])),
-                    "l": str(label)[:60]}
+                    "l": str(label)[:60], "kind": kind}
             tipo = props.get("tipo")
             if tipo in TIPO_COLOUR:
                 item["col"] = TIPO_COLOUR[tipo]

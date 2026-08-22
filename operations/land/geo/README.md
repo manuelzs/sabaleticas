@@ -57,7 +57,7 @@ Two independent checks agree it's the right parcel: the farm entrance lands on i
 tip, and its neighbours are exactly the ones the 2003 plan names — **HACIENDA TEXAS** to the
 north and **EL GUAICO** to the south.
 
-### The neighbours
+### The neighbours — all twelve, mapped and labelled
 
 | Predio | ha | Matrícula |
 |---|---|---|
@@ -138,6 +138,27 @@ that before the numbers did.
 
 And per Manuel, **the river moves constantly**. A boundary defined by a watercourse moves with
 it, so the area itself changes over time and neither document is stale so much as *dated*.
+
+### The residual after the playón: 0.78 ha
+
+| | |
+|---|---|
+| Cadastre, both parcels | 170.73 ha |
+| + playón per the plan | 21.90 ha |
+| | **192.63 ha** |
+| 2003 plan total | 193.41 ha |
+| **Residual** | **0.78 ha** |
+
+Manuel's suggestion: that residual *is* the northern triangle. **Plausible in magnitude but not
+proven.** His field estimate of the triangle — 125 m sides, ~40° apex — gives **0.50 ha**.
+Reaching 0.78 ha would need either an 87° apex or 156 m sides, so the two don't reconcile
+exactly.
+
+⚠️ **And 0.78 ha is only 0.40% of the plan total** — comfortably inside the error of a 1:5000
+hand survey, especially one we have shown to be unreliable in forest. So the residual is
+equally consistent with **accumulated survey error**, with the triangle, or with both. It
+cannot be used to size the triangle, and the triangle's own dimensions remain the better
+estimate.
 
 ### ⚠️ The open question is whether we can graze it
 
@@ -396,3 +417,56 @@ Everything here is standard, so no conversion is needed:
   to each JPEG places the imagery automatically.
 - **Google Earth Pro** — open `boundary.kml`.
 - Anything else — it is all WGS 84 lat/lon (EPSG:4326) GeoJSON.
+
+## Neighbours — all twelve adjoining predios
+
+`neighbours.geojson`, layer **"Vecinos (con nombre)"** in the viewer. Each polygon is labelled
+with its name, which side it lies on, and its registered area, so turning the layer on shows
+who is on every boundary.
+
+| Side | Name | ha | Matrícula | Municipio |
+|---|---|---|---|---|
+| **N** | **BELLAVISTA** | 133.71 | 023-20857 | Santa Bárbara |
+| SE | EL GUAICO | 132.44 | 023-16154 | La Pintada |
+| NE | LT N2 | 121.85 | 023-23119 | La Pintada |
+| NO | NAMUR | 114.20 | 010-8832 | Fredonia |
+| O | LOS BUHOS | 82.04 | 010-4129 | Fredonia |
+| E | HACIENDA TEXAS | 53.06 | 023-14591 | La Pintada |
+| SE | AP 2 PARTE ALTA | 41.16 | 023-16155 | La Pintada |
+| SO | EL PARAISO | 26.42 | 010-8418 | Fredonia |
+| E | FCA LA ESMERALDA | 22.61 | 023-23120 | La Pintada |
+| SO | LA VEGA | 17.47 | 010-17150 | Fredonia |
+| SO | EL BILLAR | 11.99 | 010-17149 | Fredonia |
+| E | FCA EL VERDUN | 8.78 | 023-23121 | La Pintada |
+
+Worth noting the farm touches **three municipalities** — La Pintada, Santa Bárbara *and*
+Fredonia (the whole western flank, across the Poblanco). Another reason to query the cadastre
+by matrícula rather than by municipality.
+
+**BELLAVISTA (023-20857) is the parcel holding the disputed northern tip.** Sampling 60–110 m
+north of our boundary across all 69 northern vertices returns Bellavista 112 times out of 138 —
+so the cadastre has actively drawn that line and placed the land beyond it, rather than leaving
+a gap. Two other Bellavista parcels exist nearby (023-20858, and Bellavista Aures 023-7914) but
+neither adjoins us.
+
+## History — long possession `[owner, unverified]`
+
+Per Manuel (2026-08-21), and directly relevant to the northern tip:
+
+- **The farm has been in the family since the 19th century.**
+- **The fence on the disputed northern boundary has stood for over 150 years.**
+- **The northern neighbour was a cousin**, who is believed to have **sold** the land since.
+
+If that holds up, the possession argument is far stronger than a 2003 plan alone: a fence in
+continuous use for a century and a half, on a boundary between family members who never
+disputed it, against a cadastral polygon drawn from imagery in the 2020s. **The change of
+ownership matters too** — a new owner inherits the title as registered, and has no memory of
+where the fence was agreed. That is exactly how quiet boundaries turn into disputes.
+
+## 📌 Parked: historical maps
+
+Raised by Manuel 2026-08-21, **not to be worked on now.** Worth searching later for historical
+cartography of the area — 19th and early-20th century — which could independently corroborate
+the old boundary. Places to try: the **Archivo General de la Nación**, IGAC's historical map
+collection, the **Sociedad Geográfica de Colombia**, departmental archives in Medellín, and
+19th-century cadastral or notarial records for the original Hacienda El Guaico.

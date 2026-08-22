@@ -199,8 +199,15 @@ function draw(){
     // labels for named features (water infrastructure etc.), only when zoomed in enough
     if(view.s>3000) for(const f of L.features){
       if(!f.l) continue;
-      if(f.t!=='Point') continue;            // label points only; line labels were noise
-      const p0 = f.c;
+      let p0=null;
+      if(f.t==='Point') p0=f.c;
+      else if(f.kind!=='line' && (f.t==='Polygon'||f.t==='MultiPolygon')){
+        const ring = f.t==='Polygon'? f.c[0] : f.c[0][0];   // centroid of the outer ring
+        let sx=0, sy=0;
+        for(const c of ring){ sx+=c[0]; sy+=c[1]; }
+        p0=[sx/ring.length, sy/ring.length];
+      }
+      if(!p0) continue;
       const s0=toScreen(p0[0],p0[1]);
       cx.font='bold 13px system-ui'; cx.lineWidth=3.5;
       cx.strokeStyle='rgba(0,0,0,.8)'; cx.strokeText(f.l,s0[0]+9,s0[1]-7);
