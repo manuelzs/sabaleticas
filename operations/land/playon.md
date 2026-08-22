@@ -1,7 +1,24 @@
 # El playón — tierra que usamos y no contamos
 
-> **[owner, 2026-08-22] No sumar el playón al área de pastoreo.** Es casi todo piedra. Lo que
-> aporta es **acceso a agua** para lo que tiene al lado, no comida para el ganado.
+> **[owner, 2026-08-22] No sumar el playón al área de pastoreo.** No porque no dé nada —
+> **sí se pueden levantar unos pocos animales ahí, y hay gente que lo hace**— sino porque lo
+> que da no se parece en nada a una hectárea de potrero. Es **casi todo arena y piedra**, con
+> **algo de pasto por las orillas**; se sostiene a punta de jornal y con el río encima.
+
+## Lo que de verdad se puede hacer ahí
+
+**[owner, 2026-08-22]** Quien lo usa **mete los animales de día y vuelve por ellos todas las
+noches**. Manuel: *es una vaina jodida*. Y hay un riesgo que no tiene ningún potrero:
+
+- **El río puede crecer y llevarse los animales.** No es una pérdida de pasto, es una pérdida
+  de cabezas. Un potrero malo te da menos carne; éste te la puede quitar toda de una vez.
+- **No hay cerca que lo cierre** —no se puede cercar a través de un río—, así que la
+  contención es **una persona**, todos los días, ida y vuelta.
+
+Por eso 18,79 ha de playón **no son 18,79 ha de finca**, y sumarlas al denominador diría que
+la finca está menos cargada de lo que está. Lo que sí es cierto es que **no es cero**: si
+alguna vez se cuantifica, va como **renglón aparte** —cuántas cabezas, cuántos jornales,
+cuánto riesgo de creciente— y nunca dentro de la carga animal.
 
 ## Qué es
 
@@ -43,7 +60,7 @@ plano de 2007 es esto: por el lado del río la geometría de verdad cambió.
 
 | | |
 |---|---|
-| **Carga animal, ha de pastoreo, presupuesto de forraje** | **No cambian.** Piedra. Sumarlo inflaría el denominador de todas las cifras por hectárea y haría ver la finca menos cargada de lo que está |
+| **Carga animal, ha de pastoreo, presupuesto de forraje** | **No cambian.** Arena y piedra con pasto de orilla: da para unos pocos animales vigilados, no para una carga. Sumarlo inflaría el denominador de todas las cifras por hectárea y haría ver la finca menos cargada de lo que está |
 | **Agua** | **NO es fuente de agua de ningún potrero.** Ver abajo: en operación normal no hay acceso al río |
 | **Área del predio** | Sigue siendo **170,73 ha** catastrales. El playón no se suma |
 
@@ -72,6 +89,12 @@ regla que él mismo puso: *drain only se marca sin confirmar*.
 
 ## Abierto
 
-- Cuánto mide, y si vale la pena medirlo dado que se mueve.
+- **Ya está medido: 18,79 ha** (contorno marcado por Manuel el 2026-08-22, `playon.geojson`).
+  Pero se mueve, así que la cifra lleva fecha. Dos cosas la pueden bajar bastante: la **cuña**
+  de hasta 189 m frente al punto 14, y el **traslape con NAMUR y LOS BUHOS** —9 de los 33
+  puntos caen dentro de sus polígonos catastrales—. Si el playón debe parar donde empieza el
+  vecino, sobran hectáreas.
+- **Cuántas cabezas aguanta con vigilancia diaria, y cuánto vale esa vigilancia.** Es la
+  pregunta real: no *cuánto pasto hay* sino *cuánto jornal cuesta cobrarlo*.
 - Cuántos jornales costaría cuidar el ganado en el playón durante una sequía — es el número
   que decide si esta contingencia sirve de algo frente a arreglar el agua conducida.

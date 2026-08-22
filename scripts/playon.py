@@ -5,7 +5,13 @@ The playón is NOT a potrero and must never be one. It is government land — th
 between our cadastral lindero and the midpoint of the Río Poblanco — that we use and
 that both surveys draw. Filing it as an enclosure would put land we do not own into a
 layer that means "land we own", add it to the 169 ha and to the audit denominator, and
-inflate every per-hectare figure with what Manuel calls rock. So it lives here, alone,
+inflate every per-hectare figure with sand.
+
+Not with nothing, though: a few animals CAN be raised there and some people do it. The
+reason it stays out of the carrying capacity is not that it is barren, it is that it is
+paid for in labour — the animals go in by day and someone walks back for them every
+night — and that the river can rise and take them. A bad paddock gives less beef; this
+one can take the herd. So it lives here, alone,
 with its own area reported and summed into nothing.
 
 Its boundary is a photograph with a date, not a measurement: Manuel — the river moves
@@ -192,11 +198,12 @@ def main():
             "_id": "tierra:playon",
             "nombre": "Playón",
             "name": "Playón",
-            "sub2": f"{ha} ha · uso, no pastoreo",
+            "sub2": f"{ha} ha · pastoreo marginal, fuera de la carga",
             "tipo_tierra": "playon",
             "area_ha": ha,
             "propiedad": "Estado (cauce y playón del Río Poblanco)",
             "en_area_de_pastoreo": False,
+            "pastoreo_marginal": True,
             "en_area_del_predio": False,
             "marcado": FECHA,
             "estilo": "discontinuo",
