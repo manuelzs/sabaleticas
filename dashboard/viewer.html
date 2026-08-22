@@ -55,7 +55,7 @@
    text-transform:uppercase}
  /* DOM views (lists, tables) render here, over the canvases */
  #page{position:absolute;inset:0;overflow:auto;background:var(--bg);display:none;
-   padding:96px 26px 40px}
+   padding:104px 26px 40px}
  #page .inner{max-width:1080px;margin:0 auto}
  #page h2{font-size:17px;margin:0 0 4px}
  #page .lead{color:var(--muted);font-size:12px;margin:0 0 18px;max-width:70ch;line-height:1.6}
@@ -83,7 +83,7 @@
  .card.ghost .big{color:#4b5761;font-size:24px}
  .card .why{color:var(--muted);font-size:11.5px;line-height:1.55;margin-top:10px}
  .card .why ul{margin:5px 0 0 14px;padding:0}
- .sect{display:flex;align-items:baseline;gap:11px;margin:0 0 5px}
+ .sect{display:flex;align-items:baseline;gap:11px;margin:0 0 16px}
  .sect .n{color:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
  table{border-collapse:collapse;width:100%;font-size:12.5px}
  th{text-align:left;color:var(--muted);font-weight:500;font-size:10.5px;
@@ -1836,10 +1836,6 @@ function renderLecturas(){
   document.getElementById('pageInner').innerHTML=`
     <div class="sect"><h2>Lecturas</h2>
       <span class="n">${R.length} con dato · ${P.length} esperando</span></div>
-    <p class="lead">Entidad + magnitud + valor + fecha + <b>cómo se obtuvo</b>. Una anotación a
-      mano vale igual que una automática: cambia el <b>origen</b> y la frescura que cabe esperar,
-      no la lectura. Por eso esto funciona hoy, sin comprar nada — y por eso las tarjetas
-      apagadas de abajo se pueden llenar esta semana, sin hardware.</p>
     <div class="cards">${R.map(cardReading).join('')}${P.map(cardPending).join('')}</div>`;
 }
 
@@ -1848,9 +1844,6 @@ function renderFuentes(){
   const live=S.filter(f=>f.estado==='en_linea').length;
   document.getElementById('pageInner').innerHTML=`
     <div class="sect"><h2>Fuentes</h2><span class="n">${live} de ${S.length} en línea</span></div>
-    <p class="lead">De dónde vienen, o vendrán, las lecturas. Cada una se ancla a una
-      <b>entidad</b>, y por eso un valor puede dibujarse sobre el mapa y sobre el esquema sin
-      plomería adicional. La regla sigue siendo <b>arreglar primero, medir después</b>.</p>
     <div class="cards">${S.map(cardSource).join('')}</div>`;
 }
 </script></body></html>

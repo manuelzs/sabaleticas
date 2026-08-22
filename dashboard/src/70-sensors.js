@@ -102,10 +102,6 @@ function renderLecturas(){
   document.getElementById('pageInner').innerHTML=`
     <div class="sect"><h2>Lecturas</h2>
       <span class="n">${R.length} con dato · ${P.length} esperando</span></div>
-    <p class="lead">Entidad + magnitud + valor + fecha + <b>cómo se obtuvo</b>. Una anotación a
-      mano vale igual que una automática: cambia el <b>origen</b> y la frescura que cabe esperar,
-      no la lectura. Por eso esto funciona hoy, sin comprar nada — y por eso las tarjetas
-      apagadas de abajo se pueden llenar esta semana, sin hardware.</p>
     <div class="cards">${R.map(cardReading).join('')}${P.map(cardPending).join('')}</div>`;
 }
 
@@ -114,8 +110,5 @@ function renderFuentes(){
   const live=S.filter(f=>f.estado==='en_linea').length;
   document.getElementById('pageInner').innerHTML=`
     <div class="sect"><h2>Fuentes</h2><span class="n">${live} de ${S.length} en línea</span></div>
-    <p class="lead">De dónde vienen, o vendrán, las lecturas. Cada una se ancla a una
-      <b>entidad</b>, y por eso un valor puede dibujarse sobre el mapa y sobre el esquema sin
-      plomería adicional. La regla sigue siendo <b>arreglar primero, medir después</b>.</p>
     <div class="cards">${S.map(cardSource).join('')}</div>`;
 }
