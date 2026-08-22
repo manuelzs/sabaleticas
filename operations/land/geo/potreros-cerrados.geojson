@@ -2077,9 +2077,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 9",
+    "nombre": "La Mancha",
     "n": 9,
-    "nombrado": false,
+    "nombrado": true,
     "area_ha": 4.28,
     "area_m2": 42822,
     "agua": [
