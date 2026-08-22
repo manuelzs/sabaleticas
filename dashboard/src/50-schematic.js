@@ -263,7 +263,7 @@ function setPid(on){
 if(D.net && D.net.nodes && D.net.nodes.some(n=>n.pid)){
   const b=document.getElementById('btnPid');
   b.style.display='inline-block';
-  b.onclick=()=>setMode(isPid?'mapa':'esquema');
+  b.onclick=()=>navGo(isPid?'general':'agua', isPid?'mapa':'esquema');
   let pd=null;
   cvp.addEventListener('mousedown',e=>{pd={x:e.clientX,y:e.clientY,ox:pv.ox,oy:pv.oy};});
   addEventListener('mouseup',()=>{pd=null;});

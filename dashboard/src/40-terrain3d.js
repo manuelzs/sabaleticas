@@ -183,7 +183,7 @@ function set3d(on){
 }
 if(D.tex && D.mesh){
   const b=document.getElementById('btn3d'); b.style.display='inline-block';
-  b.onclick=()=>setMode(is3d?'mapa':'3d');
+  b.onclick=()=>navGo('general', is3d?'mapa':'3d');   // superseded by the nav; kept wired
   document.getElementById('exag').oninput=e=>{
     exag=parseFloat(e.target.value);
     document.getElementById('exagv').textContent=exag+'×'; saveView(); render3d();};

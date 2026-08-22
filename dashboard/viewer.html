@@ -1344,7 +1344,7 @@ function set3d(on){
 }
 if(D.tex && D.mesh){
   const b=document.getElementById('btn3d'); b.style.display='inline-block';
-  b.onclick=()=>setMode(is3d?'mapa':'3d');
+  b.onclick=()=>navGo('general', is3d?'mapa':'3d');   // superseded by the nav; kept wired
   document.getElementById('exag').oninput=e=>{
     exag=parseFloat(e.target.value);
     document.getElementById('exagv').textContent=exag+'×'; saveView(); render3d();};
@@ -1625,7 +1625,7 @@ function setPid(on){
 if(D.net && D.net.nodes && D.net.nodes.some(n=>n.pid)){
   const b=document.getElementById('btnPid');
   b.style.display='inline-block';
-  b.onclick=()=>setMode(isPid?'mapa':'esquema');
+  b.onclick=()=>navGo(isPid?'general':'agua', isPid?'mapa':'esquema');
   let pd=null;
   cvp.addEventListener('mousedown',e=>{pd={x:e.clientX,y:e.clientY,ox:pv.ox,oy:pv.oy};});
   addEventListener('mouseup',()=>{pd=null;});
@@ -1854,6 +1854,35 @@ function rowSource(f){
         <div class="v"><span class="pill" style="background:${col}22;color:${col}">${label}</span></div></div>
       ${spark(sourceLive(f))}
     </div>
+  </div>`;
+}
+
+/* Everything we have decided to measure but have not measured yet. Derived from the
+   sources — no placeholder rows in the series, because a reading with no value is not
+   a reading. These are slots, and they say plainly what would fill them. */
+function pendingSlots(){
+  const R=D.readings||{}, out=[];
+  for(const f of (D.sources&&D.sources.fuentes)||[]){
+    if(!f.entidad) continue;
+    for(const c of f.canales||[]){
+      const mag=c.magnitud;
+      if(R[f.entidad+'|'+mag]) continue;
+      if(out.some(o=>o.entidad===f.entidad && o.magnitud===mag)) continue;
+      out.push({entidad:f.entidad, magnitud:mag, unidad:c.unidad||'',
+                fuente:f.nombre, estado:f.estado});
+    }
+  }
+  return out;
+}
+function cardPending(p){
+  const n=(D.net&&D.net.nodes||[]).find(n=>n.id===p.entidad);
+  const lit=n&&n.capacidad_l ? n.capacidad_l.toLocaleString('es-CO')+' L' : '';
+  return `<div class="card ghost" style="--acc:#78909c">
+    <div class="top"><span class="dot"></span>esperando primera lectura</div>
+    <div class="big">—<small>${p.unidad}</small></div>
+    <div class="mag">${p.magnitud}</div>
+    <div class="ent">${entityName(p.entidad)}</div>
+    <div class="meta">${lit?lit+' · ':''}${p.fuente}</div>
   </div>`;
 }
 

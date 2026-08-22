@@ -14,6 +14,7 @@ into a texture (cross-origin), so a downscaled copy ships inside the HTML.
 """
 import base64
 import json
+import sys
 from pathlib import Path
 
 from . import network
@@ -299,6 +300,14 @@ def build(root: Path) -> Path:
     src = sorted((dash / "src").glob("*.js"))
     if not src:
         raise SystemExit(f"error: no sources in {dash / 'src'}")
+    # There is no bundler and no type checker, so a function removed by a careless
+    # block-replace fails only at runtime. Warn at build time instead.
+    try:
+        sys.path.insert(0, str(root / "scripts"))
+        import check_js
+        check_js.main(quiet=True)
+    except Exception:
+        pass
     js = "".join(f.read_text(encoding="utf-8") for f in src)
 
     out = dash / "viewer.html"

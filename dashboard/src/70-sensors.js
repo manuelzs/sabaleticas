@@ -103,6 +103,35 @@ function rowSource(f){
   </div>`;
 }
 
+/* Everything we have decided to measure but have not measured yet. Derived from the
+   sources — no placeholder rows in the series, because a reading with no value is not
+   a reading. These are slots, and they say plainly what would fill them. */
+function pendingSlots(){
+  const R=D.readings||{}, out=[];
+  for(const f of (D.sources&&D.sources.fuentes)||[]){
+    if(!f.entidad) continue;
+    for(const c of f.canales||[]){
+      const mag=c.magnitud;
+      if(R[f.entidad+'|'+mag]) continue;
+      if(out.some(o=>o.entidad===f.entidad && o.magnitud===mag)) continue;
+      out.push({entidad:f.entidad, magnitud:mag, unidad:c.unidad||'',
+                fuente:f.nombre, estado:f.estado});
+    }
+  }
+  return out;
+}
+function cardPending(p){
+  const n=(D.net&&D.net.nodes||[]).find(n=>n.id===p.entidad);
+  const lit=n&&n.capacidad_l ? n.capacidad_l.toLocaleString('es-CO')+' L' : '';
+  return `<div class="card ghost" style="--acc:#78909c">
+    <div class="top"><span class="dot"></span>esperando primera lectura</div>
+    <div class="big">—<small>${p.unidad}</small></div>
+    <div class="mag">${p.magnitud}</div>
+    <div class="ent">${entityName(p.entidad)}</div>
+    <div class="meta">${lit?lit+' · ':''}${p.fuente}</div>
+  </div>`;
+}
+
 function renderLecturas(){
   const R=Object.values(D.readings||{});
   const P=pendingSlots();
