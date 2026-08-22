@@ -67,6 +67,17 @@ Most of the open questions are one conversation.
 - **Locate the two bocatomas** — off-property, east, still unmapped
 - **Read the concesión: the caudal in L/s.** The legal ceiling on supply
 
+## 4b · Re-pull the V5 guides *with the head count* — one task, large payoff
+
+`[derived, 2026-08-22]` All 3 **V6** guides carry a head count; only 3 of 82 **V5** guides do.
+That is our export dropping the field, **not SINIGAN failing to record it**.
+
+It matters because a known count plus a complete movement ledger reconstructs the herd
+backwards through time. From 266 at 2026-05-21 the six counted guides already give
+**303 in February → 259 after 25 May**. Re-pull the V5 guides with the field and **17 months of
+herd history** open up — turnover, days-on-farm, and what the herd was when each cost was
+incurred. See [`herd/movements.md`](herd/movements.md).
+
 ## 5 · Potreros — the biggest unblock in the project
 
 > Grass, cattle location, rest periods, kg per hectare — **every one of them waits on this.**

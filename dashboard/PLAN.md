@@ -23,6 +23,11 @@
 | **Freshness model** — values expire and views stop asserting them | ✅ |
 | **Ganado tab** — hato and movimientos, from real SINIGAN and GSMI data | ✅ |
 | `check_js.py` — catches identifiers called but never declared, on every build | ✅ |
+| **Avisos drawer** — rules over data, not prose; 9 findings fire today | ✅ |
+| **`general/estado`** — compound indicators, each taking its worst input's confidence | ✅ |
+| **Herd reconstructed over time** — anchor count + movement ledger, drawn as a step | ✅ |
+| **Event strip** for guides — no binning, gaps visible as gaps | ✅ |
+| Charts are **hand-written SVG generated from data** — no library, no build step | ✅ |
 
 ## Open
 
@@ -95,6 +100,16 @@ The cursor reports slope already. Missing: the coloured surface in 2D and on the
 ### 6 · Potrero polygons
 The data work is in [`../PLAN.md`](../PLAN.md); the app side is a layer plus, eventually,
 per-potrero attributes. **This is what unblocks Ganado.**
+
+### 6b · Charts — when a library would earn its place
+All charts are inline SVG emitted from the data (`trendMark`, `eventStrip`, `herdChart`,
+`barRow` — under 150 lines total). No library, because the page must open from `file://` with
+no build step, and because the honesty behaviours are the point: a strip that **refuses to bin**,
+a step line that **stops rather than interpolating**, a sparkline that says *"1 medición"*
+instead of drawing a flat line. Those fight a generic library's defaults.
+
+**Revisit if** we want interactive zoom, crosshairs or linked brushing on long series. `uPlot`
+would be the candidate — small and canvas-based — but it needs vendoring.
 
 ### 7 · Deferred on purpose
 Tables/CRUD · charts · per-view state persistence beyond the hash · anything for Ganado
