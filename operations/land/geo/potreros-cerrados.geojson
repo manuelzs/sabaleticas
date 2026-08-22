@@ -959,10 +959,13 @@
     "nombre": "Potrero 3",
     "n": 3,
     "nombrado": false,
-    "estado": null,
-    "estado_nota": "",
-    "subdivide_en": [],
-    "subdivide_nota": "",
+    "estado": "por_subdividir",
+    "estado_nota": "Manuel: son dos, Altamira al oriente y San Sebastián al occidente; la línea la verifica en campo",
+    "subdivide_en": [
+     "Altamira",
+     "San Sebastián"
+    ],
+    "subdivide_nota": "La LÍNEA está por definir y Manuel la verificará en el terreno. El candidato es el drenaje 34 (tramos 5–9), que corre justo entre las dos etiquetas de 2007: se llegó a dictar y se retiró porque sus dos puntas quedaban a 57 m de cualquier cosa conocida — sin un solo extremo confirmado que la anclara, era la palabra del cauce y nada más.",
     "area_ha": 7.75,
     "area_m2": 77479,
     "agua": [

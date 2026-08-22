@@ -303,6 +303,15 @@
    "estado": "por_subdividir",
    "nota": "es el lote entero; adentro hay varios potreros que Manuel dará después. El IGAC no tiene ninguna cerca dibujada aquí, así que las divisiones habrá que digitalizarlas o dictarlas.",
    "fuente": "[owner, 2026-08-22] Manuel lo marcó como «por_subdividir» sobre el El Guaico de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.60688,
+    5.799196
+   ],
+   "estado": "por_subdividir",
+   "nota": "Manuel: son dos, Altamira al oriente y San Sebastián al occidente; la línea la verifica en campo",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «por_subdividir» sobre el Potrero 3 de la corrida del 2026-08-22."
   }
  ]
 }
