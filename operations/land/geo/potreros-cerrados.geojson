@@ -2575,10 +2575,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 11",
+    "nombre": "Mozambique",
     "n": 11,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "area_ha": 4.36,
     "area_m2": 43609,
