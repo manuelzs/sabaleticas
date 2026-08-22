@@ -219,16 +219,22 @@ def _collect(geo: Path, TIPOS):
             if not g.get("coordinates"):
                 continue
             props = f.get("properties") or {}
+            item_sub2, item_mal = None, False
             label = props.get("name") or props.get("DIRECCION") or ""
             if props.get("tipo") == "potrero" and props.get("area_ha"):
                 # Manuel: nothing special on the ones he has confirmed, a marker on the
                 # ones he has not. So a clean map is a finished map, and "not audited yet"
                 # looks the same as "audited and wrong" — both still need him.
                 est = props.get("estado")
-                marca = "" if est == "final" else " ?"
-                label = f"{props.get('nombre','')}{marca} · {props['area_ha']} ha"
+                label = props.get("nombre", "")
+                if est != "final":
+                    label += " ?"
+                # The area rides in the quiet third line, like the neighbours' — it is
+                # reference, not headline. Bold yellow made every paddock shout its size.
+                sub2 = f"{props['area_ha']} ha"
                 if est and est != "final":
-                    label += f" · {est.replace('_', ' ')}"
+                    sub2 += f" · {est.replace('_', ' ')}"
+                item_sub2, item_mal = sub2, est != "final"
             if props.get("lado") and props.get("area_ha"):      # neighbours: name / owner / side+area
                 who = (owners.get(props.get("matricula") or "", {}) or {}).get("owner", "")
                 label = (f"{props['name']} · {who}"
@@ -238,6 +244,10 @@ def _collect(geo: Path, TIPOS):
                 label = f"{props['elev']} m"
             item = {"t": g["type"], "c": _round_geom(_thin(g["coordinates"])),
                     "l": str(label)[:120], "kind": kind}
+            if item_sub2 is not None:
+                item["sub2"] = item_sub2
+                if item_mal:
+                    item["mal"] = 1        # unconfirmed: the NAME is coloured, not just marked
             for k, dst in (("sin_agua", "sinAgua"), ("agua_por_confirmar", "soloNatural"),
                            ("area_ha", "areaHa")):
                 if props.get(k) is not None:

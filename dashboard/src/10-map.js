@@ -243,13 +243,16 @@ function draw(){
       if(isPoly){
         // Neighbour parcels: large centred label, name on top, detail beneath.
         const parts=f.l.split(' · ');
-        const name=parts[0];                       // predio
-        const sub=parts[1]||'';                    // propietario
-        const sub2=parts.slice(2).join(' · ');     // lado + área
+        const name=parts[0];                       // predio / potrero
+        // A feature carrying its own sub2 (potreros) keeps the middle line empty: its
+        // area belongs in the quiet third line, not shouting in bold yellow.
+        const sub=f.sub2!==undefined ? '' : (parts[1]||'');          // propietario
+        const sub2=f.sub2!==undefined ? f.sub2 : parts.slice(2).join(' · ');
         cx.textAlign='center';
         cx.font='bold 19px system-ui'; cx.lineWidth=5;
         cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(name,s0[0],s0[1]);
-        cx.fillStyle='#ffffff'; cx.fillText(name,s0[0],s0[1]);
+        // Unconfirmed enclosures colour the NAME. The '?' alone was too easy to miss.
+        cx.fillStyle= f.mal ? '#ffa726' : '#ffffff'; cx.fillText(name,s0[0],s0[1]);
         let dy=0;
         if(sub){                                   // owner line only when we know it
           dy=18;
