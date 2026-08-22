@@ -2435,9 +2435,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 13",
+    "nombre": "Ciruelo",
     "n": 13,
-    "nombrado": false,
+    "nombrado": true,
     "area_ha": 2.39,
     "area_m2": 23934,
     "agua": [
