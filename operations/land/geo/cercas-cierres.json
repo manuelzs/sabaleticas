@@ -221,6 +221,24 @@
    "@extend",
    "se prolonga al noroeste en su misma dirección hasta cortar el lindero",
    true
+  ],
+  [
+   25,
+   [
+    -75.612183,
+    5.798967
+   ],
+   "se prolonga al sur en su misma dirección (rumbo 161,8°) hasta cruzar con la prolongación al este de la cerca 28–29",
+   true
+  ],
+  [
+   28,
+   [
+    -75.612183,
+    5.798967
+   ],
+   "la cerca 28–29 se prolonga al este en su misma dirección (rumbo 86,6°) hasta cruzar con la que baja del extremo 25",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

@@ -720,6 +720,54 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 25–punto",
+    "longitud_m": 74,
+    "motivo": "se prolonga al sur en su misma dirección (rumbo 161,8°) hasta cruzar con la prolongación al este de la cerca 28–29",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612391,
+      5.799602
+     ],
+     [
+      -75.612183,
+      5.798967
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 28–punto",
+    "longitud_m": 76,
+    "motivo": "la cerca 28–29 se prolonga al este en su misma dirección (rumbo 86,6°) hasta cruzar con la que baja del extremo 25",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612872,
+      5.798926
+     ],
+     [
+      -75.612183,
+      5.798967
+     ]
+    ]
+   }
   }
  ]
 }

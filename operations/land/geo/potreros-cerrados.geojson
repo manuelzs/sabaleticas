@@ -1094,8 +1094,8 @@
     "nombrado": false,
     "estado": null,
     "estado_nota": "",
-    "area_ha": 15.06,
-    "area_m2": 150649,
+    "area_ha": 12.98,
+    "area_m2": 129787,
     "agua": [
      {
       "id": "agua:beb-3",
@@ -1219,36 +1219,8 @@
        5.799602
       ],
       [
-       -75.612627,
-       5.800322
-      ],
-      [
-       -75.612674,
-       5.800419
-      ],
-      [
-       -75.612845,
-       5.800974
-      ],
-      [
-       -75.613338,
-       5.800936
-      ],
-      [
-       -75.613868,
-       5.80062
-      ],
-      [
-       -75.613749,
-       5.800226
-      ],
-      [
-       -75.613255,
-       5.799801
-      ],
-      [
-       -75.612834,
-       5.799213
+       -75.612183,
+       5.798967
       ],
       [
        -75.612872,
@@ -3692,6 +3664,82 @@
     "nombre": "Potrero 23",
     "n": 23,
     "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
+    "area_ha": 2.09,
+    "area_m2": 20861,
+    "agua": [],
+    "sal": [],
+    "sin_agua": true,
+    "solo_natural": false,
+    "agua_por_confirmar": true,
+    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.612391,
+       5.799602
+      ],
+      [
+       -75.612627,
+       5.800322
+      ],
+      [
+       -75.612674,
+       5.800419
+      ],
+      [
+       -75.612845,
+       5.800974
+      ],
+      [
+       -75.613338,
+       5.800936
+      ],
+      [
+       -75.613868,
+       5.80062
+      ],
+      [
+       -75.613749,
+       5.800226
+      ],
+      [
+       -75.613255,
+       5.799801
+      ],
+      [
+       -75.612834,
+       5.799213
+      ],
+      [
+       -75.612872,
+       5.798926
+      ],
+      [
+       -75.612183,
+       5.798967
+      ],
+      [
+       -75.612391,
+       5.799602
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 24",
+    "n": 24,
+    "nombrado": false,
     "estado": "final",
     "estado_nota": "",
     "area_ha": 1.96,
@@ -3810,8 +3858,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 24",
-    "n": 24,
+    "nombre": "Potrero 25",
+    "n": 25,
     "nombrado": false,
     "estado": "final",
     "estado_nota": "",
