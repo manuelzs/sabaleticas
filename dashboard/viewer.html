@@ -282,7 +282,8 @@
   <div id="rcurw" style="display:none"><b>curva</b> <span id="rcur">—</span></div>
   <div><b>pendiente</b> <span id="rslp">—</span></div>
   <div style="margin-top:5px;opacity:.75;font-size:11px">
-    <b>C</b> captura el punto · <b><span id="rcapn">0</span></b> capturados · <b>X</b> borra</div>
+    <b>C</b> captura el punto · <b><span id="rcapn">0</span></b> capturados · <b>X</b> borra
+    · <a href="#" id="btnCapCopy" style="color:#4fc3f7">copiar</a></div>
 </div>
 
 <div id="compass">
@@ -487,6 +488,22 @@ addEventListener('keydown',e=>{
   if(k==='c' && lastG){ captured.push(Object.assign({n:captured.length+1},lastG)); capSave(); }
   else if(k==='x'){ captured=[]; capSave(); }
   else if(k==='a'){ setEdgeMode(!edgeMode); }
+});
+
+/* The capture panel had no way out: the points lived in localStorage and the only
+   reader was the browser extension, which is not always connected. The edge picker
+   already copies its picks to the clipboard; captures now do the same, so a batch can
+   be pasted into the conversation and fed straight to scripts/playon.py. */
+function capCopy(){
+  const t=JSON.stringify(captured.map(p=>[+p.lon.toFixed(6),+p.lat.toFixed(6)]));
+  const el=document.getElementById('btnCapCopy');
+  navigator.clipboard.writeText(t).then(()=>{
+    if(el){ el.textContent='✓ '+captured.length; setTimeout(()=>el.textContent='copiar',1200); }
+  }).catch(()=>{ if(el) el.textContent='falló'; });
+}
+addEventListener('DOMContentLoaded',()=>{
+  const el=document.getElementById('btnCapCopy');
+  if(el) el.onclick=e=>{ e.preventDefault(); capCopy(); };
 });
 
 /* Live readings on the map. A reading carries its AGE as prominently as its value —

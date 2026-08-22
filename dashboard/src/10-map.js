@@ -80,6 +80,22 @@ addEventListener('keydown',e=>{
   else if(k==='a'){ setEdgeMode(!edgeMode); }
 });
 
+/* The capture panel had no way out: the points lived in localStorage and the only
+   reader was the browser extension, which is not always connected. The edge picker
+   already copies its picks to the clipboard; captures now do the same, so a batch can
+   be pasted into the conversation and fed straight to scripts/playon.py. */
+function capCopy(){
+  const t=JSON.stringify(captured.map(p=>[+p.lon.toFixed(6),+p.lat.toFixed(6)]));
+  const el=document.getElementById('btnCapCopy');
+  navigator.clipboard.writeText(t).then(()=>{
+    if(el){ el.textContent='✓ '+captured.length; setTimeout(()=>el.textContent='copiar',1200); }
+  }).catch(()=>{ if(el) el.textContent='falló'; });
+}
+addEventListener('DOMContentLoaded',()=>{
+  const el=document.getElementById('btnCapCopy');
+  if(el) el.onclick=e=>{ e.preventDefault(); capCopy(); };
+});
+
 /* Live readings on the map. A reading carries its AGE as prominently as its value —
    a manual note from three weeks ago should not look like a fresh one, and the colour
    of the dot says which it is. Same data the schematic and the Sensores list use. */
