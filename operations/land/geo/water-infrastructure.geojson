@@ -812,6 +812,116 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "bebedero",
+    "nombre": "Bebedero 5",
+    "n": 5,
+    "altura_m": 714,
+    "fuente": "[owner, 2026-08-21] Bebedero actual, ubicado por Manuel en la ortofoto.",
+    "confianza": "posición: ALTA (ortofoto) · conexión: DESCONOCIDA",
+    "alimentado_por": "[pendiente] Sin conexión conocida con la línea principal.",
+    "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.612802,
+     5.803313
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "bebedero",
+    "nombre": "Bebedero 6",
+    "n": 6,
+    "altura_m": 678,
+    "fuente": "[owner, 2026-08-21] Bebedero actual, ubicado por Manuel en la ortofoto.",
+    "confianza": "posición: ALTA (ortofoto) · conexión: DESCONOCIDA",
+    "alimentado_por": "[owner] En serie: 5 → 6 → 7.",
+    "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.614336,
+     5.804734
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "bebedero",
+    "nombre": "Bebedero 7",
+    "n": 7,
+    "altura_m": 675,
+    "fuente": "[owner, 2026-08-21] Bebedero actual, ubicado por Manuel en la ortofoto.",
+    "confianza": "posición: ALTA (ortofoto) · conexión: DESCONOCIDA",
+    "alimentado_por": "[owner] En serie: 5 → 6 → 7.",
+    "nombre_definitivo": "[pendiente] Nombre real cuando lleguen los nombres de los potreros."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.614034,
+     5.803918
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Bebedero 5 → 6 (trazado esquemático)",
+    "longitud_m": 231,
+    "desnivel_m": 36,
+    "gradiente_pct": 15.6,
+    "fuente": "[owner, 2026-08-21] Conexión confirmada por Manuel. Extremos confirmados en ortofoto; el trazado entre ellos es recto y esquemático.",
+    "confianza": "conexión: ALTA · extremos: ALTA · trazado: esquemático"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612802,
+      5.803313
+     ],
+     [
+      -75.614336,
+      5.804734
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Bebedero 6 → 7 (trazado esquemático)",
+    "longitud_m": 96,
+    "desnivel_m": 3,
+    "gradiente_pct": 3.1,
+    "fuente": "[owner, 2026-08-21] Conexión confirmada por Manuel. Extremos confirmados en ortofoto; el trazado entre ellos es recto y esquemático.",
+    "confianza": "conexión: ALTA · extremos: ALTA · trazado: esquemático"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614336,
+      5.804734
+     ],
+     [
+      -75.614034,
+      5.803918
+     ]
+    ]
+   }
   }
  ]
 }
