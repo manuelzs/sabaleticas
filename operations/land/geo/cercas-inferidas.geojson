@@ -322,6 +322,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 26,
+    "fuente": "[owner] cerca real entre un vértice de la represa y un vértice del lindero — la represa y el lindero hacen de bordes del potrero",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.605179,
+      5.795883
+     ],
+     [
+      -75.605306,
+      5.795682
+     ]
+    ]
+   }
   }
  ]
 }

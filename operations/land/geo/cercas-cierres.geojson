@@ -576,6 +576,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 26,
+    "motivo": "cerca real entre un vértice de la represa y un vértice del lindero — la represa y el lindero hacen de bordes del potrero",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.605179,
+      5.795883
+     ],
+     [
+      -75.605306,
+      5.795682
+     ]
+    ]
+   }
   }
  ]
 }

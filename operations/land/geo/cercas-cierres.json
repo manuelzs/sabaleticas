@@ -170,6 +170,18 @@
    ],
    "cerca real hasta un vértice de la represa — la represa hace de lindero del potrero",
    true
+  ],
+  [
+   [
+    -75.6051794,
+    5.7958831
+   ],
+   [
+    -75.60530577566549,
+    5.795682259227608
+   ],
+   "cerca real entre un vértice de la represa y un vértice del lindero — la represa y el lindero hacen de bordes del potrero",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

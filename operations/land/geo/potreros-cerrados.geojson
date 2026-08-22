@@ -1667,6 +1667,313 @@
     "nombre": "Potrero 4",
     "n": 4,
     "nombrado": false,
+    "area_ha": 12.74,
+    "area_m2": 127439,
+    "agua": [
+     {
+      "id": "agua:beb-2",
+      "nombre": "Bebedero 2",
+      "tipo": "bebedero",
+      "confianza": "alta"
+     },
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": false,
+    "agua_por_confirmar": false,
+    "agua_nota": "",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.603528,
+       5.794829
+      ],
+      [
+       -75.603373,
+       5.7952
+      ],
+      [
+       -75.603232,
+       5.79582
+      ],
+      [
+       -75.603222,
+       5.795868
+      ],
+      [
+       -75.603197,
+       5.795954
+      ],
+      [
+       -75.603134,
+       5.796227
+      ],
+      [
+       -75.603321,
+       5.796402
+      ],
+      [
+       -75.603094,
+       5.796656
+      ],
+      [
+       -75.603503,
+       5.797054
+      ],
+      [
+       -75.604597,
+       5.798101
+      ],
+      [
+       -75.604856,
+       5.798354
+      ],
+      [
+       -75.605223,
+       5.798713
+      ],
+      [
+       -75.605572,
+       5.799054
+      ],
+      [
+       -75.607173,
+       5.800553
+      ],
+      [
+       -75.607197,
+       5.800576
+      ],
+      [
+       -75.607405,
+       5.80078
+      ],
+      [
+       -75.608043,
+       5.801403
+      ],
+      [
+       -75.608444,
+       5.800733
+      ],
+      [
+       -75.608498,
+       5.800636
+      ],
+      [
+       -75.608978,
+       5.799957
+      ],
+      [
+       -75.60911,
+       5.79977
+      ],
+      [
+       -75.608776,
+       5.799699
+      ],
+      [
+       -75.608265,
+       5.799467
+      ],
+      [
+       -75.607908,
+       5.799305
+      ],
+      [
+       -75.607649,
+       5.799182
+      ],
+      [
+       -75.6073,
+       5.799015
+      ],
+      [
+       -75.606905,
+       5.798667
+      ],
+      [
+       -75.606078,
+       5.798004
+      ],
+      [
+       -75.606042,
+       5.797939
+      ],
+      [
+       -75.605119,
+       5.797174
+      ],
+      [
+       -75.605116,
+       5.79708
+      ],
+      [
+       -75.605063,
+       5.797037
+      ],
+      [
+       -75.605029,
+       5.797018
+      ],
+      [
+       -75.605007,
+       5.796985
+      ],
+      [
+       -75.605008,
+       5.796951
+      ],
+      [
+       -75.605037,
+       5.796849
+      ],
+      [
+       -75.60503,
+       5.796812
+      ],
+      [
+       -75.605009,
+       5.796778
+      ],
+      [
+       -75.604996,
+       5.796742
+      ],
+      [
+       -75.60498,
+       5.796712
+      ],
+      [
+       -75.604963,
+       5.796677
+      ],
+      [
+       -75.604944,
+       5.796635
+      ],
+      [
+       -75.604951,
+       5.796573
+      ],
+      [
+       -75.604972,
+       5.796543
+      ],
+      [
+       -75.604988,
+       5.796517
+      ],
+      [
+       -75.604991,
+       5.796475
+      ],
+      [
+       -75.604987,
+       5.796456
+      ],
+      [
+       -75.604979,
+       5.796429
+      ],
+      [
+       -75.604962,
+       5.796387
+      ],
+      [
+       -75.604938,
+       5.796338
+      ],
+      [
+       -75.604912,
+       5.796299
+      ],
+      [
+       -75.604894,
+       5.796267
+      ],
+      [
+       -75.604895,
+       5.796245
+      ],
+      [
+       -75.604921,
+       5.79616
+      ],
+      [
+       -75.604965,
+       5.796109
+      ],
+      [
+       -75.60499,
+       5.796073
+      ],
+      [
+       -75.605009,
+       5.796032
+      ],
+      [
+       -75.605025,
+       5.795975
+      ],
+      [
+       -75.605036,
+       5.795939
+      ],
+      [
+       -75.605055,
+       5.795912
+      ],
+      [
+       -75.605179,
+       5.795883
+      ],
+      [
+       -75.605306,
+       5.795682
+      ],
+      [
+       -75.605232,
+       5.795645
+      ],
+      [
+       -75.604843,
+       5.795448
+      ],
+      [
+       -75.604394,
+       5.79522
+      ],
+      [
+       -75.60358,
+       5.794853
+      ],
+      [
+       -75.603528,
+       5.794829
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 5",
+    "n": 5,
+    "nombrado": false,
     "area_ha": 5.71,
     "area_m2": 57143,
     "agua": [
@@ -1757,8 +2064,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 5",
-    "n": 5,
+    "nombre": "Potrero 6",
+    "n": 6,
     "nombrado": false,
     "area_ha": 5.12,
     "area_m2": 51161,
@@ -1845,7 +2152,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Portugal",
-    "n": 6,
+    "n": 7,
     "nombrado": true,
     "area_ha": 4.49,
     "area_m2": 44912,
@@ -1927,8 +2234,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 7",
-    "n": 7,
+    "nombre": "Potrero 8",
+    "n": 8,
     "nombrado": false,
     "area_ha": 4.44,
     "area_m2": 44364,
@@ -2004,8 +2311,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 8",
-    "n": 8,
+    "nombre": "Potrero 9",
+    "n": 9,
     "nombrado": false,
     "area_ha": 4.36,
     "area_m2": 43609,
@@ -2078,7 +2385,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "La Mancha",
-    "n": 9,
+    "n": 10,
     "nombrado": true,
     "area_ha": 4.28,
     "area_m2": 42822,
@@ -2169,7 +2476,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Serengueti",
-    "n": 10,
+    "n": 11,
     "nombrado": true,
     "area_ha": 3.76,
     "area_m2": 37593,
@@ -2248,7 +2555,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Balkanes",
-    "n": 11,
+    "n": 12,
     "nombrado": true,
     "area_ha": 3.62,
     "area_m2": 36247,
@@ -2340,8 +2647,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 12",
-    "n": 12,
+    "nombre": "Potrero 13",
+    "n": 13,
     "nombrado": false,
     "area_ha": 3.23,
     "area_m2": 32318,
@@ -2429,7 +2736,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Lajas",
-    "n": 13,
+    "n": 14,
     "nombrado": true,
     "area_ha": 3.21,
     "area_m2": 32092,
@@ -2521,7 +2828,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Paraíso",
-    "n": 14,
+    "n": 15,
     "nombrado": true,
     "area_ha": 3.11,
     "area_m2": 31102,
@@ -2606,7 +2913,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Ciruelo",
-    "n": 15,
+    "n": 16,
     "nombrado": true,
     "area_ha": 2.39,
     "area_m2": 23935,
@@ -2690,8 +2997,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 16",
-    "n": 16,
+    "nombre": "Potrero 17",
+    "n": 17,
     "nombrado": false,
     "area_ha": 1.82,
     "area_m2": 18233,
