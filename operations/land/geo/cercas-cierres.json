@@ -143,6 +143,30 @@
    ],
    "cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice",
    true
+  ],
+  [
+   [
+    -75.608778,
+    5.7997
+   ],
+   [
+    -75.60904,
+    5.797978
+   ],
+   "lado oriente del potrero rectangular que marcó Manuel",
+   true
+  ],
+  [
+   [
+    -75.60904,
+    5.797978
+   ],
+   [
+    -75.610991,
+    5.798738
+   ],
+   "lado sur del potrero rectangular que marcó Manuel",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

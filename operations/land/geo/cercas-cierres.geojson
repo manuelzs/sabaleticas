@@ -307,7 +307,7 @@
       5.800313
      ],
      [
-      -75.610992,
+      -75.610991,
       5.798738
      ]
     ]
@@ -501,6 +501,54 @@
      [
       -75.610425,
       5.800051
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 193,
+    "motivo": "lado oriente del potrero rectangular que marcó Manuel",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608776,
+      5.799699
+     ],
+     [
+      -75.60904,
+      5.797977
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 232,
+    "motivo": "lado sur del potrero rectangular que marcó Manuel",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.60904,
+      5.797977
+     ],
+     [
+      -75.610991,
+      5.798738
      ]
     ]
    }
