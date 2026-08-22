@@ -2095,10 +2095,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 9",
+    "nombre": "Manantial",
     "n": 9,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "area_ha": 4.46,
     "area_m2": 44609,
