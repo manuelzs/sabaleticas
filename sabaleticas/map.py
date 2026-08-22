@@ -137,11 +137,12 @@ def _collect(geo: Path):
             if props.get("lado") and props.get("area_ha"):      # neighbours: name / owner / side+area
                 who = (owners.get(props.get("matricula") or "", {}) or {}).get("owner", "")
                 label = (f"{props['name']} · {who}"
-                         f" · {props['lado']} · {props['area_ha']} ha")
+                         f" · {props['lado']} · {props['area_ha']} ha"
+                         f" · {props.get('municipio','')}")
             if not label and props.get("elev"):
                 label = f"{props['elev']} m"
             item = {"t": g["type"], "c": _round_geom(_thin(g["coordinates"])),
-                    "l": str(label)[:60], "kind": kind}
+                    "l": str(label)[:120], "kind": kind}
             tipo = props.get("tipo")
             if tipo in TIPO_COLOUR:
                 item["col"] = TIPO_COLOUR[tipo]

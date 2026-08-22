@@ -9,7 +9,7 @@
  canvas{position:absolute;inset:0;cursor:crosshair;display:block}
  .panel{position:absolute;background:var(--panel);border:1px solid var(--line);
    border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.45)}
- #side{top:12px;left:12px;width:232px;padding:12px 14px}
+ #side{top:12px;left:12px;width:238px;padding:13px 15px}
  #side h1{margin:0 0 2px;font-size:14px;letter-spacing:.2px}
  #side .sub{color:var(--muted);font-size:11px;margin-bottom:10px}
  label{display:flex;align-items:center;gap:8px;padding:3px 0;cursor:pointer}
@@ -17,12 +17,16 @@
  .sw{width:14px;height:4px;border-radius:2px;flex:none}
  #read{bottom:12px;left:12px;padding:9px 12px;font-variant-numeric:tabular-nums;min-width:232px}
  #read b{color:var(--muted);font-weight:500}
- #tools{top:12px;right:12px;padding:10px 12px;width:222px}
+ #tools{top:12px;right:12px;padding:12px 14px;width:238px}
  button{background:#263039;color:var(--ink);border:1px solid var(--line);
-   border-radius:7px;padding:5px 9px;font:inherit;cursor:pointer}
+   border-radius:7px;padding:6px 12px;font:inherit;cursor:pointer;
+   line-height:1.15;white-space:nowrap}
  button:hover{background:#2f3b46}
+ button:active{transform:translateY(1px)}
+ .btnrow{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+ .btnrow button{flex:0 0 auto}
  button.on{background:#0b5c72;border-color:#0e7f9c}
- #mout{margin-top:8px;color:var(--muted);font-size:12px;line-height:1.5}
+ #mout{margin-top:10px;color:var(--muted);font-size:12px;line-height:1.55}
  #mout .big{color:var(--ink);font-size:13px}
  .hint{color:var(--muted);font-size:11px;margin-top:6px}
  #scale{position:absolute;bottom:14px;right:14px;text-align:center;color:#fff;
@@ -35,6 +39,12 @@
 <div class="panel" id="side">
   <h1>Hacienda Sabaleticas</h1>
   <div class="sub">151.85 ha · La Pintada, Antioquia</div>
+  <div style="color:var(--muted);font-size:11px;margin:2px 0 3px;letter-spacing:.4px">FONDOS</div>
+  <label style="gap:8px"><input type="checkbox" id="baseOn" checked>
+    <span class="sw" style="background:#78909c"></span>Foto aérea</label>
+  <input id="baseOp" type="range" min="10" max="100" value="100"
+         style="width:calc(100% - 22px);margin:2px 0 6px 22px">
+  <div style="color:var(--muted);font-size:11px;margin:8px 0 3px;letter-spacing:.4px">CAPAS</div>
   <div id="layers"></div>
   <hr style="border:0;border-top:1px solid var(--line);margin:9px 0">
   <label style="gap:8px"><input type="checkbox" id="planoOn">
@@ -42,14 +52,14 @@
   <div id="planoBox" style="display:none;margin-top:6px">
     <label style="gap:6px"><span style="color:var(--muted);font-size:11px;width:52px">opacidad</span>
       <input id="planoOp" type="range" min="10" max="100" value="65" style="flex:1"></label>
-    <div style="display:flex;gap:5px;margin-top:6px;flex-wrap:wrap">
-      <button id="planoAlign" style="padding:4px 7px">Alinear</button>
-      <button id="planoRotL" style="padding:4px 7px">⟲</button>
-      <button id="planoRotR" style="padding:4px 7px">⟳</button>
-      <button id="planoCal" style="padding:4px 7px">Calibrar 2 pts</button>
-      <button id="planoMulti" style="padding:4px 7px">Puntos (N)</button>
-      <button id="planoUndo" style="padding:4px 7px">Deshacer par</button>
-      <button id="planoReset" style="padding:4px 7px">Reset</button>
+    <div class="btnrow" style="margin-top:7px">
+      <button id="planoAlign">Alinear</button>
+      <button id="planoRotL">⟲</button>
+      <button id="planoRotR">⟳</button>
+      <button id="planoCal">Calibrar 2 pts</button>
+      <button id="planoMulti">Puntos (N)</button>
+      <button id="planoUndo">Deshacer par</button>
+      <button id="planoReset">Reset</button>
     </div>
     <div class="hint" id="planoHint">Enciende <b>Alinear</b>: arrastra para mover, rueda para
     escalar, ⟲⟳ para girar. Se guarda solo.</div>
@@ -60,10 +70,12 @@
 </div>
 
 <div class="panel" id="tools">
-  <button id="btnMeasure">Medir</button>
-  <button id="btnClear">Limpiar</button>
-  <button id="btnReset">Vista inicial</button>
-  <button id="btn3d" style="display:none">3D</button>
+  <div class="btnrow">
+    <button id="btnMeasure">Medir</button>
+    <button id="btnClear">Limpiar</button>
+    <button id="btnReset">Vista inicial</button>
+    <button id="btn3d" style="display:none">3D</button>
+  </div>
   <div id="ex3d" style="display:none;margin-top:8px">
     <label style="gap:6px"><span style="color:var(--muted);font-size:11px">exageración</span>
       <input id="exag" type="range" min="1" max="5" step="0.5" value="2" style="flex:1">
@@ -184,10 +196,11 @@ function draw(){
   cx.clearRect(0,0,W,H);
   cx.fillStyle='#0d1114'; cx.fillRect(0,0,W,H);
   drawSurroundings();
-  if(img){
+  if(img && baseOn){
     const a=toScreen(B.minx,B.maxy), b=toScreen(B.maxx,B.miny);
-    cx.imageSmoothingQuality='high';
+    cx.save(); cx.globalAlpha=baseOp; cx.imageSmoothingQuality='high';
     cx.drawImage(img,a[0],a[1],b[0]-a[0],b[1]-a[1]);
+    cx.restore();
   }
   drawPlano();
   for(const L of D.layers){
@@ -434,6 +447,22 @@ document.getElementById('btnClear').onclick=()=>{pts=[];report();draw();
   document.getElementById('mout').innerHTML='Pulsa <b>Medir</b> y haz clic en dos o más puntos.';};
 document.getElementById('btnReset').onclick=reset;
 
+/* --- background imagery: independent on/off + opacity, so backgrounds can be
+       combined or all switched off to see the vectors alone --- */
+let baseOn=true, baseOp=1.0;
+try{
+  const b=localStorage.getItem('sab_base'); if(b!==null) baseOn=(b==='1');
+  const o=localStorage.getItem('sab_baseop'); if(o!==null) baseOp=parseFloat(o);
+}catch(e){}
+setTimeout(()=>{
+  const cb=document.getElementById('baseOn'), sl=document.getElementById('baseOp');
+  cb.checked=baseOn; sl.value=Math.round(baseOp*100);
+  cb.onchange=e=>{ baseOn=e.target.checked;
+    try{localStorage.setItem('sab_base',baseOn?'1':'0');}catch(x){} draw(); };
+  sl.oninput=e=>{ baseOp=e.target.value/100;
+    try{localStorage.setItem('sab_baseop',String(baseOp));}catch(x){} draw(); };
+});
+
 let LSTATE={};
 try{ LSTATE=JSON.parse(localStorage.getItem('sab_layers')||'{}'); }catch(e){}
 D.layers.forEach(L=>{ if(L.name in LSTATE) L.on=!!LSTATE[L.name]; });
@@ -475,6 +504,7 @@ function neighboursOn(){
   return !!(L && L.on);
 }
 function drawSurroundings(){
+  if(!baseOn) return;
   if(!D.surroundings || !neighboursOn()) return;
   if(!surImg && !surTried){
     surTried=true;
@@ -487,7 +517,7 @@ function drawSurroundings(){
   if(!surImg || !surImg.complete) return;
   const b=D.surroundings.bounds;
   const a=toScreen(b.minx,b.maxy), c=toScreen(b.maxx,b.miny);
-  cx.save(); cx.globalAlpha=0.85; cx.imageSmoothingQuality='high';
+  cx.save(); cx.globalAlpha=0.85*baseOp; cx.imageSmoothingQuality='high';
   cx.drawImage(surImg, a[0],a[1], c[0]-a[0], c[1]-a[1]);
   cx.restore();
 }
