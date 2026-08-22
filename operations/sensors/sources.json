@@ -14,21 +14,11 @@
   "origenes": {
    "manual": "alguien lo miró y lo anotó",
    "automatico": "un equipo lo reporta solo"
-  }
+  },
+  "origen_vs_fuente": "`origen` es una propiedad de la LECTURA (a mano / automático), no de la fuente. Cualquier fuente real se puede leer a mano — la temperatura de la Hikvision entró transcrita por Manuel y sigue siendo de la Hikvision. Por eso no existe una fuente llamada 'anotación manual': sería confundir el canal con el mensajero.",
+  "estado_declarado_vs_real": "El `estado` de este archivo es el de la INTEGRACIÓN (planificado / por investigar / conectado). El visor muestra el estado REAL, derivado de si llegó un dato: una fuente declarada 'en línea' que lleva días callada se muestra 'sin datos'. Declarar no es medir."
  },
  "fuentes": [
-  {
-   "id": "manual",
-   "nombre": "Anotación manual",
-   "tipo": "persona",
-   "origen": "manual",
-   "entidad": null,
-   "estado": "en_linea",
-   "transporte": "—",
-   "canales": [],
-   "por_que_importa": "Funciona HOY, sin comprar nada, y ejercita toda la cadena de visualización. Un tubo de nivel en el rompecargas y una foto diaria valen como fuente de datos: la lectura se anota, queda fechada, y el visor la dibuja igual que una automática. Cuando llegue la automatización no cambia nada del lado de la pantalla — sólo quién escribe.",
-   "nota": "Manuel, 2026-08-22: *\"podemos decir: este tanque está en tal cantidad, con un registro manual y una fecha de última actualización\"*."
-  },
   {
    "id": "seguridad-casa-principal",
    "nombre": "Hikvision — casa principal (cámaras, PIR, alarma)",
