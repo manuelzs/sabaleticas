@@ -754,36 +754,6 @@
    ],
    "es_cerca": true,
    "motivo": "cerca real nueva por drenaje, 281.0 m, cruzando de un cauce a otro: tramos 17–22 del drenaje 4 y 6–8 del 24, que se encuentran a 0,7 m en -75.614424,5.804304. Al OCCIDENTE no hubo que ajustar nada: la punta ya caía a 0,0 m sobre el lindero y sobre el borde del Potrero 1. Al ORIENTE se engancha al vértice de Mozambique que Manuel capturó, a 9,1 m de la punta del drenaje."
-  },
-  {
-   "polilinea": [
-    [
-     -75.606044,
-     5.799265
-    ],
-    [
-     -75.606319,
-     5.799163
-    ],
-    [
-     -75.606452,
-     5.799164
-    ],
-    [
-     -75.606545,
-     5.799183
-    ],
-    [
-     -75.60663,
-     5.799242
-    ],
-    [
-     -75.606838,
-     5.799277
-    ]
-   ],
-   "es_cerca": true,
-   "motivo": "cerca real por el drenaje 34 (tramos 5–9), 92.5 m. PRIMER PASO para partir el Potrero 3: se traza EXACTA sobre el cauce, sin ajustar las puntas a nada. Las dos quedan sueltas a propósito; las conexiones las dictará Manuel después."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
