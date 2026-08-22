@@ -78,6 +78,13 @@ not correcting for them.
 Also counter-intuitive: **standing dead material pushes NDVI down while dry matter goes up.**
 In verano the index moves the wrong way.
 
+## And if free isn't enough
+
+Paid 50 cm snapshots are now genuinely cheap for an area our size — roughly **$57 for a 3 km²
+archive image** through a marketplace, because minimum order areas collapsed from 25 km² to
+1 km². See [`land/imagery-options.md`](land/imagery-options.md). That does **not** fix the cloud
+problem, which is the binding constraint — but a tasked capture can at least be re-tried.
+
 ## If we do this
 
 1. **Copernicus Browser + Auravant free.** Zero cost. Skip every paid tier.

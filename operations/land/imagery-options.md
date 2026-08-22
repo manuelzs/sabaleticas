@@ -105,3 +105,66 @@ design** — pipe routing, gravity head, catchment — which imagery alone can't
 [El Guaico gravity route](../water/README.md), where our margin is 0.2 m and the terrain model
 carries ±1–2 m of error. **If a drone gets bought, that is the justification** — not counting
 tanks.
+
+---
+
+# Price trend — Manuel's question answered
+
+> Researched 2026-08-21. **Parked; not yet discussed.**
+> Manuel: *"I know it has gone down dramatically since so many companies have been launching...
+> even if it's not an option today, it might become an option one day."*
+
+## He is right that it collapsed — but not for the reason he thinks
+
+**The per-km² rate has not fallen. For Western 30 cm it is flat to slightly *up* since 2020.**
+
+| Sensor, archive $/km² | Jan 2020 | May 2026 |
+|---|---|---|
+| WorldView 30 cm | $22.50 | **$24.00** |
+| Pléiades Neo 30 cm | — | $22.50 |
+| Maxar 50 cm | $17.50 | $15.00 |
+
+What actually collapsed is the **minimum order area**, and for a farm-sized buyer that is the
+only number that ever mattered:
+
+| Buying a **3 km²** archive image | 30 cm |
+|---|---|
+| Traditional reseller, 2020 (25 km² minimum) | 25 × $22.50 = **$562** |
+| Traditional reseller, today (still 25 km² minimum) | 25 × $24.00 = **$600** |
+| **Marketplace today (1 km² minimum)** | 3 × $19 = **$57** |
+
+> ### A ~10× fall in what we would actually pay — delivered entirely by the minimum dropping
+> from 25 km² to 1 km², not by imagery getting cheaper.
+
+The traditional-reseller floor is **almost exactly what it was in 2020**, because their 25 km²
+minimum never moved. **So the single decision worth making is the channel, not the sensor:**
+buy through **SkyWatch** or **SkyFi**, never a classic reseller, unless the area is big enough
+that 25 km² isn't wasted.
+
+**Tasking minimums fell too, and very recently.** SkyWatch now advertises **1 km² minimum for
+30–49 cm tasking** — roughly **$87 for our 3 km²**, against ~$3,250 at a traditional reseller's
+100 km² minimum. If that holds in practice it is the most significant development here.
+
+## Should we wait? Modestly, no
+
+The reasons to expect further falls are weaker than the launch headlines suggest:
+
+- **Added capacity has not cut prices.** WorldView Legion's six satellites roughly *doubled*
+  30 cm capacity, and the archive rate went **up** $22.50 → $24. The extra supply went into
+  premium guaranteed-collection tiers instead.
+- **Albedo — the 10 cm hope — has failed.** Clarity-1 launched March 2025, a bearing failed a
+  month later, it never achieved stable pointing, and contact was lost around December 2025.
+  The company **never sold a single image** and has left the imagery business.
+- **Planet Pelican is still 50 cm.** The 30 cm version is "coming soon" with no announced price.
+- BlackSky sells six-to-eight-figure subscriptions and has no interest in small buyers.
+
+The one genuine deflation is **Chinese sensors** — SuperView fell 25–33% in eighteen months,
+and **BJ3N offers 30 cm at $16/km²**, the cheapest on the market. Worth knowing: **Colombia can
+buy these.** The export restrictions run the other way, barring sales *into* China, North Korea
+and Iran; Colombia appears on no restricted list.
+
+> **Bottom line: the price fall Manuel expected has already happened, in the last two years,
+> and it came from minimum order sizes rather than rates. Waiting longer buys little.**
+> The ~$57 figure does not change the conclusion at the top of this document — 30 cm still
+> cannot resolve a 1,000 L tank — but it does make **periodic pasture snapshots** cheap enough
+> to be a real option, which is the use Manuel actually described.
