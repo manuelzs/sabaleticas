@@ -2101,9 +2101,8 @@ function renderHato(){
       <div class="legend">
         <span><i style="background:#00e676"></i>reconstruido</span>
         <span><i style="background:#4fc3f7"></i>conteo SINIGAN</span>
-        ${S.sinConteo?`<span><i style="background:#ff9100"></i>sin conteo · ${
-          S.cSal} salidas${S.cEnt?', '+S.cEnt+' entradas':''}</span>`:''}
-        ${S.sesgo?`<span style="margin-left:auto;color:${S.sesgo.col}">${S.sesgo.t}</span>`:''}
+        ${S.sinConteo?`<span><i style="background:#ff9100"></i>${S.sinConteo} movimientos
+          sin conteo · no están en la línea</span>`:''}
         </div>`;})()}
 
     <div class="sect"><h2>Grupo etario</h2><span class="n">confianza baja</span></div>
@@ -2139,14 +2138,7 @@ function herdSeries(){
     pts.push({t:m.t, n, mv:m}); }
   const ciegos=mv.filter(m=>m.head===0 && m.t>=desde);   // movements of unknown size
   const cSal=ciegos.filter(m=>!m.ent).length, cEnt=ciegos.filter(m=>m.ent).length;
-  /* Which way the unknown movements bias the line — derived, not asserted. If they all
-     leave, the real herd is lower than drawn; if they all arrive, higher; if mixed, the
-     error has no known sign and we say exactly that. */
-  const sesgo = !ciegos.length ? null
-    : cEnt===0 ? {t:'la caída real es mayor', col:'#ff9100'}
-    : cSal===0 ? {t:'el hato real es mayor',  col:'#ff9100'}
-    : {t:'sesgo sin signo conocido', col:'#8b98a5'};
-  return {pts, ciegos, desde, hasta, anchor:{t:t0, n:n0}, sesgo, cSal, cEnt,
+  return {pts, ciegos, desde, hasta, anchor:{t:t0, n:n0}, cSal, cEnt,
           sinConteo:ciegos.length, total:mv.filter(m=>m.t>=desde).length};
 }
 
