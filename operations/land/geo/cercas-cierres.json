@@ -4,19 +4,22 @@
   [
    32,
    33,
-   "bebedero — la cerca se parte para que el ganado tome de ambos lados"
+   "bebedero — la cerca se parte para que el ganado tome de ambos lados. NO está en la red de agua (95 m del punto conocido más cercano)."
   ],
   [
    16,
-   17
+   17,
+   "coincide a 0 m con Bebedero 2, ya confirmado en ortofoto — el hueco es la cerca partiéndose para el bebedero"
   ],
   [
    14,
-   15
+   15,
+   "coincide a 0 m con Bebedero 3, ya confirmado en ortofoto — el hueco es la cerca partiéndose para el bebedero"
   ],
   [
    21,
-   22
+   22,
+   "[ABIERTA] Hay algo, pero Manuel no distingue si es bebedero o saladero. Importa: si es bebedero, hay que conectarlo a la red de agua. 234 m del punto conocido más cercano."
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

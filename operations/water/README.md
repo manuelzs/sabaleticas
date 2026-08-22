@@ -705,6 +705,27 @@ order is in a very different position from one whose is not.**
    closer at 262 m but sits at ~719 m — 5 m of head is thin for 300 m of pipe.
    **Not visible in the orthophoto. Look for the split around Bebedero 3.**
 
+### Puntos de agua que aparecieron cerrando potreros
+
+`[derived + owner, 2026-08-22]` Al reconstruir los potreros salió un patrón que Manuel
+reconoció: **un hueco en la cerca suele ser un bebedero**, con la cerca partida para que el
+ganado tome de ambos lados. Así que cada hueco es un candidato a punto de agua — y uno lejos
+de todo lo conocido es infraestructura que la red **no tiene**.
+
+| Hueco | Qué es | Distancia al punto de agua más cercano |
+|---|---|---|
+| 16–17 | **Bebedero 2** — confirma lo que ya sabíamos | **0 m** |
+| 14–15 | **Bebedero 3** — confirma lo que ya sabíamos | **0 m** |
+| 32–33 | Bebedero `[owner]` — **NUEVO** | 95 m |
+| 21–22 | **¿bebedero o saladero?** — sin identificar | 234 m |
+
+> **21–22 es la que importa resolver.** Si es bebedero hay que conectarlo a la red y entra en
+> el reparto de caudal; si es saladero, no. Manuel no lo distingue en la foto.
+
+Que 16–17 y 14–15 caigan a **0 m** de bebederos que Manuel ya había identificado en la ortofoto
+es una validación cruzada real: dos fuentes independientes, el catastro y la foto, señalando el
+mismo punto.
+
 ### Along the lines
 7. **Walk the pipes with a GPS track**, not paper. Same walk, same person, real coordinates.
    **Record construction type as you go** — buried, deep-trenched, surface-laid, or aerial —

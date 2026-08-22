@@ -468,12 +468,13 @@
     5.800685
    ],
    "pos_confianza": "alta",
-   "pos_motivo": "ortofoto",
+   "pos_motivo": "ortofoto + hueco de cerca IGAC a 0 m",
    "props": {
     "orden_en_el_ramal": 1,
     "fuente": "[owner, CONFIRMADA 2026-08-21] Manuel la identificó directamente en la ortofoto. Misma confianza que los tanques y las casas. Sustituye la posición leída del plano.",
     "confianza": "posición: ALTA (ortofoto) · capacidad: n/a",
-    "n": 2
+    "n": 2,
+    "corroboracion": "[derived 2026-08-22] El hueco 16–17 de la capa Cerca del IGAC cae a 0 m de este punto. Dos fuentes independientes coinciden: la ortofoto (Manuel) y la cartografía catastral. La cerca se parte aquí para el bebedero."
    },
    "pid": [
     26,
@@ -490,12 +491,13 @@
     5.801364
    ],
    "pos_confianza": "alta",
-   "pos_motivo": "ortofoto",
+   "pos_motivo": "ortofoto + hueco de cerca IGAC a 0 m",
    "props": {
     "orden_en_el_ramal": 2,
     "fuente": "[owner, CONFIRMADA 2026-08-21] Manuel la identificó directamente en la ortofoto. Misma confianza que los tanques y las casas. Sustituye la posición leída del plano.",
     "confianza": "posición: ALTA (ortofoto) · capacidad: n/a",
-    "n": 3
+    "n": 3,
+    "corroboracion": "[derived 2026-08-22] El hueco 14–15 de la capa Cerca del IGAC cae a 0 m de este punto. Dos fuentes independientes coinciden."
    },
    "pid": [
     20,

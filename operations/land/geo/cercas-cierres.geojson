@@ -7,7 +7,7 @@
     "tipo": "cierre",
     "nombre": "Cierre 32–33",
     "longitud_m": 7,
-    "motivo": "bebedero — la cerca se parte para que el ganado tome de ambos lados",
+    "motivo": "bebedero — la cerca se parte para que el ganado tome de ambos lados. NO está en la red de agua (95 m del punto conocido más cercano).",
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -30,7 +30,7 @@
     "tipo": "cierre",
     "nombre": "Cierre 16–17",
     "longitud_m": 12,
-    "motivo": "sin especificar",
+    "motivo": "coincide a 0 m con Bebedero 2, ya confirmado en ortofoto — el hueco es la cerca partiéndose para el bebedero",
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -53,7 +53,7 @@
     "tipo": "cierre",
     "nombre": "Cierre 14–15",
     "longitud_m": 7,
-    "motivo": "sin especificar",
+    "motivo": "coincide a 0 m con Bebedero 3, ya confirmado en ortofoto — el hueco es la cerca partiéndose para el bebedero",
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
@@ -76,7 +76,7 @@
     "tipo": "cierre",
     "nombre": "Cierre 21–22",
     "longitud_m": 12,
-    "motivo": "sin especificar",
+    "motivo": "[ABIERTA] Hay algo, pero Manuel no distingue si es bebedero o saladero. Importa: si es bebedero, hay que conectarlo a la red de agua. 234 m del punto conocido más cercano.",
     "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
    },
    "geometry": {
