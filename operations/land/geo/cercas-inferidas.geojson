@@ -167,8 +167,8 @@
    "properties": {
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
-    "longitud_m": 188,
-    "fuente": "[owner] cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice",
+    "longitud_m": 26,
+    "fuente": "[owner] cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice [2026-08-22] El primer tramo ya no va recto de la T al nodo: dobla por el vértice del drenaje 34 en -75.608998,5.799748, que es por donde va la cerca. Una arista de 39,8 m pasa a dos de 29,2 + 15,0. El arranque se queda EN la T, no en la punta del drenaje, que quedaba 3,3 m corta. (tramo 1 de 3)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
@@ -177,6 +177,52 @@
      [
       -75.608782,
       5.79966
+     ],
+     [
+      -75.608998,
+      5.799748
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 15,
+    "fuente": "[owner] cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice [2026-08-22] El primer tramo ya no va recto de la T al nodo: dobla por el vértice del drenaje 34 en -75.608998,5.799748, que es por donde va la cerca. Una arista de 39,8 m pasa a dos de 29,2 + 15,0. El arranque se queda EN la T, no en la punta del drenaje, que quedaba 3,3 m corta. (tramo 2 de 3)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608998,
+      5.799748
+     ],
+     [
+      -75.609133,
+      5.799737
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 148,
+    "fuente": "[owner] cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice [2026-08-22] El primer tramo ya no va recto de la T al nodo: dobla por el vértice del drenaje 34 en -75.608998,5.799748, que es por donde va la cerca. Una arista de 39,8 m pasa a dos de 29,2 + 15,0. El arranque se queda EN la T, no en la punta del drenaje, que quedaba 3,3 m corta. (tramo 3 de 3)",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.609133,
+      5.799737
      ],
      [
       -75.610436,

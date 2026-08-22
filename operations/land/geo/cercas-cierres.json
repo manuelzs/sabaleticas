@@ -111,18 +111,28 @@
    "se prolonga al noroeste hasta cruzar con la que sube desde 26",
    true
   ],
-  [
-   [
-    -75.608782,
-    5.79966
+  {
+   "polilinea": [
+    [
+     -75.608782,
+     5.79966
+    ],
+    [
+     -75.608998,
+     5.799748
+    ],
+    [
+     -75.609133,
+     5.799737
+    ],
+    [
+     -75.610436,
+     5.800024
+    ]
    ],
-   [
-    -75.610436,
-    5.800024
-   ],
-   "cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice",
-   true
-  ],
+   "es_cerca": true,
+   "motivo": "cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice [2026-08-22] El primer tramo ya no va recto de la T al nodo: dobla por el vértice del drenaje 34 en -75.608998,5.799748, que es por donde va la cerca. Una arista de 39,8 m pasa a dos de 29,2 + 15,0. El arranque se queda EN la T, no en la punta del drenaje, que quedaba 3,3 m corta."
+  },
   [
    [
     -75.608782,

@@ -963,8 +963,8 @@
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",
-    "area_ha": 7.76,
-    "area_m2": 77566,
+    "area_ha": 7.75,
+    "area_m2": 77479,
     "agua": [
      {
       "id": "agua:beb-2",
@@ -1016,6 +1016,10 @@
       [
        -75.609133,
        5.799737
+      ],
+      [
+       -75.608998,
+       5.799748
       ],
       [
        -75.608782,
@@ -2919,7 +2923,7 @@
     "subdivide_en": [],
     "subdivide_nota": "",
     "area_ha": 4.34,
-    "area_m2": 43361,
+    "area_m2": 43363,
     "agua": [
      {
       "id": "agua:beb-2",
@@ -3408,8 +3412,8 @@
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",
-    "area_ha": 3.69,
-    "area_m2": 36883,
+    "area_ha": 3.7,
+    "area_m2": 36967,
     "agua": [
      {
       "id": "agua:beb-9",
@@ -3449,6 +3453,10 @@
       [
        -75.608782,
        5.79966
+      ],
+      [
+       -75.608998,
+       5.799748
       ],
       [
        -75.609133,
