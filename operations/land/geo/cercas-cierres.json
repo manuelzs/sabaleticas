@@ -131,6 +131,18 @@
    ],
    "se prolonga al noroeste hasta cruzar con la que sube desde 26",
    true
+  ],
+  [
+   [
+    -75.608776,
+    5.799699
+   ],
+   [
+    -75.610425,
+    5.800051
+   ],
+   "cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

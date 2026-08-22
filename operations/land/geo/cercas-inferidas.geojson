@@ -230,6 +230,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 187,
+    "fuente": "[owner] cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608776,
+      5.799699
+     ],
+     [
+      -75.610425,
+      5.800051
+     ]
+    ]
+   }
   }
  ]
 }

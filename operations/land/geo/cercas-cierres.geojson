@@ -480,6 +480,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 187,
+    "motivo": "cerca al oeste desde el cruce; termina sobre una cerca existente, no en un vértice",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608776,
+      5.799699
+     ],
+     [
+      -75.610425,
+      5.800051
+     ]
+    ]
+   }
   }
  ]
 }
