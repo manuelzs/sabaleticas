@@ -3398,10 +3398,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 22",
+    "nombre": "Zanzíbar",
     "n": 22,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "area_ha": 2.99,
     "area_m2": 29899,
