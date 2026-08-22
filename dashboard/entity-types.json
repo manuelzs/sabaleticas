@@ -250,6 +250,17 @@
    "atributos": [
     "pos_confianza"
    ]
+  },
+  "mojon_via": {
+   "label": "Referencia de vía (2007)",
+   "color": "#8d6e63",
+   "mapa": "circle",
+   "esquema": "dot",
+   "ancho": 1.0,
+   "geom": "point",
+   "atributos": [
+    "pos_confianza"
+   ]
   }
  }
 }
