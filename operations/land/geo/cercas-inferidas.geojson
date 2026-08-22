@@ -23,6 +23,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 51–lindero",
+    "longitud_m": 30,
+    "fuente": "[owner] llega al lindero en el quiebre que marcó Manuel",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617131,
+      5.794109
+     ],
+     [
+      -75.617047,
+      5.793853
+     ]
+    ]
+   }
   }
  ]
 }

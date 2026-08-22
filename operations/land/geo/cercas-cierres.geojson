@@ -264,6 +264,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 51–lindero",
+    "longitud_m": 30,
+    "motivo": "llega al lindero en el quiebre que marcó Manuel",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.617131,
+      5.794109
+     ],
+     [
+      -75.617047,
+      5.793853
+     ]
+    ]
+   }
   }
  ]
 }

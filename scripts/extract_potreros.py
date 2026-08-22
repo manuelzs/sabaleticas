@@ -409,6 +409,9 @@ def main():
     f_c0 = GEO / CIERRES
     if f_c0.exists():
         for c in json.loads(f_c0.read_text(encoding="utf-8"))["cierres"]:
+            if isinstance(c[1], list):
+                ext_pts.append(tuple(c[1]))
+                continue
             if c[1] in ents:
                 ext_pts.append(ents[c[1]])
                 continue
@@ -549,9 +552,9 @@ def main():
             a, b = c[0], c[1]
             motivo = c[2] if len(c) > 2 else ""
             es_cerca = bool(c[3]) if len(c) > 3 else False
-            if b in ents:
+            if isinstance(b, list) or b in ents:
                 va = by_num.get(a)
-                pt = ents[b]
+                pt = tuple(b) if isinstance(b, list) else ents[b]
                 # The junction must sit exactly ON the entity. Snapping to whatever vertex
                 # happens to be nearest put all three fences on a point 3.3 m west of the
                 # trough, which drew as a dogleg — the fences meet AT the trough, so the
@@ -562,7 +565,7 @@ def main():
                     if d2 < bd2:
                         vb, bd2 = v, d2
                 if vb is None:
-                    vb = ("ent", b)
+                    vb = ("ent", tuple(pt))
                     pos[vb] = pt
                     adj.setdefault(vb, set())
                 if va is None:
@@ -571,10 +574,11 @@ def main():
                 d_m = math.hypot((pos[vb][0] - pos[va][0]) * LON2M,
                                  (pos[vb][1] - pos[va][1]) * LAT2M)
                 flag = "  ⚠ muy largo" if d_m > 60 else ""
-                print(f"    {a} → {b}: {d_m:6.1f} m{flag}")
+                print(f"    {a} → {'lindero' if isinstance(b, list) else b}: {d_m:6.1f} m{flag}")
                 adj[va].add(vb)
                 adj[vb].add(va)
-                cierres.append((a, b.split(":")[-1], pos[va], pos[vb], motivo, round(d_m), es_cerca))
+                lab = "lindero" if isinstance(b, list) else b.split(":")[-1]
+                cierres.append((a, lab, pos[va], pos[vb], motivo, round(d_m), es_cerca))
                 hechos += 1
                 continue
             if b == "@extend":
