@@ -22,7 +22,7 @@
 ### 1 · Navigation and the three axes *(next)*
 See [`ARCHITECTURE.md`](ARCHITECTURE.md). Build the seam, not the cathedral.
 
-### 2 · Globally unique entity ids
+### 2 · Globally unique entity ids — 🔴 **high priority, next session**
 `agua:rompecargas` rather than `rompecargas`. A rename today; a migration once readings and
 tickets reference the old ids.
 
