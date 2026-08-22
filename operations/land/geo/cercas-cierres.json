@@ -295,6 +295,52 @@
    ],
    "cerca real confirmada en terreno: del vértice del potrero hasta el lindero de enfrente. Muere sobre la línea, no en un vértice (al 7 % de un tramo de 90 m). 121,7 m subiendo 25 m.",
    true
+  ],
+  [
+   [
+    -75.614132,
+    5.795599
+   ],
+   [
+    -75.614257,
+    5.796067
+   ],
+   "cerca real confirmada en terreno (53,6 m). Corre sobre los primeros 54 m del trazo que se excluyó como inexistente (Cerca 41 del IGAC): esa parte SÍ existe; lo que no existía era el resto, que seguía la vía. Se dicta aparte en vez de deshacer la exclusión, para que sólo vuelva el tramo confirmado.",
+   true
+  ],
+  [
+   [
+    -75.614257,
+    5.796067
+   ],
+   [
+    -75.61426,
+    5.796133
+   ],
+   "quiebrapatas — aquí cruza la vía principal (a 3,4 y 3,9 m de los dos puntos). NO hay cerca."
+  ],
+  [
+   [
+    -75.61426,
+    5.796133
+   ],
+   [
+    -75.614262,
+    5.796179
+   ],
+   "Bebedero 1 — la cerca se parte para que el ganado tome de ambos lados. NO hay cerca en el hueco. El bebedero queda en el punto medio del tramo."
+  ],
+  [
+   [
+    -75.614262,
+    5.796179
+   ],
+   [
+    -75.614263,
+    5.79621
+   ],
+   "cerca real (3,4 m) hasta el borde del potrero",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

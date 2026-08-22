@@ -602,11 +602,11 @@
    "nombre": "Bebedero 1",
    "cota_m": 717,
    "geo": [
-    -75.614251,
-    5.796126
+    -75.614261,
+    5.796156
    ],
    "pos_confianza": "alta",
-   "pos_motivo": "ortofoto: junto al camino, quiebrapatas visibles",
+   "pos_motivo": "[owner, 2026-08-22] Manuel lo puso en el punto medio exacto del hueco de cerca que se abre para él (puntos 3–4 de su captura).",
    "props": {
     "alimentado_por": "[owner, 2026-08-21] Desde una de las T — cuál, por determinar.",
     "fuente": "[owner, CONFIRMADA] Manuel 2026-08-21: posición segura — está junto al camino, con los quiebrapatas visibles en la ortofoto. Misma confianza que los tanques y las casas.",

@@ -573,7 +573,7 @@
     "nombre": "Bebedero 1",
     "altura_m": 717,
     "pos_confianza": "alta",
-    "pos_motivo": "ortofoto: junto al camino, quiebrapatas visibles",
+    "pos_motivo": "[owner, 2026-08-22] Manuel lo puso en el punto medio exacto del hueco de cerca que se abre para él (puntos 3–4 de su captura).",
     "alimentado_por": "[owner, 2026-08-21] Desde una de las T — cuál, por determinar.",
     "fuente": "[owner, CONFIRMADA] Manuel 2026-08-21: posición segura — está junto al camino, con los quiebrapatas visibles en la ortofoto. Misma confianza que los tanques y las casas.",
     "confianza": "posición: ALTA · alimentación desde T-3: según Manuel",
@@ -587,8 +587,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.614251,
-     5.796126
+     -75.614261,
+     5.796156
     ]
    }
   },
@@ -1279,9 +1279,9 @@
    "properties": {
     "tipo": "tuberia",
     "nombre": "T-2 → Bebedero 1 — SIN CONFIRMAR",
-    "longitud_m": 88,
+    "longitud_m": 86,
     "desnivel_m": 3,
-    "gradiente_pct": 3.4,
+    "gradiente_pct": 3.5,
     "estilo": "discontinuo",
     "fuente": "[derived, 2026-08-22] Manuel sabía que el bebedero cuelga de una T pero no de cuál. El terreno lo decide: moviendo T-3 al sur nunca pasa de 717 m, la misma cota del bebedero — carga cero, imposible. T-2 llega a 720 m y sí puede (3 m sobre 88 m).",
     "advertencia": "Margen de 3 m, más fino que el error del modelo. Es la primera configuración CONSISTENTE, no una medición. VERIFICAR EN CAMPO: ¿la derivación al Bebedero 1 sale de T-2 o de T-3?",
@@ -1296,8 +1296,8 @@
       5.796644
      ],
      [
-      -75.614251,
-      5.796126
+      -75.614261,
+      5.796156
      ]
     ]
    }

@@ -598,6 +598,52 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 54,
+    "fuente": "[owner] cerca real confirmada en terreno (53,6 m). Corre sobre los primeros 54 m del trazo que se excluyó como inexistente (Cerca 41 del IGAC): esa parte SÍ existe; lo que no existía era el resto, que seguía la vía. Se dicta aparte en vez de deshacer la exclusión, para que sólo vuelva el tramo confirmado.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614132,
+      5.795599
+     ],
+     [
+      -75.614257,
+      5.796067
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 3,
+    "fuente": "[owner] cerca real (3,4 m) hasta el borde del potrero",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614262,
+      5.796179
+     ],
+     [
+      -75.614263,
+      5.79621
+     ]
+    ]
+   }
   }
  ]
 }

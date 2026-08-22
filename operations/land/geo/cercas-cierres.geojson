@@ -888,6 +888,102 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 54,
+    "motivo": "cerca real confirmada en terreno (53,6 m). Corre sobre los primeros 54 m del trazo que se excluyó como inexistente (Cerca 41 del IGAC): esa parte SÍ existe; lo que no existía era el resto, que seguía la vía. Se dicta aparte en vez de deshacer la exclusión, para que sólo vuelva el tramo confirmado.",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614132,
+      5.795599
+     ],
+     [
+      -75.614257,
+      5.796067
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 7,
+    "motivo": "quiebrapatas — aquí cruza la vía principal (a 3,4 y 3,9 m de los dos puntos). NO hay cerca.",
+    "es_cerca": false,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614257,
+      5.796067
+     ],
+     [
+      -75.61426,
+      5.796133
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 5,
+    "motivo": "Bebedero 1 — la cerca se parte para que el ganado tome de ambos lados. NO hay cerca en el hueco. El bebedero queda en el punto medio del tramo.",
+    "es_cerca": false,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.61426,
+      5.796133
+     ],
+     [
+      -75.614262,
+      5.796179
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 3,
+    "motivo": "cerca real (3,4 m) hasta el borde del potrero",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614262,
+      5.796179
+     ],
+     [
+      -75.614263,
+      5.79621
+     ]
+    ]
+   }
   }
  ]
 }
