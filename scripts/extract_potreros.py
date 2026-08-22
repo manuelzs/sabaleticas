@@ -1192,6 +1192,38 @@ def main():
         if dictados:
             print(f"  potreros dictados (no salen del grafo): {len(dictados)} · "
                   f"{sum(a for a, _, _ in dictados)/10000:.2f} ha")
+    # A dictated enclosure can be subdivided on its OWN graph. El Guaico is a separate parcel
+    # across the river, so it does not have to share one with Sabaleticas — and extracting it
+    # apart sidesteps the three points where the two cadastral outlines touch at 1.0-1.7 m and
+    # fuse under the 2 m clustering, which is the only reason it could not close by itself.
+    # Its own ring plus whatever fences Manuel dictates inside it are enough.
+    sub_ok = []
+    for a, ring, e in dictados:
+        if not e.get("subdividir_con_grafo"):
+            continue
+        dentro = [l for l in lines
+                  if len(l) > 1 and all(inside(p, [[ring]]) for p in l)]
+        if not dentro:
+            continue
+        sl = node_lines([list(ring)] + dentro)
+        sp, sa = build(sl)
+        caras = []
+        for cyc in faces(sp, sa):
+            r2 = [sp[k] for k in cyc]
+            ar = area_m2(r2)
+            if ar < 200 or ar >= a * 0.98:      # descarta el contorno mismo y las astillas
+                continue
+            caras.append((ar, r2))
+        if caras:
+            print(f"  «{e.get('del_lindero', 'dictado')}» subdividido en su propio grafo: "
+                  f"{len(caras)} caras, {sum(x for x, _ in caras)/10000:.2f} de {a/10000:.2f} ha")
+            sub_ok.append((a, caras))
+    hechos = {id(x[0]) for x in sub_ok}
+    for a, caras in sub_ok:
+        polys += caras
+    dictados = [d for d in dictados
+                if not any(abs(d[0] - a) < 1 for a, _ in sub_ok)]
+
     polys += [(a, r) for a, r, _ in dictados]
     dic_por_area = {round(a): e for a, _, e in dictados}
     polys.sort(key=lambda t: -t[0])

@@ -6,7 +6,10 @@
   {
    "del_lindero": "LO 1 EL GUAICO",
    "nota": "Contorno catastral del lote LO 1 EL GUAICO, 18,75 ha. NO lleva nombre: «El Guaico» es el nombre del LOTE, no de un potrero, y ponérselo a esta cara haría creer que es un potrero cuando es un contenedor. Manuel calcula unas SIETE subdivisiones adentro. El IGAC no tiene ninguna cerca dibujada aquí, así que habrá que digitalizarlas de la ortofoto o dictarlas.",
-   "subdivisiones_esperadas": 7
+   "subdivisiones_esperadas": 7,
+   "subdividir_con_grafo": true
   }
- ]
+ ],
+ "_subdividir_con_grafo": "Si va en true, la cara no se usa entera: se arma un grafo APARTE con su propio anillo más las cercas dictadas que caen dentro, y de ahí salen las caras. Mientras no haya cercas adentro, sigue saliendo la cara entera.",
+ "_por_que_varios_grafos": "[owner, 2026-08-22] Manuel: que haya VARIOS grafos está bien y no es un parche. Una finca puede estar partida en dos —por una vía, por un río, o en dos islas— y el programa debería soportarlo. Aquí El Guaico está al otro lado del río; armarlo aparte no sólo evita los tres puntos donde los dos contornos catastrales se tocan a 1,0–1,7 m y se funden bajo el agrupamiento de 2 m, sino que además describe la realidad: son dos predios separados."
 }
