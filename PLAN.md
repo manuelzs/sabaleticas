@@ -78,32 +78,25 @@ land. Manuel supplies the names.
 
 **This is the one I would do next.** No hardware, no survey, no money.
 
-## 6 · The application
+## 6 · The dashboard application
 
-Architecture in [`dashboard/ARCHITECTURE.md`](dashboard/ARCHITECTURE.md).
+**Moved out.** The app has its own plan and its own to-dos:
+[`dashboard/PLAN.md`](dashboard/PLAN.md). It is a tool for running the farm, not part of
+running it — mixing the two made both harder to read.
 
-| | | Status |
-|---|---|---|
-| Water as a graph, GeoJSON generated from it | | ✅ done |
-| Hydraulic schematic view | | ✅ done |
-| View in the URL hash | | ✅ done |
-| **Tabs: Ganado · Geoespacial · Agua** | workspaces, layers grouped by subsystem | not started |
-| **Globally unique entity ids** (`agua:rompecargas`) | cheap now, painful later | not started |
-| **Attachment model** — readings, tickets, alerts keyed on entity id | one mechanism, three hats | designed only |
-| Slope-shaded surface in 2D and 3D | a third of the farm is ≥15° | not started |
+What the farm side needs to know: the water system is mapped, the schematic exists, and the
+verification checklist regenerates itself from the data.
 
-## 7 · Sensors
+## 7 · Sensors — the farm side
 
-[`operations/water/sensors.md`](operations/water/sensors.md). LoRa, not cellular. **Deliberately
-price-free** until researched — Manuel orders from Amazon US.
+Hardware, siting and connectivity: [`operations/water/sensors.md`](operations/water/sensors.md).
+LoRa, not cellular. **Deliberately price-free** until researched.
 
 **Rule: fix first, measure second.** A sensor would have reported the rompecargas emptying; it
 would not have stopped it.
 
-1. **The house temperature probe** — the value is not the temperature, it is proving the chain
-   end to end. This is the pilot.
-2. Then the rompecargas — **two float switches, not an ultrasonic**; it is a buried concrete pit.
-3. A **sight tube and a daily photo** costs almost nothing and would have caught this months ago.
+- The rompecargas wants **two float switches, not an ultrasonic** — it is a buried concrete pit.
+- A **sight tube and a daily photo** costs almost nothing and would have caught this months ago.
 
 ## 8 · Land and paperwork *(Manuel, when convenient)*
 
@@ -119,3 +112,5 @@ would not have stopped it.
 1. **Throttle the rompecargas outlet.** Free, today, fixes the live failure.
 2. **Close the potrero polygons.** Unblocks more of this project than anything else.
 3. **Level the ridge for the gravity route.** Decides whether the pump project exists at all.
+
+_The dashboard has its own plan: [`dashboard/PLAN.md`](dashboard/PLAN.md)._
