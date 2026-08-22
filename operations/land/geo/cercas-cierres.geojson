@@ -115,6 +115,52 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 31–34",
+    "longitud_m": 8,
+    "motivo": "quiebrapatas",
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.606078,
+      5.798004
+     ],
+     [
+      -75.606042,
+      5.797939
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 42–43",
+    "longitud_m": 10,
+    "motivo": "quiebrapatas",
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.603197,
+      5.795954
+     ],
+     [
+      -75.603222,
+      5.795868
+     ]
+    ]
+   }
   }
  ]
 }

@@ -25,6 +25,16 @@
    19,
    20,
    "Bebedero 4 — identificado aquí por Manuel; el bebedero se reubicó a este punto"
+  ],
+  [
+   31,
+   34,
+   "quiebrapatas"
+  ],
+  [
+   42,
+   43,
+   "quiebrapatas"
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

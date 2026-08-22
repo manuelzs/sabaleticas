@@ -435,14 +435,25 @@ def main():
     if wf.exists() and cierres:
         net = json.loads(wf.read_text(encoding="utf-8"))
         pts = [n for n in net["nodes"] if n.get("geo")]
+        # Only closures that might BE water are worth checking against the water graph.
+        # A quiebrapatas reported as a "new water point" is noise, and noise is how a
+        # useful check gets ignored.
+        NO_AGUA = ("quiebrapatas", "puerta", "portillo", "saladero")
+        AGUA = ("bebedero", "tanque", "agua", "abrevadero")
         print("  contra la red de agua:")
         for a, b, pa, pb, mot, _ in cierres:
+            m = (mot or "").lower()
+            if any(w in m for w in NO_AGUA) and not any(w in m for w in AGUA):
+                continue
             mid = ((pa[0] + pb[0]) / 2, (pa[1] + pb[1]) / 2)
             d, n = min((( math.hypot((mid[0]-x["geo"][0])*LON2M,
                                      (mid[1]-x["geo"][1])*LAT2M), x) for x in pts),
                        key=lambda t: t[0])
+            known = any(w in m for w in AGUA)
             tag = ("coincide con" if d < 25 else
-                   "cerca de" if d < 80 else "NUEVO · lo más cercano")
+                   "cerca de" if d < 80 else
+                   ("NUEVO — falta en la red · lo más cercano" if known
+                    else "sin identificar · lo más cercano"))
             print(f"    {a}–{b}: {tag} {n['nombre']} ({d:.0f} m)")
 
     if sin_agua:
