@@ -3,7 +3,8 @@
  "cierres": [
   [
    32,
-   33
+   33,
+   "bebedero — la cerca se parte para que el ganado tome de ambos lados"
   ],
   [
    16,
@@ -19,5 +20,7 @@
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
- "_por_que": "[owner, 2026-08-22] La capa de CERCAS y la de POTREROS no son lo mismo. Donde hay un quiebrapatas en un camino no hay cerca física — el dato del IGAC está bien —, pero el potrero SÍ está cerrado para el ganado. Las cercas se quedan abiertas; los potreros se cierran. Cada cierre puede llevar su motivo."
+ "_por_que": "[owner, 2026-08-22] La capa de CERCAS y la de POTREROS no son lo mismo. Donde no hay cerca física el IGAC hace bien en dejar el hueco, pero el POTRERO puede estar cerrado igual para el ganado. Las cercas se quedan abiertas; los potreros se cierran.",
+ "_motivo": "El motivo lo DICE Manuel, nunca se infiere. Un hueco puede ser un quiebrapatas, un bebedero con la cerca partida para que el ganado tome de ambos lados, un saladero, una puerta, o simplemente cerca que el satélite no vio. Vocabulario abierto; si no se sabe, queda 'sin especificar'.",
+ "_ojo_bosque": "[owner, 2026-08-22] NO deducir cierres de la capa Bosque. En la mayor parte del bosque SÍ hay cerca — lo que pasa es que el satélite no la detecta bajo el dosel. La correlación entre hueco y borde de bosque es de VISIBILIDAD, no de barrera."
 }

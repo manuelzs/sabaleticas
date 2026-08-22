@@ -104,10 +104,16 @@ The cursor reports slope already. Missing: the coloured surface in 2D and on the
 boundary, nodes it, applies the closures Manuel dictates, and walks the faces.
 
 > #### A fence layer and an enclosure layer are not the same thing
-> `[owner, 2026-08-22]` Where a **quiebrapatas** closes a road crossing there is no physical
-> fence — IGAC is right to leave the gap. But the **potrero is closed** as far as the cattle are
-> concerned. So the fence layer keeps its gaps and the potrero layer closes them, each closure
-> carrying its reason.
+> `[owner, 2026-08-22]` Where there is no physical fence, IGAC is right to leave the gap — but
+> the **potrero can still be closed** as far as the cattle are concerned. The fence layer keeps
+> its gaps; the potrero layer closes them.
+>
+> **The reason is stated, never inferred.** A gap may be a quiebrapatas, a trough with the fence
+> split so cattle drink from both sides, a saladero, a gate — or fence the satellite simply
+> could not see. Manuel names it; we do not guess from geometry.
+>
+> ⚠️ **And not from the Bosque layer either.** Most of the forest *does* have fence; the imagery
+> cannot see it under canopy. Gap-near-forest is a **visibility** correlation, not a barrier.
 
 Loose ends are numbered **north to south, stably across runs**, so a number Manuel says out
 loud stays valid after other gaps close. Closures live in `cercas-cierres.json` as pairs of
