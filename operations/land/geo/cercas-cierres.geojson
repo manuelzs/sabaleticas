@@ -2640,6 +2640,126 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 32,
+    "motivo": "cerca real por el drenaje 34 (tramos 5–9), 92.5 m. PRIMER PASO para partir el Potrero 3: se traza EXACTA sobre el cauce, sin ajustar las puntas a nada. Las dos quedan sueltas a propósito; las conexiones las dictará Manuel después. (tramo 1 de 5)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.606044,
+      5.799265
+     ],
+     [
+      -75.606319,
+      5.799163
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 15,
+    "motivo": "cerca real por el drenaje 34 (tramos 5–9), 92.5 m. PRIMER PASO para partir el Potrero 3: se traza EXACTA sobre el cauce, sin ajustar las puntas a nada. Las dos quedan sueltas a propósito; las conexiones las dictará Manuel después. (tramo 2 de 5)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.606319,
+      5.799163
+     ],
+     [
+      -75.606452,
+      5.799164
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 11,
+    "motivo": "cerca real por el drenaje 34 (tramos 5–9), 92.5 m. PRIMER PASO para partir el Potrero 3: se traza EXACTA sobre el cauce, sin ajustar las puntas a nada. Las dos quedan sueltas a propósito; las conexiones las dictará Manuel después. (tramo 3 de 5)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.606452,
+      5.799164
+     ],
+     [
+      -75.606545,
+      5.799183
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 11,
+    "motivo": "cerca real por el drenaje 34 (tramos 5–9), 92.5 m. PRIMER PASO para partir el Potrero 3: se traza EXACTA sobre el cauce, sin ajustar las puntas a nada. Las dos quedan sueltas a propósito; las conexiones las dictará Manuel después. (tramo 4 de 5)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.606545,
+      5.799183
+     ],
+     [
+      -75.60663,
+      5.799242
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 23,
+    "motivo": "cerca real por el drenaje 34 (tramos 5–9), 92.5 m. PRIMER PASO para partir el Potrero 3: se traza EXACTA sobre el cauce, sin ajustar las puntas a nada. Las dos quedan sueltas a propósito; las conexiones las dictará Manuel después. (tramo 5 de 5)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.60663,
+      5.799242
+     ],
+     [
+      -75.606838,
+      5.799277
+     ]
+    ]
+   }
   }
  ]
 }
