@@ -920,6 +920,28 @@
    ],
    "es_cerca": true,
    "motivo": "quinta cerca dentro de EL GUAICO, 134.7 m, de occidente a oriente entre las dos cercas norte–sur. Las dos puntas se llevan exactamente sobre ellas (estaban a 0,32 y 0,49 m). Cuatro puntos de Manuel sobre la ortofoto, sin cota."
+  },
+  {
+   "polilinea": [
+    [
+     -75.618415,
+     5.800629
+    ],
+    [
+     -75.617669,
+     5.800517
+    ],
+    [
+     -75.616953,
+     5.800289
+    ],
+    [
+     -75.616658,
+     5.800242
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "cerca real al sur de El Guaico, 199.8 m, del lindero (occidente) a una cerca existente (oriente). Las dos puntas se ajustaron (estaban a 0,28 y 0,09 m). Aquí SÍ hay MDT: sube 69 m en 200, un 35 % de pendiente media, con tramos al 27° — es ladera fuerte, no vega."
   }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
