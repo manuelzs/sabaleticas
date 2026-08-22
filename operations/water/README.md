@@ -377,6 +377,32 @@ two to three times demand.** The system is losing water to *stoppages*, not to s
 | 5 | **Inspect and clean the float valve.** Check size and blockage; this is unfiltered quebrada water. **Do not redesign it** — see above. | low |
 | 6 | **Give the garden a higher take-off than the cattle** on the tanques intermedios. The garden then dies first, automatically, and the remaining volume is reserved for the bebederos — **no discipline required.** | low |
 
+### ⚠️ How good these coordinates are — read before trusting any profile below
+
+`[owner, 2026-08-21]` Manuel, on everything transcribed off the 2003 plan:
+
+> *"Everything that I'm giving you — the three tanks, the location of the first T junction, all
+> of that is unconfirmed. I'm trying to be as accurate as possible, but the plan doesn't really
+> match what I'm seeing in the photo, sometimes by 10 m, even 15. Only the tanks and the houses
+> we are certain of."*
+
+| Feature | Position confidence |
+|---|---|
+| **Tanques altos, intermedios, both casas** | **high** — given from the viewer against the orthophoto |
+| Represa (extent) | high — IGAC polygon |
+| **T-junctions, ramal norte tanks, ventosa** | **±10–15 m** — read off the 2003 plan |
+| All pipe routes | schematic unless stated otherwise |
+
+> ### What this means for the terrain analysis
+> Every profile in this document is sampled **along a line between two points**. A 15 m
+> sideways error puts the sample on different ground. On a slope of 20 % that is **3 m of
+> spurious elevation** — enough to invent a hump, or to hide one.
+>
+> **Treat every hump, summit and clearance figure below as a hypothesis to check in the field,
+> not a measurement.** The findings that survive are the ones with margins much larger than
+> that: the 7 m difference between route options, the 49 m vs 13 m gradient asymmetry. The ones
+> that do not are the small ones: a 0.50 m clearance, a 1.9 m hump.
+
 ### The T del norte — an uncontrolled split, and the north loses it
 
 `[owner, 2026-08-21]` **5.797082, −75.607946 · 775 m**, on the leg between the rompecargas and
@@ -427,6 +453,10 @@ direction.** Diameters are on the field list for exactly this reason.
 > ### Tanks are built on high points, so every tank inlet is a summit — and every summit is an air trap.
 > The rompecargas inlet climbs **20.9 m**. Tanque norte 1's inlet climbs **10.6 m**. Same shape,
 > twice. That is a property of how the system was laid out, not an accident of one pipe.
+
+⚠️ **But see the coordinate-quality note above.** These humps are sampled along straight lines
+between points that may be 10–15 m off. The **20.9 m and 10.6 m climbs are large enough to
+survive that**; the +1.9 m on the last leg is not, and should be ignored until surveyed.
 
 So when the rompecargas runs to air, the branch that stays blocked is the one with the most
 summits and the longest run — **the north, 1.1 km of it, with nothing stored downstream.**
