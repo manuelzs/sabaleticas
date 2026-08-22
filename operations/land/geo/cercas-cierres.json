@@ -353,6 +353,12 @@
    ],
    "cerca real confirmada en terreno: cruza el Potrero 1 de oriente a occidente (183,5 m, rumbo 266,6°, bajando 42 m). Los dos extremos son vértices exactos del potrero.",
    true
+  ],
+  [
+   54,
+   "@extend",
+   "se prolonga al sursureste en su misma dirección (rumbo 165,7°) hasta cortar el lindero",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

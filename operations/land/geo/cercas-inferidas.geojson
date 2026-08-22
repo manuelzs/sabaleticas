@@ -667,6 +667,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 54–→",
+    "longitud_m": 48,
+    "fuente": "[owner] se prolonga al sursureste en su misma dirección (rumbo 165,7°) hasta cortar el lindero",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614096,
+      5.793427
+     ],
+     [
+      -75.613989,
+      5.793009
+     ]
+    ]
+   }
   }
  ]
 }

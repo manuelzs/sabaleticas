@@ -1008,6 +1008,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 54–→",
+    "longitud_m": 48,
+    "motivo": "se prolonga al sursureste en su misma dirección (rumbo 165,7°) hasta cortar el lindero",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614096,
+      5.793427
+     ],
+     [
+      -75.613989,
+      5.793009
+     ]
+    ]
+   }
   }
  ]
 }
