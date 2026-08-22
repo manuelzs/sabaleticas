@@ -435,9 +435,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 6",
+    "nombre": "Lajas",
     "n": 6,
-    "nombrado": false,
+    "nombrado": true,
     "area_ha": 3.21,
     "area_m2": 32092,
     "agua": [
