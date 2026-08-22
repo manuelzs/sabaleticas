@@ -105,8 +105,20 @@ TIPO_SHAPE = {
 }
 
 
+def _owners(geo: Path):
+    """Hand-maintained owner names, keyed by matrícula. The cadastre omits owners."""
+    f = geo / "neighbour-owners.json"
+    if not f.exists():
+        return {}
+    try:
+        return json.loads(f.read_text(encoding="utf-8")).get("predios", {})
+    except Exception:
+        return {}
+
+
 def _collect(geo: Path):
     out = []
+    owners = _owners(geo)
     for name, rel, kind, colour, width, fill in LAYERS:
         path = geo / rel
         if not path.exists():
@@ -122,9 +134,10 @@ def _collect(geo: Path):
                 continue
             props = f.get("properties") or {}
             label = props.get("name") or props.get("DIRECCION") or ""
-            if props.get("lado") and props.get("area_ha"):      # neighbours: name / area / matrícula
-                label = (f"{props['name']} · {props['lado']} · {props['area_ha']} ha"
-                         f" · mat {props.get('matricula') or '?'} · {props.get('municipio','')}")
+            if props.get("lado") and props.get("area_ha"):      # neighbours: name / owner / side+area
+                who = (owners.get(props.get("matricula") or "", {}) or {}).get("owner", "")
+                label = (f"{props['name']} · {who or 'propietario por confirmar'}"
+                         f" · {props['lado']} · {props['area_ha']} ha")
             if not label and props.get("elev"):
                 label = f"{props['elev']} m"
             item = {"t": g["type"], "c": _round_geom(_thin(g["coordinates"])),

@@ -1,0 +1,114 @@
+{
+ "_README": "Propietarios de los predios vecinos. El catastro público NO publica propietarios, así que esto se llena a mano. Añade 'owner' y 'owner_note'; deja '' si no se sabe. Se rotula en el visor bajo el nombre del predio. Reconstruir con: sabaleticas map",
+ "_provenance": "[owner, unverified] salvo que se indique otra fuente por predio.",
+ "predios": {
+  "023-20857": {
+   "predio": "BELLAVISTA",
+   "lado": "N",
+   "area_ha": 133.71,
+   "municipio": "Santa Bárbara",
+   "npn": "056790002000000010106000000000",
+   "owner": "",
+   "owner_note": "Vecino al NORTE. Era de un primo, que se cree vendió. Tiene asignado el triángulo en disputa [owner, unverified]"
+  },
+  "023-16154": {
+   "predio": "EL GUAICO",
+   "lado": "SE",
+   "area_ha": 132.44,
+   "municipio": "La Pintada",
+   "npn": "053900001000000020018000000000",
+   "owner": "",
+   "owner_note": "parcela hermana de la división de El Guaico (~2006) — probablemente familia [inferido]"
+  },
+  "023-23119": {
+   "predio": "LT N2",
+   "lado": "NE",
+   "area_ha": 121.85,
+   "municipio": "La Pintada",
+   "npn": "053900001000000020229000000000",
+   "owner": "",
+   "owner_note": ""
+  },
+  "010-8832": {
+   "predio": "NAMUR",
+   "lado": "NO",
+   "area_ha": 114.2,
+   "municipio": "Fredonia",
+   "npn": "052820011000000010082000000000",
+   "owner": "",
+   "owner_note": ""
+  },
+  "010-4129": {
+   "predio": "LOS BUHOS",
+   "lado": "O",
+   "area_ha": 82.04,
+   "municipio": "Fredonia",
+   "npn": "052820011000000010081000000000",
+   "owner": "",
+   "owner_note": ""
+  },
+  "023-14591": {
+   "predio": "HACIENDA TEXAS",
+   "lado": "E",
+   "area_ha": 53.06,
+   "municipio": "La Pintada",
+   "npn": "053900001000000020028000000000",
+   "owner": "",
+   "owner_note": ""
+  },
+  "023-16155": {
+   "predio": "AP 2 PARTE ALTA",
+   "lado": "SE",
+   "area_ha": 41.16,
+   "municipio": "La Pintada",
+   "npn": "053900001000000020059000000000",
+   "owner": "Primo de Manuel",
+   "owner_note": "heredó AP 2 Parte Alta en la división de El Guaico [owner, unverified]"
+  },
+  "010-8418": {
+   "predio": "EL PARAISO",
+   "lado": "SO",
+   "area_ha": 26.42,
+   "municipio": "Fredonia",
+   "npn": "052820011000000010078000000000",
+   "owner": "",
+   "owner_note": ""
+  },
+  "023-23120": {
+   "predio": "FCA LA ESMERALDA",
+   "lado": "E",
+   "area_ha": 22.61,
+   "municipio": "La Pintada",
+   "npn": "053900001000000020230000000000",
+   "owner": "",
+   "owner_note": ""
+  },
+  "010-17150": {
+   "predio": "LA VEGA",
+   "lado": "SO",
+   "area_ha": 17.47,
+   "municipio": "Fredonia",
+   "npn": "052820011000000010329000000000",
+   "owner": "",
+   "owner_note": ""
+  },
+  "010-17149": {
+   "predio": "EL BILLAR",
+   "lado": "SO",
+   "area_ha": 11.99,
+   "municipio": "Fredonia",
+   "npn": "052820011000000010330000000000",
+   "owner": "",
+   "owner_note": ""
+  },
+  "023-23121": {
+   "predio": "FCA EL VERDUN",
+   "lado": "E",
+   "area_ha": 8.78,
+   "municipio": "La Pintada",
+   "npn": "053900001000000020231000000000",
+   "owner": "",
+   "owner_note": ""
+  }
+ }
+}
