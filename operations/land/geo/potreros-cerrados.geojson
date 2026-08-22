@@ -2438,6 +2438,91 @@
     "nombre": "Potrero 13",
     "n": 13,
     "nombrado": false,
+    "area_ha": 2.39,
+    "area_m2": 23934,
+    "agua": [
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": true,
+    "agua_por_confirmar": true,
+    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.607649,
+       5.799182
+      ],
+      [
+       -75.607908,
+       5.799305
+      ],
+      [
+       -75.608265,
+       5.799467
+      ],
+      [
+       -75.608776,
+       5.799699
+      ],
+      [
+       -75.608802,
+       5.799532
+      ],
+      [
+       -75.60904,
+       5.797977
+      ],
+      [
+       -75.608871,
+       5.797948
+      ],
+      [
+       -75.60881,
+       5.797939
+      ],
+      [
+       -75.608068,
+       5.79777
+      ],
+      [
+       -75.607628,
+       5.797584
+      ],
+      [
+       -75.607645,
+       5.798066
+      ],
+      [
+       -75.60792,
+       5.798606
+      ],
+      [
+       -75.607649,
+       5.799182
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 14",
+    "n": 14,
+    "nombrado": false,
     "area_ha": 1.82,
     "area_m2": 18233,
     "agua": [

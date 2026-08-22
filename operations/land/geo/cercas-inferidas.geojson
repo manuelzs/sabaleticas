@@ -184,6 +184,52 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 26–punto",
+    "longitud_m": 19,
+    "fuente": "[owner] se prolonga al norte hasta cruzar con la que sube desde 27",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608802,
+      5.799532
+     ],
+     [
+      -75.608776,
+      5.799699
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 27–punto",
+    "longitud_m": 62,
+    "fuente": "[owner] se prolonga al noroeste hasta cruzar con la que sube desde 26",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608265,
+      5.799467
+     ],
+     [
+      -75.608776,
+      5.799699
+     ]
+    ]
+   }
   }
  ]
 }

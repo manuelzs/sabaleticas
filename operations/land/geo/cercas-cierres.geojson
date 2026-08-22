@@ -432,6 +432,54 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 26–punto",
+    "longitud_m": 19,
+    "motivo": "se prolonga al norte hasta cruzar con la que sube desde 27",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608802,
+      5.799532
+     ],
+     [
+      -75.608776,
+      5.799699
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 27–punto",
+    "longitud_m": 62,
+    "motivo": "se prolonga al noroeste hasta cruzar con la que sube desde 26",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608265,
+      5.799467
+     ],
+     [
+      -75.608776,
+      5.799699
+     ]
+    ]
+   }
   }
  ]
 }
