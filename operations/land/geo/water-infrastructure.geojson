@@ -454,12 +454,14 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "tanque",
-    "nombre": "Tanque norte 1 (aprox.)",
+    "tipo": "bebedero",
+    "nombre": "Bebedero 2 (aprox.)",
     "altura_m": 747,
     "orden_en_el_ramal": 1,
     "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
-    "confianza": "orden: alta · posición: BAJA · capacidad: desconocida"
+    "confianza": "orden: alta · posición: BAJA · capacidad: desconocida",
+    "n": 2,
+    "nota": "[owner, 2026-08-21] Bebedero, no tanque de almacenamiento. El ramal norte no guarda agua: se apoya en los tanques altos."
    },
    "geometry": {
     "type": "Point",
@@ -472,12 +474,14 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "tanque",
-    "nombre": "Tanque norte 2 (aprox.)",
+    "tipo": "bebedero",
+    "nombre": "Bebedero 3 (aprox.)",
     "altura_m": 722,
     "orden_en_el_ramal": 2,
     "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
-    "confianza": "orden: alta · posición: BAJA · capacidad: desconocida"
+    "confianza": "orden: alta · posición: BAJA · capacidad: desconocida",
+    "n": 3,
+    "nota": "[owner, 2026-08-21] Bebedero, no tanque de almacenamiento. El ramal norte no guarda agua: se apoya en los tanques altos."
    },
    "geometry": {
     "type": "Point",
@@ -490,12 +494,14 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "tanque",
-    "nombre": "Tanque norte 3 (aprox.)",
+    "tipo": "bebedero",
+    "nombre": "Bebedero 4 (aprox.)",
     "altura_m": 700,
     "orden_en_el_ramal": 3,
     "fuente": "[owner, APROXIMADA] Manuel, 2026-08-21: leída del plano 2003, que 'no es muy bueno y no coincide del todo'. El ORDEN sobre el ramal es correcto; la POSICIÓN no. Sirve para ver por dónde va la línea, no para medir. Pendiente de levantamiento con GPS.",
-    "confianza": "orden: alta · posición: BAJA · capacidad: desconocida"
+    "confianza": "orden: alta · posición: BAJA · capacidad: desconocida",
+    "n": 4,
+    "nota": "[owner, 2026-08-21] Bebedero, no tanque de almacenamiento. El ramal norte no guarda agua: se apoya en los tanques altos."
    },
    "geometry": {
     "type": "Point",
@@ -509,7 +515,7 @@
    "type": "Feature",
    "properties": {
     "tipo": "tuberia",
-    "nombre": "T del norte → tanque norte 1 (APROXIMADA)",
+    "nombre": "T del norte → Bebedero 2 (APROXIMADA)",
     "longitud_m": 371,
     "desnivel_m": 28,
     "gradiente_pct": 7.6,
@@ -534,7 +540,7 @@
    "type": "Feature",
    "properties": {
     "tipo": "tuberia",
-    "nombre": "Tanque norte 1 → 2 (APROXIMADA)",
+    "nombre": "Bebedero 2 → 3 (APROXIMADA)",
     "longitud_m": 337,
     "desnivel_m": 25,
     "gradiente_pct": 7.4,
@@ -559,7 +565,7 @@
    "type": "Feature",
    "properties": {
     "tipo": "tuberia",
-    "nombre": "Tanque norte 2 → 3 (APROXIMADA)",
+    "nombre": "Bebedero 3 → 4 (APROXIMADA)",
     "longitud_m": 401,
     "desnivel_m": 22,
     "gradiente_pct": 5.5,
@@ -691,12 +697,11 @@
    "type": "Feature",
    "properties": {
     "tipo": "tuberia",
-    "nombre": "T-1 → T-2 (APROXIMADA)",
-    "longitud_m": 321,
-    "desnivel_m": 42,
-    "gradiente_pct": 13.1,
+    "nombre": "T-1 → ventosa → T-2 (APROXIMADA)",
+    "longitud_m": 339,
     "fuente": "[owner, APROXIMADA ±10–15 m] Manuel, 2026-08-21, capturada en el visor sobre el calco del plano 2003. El ORDEN sobre la línea es correcto; la POSICIÓN no. El plano no coincide del todo con la foto. Pendiente de levantamiento con GPS.",
-    "confianza": "orden: alta · trazado y longitud: BAJA"
+    "confianza": "orden: alta · trazado y longitud: BAJA",
+    "pasa_por": "[owner, 2026-08-21] La ventosa está en este tramo."
    },
    "geometry": {
     "type": "LineString",
@@ -704,6 +709,10 @@
      [
       -75.610805,
       5.797628
+     ],
+     [
+      -75.612092,
+      5.796878
      ],
      [
       -75.613651,

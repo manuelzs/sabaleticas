@@ -438,7 +438,7 @@ system is a hand annotation nobody has touched in ten years.
 |---|---|
 | **Tanques altos, intermedios, both casas** | **high** — given from the viewer against the orthophoto |
 | Represa (extent) | high — IGAC polygon |
-| **T-junctions, ramal norte tanks, ventosa** | **±10–15 m** — read off the 2003 plan |
+| **T-junctions, ramal norte troughs, ventosa** | **±10–15 m** — read off the 2003 plan |
 | All pipe routes | schematic unless stated otherwise |
 
 > ### What this means for the terrain analysis
@@ -469,7 +469,7 @@ construction facts break that assumption, and they all break it in the same dire
 | **Surface-laid sections** | Pipe sits at or slightly above ground, roughly as modelled |
 
 > ### This weakens my strongest air-trap finding, and I should say so directly.
-> The **20.9 m "climb" into the rompecargas** and the **10.6 m "climb" into tanque norte 1**
+> The **20.9 m "climb" into the rompecargas** and the **10.6 m "climb" into Bebedero 2**
 > were computed by walking the ground down into a valley and back up. **If those valleys are
 > creeks the hose spans aerially, neither climb exists in the pipe** — the hose goes straight
 > across. I called those two "large enough to survive" the coordinate error. They survive *that*
@@ -504,7 +504,7 @@ Two things fall out of that:
 
 1. **Most of the head is already spent before the T.** More than half the fall on this leg
    happens in the first 198 m.
-2. **The north branch carries no storage of its own** `[owner, 2026-08-21]` — it leans on the
+2. **The north branch carries no storage of its own** — its three points are *bebederos*, not tanks `[owner, 2026-08-21]` — `[owner, 2026-08-21]` — it leans on the
    tanques altos. The tanques intermedios exist *"mostly because of the high water usage of the
    house."*
 
@@ -520,7 +520,7 @@ Manuel's coordinates for the ramal norte, 2026-08-21:
 | From the T (775 m) | Distance | Drop | Gradient |
 |---|---|---|---|
 | South → tanques intermedios (762 m) | 227 m | 13 m | 5.7 % |
-| **North → tanque norte 1 (747 m)** | 371 m | **28 m** | **7.6 %** |
+| **North → Bebedero 2 (747 m)** | 371 m | **28 m** | **7.6 %** |
 
 The north's first tank is **28 m below** the T. If diameters match, flow goes roughly as
 √gradient, so the north should draw about **15 % more** than the south — the opposite of the
@@ -532,13 +532,13 @@ direction.** Diameters are on the field list for exactly this reason.
 
 | Leg | Length | Drop | Gradient | Ground above its own grade line |
 |---|---|---|---|---|
-| T → norte 1 | 371 m | 28 m | 7.6 % | **+5.7 m**, and a **10.6 m climb into the tank** |
-| norte 1 → norte 2 | 337 m | 25 m | 7.4 % | **+9.2 m** at 272 m along |
-| norte 2 → norte 3 | 401 m | 22 m | 5.5 % | +1.9 m |
+| T → Bebedero 2 | 371 m | 28 m | 7.6 % | **+5.7 m**, and a **10.6 m climb into the tank** |
+| Bebedero 2 → 3 | 337 m | 25 m | 7.4 % | **+9.2 m** at 272 m along |
+| Bebedero 3 → 4 | 401 m | 22 m | 5.5 % | +1.9 m |
 | **Total from the T** | **1.109 m** | **75 m** | | 13 humps in all |
 
 > ### Tanks are built on high points, so every tank inlet is a summit — and every summit is an air trap.
-> The rompecargas inlet climbs **20.9 m**. Tanque norte 1's inlet climbs **10.6 m**. Same shape,
+> The rompecargas inlet climbs **20.9 m**. Bebedero 2's inlet climbs **10.6 m**. Same shape,
 > twice. That is a property of how the system was laid out, not an accident of one pipe.
 
 ⚠️ **Both caveats above apply, and the second one bites hardest here.** These humps are sampled
@@ -566,14 +566,14 @@ that need it.
 
 **Two fixes, both cheap, and they are probably the best value in the whole water system:**
 
-1. **Put a poly tank on the north branch.** A 10.000 L tank at tanque norte 1 buys roughly
+1. **Put a poly tank on the north branch.** A 10.000 L tank at Bebedero 2 buys roughly
    **1.2–2 days** for the northern cattle `[derived, unverified: ~100–160 head × ~50 L/día]`.
    It is a tank on a slab — not civil works, unlike enlarging the rompecargas.
 2. **Cross-tie the tanques intermedios to the north branch.** Tested on the terrain model:
 
    | | |
    |---|---|
-   | Route | intermedios (762 m) → tanque norte 1 (747 m) |
+   | Route | intermedios (762 m) → Bebedero 2 (747 m) |
    | Length | **430 m, entirely on our own land** |
    | Climb required | **0.4 m** — less than the tanks' own height |
    | Limiting gradient | 3.40 % |
