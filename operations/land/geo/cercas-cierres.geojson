@@ -1704,6 +1704,54 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 28,
+    "motivo": "cerca real nueva que SUBDIVIDE, por el drenaje 12 (tramos 13 y 14). Une dos vértices que ya existían y que salieron de los dos ajustes anteriores: al sur, el final de la cerca dictada que se corrió al cruce drenaje/IGAC; al norte, la punta de la prolongación del extremo 30. 65,7 m por el cauce contra 65,1 m en recta — aquí el drenaje casi no dobla, pero es por donde va la cerca. (tramo 1 de 2)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.615431,
+      5.797699
+     ],
+     [
+      -75.61565,
+      5.797828
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 37,
+    "motivo": "cerca real nueva que SUBDIVIDE, por el drenaje 12 (tramos 13 y 14). Une dos vértices que ya existían y que salieron de los dos ajustes anteriores: al sur, el final de la cerca dictada que se corrió al cruce drenaje/IGAC; al norte, la punta de la prolongación del extremo 30. 65,7 m por el cauce contra 65,1 m en recta — aquí el drenaje casi no dobla, pero es por donde va la cerca. (tramo 2 de 2)",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.61565,
+      5.797828
+     ],
+     [
+      -75.615887,
+      5.79807
+     ]
+    ]
+   }
   }
  ]
 }

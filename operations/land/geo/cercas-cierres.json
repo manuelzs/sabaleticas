@@ -546,7 +546,25 @@
    ],
    "prolongación dictada: la cerca del IGAC muere en el extremo 30 y sigue 18,2 m al este hasta donde de verdad va. El extremo 30 NO se mueve — es de una cerca real del IGAC.",
    true
-  ]
+  ],
+  {
+   "polilinea": [
+    [
+     -75.615431,
+     5.797699
+    ],
+    [
+     -75.61565,
+     5.797828
+    ],
+    [
+     -75.615887,
+     5.79807
+    ]
+   ],
+   "es_cerca": true,
+   "motivo": "cerca real nueva que SUBDIVIDE, por el drenaje 12 (tramos 13 y 14). Une dos vértices que ya existían y que salieron de los dos ajustes anteriores: al sur, el final de la cerca dictada que se corrió al cruce drenaje/IGAC; al norte, la punta de la prolongación del extremo 30. 65,7 m por el cauce contra 65,1 m en recta — aquí el drenaje casi no dobla, pero es por donde va la cerca."
+  }
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
  "_por_que": "[owner, 2026-08-22] La capa de CERCAS y la de POTREROS no son lo mismo. Donde no hay cerca física el IGAC hace bien en dejar el hueco, pero el POTRERO puede estar cerrado igual para el ganado. Las cercas se quedan abiertas; los potreros se cierran.",

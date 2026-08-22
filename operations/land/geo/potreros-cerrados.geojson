@@ -2799,125 +2799,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 17",
-    "n": 17,
-    "nombrado": false,
-    "estado": null,
-    "estado_nota": "",
-    "subdivide_en": [],
-    "subdivide_nota": "",
-    "area_ha": 3.81,
-    "area_m2": 38072,
-    "agua": [
-     {
-      "id": null,
-      "nombre": "drenaje",
-      "tipo": "natural",
-      "confianza": "IGAC"
-     }
-    ],
-    "sal": [],
-    "sin_agua": false,
-    "solo_natural": true,
-    "agua_por_confirmar": true,
-    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
-    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
-    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
-   },
-   "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -75.615696,
-       5.796693
-      ],
-      [
-       -75.615493,
-       5.797618
-      ],
-      [
-       -75.615431,
-       5.797699
-      ],
-      [
-       -75.615344,
-       5.797812
-      ],
-      [
-       -75.615115,
-       5.797881
-      ],
-      [
-       -75.614275,
-       5.798024
-      ],
-      [
-       -75.614472,
-       5.798867
-      ],
-      [
-       -75.614926,
-       5.798886
-      ],
-      [
-       -75.615282,
-       5.798782
-      ],
-      [
-       -75.615887,
-       5.79807
-      ],
-      [
-       -75.616726,
-       5.797314
-      ],
-      [
-       -75.616763,
-       5.796373
-      ],
-      [
-       -75.616734,
-       5.796
-      ],
-      [
-       -75.616515,
-       5.795961
-      ],
-      [
-       -75.616319,
-       5.796002
-      ],
-      [
-       -75.615926,
-       5.796184
-      ],
-      [
-       -75.615718,
-       5.796307
-      ],
-      [
-       -75.615555,
-       5.796451
-      ],
-      [
-       -75.615541,
-       5.796607
-      ],
-      [
-       -75.615696,
-       5.796693
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "potrero",
     "nombre": "Balkanes",
-    "n": 18,
+    "n": 17,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3014,7 +2897,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Serengueti",
-    "n": 19,
+    "n": 18,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3096,8 +2979,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 20",
-    "n": 20,
+    "nombre": "Potrero 19",
+    "n": 19,
     "nombrado": false,
     "estado": "final",
     "estado_nota": "",
@@ -3195,7 +3078,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Lajas",
-    "n": 21,
+    "n": 20,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3295,7 +3178,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Paraíso",
-    "n": 22,
+    "n": 21,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3388,7 +3271,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Perfume",
-    "n": 23,
+    "n": 22,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3549,7 +3432,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Zanzíbar",
-    "n": 24,
+    "n": 23,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3660,7 +3543,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Consuelo",
-    "n": 25,
+    "n": 24,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3767,7 +3650,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Ciruelo",
-    "n": 26,
+    "n": 25,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -3846,6 +3729,103 @@
       [
        -75.607649,
        5.799182
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 26",
+    "n": 26,
+    "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
+    "area_ha": 2.34,
+    "area_m2": 23373,
+    "agua": [
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": true,
+    "agua_por_confirmar": true,
+    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.615696,
+       5.796693
+      ],
+      [
+       -75.615493,
+       5.797618
+      ],
+      [
+       -75.615431,
+       5.797699
+      ],
+      [
+       -75.61565,
+       5.797828
+      ],
+      [
+       -75.615887,
+       5.79807
+      ],
+      [
+       -75.616726,
+       5.797314
+      ],
+      [
+       -75.616763,
+       5.796373
+      ],
+      [
+       -75.616734,
+       5.796
+      ],
+      [
+       -75.616515,
+       5.795961
+      ],
+      [
+       -75.616319,
+       5.796002
+      ],
+      [
+       -75.615926,
+       5.796184
+      ],
+      [
+       -75.615718,
+       5.796307
+      ],
+      [
+       -75.615555,
+       5.796451
+      ],
+      [
+       -75.615541,
+       5.796607
+      ],
+      [
+       -75.615696,
+       5.796693
       ]
      ]
     ]
@@ -4561,8 +4541,85 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Tanzania",
+    "nombre": "Potrero 34",
     "n": 34,
+    "nombrado": false,
+    "estado": null,
+    "estado_nota": "",
+    "subdivide_en": [],
+    "subdivide_nota": "",
+    "area_ha": 1.47,
+    "area_m2": 14699,
+    "agua": [
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": true,
+    "agua_por_confirmar": true,
+    "agua_nota": "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. No asumir lo uno ni lo otro.",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.615431,
+       5.797699
+      ],
+      [
+       -75.615344,
+       5.797812
+      ],
+      [
+       -75.615115,
+       5.797881
+      ],
+      [
+       -75.614275,
+       5.798024
+      ],
+      [
+       -75.614472,
+       5.798867
+      ],
+      [
+       -75.614926,
+       5.798886
+      ],
+      [
+       -75.615282,
+       5.798782
+      ],
+      [
+       -75.615887,
+       5.79807
+      ],
+      [
+       -75.61565,
+       5.797828
+      ],
+      [
+       -75.615431,
+       5.797699
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Tanzania",
+    "n": 35,
     "nombrado": true,
     "estado": "final",
     "estado_nota": "",
@@ -4634,8 +4691,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 35",
-    "n": 35,
+    "nombre": "Potrero 36",
+    "n": 36,
     "nombrado": false,
     "estado": "por_verificar",
     "estado_nota": "Manuel dice que es Rincón, pero el Mojón 15 queda 56 m al sur, fuera de la cara: puede que el potrero llegue hasta allá. Nombre en espera hasta decidir el borde.",
