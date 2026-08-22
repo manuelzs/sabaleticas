@@ -3924,10 +3924,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 28",
+    "nombre": "Etiopía",
     "n": 28,
-    "nombrado": false,
-    "estado": null,
+    "nombrado": true,
+    "estado": "final",
     "estado_nota": "",
     "subdivide_en": [],
     "subdivide_nota": "",
