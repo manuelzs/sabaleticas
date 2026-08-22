@@ -31,6 +31,24 @@ And it is not alone. **Sensor readings work exactly the same way**: a level for
 > entity ids. Any view can render the attachments it cares about — a map marker showing an
 > open ticket, a schematic symbol showing a live level.
 
+### Alerting closes the loop
+
+`[Manuel, 2026-08-22]` *"We can probably also eventually develop an alert system that connects
+to the sensors. Everything is connected."*
+
+He is right, and it falls out of the same shape rather than needing new machinery:
+
+```
+sensor reading  →  attaches to entity id  →  rule fires  →  raises a ticket on the same id
+```
+
+**An alert is just a ticket nobody typed.** "Rompecargas below 20 % for two hours" becomes an
+open item against `agua:rompecargas`, visible on the map marker, on the schematic symbol, and
+in the work list — because all three already resolve attachments by id.
+
+That is the argument for getting the attachment model right before building any of the three:
+sensors, tickets and alerts are **one mechanism wearing three hats.**
+
 This has one consequence worth acting on **now**, because it is painful to retrofit:
 
 > **Entity ids must be globally unique, not unique per subsystem.**

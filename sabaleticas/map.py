@@ -232,8 +232,14 @@ def build(root: Path) -> Path:
            if tex_path.exists() else "")
 
     farm = _farm(root, geo)
+    net = json.loads((geo / "water-network.json").read_text(encoding="utf-8")) \
+        if (geo / "water-network.json").exists() else None
+
     payload = json.dumps({
         "farm": farm,
+        "net": net,                       # the water graph, for the schematic view
+        "tipoColour": TIPO_COLOUR,
+        "tipoShape": TIPO_SHAPE,
         "bounds": farm["bounds"],
         "layers": _collect(geo),
         "dem": dem,
