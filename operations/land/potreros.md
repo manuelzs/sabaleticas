@@ -96,6 +96,16 @@ lindero para servir a varios; los viejos van en el **centro** de uno solo.
 **Sin bebedero mapeado ≠ toma de la quebrada.** Puede ser que el ganado beba del cauce, o que no
 hayamos ubicado su bebedero. Las dos quedan abiertas.
 
+## El plano de 2007 no prueba lo de hoy
+
+**[owner, 2026-08-22] En veinte años no sólo se ha subdividido: también se han QUITADO
+divisiones.** Así que un rótulo de 2007 dentro de una cara de hoy dice **cómo estaba en 2007**,
+no cómo está. Sirve para dos cosas —saber **qué mirar** y con **qué nombre**— y para ninguna
+más. No parte nada, y no convierte una cara en «tiene que ser N potreros».
+
+Se lee en un solo sentido: si hoy hay una cerca, existe. Si en 2007 había una y hoy no se ve,
+puede que la hayan quitado. Lo confirma Manuel en campo.
+
 ## El playón no cuenta como pasto
 
 Entre el lindero y el punto medio del río hay una franja que usamos y que el catastro no

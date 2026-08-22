@@ -6,7 +6,8 @@
   "por_subdividir": "Cierra, pero es un resto: por dentro hay más de un potrero.",
   "abierto": "Todavía no cierra, o cierra por donde no debe. Faltan cercas por dictar.",
   "por_ajustar": "Cierra y es un solo potrero, pero algún borde está mal trazado.",
-  "(sin marcar)": "No auditado todavía. Es el estado por defecto y NO significa que esté bien."
+  "(sin marcar)": "No auditado todavía. Es el estado por defecto y NO significa que esté bien.",
+  "por_verificar": "Hay motivo para dudar de la cara o de su nombre, pero no basta para decidir desde el escritorio. Requiere ir al terreno. NO es lo mismo que «por_subdividir»: ahí ya se sabe que se parte; aquí no se sabe."
  },
  "_vocabulario_abierto": "Si Manuel describe un estado que no está en la lista, se añade aquí con sus palabras; no se fuerza en una de las cuatro casillas.",
  "estados": [
@@ -140,14 +141,6 @@
   },
   {
    "punto": [
-    -75.616893,
-    5.803838
-   ],
-   "estado": "final",
-   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 6 de la corrida del 2026-08-22."
-  },
-  {
-   "punto": [
     -75.614393,
     5.799937
    ],
@@ -235,6 +228,24 @@
    ],
    "estado": "final",
    "fuente": "[owner, 2026-08-22] Manuel lo marcó como «final» sobre el Potrero 33 de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.616893,
+    5.803838
+   ],
+   "estado": "por_verificar",
+   "nota": "el plano de 2007 muestra dos potreros aquí (San Mateo y San Matías); en la ortofoto no se ve la división. Manuel confirma en campo.",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «por_verificar» sobre el San Matías de la corrida del 2026-08-22."
+  },
+  {
+   "punto": [
+    -75.613509,
+    5.793582
+   ],
+   "estado": "por_verificar",
+   "nota": "Manuel dice que es Rincón, pero el Mojón 15 queda 56 m al sur, fuera de la cara: puede que el potrero llegue hasta allá. Nombre en espera hasta decidir el borde.",
+   "fuente": "[owner, 2026-08-22] Manuel lo marcó como «por_verificar» sobre el Potrero 34 de la corrida del 2026-08-22."
   }
  ]
 }
