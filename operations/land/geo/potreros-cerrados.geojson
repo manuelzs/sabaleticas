@@ -2077,9 +2077,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 9",
+    "nombre": "Serengueti",
     "n": 9,
-    "nombrado": false,
+    "nombrado": true,
     "area_ha": 3.76,
     "area_m2": 37593,
     "agua": [
@@ -2152,9 +2152,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 10",
+    "nombre": "Balkanes",
     "n": 10,
-    "nombrado": false,
+    "nombrado": true,
     "area_ha": 3.62,
     "area_m2": 36247,
     "agua": [

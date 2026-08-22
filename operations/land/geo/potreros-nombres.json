@@ -33,6 +33,22 @@
     5.79859
    ],
    "fuente": "[owner, 2026-08-22] Manuel lo identificó como el potrero 13 de esa corrida."
+  },
+  {
+   "nombre": "Serengueti",
+   "punto": [
+    -75.609669,
+    5.798822
+   ],
+   "fuente": "[owner, 2026-08-22] Manuel lo identificó como el potrero 9 de la corrida del 2026-08-22 — el rectángulo de 3,76 ha que apareció al arreglar las aristas paralelas."
+  },
+  {
+   "nombre": "Balkanes",
+   "punto": [
+    -75.610151,
+    5.797726
+   ],
+   "fuente": "[owner, 2026-08-22] Manuel lo identificó como el potrero 10 de esa corrida."
   }
  ]
 }
