@@ -42,7 +42,7 @@ def load_lines(tag=False):
     return (out, n_cerca) if tag else out
 
 
-def node_lines(lines, tol=TOL, extra=()):
+def node_lines(lines, tol=TOL, extra=(), extra_tol=6.0):
     """Split every segment where another line's endpoint lands on it.
 
     This is the whole problem. IGAC's fences genuinely meet — one ends *on* another —
@@ -62,12 +62,14 @@ def node_lines(lines, tol=TOL, extra=()):
             dx, dy = bx - ax, by - ay
             dd = dx * dx + dy * dy
             hits = []
+            extra_set = set(extra)
             for p in ends:
                 px, py = p[0] * LON2M, p[1] * LAT2M
                 t = 0.0 if dd == 0 else ((px - ax) * dx + (py - ay) * dy) / dd
                 if t <= 1e-9 or t >= 1 - 1e-9:
                     continue
-                if math.hypot(px - (ax + t * dx), py - (ay + t * dy)) <= tol:
+                lim = extra_tol if p in extra_set else tol
+                if math.hypot(px - (ax + t * dx), py - (ay + t * dy)) <= lim:
                     hits.append((t, p))
             for _, p in sorted(hits):
                 if p != new_l[-1]:

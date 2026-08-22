@@ -121,8 +121,8 @@
    "properties": {
     "tipo": "cerca_inferida",
     "nombre": "Cerca 12–punto",
-    "longitud_m": 47,
-    "fuente": "[owner] cerca real hasta el quiebre del lindero que marcó Manuel",
+    "longitud_m": 43,
+    "fuente": "[owner] cerca real hasta el vértice donde se juntan los potreros — 10 m al norte y 16 m al este del quiebre del lindero, según Manuel",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
@@ -133,8 +133,8 @@
       5.801972
      ],
      [
-      -75.617273,
-      5.802206
+      -75.617129,
+      5.802296
      ]
     ]
    }
