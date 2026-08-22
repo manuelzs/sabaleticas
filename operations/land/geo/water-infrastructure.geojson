@@ -1,0 +1,117 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "casa",
+    "nombre": "Casa de la entrada",
+    "altura_m": 813,
+    "fuente": "[owner, corroborated by IGAC 1:5000] Manuel describió dos sitios construidos en el predio; el catastro 1:5000 muestra exactamente dos (entrada y suroeste). Construcción 14x10 m.",
+    "confianza": "alta"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.60241,
+     5.79529
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tanque",
+    "nombre": "Tanque principal 1 (~50.000 L)",
+    "altura_m": 813,
+    "capacidad_l": 50000,
+    "confianza": "posición: media · capacidad: baja",
+    "fuente": "[owner, unverified] capacidad y conteo de memoria. Posición aproximada: junto a la casa de la entrada."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.60239,
+     5.79529
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tanque",
+    "nombre": "Tanque principal 2 (~20.000 L)",
+    "altura_m": 813,
+    "capacidad_l": 20000,
+    "confianza": "posición: media · capacidad: baja",
+    "fuente": "[owner, unverified] capacidad y conteo de memoria. Posición aproximada: junto a la casa de la entrada."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.6025,
+     5.79534
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "casa",
+    "nombre": "Casa principal",
+    "altura_m": 705,
+    "fuente": "[owner, corroborated by IGAC 1:5000] Manuel describió dos sitios construidos en el predio; el catastro 1:5000 muestra exactamente dos (entrada y suroeste). Construcción 60x30 m, la mayor del predio.",
+    "confianza": "alta"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.61623,
+     5.79648
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "casa",
+    "nombre": "Anexo casa principal",
+    "altura_m": 703,
+    "fuente": "[IGAC 1:5000] construcción 19x10 m, a ~85 m de la casa principal.",
+    "confianza": "alta"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.61547,
+     5.7965
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Línea principal — TRAZADO INDICATIVO",
+    "desnivel_m": 108,
+    "distancia_recta_m": 1575,
+    "presion_estatica_bar_aprox": 10.8,
+    "confianza": "solo los extremos son reales; la ruta es un marcador de posición",
+    "fuente": "Esquemática. Une dos puntos conocidos (tanques 813 m → casa principal 705 m). Se reemplaza con el levantamiento de tubería."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.60244,
+      5.79531
+     ],
+     [
+      -75.61623,
+      5.79648
+     ]
+    ]
+   }
+  }
+ ]
+}

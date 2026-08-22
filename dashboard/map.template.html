@@ -137,6 +137,13 @@ function drawGeom(g,kind,fill){
     }
     return;
   }
+  if(t==='Point'||t==='MultiPoint'){
+    const ps = t==='Point'?[c]:c;
+    for(const p of ps){ const s=toScreen(p[0],p[1]);
+      cx.fillStyle=cx.strokeStyle; cx.beginPath(); cx.arc(s[0],s[1],5.5,0,7); cx.fill();
+      cx.save(); cx.strokeStyle='#0b0e11'; cx.lineWidth=2; cx.stroke(); cx.restore(); }
+    return;
+  }
   const lines = t==='MultiLineString'?c : t==='LineString'?[c] : [];
   for(const line of lines){ ringPath(line); cx.stroke(); }
 }
@@ -263,7 +270,7 @@ if(D.ortho){
 const GEOM={tanque:'point',nacimiento:'point',bebedero:'point',
             represa:'polygon',tuberia:'line',potrero:'polygon',otro:'line'};
 const DCOL={tanque:'#00e5ff',nacimiento:'#7cffcb',bebedero:'#4dd0e1',represa:'#0091ea',
-            tuberia:'#ff4081',potrero:'#ffee58',otro:'#b39ddb'};
+            tuberia:'#b388ff',potrero:'#ffee58',otro:'#b39ddb'};
 let drawn=[], draft=null, drawing=false;
 try{ drawn=JSON.parse(localStorage.getItem('sab_drawn')||'[]'); }catch(e){ drawn=[]; }
 const save=()=>{ try{localStorage.setItem('sab_drawn',JSON.stringify(drawn));}catch(e){} };

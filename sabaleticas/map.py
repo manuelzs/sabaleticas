@@ -24,10 +24,11 @@ GEO_REL = "../operations/land/geo"          # dashboard/ -> geo/, as the browser
 # label, file (relative to geo/), kind, colour, width, fill
 LAYERS = [
     ("Linderos",                "boundary.geojson",                    "poly", "#ff1744", 3.0, None),
-    ("Cercas (IGAC ⚠ parcial)", "igac-1to5000/Cerca.geojson",          "line", "#ffd54f", 1.6, None),
+    ("Cercas (IGAC ⚠ parcial)", "igac-1to5000/Cerca.geojson",          "line", "#ff2ecc", 1.7, None),
     ("Drenajes",                "igac-1to5000/Drenaje.geojson",        "line", "#4fc3f7", 1.4, None),
     ("Cauces (área)",           "igac-1to5000/Drenaje_R.geojson",      "poly", "#29b6f6", 1.0, "rgba(41,182,246,.35)"),
     ("Depósitos de agua",       "igac-1to5000/Deposito_Agua_R.geojson","poly", "#00e5ff", 2.0, "rgba(0,229,255,.45)"),
+    ("Agua: infraestructura",   "water-infrastructure.geojson",        "line", "#b388ff", 2.6, None),
     ("Curvas 5 m",              "contours-5m.geojson",                 "line", "#c9a227", 0.6, None),
     ("Curvas 25 m",             "contours-25m.geojson",                "line", "#ffb74d", 1.4, None),
     ("Bosque",                  "igac-1to5000/Bosque.geojson",         "poly", "#66bb6a", 1.0, "rgba(102,187,106,.20)"),
@@ -36,7 +37,7 @@ LAYERS = [
     ("Vecinos",                 "neighbours.geojson",                  "poly", "#b0bec5", 1.2, None),
 ]
 DEFAULT_ON = {"Linderos", "Cercas (IGAC ⚠ parcial)", "Drenajes",
-              "Depósitos de agua", "Curvas 25 m"}
+              "Depósitos de agua", "Curvas 25 m", "Agua: infraestructura"}
 
 # ~2 m at this latitude. Plenty for a screen that never shows better than 0.5 m/px.
 SIMPLIFY_TOL = 0.00002

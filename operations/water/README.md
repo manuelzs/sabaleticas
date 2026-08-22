@@ -43,6 +43,58 @@ they run out of water *where the cattle are*, and end up crowding the herd onto 
 watered paddocks — which overgrazes those and rests the rest into rank, low-quality forage.
 That pattern would show up as poor daily gain without ever looking like a water problem.
 
+## How the system works — Manuel's account (2026-08-21)
+
+⚠️ **All `[owner, unverified]` — explicitly from memory, to be fact-checked by the survey.**
+Recorded because it is the first coherent description of the system we have.
+
+1. **Two sources, both outside the farm**, which we hold **water rights** on. They feed the
+   farm — this is how water gets in at all.
+2. **Two tanks at the top**, beside the little house at the entrance:
+   **~50,000 L and ~20,000 L**. *(Manuel: "I do know there are two sources, I do know there
+   are two tanks. I just don't know the capacity.")*
+3. **Distribution runs from those two tanks across the farm.**
+4. **Potreros without natural water have a small trough (bebedero)** for the cattle. This is
+   a large share of total use.
+5. **The big house in the southwest** is the other main draw.
+6. **The big reservoir inside the farm is a separate system** — it does not feed the tanks.
+
+### What the data independently confirms
+
+The terrain backs the shape of this exactly, which raises confidence in the rest:
+
+| Claim | Check | Verdict |
+|---|---|---|
+| "The entrance is the highest point" | Entrance sits at **814.9 m**; the **highest ground in the parcel (822.3 m) is 40–48 m away** | ✅ confirmed `[IGAC terrain model]` |
+| "The tanks are at the top, water goes down from there" | Elevation falls **monotonically east→west**: 800 m mean in the entrance band, 660 m at the river | ✅ confirmed |
+| "Two built sites — little house at the entrance, big house southwest" | The cadastre maps **exactly two building sites** inside the parcel: 14×10 m at the entrance (813 m), and a 60×30 m + 19×10 m pair in the southwest (705 m) | ✅ `[owner, corroborated by IGAC 1:5000]` |
+
+> **So the whole farm lies below the tanks — every hectare of it.** The lowest ground is
+> 627 m, 186 m below the tank site. In principle nothing here needs a pump.
+
+### ⚠️ The flip side: this may be too much pressure, not too little
+
+Head converts to pressure at roughly **1 bar per 10.2 m** of water column. So:
+
+| From the tanks (813 m) to… | Drop | Static pressure |
+|---|---|---|
+| The big house (705 m) | **108 m** | **~10.6 bar** |
+| The lowest ground (627 m) | **186 m** | **~18 bar** |
+
+Common pressure-pipe classes sit in the region of 10–14 bar _(needs confirming against what
+is actually installed — `[unsourced]`)_. If that is right, **the lower reaches of this system
+run at or beyond ordinary pipe rating**, which means one of three things:
+
+- there are **break-pressure tanks or pressure-reducing valves** along the line that we
+  haven't recorded yet — most likely, and the 2003 plan's *ventosa* hints at deliberate
+  design; or
+- the pipe is a heavier class than standard; or
+- **it bursts periodically** and everyone treats that as normal.
+
+**This is now a specific thing to ask the pipe survey to look for**, and it is cheap to check
+while someone is already walking the line. Worth knowing before we spend anything on the
+network, because "add more pressure" would be exactly the wrong instinct here.
+
 ## What we know today
 
 Thin, and all of it from the 2003 survey plan
@@ -140,6 +192,18 @@ estimates:
 
 ## Open questions for the discussion
 
+0. **The two external sources** — what are they (nacimientos? a bocatoma on a quebrada? a
+   veredal aqueduct)? Where? Is the water right a **concesión de aguas** from Corantioquia,
+   and is it current? A source outside the farm we don't fully control is the single biggest
+   risk in this whole system.
+0b. **Are the two tanks interconnected**, or does each serve its own line?
+0c. **Does the big house share a line with the cattle troughs?** If so, domestic demand and
+   stock water compete in verano — a classic and avoidable failure.
+0d. **Roughly how many bebederos**, and which potreros have natural water versus depending
+   entirely on the tanks? This is the map that decides verano carrying capacity.
+0e. **The big reservoir** — what feeds it, and what does it serve? Do cattle drink from it
+   directly?
+0f. **Any break-pressure tanks or valves** along the lines (see the pressure note above)?
 1. Which verano are we planning for, and what makes Manuel expect it to be a hard one?
 2. Has the farm ever actually run short of water — and what did we do?
 3. Where did the new reservoir tanks go, and why *there*?
