@@ -441,6 +441,11 @@ if the contador turns out to be cheap — the two combine well, since the pump i
 that either can carry it alone. **Get prices for the meter and connection before assuming
 solar wins**; if the line genuinely passes close, that number could be small.
 
+📄 **Partly priced now** — see [`pump-costing.md`](pump-costing.md): the pump itself is only
+~COP 500,000, EPM's published connection charges are ~COP 500,000, but **the meter, acometida
+and any line extension are not published by EPM at all** and could dominate the budget. The
+free **factibilidad del servicio** request is what turns that into a number.
+
 **What to price:**
 1. The **contador** and connection from the existing east–west line, including whatever the
    utility requires.
