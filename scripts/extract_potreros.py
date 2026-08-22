@@ -1279,17 +1279,32 @@ def main():
             d1, d2, d3, d4 = X(a, b, p), X(a, b, q), X(p, q, a), X(p, q, b)
             return ((d1 > 0) != (d2 > 0)) and ((d3 > 0) != (d4 > 0))
 
-        nuevos = 0
+        f_qn = GEO / "quiebrapatas-numeracion.json"
+        q_reg = json.loads(f_qn.read_text(encoding="utf-8"))["puntos"] if f_qn.exists() else {}
+        nuevos, sin_num = 0, []
         for a, b, pa, pb, mot, d_m, _c in cierres:
             if "quiebrapatas" not in (mot or "").lower():
                 continue
             mid = ((pa[0] + pb[0]) / 2, (pa[1] + pb[1]) / 2)
             via = any(cruza(pa, pb, x, y) for x, y in vias)
-            ident = f"{a}-{b}" if not isinstance(a, str) or not a.startswith("punto") else \
-                f"{mid[0]:.5f}_{mid[1]:.5f}".replace("-", "").replace(".", "")
+            # The NUMBER is Manuel's, from a registry, never derived from this run's sort
+            # order: 4, 5, 6 and 8 are still unmapped and sit between the ones we have, so
+            # sorting what exists would renumber 7 the moment 4 appears. Same lesson the
+            # fence-end numbers taught.
+            num = None
+            for k, p in q_reg.items():
+                if math.hypot((mid[0] - p[0]) * LON2M, (mid[1] - p[1]) * LAT2M) < 15.0:
+                    num = k
+                    break
+            if num is None:
+                sin_num.append(mid)
+            nombre = f"Quiebrapatas {num}" if num else "Quiebrapatas (sin número)"
+            ident = num or f"{mid[0]:.5f}_{mid[1]:.5f}".replace("-", "").replace(".", "")
             gan["features"].append({"type": "Feature", "properties": {
                 "tipo": "quiebrapatas",
-                "nombre": f"Quiebrapatas {a}–{b}",
+                "nombre": nombre,
+                "n": int(num) if num else None,
+                "cierre": f"{a}–{b}",
                 "_id": f"ganado:quiebrapatas-{ident}",
                 "_generado": "quiebrapatas",
                 "ancho_m": d_m,
@@ -1309,6 +1324,11 @@ def main():
                       if f["properties"].get("_generado") == "quiebrapatas"
                       and f["properties"].get("via"))
             print(f"  quiebrapatas en la capa de ganado: {nuevos} ({con} con vía cruzando)")
+            if sin_num:
+                print(f"  ⚠ {len(sin_num)} quiebrapatas sin número en el registro — "
+                      f"el número lo da Manuel, no se inventa:")
+                for p in sin_num:
+                    print(f"      {p[0]:.6f},{p[1]:.6f}")
 
     # Cross-check against the water graph. Manuel's insight: a fence gap is often a
     # trough with the fence split so cattle drink from both sides — so every closure is

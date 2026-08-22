@@ -1,0 +1,12 @@
+{
+ "_nota": "Números de quiebrapatas, dictados por Manuel, anclados a un PUNTO. Van de ESTE a OESTE.",
+ "_por_que_registro": "[owner, 2026-08-22] La numeración NO se deriva del orden en cada corrida. Faltan por mapear el 4, el 5, el 6 y el 8, y están entre los que ya tenemos: si el número saliera de ordenar lo mapeado, al añadir el 4 se renumerarían el 7 y todo lo demás. Es la misma lección que dejaron los extremos de cerca, donde reciclar un número convirtió tres instrucciones correctas en aristas de 271, 309 y 685 m.",
+ "_como_se_asigna": "Sólo Manuel asigna un número. Un quiebrapatas derivado que no case con ningún punto de este registro sale como «Quiebrapatas (sin número)» y se avisa en la corrida — nunca se le inventa uno.",
+ "_pendientes": "Faltan el 4, el 5 y el 6 (entre el 3 y el 7 en longitud) y el 8 (al oeste del 7). Manuel dará sus ubicaciones.",
+ "puntos": {
+  "1": [-75.603209, 5.795911],
+  "2": [-75.604675, 5.797566],
+  "3": [-75.606060, 5.797971],
+  "7": [-75.614259, 5.796100]
+ }
+}
