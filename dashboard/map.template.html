@@ -973,7 +973,7 @@ function init3d(){
       vec2 d=sb-sa;
       float l=length(d);
       vec2 n=l>1e-6 ? vec2(-d.y,d.x)/l : vec2(0.0);
-      c.xy += n*side*w*c.w/res;
+      c.xy += n*side*(w*0.5)*c.w/res;
       gl_Position=c;}`;
   const lfs=`precision mediump float;uniform vec3 col;
     void main(){gl_FragColor=vec4(col,1.0);}`;
@@ -1038,7 +1038,7 @@ function draw3dLayers(){
     if(!L._v3.length) continue;
     gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(L._v3),gl.DYNAMIC_DRAW);
     gl.uniform3fv(gl.getUniformLocation(lp,'col'),hex2rgb(L.colour));
-    gl.uniform1f(wloc, Math.max(1.6, L.width*1.5)*devicePixelRatio);
+    gl.uniform1f(wloc, Math.max(1.6, L.width*1.1)*devicePixelRatio);   // ~10% over the 2D weight
     gl.drawArrays(gl.TRIANGLES,0,L._v3.length/8);
   }
   for(const a of at) if(a!==g3.bpos.a && a!==g3.buv.a) gl.disableVertexAttribArray(a);
