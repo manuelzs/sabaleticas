@@ -86,6 +86,15 @@
    29,
    "cerca real que el IGAC no capturó",
    true
+  ],
+  [
+   12,
+   [
+    -75.617273,
+    5.802206
+   ],
+   "cerca real hasta el quiebre del lindero que marcó Manuel",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

@@ -360,6 +360,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 12–punto",
+    "longitud_m": 47,
+    "motivo": "cerca real hasta el quiebre del lindero que marcó Manuel",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616913,
+      5.801972
+     ],
+     [
+      -75.617273,
+      5.802206
+     ]
+    ]
+   }
   }
  ]
 }

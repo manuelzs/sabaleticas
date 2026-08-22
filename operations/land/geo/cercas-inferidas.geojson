@@ -115,6 +115,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 12–punto",
+    "longitud_m": 47,
+    "fuente": "[owner] cerca real hasta el quiebre del lindero que marcó Manuel",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616913,
+      5.801972
+     ],
+     [
+      -75.617273,
+      5.802206
+     ]
+    ]
+   }
   }
  ]
 }
