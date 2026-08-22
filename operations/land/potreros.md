@@ -96,6 +96,12 @@ lindero para servir a varios; los viejos van en el **centro** de uno solo.
 **Sin bebedero mapeado ≠ toma de la quebrada.** Puede ser que el ganado beba del cauce, o que no
 hayamos ubicado su bebedero. Las dos quedan abiertas.
 
+## El playón no cuenta como pasto
+
+Entre el lindero y el punto medio del río hay una franja que usamos y que el catastro no
+incluye — ver [`playon.md`](playon.md). **No se suma al área de pastoreo:** es casi todo
+piedra. Lo que aporta es acceso a agua.
+
 ## Abierto
 
 - **17 extremos sueltos.** Los fáciles ya están; quedan los que necesitan un punto marcado.
