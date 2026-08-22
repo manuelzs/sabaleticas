@@ -36,6 +36,22 @@
   <h1>Hacienda Sabaleticas</h1>
   <div class="sub">151.85 ha · La Pintada, Antioquia</div>
   <div id="layers"></div>
+  <hr style="border:0;border-top:1px solid var(--line);margin:9px 0">
+  <label style="gap:8px"><input type="checkbox" id="planoOn">
+    <span class="sw" style="background:#e0c9a6"></span>Plano 2003 (calco)</label>
+  <div id="planoBox" style="display:none;margin-top:6px">
+    <label style="gap:6px"><span style="color:var(--muted);font-size:11px;width:52px">opacidad</span>
+      <input id="planoOp" type="range" min="10" max="100" value="65" style="flex:1"></label>
+    <div style="display:flex;gap:5px;margin-top:6px;flex-wrap:wrap">
+      <button id="planoAlign" style="padding:4px 7px">Alinear</button>
+      <button id="planoRotL" style="padding:4px 7px">⟲</button>
+      <button id="planoRotR" style="padding:4px 7px">⟳</button>
+      <button id="planoCal" style="padding:4px 7px">Calibrar 2 pts</button>
+      <button id="planoReset" style="padding:4px 7px">Reset</button>
+    </div>
+    <div class="hint" id="planoHint">Enciende <b>Alinear</b>: arrastra para mover, rueda para
+    escalar, ⟲⟳ para girar. Se guarda solo.</div>
+  </div>
   <div class="hint">Arrastra para mover · rueda para zoom</div>
   <div class="hint">⚠ Las <b>cercas</b> del IGAC están incompletas: faltan muchas y varios
   potreros no cierran. Sirven de esqueleto, no son el mapa de potreros.</div>
@@ -52,6 +68,9 @@
       <span id="exagv" style="color:var(--muted);font-size:11px">2×</span></label>
   </div>
   <div id="mout">Pulsa <b>Medir</b> y haz clic en dos o más puntos.</div>
+  <!-- Drawing tools: intentionally hidden (Manuel, 2026-08-21). The code below is kept
+       and fully functional; flip DRAW_UI to true to bring the controls back. -->
+  <div id="drawUI" style="display:none">
   <hr style="border:0;border-top:1px solid var(--line);margin:10px 0">
   <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
     <button id="btnDraw">Dibujar</button>
@@ -75,6 +94,7 @@
   <div style="display:flex;gap:6px;margin-top:8px">
     <button id="btnExport">Exportar GeoJSON</button>
   </div>
+  </div><!-- /drawUI -->
 </div>
 
 <div class="panel" id="read">
@@ -166,6 +186,7 @@ function draw(){
     cx.imageSmoothingQuality='high';
     cx.drawImage(img,a[0],a[1],b[0]-a[0],b[1]-a[1]);
   }
+  drawPlano();
   for(const L of D.layers){
     if(!L.on) continue;
     cx.lineWidth=L.width; cx.lineJoin='round';
@@ -184,6 +205,14 @@ function draw(){
       cx.fillStyle= f.col || L.colour; cx.fillText(f.l,s0[0]+9,s0[1]-7);
       cx.lineWidth=L.width;
     }
+  }
+  if(calStep>=0) for(let k=0;k<calPts.length;k++){
+    const s0=toScreen(calPts[k][0],calPts[k][1]);
+    cx.fillStyle = k%2 ? '#00e676' : '#e0c9a6';
+    cx.strokeStyle='#000'; cx.lineWidth=2;
+    cx.beginPath(); cx.arc(s0[0],s0[1],6,0,7); cx.fill(); cx.stroke();
+    cx.fillStyle='#fff'; cx.font='bold 11px system-ui';
+    cx.fillText((k%2?'foto ':'plano ')+(Math.floor(k/2)+1), s0[0]+9, s0[1]-6);
   }
   drawOverlay();
   if(pts.length){
@@ -216,8 +245,12 @@ function reset(){
   view={s:s, x:(W-s)/2, y:(H-s*aspect())/2}; draw();
 }
 let drag=null;
-cv.addEventListener('mousedown',e=>{drag={x:e.clientX,y:e.clientY,vx:view.x,vy:view.y,moved:false};});
+cv.addEventListener('mousedown',e=>{
+  if(planoAlign && PL.on){ drag={x:e.clientX,y:e.clientY,plon:PL.lon,plat:PL.lat,plano:true,moved:false}; return; }
+  drag={x:e.clientX,y:e.clientY,vx:view.x,vy:view.y,moved:false};});
 addEventListener('mouseup',e=>{
+  if(drag && drag.plano){ savePlano(); drag=null; return; }
+  if(drag && !drag.moved && calStep>=0){ calClick(toGeo(e.clientX,e.clientY)); drag=null; return; }
   if(drag && !drag.moved && drawing){
     const g=toGeo(e.clientX,e.clientY);
     if(!draft) draft={tipo:document.getElementById('dtype').value,geom:[]};
@@ -229,7 +262,11 @@ addEventListener('mouseup',e=>{
   drag=null;
 });
 addEventListener('mousemove',e=>{
-  if(drag){
+  if(drag && drag.plano){
+    drag.moved=true;
+    const g0=toGeo(drag.x,drag.y), g1=toGeo(e.clientX,e.clientY);
+    PL.lon=drag.plon+(g1[0]-g0[0]); PL.lat=drag.plat+(g1[1]-g0[1]); draw();
+  } else if(drag){
     if(Math.abs(e.clientX-drag.x)+Math.abs(e.clientY-drag.y)>3) drag.moved=true;
     view.x=drag.vx+(e.clientX-drag.x); view.y=drag.vy+(e.clientY-drag.y); draw();
   }
@@ -240,6 +277,7 @@ addEventListener('mousemove',e=>{
 });
 cv.addEventListener('wheel',e=>{
   e.preventDefault();
+  if(planoAlign && PL.on){ PL.w*=Math.exp(-e.deltaY*0.0012); savePlano(); draw(); return; }
   const k=Math.exp(-e.deltaY*0.0016), old=view.s;
   view.s=Math.max(200,Math.min(400000,view.s*k));
   const r=view.s/old;
@@ -299,7 +337,104 @@ if(D.ortho){
   img.onerror=()=>{img=null;resize();reset();};
   img.src=D.ortho;
 } else { resize(); reset(); }
-/* ================= drawing / digitising ================= */
+/* ================= 2003 plan overlay (georeferencing by eye) ================= */
+const PL_DEF={lon:(B.minx+B.maxx)/2, lat:(B.miny+B.maxy)/2, w:0.0290, rot:0, op:0.65, on:false};
+let PL=Object.assign({},PL_DEF), planoImg=null, planoAlign=false;
+try{ PL=Object.assign(PL, JSON.parse(localStorage.getItem('sab_plano')||'{}')); }catch(e){}
+const savePlano=()=>{ try{localStorage.setItem('sab_plano',JSON.stringify(PL));}catch(e){} };
+
+function drawPlano(){
+  if(!PL.on || !planoImg) return;
+  const ar = planoImg.naturalHeight/planoImg.naturalWidth;
+  const wDeg = PL.w;
+  const hDeg = wDeg*ar*(LON2M/LAT2M);          // keep true ground aspect
+  const c = toScreen(PL.lon, PL.lat);
+  const px = wDeg/(B.maxx-B.minx)*view.s;
+  const py = hDeg/(B.maxy-B.miny)*view.s*aspect();
+  cx.save();
+  cx.globalAlpha = PL.op;
+  cx.translate(c[0], c[1]);
+  cx.rotate(PL.rot*Math.PI/180);
+  cx.imageSmoothingQuality='high';
+  cx.drawImage(planoImg, -px/2, -py/2, px, py);
+  cx.restore();
+  if(planoAlign){
+    cx.save(); cx.strokeStyle='#e0c9a6'; cx.lineWidth=2; cx.setLineDash([8,6]);
+    cx.translate(c[0],c[1]); cx.rotate(PL.rot*Math.PI/180);
+    cx.strokeRect(-px/2,-py/2,px,py); cx.restore();
+  }
+}
+document.getElementById('planoOn').checked = PL.on;
+document.getElementById('planoBox').style.display = PL.on?'block':'none';
+document.getElementById('planoOp').value = Math.round(PL.op*100);
+document.getElementById('planoOn').onchange=e=>{
+  PL.on=e.target.checked; savePlano();
+  document.getElementById('planoBox').style.display=PL.on?'block':'none';
+  if(PL.on && !planoImg){
+    planoImg=new Image();
+    planoImg.onload=()=>draw();
+    planoImg.src=D.plano;
+  } else draw();
+};
+document.getElementById('planoOp').oninput=e=>{ PL.op=e.target.value/100; savePlano(); draw(); };
+document.getElementById('planoAlign').onclick=e=>{
+  planoAlign=!planoAlign; e.target.classList.toggle('on',planoAlign);
+  document.getElementById('planoHint').innerHTML = planoAlign
+    ? '<b>Alineando.</b> Arrastra el plano · rueda = escala · ⟲⟳ = giro.'
+    : 'Enciende <b>Alinear</b>: arrastra para mover, rueda para escalar, ⟲⟳ para girar. Se guarda solo.';
+  draw();
+};
+document.getElementById('planoRotL').onclick=()=>{PL.rot-=0.5;savePlano();draw();};
+document.getElementById('planoRotR').onclick=()=>{PL.rot+=0.5;savePlano();draw();};
+document.getElementById('planoReset').onclick=()=>{
+  const on=PL.on, op=PL.op; PL=Object.assign({},PL_DEF); PL.on=on; PL.op=op; savePlano(); draw();};
+
+/* --- two-point calibration: match a feature on the plan to the same feature on the photo --- */
+let calStep=-1, calPts=[];
+const CAL_MSG=[
+ 'Punto 1: clic sobre el rasgo <b>EN EL PLANO</b>.',
+ 'Punto 1: ahora clic sobre el <b>MISMO rasgo en la FOTO</b>.',
+ 'Punto 2: clic sobre otro rasgo <b>EN EL PLANO</b> (lejos del primero).',
+ 'Punto 2: ahora el <b>MISMO rasgo en la FOTO</b>.'];
+function calClick(g){
+  calPts.push(g); calStep++;
+  if(calStep<4){ document.getElementById('planoHint').innerHTML=CAL_MSG[calStep]; draw(); return; }
+  // metric frame
+  const M=p=>[p[0]*LON2M, p[1]*LAT2M];
+  const [p1,q1,p2,q2]=calPts.map(M);
+  const dp=[p2[0]-p1[0],p2[1]-p1[1]], dq=[q2[0]-q1[0],q2[1]-q1[1]];
+  const lp=Math.hypot(...dp), lq=Math.hypot(...dq);
+  if(lp<1e-6){ document.getElementById('planoHint').innerHTML='Puntos demasiado juntos. Reintenta.'; calStep=-1; calPts=[]; return; }
+  const sc=lq/lp;
+  const th=Math.atan2(dq[1],dq[0])-Math.atan2(dp[1],dp[0]);   // radians, geo frame
+  const C=M([PL.lon,PL.lat]);
+  const v=[C[0]-p1[0], C[1]-p1[1]];
+  const nc=[ q1[0]+sc*(v[0]*Math.cos(th)-v[1]*Math.sin(th)),
+             q1[1]+sc*(v[0]*Math.sin(th)+v[1]*Math.cos(th)) ];
+  PL.lon=nc[0]/LON2M; PL.lat=nc[1]/LAT2M;
+  PL.w*=sc; PL.rot-=th*180/Math.PI;
+  savePlano(); calStep=-1; calPts=[];
+  document.getElementById('planoCal').classList.remove('on');
+  document.getElementById('planoHint').innerHTML=
+    `Calibrado: escala ×${sc.toFixed(3)}, giro ${(-th*180/Math.PI).toFixed(2)}°. ` +
+    `Si quedó al revés, pulsa ⟲⟳ o vuelve a calibrar.`;
+  draw();
+}
+document.getElementById('planoCal').onclick=e=>{
+  if(calStep>=0){ calStep=-1; calPts=[]; e.target.classList.remove('on');
+    document.getElementById('planoHint').textContent='Calibración cancelada.'; draw(); return; }
+  if(!PL.on){ document.getElementById('planoHint').textContent='Enciende el plano primero.'; return; }
+  planoAlign=false; document.getElementById('planoAlign').classList.remove('on');
+  calStep=0; calPts=[]; e.target.classList.add('on');
+  document.getElementById('planoHint').innerHTML=CAL_MSG[0];
+};
+
+if(D.plano && PL.on){ planoImg=new Image(); planoImg.onload=()=>draw(); planoImg.src=D.plano; }
+
+/* ================= drawing / digitising =================
+   UI hidden by default; set DRAW_UI = true to expose the controls again. */
+const DRAW_UI=false;
+if(DRAW_UI) document.getElementById('drawUI').style.display='block';
 const GEOM={tanque:'point',nacimiento:'point',bebedero:'point',
             represa:'polygon',tuberia:'line',potrero:'polygon',otro:'line'};
 const DCOL={tanque:'#00e5ff',nacimiento:'#7cffcb',bebedero:'#4dd0e1',represa:'#0091ea',

@@ -169,6 +169,10 @@ def build(root: Path) -> Path:
             ortho = f"{GEO_REL}/{cand}"
             break
 
+    plano_path = geo / "plano-overlay.jpg"
+    plano = ("data:image/jpeg;base64," + base64.b64encode(plano_path.read_bytes()).decode()
+             if plano_path.exists() else "")
+
     tex_path = geo / "texture-1280.jpg"
     tex = ("data:image/jpeg;base64," + base64.b64encode(tex_path.read_bytes()).decode()
            if tex_path.exists() else "")
@@ -180,6 +184,7 @@ def build(root: Path) -> Path:
         "ortho": ortho,
         "mesh": _mesh(dem) if dem else None,
         "tex": tex,
+        "plano": plano,
     }, separators=(",", ":"))
 
     out = dash / "viewer.html"
