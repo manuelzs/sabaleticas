@@ -759,6 +759,75 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 17,
+    "fuente": "[owner] cerca real curva entre dos vértices existentes, tramo 1 de 3. Va de la punta de la prolongación de la cerca 49 al final de la cerca 50, pasando por los dos puntos intermedios que marcó Manuel: 59,0 m por la curva contra 57,2 m en recta.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.613898,
+      5.794252
+     ],
+     [
+      -75.613747,
+      5.794279
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 22,
+    "fuente": "[owner] cerca real curva entre dos vértices existentes, tramo 2 de 3. Va de la punta de la prolongación de la cerca 49 al final de la cerca 50, pasando por los dos puntos intermedios que marcó Manuel: 59,0 m por la curva contra 57,2 m en recta.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.613747,
+      5.794279
+     ],
+     [
+      -75.613547,
+      5.794268
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 20,
+    "fuente": "[owner] cerca real curva entre dos vértices existentes, tramo 3 de 3. Va de la punta de la prolongación de la cerca 49 al final de la cerca 50, pasando por los dos puntos intermedios que marcó Manuel: 59,0 m por la curva contra 57,2 m en recta.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.613547,
+      5.794268
+     ],
+     [
+      -75.613385,
+      5.794191
+     ]
+    ]
+   }
   }
  ]
 }

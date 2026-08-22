@@ -1104,6 +1104,78 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 17,
+    "motivo": "cerca real curva entre dos vértices existentes, tramo 1 de 3. Va de la punta de la prolongación de la cerca 49 al final de la cerca 50, pasando por los dos puntos intermedios que marcó Manuel: 59,0 m por la curva contra 57,2 m en recta.",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.613898,
+      5.794252
+     ],
+     [
+      -75.613747,
+      5.794279
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 22,
+    "motivo": "cerca real curva entre dos vértices existentes, tramo 2 de 3. Va de la punta de la prolongación de la cerca 49 al final de la cerca 50, pasando por los dos puntos intermedios que marcó Manuel: 59,0 m por la curva contra 57,2 m en recta.",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.613747,
+      5.794279
+     ],
+     [
+      -75.613547,
+      5.794268
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre punto–punto",
+    "longitud_m": 20,
+    "motivo": "cerca real curva entre dos vértices existentes, tramo 3 de 3. Va de la punta de la prolongación de la cerca 49 al final de la cerca 50, pasando por los dos puntos intermedios que marcó Manuel: 59,0 m por la curva contra 57,2 m en recta.",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.613547,
+      5.794268
+     ],
+     [
+      -75.613385,
+      5.794191
+     ]
+    ]
+   }
   }
  ]
 }
