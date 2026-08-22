@@ -1170,6 +1170,30 @@ def main():
                 print(f"      descartada por ser el contorno del predio: {a/10000:.2f} ha")
             continue                             # this face IS a parcel outline, not a potrero
         polys.append((a, ring))
+    # Enclosures given DIRECTLY, not derived from the fence graph. El Guaico is the case:
+    # its two outlines are the two banks of the river, they touch, and putting them in the
+    # graph merges the parcel into San Matías instead of closing it on its own. Rather than
+    # leave 18.88 ha untracked, the parcel outline is taken as one enclosure, flagged so it
+    # can never be mistaken for a face the fences actually produced.
+    dictados = []
+    f_dic = GEO / "potreros-dictados.json"
+    if f_dic.exists():
+        bnd_raw = json.loads((GEO / "boundary.geojson").read_text(encoding="utf-8"))
+        for e in json.loads(f_dic.read_text(encoding="utf-8"))["potreros"]:
+            ring = None
+            if e.get("del_lindero"):
+                for f in bnd_raw["features"]:
+                    if f["properties"].get("name") == e["del_lindero"]:
+                        ring = [tuple(c[:2]) for c in f["geometry"]["coordinates"][0]]
+            elif e.get("anillo"):
+                ring = [tuple(c) for c in e["anillo"]]
+            if ring:
+                dictados.append((abs(area_m2(ring)), ring, e))
+        if dictados:
+            print(f"  potreros dictados (no salen del grafo): {len(dictados)} · "
+                  f"{sum(a for a, _, _ in dictados)/10000:.2f} ha")
+    polys += [(a, r) for a, r, _ in dictados]
+    dic_por_area = {round(a): e for a, _, e in dictados}
     polys.sort(key=lambda t: -t[0])
 
     # water sources per enclosure
@@ -1261,6 +1285,8 @@ def main():
                 "[por confirmar] No hay bebedero mapeado en este potrero. Puede que el ganado "
                 "tome de la quebrada, o puede que haya un bebedero que todavía no ubicamos. "
                 "No asumir lo uno ni lo otro."),
+            "dictado": bool(dic_por_area.get(round(a))),
+            "dictado_nota": (dic_por_area.get(round(a)) or {}).get("nota", ""),
             "fuente": f"[derived {TOL} m] Cara cerrada del grafo Cerca IGAC + linderos. "
                       "Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
             "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"},

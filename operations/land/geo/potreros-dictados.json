@@ -1,0 +1,12 @@
+{
+ "_nota": "Potreros que NO salen del grafo de cercas, sino que se dan directamente. Van marcados con dictado=true para que nunca se confundan con una cara que las cercas produjeron.",
+ "_por_que": "[owner, 2026-08-22] Manuel: El Guaico entero faltaba en el inventario. Meter su lindero al grafo no sirve — sus dos trazos son las DOS ORILLAS del río, se tocan, y el resultado es que el predio se funde con San Matías (6,8 → 26,51 ha) en vez de cerrar solo. Antes que dejar 18,88 ha sin registrar, se toma el contorno catastral como un potrero.",
+ "_ojo": "Es un CONTENEDOR, no un potrero de verdad: adentro hay varios y Manuel los dará después. Su área es la catastral, no la medida entre cercas, y no debe usarse para carga animal hasta subdividirlo.",
+ "potreros": [
+  {
+   "del_lindero": "LO 1 EL GUAICO",
+   "nombre_sugerido": "El Guaico",
+   "nota": "Contorno catastral del lote, 18,88 ha. Pendiente de subdividir: el IGAC no tiene NINGUNA cerca dibujada aquí, así que las divisiones habrá que digitalizarlas de la ortofoto o dictarlas."
+  }
+ ]
+}
