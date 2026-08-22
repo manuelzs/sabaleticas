@@ -59,6 +59,39 @@ predates significant additions:
 - **Reservoir-tank storage added since 2003, in several places** — capacity and locations
   not yet recorded. This is the biggest known gap in our picture.
 
+## 📐 The pipe survey — and how to not lose it
+
+Manuel is arranging for **someone to walk and trace every pipe** and update the 2003 map
+(2026-08-21). That closes the biggest gap in this document. One thing is worth settling
+*before* they walk, because it costs nothing then and a lot afterwards:
+
+> ### Ask them to record a GPS track while they walk.
+> Manuel expects the update to come back **on paper**. Paper is a lossy intermediate: someone
+> then has to re-draw it, guess at positions, and the result is only as good as the sketch.
+> A phone recording a track while walking the same line gives us the **real coordinates for
+> free** — same walk, same person, same day, no extra effort.
+
+Any GPS/track app that exports **GPX or KML** works. Accuracy of 3–5 m is plenty; a pipe does
+not need centimetres. **Waypoints at every tank, spring, valve and trough** matter as much as
+the line itself — arguably more, since a tank's *elevation* is what decides what it can feed.
+
+If it does come back only on paper, we are not stuck: the pipes can be traced onto the
+orthophoto in the viewer (below). It is just slower and less accurate.
+
+### Getting it onto the map
+
+The dashboard now has a **drawing mode** ([`../../dashboard/README.md`](../../dashboard/README.md)):
+pick a type — *tanque, nacimiento, bebedero, represa, tubería* — click on the 0.5 m
+orthophoto, and it exports GeoJSON. It automatically records:
+
+- **elevation** for every point, from the terrain model — so each tank arrives with the number
+  that decides its gravity reach;
+- **length** for every pipe run;
+- **area** for every represa.
+
+So a traced pipe network immediately answers *"what can this tank feed without a pump?"*
+rather than just looking like a map.
+
 ## What we need to gather
 
 Nothing here needs to be precise. Rough and complete beats exact and partial, as ever.
