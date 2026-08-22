@@ -89,6 +89,13 @@ regla que él mismo puso: *drain only se marca sin confirmar*.
 
 ## Abierto
 
+- **[owner, 2026-08-22] El contorno se queda como está por ahora — no se toca.** No porque
+  esté verificado, sino porque **ahí es donde están los mojones**, y son ellos los que van a
+  resolverlo. Lo que hay que averiguar **en el terreno** es **dónde está de verdad el mojón de
+  la casa**: fijado ése, se sabe cuánto del desfase de los demás es georreferenciación y cuánto
+  es playón real, y entonces se decide el contorno. Mientras tanto la línea de hoy sirve para
+  ver los mojones en contexto, que es justo para lo que se necesita. **No “corregirla” antes
+  de esa medida.**
 - **Ya está medido: 18,79 ha** (contorno marcado por Manuel el 2026-08-22, `playon.geojson`).
   Pero se mueve, así que la cifra lleva fecha. Dos cosas la pueden bajar bastante: la **cuña**
   de hasta 189 m frente al punto 14, y el **traslape con NAMUR y LOS BUHOS** —9 de los 33
