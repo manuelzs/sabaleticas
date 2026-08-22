@@ -35,6 +35,7 @@ LAYERS = [
     ("Vías",                    "igac-1to5000/Vias.geojson",           "line", "#ffffff", 1.4, None),
     ("Construcciones",          "igac-1to5000/Construccion_R.geojson", "poly", "#ff8a65", 1.5, "rgba(255,138,101,.6)"),
     ("Vecinos (con nombre)",   "neighbours.geojson",                  "poly", "#b0bec5", 1.6, None),
+    ("Ruta gravedad (candidata)","gravity-route-candidate.geojson",     "line", "#00e676", 3.0, None),
 ]
 DEFAULT_ON = {"Linderos", "Cercas", "Drenajes",
               "Depósitos de agua", "Curvas 25 m", "Agua: infraestructura"}
@@ -92,7 +93,7 @@ def _round_geom(coords, dp=6):
 TIPO_COLOUR = {
     "tanque": "#00e5ff", "nacimiento": "#7cffcb", "bebedero": "#4dd0e1",
     "represa": "#0091ea", "rompecargas": "#ffd54f", "bocatoma": "#26c6da", "tuberia": "#b388ff",
-    "casa": "#ff8a65", "potrero": "#ffee58",
+    "casa": "#ff8a65", "potrero": "#ffee58", "ruta_candidata": "#00e676",
     "derivacion": "#ff9100", "valvula": "#ffab40",
 }
 

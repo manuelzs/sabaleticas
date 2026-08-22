@@ -1,0 +1,76 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "ruta_candidata",
+    "nombre": "Ruta gravedad represa → intermedios (CANDIDATA)",
+    "longitud_m": 767,
+    "desnivel_m": 15.6,
+    "gradiente_pct": 2.03,
+    "cota_maxima_m": 777.8,
+    "fuente": "[derived] ruta minimax sobre el MDT IGAC 5 m, 2026-08-21. Minimiza la cota máxima entre la represa y los tanques intermedios. NO es un levantamiento topográfico.",
+    "advertencia": "Cruza predio ajeno — requiere servidumbre. Margen vertical dentro del error del MDT (±2–5 m): exige nivelación en campo antes de comprometer nada.",
+    "confianza": "trazado: orientativo · viabilidad por gravedad: probable, sin verificar"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.605188,
+      5.79636
+     ],
+     [
+      -75.605188,
+      5.796305
+     ],
+     [
+      -75.605297,
+      5.796197
+     ],
+     [
+      -75.605297,
+      5.796143
+     ],
+     [
+      -75.605351,
+      5.796088
+     ],
+     [
+      -75.605351,
+      5.795762
+     ],
+     [
+      -75.606327,
+      5.794785
+     ],
+     [
+      -75.606382,
+      5.794785
+     ],
+     [
+      -75.606544,
+      5.794622
+     ],
+     [
+      -75.606815,
+      5.794622
+     ],
+     [
+      -75.606924,
+      5.794513
+     ],
+     [
+      -75.607412,
+      5.794513
+     ],
+     [
+      -75.610015,
+      5.79712
+     ]
+    ]
+   }
+  }
+ ]
+}

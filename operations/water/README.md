@@ -327,10 +327,32 @@ either one.** So there is no true siphon that can "break." What forms instead ar
 at local high points**, which throttle or block flow until enough head sweeps them out — which
 is precisely what closing the valves achieves. `[derived, IGAC MDT 5 m]`
 
-⚠️ Caveat: profiles were run on the **schematic straight lines**, not the real pipe route. One
-finding worth checking on site — the straight line from the tanques altos **drops into a valley
-and climbs 20.9 m back up** to the rompecargas. If the real pipe does that, the summit sits at
-the tank inlet: a textbook air trap, and a second reason the inflow is weak.
+The profile was run on the **schematic straight line**, not the surveyed pipe route — but it
+found that the run from the tanques altos **drops into a valley and climbs 20.9 m back up** to
+the rompecargas, putting the summit **at the tank inlet**. Manuel: *"I'm pretty certain the
+summit sits right at the tank inlet"* `[owner, corroborated by IGAC MDT]`.
+
+That makes the inlet leg an **inverted siphon**, and it matters more than it looks:
+
+> **An air pocket at a summit doesn't just add friction — it subtracts its own height from the
+> driving head.** The inlet leg has only **13 m** to work with, so a 2–3 m air column costs it
+> **15–25 % of its head**. The same pocket on the 34 m outlet leg costs 6–9 %.
+>
+> **The low-gradient leg is the one air hurts most** — which is exactly the leg that is
+> already losing.
+
+### Why a better float valve is *not* the answer
+
+Manuel's first read was that the float was starving the inlet, and that the fix was a better
+float system. **The symptom is right; the cause is not.** `[derived]`
+
+- Even **wide open**, the inlet leg carries ~0.39 L/s against the outlet's ~0.68 L/s. A perfect
+  float valve still leaves a deficit — it would **slow the drain, not stop it.**
+- The likelier restriction is the **air pocket at the inlet summit**, not the valve.
+- So: **inspect and clean the float, don't redesign it.** Spend the money on a ventosa instead.
+
+**A bigger float valve alone would delay the failure and hide it.** That is worse than the
+current situation, where it fails visibly and often enough to have been diagnosed.
 
 ### The good news: this is a control problem, not a shortage
 
@@ -345,8 +367,8 @@ two to three times demand.** The system is losing water to *stoppages*, not to s
 | 1 | **Throttle the outlet valve permanently** so outflow ≤ inflow. Manuel already does this as an emergency measure — make it a setting, not a rescue. Continuous moderate flow beats intermittent fast flow, because the intermedios are *storage*: they care about the daily total, not the rate. | **nothing** |
 | 2 | **Raise the outlet draw-off inside the rompecargas** (internal standpipe / elbow up) plus a vortex breaker, so the tank **physically cannot drain to air.** Level falls, flow drops to match inflow, prime is never lost. | very low |
 | 3 | **Bigger rompecargas — 1.000 L → 5.000 L.** Buffer goes from ~1 h to ~5 h and rides out demand peaks. | low |
-| 4 | **Ventosas (automatic air-release valves) at the local high points**, especially at the tank inlet. | low |
-| 5 | **Inspect the float valve** — size and blockage. A ½" float on a 1" line is a classic strangle point, and this is unfiltered quebrada water. | low |
+| 4 | **Ventosa (automatic air-release valve) at the inlet summit**, where the line crests just before the tank. This is the one that should actually **raise the inflow** — the concern Manuel started from. | low |
+| 5 | **Inspect and clean the float valve.** Check size and blockage; this is unfiltered quebrada water. **Do not redesign it** — see above. | low |
 | 6 | **Give the garden a higher take-off than the cattle** on the tanques intermedios. The garden then dies first, automatically, and the remaining volume is reserved for the bebederos — **no discipline required.** | low |
 
 ### The two measurements that would settle it
@@ -360,6 +382,66 @@ If outflow > inflow, the hypothesis is confirmed and fix 1 is immediately action
 
 **Still unknown:** actual pipe diameters in and out, float valve size, the real pipe routes,
 and where the single outlet splits.
+
+## 🟡 The gravity route through El Guaico — plausible, unproven, and worth surveying
+
+**Manuel's idea, 2026-08-21**, reading a highlighted 25 m contour in the viewer: if the line
+follows the contour around the hill instead of over it, the represa could feed the tanques
+intermedios **by gravity, through the neighbour's land.**
+
+Tested against the terrain model with a **minimax route search** (lowest achievable summit
+between the two points):
+
+| Constraint | Highest point the route must cross | Verdict |
+|---|---|---|
+| **Staying on our own land** | **784.6 m** | must climb **6.6 m** above the represa → **pump required** |
+| **Allowed through EL GUAICO** | **777.8 m** | **never rises above the represa surface** → gravity plausible |
+| Route length | 767 m (vs 716 m on-farm) | +51 m |
+| Land crossed | **83 of 98 samples in EL GUAICO** (023-16154) | needs a **servidumbre** |
+
+> **The 7 m difference between those two rows is the robust finding.** It is far larger than
+> the terrain model's error, so "the neighbour's route is dramatically better" is solid.
+
+### But the margin is inside the noise, and that is the whole story
+
+The route **undulates along a ridge at ~777 m for its first 420 m.** The binding constraint is
+at **323 m along, where the ground reaches 777.5 m — leaving 0.50 m of head.**
+
+| | |
+|---|---|
+| Design gradient on the limiting section | **0.155 %** |
+| Flow at 2″ | **0.50 L/s ≈ 43 m³/día** |
+| Flow at 3″ | 1.45 L/s ≈ 126 m³/día |
+| Estimated demand | ~10–17 m³/día |
+
+So **2″ carries 2.5–4× demand** — the hydraulics work *if the profile is real.*
+
+> ### ⚠️ 0.50 m of head, from a model with ±2–5 m vertical error.
+> The margin is **below the noise floor.** This is a candidate worth surveying, **not a design.**
+> Nothing should be bought against it until someone runs a level along that ridge.
+
+Two further cautions, both real:
+
+- **The represa's working level, not its full level, sets the margin.** Draw it down 1 m in a
+  verano and a 0.5 m margin is gone. The route must be surveyed against the **lowest** level
+  the reservoir is expected to reach — which is precisely when the water is most needed.
+- **A long, nearly flat line with several local high points is the exact profile that air-locks**
+  — the lesson from the rompecargas above. Any build needs **ventosas at every summit**, designed
+  in from the start rather than retrofitted.
+
+### Even if pure gravity fails, this changes the pump project
+
+The current pump case is built on lifting **33 m** out of the represa. This route needs
+**no lift at all — only friction.** If the survey finds the ridge 1 m too high, the answer is a
+**short cut-and-cover trench at one saddle**, or a small in-line booster, not a 33 m lift with
+solar panels and a caseta. `[derived]`
+
+**That makes the field survey the cheapest high-value action in the whole water project.**
+See [`pump-costing.md`](pump-costing.md), whose premise this may retire.
+
+Drawn in the viewer as **"Ruta gravedad (candidata)"** (green, off by default), from
+`operations/land/geo/gravity-route-candidate.geojson`. The trace is **orientative** — it is the
+model's best line, not a surveyed one.
 
 ## 🟢 But the pump is small — and the break-pressure tank is why
 

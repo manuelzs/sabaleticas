@@ -112,6 +112,7 @@
 <div class="panel" id="read">
   <div><b>lat</b> <span id="rlat">—</span> &nbsp; <b>lon</b> <span id="rlon">—</span></div>
   <div><b>altura</b> <span id="rele">—</span></div>
+  <div id="rcurw" style="display:none"><b>curva</b> <span id="rcur">—</span></div>
 </div>
 
 <div id="scale"><div id="sbar" style="width:100px"></div><span id="slab">—</span></div>
@@ -189,6 +190,54 @@ function drawGeom(g,kind,fill){
   const lines = t==='MultiLineString'?c : t==='LineString'?[c] : [];
   for(const line of lines){ ringPath(line); cx.stroke(); }
 }
+/* ---- hover highlight: light up the contour nearest the cursor ---- */
+let hoverC=null;                       // {L,f} of the contour under the pointer
+const HOVER_PX=12;                     // how close the cursor has to get
+function isContour(L){ return L.name.indexOf('Curvas')===0; }
+function lighten(hex,t){
+  const v=parseInt(hex.slice(1),16);
+  const m=(c)=>Math.round(c+(255-c)*t);
+  return `rgb(${m((v>>16)&255)},${m((v>>8)&255)},${m(v&255)})`;
+}
+function bboxOf(f){
+  if(f._bb) return f._bb;
+  let a=1e9,b=1e9,c=-1e9,d=-1e9;
+  (function walk(co){
+    if(typeof co[0]==='number'){
+      if(co[0]<a)a=co[0]; if(co[1]<b)b=co[1];
+      if(co[0]>c)c=co[0]; if(co[1]>d)d=co[1];
+    } else co.forEach(walk);
+  })(f.c);
+  return f._bb=[a,b,c,d];
+}
+function segDist(px,py,ax,ay,bx,by){
+  const dx=bx-ax, dy=by-ay, dd=dx*dx+dy*dy;
+  let t = dd ? ((px-ax)*dx+(py-ay)*dy)/dd : 0;
+  t = t<0?0:t>1?1:t;
+  return Math.hypot(px-(ax+t*dx), py-(ay+t*dy));
+}
+function findContour(px,py){
+  let best=null, bd=HOVER_PX;
+  for(const L of D.layers){
+    if(!L.on || !isContour(L)) continue;
+    for(const f of L.features){
+      const bb=bboxOf(f);
+      const p0=toScreen(bb[0],bb[3]), p1=toScreen(bb[2],bb[1]);   // top-left, bottom-right
+      if(px<p0[0]-HOVER_PX||px>p1[0]+HOVER_PX||py<p0[1]-HOVER_PX||py>p1[1]+HOVER_PX) continue;
+      const lines = f.t==='LineString' ? [f.c] : f.c;
+      for(const ln of lines){
+        let prev=toScreen(ln[0][0],ln[0][1]);
+        for(let k=1;k<ln.length;k++){
+          const cur=toScreen(ln[k][0],ln[k][1]);
+          const d=segDist(px,py,prev[0],prev[1],cur[0],cur[1]);
+          if(d<bd){ bd=d; best={L,f}; }
+          prev=cur;
+        }
+      }
+    }
+  }
+  return best;
+}
 function draw(){
   cx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
   cx.clearRect(0,0,W,H);
@@ -253,6 +302,15 @@ function draw(){
       }
       cx.lineWidth=L.width;
     }
+  }
+  if(hoverC && hoverC.L.on){                       // the curve under the cursor, lit up
+    const {L,f}=hoverC;
+    cx.save();
+    cx.lineJoin='round'; cx.lineCap='round';
+    cx.shadowColor=lighten(L.colour,.5); cx.shadowBlur=10;
+    cx.strokeStyle=lighten(L.colour,.65); cx.lineWidth=L.width+2.5;
+    drawGeom(f,L.kind,null);
+    cx.restore();
   }
   if(mpOn){
     mpPairs.forEach((q,i)=>{
@@ -377,6 +435,13 @@ addEventListener('mousemove',e=>{
   document.getElementById('rlat').textContent=g[1].toFixed(6);
   document.getElementById('rlon').textContent=g[0].toFixed(6);
   document.getElementById('rele').textContent = z?z.toFixed(0)+' m':'sin dato';
+  if(!is3d){
+    const hc=findContour(e.clientX,e.clientY);
+    const nf=hc?hc.f:null, of=hoverC?hoverC.f:null;
+    if(nf!==of){ hoverC=hc; draw(); }               // only repaint when it actually changes
+    document.getElementById('rcurw').style.display = hoverC?'block':'none';
+    if(hoverC) document.getElementById('rcur').textContent=hoverC.f.l||'—';
+  }
 });
 cv.addEventListener('wheel',e=>{
   e.preventDefault();
