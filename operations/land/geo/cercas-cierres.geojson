@@ -1032,6 +1032,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 49–punto",
+    "longitud_m": 25,
+    "motivo": "PASO INTERMEDIO: se prolonga 25 m al sureste en su misma dirección (rumbo 126,9°). No cierra nada todavía — el extremo nuevo queda suelto a propósito, esperando la siguiente instrucción de Manuel.",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614079,
+      5.794387
+     ],
+     [
+      -75.613898,
+      5.794252
+     ]
+    ]
+   }
   }
  ]
 }

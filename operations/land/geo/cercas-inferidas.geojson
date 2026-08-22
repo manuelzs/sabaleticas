@@ -690,6 +690,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 49–punto",
+    "longitud_m": 25,
+    "fuente": "[owner] PASO INTERMEDIO: se prolonga 25 m al sureste en su misma dirección (rumbo 126,9°). No cierra nada todavía — el extremo nuevo queda suelto a propósito, esperando la siguiente instrucción de Manuel.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.614079,
+      5.794387
+     ],
+     [
+      -75.613898,
+      5.794252
+     ]
+    ]
+   }
   }
  ]
 }
