@@ -87,6 +87,13 @@
  .tr svg path{fill:none;stroke:var(--acc);stroke-width:1.6;stroke-linejoin:round}
  .tr i{color:var(--muted);font-style:normal}
  .tr.none{color:#4b5761;font-size:10.5px}
+ /* event strip — one tick per event on a real time axis, never binned */
+ .strip-t{width:100%;height:104px;margin:0 0 8px;display:block}
+ .strip-t .grid{stroke:#232b33;stroke-width:1}
+ .strip-t .lane{fill:#151b21}
+ .strip-t text{fill:#8b98a5;font:10px system-ui}
+ .strip-t .horiz{stroke:#ff5252;stroke-width:1.5;stroke-dasharray:3 3}
+ .strip-t .gap{fill:url(#hatch)}
  .card .why ul{margin:5px 0 0 14px;padding:0}
  /* rows: same material as the cards, accent moved to the left margin */
  .rows{display:flex;flex-direction:column;gap:8px;margin-bottom:30px}

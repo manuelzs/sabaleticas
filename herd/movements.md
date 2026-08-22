@@ -72,3 +72,39 @@ small-lot selling, mostly via comisionistas on consignación.** The likely leaks
 - **Prices** — GSMI never has them. Realized $/kg per sale is the key gap.
 - **Total head sold** — only 5 lot sizes pulled; the rest need each guide's PDF or the
   owner's books.
+
+
+## ⚠️ The missing head counts are an EXTRACTION gap, not a data gap
+
+`[derived, 2026-08-22]` Of 85 guides, only 6 carry a head count — but the split is not random:
+
+| Export | Guides | With a head count |
+|---|---|---|
+| **V6** | 3 | **3 — all of them** |
+| **V5** | 82 | 3 |
+
+**Every V6 guide has its count. Almost no V5 guide does.** That is our export dropping the
+field, not SINIGAN failing to record it.
+
+### Why this matters more than it looks
+
+With a known count at a date and a complete movement ledger, **the herd is reconstructable
+backwards through time** — `hato(t) = hato_conocido − movimientos netos entre t y ahora`. That
+turns one snapshot into a curve, and a curve answers questions a snapshot cannot: when the
+sell-down started, how fast it is running, what the herd was when a cost was incurred.
+
+**The blocker is one re-pull.** Re-extract the V5 guides *with the head field* and the whole
+history opens up.
+
+### What is already reconstructable
+
+From the anchor of **266 head at 2026-05-21**, walking the six counted movements:
+
+| | Head |
+|---|---|
+| before 2026-02-09 | **303** |
+| after 2026-05-25 | **259** |
+
+**−44 head in about three months**, which matches Manuel selling ahead of price falls. Treat it
+as a **lower bound on the decline**: four closed guides in that same window carry no count, so
+more animals left than this shows.

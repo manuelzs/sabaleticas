@@ -77,6 +77,10 @@ def main(quiet=False):
         src = _strip_literals(src)
         for a, b in DECL.findall(src):
             declared.add(a or b)
+        # multi-declarator statements: const W=1, H=2, top=3 — DECL sees only the first
+        for stmt in re.findall(r"\b(?:const|let|var)\s+([^;\n]*)", src):
+            for name in re.findall(r"([A-Za-z_]\w*)\s*=", stmt):
+                declared.add(name)
         for a, b, c in PARAM.findall(src):
             for grp in (a, b, c):
                 for p in grp.split(","):

@@ -230,6 +230,25 @@ trend and the autonomy indicator got an input, with no new machinery.
 > **Nothing gets a bespoke pipeline because of where it came from.** A person typing, a LoRa
 > node and a scraper all append to the same series and are distinguished by one field.
 
+## Drawing time: flows, stocks, coverage
+
+Three different things, three different shapes. Getting this wrong is how a chart lies.
+
+| Kind | Examples | Shape | Why |
+|---|---|---|---|
+| **Flow** | guides issued, animals sold, litres used | **event strip** or cumulative curve | Binning sparse events into months loses the rhythm and invents precision at the bucket edges. 85 ticks on a real axis keep both |
+| **Stock** | herd count, tank level, temperature | **step line** | A stock holds its value until something moves it. A smooth line between two points claims we watched it the whole way |
+| **Coverage** | where data exists at all | drawn explicitly, **never interpolated** | The gap between what happened and what we hold is part of the picture |
+
+> **A stock can be reconstructed from a known value plus a ledger of flows.**
+> `hato(t) = anchor − net movements between t and the anchor`. One snapshot plus the guides
+> becomes a curve — and a curve answers what a snapshot cannot: when the sell-down started, how
+> fast it runs, what the herd was when a cost was incurred.
+
+Where the ledger has holes, the chart shows them as holes. The herd reconstruction draws every
+movement whose size we do not know as an **orange break**, and labels the whole line a lower
+bound on the decline. It does not smooth over them.
+
 ## Compound indicators — the reason the subsystems share a roof
 
 `[Manuel, 2026-08-22]` *"You combined water capacity, land size and herd size and told me
