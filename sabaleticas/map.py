@@ -24,7 +24,7 @@ GEO_REL = "../operations/land/geo"          # dashboard/ -> geo/, as the browser
 # label, file (relative to geo/), kind, colour, width, fill
 LAYERS = [
     ("Linderos",                "boundary.geojson",                    "poly", "#ff1744", 3.0, None),
-    ("Cercas (IGAC ⚠ parcial)", "igac-1to5000/Cerca.geojson",          "line", "#ff2ecc", 1.7, None),
+    ("Cercas",                  "igac-1to5000/Cerca.geojson",          "line", "#ff2ecc", 1.7, None),
     ("Drenajes",                "igac-1to5000/Drenaje.geojson",        "line", "#4fc3f7", 1.4, None),
     ("Cauces (área)",           "igac-1to5000/Drenaje_R.geojson",      "poly", "#29b6f6", 1.0, "rgba(41,182,246,.35)"),
     ("Depósitos de agua",       "igac-1to5000/Deposito_Agua_R.geojson","poly", "#00e5ff", 2.0, "rgba(0,229,255,.45)"),
@@ -36,7 +36,7 @@ LAYERS = [
     ("Construcciones",          "igac-1to5000/Construccion_R.geojson", "poly", "#ff8a65", 1.5, "rgba(255,138,101,.6)"),
     ("Vecinos (con nombre)",   "neighbours.geojson",                  "poly", "#b0bec5", 1.6, None),
 ]
-DEFAULT_ON = {"Linderos", "Cercas (IGAC ⚠ parcial)", "Drenajes",
+DEFAULT_ON = {"Linderos", "Cercas", "Drenajes",
               "Depósitos de agua", "Curvas 25 m", "Agua: infraestructura"}
 
 # ~2 m at this latitude. Plenty for a screen that never shows better than 0.5 m/px.

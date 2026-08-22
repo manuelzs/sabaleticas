@@ -49,6 +49,17 @@ data.
 IGAC's `Cerca` layer is **not** it: incomplete, many fences missing, several enclosures don't
 close (Manuel, 2026-08-21). A skeleton, not a map.
 
+> ### All the IGAC 1:5000 layers are approximate — not just the fences
+> Manuel, 2026-08-21: *"there are pretty much mistakes on all the layers… the roadways it
+> identified are just cattle paths or not really roadways. Some of the forested areas are not
+> really forested."*
+>
+> The viewer used to carry a ⚠ on the fences layer alone, which **implied the others were
+> reliable**. It has been removed rather than repeated on every layer. The honest statement is
+> here instead: **IGAC's vector cartography is a starting sketch for the whole farm, and any
+> figure derived from it inherits that error** — including the ~47 ha forest split in
+> [`../profile.md`](../profile.md).
+
 Three ways to fix it, cheapest first:
 
 1. **Trace them on the orthophoto.** ✅ **The drawing mode now exists** — fence lines are

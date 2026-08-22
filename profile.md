@@ -59,6 +59,8 @@ resolved**; both are shown rather than picking one silently.
   plus **reservoir-tank storage added since 2003** `[owner, unverified]`.
   → active workstream: [`operations/water/`](operations/water/README.md)
 - **Land cover:** **~47 ha forest / ~105 ha open** `[derived: IGAC 1:5000 Bosque ∩ parcel]`.
+  ⚠ Treat as a rough split. Manuel (2026-08-21): **several areas IGAC maps as bosque are not
+  forested**, so 47 ha is an upper bound, not a measurement.
   Much of the forest is gallery woodland along the quebradas and hedgerows, so it is *not* all
   lost to grazing — but the open-land figure is the honest lower bound for grazing area
 - **Subdivision:** **finely subdivided into many fenced potreros** `[owner, corroborated by
