@@ -21,4 +21,10 @@ then the whole-operation P&L and break-even.
   changes, depreciation) — both matter, they answer different questions.
 - The herd is both inventory and capital; track its value movement explicitly.
 
-_No statements captured yet — waiting on whatever records exist today._
+## Incoming
+
+📅 **The accountants will send a monthly P&L, first one at the close of August 2026.** What to
+ask them for before that first report is generated — and why a standard accounting P&L can
+mislead for a *ceba* operation — is in [`accounting-feed.md`](accounting-feed.md).
+
+_No statements captured yet._

@@ -15,7 +15,13 @@ row. Companion docs: [`financials/owner-records-request.md`](financials/owner-re
 These four build the 12-month P&L and confirm the core diagnosis (why we're losing money).
 Everything else can wait behind them.
 
-> 🔓 **Update 2026-08-21: a user account on the farm's accounting service is being set up**,
+> 📅 **Update 2026-08-21: the accountants will send a MONTHLY P&L, first one at the close of
+> August** — about a week out. This is the unblock. **We have that week to influence the
+> format**, which is worth using: see [`financials/accounting-feed.md`](financials/accounting-feed.md)
+> for what to ask for, and in particular the trap that a standard P&L treats cattle purchases
+> as an expense, which makes a *growing* herd look like a failing business.
+>
+> 🔓 **Also: a user account on the farm's accounting service is being set up**,
 > and Manuel will hand over access. If the books are in there, that potentially delivers
 > items 1–3 in one move and makes the hand-fill intake templates unnecessary. **Nothing is
 > loaded until we actually see the data** — the templates stay as the fallback. What we'll
@@ -24,9 +30,9 @@ Everything else can wait behind them.
 
 | # | What | Status | Cadence | Lands in |
 |---|---|---|---|---|
-| 1 | **Sales, last 12 mo** — date, head, total kg en pie, COP received, buyer, channel, comisionista | ❌ | One-off (history) + Recurring per sale | [`financials/intake/sales_intake.csv`](financials/intake/sales_intake.csv) → `sales` |
+| 1 | **Sales, last 12 mo** — date, head, total kg en pie, COP received, buyer, channel, comisionista | 📅 **partly due ~2026-08-31** (money yes, **kg no**) | One-off (history) + Recurring per sale | Accountants' P&L → `sales`; kg still from the báscula |
 | 2 | **Purchases, last 12 mo** — date, head, entry kg, COP paid, source/feria, lot name | ❌ | One-off (history) + Recurring per purchase | [`financials/intake/purchases_intake.csv`](financials/intake/purchases_intake.csv) → `lotes` |
-| 3 | **Monthly costs, last 12 mo** — by category (labor, feed, health, pasture, transport, admin) | ❌ | One-off (history) + Recurring monthly | [`financials/intake/costs_intake.csv`](financials/intake/costs_intake.csv) → `costs` |
+| 3 | **Monthly costs, last 12 mo** — by category (labor, feed, health, pasture, transport, admin) | 📅 **due ~2026-08-31** | One-off (history) + Recurring monthly | Accountants' monthly P&L → `costs` |
 | 4 | **Lot history** — which lot each animal/group entered with & when it left | ❌ | One-off (history) + Recurring per event | `lotes` ↔ `sales.lote_id` |
 
 ---
