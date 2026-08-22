@@ -39,6 +39,20 @@
    ],
    "tol_m": 5.0,
    "motivo": "[owner, 2026-08-22] Extremo 45: la cerca del IGAC se pasa 3,9 m de la esquina del lindero y muere en mitad de la vía. La esquina (compartida con el cierre de Potrero 38) es donde la cerca termina de verdad; el sobrante es cola de digitalización."
+  },
+  {
+   "tipo": "recortar",
+   "por_punto": [
+    -75.602679,
+    5.795067
+   ],
+   "extent": [
+    -75.6075,
+    5.7918,
+    -75.60345,
+    5.7945
+   ],
+   "motivo": "[owner, 2026-08-22] Manuel: toda la línea desde el extremo 58 hasta la esquina junto al Mojón 4 sobra. Es la cola de 500 m de la cerca 53 del IGAC: sus 14 vértices caen dentro del predio vecino EL GUAICO (SE) y acompañan una vía a 4 m. Sólo entró como nuestra porque dos vértices del otro extremo pisan el predio. Los últimos ~140 m (del Mojón 4 al nororiente) SÍ son nuestros —van a 0,0 m del lindero— y se conservan."
   }
  ],
  "_recortar": "Un cierre {tipo: recortar} borra parte de UNA cerca: la identifica por un punto sobre ella (como cercas-excluidas.json) y le quita los vértices que caen en 'extent'. Hace falta lo uno Y lo otro: excluir la cerca entera se llevaría también el tramo bueno, y el 'extent' a secas alcanzaría a otra cerca 81 m al oeste.",
