@@ -3088,9 +3088,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 20",
+    "nombre": "Perfume",
     "n": 20,
-    "nombrado": false,
+    "nombrado": true,
     "estado": null,
     "estado_nota": "",
     "subdivide_en": [],
