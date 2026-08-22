@@ -1,0 +1,12 @@
+{
+ "bounds": {
+  "minx": -75.640964,
+  "miny": 5.773242,
+  "maxx": -75.58016900000001,
+  "maxy": 5.827443000000001
+ },
+ "w": 3000,
+ "h": 2688,
+ "source": "Esri World Imagery z17 (~1.2 m/px), mosaicked 2026-08-21",
+ "note": "3x3 context tile: our parcel is the centre ninth"
+}

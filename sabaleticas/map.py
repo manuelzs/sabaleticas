@@ -122,8 +122,9 @@ def _collect(geo: Path):
                 continue
             props = f.get("properties") or {}
             label = props.get("name") or props.get("DIRECCION") or ""
-            if props.get("lado") and props.get("area_ha"):      # neighbours: name + side + area
-                label = f"{props['name']} · {props['lado']} · {props['area_ha']} ha"
+            if props.get("lado") and props.get("area_ha"):      # neighbours: name / area / matrícula
+                label = (f"{props['name']} · {props['lado']} · {props['area_ha']} ha"
+                         f" · mat {props.get('matricula') or '?'} · {props.get('municipio','')}")
             if not label and props.get("elev"):
                 label = f"{props['elev']} m"
             item = {"t": g["type"], "c": _round_geom(_thin(g["coordinates"])),
@@ -171,6 +172,11 @@ def build(root: Path) -> Path:
             ortho = f"{GEO_REL}/{cand}"
             break
 
+    sur_path = geo / "surroundings.json"
+    surroundings = json.loads(sur_path.read_text()) if sur_path.exists() else None
+    if surroundings and (geo / "surroundings.jpg").exists():
+        surroundings["src"] = f"{GEO_REL}/surroundings.jpg"
+
     plano_path = geo / "plano-overlay.jpg"
     plano = ("data:image/jpeg;base64," + base64.b64encode(plano_path.read_bytes()).decode()
              if plano_path.exists() else "")
@@ -187,6 +193,7 @@ def build(root: Path) -> Path:
         "mesh": _mesh(dem) if dem else None,
         "tex": tex,
         "plano": plano,
+        "surroundings": surroundings,
     }, separators=(",", ":"))
 
     out = dash / "viewer.html"

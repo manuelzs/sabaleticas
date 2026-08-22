@@ -183,6 +183,7 @@ function draw(){
   cx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
   cx.clearRect(0,0,W,H);
   cx.fillStyle='#0d1114'; cx.fillRect(0,0,W,H);
+  drawSurroundings();
   if(img){
     const a=toScreen(B.minx,B.maxy), b=toScreen(B.maxx,B.miny);
     cx.imageSmoothingQuality='high';
@@ -214,15 +215,22 @@ function draw(){
       if(isPoly){
         // Neighbour parcels: large centred label, name on top, detail beneath.
         const parts=f.l.split(' · ');
-        const name=parts[0], sub=parts.slice(1).join(' · ');
+        const name=parts[0];
+        const sub=parts.slice(1,3).join(' · ');
+        const sub2=parts.slice(3).join(' · ');
         cx.textAlign='center';
         cx.font='bold 19px system-ui'; cx.lineWidth=5;
         cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(name,s0[0],s0[1]);
         cx.fillStyle='#ffffff'; cx.fillText(name,s0[0],s0[1]);
         if(sub){
           cx.font='bold 13px system-ui'; cx.lineWidth=4;
-          cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(sub,s0[0],s0[1]+17);
-          cx.fillStyle= f.col || L.colour; cx.fillText(sub,s0[0],s0[1]+17);
+          cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(sub,s0[0],s0[1]+18);
+          cx.fillStyle= f.col || L.colour; cx.fillText(sub,s0[0],s0[1]+18);
+        }
+        if(sub2){
+          cx.font='11px system-ui'; cx.lineWidth=3.5;
+          cx.strokeStyle='rgba(0,0,0,.9)'; cx.strokeText(sub2,s0[0],s0[1]+33);
+          cx.fillStyle='#cfd8dc'; cx.fillText(sub2,s0[0],s0[1]+33);
         }
         cx.textAlign='left';
       } else {
@@ -435,6 +443,29 @@ let PL=Object.assign({},PL_DEF), planoImg=null, planoAlign=false;
 try{ PL=Object.assign(PL, JSON.parse(localStorage.getItem('sab_plano')||'{}')); }catch(e){}
 const savePlano=()=>{ try{localStorage.setItem('sab_plano',JSON.stringify(PL));}catch(e){} };
 
+/* 3x3 context imagery — loaded only when the neighbours layer is switched on */
+let surImg=null, surTried=false;
+function neighboursOn(){
+  const L=D.layers.find(l=>l.name.indexOf('Vecinos')===0);
+  return !!(L && L.on);
+}
+function drawSurroundings(){
+  if(!D.surroundings || !neighboursOn()) return;
+  if(!surImg && !surTried){
+    surTried=true;
+    surImg=new Image();
+    surImg.onload=()=>draw();
+    surImg.onerror=()=>{surImg=null;};
+    surImg.src=D.surroundings.src;
+    return;
+  }
+  if(!surImg || !surImg.complete) return;
+  const b=D.surroundings.bounds;
+  const a=toScreen(b.minx,b.maxy), c=toScreen(b.maxx,b.miny);
+  cx.save(); cx.globalAlpha=0.85; cx.imageSmoothingQuality='high';
+  cx.drawImage(surImg, a[0],a[1], c[0]-a[0], c[1]-a[1]);
+  cx.restore();
+}
 function drawPlano(){
   if(!PL.on || !planoImg) return;
   if(mpModel){ drawPlanoWarped(); return; }
