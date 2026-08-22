@@ -46,6 +46,24 @@ def main():
                     c[j] = [round(nx, 6), round(ny, 6)]
                     tocados.append(f"par [{i}] extremo {j}")
 
+    # A vertex can also be referenced BY NUMBER: a closure written [28, ...] resolves its
+    # coordinates through cercas-numeracion.json, not from the closure file. Move only the
+    # coordinates and that closure keeps pointing at the old spot, and the fence silently
+    # comes apart. The registry is append-only in its NUMBERING — a number is never reused —
+    # but where a numbered end sits is a fact that can change, so it follows the vertex.
+    f_reg = GEO / "cercas-numeracion.json"
+    if f_reg.exists():
+        reg = json.loads(f_reg.read_text(encoding="utf-8"))
+        for k, p in list(reg["puntos"].items()):
+            if math.hypot((p[0] - ox) * LON2M, (p[1] - oy) * LAT2M) < TOL:
+                reg["puntos"][k] = [round(nx, 6), round(ny, 6)]
+                tocados.append(f"registro: extremo nº {k}")
+        if any(t.startswith("registro") for t in tocados):
+            reg.setdefault("_movidos", []).append(
+                {"de": [round(ox, 6), round(oy, 6)], "a": [round(nx, 6), round(ny, 6)],
+                 "metros": round(d, 1), "motivo": motivo})
+            f_reg.write_text(json.dumps(reg, indent=1, ensure_ascii=False), encoding="utf-8")
+
     if not tocados:
         print(f"  ningún cierre usa {ox},{oy} — nada que mover")
         return 1

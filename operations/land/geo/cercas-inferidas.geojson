@@ -465,17 +465,17 @@
    "type": "Feature",
    "properties": {
     "tipo": "cerca_inferida",
-    "nombre": "Cerca 28–punto",
-    "longitud_m": 77,
-    "fuente": "[owner] la cerca 28–29 se prolonga al este en su misma dirección (rumbo 86,6°) hasta cruzar con la que baja del extremo 25",
+    "nombre": "Cerca punto–punto",
+    "longitud_m": 79,
+    "fuente": "[owner] la cerca 28–29 se prolonga al este en su misma dirección (rumbo 86,6°) hasta cruzar con la que baja del extremo 25 [Arranca ahora del final de la prolongación del 28, no del 28.]",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -75.612872,
-      5.798926
+      -75.612884,
+      5.798822
      ],
      [
       -75.612176,
@@ -1064,16 +1064,16 @@
    "properties": {
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
-    "longitud_m": 43,
-    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. (tramo 1 de 8)",
+    "longitud_m": 41,
+    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. [Su punta oriente se corrió 11,6 m al sur, al final de la prolongación del extremo 28.] (tramo 1 de 8)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
     "type": "LineString",
     "coordinates": [
      [
-      -75.612872,
-      5.798926
+      -75.612884,
+      5.798822
      ],
      [
       -75.613252,
@@ -1088,7 +1088,7 @@
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
     "longitud_m": 58,
-    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. (tramo 2 de 8)",
+    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. [Su punta oriente se corrió 11,6 m al sur, al final de la prolongación del extremo 28.] (tramo 2 de 8)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
@@ -1111,7 +1111,7 @@
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
     "longitud_m": 14,
-    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. (tramo 3 de 8)",
+    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. [Su punta oriente se corrió 11,6 m al sur, al final de la prolongación del extremo 28.] (tramo 3 de 8)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
@@ -1134,7 +1134,7 @@
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
     "longitud_m": 34,
-    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. (tramo 4 de 8)",
+    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. [Su punta oriente se corrió 11,6 m al sur, al final de la prolongación del extremo 28.] (tramo 4 de 8)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
@@ -1157,7 +1157,7 @@
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
     "longitud_m": 12,
-    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. (tramo 5 de 8)",
+    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. [Su punta oriente se corrió 11,6 m al sur, al final de la prolongación del extremo 28.] (tramo 5 de 8)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
@@ -1180,7 +1180,7 @@
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
     "longitud_m": 32,
-    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. (tramo 6 de 8)",
+    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. [Su punta oriente se corrió 11,6 m al sur, al final de la prolongación del extremo 28.] (tramo 6 de 8)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
@@ -1203,7 +1203,7 @@
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
     "longitud_m": 50,
-    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. (tramo 7 de 8)",
+    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. [Su punta oriente se corrió 11,6 m al sur, al final de la prolongación del extremo 28.] (tramo 7 de 8)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
@@ -1226,7 +1226,7 @@
     "tipo": "cerca_inferida",
     "nombre": "Cerca punto–punto",
     "longitud_m": 41,
-    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. (tramo 8 de 8)",
+    "fuente": "[owner] cerca real 28–29, ENTERA sobre el drenaje 34. Oriente: tramos 37–42 del drenaje (173,9 m) en vez de la recta de 177,0 m — se aparta hasta 15,0 m al sur de ella. Occidente: tramos 44–45 (79,5 m) en vez de 90,4 m. Las cuatro puntas de drenaje se llevan a los vértices que ya existían: extremo 28 (12,3 m), el cruce con la perpendicular (6,6 y 7,1 m) y extremo 29 (7,9 m). Es la segunda cerca del día que resulta ir por un drenaje y no recta. [Su punta oriente se corrió 11,6 m al sur, al final de la prolongación del extremo 28.] (tramo 8 de 8)",
     "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
    },
    "geometry": {
@@ -1239,6 +1239,29 @@
      [
       -75.615282,
       5.798782
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 28–punto",
+    "longitud_m": 12,
+    "fuente": "[owner] prolongación dictada: la cerca del IGAC termina en el extremo 28 y sigue 11,6 m al sur hasta donde de verdad va, sobre el drenaje. El extremo 28 NO se mueve — es de una cerca real del IGAC; lo que se hace es alargarla.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.612872,
+      5.798926
+     ],
+     [
+      -75.612884,
+      5.798822
      ]
     ]
    }
