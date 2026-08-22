@@ -155,6 +155,12 @@
    ],
    "lado oriente del potrero rectangular que marcó Manuel",
    true
+  ],
+  [
+   24,
+   "@extend",
+   "se prolonga al sursuroeste hasta cortar el borde norte de Serengueti",
+   true
   ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",

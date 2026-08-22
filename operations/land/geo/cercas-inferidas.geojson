@@ -276,6 +276,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 24–→",
+    "longitud_m": 25,
+    "fuente": "[owner] se prolonga al sursuroeste hasta cortar el borde norte de Serengueti",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608978,
+      5.799957
+     ],
+     [
+      -75.60911,
+      5.79977
+     ]
+    ]
+   }
   }
  ]
 }

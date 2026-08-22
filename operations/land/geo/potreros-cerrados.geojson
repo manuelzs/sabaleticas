@@ -2077,8 +2077,99 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Serengueti",
+    "nombre": "Potrero 9",
     "n": 9,
+    "nombrado": false,
+    "area_ha": 4.28,
+    "area_m2": 42822,
+    "agua": [
+     {
+      "id": "agua:beb-2",
+      "nombre": "Bebedero 2",
+      "tipo": "bebedero",
+      "confianza": "alta"
+     },
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": false,
+    "agua_por_confirmar": false,
+    "agua_nota": "",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.609228,
+       5.802541
+      ],
+      [
+       -75.60927,
+       5.802581
+      ],
+      [
+       -75.609827,
+       5.801367
+      ],
+      [
+       -75.610312,
+       5.800313
+      ],
+      [
+       -75.610425,
+       5.800051
+      ],
+      [
+       -75.60911,
+       5.79977
+      ],
+      [
+       -75.608978,
+       5.799957
+      ],
+      [
+       -75.608498,
+       5.800636
+      ],
+      [
+       -75.608444,
+       5.800733
+      ],
+      [
+       -75.608043,
+       5.801403
+      ],
+      [
+       -75.608521,
+       5.801858
+      ],
+      [
+       -75.608766,
+       5.802092
+      ],
+      [
+       -75.609228,
+       5.802541
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Serengueti",
+    "n": 10,
     "nombrado": true,
     "area_ha": 3.76,
     "area_m2": 37593,
@@ -2121,6 +2212,10 @@
        5.799699
       ],
       [
+       -75.60911,
+       5.79977
+      ],
+      [
        -75.610425,
        5.800051
       ],
@@ -2153,7 +2248,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Balkanes",
-    "n": 10,
+    "n": 11,
     "nombrado": true,
     "area_ha": 3.62,
     "area_m2": 36247,
@@ -2245,8 +2340,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 11",
-    "n": 11,
+    "nombre": "Potrero 12",
+    "n": 12,
     "nombrado": false,
     "area_ha": 3.23,
     "area_m2": 32318,
@@ -2334,7 +2429,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Lajas",
-    "n": 12,
+    "n": 13,
     "nombrado": true,
     "area_ha": 3.21,
     "area_m2": 32092,
@@ -2426,7 +2521,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Paraíso",
-    "n": 13,
+    "n": 14,
     "nombrado": true,
     "area_ha": 3.11,
     "area_m2": 31102,
@@ -2511,7 +2606,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Ciruelo",
-    "n": 14,
+    "n": 15,
     "nombrado": true,
     "area_ha": 2.39,
     "area_m2": 23935,
@@ -2595,8 +2690,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 15",
-    "n": 15,
+    "nombre": "Potrero 16",
+    "n": 16,
     "nombrado": false,
     "area_ha": 1.82,
     "area_m2": 18233,

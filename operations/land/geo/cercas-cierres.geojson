@@ -528,6 +528,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 24–→",
+    "longitud_m": 25,
+    "motivo": "se prolonga al sursuroeste hasta cortar el borde norte de Serengueti",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.608978,
+      5.799957
+     ],
+     [
+      -75.60911,
+      5.79977
+     ]
+    ]
+   }
   }
  ]
 }
