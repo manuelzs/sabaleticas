@@ -944,6 +944,49 @@
      5.79711
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "bebedero",
+    "nombre": "Bebedero 8 (aprox.)",
+    "n": 8,
+    "altura_m": 693,
+    "alimentado_por": "[owner, 2026-08-22] T-2 (abajo de intermedios).",
+    "fuente": "[owner, 2026-08-22] Capturado por Manuel en el visor.",
+    "confianza": "existencia y alimentación: alta · posición: asumida aproximada",
+    "nombre_definitivo": "[pendiente] Nombre real con los nombres de los potreros."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.614033,
+     5.798286
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "T-2 → Bebedero 8 (trazado esquemático)",
+    "longitud_m": 138,
+    "fuente": "[owner, 2026-08-22] Conexión confirmada por Manuel.",
+    "confianza": "conexión: ALTA · trazado: ninguno — la posición de T-2 está CONTRADICHA por el terreno, así que esta línea sólo dice que la conexión existe."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.613651,
+      5.797096
+     ],
+     [
+      -75.614033,
+      5.798286
+     ]
+    ]
+   }
   }
  ]
 }
