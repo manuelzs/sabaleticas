@@ -1,0 +1,14 @@
+{
+ "_nota": "Nombres de potrero, anclados a un PUNTO, no a un número. La numeración va por área y se baraja cada vez que aparece un potrero nuevo; el nombre se pega al lugar. Mientras el punto siga dentro del polígono, el nombre lo sigue aunque cambie de forma.",
+ "_origen": "Los nombres son de Manuel. El plano de 2003 ya traía algunos — Bilbao, Siberia, Portugal, Marruecos — así que conviene comprobar si coinciden.",
+ "nombres": [
+  {
+   "nombre": "Portugal",
+   "punto": [
+    -75.614454,
+    5.800999
+   ],
+   "fuente": "[owner, 2026-08-22] Manuel lo identificó como el potrero 2 de la corrida del 2026-08-22."
+  }
+ ]
+}

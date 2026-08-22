@@ -25,8 +25,7 @@ LAT2M = 110574.0
 
 def load_lines(tag=False):
     out = []
-    cer = json.loads((GEO / "igac-1to5000/Cerca.geojson").read_text(encoding="utf-8"))
-    for f in cer["features"]:
+    for f in cercas_propias(write=False):
         g = f["geometry"]
         if g["type"] == "LineString":
             out.append([tuple(c[:2]) for c in g["coordinates"]])
@@ -76,6 +75,56 @@ def node_lines(lines, tol=TOL):
             new_l.append(b)
         out.append(new_l)
     return out
+
+
+def cercas_propias(write=True):
+    """Split IGAC's fences into ours and the neighbours'.
+
+    A fence with any vertex inside the boundary is ours. So is one lying just outside it —
+    a perimeter fence is built on the line, not on the surveyor's idea of it, so a few
+    metres of offset is normal. Beyond that it is somebody else's paddock and only creates
+    faces we then have to discard.
+
+    The split is clean here: 9 fences sit within 10 m of the boundary, 8 sit beyond 50 m,
+    and nothing lies between. The raw IGAC download is never modified.
+    """
+    bnd = json.loads((GEO / "boundary.geojson").read_text(encoding="utf-8"))
+    polys = []
+    for f in bnd["features"]:
+        g = f["geometry"]
+        polys += [g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]
+
+    def d_bnd(p):
+        best = 1e9
+        for poly in polys:
+            for ring in poly:
+                for i in range(len(ring) - 1):
+                    a, b = ring[i], ring[i + 1]
+                    ax, ay = a[0] * LON2M, a[1] * LAT2M
+                    bx, by = b[0] * LON2M, b[1] * LAT2M
+                    px, py = p[0] * LON2M, p[1] * LAT2M
+                    dx, dy = bx - ax, by - ay
+                    dd = dx * dx + dy * dy
+                    t = 0.0 if dd == 0 else max(0.0, min(1.0,
+                        ((px - ax) * dx + (py - ay) * dy) / dd))
+                    best = min(best, math.hypot(px - (ax + t * dx), py - (ay + t * dy)))
+        return best
+
+    cer = json.loads((GEO / "igac-1to5000/Cerca.geojson").read_text(encoding="utf-8"))
+    ours, theirs = [], []
+    for f in cer["features"]:
+        g = f["geometry"]
+        ls = [g["coordinates"]] if g["type"] == "LineString" else g["coordinates"]
+        pts = [tuple(c[:2]) for l in ls for c in l]
+        keep = any(inside(p, [polys[i]]) for p in pts for i in range(len(polys))) \
+            or min(d_bnd(p) for p in pts) <= 10.0
+        (ours if keep else theirs).append(f)
+    if write:
+        (GEO / "cercas-propias.geojson").write_text(
+            json.dumps({"type": "FeatureCollection", "features": ours}, indent=1,
+                       ensure_ascii=False), encoding="utf-8")
+        print(f"  cercas: {len(ours)} propias, {len(theirs)} del vecino (descartadas)")
+    return ours
 
 
 def build(lines):
@@ -274,6 +323,7 @@ def main():
         g = f["geometry"]
         OURS += [g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]
 
+    cercas_propias()
     lines, n_cerca = load_lines(tag=True)
     before = sum(len(l) for l in lines)
     lines = node_lines(lines)
@@ -290,17 +340,19 @@ def main():
     # by position and kept; only genuinely new gaps get new ones.
     tips = sorted([v for v, n in adj.items() if len(n) == 1],
                   key=lambda v: (-pos[v][1], pos[v][0]))
-    prev = {}
-    f_prev = GEO / "cercas-abiertas.geojson"
-    if f_prev.exists():
-        for ft in json.loads(f_prev.read_text(encoding="utf-8"))["features"]:
-            c = ft["geometry"]["coordinates"]
-            prev[(round(c[0], 6), round(c[1], 6))] = ft["properties"].get("n")
-    num, taken = {}, {n for n in prev.values() if n}
+    # The registry is the authority and is append-only: a number, once given, is never
+    # reused — not when its gap closes and drops out of cercas-abiertas, and not when the
+    # input fences change. Manuel dictates closures by number, so recycling one turns a
+    # correct instruction into a 685 m edge. That happened once; hence this file.
+    f_reg = GEO / "cercas-numeracion.json"
+    reg = json.loads(f_reg.read_text(encoding="utf-8")) if f_reg.exists() \
+        else {"puntos": {}}
+    known = {(round(v[0], 6), round(v[1], 6)): int(k) for k, v in reg["puntos"].items()}
+    num, taken = {}, set(known.values())
     for v in tips:
         p = (round(pos[v][0], 6), round(pos[v][1], 6))
-        if prev.get(p):
-            num[v] = prev[p]
+        if p in known:
+            num[v] = known[p]
     nxt = 1
     for v in tips:
         if v in num:
@@ -309,8 +361,21 @@ def main():
             nxt += 1
         num[v] = nxt
         taken.add(nxt)
-    by_num = {n: v for v, n in num.items()}
+        reg["puntos"][str(nxt)] = [round(pos[v][0], 6), round(pos[v][1], 6)]
+    f_reg.write_text(json.dumps(reg, indent=1, ensure_ascii=False), encoding="utf-8")
 
+    # closures reference numbers that may already be closed, so resolve through the registry
+    by_num = {n: v for v, n in num.items()}
+    for k, p in reg["puntos"].items():
+        if int(k) in by_num:
+            continue
+        best, bd = None, 3.0
+        for v in adj:
+            d = math.hypot((pos[v][0] - p[0]) * LON2M, (pos[v][1] - p[1]) * LAT2M)
+            if d < bd:
+                best, bd = v, d
+        if best is not None:
+            by_num[int(k)] = best
     # closures dictated by Manuel, as graph edges
     cierres, hechos = [], 0
     f_c = GEO / CIERRES
@@ -372,6 +437,12 @@ def main():
             for poly in rings_:
                 dep.append([tuple(c[:2]) for c in poly[0]])
 
+    # Names attach to a POINT, not to a number. Ranking is by area and reshuffles the
+    # moment a new enclosure closes, so a name bound to "Potrero 2" would wander.
+    f_nom = GEO / "potreros-nombres.json"
+    nombres = json.loads(f_nom.read_text(encoding="utf-8"))["nombres"] \
+        if f_nom.exists() else []
+
     feats = []
     sin_agua = []
     for i, (a, ring) in enumerate(polys, 1):
@@ -385,8 +456,11 @@ def main():
             sin_agua.append((i, a / 10000, "ninguna fuente conocida — POR CONFIRMAR"))
         elif not conducida:
             sin_agua.append((i, a / 10000, "sin bebedero mapeado — POR CONFIRMAR"))
+        prop = next((n for n in nombres if inside(n["punto"], [[ring]])), None)
         feats.append({"type": "Feature", "properties": {
-            "tipo": "potrero", "nombre": f"Potrero {i}", "n": i,
+            "tipo": "potrero",
+            "nombre": prop["nombre"] if prop else f"Potrero {i}",
+            "n": i, "nombrado": bool(prop),
             "area_ha": round(a / 10000, 2), "area_m2": round(a),
             "agua": fuentes,
             "sin_agua": not fuentes,
@@ -460,6 +534,9 @@ def main():
         print("  ⚠ potreros sin bebedero mapeado (fuente por confirmar):")
         for i, ha, why in sin_agua:
             print(f"      Potrero {i}: {ha:5.2f} ha — {why}")
+    named = sum(1 for f in feats if f["properties"].get("nombrado"))
+    if named:
+        print(f"  con nombre: {named} de {len(feats)}")
     tot = sum(a for a, _ in polys) / 10000
     print(f"  {len(polys)} potreros cerrados · {tot:.1f} ha en total"
           + (f"  ({fuera} descartados por caer fuera del lindero)" if fuera else ""))

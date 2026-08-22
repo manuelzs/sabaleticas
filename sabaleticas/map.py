@@ -38,7 +38,7 @@ LAYER_GROUP = {
 # label, file (relative to geo/), kind, colour, width, fill
 LAYERS = [
     ("Linderos",                "boundary.geojson",                    "poly", "#ff1744", 3.0, None),
-    ("Cercas",                  "igac-1to5000/Cerca.geojson",          "line", "#ff2ecc", 1.7, None),
+    ("Cercas",                  "cercas-propias.geojson",              "line", "#ff2ecc", 1.7, None),
     ("Drenajes",                "igac-1to5000/Drenaje.geojson",        "line", "#4fc3f7", 1.4, None),
     ("Cauces (área)",           "igac-1to5000/Drenaje_R.geojson",      "poly", "#29b6f6", 1.0, "rgba(41,182,246,.35)"),
     ("Depósitos de agua",       "igac-1to5000/Deposito_Agua_R.geojson","poly", "#00e5ff", 2.0, "rgba(0,229,255,.45)"),

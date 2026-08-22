@@ -7,6 +7,7 @@
     "tipo": "potrero",
     "nombre": "Potrero 1",
     "n": 1,
+    "nombrado": false,
     "area_ha": 12.16,
     "area_m2": 121554,
     "agua": [
@@ -168,8 +169,9 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 2",
+    "nombre": "Portugal",
     "n": 2,
+    "nombrado": true,
     "area_ha": 4.49,
     "area_m2": 44912,
     "agua": [
@@ -251,6 +253,7 @@
     "tipo": "potrero",
     "nombre": "Potrero 3",
     "n": 3,
+    "nombrado": false,
     "area_ha": 4.36,
     "area_m2": 43609,
     "agua": [
@@ -322,6 +325,7 @@
     "tipo": "potrero",
     "nombre": "Potrero 4",
     "n": 4,
+    "nombrado": false,
     "area_ha": 3.62,
     "area_m2": 36249,
     "agua": [
@@ -413,6 +417,7 @@
     "tipo": "potrero",
     "nombre": "Potrero 5",
     "n": 5,
+    "nombrado": false,
     "area_ha": 1.82,
     "area_m2": 18233,
     "agua": [
