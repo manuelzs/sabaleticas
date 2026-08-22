@@ -115,11 +115,12 @@ from AGROSAVIA, Fedegán, CIPAV, CONtexto Ganadero, Central Ganadera, universiti
 
 ## What's pending (the real unlock)
 
-1. **The P&L — 📅 first monthly report due from the accountants ~2026-08-31.** The #1
-   blocker, finally moving. Before it lands, see `financials/accounting-feed.md`: what to ask
-   them for, and the trap that treating cattle purchases as an expense makes a growing herd
-   look like a failing business. **Kg and lote linkage still won't come from accounting** —
-   those stay with the báscula and Manuel's records.
+1. **The financials — 📅 first delivery from the accountant ~2026-08-31** (P&L, balance
+   sheet, cash flow, whatever her software emits). The #1 blocker, finally moving. **Do not
+   send her requirements** — take the first delivery as it comes, then ask for specifics.
+   `financials/accounting-feed.md` is the reading guide; the trap to check is cattle
+   purchases expensed rather than held as inventory. **Kg and lote linkage still won't come
+   from accounting** — those stay with the báscula and Manuel's records.
 2. **Weighing discipline** — no GDP data yet ("báscula"). Encourage it; it unlocks the core ceba metrics.
 3. ~~Farm maps~~ ✅ **received 2026-08-21** (`operations/land/plano-2003.md`). Key finding: **the farm is already finely subdivided into fenced potreros** (more than the plan shows) — so rotation needs *a plan and discipline, not capital*. Pending: what rotation is actually run today.
 3b. **Water / verano capacity** — own project, `operations/water/README.md`. Manuel flagged a hard dry season coming; scaffolded, not yet discussed.

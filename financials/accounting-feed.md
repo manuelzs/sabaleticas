@@ -1,19 +1,19 @@
-# The accounting feed — getting the first report in the right shape
+# The accounting feed — how to read the first reports
 
-> **Status: incoming.** Manuel has arranged with the accountants for a **monthly P&L report**,
-> first one expected at the **close of August 2026** — roughly a week out (noted 2026-08-21).
-> This is the unblock the whole advisory has been waiting on
+> **Status: incoming, ~close of August 2026** (noted 2026-08-21). Manuel has asked the
+> accountant for the **P&L, balance sheet, cash flow, and whatever else her software
+> produces**. This is the unblock the whole advisory has been waiting on
 > ([`../data-inventory.md`](../data-inventory.md)).
 
-## Why this doc exists
+## How to use this doc
 
-**We have about a week to influence the format, and that window is worth using.** Asking for
-a field before the first report is generated costs a sentence. Asking for it after six months
-of reports means re-deriving history from source documents.
+**Don't send the accountant a list of requirements.** Per Manuel (2026-08-21): she works from
+accounting software, so what it outputs is what we get. He has already asked for the full set
+of standard reports. **We take the first delivery as it comes, read it, and only then ask for
+anything specific we turn out to need.**
 
-More importantly: **a standard accounting P&L can be actively misleading for a ceba
-operation.** Not wrong as accounting — wrong as a picture of whether we are making money. The
-reason is below, and it is the single most important thing to settle with them.
+So this is a **reading guide, not a request** — what to look for when it lands, and the one
+structural trap to check for before drawing any conclusion from the numbers.
 
 ## ⚠️ The trap: cattle are inventory, not an expense
 
@@ -37,32 +37,35 @@ This isn't a reason to distrust the accountants. It's the reason we need **both*
 and accrual picture, *and* our own kilos-and-margin picture from weights and lot records.
 Neither one alone answers "are we making money."
 
-## What to ask for
+## What to check when it arrives
 
-### The essentials — worth asking now
+### The things that decide whether the numbers mean anything
 
-1. **Cattle purchases and sales separated from operating costs.** Never blended into a single
-   expense line. This is the one that matters most.
-2. **How the herd is treated** — inventory or expense? If inventory: at what value, and is it
-   ever revalued? Is there an **opening and closing herd value each month**? That number, and
-   its movement, is closer to real economic profit than the P&L line itself.
-3. **Operating costs split by category** — labor, feed (sal, melaza, suplementos), health
-   (drogas, vacunas), pasture, transport, admin, finance. A single "gastos" total tells us
-   nothing about where the leak is.
-4. **Revenue line by line, not just a monthly total** — date, buyer, amount per sale. This is
-   what lets us tie their figures to the GSMI movement guías we already have
+1. **Are cattle purchases separated from operating costs, or blended into one expense line?**
+   The single most important thing to establish, for the reason above.
+2. **How is the herd treated** — inventory or expense? If inventory, is there an **opening and
+   closing herd value each month**? The **balance sheet** should answer this, which is why
+   asking for the full report set was the right call. The movement in herd value is closer to
+   real economic profit than the P&L line itself.
+3. **Are operating costs split by category** — labor, feed, health, pasture, transport, admin,
+   finance? A single "gastos" total tells us nothing about where the leak is.
+4. **Is revenue line by line, or only a monthly total?** Line by line lets us tie their
+   figures to the GSMI movement guías we already have
    ([`../herd/movements.md`](../herd/movements.md)) and finally compute realized $/kg.
-5. **Whether commissions and transport are netted out of revenue or shown separately.** With
-   ~63% of sales through comisionistas, the commission is a real cost we need to see, not have
-   silently deducted.
+   A monthly total still gives us the cash picture — just not the per-channel one.
+5. **Are commissions and transport netted out of revenue, or shown separately?** With ~63% of
+   sales through comisionistas, a commission silently deducted from revenue hides a real cost.
 
-### Also useful
+### Nice to find, not worth chasing yet
 
-6. Loan interest, taxes and insurance as their own lines — fixed monthly cash out.
-7. **Impuesto predial**, and on which predio and área — which happens to answer next week's
-   [land question](../operations/land/geo/README.md) at the same time.
-8. Whatever **historical months** they can produce. Twelve months of history is worth more
-   than twelve months of waiting.
+6. Loan interest, taxes and insurance on their own lines.
+7. **Impuesto predial** and the predio/área it is liquidated on — would answer the
+   [land question](../operations/land/geo/README.md) for free if it happens to be itemized.
+8. **Historical months.** If the software can produce them, twelve months of history is worth
+   far more than twelve months of waiting.
+
+**Only after reading the first delivery** do we go back with anything specific — and then it
+should be a short list of things we genuinely could not work around, not a wish list.
 
 ### What they almost certainly won't have
 
@@ -71,30 +74,6 @@ Neither one alone answers "are we making money."
 
 Those two remain the gap, and they're what turn a P&L into a diagnosis. Worth being explicit
 about that so nobody assumes the accounting feed closes it.
-
----
-
-## Para reenviar al contador
-
-> Buenas. Estamos armando el análisis de rentabilidad de la finca y vamos a usar el reporte
-> mensual. Para que nos sirva desde el primer envío, ¿sería posible que incluyera lo
-> siguiente?
->
-> 1. **Compras y ventas de ganado separadas** de los gastos de operación (nunca mezcladas en
->    una sola línea).
-> 2. **Cómo se maneja el ganado contablemente**: ¿como inventario o como gasto? Si es
->    inventario, ¿con qué valor, y hay **valor de inventario al inicio y al cierre de cada
->    mes**?
-> 3. **Gastos operativos por categoría**: mano de obra, alimentación (sal, melaza,
->    suplementos), sanidad (drogas, vacunas), praderas, transporte, administración,
->    financieros.
-> 4. **Ventas detalladas** (fecha, comprador, valor por venta), no solo el total del mes.
-> 5. Si las **comisiones y el transporte** se descuentan del ingreso o van en línea aparte.
-> 6. Intereses, impuestos y seguros en líneas propias.
-> 7. El **impuesto predial**, indicando sobre **qué predio y qué área** se liquida.
-> 8. Los **meses anteriores** que puedan generar, si es posible.
->
-> Con eso podemos calcular margen real por kilo y costo por cabeza. Mil gracias.
 
 ## When it lands
 

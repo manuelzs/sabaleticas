@@ -15,11 +15,12 @@ row. Companion docs: [`financials/owner-records-request.md`](financials/owner-re
 These four build the 12-month P&L and confirm the core diagnosis (why we're losing money).
 Everything else can wait behind them.
 
-> 📅 **Update 2026-08-21: the accountants will send a MONTHLY P&L, first one at the close of
-> August** — about a week out. This is the unblock. **We have that week to influence the
-> format**, which is worth using: see [`financials/accounting-feed.md`](financials/accounting-feed.md)
-> for what to ask for, and in particular the trap that a standard P&L treats cattle purchases
-> as an expense, which makes a *growing* herd look like a failing business.
+> 📅 **Update 2026-08-21: the accountant will send P&L, balance sheet, cash flow and whatever
+> else her software produces — first delivery ~close of August.** This is the unblock. We take
+> it as it comes and only ask for specifics after reading it; see
+> [`financials/accounting-feed.md`](financials/accounting-feed.md) — a reading guide, not a
+> request list. The key thing to check: whether cattle purchases are expensed rather than held
+> as inventory, because that makes a *growing* herd look like a failing business.
 >
 > 🔓 **Also: a user account on the farm's accounting service is being set up**,
 > and Manuel will hand over access. If the books are in there, that potentially delivers
