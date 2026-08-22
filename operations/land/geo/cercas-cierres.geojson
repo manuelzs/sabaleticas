@@ -2088,6 +2088,30 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cierre",
+    "nombre": "Cierre 35–punto",
+    "longitud_m": 125,
+    "motivo": "cerca real del extremo 35 al vértice que marcó Manuel (125,0 m). Reemplaza a la anterior, que se quitó y se volvió a dictar desde cero por si el trazado viejo arrastraba algún artefacto.",
+    "es_cerca": true,
+    "fuente": "[owner] Cierre dictado por Manuel. No es una cerca física: cierra el POTRERO, que es lo que importa para el ganado."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616726,
+      5.797314
+     ],
+     [
+      -75.615887,
+      5.79807
+     ]
+    ]
+   }
   }
  ]
 }

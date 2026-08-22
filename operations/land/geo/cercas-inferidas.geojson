@@ -1702,6 +1702,29 @@
      ]
     ]
    }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "cerca_inferida",
+    "nombre": "Cerca 35–punto",
+    "longitud_m": 125,
+    "fuente": "[owner] cerca real del extremo 35 al vértice que marcó Manuel (125,0 m). Reemplaza a la anterior, que se quitó y se volvió a dictar desde cero por si el trazado viejo arrastraba algún artefacto.",
+    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.616726,
+      5.797314
+     ],
+     [
+      -75.615887,
+      5.79807
+     ]
+    ]
+   }
   }
  ]
 }

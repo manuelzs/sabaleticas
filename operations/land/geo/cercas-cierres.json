@@ -630,7 +630,16 @@
    ],
    "es_cerca": true,
    "motivo": "cerca real por el drenaje 34 (tramos 46–50), 107.6 m, en vez de la recta de 103,4 m que iba del extremo 29 a la punta de la prolongación del 30. Las dos puntas del drenaje se llevan a esos dos vértices (estaban a 7,9 y 5,1 m). El extremo 29 es de una cerca real del IGAC y NO se mueve: la polilínea arranca justo donde él está."
-  }
+  },
+  [
+   35,
+   [
+    -75.615887,
+    5.79807
+   ],
+   "cerca real del extremo 35 al vértice que marcó Manuel (125,0 m). Reemplaza a la anterior, que se quitó y se volvió a dictar desde cero por si el trazado viejo arrastraba algún artefacto.",
+   true
+  ]
  ],
  "_orden": "Los números van de NORTE a SUR (y de oeste a este dentro de la misma latitud). Son estables entre corridas: una vez asignado, un extremo conserva su número aunque se cierren otros.",
  "_por_que": "[owner, 2026-08-22] La capa de CERCAS y la de POTREROS no son lo mismo. Donde no hay cerca física el IGAC hace bien en dejar el hueco, pero el POTRERO puede estar cerrado igual para el ganado. Las cercas se quedan abiertas; los potreros se cierran.",
