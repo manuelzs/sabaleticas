@@ -161,6 +161,12 @@ February. Same for the **over-pressure question** — 108 m of head to the big h
 186 m to the lowest ground (see above) is the kind of fault that surfaces when a line is
 finally run hard.
 
+### 3b. Telemetry — see [`sensors.md`](sensors.md)
+
+LoRa over cellular, what to instrument and in what order, and why the rompecargas is a hard
+site. **Deliberately price-free** until researched. The rule that governs it:
+**fix first, measure second.**
+
 ### 4. The herd question — ✅ already in hand
 **Manuel is actively selling** (2026-08-21), a good number of animals, ahead of further price
 falls. So this section is recording a decision already taken, not proposing one.
@@ -433,6 +439,46 @@ If outflow > inflow, the hypothesis is confirmed and fix 1 is immediately action
 **Still unknown:** actual pipe diameters in and out, float valve size, the real pipe routes,
 and where the single outlet splits.
 
+## 📋 The field list — everything now blocked on someone walking the ground
+
+Consolidated 2026-08-21. Nothing here needs money; all of it needs a person and a morning.
+This supersedes nothing above — it is the list of things **only a site visit can answer.**
+
+### With a watch, at the rompecargas *(settles the acute failure)*
+1. **Close the outlet. Time the chamber filling.** 2.000 L ÷ seconds = **inflow in L/s**.
+2. **Shut the inlet, open the outlet. Time it draining.** = **outflow in L/s**.
+   If outflow > inflow, the diagnosis is confirmed and the free fix is actionable that day.
+
+### While standing there
+3. **Pipe diameters, in and out.** The whole gradient argument assumes they match — confirm it.
+4. **Float valve size and condition.** Inspect and clean; **do not redesign**.
+5. **Is there a ventosa on the inlet leg?** The 2003 plan shows one on the *casa* leg and none
+   here. If the inlet crests just before the chamber, that is where air is trapping.
+6. **Where does the single outlet split, and what does each branch feed?**
+
+### Along the lines
+7. **Walk the pipes with a GPS track**, not paper. Same walk, same person, real coordinates.
+8. **Check the 2003 ventosa at 5.796878, −75.612092** — still there? still working?
+   **A seized ventosa is indistinguishable from no ventosa.**
+9. **Sweep the 2003 plan for more ventosas.** Manuel, 2026-08-21: *"There are probably more air
+   vent markers."* Only one has been transcribed so far. Each one found tells us where the
+   original designers knew air collects — which is exactly where the humps are.
+10. **The T del norte** — is the split fixed, or is there a valve? Can it be balanced?
+
+### With a level, on the ridge *(unlocks the gravity route)*
+11. **Run a level along the candidate route**, against the represa's **lowest expected working
+    level**, not its full level. The margin is 0.50 m against a model with ±2–5 m error;
+    nothing gets bought until this is measured.
+12. **Check the on-farm variant too** (Option B). It needs no permission, so it can be
+    surveyed tomorrow.
+
+### Not on the ground, but pending
+13. **Impuesto predial bill** — which predios, what área.
+14. **Certificado de tradición for 023-16153**, and the northern-triangle linderos.
+15. **Nine unknown neighbour owners**, Bellavista first.
+
+---
+
 ## 🟡 The gravity route through El Guaico — plausible, unproven, and worth surveying
 
 **Manuel's idea, 2026-08-21**, reading a highlighted 25 m contour in the viewer: if the line
@@ -513,6 +559,21 @@ represa.** Pump over that one hump and gravity carries the remaining ~460 m.
 
 That reframes the negotiation with El Guaico from a **dependency into an optimisation** — and
 it is a far better position to negotiate from, because we can walk away.
+
+#### If we do go and ask them
+
+`[advice, not legal counsel]` The instrument is a **servidumbre de acueducto**. Practical notes:
+
+- **The ask is small.** A buried 2″ pipe along a ridge, no surface structures, no traffic. It
+  does not impede lemon growing — they can plant over it.
+- **Offer a tap-off.** They irrigate; water has value to them. A connection point costs us
+  almost nothing and turns an imposition into a benefit. That is the difference between a
+  favour and a deal.
+- **Get it written and registered**, so it survives a sale of *either* property. Los Búhos
+  next door has just changed hands; El Guaico could too. A handshake with the current owner is
+  worth nothing to their buyer.
+- **Do not survey their side without asking first.** 83 of 98 route samples are on their land,
+  so the conversation genuinely comes before the level run.
 
 ### Does the gravity route need its own rompecargas?
 

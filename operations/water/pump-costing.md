@@ -1,9 +1,16 @@
 # Costing the reservoir pump — what's published and what isn't
 
+> ### ⚠️ The premise of this document is now in doubt — read [`README.md`](README.md) first.
+> This was costed against a **~25 m lift**. Two cheaper routes have since been found on the
+> terrain model: a **contour line through El Guaico needing no pump at all**, and a variant
+> **entirely on our own land needing ~6.6 m of lift — roughly a quarter of the power, and
+> nobody's permission.** The prices below remain good; **the duty they were chosen for may not
+> survive a field survey.** Do not buy against this document yet.
+
 > Researched 2026-08-21. **Every price below was read off a live page**; anything that could
 > only be found in a search snippet is marked unconfirmed and should not be used.
-> Duty: **~25 m of head** (20 m static + friction), 138 m of pipe, from the reservoir up to the
-> rompecargas. See [`README.md`](README.md).
+> Duty as costed: **~25 m of head** (20 m static + friction), 138 m of pipe, from the reservoir
+> up to the rompecargas.
 
 ## The pump itself — cheaper than expected
 
