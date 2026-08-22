@@ -158,8 +158,22 @@ function draw(){
   }
   for(const L of D.layers){
     if(!L.on) continue;
-    cx.strokeStyle=L.colour; cx.lineWidth=L.width; cx.lineJoin='round';
-    for(const f of L.features) drawGeom(f,L.kind,L.fill);
+    cx.lineWidth=L.width; cx.lineJoin='round';
+    for(const f of L.features){
+      cx.strokeStyle = f.col || L.colour;
+      drawGeom(f,L.kind,L.fill);
+    }
+    // labels for named features (water infrastructure etc.), only when zoomed in enough
+    if(view.s>3000) for(const f of L.features){
+      if(!f.l) continue;
+      if(f.t!=='Point') continue;            // label points only; line labels were noise
+      const p0 = f.c;
+      const s0=toScreen(p0[0],p0[1]);
+      cx.font='12px system-ui'; cx.lineWidth=3;
+      cx.strokeStyle='rgba(0,0,0,.8)'; cx.strokeText(f.l,s0[0]+9,s0[1]-7);
+      cx.fillStyle= f.col || L.colour; cx.fillText(f.l,s0[0]+9,s0[1]-7);
+      cx.lineWidth=L.width;
+    }
   }
   drawOverlay();
   if(pts.length){

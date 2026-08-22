@@ -87,6 +87,15 @@ def _round_geom(coords, dp=6):
     return coords
 
 
+# Per-feature symbology inside a layer, keyed on the `tipo` property. Without this every
+# point in a layer renders identically — which had a casa reading as a tanque.
+TIPO_COLOUR = {
+    "tanque": "#00e5ff", "nacimiento": "#7cffcb", "bebedero": "#4dd0e1",
+    "represa": "#0091ea", "bocatoma": "#26c6da", "tuberia": "#b388ff",
+    "casa": "#ff8a65", "potrero": "#ffee58",
+}
+
+
 def _collect(geo: Path):
     out = []
     for name, rel, kind, colour, width, fill in LAYERS:
@@ -106,8 +115,13 @@ def _collect(geo: Path):
             label = props.get("name") or props.get("DIRECCION") or ""
             if not label and props.get("elev"):
                 label = f"{props['elev']} m"
-            feats.append({"t": g["type"], "c": _round_geom(_thin(g["coordinates"])),
-                          "l": str(label)[:60]})
+            item = {"t": g["type"], "c": _round_geom(_thin(g["coordinates"])),
+                    "l": str(label)[:60]}
+            tipo = props.get("tipo")
+            if tipo in TIPO_COLOUR:
+                item["col"] = TIPO_COLOUR[tipo]
+                item["l"] = str(props.get("nombre") or label)[:60]
+            feats.append(item)
         if feats:
             out.append({"name": name, "kind": kind, "colour": colour, "width": width,
                         "fill": fill, "on": name in DEFAULT_ON, "features": feats})

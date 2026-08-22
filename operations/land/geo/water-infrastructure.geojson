@@ -61,7 +61,8 @@
     "nombre": "Casa principal",
     "altura_m": 705,
     "fuente": "[owner, corroborated by IGAC 1:5000] Manuel describió dos sitios construidos en el predio; el catastro 1:5000 muestra exactamente dos (entrada y suroeste). Construcción 60x30 m, la mayor del predio.",
-    "confianza": "alta"
+    "confianza": "alta",
+    "nota": "[owner, 2026-08-21] NO hay tanques junto a esta casa. Los tanques intermedios están a ~694 m, 57 m más arriba."
    },
    "geometry": {
     "type": "Point",
@@ -74,17 +75,21 @@
   {
    "type": "Feature",
    "properties": {
-    "tipo": "casa",
-    "nombre": "Anexo casa principal",
-    "altura_m": 703,
-    "fuente": "[IGAC 1:5000] construcción 19x10 m, a ~85 m de la casa principal.",
-    "confianza": "alta"
+    "tipo": "tanque",
+    "nombre": "Tanques intermedios (3 × ~20.000 L)",
+    "altura_m": 762,
+    "n_tanques": 3,
+    "capacidad_l_total": 60000,
+    "alimentado_por": "tanques principales de la entrada (813 m) — 51 m de caída, ~860 m",
+    "abastece": "casa principal (recreativa, incl. jardín — carga prescindible) + ~la mitad de los bebederos de esa zona",
+    "fuente": "[owner] coordenada exacta dada por Manuel 2026-08-21 desde el visor. Los tres tanques se representan como un solo punto porque no conocemos sus posiciones individuales. Capacidades ~20.000 L c/u = estimación de memoria.",
+    "confianza": "posición del grupo: alta · capacidades: baja"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.61547,
-     5.7965
+     -75.609996,
+     5.797095
     ]
    }
   },
@@ -92,12 +97,10 @@
    "type": "Feature",
    "properties": {
     "tipo": "tuberia",
-    "nombre": "Línea principal — TRAZADO INDICATIVO",
-    "desnivel_m": 108,
-    "distancia_recta_m": 1575,
-    "presion_estatica_bar_aprox": 10.8,
-    "confianza": "solo los extremos son reales; la ruta es un marcador de posición",
-    "fuente": "Esquemática. Une dos puntos conocidos (tanques 813 m → casa principal 705 m). Se reemplaza con el levantamiento de tubería."
+    "nombre": "Aducción: tanques altos → tanques intermedios (INDICATIVA)",
+    "desnivel_m": 51,
+    "confianza": "solo extremos; ruta pendiente del levantamiento",
+    "fuente": "Esquemática entre dos puntos conocidos."
    },
    "geometry": {
     "type": "LineString",
@@ -105,6 +108,29 @@
      [
       -75.60244,
       5.79531
+     ],
+     [
+      -75.609996,
+      5.797095
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "tuberia",
+    "nombre": "Distribución: tanques intermedios → casa principal (INDICATIVA)",
+    "desnivel_m": 57,
+    "confianza": "solo extremos; ruta pendiente del levantamiento",
+    "fuente": "Esquemática entre dos puntos conocidos."
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      -75.609996,
+      5.797095
      ],
      [
       -75.61623,

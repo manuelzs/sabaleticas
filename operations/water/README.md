@@ -233,7 +233,7 @@ Recorded because it is the first coherent description of the system we have.
 3. **Distribution runs from those two tanks across the farm** — and it is **two-stage**, not
    one. See below.
 4. **A second tank cluster mid-farm: three tanks, ~20,000 L each** (at least), so **~60,000 L**.
-   Sited **near a house, a little above it** — position still to be pinned down. They are
+   📍 **Located exactly** at **5.797095, −75.609996 — 762 m** `[owner, 2026-08-21]`. They are
    **filled from the top tanks**, and they serve:
    - **the house**, which is *recreational* and consumes a significant amount, including
      **garden watering**; and
@@ -252,7 +252,8 @@ Recorded because it is the first coherent description of the system we have.
   (manual switchover)                 = 70,000 L
             │
             ▼
-  MID TANKS · mid-farm · ~717-730 m   3 × ~20,000 L = ~60,000 L
+  MID TANKS · 5.797095,-75.609996     3 × ~20,000 L = ~60,000 L
+             762 m                    ← 51 m below the top tanks, 860 m away
             │
       ┌─────┴─────┐
       ▼           ▼
@@ -263,6 +264,26 @@ Recorded because it is the first coherent description of the system we have.
 
 **Total storage ≈ 130,000 L**, roughly double what this document assumed before Manuel
 described the mid cluster. That is the single biggest correction here, and it is good news.
+
+### The head budget, now that both ends are fixed
+
+| Leg | Drop | Distance | Static pressure |
+|---|---|---|---|
+| Top tanks (813 m) → mid tanks (762 m) | **51 m** | ~860 m | ~5.0 bar |
+| Mid tanks (762 m) → main house (705 m) | **57 m** | ~694 m | ~5.6 bar |
+| Mid tanks → lowest ground on the farm (627 m) | 135 m | — | ~13.2 bar |
+
+**Both working legs sit around 5–6 bar** — comfortably inside ordinary pipe rating, and
+gravity-fed throughout. That is a much healthier picture than the single-stage assumption
+this document started with, where the house appeared to hang off 108 m of head at ~10.6 bar.
+
+**The two tanks in series are doing real work**: the mid cluster acts as a break-pressure
+stage as well as storage, splitting one punishing drop into two mild ones. Whoever designed
+this knew what they were doing. The remaining over-pressure question applies only to whatever
+runs *below* the mid tanks toward the low ground.
+
+⚠️ **There are no tanks beside the main house** `[owner, 2026-08-21]` — an earlier version of
+the map implied otherwise, which was a rendering fault on my side, not a fact.
 
 ### What the data independently confirms
 
@@ -397,17 +418,7 @@ estimates:
 
 ## Open questions for the discussion
 
-0aa. **Where exactly are the three mid tanks?** They must sit below the top tanks (813 m) and
-   above the house they feed. Built features the cadastre already maps in that band, closest
-   to the main house first — Manuel only needs to point at one:
-
-   | Candidate | Elevation | From the main house |
-   |---|---|---|
-   | **5.79617, −75.61426** | **717 m** | 221 m — *closest fit to "near a house, a bit further up"* |
-   | 5.80038, −75.61266 | 719 m | 585 m |
-   | 5.80136, −75.61078 | 729 m | 810 m |
-   | 5.79794, −75.60885 | 762 m | 833 m |
-
+0aa. ✅ **Mid tanks located** — 5.797095, −75.609996, 762 m.
 0ab. **How much does the house actually use?** It is the one load we can switch off, so its
    size is the size of that lever.
 0ac. **Which bebederos are on the mid cluster and which on the top tanks?** Manuel says the
