@@ -9,7 +9,7 @@ build up over time into a clear picture of the business.
 | | |
 |---|---|
 | **Herd size** | ~266 head |
-| **Land** | ⚠️ 151.85 ha per the cadastre vs 193.41 ha on the 2003 plan — [unresolved](operations/land/geo/README.md) |
+| **Land** | **170.73 ha** — two parcels, one matrícula, spanning La Pintada and Santa Bárbara |
 | **Location** | Colombia |
 | **Currency** | COP (Colombian pesos) |
 | **Units** | Metric (kg, hectares) |

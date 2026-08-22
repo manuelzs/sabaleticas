@@ -202,7 +202,7 @@ function draw(){
       if(f.t!=='Point') continue;            // label points only; line labels were noise
       const p0 = f.c;
       const s0=toScreen(p0[0],p0[1]);
-      cx.font='12px system-ui'; cx.lineWidth=3;
+      cx.font='bold 13px system-ui'; cx.lineWidth=3.5;
       cx.strokeStyle='rgba(0,0,0,.8)'; cx.strokeText(f.l,s0[0]+9,s0[1]-7);
       cx.fillStyle= f.col || L.colour; cx.fillText(f.l,s0[0]+9,s0[1]-7);
       cx.lineWidth=L.width;
@@ -215,7 +215,10 @@ function draw(){
       cx.beginPath(); cx.moveTo(a[0],a[1]); cx.lineTo(b2[0],b2[1]); cx.stroke();
       cx.fillStyle='#e0c9a6'; cx.beginPath(); cx.arc(a[0],a[1],4,0,7); cx.fill();
       cx.fillStyle='#00e676'; cx.beginPath(); cx.arc(b2[0],b2[1],4,0,7); cx.fill();
-      cx.fillStyle='#fff'; cx.font='10px system-ui'; cx.fillText(i+1,b2[0]+6,b2[1]-5);
+      cx.font='bold 13px system-ui';
+      cx.strokeStyle='rgba(0,0,0,.85)'; cx.lineWidth=3;
+      cx.strokeText(i+1,b2[0]+8,b2[1]-6);
+      cx.fillStyle='#fff'; cx.fillText(i+1,b2[0]+8,b2[1]-6);
     });
     if(mpPending){ const p=toScreen(mpPending[0],mpPending[1]);
       cx.fillStyle='#e0c9a6'; cx.strokeStyle='#000'; cx.lineWidth=2;
@@ -226,7 +229,7 @@ function draw(){
     cx.fillStyle = k%2 ? '#00e676' : '#e0c9a6';   // green = photo, cream = drawing
     cx.strokeStyle='#000'; cx.lineWidth=2;
     cx.beginPath(); cx.arc(s0[0],s0[1],6,0,7); cx.fill(); cx.stroke();
-    cx.fillStyle='#fff'; cx.font='bold 11px system-ui';
+    cx.fillStyle='#fff'; cx.font='bold 12px system-ui';
     cx.fillText((k%2?'FOTO ':'DIBUJO ')+(Math.floor(k/2)+1), s0[0]+9, s0[1]-6);
   }
   drawOverlay();
@@ -668,7 +671,7 @@ function drawOverlay(){
     cx.setLineDash([]);
     if(f!==draft&&f.nombre&&f.geom.length){
       const c=f.geom[0], s=toScreen(c[0],c[1]);
-      cx.fillStyle='#fff'; cx.font='12px system-ui'; cx.strokeStyle='rgba(0,0,0,.75)';
+      cx.fillStyle='#fff'; cx.font='bold 13px system-ui'; cx.strokeStyle='rgba(0,0,0,.8)';
       cx.lineWidth=3; cx.strokeText(f.nombre,s[0]+9,s[1]-8); cx.fillText(f.nombre,s[0]+9,s[1]-8);
     }
   }

@@ -102,7 +102,25 @@ unresolved.
 > municipal query silently truncates any property that crosses a boundary — and it does so
 > without any error, which is the dangerous kind of wrong.
 
-### The remaining gap
+### The remaining gap — and why it may not be a gap at all
+
+> ⚠️ **Reframed 2026-08-21.** This was being treated as "22.68 hectares are missing." That
+> overstates what we know, for a reason the georeferencing work then proved:
+>
+> **The 2003 plan is itself unreliable in places.** Aligning it against the cadastre with 12
+> control points showed the drawing is faithful in open ground (~11 m) but **wrong by up to
+> 173 m where the boundary crosses dense forest** — because a 2003 tape-and-compass survey
+> didn't cut lines through the trees; it drew a plausible line across the edge it could walk.
+>
+> So **193.41 ha is not a measurement to be reconciled against — it is a figure inheriting the
+> same survey error.** The difference between the two documents is a disagreement between two
+> imperfect sources, not a parcel of land known to be missing.
+>
+> Errors run **both ways**: the cadastre extends *into* forest where the plan cut the corner,
+> and separately the plan shows a surveyed ~0.5 ha spike in the north that the cadastre
+> assigns to a neighbour. Neither document is simply right.
+
+### The arithmetic, for the record
 
 | Figure | Source | |
 |---|---|---|
