@@ -2080,8 +2080,83 @@
     "nombre": "Potrero 9",
     "n": 9,
     "nombrado": false,
+    "area_ha": 3.76,
+    "area_m2": 37593,
+    "agua": [
+     {
+      "id": "agua:beb-9",
+      "nombre": "Bebedero 9",
+      "tipo": "bebedero",
+      "confianza": "alta"
+     },
+     {
+      "id": null,
+      "nombre": "drenaje",
+      "tipo": "natural",
+      "confianza": "IGAC"
+     }
+    ],
+    "sal": [],
+    "sin_agua": false,
+    "solo_natural": false,
+    "agua_por_confirmar": false,
+    "agua_nota": "",
+    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
+    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -75.60904,
+       5.797977
+      ],
+      [
+       -75.608802,
+       5.799532
+      ],
+      [
+       -75.608776,
+       5.799699
+      ],
+      [
+       -75.610425,
+       5.800051
+      ],
+      [
+       -75.610992,
+       5.798738
+      ],
+      [
+       -75.610229,
+       5.798342
+      ],
+      [
+       -75.609875,
+       5.798241
+      ],
+      [
+       -75.609214,
+       5.797995
+      ],
+      [
+       -75.60904,
+       5.797977
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "tipo": "potrero",
+    "nombre": "Potrero 10",
+    "n": 10,
+    "nombrado": false,
     "area_ha": 3.62,
-    "area_m2": 36248,
+    "area_m2": 36247,
     "agua": [
      {
       "id": "agua:tanques-intermedios",
@@ -2155,7 +2230,7 @@
        5.798342
       ],
       [
-       -75.610991,
+       -75.610992,
        5.798738
       ],
       [
@@ -2170,8 +2245,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 10",
-    "n": 10,
+    "nombre": "Potrero 11",
+    "n": 11,
     "nombrado": false,
     "area_ha": 3.23,
     "area_m2": 32318,
@@ -2259,7 +2334,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Lajas",
-    "n": 11,
+    "n": 12,
     "nombrado": true,
     "area_ha": 3.21,
     "area_m2": 32092,
@@ -2351,7 +2426,7 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Paraíso",
-    "n": 12,
+    "n": 13,
     "nombrado": true,
     "area_ha": 3.11,
     "area_m2": 31102,
@@ -2436,10 +2511,10 @@
    "properties": {
     "tipo": "potrero",
     "nombre": "Ciruelo",
-    "n": 13,
+    "n": 14,
     "nombrado": true,
     "area_ha": 2.39,
-    "area_m2": 23931,
+    "area_m2": 23935,
     "agua": [
      {
       "id": null,
@@ -2475,6 +2550,10 @@
       [
        -75.608776,
        5.799699
+      ],
+      [
+       -75.608802,
+       5.799532
       ],
       [
        -75.60904,
@@ -2516,8 +2595,8 @@
    "type": "Feature",
    "properties": {
     "tipo": "potrero",
-    "nombre": "Potrero 14",
-    "n": 14,
+    "nombre": "Potrero 15",
+    "n": 15,
     "nombrado": false,
     "area_ha": 1.82,
     "area_m2": 18233,
@@ -2576,69 +2655,6 @@
       [
        -75.607628,
        5.797584
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "potrero",
-    "nombre": "Potrero 15",
-    "n": 15,
-    "nombrado": false,
-    "area_ha": 0.13,
-    "area_m2": 1305,
-    "agua": [
-     {
-      "id": "agua:beb-9",
-      "nombre": "Bebedero 9",
-      "tipo": "bebedero",
-      "confianza": "alta"
-     },
-     {
-      "id": null,
-      "nombre": "drenaje",
-      "tipo": "natural",
-      "confianza": "IGAC"
-     }
-    ],
-    "sal": [],
-    "sin_agua": false,
-    "solo_natural": false,
-    "agua_por_confirmar": false,
-    "agua_nota": "",
-    "fuente": "[derived 2.0 m] Cara cerrada del grafo Cerca IGAC + linderos. Geometría heredada del catastro; el NOMBRE real lo da Manuel.",
-    "confianza": "geometría: media (catastro 1:5000) · nombre: pendiente"
-   },
-   "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -75.60904,
-       5.797977
-      ],
-      [
-       -75.610991,
-       5.798738
-      ],
-      [
-       -75.610229,
-       5.798342
-      ],
-      [
-       -75.609875,
-       5.798241
-      ],
-      [
-       -75.609214,
-       5.797995
-      ],
-      [
-       -75.60904,
-       5.797977
       ]
      ]
     ]

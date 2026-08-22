@@ -77,6 +77,7 @@ addEventListener('keydown',e=>{
   const k=(e.key||'').toLowerCase();
   if(k==='c' && lastG){ captured.push(Object.assign({n:captured.length+1},lastG)); capSave(); }
   else if(k==='x'){ captured=[]; capSave(); }
+  else if(k==='a'){ setEdgeMode(!edgeMode); }
 });
 
 /* Live readings on the map. A reading carries its AGE as prominently as its value —
@@ -274,6 +275,7 @@ function draw(){
     cx.fillText((k%2?'FOTO ':'DIBUJO ')+(Math.floor(k/2)+1), s0[0]+9, s0[1]-6);
   }
   drawOverlay();
+  drawEdges();
   if(pts.length){
     cx.strokeStyle='#fff'; cx.lineWidth=2; cx.setLineDash([6,5]);
     cx.beginPath();
@@ -349,6 +351,9 @@ addEventListener('mouseup',e=>{
   if(drag && drag.plano){ savePlano(); drag=null; return; }
   if(drag && !drag.moved && mpOn){ mpClick(toGeo(e.clientX,e.clientY)); drag=null; return; }
   if(drag && !drag.moved && calStep>=0){ calClick(toGeo(e.clientX,e.clientY)); drag=null; return; }
+  if(drag && !drag.moved && edgeMode){
+    edgeClick(e.clientX, e.clientY, e.metaKey||e.ctrlKey); drag=null; return;
+  }
   if(drag && !drag.moved && drawing){
     const g=toGeo(e.clientX,e.clientY);
     if(!draft) draft={tipo:document.getElementById('dtype').value,geom:[]};
@@ -383,6 +388,15 @@ addEventListener('mousemove',e=>{
     if(nf!==of){ hoverC=hc; draw(); }               // only repaint when it actually changes
     document.getElementById('rcurw').style.display = hoverC?'block':'none';
     if(hoverC) document.getElementById('rcur').textContent=hoverC.f.l||'—';
+    if(edgeMode){
+      const he=findEdge(e.clientX,e.clientY);
+      const nk=he?edgeKey(he):'', ok=hoverE?edgeKey(hoverE):'';
+      if(nk!==ok){ hoverE=he; draw(); }
+      const hw=document.getElementById('ehov');
+      if(hw) hw.textContent = hoverE
+        ? `${hoverE.capa}${hoverE.etiqueta?' · '+hoverE.etiqueta:''} · ${hoverE.largo_m} m`
+        : '—';
+    }
   }
 });
 cv.addEventListener('wheel',e=>{

@@ -64,7 +64,7 @@
       5.800313
      ],
      [
-      -75.610991,
+      -75.610992,
       5.798738
      ]
     ]
@@ -273,29 +273,6 @@
      [
       -75.60904,
       5.797977
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
-    "tipo": "cerca_inferida",
-    "nombre": "Cerca punto–punto",
-    "longitud_m": 232,
-    "fuente": "[owner] lado sur del potrero rectangular que marcó Manuel",
-    "por_que_falta": "El IGAC no la capturó — normalmente porque el dosel tapa la vista."
-   },
-   "geometry": {
-    "type": "LineString",
-    "coordinates": [
-     [
-      -75.60904,
-      5.797977
-     ],
-     [
-      -75.610991,
-      5.798738
      ]
     ]
    }

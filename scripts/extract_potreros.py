@@ -409,6 +409,7 @@ def main():
     reg0 = json.loads(f_reg0.read_text(encoding="utf-8"))["puntos"] if f_reg0.exists() else {}
     ext_pts, ext_for = [], {}
     f_c0 = GEO / CIERRES
+    ya_geom = set()
     if f_c0.exists():
         for c in json.loads(f_c0.read_text(encoding="utf-8"))["cierres"]:
             if isinstance(c[0], list):
@@ -516,6 +517,7 @@ def main():
             pa, pb = resolve(c[0]), resolve(c[1])
             if pa and pb:
                 lines.append([pa, pb])
+                ya_geom.add((json.dumps(c[0]), json.dumps(c[1])))
 
     before = sum(len(l) for l in lines)
     lines = node_lines(lines, extra=ext_pts)
@@ -576,6 +578,12 @@ def main():
             a, b = c[0], c[1]
             motivo = c[2] if len(c) > 2 else ""
             es_cerca = bool(c[3]) if len(c) > 3 else False
+            # A dictated fence is already IN the geometry (added to `lines` before noding,
+            # so it split at every crossing). Adding it a second time as a straight graph
+            # edge lays a parallel shortcut over its own split halves, and the face walk
+            # takes the shortcut — which is exactly why the rectangle by Bebedero 9 never
+            # closed: a 189.8 m edge ran alongside 158.2 m + 31.6 m and skipped the corner.
+            enlazar = (json.dumps(c[0]), json.dumps(c[1])) not in ya_geom
             if isinstance(b, list) or b in ents:
                 if isinstance(a, list):                      # both ends are coordinates
                     va, bd0 = None, 6.0
@@ -614,8 +622,9 @@ def main():
                 lim = 400 if es_cerca else 60      # a real fence may be long; a gap may not
                 flag = "  ⚠ muy largo" if d_m > lim else ""
                 print(f"    {a_lab} → {lab}: {d_m:6.1f} m{flag}")
-                adj[va].add(vb)
-                adj[vb].add(va)
+                if enlazar:
+                    adj[va].add(vb)
+                    adj[vb].add(va)
                 cierres.append((a_lab, lab, pos[va], pos[vb], motivo, round(d_m), es_cerca))
                 hechos += 1
                 continue
@@ -648,8 +657,9 @@ def main():
             lim = 400 if es_cerca else 120
             flag = "  ⚠ muy largo, ¿número equivocado?" if d_m > lim else ""
             print(f"    cierre {a}–{b}: {d_m:6.1f} m{flag}")
-            adj[va].add(vb)
-            adj[vb].add(va)
+            if enlazar:
+                adj[va].add(vb)
+                adj[vb].add(va)
             cierres.append((a, b, pos[va], pos[vb], motivo, round(d_m), es_cerca))
             hechos += 1
     if hechos:

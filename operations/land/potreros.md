@@ -59,6 +59,16 @@ para un bebedero son huecos reales donde no hay cerca.
   de 2.183 m calificaba por un solo vértice a 10 m.
 - **Los puntos que marca Manuel enganchan a 6 m**, los vértices crudos del IGAC a 2 m. Él señala
   una unión en el terreno; la línea catastral está corrida un par de metros por naturaleza.
+- **Una cerca dictada entra UNA sola vez.** Va a `lines` antes del *noding*, para que se parta
+  donde otras la tocan. Si además se añade después como arista recta del grafo, esa recta queda
+  *en paralelo* sobre sus propias mitades, y el recorrido de caras toma el atajo. Fue justo lo
+  que pasó junto al Bebedero 9: una arista de **189,8 m** corría al lado de 158,2 m + 31,6 m y
+  se saltaba la esquina, así que el rectángulo de 3,76 ha nunca cerró. Las cuatro esquinas
+  existían y tres de los cuatro lados eran adyacencias directas — el grafo *parecía* correcto.
+  El síntoma que lo delata: **dos aristas con el mismo rumbo desde un nodo**.
+- **Un cierre dictado no se redibuja si la cerca ya está.** Un lado que se inventó entre el
+  Bebedero 9 y el vértice al oriente duplicó una cerca existente más matizada y creó una astilla
+  de 0,13 ha. Antes de dictar un lado, mirar si ya hay línea.
 
 ## Lo que apareció de paso
 

@@ -18,6 +18,7 @@
  #read{bottom:12px;left:12px;padding:9px 12px;font-variant-numeric:tabular-nums;min-width:232px}
  #read b{color:var(--muted);font-weight:500}
  #tools{top:12px;right:12px;padding:12px 14px;width:238px}
+ #epanel{bottom:12px;right:12px;width:340px;padding:11px 13px}
  button{background:#263039;color:var(--ink);border:1px solid var(--line);
    border-radius:7px;padding:6px 12px;font:inherit;cursor:pointer;
    line-height:1.15;white-space:nowrap}
@@ -213,6 +214,7 @@
 <div class="panel" id="tools">
   <div class="btnrow">
     <button id="btnMeasure">Medir</button>
+    <button id="btnEdges">Aristas</button>
     <button id="btnClear">Limpiar</button>
     <button id="btnReset">Vista inicial</button>
     <button id="btn3d" style="display:none">3D</button>
@@ -251,6 +253,17 @@
     <button id="btnExport">Exportar GeoJSON</button>
   </div>
   </div><!-- /drawUI -->
+</div>
+
+<div class="panel" id="epanel" style="display:none">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+    <b style="color:#ff4081">ARISTAS</b>
+    <span style="color:var(--muted);font-size:11px;flex:1"><span id="enum">0</span> seleccionadas</span>
+    <button id="btnEdgeCopy" style="font-size:11px;padding:3px 7px">Copiar</button>
+    <button id="btnEdgeClear" style="font-size:11px;padding:3px 7px">Limpiar</button>
+  </div>
+  <div style="color:var(--muted);font-size:11px;margin-bottom:4px">bajo el cursor: <span id="ehov">—</span></div>
+  <div id="eout" style="max-height:230px;overflow:auto;font-size:12px"></div>
 </div>
 
 <div class="panel" id="read">
