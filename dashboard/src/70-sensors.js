@@ -69,8 +69,18 @@ function sourceLive(f){
   const R=Object.values(D.readings||{});
   return R.some(r=>r.fuente===f.id && readingAge(r.ts).hours < 48);
 }
+
+/* Declared status is an intention; this is what is true. A source declared online that
+   has been silent for days shows "sin datos", because declaring is not measuring.
+   The pill and the sparkline both read from data flow, so they cannot disagree. */
+function effState(f){
+  if(sourceLive(f)) return 'en_linea';
+  if(f.estado==='en_linea') return 'sin_datos';
+  return f.estado;
+}
 function rowSource(f){
-  const [col,label]=SRC_STATE[f.estado]||['#78909c',f.estado||'?'];
+  const st=effState(f);
+  const [col,label]=SRC_STATE[st]||['#78909c',st||'?'];
   const canales=(f.canales||[]).map(c=>c.magnitud).join(' · ')||'—';
   return `<div class="row" style="--acc:${col}">
     <div class="main"><div class="nm">${f.origen==='manual'?'✍︎':'⚙'} ${f.nombre}</div></div>
@@ -98,7 +108,7 @@ function renderLecturas(){
 
 function renderFuentes(){
   const S=(D.sources&&D.sources.fuentes)||[];
-  const live=S.filter(f=>f.estado==='en_linea').length;
+  const live=S.filter(sourceLive).length;
   document.getElementById('pageInner').innerHTML=`
     <div class="sect"><h2>Fuentes</h2><span class="n">${live} de ${S.length} en línea</span></div>
     <div class="rows">${S.map(rowSource).join('')}</div>`;
