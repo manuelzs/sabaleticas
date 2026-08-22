@@ -1,4 +1,13 @@
 {
  "_nota": "Cercas que la regla automática conserva pero que Manuel sabe que no son nuestras. Se señalan por el NÚMERO de un extremo suelto que esté sobre ellas — que es como se pueden apuntar en el mapa.",
- "excluir": []
+ "excluir": [
+  {
+   "por_extremo": 46,
+   "motivo": "[owner, 2026-08-22] No es nuestra."
+  },
+  {
+   "por_extremo": 53,
+   "motivo": "[owner, 2026-08-22] No es nuestra."
+  }
+ ]
 }
