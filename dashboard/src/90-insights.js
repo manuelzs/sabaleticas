@@ -88,12 +88,26 @@ const RULES=[
       if(!bad.length) return;
       return {t:`Tramos que suben`, v:`${bad.length}`, d:`imposible por gravedad`}; } },
 
+  /* Names the points rather than counting them. A count sends you looking; a list
+     tells you what to take to the field. These were briefly nine hand-written tickets
+     until the duplication showed up — the rule already knew, it just would not say. */
   { id:'posiciones-sin-confirmar', sev:'info', ir:'agua/esquema',
     run:D=>{ if(!D.net) return;
-      const baja=D.net.nodes.filter(n=>n.pos_confianza==='baja').length;
-      if(!baja) return;
-      return {t:`Puntos por confirmar en campo`, v:`${baja}`,
-              d:`de ${D.net.nodes.length}`}; } },
+      const baja=D.net.nodes.filter(n=>n.pos_confianza==='baja');
+      if(!baja.length) return;
+      return {t:`Puntos por medir en campo`, v:`${baja.length}`,
+              d:baja.map(n=>n.nombre||n.id).join(' · ')}; } },
+
+  /* Same reasoning: a dashed line on the schematic is a claim we have not verified,
+     and there were four tickets restating it by hand before this rule existed. */
+  { id:'conexiones-hipoteticas', sev:'info', ir:'agua/esquema',
+    run:D=>{ if(!D.net) return;
+      const by={}; for(const n of D.net.nodes) by[n.id]=n;
+      const h=D.net.edges.filter(e=>e.hipotetica);
+      if(!h.length) return;
+      const nom=e=>`${(by[e.from]||{}).nombre||e.from} → ${(by[e.to]||{}).nombre||e.to}`;
+      return {t:`Conexiones sin confirmar`, v:`${h.length}`,
+              d:h.map(nom).join(' · ')}; } },
 ];
 
 function findings(){
@@ -126,6 +140,25 @@ function renderDrawer(){
     badge.className = alta ? 'badge alta' : (F.length ? 'badge' : 'badge cero');
   }
 }
+/* The same findings as a page. The drawer is for glancing from wherever you are; the
+   view is for reading them next to the tickets, which is where the two kinds of
+   attention belong side by side. One source, two surfaces. */
+function renderAvisos(){
+  const F=findings();
+  document.getElementById('page').innerHTML=
+    `<h2>Avisos <small class="muted">${F.length}</small></h2>
+     <p class="muted">Derivados: los calcula una regla sobre los datos cada vez que abres
+     la página. Aparecen solos y desaparecen solos. Lo que hay que <b>decidir</b> vive en
+     Pendientes.</p>` +
+    (F.length ? `<div class="tks">` + F.map(f=>{
+      const [col,lab]=SEV[f.sev];
+      return `<div class="tk" style="border-left-color:${col}">
+        <div class="tkh"><b>${f.v}</b> ${f.t}
+          <span class="nopos">${lab}</span></div>
+        <div class="tkt">${f.d||''}</div></div>`;}).join('') + `</div>`
+      : `<p class="muted">Nada que reportar.</p>`);
+}
+
 function toggleDrawer(on){
   const el=document.getElementById('drawer');
   const open = on===undefined ? !el.classList.contains('open') : on;

@@ -308,3 +308,33 @@ Live readings key on **node id**. `water-network.json` already has stable ids, s
 reading for `rompecargas` lights up **both** the map marker and the schematic symbol with
 no extra plumbing. That is the real reason to do the graph refactor before the P&ID rather
 than after.
+
+## Avisos y Trabajo: derivado contra afirmado
+
+Son dos cosas distintas y las dos hacen falta. La prueba salió sola: de los 22 primeros
+tiquetes, **14 los sabía ya una regla** y 8 no los podía saber nadie más que Manuel.
+
+| | **Avisos** | **Trabajo** |
+|---|---|---|
+| Qué es | Lo que **dicen los datos** | Lo que **decidió Manuel** |
+| De dónde sale | Una regla que corre en cada render | Escrito a mano en `operations/trabajo/tickets.json` |
+| Cómo desaparece | **Solo**, cuando deja de ser cierto | Se borra el tiquete; git guarda el resto |
+| Qué no puede | Guardar una intención | Enterarse solo |
+
+**La regla para decidir dónde va algo:** si el dato lo puede decir, es un aviso. Si sólo
+lo puedes decir tú, es un tiquete.
+
+Escribir a mano un tiquete que una regla ya detecta es el error a evitar, y es fácil de
+cometer: nueve tiquetes decían «esta posición es aproximada», que es exactamente lo que
+mira `posiciones-sin-confirmar`. El daño no es la repetición, es que **el tiquete miente
+después**: cuando se mida el tanque, el aviso se apaga solo y el tiquete se queda ahí
+afirmando algo que ya no pasa. Estado que hay que mantener es estado que acaba mintiendo.
+
+El error simétrico también estaba: cuatro tiquetes describían a mano las conexiones
+dibujadas con línea discontinua. Eso no era un tiquete mal puesto, era **una regla que
+faltaba** — hoy es `conexiones-hipoteticas`.
+
+Un aviso es el **candidato**; un tiquete es la **decisión**. El aviso dice «hay nueve
+puntos sin medir»; el tiquete dice «voy a ir a medirlos». Por eso las reglas nombran las
+entidades en vez de contarlas: un número te manda a buscar, una lista te dice qué llevar
+al campo.

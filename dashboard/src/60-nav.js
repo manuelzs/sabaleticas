@@ -22,7 +22,7 @@ const NAV=[
      earns these tabs is the MANAGEMENT view of them: "is my telemetry alive", "what
      work is open", which no entity-level badge can answer. */
   {id:'trabajo',  label:'Trabajo',  cross:true,
-   views:[['pendientes','Pendientes']]},
+   views:[['pendientes','Pendientes'],['avisos','Avisos']]},
   {id:'sensores', label:'Sensores', cross:true,
    views:[['lecturas','Lecturas'],['fuentes','Fuentes']]},
 ];
@@ -69,7 +69,7 @@ function navRender(){
 const PAGE_VIEWS={lecturas:renderLecturas, fuentes:renderFuentes,
                   hato:renderHato, movimientos:renderMovimientos,
                   guias:renderGuias, estado:renderEstado,
-                  pendientes:renderTrabajo};
+                  pendientes:renderTrabajo, avisos:renderAvisos};
 
 function navApply(){
   const page=PAGE_VIEWS[route.view];
