@@ -225,16 +225,16 @@ def _types(dash: Path):
     return json.loads(f.read_text(encoding="utf-8"))["tipos"] if f.exists() else {}
 
 
-def _owners(geo: Path, publico=False):
+def _owners(geo: Path):
     """Hand-maintained owner names, keyed by matrícula. The cadastre omits owners.
 
-    In `publico` builds the names are dropped. They are deliberately on the map — knowing
-    that the parcel to the southeast is Manuela and Amalia's is the point of the label —
-    but they are OTHER PEOPLE'S names, and a build meant to be published is not ours to
-    put them in. The parcel, its area and its side stay; only the person goes.
+    [owner, 2026-08-22] These are NOT sensitive and are not stripped from published
+    builds. Who owns the farm next door is ordinary knowledge in the vereda, it is on
+    the label because Manuel put it there, and deciding otherwise on his behalf was not
+    ours to do.
     """
     f = geo / "neighbour-owners.json"
-    if not f.exists() or publico:
+    if not f.exists():
         return {}
     try:
         return json.loads(f.read_text(encoding="utf-8")).get("predios", {})
@@ -328,9 +328,9 @@ def _movements(path: Path):
         return [{k: (r.get(k) or "") for k in MOV_CAMPOS} for r in csv.DictReader(f)]
 
 
-def _collect(geo: Path, TIPOS, publico=False):
+def _collect(geo: Path, TIPOS):
     out = []
-    owners = _owners(geo, publico)
+    owners = _owners(geo)
     for name, rel, kind, colour, width, fill in LAYERS:
         path = geo / rel
         if not path.exists():
@@ -428,7 +428,7 @@ def _mesh(dem, step=2):
     return {"grid": out, "nx": ox, "ny": oy}
 
 
-def build(root: Path, publico: bool = False) -> Path:
+def build(root: Path) -> Path:
     geo = root / "operations" / "land" / "geo"
     # The water system is authored as a graph; the GeoJSON the map draws is
     # generated from it every build, so the two can never disagree.
@@ -489,7 +489,7 @@ def build(root: Path, publico: bool = False) -> Path:
         "tipos": tipos,                   # the single entity-type registry
         "tickets": _tickets(root, geo),    # open work, resolved to its entity
         "bounds": farm["bounds"],
-        "layers": _collect(geo, tipos, publico),
+        "layers": _collect(geo, tipos),
         "dem": dem,
         "ortho": ortho,
         "mesh": _mesh(dem) if dem else None,
