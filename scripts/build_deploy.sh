@@ -13,7 +13,15 @@ set -euo pipefail
 rm -rf public
 mkdir -p public/dashboard public/operations/land/geo
 
-python3 -m sabaleticas map --no-open
+# The viewer is committed, so the deploy does not DEPEND on rebuilding it — that would
+# make shipping hostage to whatever Python happens to be in the build image. Rebuild when
+# we can, because it costs nothing and catches a stale commit; fall back to the committed
+# file when we cannot.
+if command -v python3 >/dev/null 2>&1; then
+  python3 -m sabaleticas map --no-open || echo "aviso: no se pudo reconstruir; uso el viewer.html del repositorio"
+else
+  echo "aviso: sin python3 en el build; uso el viewer.html del repositorio"
+fi
 
 cp dashboard/viewer.html            public/dashboard/viewer.html
 cp operations/land/geo/orthophoto.jpg   public/operations/land/geo/
