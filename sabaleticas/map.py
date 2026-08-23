@@ -145,6 +145,81 @@ def _round_geom(coords, dp=6):
 
 # Per-feature symbology comes from the single entity-type registry, so changing an
 # icon is one line in dashboard/entity-types.json rather than five files.
+def _tickets(root: Path, geo: Path):
+    """Work tickets, each resolved to the entity it hangs off.
+
+    A ticket carries two things and no more — what it is about, and what needs doing.
+    Manuel's rule: no priority, no status. A ticket that exists is open; closing it
+    deletes the line and git keeps the history, which is the one place history keeps
+    itself. Anything else would be state to maintain, and unmaintained state lies.
+
+    Resolution is the interesting half. `sobre` is an entity id, and entities live in
+    several files, so the index is built by sweeping every GeoJSON for `_id`. Potreros
+    have no `_id` — they are derived, and they renumber on every run — so they are
+    reachable as `predio:potrero/<nombre>`, matched on the name Manuel gave them. A
+    ticket whose target cannot be found is NOT dropped: it is returned unresolved and
+    shown as such, because a ticket pointing at something that no longer exists is
+    itself news.
+    """
+    f = root / "operations" / "trabajo" / "tickets.json"
+    if not f.exists():
+        return []
+    tickets = json.loads(f.read_text(encoding="utf-8")).get("tickets", [])
+    if not tickets:
+        return []
+
+    idx = {}
+    for g in sorted(geo.rglob("*.geojson")):
+        try:
+            data = json.loads(g.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for feat in data.get("features", []):
+            props = feat.get("properties") or {}
+            geom = feat.get("geometry") or {}
+            if not geom.get("coordinates"):
+                continue
+            pt = _punto(geom)
+            if props.get("_id"):
+                idx[props["_id"]] = (props.get("nombre") or props.get("name") or
+                                     props["_id"], pt)
+            if props.get("tipo") == "potrero" and props.get("nombre"):
+                idx[f"predio:potrero/{props['nombre']}"] = (props["nombre"], pt)
+
+    # The water graph carries nodes that no GeoJSON does — the two bocatomas have no
+    # coordinates at all, which is precisely what their tickets are about. Index them
+    # anyway, so the ticket shows a name instead of a raw id and reads as "known thing,
+    # unknown place" rather than "broken reference".
+    net_f = geo / "water-network.json"
+    if net_f.exists():
+        for n in json.loads(net_f.read_text(encoding="utf-8")).get("nodes", []):
+            if n.get("id") and n["id"] not in idx:
+                idx[n["id"]] = (n.get("nombre") or n["id"], n.get("geo"))
+
+    out = []
+    for t in tickets:
+        sobre = t.get("sobre")
+        nombre, pt = idx.get(sobre, (None, None))
+        if pt is None and t.get("punto"):
+            nombre, pt = t.get("donde") or "punto marcado", t["punto"]
+        out.append({"id": t["id"], "texto": t["texto"],
+                    "sobre": sobre or t.get("donde", ""),
+                    "nombre": nombre or (sobre or t.get("donde") or "?"),
+                    "sub": (sobre or "").split(":")[0] if sobre else "sitio",
+                    "pt": [round(pt[0], 6), round(pt[1], 6)] if pt else None,
+                    "perdido": 1 if (sobre and sobre not in idx) else 0,
+                    "abierto": t.get("abierto")})
+    return out
+
+
+def _punto(geom):
+    """One representative coordinate for any geometry."""
+    c = geom["coordinates"]
+    while isinstance(c[0], list):
+        c = c[len(c) // 2] if len(c) > 2 else c[0]
+    return c
+
+
 def _types(dash: Path):
     f = dash / "entity-types.json"
     return json.loads(f.read_text(encoding="utf-8"))["tipos"] if f.exists() else {}
@@ -394,6 +469,7 @@ def build(root: Path) -> Path:
         "herd": herd,                     # SINIGAN inventory snapshot
         "movements": movements,           # GSMI movement guides
         "tipos": tipos,                   # the single entity-type registry
+        "tickets": _tickets(root, geo),    # open work, resolved to its entity
         "bounds": farm["bounds"],
         "layers": _collect(geo, tipos),
         "dem": dem,

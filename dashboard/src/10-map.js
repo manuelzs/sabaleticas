@@ -367,6 +367,7 @@ function draw(){
       cx.fillText(A.toFixed(1)+'°', b[0]+Math.cos(mid)*38-12, b[1]+Math.sin(mid)*38+4);
     }
   }
+  drawMarcaTicket();
   scaleBar();
 }
 function scaleBar(){

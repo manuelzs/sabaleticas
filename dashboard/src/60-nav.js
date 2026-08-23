@@ -21,8 +21,8 @@ const NAV=[
      and surface in context — a level inside a tank symbol, a badge on a marker. What
      earns these tabs is the MANAGEMENT view of them: "is my telemetry alive", "what
      work is open", which no entity-level badge can answer. */
-  {id:'trabajo',  label:'Trabajo',  views:[], disabled:true, cross:true,
-   why:'tareas y alertas sobre cualquier entidad — pendiente'},
+  {id:'trabajo',  label:'Trabajo',  cross:true,
+   views:[['pendientes','Pendientes']]},
   {id:'sensores', label:'Sensores', cross:true,
    views:[['lecturas','Lecturas'],['fuentes','Fuentes']]},
 ];
@@ -68,7 +68,8 @@ function navRender(){
    need the map chrome out of the way entirely. */
 const PAGE_VIEWS={lecturas:renderLecturas, fuentes:renderFuentes,
                   hato:renderHato, movimientos:renderMovimientos,
-                  guias:renderGuias, estado:renderEstado};
+                  guias:renderGuias, estado:renderEstado,
+                  pendientes:renderTrabajo};
 
 function navApply(){
   const page=PAGE_VIEWS[route.view];

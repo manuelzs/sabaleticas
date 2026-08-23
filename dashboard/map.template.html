@@ -62,6 +62,17 @@
  #views:empty{display:none}
  /* the nav supersedes the old inline toggles */
  #btn3d,#btnPid{display:none!important}
+ /* Trabajo: one row per ticket. The id and the thing on one line, what to do below —
+    so the eye can run down the left edge and find the entity without reading. */
+ .tks{display:flex;flex-direction:column;gap:1px;margin-bottom:14px}
+ .tk{background:#161c23;border-left:2px solid #263039;padding:8px 12px}
+ .tk:hover{background:#1a222b;border-left-color:#00e676}
+ .tkh{font-size:12px;color:#8fa0b0;margin-bottom:3px}
+ .tkh b{color:#5d6b78;font-weight:600;margin-right:7px;font-variant-numeric:tabular-nums}
+ .tkh a{color:#e6edf3;text-decoration:none;border-bottom:1px solid #35424e}
+ .tkh a:hover{border-bottom-color:#00e676}
+ .nopos{color:#6b7883;font-size:11px;font-style:italic}
+ .tkt{font-size:13px;color:#c2cdd6;line-height:1.45}
  .grp{margin:9px 0 2px;color:var(--muted);font-size:10px;letter-spacing:.09em;
    text-transform:uppercase}
  /* DOM views (lists, tables) render here, over the canvases */
