@@ -515,8 +515,70 @@ def build(root: Path) -> Path:
         pass
     js = "".join(f.read_text(encoding="utf-8") for f in src)
 
+    plantilla = tpl.read_text(encoding="utf-8")
+
+    # The self-contained file: everything inlined, opens from file://. This is the local
+    # working copy and the fastest loop we have — edit, rebuild, reload a tab.
     out = dash / "viewer.html"
-    out.write_text(
-        tpl.read_text(encoding="utf-8").replace("/*__JS__*/", js).replace("/*__DATA__*/", payload),
-        encoding="utf-8")
+    out.write_text(plantilla.replace("/*__JS__*/", js).replace("/*__DATA__*/", payload),
+                   encoding="utf-8")
+
+    # The deployed split: the same template and the same payload, taken apart so the data
+    # can sit behind a login. Not a second implementation — one builder, two shapes, which
+    # is the only version of this that stays honest. The shell carries no data at all; the
+    # code becomes a cacheable file; the payload is served by a function that checks a
+    # cookie first. `D` is assigned by that response before app.js runs, so nothing in the
+    # 500-odd lines of view code has to learn that its data now arrives over a network.
+    split = dash / "build"
+    split.mkdir(exist_ok=True)
+    (split / "app.js").write_text(js.replace("/*__DATA__*/", "window.__D"), encoding="utf-8")
+    # The two rasters are <img> sources, and the shell no longer sits in dashboard/ —
+    # it is served at the root — so the relative hop up one level has to become absolute.
+    # Done on the payload rather than in GEO_REL because the local file:// build still
+    # needs the relative form, and one of them has to be the odd one out.
+    (split / "payload.json").write_text(
+        payload.replace("../operations/", "/operations/"), encoding="utf-8")
+    (split / "index.html").write_text(
+        plantilla.replace("/*__JS__*/", _ARRANQUE), encoding="utf-8")
     return out
+
+
+# Loader for the deployed build. Deliberately tiny and dependency-free: ask for the data,
+# and if the answer is 401 put up a password box instead of the map. app.js is only
+# attached once `window.__D` exists, so the view code never runs without its data.
+_ARRANQUE = """
+async function pedirDatos(clave){
+  if(clave!==undefined){
+    const r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({clave})});
+    if(!r.ok) return false;
+  }
+  const r=await fetch('/api/data',{credentials:'same-origin'});
+  if(r.status===401) return false;
+  if(!r.ok) throw new Error('respuesta '+r.status);
+  window.__D=await r.json();
+  return true;
+}
+function arrancar(){
+  const s=document.createElement('script'); s.src='/app.js'; document.body.appendChild(s);
+}
+function pedirClave(malo){
+  document.getElementById('wrap').innerHTML=
+    `<div id="puerta">
+       <h1>Trueground</h1>
+       <p>Hacienda Sabaleticas</p>
+       <form id="pf"><input id="pw" type="password" placeholder="clave" autofocus
+         autocomplete="current-password"><button>Entrar</button></form>
+       <div id="pe">${malo?'Clave incorrecta.':''}</div>
+     </div>`;
+  document.getElementById('pf').onsubmit=async e=>{
+    e.preventDefault();
+    const v=document.getElementById('pw').value;
+    document.getElementById('pe').textContent='…';
+    if(await pedirDatos(v)) arrancar(); else pedirClave(true);
+  };
+}
+pedirDatos().then(ok=>{ ok ? arrancar() : pedirClave(false); })
+           .catch(e=>{ document.getElementById('wrap').innerHTML=
+             '<div id="puerta"><h1>Trueground</h1><p>No pude cargar los datos: '+e.message+'</p></div>'; });
+"""

@@ -73,6 +73,17 @@
  .tkh a:hover{border-bottom-color:#00e676}
  .nopos{color:#6b7883;font-size:11px;font-style:italic}
  .tkt{font-size:13px;color:#c2cdd6;line-height:1.45}
+ /* La puerta: lo único que se ve sin sesión. */
+ #puerta{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+   justify-content:center;gap:10px;background:var(--bg);text-align:center;padding:24px}
+ #puerta h1{margin:0;font-size:26px;letter-spacing:.14em;font-weight:600;color:#e6edf3}
+ #puerta p{margin:0;color:var(--muted);font-size:13px}
+ #pf{display:flex;gap:8px;margin-top:14px}
+ #pw{background:var(--panel);border:1px solid var(--line);color:var(--ink);
+   padding:10px 13px;border-radius:7px;font-size:15px;width:210px}
+ #pf button{background:#00e676;border:0;color:#0d1117;font-weight:650;
+   padding:10px 17px;border-radius:7px;font-size:14px;cursor:pointer}
+ #pe{color:#ff5252;font-size:12px;min-height:16px}
  .grp{margin:9px 0 2px;color:var(--muted);font-size:10px;letter-spacing:.09em;
    text-transform:uppercase}
  /* DOM views (lists, tables) render here, over the canvases */

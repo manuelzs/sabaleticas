@@ -2,6 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "bash scripts/build_deploy.sh",
   "outputDirectory": "public",
-  "framework": null,
-  "rewrites": [{ "source": "/", "destination": "/dashboard/viewer.html" }]
+  "framework": null
 }
