@@ -22,3 +22,5 @@ dist/
 
 # QCAD deja copias de respaldo con ~ al abrir un DXF
 operations/land/plano-2007/~*
+public/
+.vercel/
