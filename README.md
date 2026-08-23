@@ -1,4 +1,16 @@
-# Rancher
+# Trueground
+
+**[owner, 2026-08-22] El nombre de la plataforma es Trueground.** La finca sigue siendo
+Hacienda Sabaleticas; Trueground es lo que la administra, y está pensado para servir a
+más de una finca aunque hoy sólo corra sobre ésta.
+
+El nombre viene de *ground truth*: en teledetección, ir al sitio a verificar lo que la
+imagen afirma. Es el ciclo de trabajo de este repositorio y su única regla dura —
+**nada se afirma sin haberlo verificado, y lo que no está verificado se marca como tal**.
+El catastro dice que hay una cerca, Manuel camina, no hay cerca, y el dato cambia con
+firma y fecha. De ahí también salen las dos mitades del sistema: lo **derivado** (avisos,
+que una regla calcula y se apagan solos) y lo **afirmado** (tiquetes y datos, que alguien
+dijo y quedan firmados). Ver `dashboard/ARCHITECTURE.md`.
 
 Working repository for running and advising a cattle operation. Mostly markdown:
 profiles, processes, financial statements, herd records, and decision notes that
