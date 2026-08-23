@@ -148,9 +148,10 @@ def cmd_prices_fetch(args):
 def cmd_map(args):
     """Build the offline map viewer and (unless --no-open) open it."""
     from . import map as mapmod
-    out = mapmod.build(ROOT)
+    out = mapmod.build(ROOT, publico=getattr(args, "publico", False))
     mb = out.stat().st_size / 1024 / 1024
-    print(f"dashboard: {out}  ({mb:.1f} MB)")
+    print(f"dashboard: {out}  ({mb:.1f} MB)"
+          + ("  [público: sin nombres de terceros]" if getattr(args, "publico", False) else ""))
     if not args.no_open:
         opener = {"darwin": "open", "win32": "start"}.get(sys.platform, "xdg-open")
         try:
@@ -189,6 +190,8 @@ def main():
     sub.add_parser("movements", help="GSMI sales cadence & channels").set_defaults(fn=cmd_movements)
     mp = sub.add_parser("map", help="build + open the local map viewer")
     mp.add_argument("--no-open", action="store_true", help="just write the file")
+    mp.add_argument("--publico", action="store_true",
+                    help="build for publishing: leave third parties' names out")
     mp.set_defaults(fn=cmd_map)
     args = p.parse_args()
     sys.exit(args.fn(args))

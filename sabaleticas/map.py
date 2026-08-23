@@ -225,10 +225,16 @@ def _types(dash: Path):
     return json.loads(f.read_text(encoding="utf-8"))["tipos"] if f.exists() else {}
 
 
-def _owners(geo: Path):
-    """Hand-maintained owner names, keyed by matrícula. The cadastre omits owners."""
+def _owners(geo: Path, publico=False):
+    """Hand-maintained owner names, keyed by matrícula. The cadastre omits owners.
+
+    In `publico` builds the names are dropped. They are deliberately on the map — knowing
+    that the parcel to the southeast is Manuela and Amalia's is the point of the label —
+    but they are OTHER PEOPLE'S names, and a build meant to be published is not ours to
+    put them in. The parcel, its area and its side stay; only the person goes.
+    """
     f = geo / "neighbour-owners.json"
-    if not f.exists():
+    if not f.exists() or publico:
         return {}
     try:
         return json.loads(f.read_text(encoding="utf-8")).get("predios", {})
@@ -300,19 +306,31 @@ def _latest_readings(path: Path):
     return out
 
 
+# What the movement views actually read. The payload carries what is RENDERED, not
+# whatever the source file happens to hold — the CSV row also carries the name of the
+# person responsible for each guide, and no view has ever shown it. It rode along into a
+# 3.5 MB file that is meant to be published, which is how a third party's name ends up
+# somewhere it was never needed. Widen this set deliberately, never by default.
+MOV_CAMPOS = ("codigo", "mov_date", "destino", "head", "estado", "animal_class")
+
+
 def _movements(path: Path):
-    """GSMI movement guides, as issued. Nothing is filtered or filled in — several
-    carry no head count at all, and that gap is worth seeing rather than hiding."""
+    """GSMI movement guides, as issued, projected to the fields the views use.
+
+    Nothing is filtered or filled in — several carry no head count at all, and that gap
+    is worth seeing rather than hiding. But nothing extra is carried either: `resp_origen`
+    names real people, `pago` is how they paid, and neither is on screen anywhere.
+    """
     if not path.exists():
         return []
     import csv
     with path.open(encoding="utf-8") as f:
-        return [{k: (v or "") for k, v in r.items()} for r in csv.DictReader(f)]
+        return [{k: (r.get(k) or "") for k in MOV_CAMPOS} for r in csv.DictReader(f)]
 
 
-def _collect(geo: Path, TIPOS):
+def _collect(geo: Path, TIPOS, publico=False):
     out = []
-    owners = _owners(geo)
+    owners = _owners(geo, publico)
     for name, rel, kind, colour, width, fill in LAYERS:
         path = geo / rel
         if not path.exists():
@@ -410,7 +428,7 @@ def _mesh(dem, step=2):
     return {"grid": out, "nx": ox, "ny": oy}
 
 
-def build(root: Path) -> Path:
+def build(root: Path, publico: bool = False) -> Path:
     geo = root / "operations" / "land" / "geo"
     # The water system is authored as a graph; the GeoJSON the map draws is
     # generated from it every build, so the two can never disagree.
@@ -471,7 +489,7 @@ def build(root: Path) -> Path:
         "tipos": tipos,                   # the single entity-type registry
         "tickets": _tickets(root, geo),    # open work, resolved to its entity
         "bounds": farm["bounds"],
-        "layers": _collect(geo, tipos),
+        "layers": _collect(geo, tipos, publico),
         "dem": dem,
         "ortho": ortho,
         "mesh": _mesh(dem) if dem else None,

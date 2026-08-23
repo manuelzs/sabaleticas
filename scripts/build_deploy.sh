@@ -13,14 +13,20 @@ set -euo pipefail
 rm -rf public
 mkdir -p public/dashboard public/operations/land/geo
 
+# --publico is not optional here. The committed viewer.html is the LOCAL build and does
+# carry the neighbours' owner names, so a deploy that fell back to it would publish them.
+# If the public build cannot run, the deploy fails rather than shipping the local one.
+#
 # The viewer is committed, so the deploy does not DEPEND on rebuilding it — that would
 # make shipping hostage to whatever Python happens to be in the build image. Rebuild when
 # we can, because it costs nothing and catches a stale commit; fall back to the committed
 # file when we cannot.
 if command -v python3 >/dev/null 2>&1; then
-  python3 -m sabaleticas map --no-open || echo "aviso: no se pudo reconstruir; uso el viewer.html del repositorio"
+  python3 -m sabaleticas map --no-open --publico || { echo "error: no se pudo construir la versión pública"; exit 1; }
 else
-  echo "aviso: sin python3 en el build; uso el viewer.html del repositorio"
+  echo "error: sin python3 en el build — no puedo construir la versión pública,"
+  echo "       y el viewer.html del repositorio lleva nombres de terceros."
+  exit 1
 fi
 
 cp dashboard/viewer.html            public/dashboard/viewer.html
