@@ -28,16 +28,38 @@
 | **Herd reconstructed over time** — anchor count + movement ledger, drawn as a step | ✅ |
 | **Event strip** for guides — no binning, gaps visible as gaps | ✅ |
 | Charts are **hand-written SVG generated from data** — no library, no build step | ✅ |
+| **Trabajo tab** — tickets on any entity, two fields and nothing else | ✅ |
+| **Derived vs asserted** split written down and enforced (avisos ≠ tiquetes) | ✅ |
+| **Deployed**, git-connected, data behind a session cookie | ✅ |
+| **One builder, two shapes** — self-contained `viewer.html` and the split shell/app/payload | ✅ |
+| Menu shows **one `Cercas` entry** over two layers; leftover closures became `Pasos en la cerca` | ✅ |
 
 ## Open
+
+### 0 · What today left loose — 2026-08-22
+
+The platform is named **Trueground** and is live at `trueground.vercel.app` behind a shared
+password. Everything below is a consequence of that, and none of it is urgent.
+
+| | What | Why it matters |
+|---|---|---|
+| **Touch** | Pan, pinch-zoom and tap targets are built for a mouse | The whole point of deploying was the phone. This will bite on the first field visit, and no framework fixes it — it is our own canvas handlers |
+| **Writes from the field** | There is a backend and a session now, but every route is read-only | Closing a ticket standing next to the tank, or capturing a point at a trough, is the obvious first write. `POST /api/tickets` against `operations/trabajo/tickets.json` — needs somewhere to persist, since the filesystem on Vercel is read-only |
+| **Repo weight** | 389 MB. `dashboard/viewer.html` is 3.4 MB and is committed on **every** build | `dashboard/build/` and `api/_payload.json` are already ignored; `viewer.html` is the one still growing history. Ignoring it costs nothing — it is generated — but changes the habit of rebuilding before commit |
+| **Domain** | `trueground.vercel.app` for now | `trueground.ag` / `.farm` are the candidates. Note: Vercel Authentication does not cover custom domains on any plan setting we have, so a custom domain would bypass the gate — the app password would still hold |
+| **Password rotation** | One shared password in `TG_PASSWORD`, one secret in `TG_SECRET` | No rotation policy and no way to revoke a single session. Fine for one person; revisit at the second |
+| **Vercel MCP plugin** | Sees the teams, returns empty for projects and 404s on this one | Worked around with the CLI + REST. Not ours to fix, but worth remembering before trusting it |
+| **Potrero identity** | Tickets reference potreros as `predio:potrero/<nombre>` | Potreros are derived and renumber every run, so the name is the only stable handle. Renaming one orphans its ticket — the view flags it as `no encontrado` rather than dropping it, which is the right failure but not a fix |
+| **No tests** | `check_js.py` catches undeclared identifiers; that is the whole safety net | The Python side has none. The planar-graph face extraction is the part that would most repay a fixture: a known fence set in, a known potrero count out |
+
 
 ### 1 · Navigation — ✅ **built, seam only**
 `Finca · Agua · Predio · Ganado(off)`, each with its own views, routed in the hash.
 Layers are grouped by subsystem and scoped to the active tab. **No framework** — a ~90-line
 registry and router; the heavy lifting is canvas, which a framework would not help with.
 
-**Deliberately absent:** the `Trabajo` tab (no tickets yet), tables, and anything for Ganado
-before there is cattle data.
+**`Trabajo` arrived 2026-08-22** with two views — `Pendientes` and `Avisos`. Still deliberately
+absent: tables, and anything for Ganado beyond what the data supports.
 
 ### 2 · Globally unique entity ids — ✅ **done 2026-08-22**
 `agua:rompecargas`, `ganado:hato`, `predio:finca`. The prefix is the subsystem — the same word
@@ -56,12 +78,28 @@ in `sabaleticas/map.py`, and the symbol drawing in `50-schematic.js`. One regist
 That registry is also what the future table and ticket views read to know how to render a type,
 so it is not only cosmetic.
 
-### 3 · Attachment model — ✅ **half built**
+### 3 · Attachment model — ✅ **done 2026-08-22**
 Readings work: `data/readings.csv` → latest per entity+magnitude → rendered by the map, the
 schematic and the Sensores list, all resolving by entity id. **A manual note and an automated
 reading are the same object**, differing only in `origen` and expected freshness.
 
-Still to come: **tickets and alerts on the same mechanism**, and the `Trabajo` tab.
+Tickets now ride the same mechanism: `operations/trabajo/tickets.json` names an entity by id
+(`agua:t-2`, `tierra:playon`, `predio:potrero/Rincón`) and the builder resolves it to a name and
+a position, so a ticket can point at anything the system knows without new plumbing.
+
+**And the division that came out of building it** — worth keeping, because it decides where
+future things go:
+
+> **Avisos are derived, tiquetes are asserted.** A rule runs over the data on every render and
+> switches itself off when it stops being true. A ticket is something Manuel decided and only
+> he can close. The test: *if the data can tell you, it is an aviso; if only you can tell you,
+> it is a tiquete.*
+>
+> Of the first 22 tickets, **14 were already a rule's job** — nine restated
+> `posiciones-sin-confirmar`, four described the dashed connections by hand (that one was a
+> **missing rule**, now `conexiones-hipoteticas`). The damage is not repetition: a duplicated
+> ticket **lies later**, when the aviso clears itself and the ticket stays. Full reasoning in
+> `ARCHITECTURE.md`.
 
 ### 3b · Collecting Hikvision automatically
 The house system is the pilot. `operations/sensors/sources.json` holds what we know and the
@@ -150,7 +188,10 @@ before there is cattle data.
 
 1. **The dashboard renders; it never owns data.**
 2. **Derived numbers are derived** — length, gradient, area, all computed.
-3. **Offline first**, single file, stdlib only, no build step.
+3. **Single file, stdlib only, no build step** — and now also a split shell/app/payload for the
+   deployment, emitted by the *same* builder so the two cannot drift. Offline is no longer a
+   requirement (`[owner, 2026-08-22]` there is connectivity across the farm), but the
+   self-contained file stays because it is the fastest edit-rebuild-reload loop we have.
 4. **Never look more confident than the data.** Dashed hypotheticals, confidence dots, the
    *cota desconocida* band, and a router that cannot draw a connection that does not exist.
 5. **Labels may be written. Claims must be computed — and both must be readable.**
